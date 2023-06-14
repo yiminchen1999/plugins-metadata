@@ -8,7 +8,43 @@ from quart import request
 app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.com")
 
 # Database of literature data. Does not persist if Python session is restarted.
-_DATABASE = {}
+_DATABASE = {
+    "username1": [
+        {
+            "title": "Sample Paper 1",
+            "author": "John Doe",
+            "year": 2021,
+            "value": 10.5
+        },
+        {
+            "title": "Sample Paper 2",
+            "author": "Jane Smith",
+            "year": 2022,
+            "value": 8.2
+        },
+        {
+            "title": "Sample Paper 3",
+            "author": "David Johnson",
+            "year": 2020,
+            "value": 6.9
+        }
+    ],
+    "username2": [
+        {
+            "title": "Research Study 1",
+            "author": "Alice Brown",
+            "year": 2019,
+            "value": 7.8
+        },
+        {
+            "title": "Research Study 2",
+            "author": "Bob Wilson",
+            "year": 2023,
+            "value": 9.1
+        }
+    ]
+}
+
 
 @app.post("/literature/<string:username>")
 async def add_literature(username):

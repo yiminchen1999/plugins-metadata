@@ -9,6 +9,12 @@ To install the required packages for this plugin, run the following command:
 ```bash
 pip install -r requirements.txt
 ```
+```bash
+pip install numpy
+pip install matplotlib
+pip install quart
+pip install quart-cors
+```
 
 To run the plugin, enter the following command:
 
