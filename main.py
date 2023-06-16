@@ -7,7 +7,7 @@ from quart import request
 
 app = quart_cors.cors(quart.Quart(__name__), allow_origin="https://chat.openai.com")
 
-# Database of literature data. Does not persist if Python session is restarted.
+# Database
 _DATABASE = {
     "username1": [
         {

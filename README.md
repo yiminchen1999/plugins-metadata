@@ -14,6 +14,12 @@ pip install numpy
 pip install matplotlib
 pip install quart
 pip install quart-cors
+pip install langchain
+pip install openai
+pip install PyPDF2
+pip install faiss-cpu
+pip install tiktoken
+pip install PyDrive
 ```
 
 To run the plugin, enter the following command:
@@ -35,11 +41,3 @@ The plugin should now be installed and enabled! You can start with a question li
 ## Setup remotely
 
 ### Cloudflare workers
-
-### Code Sandbox
-
-### Replit
-
-## Getting help
-
-If you run into issues or have questions building a plugin, please join our [Developer community forum](https://community.openai.com/c/chat-plugins/20).
