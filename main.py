@@ -62,7 +62,7 @@ async def get_literature(username):
 async def delete_literature(username):
     data = await quart.request.get_json(force=True)
     literature_idx = data["literature_idx"]
-    # fail silently, it's a simple plugin
+
     if 0 <= literature_idx < len(_DATABASE[username]):
         _DATABASE[username].pop(literature_idx)
     return quart.Response(response='OK', status=200)
