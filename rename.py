@@ -1,10 +1,10 @@
 import os
 
 # Define the source folder containing the files
-source_folder = '1995papers/'
+source_folder = '1997papers/'
 
 # Create a new folder for renamed files
-new_folder = '1995papers_output/'
+new_folder = '1997papers_output/'
 os.makedirs(new_folder, exist_ok=True)
 
 # Get the list of files in the source folder
@@ -19,7 +19,7 @@ sorted_files = sorted(txt_files, key=lambda x: int(x.split('-')[0]))
 # Rename and move the txt files
 for index, filename in enumerate(sorted_files):
     # Create the new filename
-    new_filename = '1995{}.txt'.format(index + 1)
+    new_filename = '1997{}.txt'.format(index + 1)
 
     # Build the full paths for the source and destination files
     source_path = os.path.join(source_folder, filename)
