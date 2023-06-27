@@ -11,7 +11,7 @@ import pandas as pd
 txt_directory = "1995papers_output"
 
 # Path to the XLSX file
-xlsx_file = "CSCL_1995.xlsx"
+xlsx_file = "CSCL_1995_without_title_author.xlsx"
 
 # Read the Excel file
 df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1995.xlsx', engine='openpyxl')
@@ -29,13 +29,13 @@ for index, row in df.iterrows():
 
     # Check if the TXT file exists
     if os.path.isfile(txt_file_path):
-        # Read the content from the TXT file
+        # Read the content from the TXT file, skipping the title, author, and abstract
         with open(txt_file_path, "r", encoding="latin-1") as txt_file:
-            content = txt_file.read()
+            lines = txt_file.readlines()
+            content = " ".join(lines[7:])  # Skip the first 3 lines (title, author, abstract)
 
         # Assign the content to the "content" column in the DataFrame
         df.at[index, "content"] = content
 
-# Save the modified DataFrame back to the XLSX file
 df.to_excel(xlsx_file, index=False)
 
