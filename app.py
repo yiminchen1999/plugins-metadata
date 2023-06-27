@@ -7,10 +7,11 @@ from langchain.prompts import PromptTemplate
 st.set_page_config(
     page_title=" 🦜 LangChain `SimpleLiteratureReview` 🔗", layout="centered"
 )
-st.title("❓What's TRUE based on learning science paper?")
+st.title("GPT creator on learning science papers?")
 st.subheader("Usage: 🦜 LangChain `SimpleLiteratureReview` 🔗")
 st.markdown("---")
 
+prompt=st.text_input('Plug in your prompt here')
 API = st.text_input(
     "Enter Your OPENAI API-KEY : ",
     placeholder="Paste your OpenAI API key here (sk-...)",
@@ -80,18 +81,16 @@ with st.sidebar:
     st.markdown(
         """
     **Background:** 
-    **git repo[https://github.com/yiminchen1999/plugins-metadata.git]
+    
+    
+    *git repo[https://github.com/yiminchen1999/plugins-metadata.git]*
 
 
     *Thank you for visiting!.*
     """
     )
-# from custom_func import *
-# from streamlit.components.v1 import html
-# st.markdown("")
-# URL = "https://twitter.com/Avra_b/status/1629438844507418625?s=20"
-# res = embedTweet(tweet_url=URL)
-# html(res, height=700)
+
 
 # Written at
 #streamlit run app.py
+#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
