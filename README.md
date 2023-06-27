@@ -20,6 +20,9 @@ pip install PyPDF2
 pip install faiss-cpu
 pip install tiktoken
 pip install PyDrive
+pip install streamlit 
+pip install langchain
+pip install openai
 ```
 
 To run the plugin, enter the following command:
