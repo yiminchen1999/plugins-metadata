@@ -8,11 +8,10 @@ import os
 import pandas as pd
 #记得改地址
 txt_directory = "1997papers_output"
-xlsx_file = "CSCL_1997_withoutabstract.xlsx"
+xlsx_file = "CSCL_1997_no_title.xlsx"
 df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1997.xlsx', engine='openpyxl')
-
-# Create an empty "content" column
 df["content"] = ""
+
 
 # Iterate through each row in the DataFrame
 for index, row in df.iterrows():
@@ -43,13 +42,11 @@ for index, row in df.iterrows():
 
             # Find the line index where the introduction part starts
             introduction_start_index = 0
-            abstract_start_index = 0
             abstract_found = False
             for i, line in enumerate(lines):
-                if "abstract" in line.lower() and not abstract_found:
-                    abstract_start_index = i
+                if "abstract" in line.lower():
                     abstract_found = True
-                if "introduction" in line.lower() and abstract_found:
+                if "introduction" in line.lower() and not abstract_found:
                     introduction_start_index = i
                     break
 
@@ -58,17 +55,12 @@ for index, row in df.iterrows():
 
             # Normalize spacing and remove extra spaces between words
             content = re.sub(r"\s+", " ", content).strip()
-
-            # Delete all the words before the abstract section if abstract found
             if abstract_found:
-                content = content[content.lower().find("abstract"):]
-            else:
-                content = ""
+                content = re.sub(r".*abstract", "abstract", content, flags=re.IGNORECASE)
 
-        # Check if the content is empty
-        if content:
-            # Assign the content to the "content" column in the DataFrame
-            df.at[index, "content"] = content
+        # Assign the content to the "content" column in the DataFrame
+        df.at[index, "content"] = content
+
 
 # Save the modified DataFrame back to the XLSX file
 df.to_excel(xlsx_file, index=False)
