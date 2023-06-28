@@ -12,10 +12,7 @@ xlsx_file = "CSCL_1997_fullcopy.xlsx"
 df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1997.xlsx', engine='openpyxl')
 df["content"] = ""
 
-# Iterate through each row in the DataFrame
-# Iterate through each row in the DataFrame
-
-# Iterate through each row in the DataFrame
+#
 for index, row in df.iterrows():
     # Get the ID from the first column
     id_value = str(row["id"])
@@ -23,23 +20,23 @@ for index, row in df.iterrows():
     # Create the path to the corresponding TXT file
     txt_file_path = os.path.join(txt_directory, id_value + ".txt")
 
-    # Check if the TXT file exists
+
     if os.path.isfile(txt_file_path):
-        # Read the content from the TXT file, handling single-column and two-column formats
+
         with open(txt_file_path, "r", encoding="latin-1") as txt_file:
             lines = txt_file.readlines()
 
-            # Identify the format based on the number of columns (assumes lines are tab-separated)
+            # Identify the format
             num_columns = len(lines[0].split("\t"))
             if num_columns == 1:
-                # Single-column format
+                # single-column
                 content = "".join(lines[3:])  # Skip the first 3 lines (title, author, abstract)
             elif num_columns == 2:
-                # Two-column format
+                # Two-column
                 content = "".join(
                     line.split("\t")[1] for line in lines[3:])  # Skip the first 3 lines and take the second column
             else:
-                # Unsupported format (handle accordingly)
+                # =
                 content = ""
 
             # Find the line index where the introduction part starts
@@ -52,10 +49,10 @@ for index, row in df.iterrows():
                     introduction_start_index = i
                     break
 
-            # Join the lines from the introduction part onwards
+            # Join the lines
             content = "".join(lines[introduction_start_index:])
 
-            # Normalize spacing and remove extra spaces between words
+            # Normalize spacing
             content = re.sub(r"\s+", " ", content).strip()
 
         # Assign the content to the "content" column in the DataFrame
