@@ -5,7 +5,7 @@ import pandas as pd
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from getpass import getpass
 from langchain.embeddings.openai import OpenAIEmbeddings
-
+#export OPENAI_API_KEY=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
 #export OPENAI_API_KEY = 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
 # Load the OpenAI API key from an environment variable
 api_key = os.environ["OPENAI_API_KEY"]
