@@ -86,7 +86,6 @@ pinecone.init(
 
 index = pinecone.Index(index_name=index_name)
 
-index.describe_index_stats()
 
 # Check if the index exists
 if index_name in pinecone.list_indexes():
