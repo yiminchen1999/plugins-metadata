@@ -73,13 +73,20 @@ import pinecone
 index_name = 'langchain-retrieval-augmentation'
 
 pinecone.init(
-     api_key=pinecone_api_key,
+     api_key=config["PINECONE_API_KEY"],
     environment=config['PINECONE_ENVIRONMENT']
  )
 
-# Get the list of all indexes
-indexes = pinecone.list_indexes()
+if index_name not in pinecone.list_indexes():
+    # we create a new index
+    pinecone.create_index(
+        name=index_name,
+        metric='cosine',
+        dimension=len(res[0])  # 1536 dim of text-embedding-ada-002
+    )
+index = pinecone.Index(index_name=index_name)
 
+index.describe_index_stats()
 # Check if the index exists
 #if indexes is not None and index_name in indexes:
     # Clear the index
