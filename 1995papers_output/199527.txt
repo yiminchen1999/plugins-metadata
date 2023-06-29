@@ -1,0 +1,190 @@
+      Environments for Collaborating Mathematically:
+                      The Middle-School Mathematics
+                        through Applications Project
+
+                                 Shelley Goldman 1, Judit Moschkovich 1,
+               and the Middle-School Mathematics through Applications Project Team2
+                                       1/nstitutefor Research on Learning
+                              2IRL, Stanford University and Bay-Area Middle Schools
+
+                      Abstract                              a context for improving conceptual learning in mathe
+Math reforms call for deeper understandings of con          matics classrooms (NCTM, 1989). The charge is for
+cepts, more collaboration among students, and use of        deeper understandings of mathematical ideas and more
+technologies.   The    Middle School   Mathematics          collaborative processes in classrooms. The expectation
+through Applications Projects (MMAP) is developing          is that freeing students from the tedium and procedural
+computer technologies to support mathematics learning       burden of excessive calculating or graphing will enable
+by middle schoolers. We outline the premises underly        them to tum their attention to mathematical objects and
+ing our approach to software design and describe three      concepts.
+software environments and the mathematical activities          Student collaboration has also been proposed as
+they support.  Two features stand out:  (1) the com         useful for improving conceptual learning in mathemat
+puter environments are resources in a larger activity       ics classrooms. Group work is expected to encourage
+structure-the group-based project; and (2), the work        an environment in which students can "explore, formu
+students do inside the software environments helps          late and test conjectures, prove generalizations, and
+generate students discourse and mathematical activi         discuss and apply the results of their investigations"
+ties.                                                       (NCTM, 1989). Researchers have explored peer col
+                                                            laboration and mathematical discussions, as well as
+Keywords - Computer-based learning, collaborative           discussions between students while using software
+group work, mathematics education.                          (Hooper and Smith, 1994; Moschkovich, 1993; Gold
+                                                            man, 1995).
+                                                               We are committed to the development of computer
+1. Introduction                                             technologies to support mathematics learning by mid
+Computer technologies can be powerful tools for doing       dle- school students. We have been actively engaged in
+mathematical work; they   can also be powerful tools        a research and development initiative for four years,
+for learning mathematics. They can perform complexand tedious computations, quickly graph and transformthe Middle-School Mathematics through ApplicationsProject (MMAP).1 While MMAP is not solely a tech
+curves (Confrey and Smith, 1992; Schoenfeld, 1990),         nology development project, the development of com
+display multiple representations of a problem situation     puter-based environments is a key component of our
+(Kaput,  1989;  P ea, 1987), display empirical data         work.
+(Rubin, 1994), and support dynamic visualization of            When we began our work, we considered many
+geometric objects (Lampert, 1988; Olive, 1994). Math        ideas about how computer technologies might help
+ematics educators and researchers are aware of the po
+tential that computers can bring to the math learningenterprise and have developed many different kinds of1TheMiddle-schoolMathematicsthroughApplications
+software environments.Curricuiar guidelines and research in mathematicseducationhaverecommendedthedevelopmentofclassroom activities that focus on the conceptual aspects of mathematics and that support conversations asProject is funded by the National Science Foundation GrantNo. MDR9154005. All opinions and results are solely theopinions of the authors and do not reflect the positions of theNSF. We write this with our colleagues at IRL, StanfordUniversity and Bay-area schools. The entire team is workingto make MMAP a reality in math classrooms.
+
+CSCL '95 Proceedings                                    143                                              October 1995
+children be more successful at learning math. First and        informed by the real everyday conditions of middle
+foremost was that any computer technologies we de              school teachers, students and classrooms. MMAP team
+veloped would have to be useful tools for meeting the          members observe and videotape in classrooms and
+learning needs of students who have been underserved           interview teachers and students at each stage of the
+by more traditional approaches to school math. Our             development process, first to validate application ideas,
+theories and ideas about how children learn mathemat           and then    to test prototype designs against desired
+ics would inform design decisions and eventually be            interaction with mathematics.
+come embodied in our software (Bowers, 1988). We                   When we began development of our first software
+wanted to create modeling and simulation environ               prototype, ArchiTech©, our criterion was that it had to
+ments that would encourage a collaborative kind of             pass a student engagement test and a math "yield" test.
+mathematics in the classroom. We wanted to test the            After one full year of prototyping and field testing the
+possible roles that technologies might play in creating        design environment for creating floor plans, we were
+a more applications-based and collaborative version of         able to settle on a design premise that met the engage
+school mathematics. Our belief that learning is a social       ment and math yield criterion. We settled on the idea
+activity meant that we wanted to create classroom en           that the computer environment and the activity envi
+vironments where students would become equally en              ronment needed to become symbiotic; one was only
+gaged with each other and mathematics.                         useful and engaging if it was totally interlocked with
+     In this paper we tell a short story of how we con         the other. This was a major departure from the ways
+ceive and design math projects and computer environ            we had seen other software for mathematics learning
+ments. The story highlights two important points about         come  into     development.   We   do  not    develop
+the reciprocity of the MMAP software environments:             "mathematics" software with some suggested activities
+(1) the computer environments are interactional and            for their use. We first decide on the kinds of interac
+mathematical resources in a larger activity structure          tions and collaborations we want students to have with
+the group-based project; and (2) design work students          mathematics, design activities to realize them, and fi
+do inside the simulation and modeling environments             nally, decide whether supports for the interactions are
+help to generate opportunities for mathematical activi         best left in the software or in the classroom activity
+ties and student discourse. We outline the premises            structures.
+embedded in our approach to design and describe                    These design decisions mean that our software en
+three software environments and the kinds of mathe             vironments are quite consciously not stand-alone in
+matical engagement they support.                               any sense of the term. To complete unit activities a
+                                                               group of students have to use some component of the
+                                                               software, and while using some part of the software,
+2. Environments for Collaborative Math                         emergent classroom math activities are generated. Us
+LearningOur view is that mathematics is crucial to everydayliving and to current scientific practice.Hence, ourmaterials are designed to reflect that view through agroup-based applications approach to learning mathematics. Central to our applications project focus is theplacing of students in design problems that require theuse of mathematics concepts as tools for their solutions. By experiencing the utility of applying theseconcepts as tools, students have a chance to appreciatethe power of the mathematics. The students can compareanddeepentheirevolvingunderstandingandmastery of the tools-in-use.Ourchargeistodesignmathematicslearningenvironmentsthatintegratereal-worldproblemsolving,collaborativegroupwork,andmaterialresources that include computer-based tools. MMAPsoftware must help us meet several goals, and ourdesign and development work has evolved continually.Fromthestarttheprocesshasbeencyclicalanditerative. The process relies on cycles consisting offourmainactivitycomponents:design,prototyping,fieldtesting,andanalysisandredesign.Themostcharacteristic feature of the design process is that it isheavilyschool-based.Alldevelopmentstagesareing the software is only satisfying in yielding the rangeof middle school mathematics we expect if the studentsare engaged in solving particular kinds of problemswith corresponding constraints. The computer applications support designing solutions to these problems byproviding multiple representations, levels of operation,and analytic opportunities.Currently, there are three MMAP software environments.Ineachtechnologysupportedproject,groups of students role-play adult occupations: architectural designers (using ArchiTech©), cryptographersand cryptanalysts (using Coding Toolbox©), or biologists and policy designers (using HabiTech©). Eachindividual plays a role in a group, and each group inclass-wide activities. The goal is to create situationswhere the math can be helpful in solving a commonproblem, and student conversations and discussionshelp to bring about new mathematical understandings.The computer simulation tools allow students to immediately design solutions to their problem withoutgetting bogged down in unnecessary technical details,computation, or symbolic forms. The environmentsgive students access to multiple representations of theirwork and information about the different designs theycreate. The technology also helps students organize
+
+CSCL '95 Proceedings                                       144                                             October 1995
+data in certain ways, structure their reportability, and       mainders. The Function Tool lets students use a subset
+use the data in explanations.                                  of algebraic expressions with a single variable to create
+                                                               replacement ciphers, where each letter in the alphabet
+                                                               is assigned a symbol using functions. The Analysis
+3. Three Software Environments for En                          Tool, useful for "breaking" codes, requires that stu
+gaging Students in Math Learning                               dents look for and use patterns both in the frequency of
+In The Antarctica Project unit students take on the roleof architectural designers who are creating a researchsymbols and letters and in the code key table.These environments provide some of the usual
+station for a scientific expedition to Antarctica. Stu         types of support that one considered useful for soft
+dents use ArchiTech© to create floor plans and retrieve        ware environments in mathematics. For example, while
+information on their structures' heating and building          using Coding Toolbox© students use the connections
+costs. Students have opportunities to develop and apply        between the graphical and algebraic representations of
+measurement and scale concepts. They work with in              functions to decide whether the equation for a code is a
+dependent and dependent variables and controlling              first or higher degree equation. Most unusually, these
+variables situations through math opportunities which          environments are designed to support early access to
+utilize hands-on experiences with the software.                some mathematical concepts. For example, the Coding
+    With the ArchiTech© environment the group's                Toolbox© environment can be useful without students
+floor plan becomes a conversation piece in two ways.           generating their own symbolic forms or graphs. It thus
+First, because the group shares a design, their design         supports the development of qualitative understandings
+decisions need to be negotiated, made explicit and jus         of  functions  and    the  connections    between   two
+tified. These aspects of design are also supported by          representations. These serve as an entry point to a
+the curriculum and the classroom activities for this           conceptual view of functions while being used in the
+unit. Second, students can make conjectures about how          service   of  solving  a   larger problem.   Likewise,
+changing a variable, such as insulation, might affect          HabiTech© allows the creation of models based on
+the cost to heat a structure. They can then test these         either natural language or symbolic expressions, thus
+conjectures by changing the value of insulation in their       allowing     earlier  entry  into    the  processes  of
+design and seeing how other quantities are affected by         mathematical modeling.
+this change.
+    In the LifeLines unit, students work as populationbiologist advisors to policy makers regarding wildlife4.Summary
+issues. Students use HabiTech© to create and run dy            Our  goal  is to develop    technologies   that become
+namic mathematical models of wildlife interactions             seamless components of the classroom activities. We
+and graph or chart changes in those interactions over          have strong ideas about what we want computer tech
+time. They translate from verbal descriptions of animal        nologies to do for middle-school aged children and
+behavior to mathematical descriptions and create rela          even stronger ideas about the kind of collaborative
+tionships among variables such as animal birth rates           math learning we want to make possible. Our orienting
+and death rates. Students explore how different kinds          criteria are that the computer-based environments need
+of functions  produce  different      patterns of growth       to:
+(linear, logistical, and sinusoidal).
+    In the HabiTech© environment, students experi                  be easy to use and invite all students to engage in
+ence the connection between two representations, natu               mathematical activities, regardless of past school
+ral language and algebra, as they make and test conjec              math history or level of mathematical sophistica
+tures about different rates of birth and death. They also          tion;
+alternate between tabular,    algebraic,  and   graphical
+representations of different relationships.                         reflect the mathematics standards and frameworks
+    In the Codes Inc. unit, students take on the role of            by  supporting  collaborative   learning,  complex
+cryptographers and cryptanalysts, designing and ana                 problem solving, understanding and use of multi
+lyzing codes for various clients. Using the Coding                  ple  representations, analysis, explanations, etc.;
+Toolbox©, with its three different tools, students work             and,
+with patterns and algebraic functions in various representations, use tables, verbal rules and graphs to represent number patterns, and are able to see and use both·bridge the gap for students between school mathand the real world where mathematics is useful.
+linear and non-linear functions. The Matrix Tool lets
+students work with transposition ciphers, rearranging              Today, three software environments are up, run
+the letters in a message by using a matrix and using           ning, and robust enough to be field tested in a variety
+number theory (factors, primes and multiples) to con           of classrooms across the country. Our research team
+struct and analyze these codes. The Matrix Tool re             has observed and documented in field notes and video
+quires students to use patterns based on factors and re-       tape over 300 hours of collaborative work, software
+
+CSCL '95 Proceedings                                       145                                              October 1995
+use and mathematics conversations by middle school             6.    Lampert, M. (1988). Teachers' thinking about
+ers involved in MMAP. One focus of the project's re                  students' thinking about geometry: The effects of
+search program is to examine if the environments sup                 new teaching  tools.  Cambridge,   MA:   Educa
+port conceptual learning and collaboration among stu                 tional Technology  Center,   Harvard   Graduate
+dents.                                                               School of Education.
+    To date, two findings seem promising. The envi
+ronments generate and support conversations between            7.    Moschkovich, J. N. (1993). Moving Up Or Get
+students. These conversations can serve as the sites for             ting Steeper? Negotiating the Meaning of Math
+negotiating and transforming students' descriptions of               ematical Descriptions During Peer Discussions.
+mathematical    situations (Moschkovich,    1993). The               Paper presented at the Fifteenth Annual Confer
+students' computer- generated designs and supporting                 ence of the North American Chapter of the In
+data serve as the referents for conversations, provide a             ternational Group for the Psychology of Mathe
+medium in which students can make, record, and eval                  matics Education, Asilomar, CA.
+uate competing conjectures, and provide entry points
+into mathematical topics and teachable moments.                8.    National Council of Teachers of Mathematics
+    The environments also shift the locus of control in              (1989). Curriculum and evaluation standards for
+the design work from the teacher to the students. Each               school mathematics. Reston, VA: NCTM.
+environment allows students to create their own de
+sign. Whether they are being questioned about their            9.    Olive, J. (1994). Teaching and learning geometry
+progress or about the features of the design, the stu                with the aid of dynamic construction tools such
+dents must explain their work to the teacher before                  as the Geometer's Sketchpad. Technology Focus
+next steps are negotiated. The responsibility for expla              Group at the Sixteenth Annual Conference of the
+nation lies with the students even when they are seek                North  American   Chapter of   the International
+ing the help of their teachers. They must "bring the                 Group for the Psychology of Mathematics Edu
+teacher up to speed" in order to make it possible for the            cation, Baton Rouge, LA.
+teacher to help them.
+                                                               10.   Pea, R. (1987). Cognitive technologies for math
+                                                                     ematics education. In  A.H.  Schoenfeld   (Ed.),
+                      References                                     Cognitive science  and mathematics    education
+1.     Bowers, C. (1988). The cultural dimensions of                 (pp. 89-122). Hillsdale, NJ: Erlbaum.
+       educational computing: Understanding the non
+       neutrality of technology. New York: Teachers            11.   Rubin, A. (1994). Jumping and Running: Using
+       College Press.                                                Technology to Capture the Real World. Tech
+                                                                     nology  Focus Group   at the Sixteenth   Annual
+2.     Confrey, J. and  Smith,  E. (1992).     FunctionProbe:Multi-representationalsoftwareforConference of the North American Chapter ofthe International Group for the Psychology of
+       learning about functions. New York State Asso                 Mathematics Education, Baton Rouge, LA.
+       ciation for Computers and Technology in Edu
+       cation, 6 (April, 1992, pp. 60-64.                      12.   Schoenfeld, A. H. (1990). GRAPHER: A case
+                                                                     study in educational technology, research and
+3.     Goldman, S. (1995). Mediating Microworlds:Collaboration in high school science activities,IRL Technical Report No. 22.107, Palo Alto,development.InA.diSessa,M.Gardner,J.Greeno, F. Reif, A. Schoenfeld, and E. Stage(Eds.), Towards a scientific practice of science
+       CA, Institute for Research on Learning.                       education. Hillsdale, NJ: Erlbaum.
+
+4.     Hooper, P. and Smith, E. LOGO in the class
+       room:  Recognizing   socio-cultural  contexts in                      Authors' Addresses
+       technology based environments. Technology Focus Group at the Sixteenth Annual Conference ofthe North American Chapter of the InternationalShelley Goldman: Institute For Research On Learning,2550HanoverStreet,PaloAlto,California,94304-1115.Shelley_Goldman@irl.org; Judit Moschkovich:
+       Group for the Psychology of Mathematics Edu             Institute For Research On Learning, 2550 Hanover
+       cation, Baton Rouge, LA.                                Street, Palo  Alto, California,   94304-1115.     Ju
+5.     Kaput, J. (1989). Linking representations in the        dit_Moschkovich@irl.org.
+       symbols systems of algebra. In S. Wagner and C.
+       Kieran (Eds.), Research issues in the learning
+       and teaching of algebra,  Volume 4      (pp. 167-
+       194). Reston, Virginia: NCTM.
+
+CSCL '95 Proceedings                                       146                                             October 1995
+

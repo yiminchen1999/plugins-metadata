@@ -1,0 +1,427 @@
+                                                                1
+                                              KidCode :
+           Using Email to Structure Interactions
+         for Elementary Mathematics Instruction
+
+                                             Judith Levy Cohen                Babette Moeller
+   Michelle Baker                             Mathematics Department             The Center for Children and
+       Intellinet Inc.                           Collegiate School                           Technology
+     325 Riverside Drive                       370 West End Avenue                          96 Morton Street
+    New York, NY 10025                         New York, NY 10023                   New York, NY 10016
+   michelle.baker@acm.org                       JudiCMed@aol.com                     bmoeller@edc.org
+
+   This material is based upon work supported by the National Science Foundation under Award No. DMI-
+   9561725. Any opinions, findings, and conclusions or recommendations expressed in this material are those of
+   the authors and do not necessarily reflect the views of the National Science Foundation.
+
+1 KidCode is a trademark of Intellinet Inc.
+
+CSCL `97 Proceedings                                   Page 1                                     December 1997
+                        Abstract                                  Macromedia Director1 prototype of the software.        The
+KidCode     is   email-based    software    designed    to        bus icon indicates a Rebus game message.
+supplement     the  National    Council  of  Teachers   of
+Mathematics      (NCTM)         elementary     curriculum        Background and Rationale
+standards by addressing the need to develop conceptual            The  ideas   for  KidCode     arose   out   of  studies  of
+links  between   concrete    mathematical   activities and        educational   research   that   indicate   that   children's
+mathematics as a language.      It provides children with         difficulty with mathematics in school arises from the
+the opportunity to      explore mathematics    as  one  of        failure   to    develop     conceptual    links    between
+many symbol systems that have been built for the                  mathematics as a symbol system and mathematical
+purposes of communication. We designed a sequence                 concepts that can be used       to  describe  the  physical
+of four two-person games centered on the theme of                 world. (e.g. Ginsburg, 1989, Goldman et. al., 1997)
+codes and secret    messages    and conducted   formative         Whereas the development of mathematical thinking in
+evaluation of the games.                                          young    children  and   skill  in  basic    counting   and
+                                                                  arithmetic can be quite advanced when posed in real
+By  pairing    tools for  the   creation  of   codes   and        world settings, their application in school math has
+authoring of coded messages with a full featured email            seemed    limited   and   often,    resistant   to   further
+messaging system, KidCode enables children to gain                development.
+experience     with     many     kinds    of     symbolic
+representations.     Message authoring can consist of             Research    on   children's mathematics      thinking   has
+text, graphics, and even animations.     Similarly, with          shown    that   understanding    of   basic   mathematical
+KidCode children can advance from an understanding                concepts generally     developed   well  before   children's
+of  symbolic     representation   of   object/noun     type       facility with    symbolic   representation.      Preschool
+entities   for text  and     simple  pictures   to  coded         children,   who   cannot    yet  read  are   usually   quite
+representations of spatial relationships and, finally, to         competent    in   using  mental    math  to  solve   simple
+representation   of  operator   actions.       Our   work         arithmetic      problems      requiring     addition    and
+provides an example of     how mathematics instruction            subtraction.      However,      young    elementary    aged
+can be based on the use of email software to structure            children have generally not developed an ability to use
+cooperative    interactions   among     elementary     aged       symbols.    Few   first graders  are  able   to read   upon
+students.                                                         entering school and their experience with         symbolic
+                                                                  processing    is  very   limited.    Nevertheless,     until
+For formative studies, we crafted materials of paper              recently  they    have  been    required  to   use  to  use
+and poster    board  with varied  examples    at  different       symbols to represent relatively abstract mathematical
+levels of difficulty that could be used     for  multiple         ideas.
+rounds of play.  These materials were used throughout
+the research period in evaluations with three      adults         The result of emphasizing symbolic math before the
+and twenty children in the first through fourth grades            children     develop    competence       with     symbolic
+(ages 5-10 yrs.) from a wide range of socioeconomic               processing has been negative.      This is where children
+backgrounds.        As   the  research   progressed,   the        begin to view school math as separate and unrelated
+materials were revised or expanded in order to address            to anything in their experience. Failure        to develop
+issues   that  arose during   the   evaluation   sessions.        children's facility with symbolic representations has
+Some of the games were modified considerably after                the  result  that many    children  in   early  elementary
+observing   children    play the  games.    Our   research        grades develop misconceptions about school math as
+suggests that, taken together, the games improve the              a  nonsensical    system  of   symbol    manipulation.   In
+children's facility with symbolic processing.                     studies   of    children    who    perform      poorly   in
+                                                                  mathematics at school, it was found that the same
+In this paper we describe one of the KidCode games -              children could solve problems with ease if they were
+Rebus    - in   detail.   We    explain  how    formative         presented in context and without recourse to paper and
+evaluation based on paper materials was used to test              pencil. (Ginsburg 1984, 1997) Related research has
+design ideas for the KidCode software and develop a               shown that children's performance        on   mathematical
+sequence of games to scaffold children's understanding            problem solving tasks actually declined after a         few
+of symbol systems and that would work effectively in              years of schooling.     Children   upon   entering   school
+an electronic mail context. The figure on the cover
+page shows the email inbox from a screen dump of a                1 Director is a registered trademark of Macromedia
+                                                                  Inc.
+
+CSCL `97 Proceedings                                          Page 2                                        December 1997
+showed   good    insight   relating  arithmetic    to  real
+situations but by the ages of 9 or 10 were trying to              In  this    paper  we   describe   our  overall  findings,
+solve  word   problems    by  resorting    to  superficial        formative evaluation procedures, and give a detailed
+strategies such as "guess the operation" or "find the             description of one of the games - Rebus.        Our focus
+numbers and add". (e.g. Carpenter et. al. 1993)                   is  on  how    the formative   evaluation   was     used to
+                                                                  develop the KidCode games and inform the software
+                                                                  design.
+Summary Description of the Research
+Our main objective was to demonstrate the feasibility
+of computer software that allows young children to               Related Work
+manipulate       symbolic        representations       and        Software for cooperative learning is usually conceived
+communicate these representations to their peers.      An         as a tool for collaborative problem solving.        In this
+important part of the work was to test and refine ideas           approach to    collaborative   learning, software     design
+for games that were intended to be self-teaching in the           issues include how to share input devices (e.g. Bricker
+sense  that   corrective   mechanisms      including   the        et. al. 1995,), methods for sharing      and    controlling
+incentive for evaluating one's own performance and                views   of  a  computer    display (e.g.  Gutwin    et.  al.
+the acquisition of relevant information would be built            1995),      and   means    for   communication      among
+into the   structure of  the  games.    In   addition, we         problem solving participants (e.g. Edelson et.al.1995,
+wanted to develop a series of games that would cover              Guzdial et. al.   1995).  KidCode, represents a different
+the intended age range of first through fourth grades             approach to cooperative learning in which interaction
+and  build  upon   one   another to    help   scaffold the        is not structured as cooperative problem solving but
+children's   developing   knowledge.     We    aimed    to        rather as   communication      per se.      In cooperative
+develop  a  series   of games  that    would  not  require        problem     solving,  communication      is essential    but
+intervention from a teacher, that would lead to more              auxiliary to the participant's objective which        is to
+sophisticated  skills    with  and     understanding    of        solve     a    given    problem.        With     KidCode,
+symbolic    representation, and be     interesting or  fun        communication is the problem that participants seek
+enough that children would choose to play the games               to solve.   In cooperative problem solving, learning
+on their own.                                                     occurs as children argue and demonstrate their ideas to
+                                                                  one   another.     With   KidCode,    learning  occurs   as
+Overall, we have found that the theme of coding and               children revise and refine their understanding as they
+secret messages is    an  excellent  venue    for  learning       seek to repair misunderstood communications.
+about   symbolic     representation.   The    context   of
+interactive communication is very appealing to         the        Because the focus is quite different, KidCode faces a
+children we have worked with.       They liked the idea           different set of software design issues.    For example,
+that  their  communications    were     secret  and    were       problems with sharing views and input devices do not
+clearly amused as    they  anticipated  the   decoding  of        arise  in   an email    environment    such  as  KidCode.
+their messages. They found many opportunities for                 Instead, some of the most important software design
+humor as partners misinterpreted some of the codings              issues   related  to  cooperative   learning    for   young
+and we had    many   lively   sessions  in  which   coder,        children are (1) how to provide sufficiently tangible
+decoder and evaluators shared in frequent laughter.               interactivity so as to preserve a compelling sense of
+                                                                  engagement with one's partner, (2) how to provide
+An important advantage of having communication as                 the coder with adequate cues to analyze and         correct
+an explicit theme is that misunderstandings naturally             misinterpretations,       and     (3)    avoidance       of
+become   an   important   source    of  feedback   to  the        "technological    artifacts" that  could    interfere with
+participants. Misunderstandings are less likely to be             intended communications, e.g. through poor quality
+construed as failure but rather as useful information             sound or graphics.
+that can form the basis for message revisions. This is
+particularly important    in  mathematics      instruction        KidCode     also   differs   significantly     from   other
+where   even   very     young  children    have    acquired       elementary mathematics curricular materials, whether
+preconceptions that there is always a single correct              software, paper,     or manipulatives.   Most    efforts to
+answer and failure to produce that answer is a sign of            address     NCTM        Standard   2:  Mathematics       as
+one's inadequacy. Finally, our research suggests that,            Communication have involved linguistic discussions
+taken  together,   the  games    help   to  improve    the        of mathematical activities.      (e.g. Scott et. al. 1992)
+children's facility with symbolic processing.                     Children are encouraged to talk and write about how
+
+CSCL `97 Proceedings                                          Page 3                                       December 1997
+they solve problems. Charts and graphs are presented                the message with any code       selected   from  a  set of
+as important forms of       mathematical    representation.         approximately    twenty     codes    included   with    the
+However,   the   notion  of     communication     is    often       program.
+viewed   solely  from   the     perspective   of  a  verbal
+linguistic medium - talking about math. Connections                 The software includes a Challenge Master mode           in
+between   mathematical   forms    of    representation   and        which the computer generates a coded message and the
+their role as a  means   of   communication       are often         child is given the task of decoding the message.       The
+neglected. The Investigations in Number, Data, and                  decoding game is designed to appeal to children who
+Space elementary mathematics curriculum developed                   play by themselves but      the software    is  not  really
+by TERC goes some way towards developing explicit                   intended to support cooperative learning.        Children
+understanding    of  mathematics       as  a    system    of        can use   the software   to   generate  a  coded message
+representation   and   notation,   particularly     in   the        which can be printed and delivered by hand but it does
+emphasis   on   children's  development     of   their  own         not include electronic interaction. The software may
+organization and notations for problems and problem                 help   children    improve     their    understanding   of
+solving activities.    However, we know of no other                 figurative language and pattern analysis. However, the
+material that uses communication as an activity in                  fact that the computer always performs the encoding
+itself to encourage children to evaluate and understand             and that representational choice is only superficially
+representational choices.                                           under the control of the user,     limits its efficacy in
+                                                                    encouraging   understanding    of  representation    as  it
+The theme of coding and secret messages has been                    relates to communication or to mathematics.
+used in    other mathematics      learning    software   for
+middle school aged children. Geared to appeal to older
+children   than  KidCode's      target    audience,     these      Formative Evaluation Procedure
+software applications use the coding theme to develop               Subjects participated in pairs in each testing session.
+particular types    of mathematical      skills  with   data        Pairs were usually made up of children from the same
+analysis, pattern recognition and linear functions.                 grade. A few sessions consisted of a child who played
+                                                                    with an adult or a child from a higher grade as partner.
+The     Middle       School     Mathematics         through         Most testing sessions involved multiple games and
+Applications Project (MMAP), includes a Codes Inc.                  lasted between 1 and 2 hours.      It was not possible to
+unit in which students act as cryptographers to design              test all four games in a single session. Therefore, we
+and analyze codes. (Goldman and Moschkovich, 1995,                  usually had the children participate in at      least  two
+1997)   The software includes a set of tools         which          separate  sessions so    that  we  could   examine    their
+help students work with patterns, explore         algebraic         reaction to the entire   sequence    of games.   In   most
+functions, and use tables, matrices, verbal rules and               cases, children were tested at    school   during   school
+graphs to represent number patterns. As they work                   hours    in   sessions    that  resembled      one-on-one
+with these tools to design and break codes, students                remediation.      The    children    interacted  with    a
+gain familiarity  with   many     topics   in   the  middle         developmental psychologist or mathematics learning
+school   mathematics     curriculum.        The     MMAP            specialist  while  a   second   expert    attended  as  an
+software   environments     are specifically   intended   to        observer.
+support    and   encourage      conversations       between
+students.  However,    they     differ considerably     from        Pairs of subjects were told that they would be playing
+KidCode    in   that   they  are  designed     to   fit  the        a series of mathematics games that involved passing
+cooperative problem solving model described earlier.                secret messages    between    each other.      One   player
+The coding activities are not intended to be used to                would make a secret message, and the other player
+effectuate communication among the students.                        would have to figure out what the message means.
+Top Secret Decoder1 is commercial software intended                 Throughout each game,       subjects   sat opposite   each
+for education and entertainment that uses the theme of              other at a table with a cardboard divider between them
+coding and decoding.    Like the MMAP software,         Top         so that they could interact with the game materials
+Secret Decoder is most appropriate for middle school                without   having   their partner   see  what    they  were
+aged children. The software enables children to type a              doing.
+message and have the computer          automatically    code
+                                                                    Each   game   was  administered    following    the   same
+1 Top Secret Decoder is a trademark of Harrison Fox                 general procedure. First, subjects were instructed how
+& Company.                                                          to play each game by talking the subjects through an
+
+CSCL `97 Proceedings                                            Page 4                                       December 1997
+example version of the game, giving them step-by-               document transmitted by the coder.      (See Figure   1.
+step  instructions for how   to  code    and  decode  a         above.)
+message, and in some instances, for how to use that
+message to solve a problem.  Second, subjects played            We used the Rebus game to introduce the children to
+each game in multiple versions.     Multiple versions           the structure of the games.    In playing this game the
+were used to test different game materials, and to give         children learned that the overall objective was to get
+subjects the opportunity to take on the roles of both           their partner to understand the message.   They learned
+coder  and  decoder.   Complete     sessions  including         what it meant to play the role of coder and of decoder,
+instructions, subject  interactions and  game  choices          and began to understand how to anticipate (or infer)
+were   documented  through  video   and  observational          the thinking of their partner.
+notes. After each game was completed, subjects were
+asked how they liked the game. They were also asked             Other   important  aspects of   the  Rebus   game   that
+to explain  specific reactions, behaviors,   and game           foreshadowed  important    features  of  later,     more
+choices.                                                        obviously mathematical games were recognition that:
+                                                               (a)   objects, events, ideas and properties   of  objects
+                                                                     can be represented by symbols;
+Rebus Game:          Introduction to using                     (b)   an  important purpose     of symbols   help us   to
+symbols.                                                             communicate with other people;
+In this game the coder was given      a  sentence   with       (c)   symbols can have many different forms and that a
+some of the words underlined.    He or she was also                  given symbol can have many meanings;
+presented with a second copy of the same message in            (d)   symbol choice is at the discretion of the speaker.
+which the underlined words   were    absent.   In   their            Some  symbols    are  better  than others  because
+place was a dot of velcro. The coder choose symbols                  they are more easily interpreted by the recipient.
+or pictures to represent the underlined words and put                Abstraction   in   symbol       choice     enhances
+the selected symbol on the   velcro   in place  of   the             predictable   communication        by   restricting
+underlined word.     The   completed  message   which                possible interpretations; and
+consisted of words and symbol       representations was        (e)   to encourage participants to cast off attempts to
+then passed to the decoder. The decoder's job was to                 "get the correct answer".    To show children that
+reconstruct the original sentence from the rebus style               the point of language is communication.        That
+                                                                     the  interchange  and     multiple  iterations  are
+
+CSCL `97 Proceedings                                        Page 5                                      December 1997
+     expected.    That   mistakes     are illuminating     and        quantity. Younger subjects sometimes had difficulties
+     fun.                                                             finding symbols when choices were presented as part
+                                                                      of higher level categories. The alternative method of
+A wide variety of symbols and pictures were available                 presenting symbol choices word by word was more
+to the children to replace the underlined words in the                manageable for the younger children.
+sentences above.     Five classes of representations were
+used   - (1)  artistic  drawings,    (2)  photographs,     (3)        The most   consistent   decoding   errors   occurred   with
+schematic drawings, (4) phonetic spellings, and            (5)        symbols  that   were   selected to represent    a number
+rebus-style   spellings.    Approximately       40   different        (e.g., a picture of 10 bananas for the number          10).
+symbols     were    available   and   we    tried  alternative        Subjects  tended    to  interpret  these     symbols    as
+methods     for arranging      the  symbols    so    that  the        representing   the objects   depicted (i.e., bananas)   as
+children could more easily find a symbol to represent                 opposed to one of their qualities (i.e.,     the  number
+a given word. Sample sentences included:                              10). Interestingly, difficulties in decoding numbers as
+�    When I see the monsters I run to my house.                       represented by a set of objects was universal for all
+�    I see ten girls dancing in the rain.                             subjects and did not have     any  relationship   to   age.
+�    What has a head, a   tail, and no    body?   A  penny.           Adults  who    played  the   games  had   just   as  much
+�    The clown said, "Why is your          nose not    twelve         trouble  decoding    this  representation    as   did  the
+     inches?"   Because then it would be a foot.                      youngest children. When a partner      misinterpreted    a
+                                                                      symbol   representing  a   number,    older  children  and
+The Rebus game was played repeatedly with four or                     adults  were   more   likely to   use  an    alphanumeric
+five  different  sentences.      Each    subject   coded   and        representation when recoding.
+decoded at least 2 sentences.       Two different ways of
+presenting the symbols to the subjects were tested.One method involved presenting subjects with largeboardsthatincludedsymbolsfordifferentwordsImplications for CollaborativeLearning
+which    belonged    to  higher    level   categories   (e.g.,        We     found   that    the   context    of      interactive
+symbols for animals, plants, girls, and people were                   communication is very appealing to the children we
+included on one board       labeled,  living   things).   The         worked   with.  An   unanticipated    result is   that the
+other  method    simply   involved    the    presentation    of       games help children and adults to get over the habit of
+symbols with the words they were meant to represent                   judging decisions and constructions as right or wrong.
+(e.g.,   along  with    the    word   girls  subjects     were        In these games, there is usually not a correct method
+presented    with    artistic,  photographic,      schematic,         for coding a message. Coding errors can occur          but
+phonetic, and rebus-like representations of girls).                   these are of secondary importance and will generally
+                                                                      be recognized by software which prompts a coder to
+All children were able to play the game and to use the                correct them before a message is sent. What matters
+materials   independently      after being   guided  through          is that the recipient can understand the message. Math
+one  or   more   rounds.       Younger    children   (pre-first       becomes less a matter of right/wrong and instead a
+graders)    required more      help  than    older   children,        question of using symbols and learning to translate.
+especially with reading, locating the        category     from        It becomes less a matter of applying the rules and
+which    to  select  a  symbol,     and   keeping    track   of       more a matter of finding the meaning.
+decoding errors. In terms of their interactions with the
+game     materials,  subjects   showed     a preference    for        Often in the Rebus game, children found it necessary
+using    visual   symbols       (schematic,     artistic,    or       to recode a message three or four times before         the
+photographic    representations)    over   textual   symbols          recipient understood.   In these cases, players quickly
+(rebus and phonetic representations).        Older children           realized that although all codings were equally valid,
+sometimes chose textual symbols, especially if visual                 their  partner would   not   necessarily     understand  a
+materials did not work out.        Younger children did not           particular coding and at     times could     only get  the
+use   textual   symbols     at  all   and   had    difficulties       meaning  after a   sequence   of  codings.   All  players,
+decoding them.                                                        adults and well as children, began the games with a
+                                                                      test taking attitude in which they were determined to
+Subjects made very few         errors in   coding.     A   few        "get the right answer". After one or two rounds of the
+subjects miscounted when         selecting   a picture    of a        Rebus game, they all switched objectives and began
+number of identical objects to        represent    a numeric          to focus on the anticipated reaction of their partner to
+                                                                      the coded messages.     We feel that the attitude shift
+
+CSCL `97 Proceedings                                              Page 6                                     December 1997
+and the focus on communication is a very important                      to replace.    => keep    message   to   be  coded   and
+feature of the games - particularly as it       applies   to            choices from the symbol library visible on the
+understanding mathematics as a language.                                same screen during coding.
+                                                                   (e)  organization of symbols by category            was   very
+Another surprise was that gender correlated to player                   confusing to younger children. Organization by
+interpretations of game objectives.      We assumed all                 words was helpful to them.
+children would accept the cooperative nature of         the        (f)  older   children  were    able  to,   and   very    much
+games and try to find codings to help one's partner                     enjoyed, making up their own messages to              be
+decipher a message.    However, some boys choose to                     coded.   After having become familiar with           the
+play competitively by coding messages so that they                      symbols     in the   symbol     library,   they  readily
+would be difficult for a partner to decipher.     In these              created messages for which appropriate symbols
+boys' implicit interpretation, a game could be "won"                    were available.
+by   decoding  messages     more    accurately   or    more        (g)  younger     children     required   text    to   speech
+quickly than one's partner.      It was interesting    that             capability but had no problem playing the games
+boys who took a competitive stance, did not            stray            otherwise.
+from  appropriate    codings even   though     we did   not
+provide guidelines or suggest      that  there  may    be a        One   of   the   most    important     findings   from    the
+difference  between    appropriate    and   inappropriate          evaluation was that careful instruction         and/or   other
+codings. As a result of the self-imposed        guidelines         scaffolding is   required   in   order for  the  children  to
+that competitive players appeared to devise, the games             understand   and    play the     games.     Children      were
+could still be played and remained viable for all of the           initially  clearly  confused     with   the   objective   and
+children we worked with.     Nevertheless, because we              procedure for many of the games. It often took one or
+find the   games   an  excellent   setting  to  encourage          two  rounds of      tentative  play    before  they   became
+cooperative play, we are examining how the software                comfortable and involved in the games.            Often the
+can  incorporate   incentives    such  as  team   play,   a        children who seemed most confused initially were the
+scoring  method    with   a  roster   of   high  achieving         ones who became most intensely involved later. The
+partnerships,  or    specialized   introductions    to  the        difficulty that children had grasping the        game     may
+games, to encourage all players to adopt a cooperative             have   had    something       to    do  with     our   initial
+approach.                                                          instructions. However, all children needed at least one
+                                                                   walk through of each game and the number of rounds
+                                                                   required  decreased   with  age.     We    believe   that the
+Implications for Software Design                                   structure of the activity was unfamiliar to them and
+Formative    evaluation    and   iterative user   interface        that the degree of confusion was related to their level
+design  have   become     essential   methodologies     for        of   symbolic       processing      development.          The
+software    developers (Neilsen,    1993).  Using      paper       observation   that,   after a  small   number    of   sample
+prototypes (Rettig, 1994),     we were able to rapidly             sessions, all of the children could play most of the
+explore and redesign many ideas for user interfaces and            games independently (assuming textual material was
+for cooperative game design.     Many of the games and             read to   non-readers)   and   enjoyed   them    very    much
+game materials were altered significantly as a result of           suggests a developmental readiness across the entire
+watching    children  use  the   paper   materials. Some           age range.
+findings and design implications specific to the Rebus
+game were:                                                         These findings have important implications for how
+(a)  a few symbols were incomprehensible to many                   the computer software should be designed.           It is clear
+     of the children => find new symbols.                          that the provision of adequate instruction within the
+(b)  most younger children did not use alphanumeric                context of the games will be         a  critical factor   that
+     representations => possible tailoring of the game             determines the success of the program.           Since,   the
+     to grade level.                                               games    are intended    to   be    "self-teaching"   it  was
+(c)  large numbers of symbol choices were confusing                important to find ways to describe game play to the
+     and unnecessary, => symbol libraries should be                children.    We found that some forms of instruction
+     moderate  sized   and  possibly   tailored  by    grade       are much more effective than others.       In particular, we
+     level.                                                        found that walking through an example of game play
+(d)  during   the search   for   a  symbol     replacement         was far better than verbal directions for how to play.
+     children often    got  caught    up   in   examining          Clearly   it  is  important      to  provide    demo     walk
+     images and forgot the word that they were trying              throughs of game play and scaffolding so that games
+
+CSCL `97 Proceedings                                           Page 7                                         December 1997
+are presented in a     sequence  of   gradually increasing         Because we were   able  to   revise quickly   and  make
+complexity and abstraction.                                        significant alterations in our initial conceptions, we
+                                                                   were able to completely revise many of the games in
+Although the Rebus game was enjoyed by all children                response to children's interactions with one another
+regardless of age or level of development, we found                and  the  materials.    Moreover,   we   were   able to
+that   developmental    readiness     was   an    important        evaluate and  construct  the   sequence   of  games  to
+determinant of the children's level of interest for some           provide  good  scaffolding  to  support   the  children's
+of  the games.    Younger    children    were   particularly       developing understanding.
+fascinated   with  a   mathematics     coding   game    that
+resembled the game of Battleship. Older children, who              We also found that the interaction model of electronic
+tend to have more exposure to symbolic            language,        mail works well to structure a series of interactions as
+were more readily able to utilize the coding models                a two person game involving a       coder and   decoder.
+and had less trouble with more abstract games            and       Occasionally we cautioned a player not to try to peek
+games    that     required  greater    sophistication    of        at a partner's work in progress, but found that the
+geometric reasoning. Younger children needed           more        children  quickly  adapted   to   the   nature  of   the
+trials and   more  systematic    instruction.     However,         communication   as   turn   taking  that  yielded   new
+once they grasped the coding model used in a game,                 information with each turn. We also discovered that a
+they were easily able to use what they learned and                 few  important  questions   can  only be   resolved  by
+apply it to new situations. In fact, we were surprised             evaluation of the software.  Not surprisingly, most of
+that even children who did not yet read could play the             these questions pertain   to the   nature of   computer
+games if an adult read textual messages.                           mediated interaction. Working with paper materials,
+                                                                   children sat together in a room and could monitor one
+                                                                   another's reactions in a direct way.    To sustain this
+Conclusion                                                         level of engagement for young children we may wish
+We found that the KidCode games improve children's                 to incorporate features not normally associated with
+skills with particular representations used commonly               electronic mail such as audio or video annotations.
+in  mathematics    and   they   seem     to  improve     the       The effectiveness of the online help system as a sole
+children's   competence     with   symbolic     processing.        source of instruction   and  the degree   to  which  the
+While all children who played the games in sequence                media supports engaging interaction will guide       our
+were    able  to  understand     and   play    each  game          research and software development as we proceed in
+independently after being guided through one or two                the next phase of this work.
+examples, children had a great deal of trouble when
+the games were not presented in sequence and games
+with higher levels of coding abstraction were played              Selected References
+without the benefit of experience with earlier games.
+                                                                   L.J. Bricker, Tanimoto, S.L. Rothenberg, A.I.,
+It was   our  further   aim   that  the   games    develop         Hutama, D.C. and Wong, T.H. Multiplayer
+children's   conscious      understanding   of    symbolic              Activities that Develop Mathematical
+representation    and  confidence   in   their  ability  to             Coordination. CSCL '95 Proceedings, Lawrence
+translate any representation to retrieve it's underlying                Erlbaum Associates, Inc. New Jersey. 1995.
+meaning.     We believe that experience with various
+kinds   of   representations     will  give     children  a        T.P.Carpenter, Ansell, E., Franke, M. L., Fennema,
+foundation   so   that they  are   not intimidated   when               E., & Weisbeck, L. Models of problem-solving:
+presented    with  a   complex     looking   mathematical               A study of kindergarten children's problem
+formula and so that they consciously experiment with                    solving processes. Journal for Research in
+alternative  representations  when     asked   to solve   a             Mathematics, 24(5), 1993. pp. 428-441.
+mathematics     problem.       Only    a  more    extensive        J.S. DeLoache. Rapid change in the symbolic
+longitudinal  study    that includes   children's  teachers             functioning of very young children. Science,
+could determine the full impact of KidCode on more                      238, 1987. pp 1556-1557.
+general mathematics learning.
+                                                                   D.C. Edelson, O'Neill, D.K., Gomez, L.M. and
+Paper prototypes used in this work have resulted in                     D'Amico, L. A Design for Effective Support
+substantial  improvements       in  the   design    of   the
+KidCode software at very early stages of development.
+
+CSCL `97 Proceedings                                           Page 8                                    December 1997
+of Inquiry and Collaboration. CSCL '95 Proceedings,
+   Lawrence Erlbaum Associates, Inc. New Jersey.           Harrison Fox & Co., Nanny M., and Mohl, B. Top
+   1995.                                                        Secret Decoder. Houghton Mifflin Interactive.
+                                                                1996.
+H. P. Ginsburg, Children's Arithmetic. (Second
+   edition.), PRO-ED, Inc., Austin, TX, 1989.              National Council of Teachers of Mathematics.
+                                                                Curriculum and Evaluation Standards for
+H. P. Ginsburg. Mathematics Learning Disabilities:         School Mathematics, 1989.
+   A View From Developmental Psychology.
+   Journal of Learning Disabilities, 30(1), 1997.          J. Nielsen. Iterative User-Interface Design. Computer,
+   pp. 20-33.                                                   Vol. 26, No. 11, Nov. 1993. pp 32-41.
+
+S. R. Goldman, Hasselbring, Ted S. and The                 M. Rettig. Prototyping for tiny fingers.
+   Cognition and Technology Group at Vanderbilt.                Communications of the ACM, Vol. 37, No. 4,
+   Achieving Meaningful Mathematics Literacy for                April 1994. pp 21-27.
+   Students with Learning Disabilities. Journal of
+   Learning Disabilities, 30(2), 1997. pp. 198-208.        D. Scott, B. Williams, and K. Hyslip. Mathematics
+                                                                as communication: journal writing in 2nd grade.
+S. Goldman and J.N. Moschkovich. Environments                   Childhood Education, Vol. 69, No. 1, Fall 1992.
+   for Collaborating Mathematically. CSCL '95                   pp 15-18.
+   Proceedings, Lawrence Erlbaum Associates, Inc.
+   New Jersey. 1995.                                       TERC (Technical Education Resource Centers).
+                                                                Investigations in Number, Data, and Space. Dale
+S. Goldman and J.N. Moschkovich et al. MMAP                     Seymour Publications. Palo Alto, CA. 1997.
+   Web site.
+   http://www.irl.org/mmap/MMAPinfo.html
+
+B. Greer. The Two Faces of Mathematics. Journal of
+   Structural Learning, Vol. 10, 1989. pp 79-82.
+
+C. Gutwin, Stark, G. and Greenberg, S. Support for
+   Workspace Awareness in Educational Groupware.
+   CSCL '95 Proceedings, Lawrence Erlbaum
+   Associates, Inc. New Jersey. 1995.
+
+M. Guzdial, Turns, J., Rappin T. and Carlson D.
+   Collaborative Support for Learning in Complex
+   Domains. CSCL '95 Proceedings, Lawrence
+   Erlbaum Associates, Inc. New Jersey. 1995.
+
+CSCL `97 Proceedings                                   Page 9                                 December 1997
+

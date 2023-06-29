@@ -1,0 +1,378 @@
+                     Support for Workspace Awareness
+                                 in Educational Groupware
+                             Carl Gutwin1, Gwen Stark2, and Saul Greenberg1
+
+               1 Department of Computer Science, University of Calgary, Calgary, Alberta, Canada
+              2Queen Elizabeth High School, Calgary Board of Education, Calgary, Alberta, Canada
+
+                      Abstract                                   typically available as well. Educational groupware is
+Real-time educational groupware systems allow physi              becoming viable as local and wide area networks are
+cally separated learners to work together in a shared            put into place, which will allow its use both in net
+virtual workspace at the same time. These systems do             worked classrooms and in distance learning.
+not yet approach the interaction richness of a face-to                Educational groupware does not yet provide the
+face learning  situation. In     particular, one    element      richness of face-to-face interaction. If such systems are
+poorly supported  is workspace     awareness:   the up-to        to foster learning within a context of interaction, as has
+the-minute knowledge a student requires about other              been advocated by educational theorists [e.g., 5, 3, 18],
+students' interactions with the shared workspace. This           they must support the existing practices and processes
+awareness is essential if students are to learn and work         of group learning. One practice critical to collaborative
+together effectively. We present a framework of sev              learning but not well supported in current educational
+eral types of awareness required by students in a col            groupware     is workspace   awareness,    the   up-to-the
+laborative  learning situation,   including   their social,      minute  knowledge    a student   needs   about  other stu
+task, concept and workspace awareness. We then con               dents' interactions  with   the shared   workspace    [13].
+centrate on workspace   awareness,    and    describe  how       Collaborating    learners  maintain  this  awareness   by
+particular awareness requirements of students in group           tracking information   such  as other learners'  locations
+learning situations  depend  on   the closeness     of their     in the shared workspace, their actions, the interaction
+tasks, and whether they are sharing the same view or             history, and their intentions. Workspace awareness is
+have separate views into the workspace. From these               necessary for    effective collaborative   work, but  also
+requirements, we  have  prototyped    several  awareness         plays an integral part in how well an environment cre
+widgets for educational groupware. These widgets help            ates opportunities for collaborative learning.
+learners maintain awareness of other learners' locations              This  paper   describes our   investigation into  the
+when  their views are separated,   of other   learners' ac       awareness requirements of collaborative learning, and
+tivities in shared and separate view situations, and of          specifically, how    workspace  awareness    can  be  sup
+other learners' past activities.                                 ported in groupware    interfaces.  Section  2 presents a
+                                                                 framework for organizing the awareness requirements
+Keywords - awareness, widgets, groupware toolkits.               of a   collaborative learning   situation. Section 3  de
+                                                                 scribes workspace awareness in more detail, and Sec
+1. Introduction                                                  tion 4 describes our initial work in supporting work
+Researchers   in    computer-supported        collaborative      space awareness through innovative interface compo
+learning (CSCL)   attempt   to   understand   and   provide      nents.
+technological support for cooperative and collaborative
+learning [e.g. 17, 24, 21]. Within CSCL, one area of             2. A Framework of Awareness
+interest is groupware for real time distributed learning.        We have created a framework of awareness in collabo
+These  systems   let geographically    separate     learners     rative learning in order to discuss the types of aware
+collaborate at the same time in a shared virtual work            ness that are used in a collaborative experience. We
+space, a software environment containing learning and            briefly explore the involvement of, and awareness re
+work artifacts that can be viewed and manipulated by             quirements    for  the    curriculum  designer,   teacher,
+anyone in the group; audio and perhaps video links are           evaluator and student in a successful collaborative ac-
+
+CSCL '95 Proceedings                                         147                                               October 1995
+         Involvement                    Types of Student Awareness                 Elements of WorkSpace Awareness
+      Curriculum designer                Social awareness                                      Who is participating?
+
+      Teacher
+
+      Evaluator
+
+      Student
+                               Figure 1. Framework of awareness in collaborative learning.
+
+tivity. We then focus on types of student awareness            other students' interactions with the shared workspace,
+which  include: social,  task, concept  and   workspace        suche as where other students are working, what they
+awareness. Workspace    awareness    in CSCL   then  be        are  doing,        and    what     they have       already     done in     the
+comes the focus of Sections 3 and 4. The skeleton of           workspace. The questions in Table 1, organized into
+the framework, shown in Figure 1, creates a context for        the categories described above, are examples of what
+our later discussion of workspace awareness.                   students consider during the collaborative activity in
+      The success of a collaborative learning experi           order to be aware of what is happening in the group as
+ence depends on the informed involvement of curricu            they work on their task.
+lum designer, teacher, evaluator, and students (Figure                      As suggested by the questions in Table 1, social
+1, left). The curriculum designer is responsible for the       awareness is inter-personal and perhaps best supported
+development of the activity and must apply the peda            implicitly. For example, audio/video conferencing and
+gogy of collaborative learning [e.g., 4, 30]. In addition,     media spaces [e.g., 6] can create communication op
+the curriculum designer must be aware of the objec             portunities that let people exchange necessary infor
+tives of the activity and must design the collaborative        mation with each other and negotiate their roles. Sup
+experience to support these objectives. The teacher is         port         for both    task   and  concept       awareness     has      been
+responsible for facilitating the activity and must work        considered in cooperative learning [e.g., 16] and CSCL
+within the constraints of the group they are working           research; this support often provides explicit structures
+with. The teacher must be aware of what the students
+are doing in the activity in order to help the students
+work towards the successful completion of the task.The evaluator is responsible for the evaluation of theprocessandmustmonitortheinteractionsthattakeplace during the activity and must be aware of the outcomeofthetask.ThestudentsareresponsibleforTable 1. Types of Student Awareness.Socialawareness.. ·.What should I expect from other members of thisgroup?How will I interact with this group?What role will I take in this group?What roles will the other members of the group
+working   together to complete   the collaborative  task,and as part of the collaboration they must be aware ofTask.assume?What do I know about this topic and the structure of
+what is going on around them. Although every role andtype of awareness in the process is important, the roleof the student and the types of awareness they musthave for a successful collaboration are the focus of thefollowing discussion.awareness···..the task?What do others know about this topic and task?What steps must we take to complete the task?How will the outcome be evaluated?What tools/materials are needed to complete thetask?How much time is required? How much time is
+      Goldman   [12]  identifies three  types of studentinteraction: social, task, and conceptual. For each kindConcept·available?How does this task fit into what I already know
+of interaction there is a corresponding type of awareness;inadditionweaddanothertypeofawarenesscalled workspace awareness (Figure 1, middle). Socialawareness is the awareness that students have aboutthe social connections within the group. Task awareawareness.·.about the concept?What else do I need to find out about this topic?Do I need to revise any of my current ideas in lightof this new information?Can I create a hypothesis from my current knowl-Workspace.edae to predict the task outcome?What are the other members of the group doing to
+ness is the awareness of how the task will be completed. Concept awareness is the awareness of how aparticular activity or piece of knowledge fits into thestudent'sexistingknowledge.Finallyworkspaceawarenessistheup-to-the-minuteknowledgeaboutawareness··. ·.complete the task?Where are they ?What are they doing?What have they already done?What will they do next?How can I help other students to complete theproject?
+
+CSCL '95 Proceedings                                       148                                                                October 1995
+that students can use as scaffolds to assist them with           collaboration a valuable way to learn. In a collabora
+organization or  to    help  them   stay focused    on  the      tive learning situation, people may learn in a number of
+learning tasks [30]. For example, cooperative learning           ways, such as:
+assigns explicit roles to students and provides a clearoutline of how the task is to be completed. In CSCL,knowledge-building environments such as CSILE [28]· modelling the practices and skills of a more knowledgeable peer [e.g., 11, 8];
+and  CoVis'     collaboratory  notebook      [20]   provide      · identifying and resolving differences between con
+structured  message    capabilities that  guide    students       flicting ideas and theories [e.g., 9, 19];
+through the steps of a learning dialogue. Support forworkspaceawarenesscanbeprovidedinpartbyfeedthroughofwhatothersaredoingintheshared· peer teaching, where one student assists or instructsanother when appropriate [e.g., 31]; and
+workspace. Although social, task, and concept aware              · constructing new shared meanings practices [23, 27].
+ness are  important  to the  success  of  a  collaborative
+learning   experience,  we   now    consider    workspace             Each of these mechanisms depends upon learners
+awareness in more detail.                                        having   a clear understanding      of others'  interactions
+                                                                 with the workspace. For one learner to model another,
+                                                                 they must be able to perceive the details of what others
+3.  Workspace Awareness                                          are doing. For one learner to propose a competing hy
+The rest of this paper deals specifically with workspace         pothesis at a point when it will be immediately rele
+awareness.  This  section   describes workspace     aware        vant, they must know what other people's activities
+ness in more detail, and presents a third part of the            and intentions are. Peer teaching is similarly dependent
+framework that organizes group learning situations in            upon knowing what another learner is working on and
+terms of task and view proximity.                                what they have already attempted, and building shared
+                                                                 knowledge demands that a group understand what each
+3.1  Workspace awareness in collaborative learning               other are doing and have done. Although the learning
+As  already  mentioned,    a student  requires   up-to-the       in a collaborative situation is dependent upon many
+minute   knowledge  about    other  students'   interactions     factors, such as verbal interaction [22], it is the aware
+with the shared workspace if they are to learn and work          ness of others and their activities that allows learners to
+together  effectively. This  awareness    is important   in      initiate meaningful     interaction at appropriate and  op
+collaborative learning for two reasons. First, it reduces        portune times.
+the overhead of working together, allowing learners to
+interact more naturally and more effectively. Second, it         3.2  Workspace proximity and workspace aware
+enables learners to engage in the practices that allow           ness
+collaborative learning to occur.                                 Another    mechanism     of  collaborative    learning that
+     As an example of how workspace awareness al                 workspace     awareness    makes    possible is to use  the
+lows groups to be more effective, consider two learners          workspace     artifacts as conversational    props [2] that
+who are reconstructing a poem given to them as indi              support   learning  dialogues. When     the  objects  being
+vidual,  mixed-up   lines.   Each   person   maintains  an       discussed are visible to both learners, they can point
+awareness of where in the text the other is working,             and gesture to make clear the referents of their com
+what they are doing, and what their intentions may be.           ments (called deixis), something that is difficult using
+Learner A may begin by picking out two lines that end            language alone [3]. In addition, visible objects can act
+with a certain rhyme. Learner B can ascertain A's ac             as a notational system [29] that extends the range and
+tivity by watching her work, even though she has not             sophistication of concepts that the learners can discuss.
+explicitly stated her chosen task. If B during the course             Although workspace awareness is often taken for
+of his own tasks comes across another line with the              granted    in face-to-face  collaborative    learning  situa
+same rhyme, he can pick it out and give it to A, thereby         tions, current groupware systems provide only a small
+assisting  with her part  of  the  task. This   moment   of      amount of the information that students need to main
+collaborative effort is made possible because of work            tain it. We    have been    investigating how    workspace
+space awareness, and though small, will be joined by             awareness works in face-to-face situations, and how it
+many other similar moments of opportunistic collabo              can be supported in groupware applications. Our goal
+ration. Taken together, these actions allow a group to           is to create real-time educational groupware that allows
+be significantly more effective than an individual.              much of the same kinds of interaction, opportunities
+     Workspace awareness also allows students to take            for collaboration, and opportunities for learning that
+advantage of the opportunities for interaction that make         are possible in a face-to-face situation.
+
+CSCL '95 Proceedings                                         149                                                 October1995
+            t         · What tasks are they engaged in?·How do their tasks affect mine?· Who's out there?· Where are they?
+       Different      · What objects are they using?               · What, in general, are they working on?
+          tasksTask Separation ISame·Where are they looking?· What exactly are they doing?· Am I interested in them?· Do their actions affect me?· Where are they working?· What are they doing?
+           task       · What are their immediate intentions?       · What artifacts are affected by their actions?
+                                                                   · What has chanaed since I last shared their view?
+            1 .- .. ----Same view             ------------Different view
+                                                     View Separation
+                                    Figure 2. View and task proximity in collaborative situations.
+       The last part of our framework, shown in Figure                  The  following sections        describe three   types of
+2, is a step towards this goal; it organizes group situa          collaborative learning situations derived from Figure 2,
+tions in a way that allows us to examine the specific             bottom half: same task and same view; same task and
+mechanisms and information sources that people use to             different views; and same task with a mixed focus be
+maintain workspace awareness. This organization con               tween views, where learners shift their attention be
+siders two dimensions of group activity that involve              tween their individual and shared work. Within each
+the distance between learners: view separation and task           situation, we  describe  GroupKit         widgets  and   proto
+separation. View         separation is how   closely   group      types that   support the         maintenance  of   workspace
+members share their views of the workspace. Learners              awareness.
+will either be looking at the same set of objects or at
+different objects at any one time. Task separation con            4.1 Same task, same view situations
+siders how closely learners share activities. Although            In  some   collaborative  learning        situations, students
+we assume they will be sharing an overall goal, learn             work on the same low-level tasks, and focus on a small
+ers may complete various low-level tasks as a group or            set of common objects. These situations involve close
+as individuals. Figure 2 shows these two dimensions of            interaction and require awareness of the precise loca
+group  activity    and,   for each  major    area within the      tion and exact actions of other learners. For example,
+space, lists some of the workspace awareness questions            group creative writing involves partners who discuss
+that learners may need to answer.                                 and collaborate on each word and phrase of a poem;
+     Some of the collaborative learning situations de             they need to know the exact context in which to inter
+fined in Figure 2 are outlined in the following section;          pret the other's comments and contributions. Peer edit
+we also describe our early investigations into support            ing is similar, where two students carry on a detailed
+ing workspace       awareness   through   groupware    inter      discussion about a piece of writing. This activity illus
+faces.                                                            trates the importance of supporting gestural communi
+                                                                  cation-the two learners will use their text as a conver
+                                                                  sational prop,  indicating       pieces of text and   possible
+4.  Widgets for Workspace Awareness                               changes by pointing and gesturing. Another example
+We are currently building general and reusable group              involves exploration and problem-solving in a physics
+ware interface widgets as part of GroupKit [25, 26], a            microworld,   where  students        work  at the  same   task
+groupware toolkit that streamlines the construction of            level, take part in each decision and action, and discuss
+multi-user applications. These widgets, designed from             the changes they see [7].
+the framework       described  above,   have  been  used  in            Same-view   groupware           systems   ( called  strict
+prototype groupware        applications  for  exploring  the      'what you see is what I see' or strict WYSIWIS [32])
+issues involved       in supporting  workspace    awareness.      must provide precise cues as to another learner's loca
+Educational       groupware   systems  built with  GroupKit       tion and activity. GroupKit provides these cues in two
+are designed      for multiple  students in  different loca       ways. First,  a designer         is given  control over   how
+tions, each with their own computer that is connected             closely the screen actions are linked. For example, a
+via a network. GroupKit supports interaction within a             shared drawing program might transmit the intermedi
+computational workspace, but does not directly supply             ate positions of an object as a student is moving it, or
+audio or video communication; we assume that these                perhaps only transmit its new position after the move is
+channels will be provided through other technology.               completed. In a same-task same-view groupware appli-
+
+CSCL '95 Proceedings                                          150                                                   October 1995
+       Figure 3. Multiple cursors in a group sketchpad
+
+cation, we  believe  fine-grained    screen linking    gives
+learners a greater awareness of immediate changes to
+the workspace.
+      Multiple   cursors [ 14] are   a second  means    for       Figure 4. Two student's views into a peer writing session,
+supporting fine-grained awareness of location and ac              showing semantic cursors and multi-user scroll bars.
+tivity in GroupKit. These show each person's mouse
+cursor  and   their movements        displayed  on     every      4.2 Same task, different view situations
+learner's screen. Multiple cursors allow gestural com             Some   learning situations involve    coordinated     action
+munication and give visual cues to a person's activity            that occurs in different areas of the workspace. This
+and intentions. Figure 3, for example, shows two stu              kind of interaction can be seen when learners create a
+dents   using  a  groupware    sketchpad    to  present   a       poster or  collage: the learners are  no longer      making
+weather cycle; their cursors are the two arrows labelled          group  decisions about    each  word  or  figure     in the
+with their names.                                                 poster, and they may be working on different parts of
+      We have extended the idea of multiple cursors for           the page.  However,   a sense   of awareness  about     the
+situations where people see the same objects but with             others' activities is needed for coordination of effort
+different presentations. The problem is that reproduc             and for   making overall   decisions. Another   situation
+ing the literal movements of each person's mouse cur              involves literature students who have the task of find
+sor across the displays will not show their actual posi           ing imagery of evil in Macbeth; each student looks for
+tion in the text. To address this problem, we have pro            images of a different theme (blood, darkness, reversal,
+totyped  a semantic  cursor    that  indicates the logical        or decay). The students are working toward the same
+location of a person's cursor in the text rather than its         goal, and will need to keep track of each others' activi
+screen position. For example, Figure 4 shows windows              ties and progress, but they will all be looking at differ
+belonging to two students involved in a creative writ             ent parts of the play at any one time. A third example
+ing session;  although   both  their views  of their   story      from our experience is that of social-studies students
+begin at the same place, their text formatting differs. In        constructing a timeline to represent events in the his
+the top window, the student's mouse cursor points to              tory of a country. Since the timeline will be long, stu
+some text; this position is displayed as a semantic cur           dents will often have different views onto the docu
+sor in the bottom window by highlighting the letter (the          ment.  Again, they   will still need  information     about
+space   between  'gingerly'   and   'out') rather than   the      where others are working, perhaps to offer additional
+actual screen location.                                           information or to see what remains to be completed in
+                                                                  the task.
+
+CSCL '95 Proceedings                                          151                                            October 1995
+                                  Figure 5. Global view of 3 student's locations in Hamlet.
+
+       Different views into a common workspace (called          overlaid with colored boxes that represent the view
+relaxed WYSIWIS [32)) imply that the requirements for           ports of all students into the document. The miniature
+workspace awareness will be coarser than in a strict            provides structural cues about the document that help
+WYSIWIS situation. Awareness of fine-grained actions            the  student understand      where their   collaborators  are
+like the movement of someone's pointer may be less              working and what they are doing. The colored view
+important, but awareness of location with respect to the        port boxes   are also active   interface  objects: a  student
+entire document, and awareness of activities at a higher        scrolls to a new location by dragging their box with the
+level, are more  important.     However,  there   are also      mouse, and the text window on the left is updated ac
+cases where learners may need some kinds of detailed            cordingly. In the figure, for example, the local student
+information about others' activities, such as the kind of       is reading   the beginning    of  Hamlet,   and   her  box is
+information that is gathered through peripheral vision          drawn at the top of the global view. Two other students
+or hearing in a face-to-face situation.                         are further on in the text. As in the multi-user scrollbar,
+       We have designed both a multi-user scrollbar and         she  can make    her  view    congruent   with  another  stu
+a global display widget in GroupKit to provide infor            dent's view by dragging her box to the same level as
+mation  about  both    location and activity   in  relaxed      the other's box.
+WYSIWIS     systems.   Figure   4 shows   the    multi-user          Supporting fine-grained awareness of activity in
+scrollbar and how it supports workspace awareness by            different-view   situations   is more difficult   than when
+pinpointing other learners' relative locations within the       learners can  see the  same      objects, since they  can  no
+document. The right-most control acts like a standard           longer see the other person's cursor or how the objects
+scrollbar, and lets each student manipulate their own           are  being changed.   Limitations    on    screen  space dis
+view. To its left are several uniquely-colored vertical         courage the simple solution of showing complete du
+bars showing the relative viewport of all three learners        plicates of every student's view. Instead, we have pro
+in this session. In this case, Figure 4 shows two learn         totyped a 'what you see is what I do' (WYS/W/D) dis
+ers with   aligned views   (whose   windows      are  both      play. This widget shows only the immediate context
+shown), and a third learner viewing text near the end of        around another learner's cursor, which is a subset of
+the document.  The     position and size  of  each   bar is     their view. This is illustrated in Figure 6, where a per
+continuously  updated   as learners  scroll   through  the      son sees not only their main view (left side), but also
+document   or change   their window     size. If a learner      part of another student's view (top right comer). The
+wishes to match their view with someone else's, they            remote view is always centered around the other stu
+need only drag their scroller until it is level with the        dent's cursor; rather than showing cursor movement,
+other's indicator bar.                                          the background is panned instead. Since most actions
+       The global view display, illustrated in Figure 5, is     in graphical applications involve the mouse cursor, this
+a richer version of the multi-user scrollbar. It shows a        local-view display can show in detail what others are
+miniature of the entire document (the right window),            doing, yet consume only      modest screen real estate.
+
+CSCL '95 Proceedings                                        152                                                  October 1995
+4.3   Same task, mixed focus situation                         view  display,  as shown      in   Figure 7.  In  addition to
+A third kind of collaboration flips between same-view          showing another learner's current viewport, the widget
+and different-view situations. We call this kind of in         tracks their location over time. Moving the slider at the
+teraction mixed focus      collaboration: individual and       bottom   of the window       plays  back  the  movement    of
+shared activities within the workspace are interleaved,        another person's viewport (displayed as a moving out
+and learners periodically shift their attention back and       line rectangle), and also indicates where they stopped
+forth between separate and shared views of the work            for a while (shown as a filled rectangle).
+space. In practice, many collaborative learning situa
+tions will have elements of mixed focus collaboration.         5. Related Work and Further Research
+In the examples described so far, the poem reconstruc          Educational  groupware       draws    on  work   done  in  the
+tion, the collaborative poster, and the group effort in        field of  computer-supported       cooperative    work   [10];
+finding imagery in Macbeth would all involve periods           several CSCW projects have considered the issues in
+of individual and shared activity.                             volved  in  creating     real-time distributed systems,   and
+      While mixed focus collaboration can be partially         some   have  touched       on the   concept    of workspace
+supported by the techniques discussed in the previous          awareness. For example, the multi-user scrollbar and a
+two   sections, it presents  additional requirements  for      global-view device called a gestalt viewer were first
+workspace awareness. In particular, a learner may need         seen in the SASSE text editor [1]; other systems have
+to bring oneself up to date on what the other person has       used  tools like   activity   indicators  [32,   10] to  keep
+been doing-the changes they have made and where                people informed. One branch of CSCW research that
+they have been-before rejoining their view and start           has promise for supporting both social and workspace
+ing a period of shared work.                                   awareness looks at mixing video signals of learner's
+      Existing techniques such as adding change bars to        hands or faces together with a computational represen
+a document or calculating the difference between two           tation of the shared workspace [15].
+versions ('diffing') can only provide some of this in                Our   investigations    into  support   for workspace
+formation, and     usually only for text  documents. We        awareness will continue in several directions. We plan
+have designed a few widgets to investigate awareness           to conduct  observational      experiments    to  gather  data
+of  a group's   recent actions. For example,  to support       about what mechanisms people use to maintain work
+awareness of where other learners have been working,           space  awareness   in      particular situations  like mixed
+we have prototyped a history mechanism to a global             focus  collaboration.      From  this  knowledge,    we   will
+
+                                        Figure 6. A 'what you see is what I do' widget.
+
+CSCL '95 Proceedings                                       153                                                   October 1995
+                                                                                                                                                                                                                                                                                                                                                                                         gestalt.history.2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                .J  _J
+                        __ __ ........... ............................ -- - .- .................. ................                                                                                                                                                                                                                                                                       _ ________ - - ....... ........ . ...........,..,.. ... ......,....................,._............,...........,........                                                                                                                                                _ .............-....-.. . -......................... ........ . _..
+                        __ _____ ..............................__- - ................................ _.,.......... ................ ..·- ... . ........................................................................................·.....-..............-.....-.............-.............-.....................·.................·......·.....·...·.....·....·...................................................................................................................................... .......... .. ........ ............ ......... ...........--- ----·- ·--·--_---·-_-_- -_-_-_---_---· ··....- - .....................·.....·....-..,..-._ ..-..,.-....-........,...·..,- ..,_..,....,...,.......·...-.....-.....-.....-.....-....-..........·....-....-.....-...-....·....-.....,....-.............-.......-.--· - __ - . ......................................,.....-... ....... ............ ..............._- .. ........................... ........ ............................ ....................................................................... ..........................................................................................................................................................................................................._-_ _______ _ _. ----. --- --·--· ·- ..................................................................................................-...............-............·.......·...............-.................·...-...- .................,.._ ...·..".....'....,.,................................................. ............................ ·- ...................... .....................................................................................................................................................................................................................................................................................................
+                        .................................................................................................................................................................................................. ...... . ..                                                                                                                                                   :.:.:.:.:.::.:.:.:.:.:.: ---- . . .:.:.·.:.:·:.:.:.:.:.:.:.:.:.:.:·...-.... . . . ........................... .............._. ..................... .........................
+                                                                                                                                                                                                                                                                                                                                                                                         ................................ .... .... . ..... .............................
+                                                                                                                                                                                                                                                                                                                                                                                         - ,._...........,._................. .........................................................._                                                                                                                                                                         ---- .............. .............. ................... .......·.·.-....·...
+                                                                                                                                                                                                                                                                                                                                                                                                . ..:::::::.:-:.:-:.:·-·                                                                                                                                                                                                                                              ...u
+
+                                                                                                                                                                                                                                                                                                                                                                                     Figure 7. A global view with history.
+
+form design principles for new groupware widgets. Aswell, we are identifying overall issues that affect the                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Acknowledgments.
+design and implementation of these techniques, includ                                                                                                                                                                                                                                                                                                                                                                      This research is supported by the National Engineering
+ing:                                                                                                                                                                                                                                                                                                                                                                                                                       and Research Council of Canada, and by Intel Corporation. Shannon Jaeger and Mark Roseman contributed
+· the trade-off between    being well            informed                                                                                                                                                                                                                                                                                                                                  about                           to                                    the                                                                                                                                                                                           widget designs. Special                                                                                                                                                                                                                                                                    thanks   to Ruby   Loo,
+  other learners' activities but being distracted by that                                                                                                                                                                                                                                                                                                                                                                  Kar-Ling Cheng, and Andrea Byrne for several long
+  information from their individual tasks;                                                                                                                                                                                                                                                                                                                                                                                 distance favours.
+· allowing learners  to exert some               control                                                                                                                                                                                                                                                                                                                              over   the
+  awareness  information   that  others                                                                            receive                                                                                                                                                                                                                                                                 about                                                                  Availability and Contact Information
+  them;                                                                                                                                                                                                                                                                                                                                                                                                                    GroupKit is available via anonymous ftp, and a world
+                                                                                                                                                                                                                                                                                                                                                                                                                           wide web page documents the system:
+· whether  we   can  go beyond   existing                                                                                                                                                                                                                                                                                                                                           face to face                            site:                                                                                                                                                                                                                                     ftp.cpsc.ucalgary.ca
+  practices, and create new awareness mechanisms that                                                                                                                                                                                                                                                                                                                                                                       directory:                                                                                                                                                                                                                                pub/projects/grouplab/software
+  augment, rather than just replace, what people nor                                                                                                                                                                                                                                                                                                                                                                        http:                                                                                                                                                                                                                                     http://www.cpsc.ucalgary.ca/projects/
+  mally expect.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       grouplab/home.html
+                                                                                                                                                                                                                                                                                                                                                                                                                           Contact                                                                                                                                                                                                                              authors at  [gutwin, saul]@cpsc.ucalgary.ca
+6.   Conclusion                                                                                                                                                                                                                                                                                                                                                                                                            and gstark@cbe.ab.ca.
+This paper has outlined a framework that sets work
+space awareness  in  a  context  of awareness                                                                                                                                                                                                                                                                                                                                            require                                                                                                                                                                                                                                                                            References
+ments for collaborative learning. We presented a way                                                                                                                                                                                                                                                                                                                                                                        1.                                    Baecker,                                                                                                                                                                                            R.M.,  Nastos,   D.,                                                                                                                                                                                                                                                                    Posner,   I.R.  and
+to organize collaborative situations in terms of task and                                                                                                                                                                                                                                                                                                                                                                                                         Mawby, K.L. (1993) ''The User-Centred Iterative
+view separation, and introduced several interface com                                                                                                                                                                                                                                                                                                                                                                                                             Design                                                                                                                                                                                           of  Collaborative Writing                                                                                                                                                                                                                                                                       Software."  In
+ponents that support   the maintenance                                                                                of                                                                                                                                                                                                                                                             workspace                                                                     Proc                                                                                                                                                                                          ACM   INTERCH/'93     Conference                                                                                                                                                                                                                                                                      on Human
+awareness in educational groupware. The components                                                                                                                                                                                                                                                                                                                                                                                                                 Factors in Computing Systems, p399-405.
+are useful for same view situations, for different viewsituations, and also for mixed focus interaction.                                                                                                                                                                                                                                                                                                                   2.                                     Brinck, T. and Gomez, L. (1992) "A CollaborativeMedium for the Support of Conversational Props."
+
+CSCL '95 Proceedings                                                                                                                                                                                                                                                                                                                                                                              154                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 October1995
+    In Proc ACM Conference on Computer Supported                 14. Hayne,    S.,  Pendergast,   M.,  and   Greenberg,   S.
+    Cooperative Work, p171-178, Toronto.                             (1993) "Implementing Gesturing with Cursors in
+3.  Brown,    J.S.,  Collins, A.  and Duguid,    P.  (1989)          Group Support Systems." In JMIS, 10(3), p43-61.
+    "Situated Cognition and the Culture of Learning."            15. Ishii, H. and    Kobayashi,  M.  (1992)   "ClearBoard:
+    In Educational Researcher, 18(1), p32-42.                        A  Seamless      Medium     for Shared  Drawing    and
+4.  Brufee,    K.   (1983)   "Teaching   Writing    throughCollaboration."InLearninginGroups:NewDirectionsforTeachingandLearning,C.BoutonConversationwithEyeContact."InProcACMCHI Conference on Human Factors in ComputingSystems, p525-532, Monterey, California.
+    and    R. Garth    ed., p23-29,   San  Fransisco  CA,        16. Johnson,  D. and   Johnson,   R. (1985)   "Cooperative
+    Jossey-Bass.                                                     Learning:   One   Key   to  Computer-Assisted   Learn
+5.  Bruner,    J. (1985)    "Vygotsky:  a  Historical  and           ing." The Computing Teacher, 13(2), pll-13.
+    Conceptual Perspective." In Culture, Communica               17. Koschmann,       T.D. (1994)    "Toward   a Theory   of
+    tion,  and Cognition:    Vygotskian perspectives, J.V.           Computer      Support   for  Collaborative  Learning."
+    Wertsch    ed.,  Cambridge,   U.K.,  Cambridge    Uni            The Journal of the Learning Sciences, 3(3), p219-
+    versity Press.                                                   225.
+6.  Buxton,    W.    (1992)   "Telepresence:     Integrating     18. Lave,  J. and Wenger, E. (1991) Situated Learning:
+    Shared Task and Person Spaces." In Proc Graphic                  Legitimate    Peripheral    Participation,  Cambridge
+    Interface '92, p123-129, Morgan Kaufmann.                        University Press, Cambridge, U.K.
+7.  Cockburn,       A.    and    Greenberg,    S.    (1995)      19. Messer,   D.   and  Light,   P. (1991)  "The    Role of
+    "TurboTurtle,      a  Collaborative    Microworld  for           Collaboration    and  Feedback    in Children's   Com
+    Exploring     Newtonian    Physics."   In  Proc   ACM            puter-based      Learning."  Journal    of  Computer
+    Conference on Computer Supported Collaborative                   assisted Learning, 7(2), p156-159.
+    Learning.                                                    20. O'Neill, D.K.    and Gomez,     L.M. (1994)   "The Col
+8.  Collins, A., Brown, J.S. and Newman, S.E. (1989)                 laboratory    Notebook:    A Networked     Knowledge
+    "Cognitive Apprenticeship: Teaching the Crafts of                Building  Environment       for Project Learning."   In
+    Reading, Writing, and Mathematics." In Knowing,                  Proc Ed-Media, Vancouver, Canada.
+    Learning,     and  Instruction:  Essays   in Honor  ofRobertGlaser,p453-494,L.Resnicked.,Hillsdale, NJ, Lawrence Erlbaum Associates.21.Pea,R. and Gomez,L. (1992)"Distributed MultimediaLearningEnvironments:WhyandHow?"Interactive Learning Environments, 1(2), p73-l10.
+9.  Doise, W. and Mugny, G. (1984) The Social Development of the Intellect, Pergamon Press, NY.22.Repman,J.(1993)"Collaborative,ComputerbasedLearning:CognitiveandAffectiveOut
+10. Ellis,    C.,  Gibbs,   S.   and    Rein,  G.    (1991)          comes."   J   of  Educational   Computing     Research,
+    "Groupware:       Some    Issues  and     Experiences."          9(2), p149-163.
+    Comm ACM, 34(1), p38-58.                                     23. Roschelle,    J. (1992) "Learning    by Collaborating:
+11. Forman, E.A. and Cazden,      C.B. (1985) "Exploring             Convergent     Conceptual   Change."   The  Journal  of
+    Vygotskian Perspectives in Education: the cogni                  the Learning Sciences, 2(3), p235-276.
+    tive  value   of peer interaction." In  Culture, Communication,andCognition:Vygotskianperspectives,J.V.Wertsched.,Cambridge,U.K.,Cambridge University Press.24.Roschelle,J. andClancey,W.J.(1992)"Learningas Social and Neural." Educational Psychologist,27(2).
+12. Goldman,      S.V. (1992)    "Computer  Resources  forSupportingStudentConversationsaboutScienceConcepts." SIGCUE Outlook, 21(3), p4-7.25.Roseman,M. andGreenberg,S.(1995)"BuildingReal Time Groupware with GroupKit, A Groupware Toolkit." Accepted to ACM Transactions onComputerHumanInteraction.Alsoastechnical
+13. Gutwin,   C. and Greenberg, S. (1995) "Support for               report  95/559/11,    Department   of   Computer   Sci
+    Group Awareness in Real-Time Desktop Confer                      ence, University of Calgary, Canada.
+    encing." In Proc 2nd New Zealand Computer Science Research Student's Conference, April 18-21,University of Waikato, Hamilton, New Zealand.26. Roseman,M.andGreenberg,S.(1992)"GroupKit:AGroupwareToolkitforBuildingReal-timeConferencingApplications."InProc
+
+CSCL '95 Proceedings                                         155                                                October 1995
+    ACM   Conference   on Computer   Supported  Cooperative Work, p43-50, Toronto, Ontario.30.Slavin,R.(1983)CooperativeLeaming,Longman, NY.
+27. Scardamalia, M.  and  Bereiter, C. (1992) "An Architecture for Collaborative Knowledge Building."InComputer-BasedLeamingEnvironmentsandProblem Solving, p41-66, E. de Corte, E. Linn, H.MandlandL.Verschaffeleds.,NY,SpringerVerlag.31. Smith, B.L. and MacGregor, J.T. (1992) "What isCollaborativeLearning?"InCollaborativeLeaming:ASourcebookforHigherEducation,pl0-29, A.S. Goodsell, M.R. Maher and V. Tintoed., Univ Park, PA, National Center on Postsecondary Teaching.
+28. Scardamalia, M., Bereiter, C.,  Brett, C., Burtis, P.,Calhoun,C.andSmithLea,N.(1992)"Educational Applications of a Networked CommunalDatabase."InteractiveLeamingEnvironments, 1(2), p45-71.32.Stefik,M.,Bobrow,D.,Foster,G.,Lanning,S.andTatar,D.(1987)"WYSIWISRevised:EarlyExperienceswithMultiuserInterfaces."ACMTrans Office Information Systems, 5(2), pl47-167.
+29. Singer, J., Behrend, S. D. and Roschelle, J. (198)
+    "Children's Collaborative Use of a Computer M1-
+    croworld." In Proc ACM Conference on Computer
+    Supported Cooperative Work, p271-281, Portland,
+    Oregon.
+
+CSCL '95 Proceedings                                       156                                            October 1995
+

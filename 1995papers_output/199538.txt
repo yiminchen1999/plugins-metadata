@@ -1,0 +1,257 @@
+      Using a Game for Social Setting in a Learning
+             Environment:                  AlgoArena                      - A Tool                   for
+                              Learning Software Design
+
+                                          Hiroshi Kato and Akiko Ide
+
+                        Information Technology Research Laboratories, NEC Corporation
+
+                     Abstract
+AlgoArena is a tool for education of software design to              Most classroom activity inevitably takes place
+beginners. The purpose is to develop the ability to                  within the culture of schooling, but it is at
+think algorithmically and the ability to view things sys             tributed by both teachers and students to the
+tematically. It is a simulation game of sumo wrestling               cultures ofreaders, writers, mathematicians,
+- the traditional Japanese national sport. Students are              historians, and so on. What students do in
+supposed to program the actions of their own wrestler                school thus tends to be a sort of ersatz activity,
+using a programming language so as 'to win matches                   distorting both what is learned and the culture
+against other wrestlers. To make the wrestler stronger,              to which it is attributed [I].
+students are encouraged to analyze the chaotic situation
+systematically, devise better tactics, and incorporate               The most rigid interpretation of this claim would
+them into the program. Such comprehensive problem               demand 'on the job training (OJT)', i.e., an educational
+solving activities are comparable to the processes in           method in which students take part in actual practice at
+volved in software design. In addition, students commit         the workplace, such as in conventional apprenticeships.
+to solving their own problems at their own responsibil          In reality, however, it is not always possible for stu
+ity. It is also comparable to the authentic activities of a     dents to become members of the actual community as
+software designer. In this sense, activities with Algo          apprentices only   for the learning    experience.  First,
+Arena can be regarded   as  a significant 'epitome' of          from the viewpoint of the workplace, the community's
+authentic software design.                                      capacity to accept excessive numbers of apprentices is
+   Social setting for the learning environment is at            inadequate by ordinary. The community of practice is
+tributable to constraints embedded in the system of Al          not able to afford to educate students who are not ex
+goArena. For example, owing to the constraint of the            pected to become regular member. Second, from the
+game that a player needs opponents to fight with, stu           viewpoint of students, they will have less opportunity
+dents are encouraged to have matches with others, and           to experience various cultures, because OJT is gener
+social interaction among students is facilitated. In this       ally a very time-consuming    process,    whereas    they
+way, a game situation is brought into the context of            should be enabled to encounter a wide variety of cul
+learning and produces a community of learners.                  tures. For these reasons, it would be impracticable to
+                                                                educate everyone on the basis of OJT.
+Keywords - simulation game, collaborative learning,                  As a result, the authors have left the framework of
+situated learning, computer literacy, programming lan           conventional schooling as it is, and have tried to bring
+guage, software education, Logo.                                realistic culture of practice into culture of schooling.
+                                                                Although practice at school cannot be the same as it is
+                                                                at the workplace, we believe that it is possible to inject
+1. Introduction                                                 student's activities with  'reality'  of actual practice.
+According to a theory of situated cognition, learning is        Before getting into the details of our approach, let us
+regarded as a process of enculturation [1], and it occurs       clarify what we mean by 'reality'.
+as newcomers gradually increase their participation in               The authors think that actual experiences have at
+a community of practice [3]. Learning is thus insepara          least two aspects. One aspect of reality is perceptual
+ble from practice. From this viewpoint, Brown pointed           reality. It concerns the similarity between perceptions
+out one problem of schooling as follows:                        caused by physical stimuli in the real world. Virtual re-
+
+CSCL '95 Proceedings                                        195                                               October 1995
+ality accomplishes reality in this sense. For example,            designated time. However, if the words are spoken in
+when a student works with the same tools that estab               the role-play dialog, the speaker is not expected to do
+lished members use for authentic activities, perceptual           so. This is why the act in the role-play has low social
+reality for the activity is high in the sense that he/she         reality.
+can feel, touch, hear, smell, and see the same things as              However,   when    you  are   communicating      via a
+the members do.                                                   computer terminal using a chat program (a real-time
+   On the other hand, there is another aspect to actual           communication system with characters and alphanu
+experience, namely, social reality. It concerns the simi          merics on screen), such as 'talk' in UNIX, you are un
+larity between the social commitments created by acts.            able to listen to live voices, or look at the speaker's
+Every act inevitably produces some social commitment              facial   expressions. Instead,   you are forced   to read
+to others. For example, articulating "This is a pen." is          strings of featureless characters. Therefore, the act has
+not only a description of the state of affairs, but pro           relatively low perceptual reality, compared to ordinary
+duces a speaker's commitment to a listener regarding              conversation. However, sending a string of "Let's meet
+the existence of the pen. That is why the speaker is an           there then." produces the sender's commitment to a re
+ticipated to disprove, if someone says, "It is a pencil."         ceiver for carrying out the appointment, which is as
+or "I cannot find a pen." Out of the network of such              valid as the appointment by face-to-face talk. Hence,
+commitments, meanings for acts emerge. Therefore, it              the act has high social reality.
+can also be stated that social reality concerns the simi              Regarding    education, perceptual    reality can    be
+larity between meanings of acts.                                  supported by various media in a learning environment.
+                                                                  In particular, multimedia technology, such as full color
+                                                                  images and high fidelity sounds, can contribute primar
+                         Socio-cultural Aspect                    ily to this aspect of reality. Meanwhile, social reality is
+                                                                  affected by the social settings of a learning environ
+                                                                  ment. Specifically, it depends on the means of organiz
+                                                                  ing student activities, putting them into context, and
+                                                                  maintaining the community of students.
+                                                                      As Brown pointed out in the earlier quotation, ac
+                                                                  tivities at school tend to be a somewhat ersatz. This is
+                                                                  partly because the environment in which activities take
+                                                                  place is quite different from the workplace, i.e., lack of
+                                                                  perceptual reality. Another reason that should be taken
+                                                                  into account is the lack of social reality. That is, stu
+                                                                  dents  at school tend  to commit     to their teacher for
+                                                                  learning activities, while established members of the
+                                                                  community of practice commit for the achievement of
+                                                                  their own tasks at their own responsibility.
+ Figure 1. Relationship between social reality and perceptualreality. Although both aspects of reality are essential forlearning, the authors would like to emphasize the importance of social reality rather than perceptual reality.
+                                                                  Regarding perceptual reality, recent progress in com
+   Both aspects of reality are, connected by actual               puter technology has improved the learning media to a
+experience, orthogonal as shown in Figure 1. That is,             considerable extent. However, it still depends on the
+there can be situations that have high perceptual reality         expertise of experienced educators to produce learning
+and low social reality at the same time, or vice versa.           activities that are rich in social reality. Therefore, we
+   Suppose that you are participating in a role-play              are convinced  of the   necessity  to   develop a design
+dialog with a native speaker to learn a foreign lan               methodology for the social setting of a learning envi
+guage. You can listen to the fluent pronunciation of the          ronment allowing the accomplishment of social reality.
+native speaker, look at his/her gestures, and even shake              From the reasons mentioned above, the authors
+hands. What you perceive there is much the same as                have tried to design a social setting using the con
+what those who speak the dialog as a part of their au             straints provided by learning tools, such that students,
+thentic activities perceive, so it has a high perceptual          wishing to establish their identities in the community,
+reality. However, such a speech-act does not produce a            will be able to work on practices to achieve their own
+similar commitment such as an authentic speech does.              tasks at their own risk, and not solely to maintain a
+For example, articulating "Let's meet there then." in             good relationship with their teacher.
+real life usually commits a speaker to the listener such
+that the speaker must go to the designated place at the
+
+CSCL '95 Proceedings                                          196                                               October 1995
+                Table 1. List of reserved words in the programming language.
+
+                    action commands      move_forward move_back bend_forward bend_back step_forward
+                                        step_back throw slap_down push_forward grasp_mawashi disturb_hishand
+                                        release_mawashi wait
+
+                    system variables    my_position his_position distance my_posture his_posture my_arrn his_arm
+                                        upper_arrn my_leg his_leg
+
+                   commands and spe-    if ifelse select endselect case caseelse repeat while until to end stop stopall
+                      cial symbols      make local table tmake search and or not # + - * / > < >= <= =
+
+2. AlgoArena: a tool for learning software                     This is also comparable to the authentic activities of
+design                                                         programmers, who are socially motivated and are re
+                                                               sponsible within the context of solving the specific
+2.1. Discussions on student's activities                       problem to which they are committed. In this sense,
+AlgoArena [2] is an introductory tool to teach software        activities using AlgoArena have a high social reality,
+design to beginners. The authors focus on developing           and can thus be regarded as a significant 'epitome' of
+the algorithmic way of thinking and a systematic view          authentic software design.
+of things through problem-solving     activities, rather           This stands in contrast to the conventional way of
+than just teaching a specific programming language.            teaching software design. A typical course consists of
+    AlgoArena is a simulation game of sumo wrestling           instructions and discontinuous exercises, where solving
+- the traditional Japanese national sport. Students are        problems is not valuable in itself, but is valuable only
+supposed to program the actions of their own wrestler          for the purpose of education. This is because they are
+using a LOGO-based programming language to win                 usually problems that have already been solved. In ad
+matches against other wrestlers.                               dition, since problems are presented in a well struc
+    In the AlgoArena system, some constraints for the          tured and specifically defined form, students do not
+social setting of the learning environment are incorpo         have to analyze chaotic states of affairs to find out the
+rated, so that students can form their community of            problem they need to solve. Consequently, students are
+practice and facilitate social interaction. For example,       more inclined to commit to the teacher for 'learning'
+<D Using the constraint that a player needs opponents to       than undertake problem-solving itself. From this, the
+fight with, students are encouraged to have matches            authors would say that the conventional way lacks so
+with others, and social interaction among students are         cial reality as well as essential portions of authentic
+facilitated; ® Using the constraint that one wins while        cultural practice.
+the other loses, the player's will to win is evoked, and           AlgoArena is designed to be the core of the stu
+students come to share a common purpose - to try to            dent's community, in which students practice software
+win - and a common sense of values; @ Using sys                design. It does not explicitly tutor like a conventional
+tematic match organization, such as tournaments or             CAI, nor implicitly embed what is to be learned as
+leagues, students are able to have an exciting time to         principles of the virtual world like a conventional mi
+gether, fostering the sense of community; and© Using           croworld. However, it serves the arena where students
+a definite game system that requires deep thought,             apply what they have learned. Students learn mainly
+which will be mentioned later, the community is kept           through social interaction with a teacher and peers,
+lasting and evolutive. In this way, AlgoArena can help         rather than solely through interaction with a computer.
+to form a student's community.
+    Regarding activities in the game, students are en          2.2. AlgoArena System Overview
+couraged to systematically analyze why they lost, to
+plan tactics to win, and to implement them into the
+programs, while simultaneously keeping various con
+straints in balance. These comprehensive problem
+solving activities are comparable to authentic activities
+in software design, i.e., in analyzing situations, defin
+ing problems to solve, devising ways to solve them,
+and implementing them into the program. Furthermore,
+what is important here is to what and how students
+commit through those activities. In AlgoArena, stu
+dents tend to commit to solve their own problems to
+establish their own identities in the community at their
+own risk, rather than commit to a teacher for learning.
+
+CSCL '95 Proceedings                                       197                                                  October 1995
+                                                                runs in the same way. When a pair of action commands
+                                                                is determined, it is evaluated at once. This is so that the
+                                                                first mover will not have a (dis)advantage. According
+                                                                to the combinations of the commands and the current
+                                                                states of the game, the game status change. The match
+                                                                ends when the conditions of the two wrestlers are such
+                                                                that one of them wins. If a match is not won by either
+                                                                wrestler after thirty sets of action, it is declared a draw.
+                                                                    The system of the game is definite, i.e., no element
+                                                                of chance  is  allowed to affect  the outcome     of the
+                                                                match. Therefore, the same match always follows the
+                                                                same process, and a match between identical wrestlers
+                                                                never fails to end in a draw. Since there is little chance
+                                                                to win by accident, deep thought is required for a sure
+                                                                win. Consequently, as student's capabilities in software
+                                                                design improve, the wrestler gets stronger.
+         Figure 3. Fighting scene of AlgoArena.
+                                                                2.3. Experience from an exploratory case study
+                                                                The authors ran a pilot experiment at a municipal ju
+                                                                nior high school. The subjects were 27 students, aged
+REPEAT   30[IFELSE(:_my_position  = 8)[move_forward][IFELSE(:_his_posture=4)[slap_down][push_forward] ] ]from 13 to 15, and classes were held once a week for 6weeks; each class was 50 minutes long. Most of theclass time was spent making programs. Oral explanations were principally limited to system operation andsample program behavior. Apart from this, a manual ofprogrammingcommandswasdistributed.Studentswere expected to learn by talking with others, as well
+            Figure 4. Example of a program.(Some parts translated into English)as by looking at sample programs.According to the answers to the questions after theclasses:"WhatwasinterestinginAlgoArena?",the
+                                                                most frequent answer (41%) was "to have matches
+                                                                with friends." The answer to the question: "Who do
+   AlgoArena is a simulation of a sumo bout. A stu              you prefer  to  fight with?" was     in 19%    of cases
+dent (player) has his/her own wrestler, and makes a             'programs made by peers', 4% preferred 'pre-installed
+program describing the wrestler's actions with a screen         sample programs', and 52% preferred 'both of them'.
+editor, as shown in Figure 2. The editor is designed so         These results show that students were mainly moti
+that beginners can enter almost all the reserved words          vated by social interaction with others. In addition, in
+(commands, special symbols, system variables, and so            the answer to the question: "With whom did you con
+on, as shown in Table 1) just by clicking on the menu.          sult on programming? Name them.", 78% of students
+The student then lets his/her wrestler fight with oppo          named consultation with peers. This result and our ob
+nents programmed by other students or teachers. The             servation show they actively communicate with one
+fighting animation is seen on the graphic screen of the         another. Consequently, it seems plausible that a com
+monitor (Figure 3). The student is supposed to analyze          munity of students, in which they are keen on problem
+the fight, find out the causes for defeat, devise tactics,      solving activities toward a common goal, was success
+and incorporate these into the program. Another cycle           fully formed.
+of activities is regenerated by a return match. Through             Regarding   performance  of   learning,  almost  all
+these cyclic activities, students are expected to develop       (96%) understood the usage of REPEAT and IF cor
+comprehensive capabilities for the basics of software           rectly. In the junior high school, BASIC language class
+design.                                                         is mandatory in the 9th grade and one of its goals is for
+   Figure 4 shows an example of a program. The pro              students to understand the usage of FOR..NEXT and
+gram repeats the following thirty times: if my wrestler         IF after 9 to 10 class hours. Compared with this, al
+is on the edge of the ring (my_position          =  8), let     most all students using AlgoArena reached this level in
+him go forward; if not and the opponent is bent far             a shorter (less than 2/3) time. In particular, the class
+forward (his_posture       =  4), then slap the oppo            teacher reported that he was surprised to see a certain
+nent down; otherwise push the opponent forward.                 student of the lowest ability working on the activities
+   The game of AlgoArena continues as follows. Ei               very aggressively, and he created a program of nearly
+ther of the programs runs, referring to the current states      average level.
+of the game, determines the subsequent action com
+mand, and stops when this is determined. The other
+
+CSCL '95 Proceedings                                        198                                             October 1995
+3. Conclusion
+The design principles and system overview of Algo
+Arena are presented in this paper. The game situation
+incorporated into AlgoArena can provide students with
+a social setting that they commit to problem-solving it
+self at their own risk. It is comparable to the authentic
+activities of programmers. In this sense, activities in
+AlgoArena have high social reality. The exploratory
+case study revealed that a community of practice was
+able to be formed successfully and students enjoyed
+the social interaction with others. Moreover, learning
+performance reached the same level as that for con
+ventional methods in a shorter time.
+    The authors will look into more cases to examine
+interaction among students and how they develop their
+community of practice.
+
+                     References
+1.   Brown, J. S., Collins, A. and Duguid P. 1988.
+     "Situated Cognition and the Culture of Learn
+     ing", IRL Report No. IRL88-0008.
+2.   Kato, H. and Ide, A. 1993.  "AlgoArena: a Sys
+     tem for Learning Programming through Social
+     Activities", Proceedings of 4th European LOGO
+     Conference, pp.239-246.
+3.   Lave, J. and Wenger, E. 1991. Situated Learning
+     - Legitimate Peripheral Participation -, Cam
+     bridge University Press.
+
+             Authors' Addresses
+Hiroshi Kato and     Akiko Ide: Applied  Information
+Technology Research Laboratory, Information Tech
+nology Research Laboratories, NEC Corporation, 1-1,
+Miyazaki 4-chome,    Miyamae-ku,     Kawasaki, Kana
+gawa 216 JAPAN. {kato, akiko}@joke.cl.nec.co.jp.
+
+CSCL '95 Proceedings                                      199                                           October 1995
+

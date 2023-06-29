@@ -1,0 +1,414 @@
+          Computational Support for Collaborative
+    Learning through Generative Problem Solving
+
+                         N. Hari Narayanan, Cindy E. Hmelo, Valery Petrushin,
+                      Wendy C. Newstetter, Mark Guzdial, and Janet L. Kolodner
+
+                      EduTech Institute, College of Computing, Georgia Institute of Technology
+
+                      Abstract                                 cognition suggest that for learning to be useful the
+In this paper we present a vision of computer-sup              learner needs to be actively involved in constructing
+ported collaborative learning through solving genera           new   knowledge   within  meaningful    contexts, not
+tive problems - problems that promote open-ended in            merely absorbing it. Furthermore, learning is enhanced
+quiry and have multiple solutions. This vision stems           by group-oriented collaborative work, reflection and
+from a novel and evolving approach to collaborative            articulation. These are therefore the central premises of
+learning that we are developing at the EduTech Insti           a multidisciplinary approach to structuring learning
+tute. This approach is based on the following premises:        within the context of case-based instruction that we are
+that learning is facilitated by generative problem solv        developing at the EduTech Institute. This approach is
+ing, collaborative work and use of multiple cases; that        called Multiple Case-Based     Approach to Generative
+learning and skill acquisition need to be, and can be,         Environments for Learning (McBAGEL).
+scaffolded through software; and that a computer envi               Three factors distinguish this approach: (1) The
+ronment which integrates a shared and structured elec          use of generative problems to promote learning. Gen
+tronic workspace with a full variety of functionalities        erative problems are those that motivate open-ended
+can effectively support all of the above. We describe          inquiry, whose solutions require synthesis, which have
+this approach and the architecture of the corresponding        multiple solutions, and which, therefore, promote the
+computer environment. This environment is designed             generation, evaluation and combination of ideas in the
+to serve  three critical functions: provide a shared           course of problem     solving. The type of generative
+workspace for students, facilitate inter- and intra-group      problems that we use are design problems. (2) The use
+collaborative work, and make available the tools and           of multiple cases provided by computer-based case li
+resources that students need for problem solving and           braries as knowledge sources to aid problem solving.
+learning. The software components of the environment           (3) The emphasis on software-scaffolded and group
+that have already been implemented are described. In           oriented collaborative work in and out of the class
+the final section we frame ongoing and planned re              room.
+search and development efforts in terms of the charac               We are designing a computer-based learning envi
+teristics desired of such an environment and ways of           ronment that we expect students to use as a workspace
+assessing its impact.                                          for conducting work as part of this approach. The ar
+                                                               chitecture of this environment and its components is
+Keywords - case-based methods of instruction, edu              the main topic of this paper. However, since the envi
+cational groupware, instructional strategies and ap            ronment's role is to support collaborative learning in
+proaches.                                                      the context of generative problem solving, a discussion
+                                                               of the approach and the educational philosophy behind
+                                                               it precedes the description of the computer environ
+1. Introduction                                                ment. Then, software components of the environment
+Too often, classroom instruction provides students withmany bits of knowledge that they are never able to assemble and apply in productive ways, particularly outside the classroom walls. One reason for this is the focus of traditional schooling on learning isolated facts incompartmentalized disciplines. Not surprisingly, thisthathavealreadybeendesigned,implementedandused in classrooms of Georgia Tech are described. Inthe final section we frame ongoing and planned research and development efforts in terms of the characteristics desired of such an environment and ways ofassessing its impact.
+knowledge often cannot be transferred to real-world
+problems.  Theories of constructivism and situated
+
+CSCL '95 Proceedings                                       247                                              October 1995
+2. Educational Framework                                       sualization  programs,  decision-support systems    and
+Our   approach  is  based   on  a synthesis  of  ideas on      smart case-libraries.
+learning and problem solving from the fields of educa               (5) A shared electronic workspace that seamlessly
+tion, cognitive psychology and artificial intelligence.        integrates  afull variety offunctionalities for the above
+This approach is based on the following five central           will  enhance  learning.   This workspace will tie to
+tenets:                                                        gether tools that students will use while solving prob
+    ( 1)  Learning  is  enhanced   by  problem   solving.      lems, collaborating, and perusing multiple cases.   It is
+Learning is more effective when it occurs through ac           also an ideal vehicle for providing adaptive software
+tivities associated with solving generative problems           realized scaffolding of various skills. Finally, it will
+(e.g., identifying and formulating the problem, generat        encourage both synchronous and asynchronous collab
+ing alternatives, evaluating, decision making, reflect         orative work among students. Such an integrated yet
+ing, and articulating) rather than through transmission        flexible computer-based learning environment that the
+models of instruction. Design, by its very nature, is a        students use as a "professional workspace" is a central
+generative activity. Therefore, design-oriented prob           component of our approach.
+lems    are particularly effective for technical domains            We want to situate classroom learning in informa
+like engineering and architecture and may well provide         tion-rich contexts that afford opportunities for problem
+effective anchors for math and science learning.               formulation, exploration and discovery. Students will
+    (2) Collaborative work is central to learning. Stu         work on problems for extended periods of time, reflect
+dents are expected to solve problems and do assign             ing and articulating on both the process and the prod
+ments in groups. Group-oriented work, in and out of            uct. Case libraries will provide them with both relevant
+the classroom, is important both in facilitating learning      data and specific solution strategies in the domain of
+and in preparing students for today's multidisciplinary        instruction, all within the context of complex and real
+team-oriented workplaces.      As students work in col         istic real-world problems. The problems students have
+laborative groups, they are forced to articulate and re        to solve and the cases that are made available to them
+flect upon their thinking, leading to an appreciation of       serve as anchors for learning. Collaborative, reflective
+the importance of distributed cognition [14] as well as        and articulative activities, aided by the tools and cases
+enhancing learning and subsequent transfer [3].       Col      provided by the computer-based learning environment,
+laborative work allows students to successfully tackle         should improve the students' knowledge, problem solv
+problems     more  complex  than   what  any  one   group      ing skills, and self-directed learning skills. Cases, be
+member could do alone.                                         ing rich knowledge structures that explicate both con
+    (3) Access to multiple cases will facilitate flexible      ceptual and strategic knowledge, will allow the stu
+learning.  Providing   students with  access  to multiple      dents to master concepts, principles and strategies in
+cases that contain information-rich and contextualized         the course of attempting to solve problems. The col
+descriptions    of specific situations   set  within   the     laborative nature of student activities should facilitate
+broader context of a course can significantly impact           the construction of new knowledge since it encourages
+learning and transfer. The availability and use of mul         articulation and intra-group communication. Our ap
+tiple cases during problem solving facilitates learning        proach is designed in particular to address the follow
+new    knowledge,   and supports     the adaptation   and      ing three issues.
+transfer of previous solutions to the current problem               Cognitive Flexibility and Transfer. Consideration
+[11].  It is expected  that by  revisiting  design  skills     of a single case leads to inflexibility of the acquired
+through   numerous   cases,  flexible  transfer  of these      knowledge and strategies [22]. Rather than having stu
+skills  will be supported   [20]. Intelligent computer         dents focus on a single case, our intention is to have
+based case libraries can provide students with not only        students revisit ideas from multiple cases both through
+such   access  but also means     of flexibly navigating       the design problems that students work on and the de
+among cases and parts of cases.                                sign cases in the case libraries. We believe that by
+    (4) Learning and the acquisition of problem-solv           having students analyze multiple cases, and by having
+ing skills need to be scaffolded.    The experiences im        them reflect on how these cases are similar and differ
+plementing effective problem-based learning environ            ent  to the problems  they are solving, more     flexible
+ments teach us that solving real-world problems re             knowledge should be constructed. The cognitive flex
+quires scaffolding, i.e., help from facilitators, knowl        ibility theory [20] supports this prediction.
+edgeable experts, and the learning environment [12,                 Collaboration. Collaboration is a key piece of our
+18]. The goals of scaffolding are to enable students to        approach.   Research on collaborative learning shows
+carry  out a  reasoning process   or achieve  a  goal that     that learning while solving problems in groups facili
+they would not be able to do without help, and to facili       tates the learning of articulation skills, makes learning
+tate learning to achieve the goal without support. The         more effective for all group members, and allows stu
+scaffolding of different skills can be provided through        dents to successfully tackle problems more complex
+software, by appropriately utilizing     multimedia and        than any one group member could individually solve
+tools such as collaboration software, simulation and vi-       [3, 14, 17]. Moreover, the collaborative discussion that
+
+CSCL '95 Proceedings                                       248                                               October 1995
+occurs is important for student learning because it acti          specifications, and learning requirements.                                                       The main
+vates prior knowledge, thus facilitating the processing           screen                   provides         several                   fields for keeping               track of
+of new information [2, 19]. On the other hand, Blu                                          sources of information, design alternatives,
+menfeld et aL [l] suggest that students may have more             and further actions to be taken. Space is provided to
+motivation to learn but    make less use of learning and          record the facts and constraints that are important, to
+metacognitive strategies. In addition students may not            record ideas about how to deal with the specifications,
+have  the  skills to  benefit   from  collaborative    work.      and to keep track of what else needs to be learned,
+Therefore it is important to help students to collaborate         what information needs to be collected, and what ac
+well together in order to make collaborative learning             tions need to be taken.                               Together, these windows allow
+work well. Aspects of our approach - the division of              the student to see where s/he is now, where s/he has
+the student body into small groups, the complexity of             been, and where s/he is going. This screen can be used
+the design problems that the groups will tackle, and the          as an individual workspace or as a shared workspace
+use of collaboration software to scaffold communica               for the group. The main screen also provides access to
+tion and cooperative work - are all intended to over              other resources and tools that students need to solve the
+come  these limitations    and  enhance    the   benefits  of     design problems: case libraries and other information
+group-oriented learning.                                          resources; tools for simulation, visualization, decision
+     Reflective Articulation.   Two   important  aspects   of     making etc.; a tool for inter- and intra-group communi
+our approach are     articulation and reflection. There are       cation, collaboration, and multimedia document shar
+several forms of reflective articulation including gen            ing; and a set of basic tools such as document process
+erating analogies [10], predicting outcomes of events             ing programs, drawing/painting programs and spread
+or processes    [21],  developing    questions   about    the     sheets.
+learning  materials    [10],  and  self-explanations    [4].
+Studies suggest that reflective articulation can enhance
+retention,  elucidate      the  coherence       of  current                                                                                                     Repository
+understanding of the problem being solved, develop                                              Main Screen                                      Problem        ofScreenproblems
+self-directed learning skills, and provide a mechanism
+for abstracting knowledge from the content in which itwaslearned,thusfacilitatingtransfer.Itisveryimportanttoprovidetwolevelsofarticulation-individualandgroup-inacollaborativelearningenvironment. Also, it is not just articulation by itself0880''
+that is  important,    but it   is the specific    kinds   of                        (Entry into problem repository.                                         Collaborati. Software
+articulations  that  engenders     reflection  - reflective                            (   CoDaboration window
+articulations   - that lead  to enhanced   understanding.The goal of reflection is to analyze and evaluate one'sknowledge, learning and problem solving strategies.Several researchers have demonstrated the importanceof articulation and reflection in learning. Pirolli and[Access to tools and resourcess(Access to scaffoldingJ,!I..,,.._ __!_.Informationresources
+Recker    [15]  suggest    that    reflection on    problemsolutions that focuses on understanding the abstractIscaffolding collaborationIscaffolding reflection and articulationCase libraries, WWW, etc.
+relationships between problems is related to improved                                     scaffolding resource Identification and use
+learning. Lin [13] has found that reflection on problem
+solving processes leads to enhanced transfer and that                                                             Figure l. Software Architecture
+technology can be used to scaffold appropriate kinds of
+reflections. One way that reflection can be enhanced is                                  The problem screen provides easy access to the
+through the articulation of meta-cognitive knowledge              evolving problem description.                                            This screen begins with
+and  skills that     typically  occurs  in    collaborative       a minimal description of the design problem presented
+discourse.                                                        to the students.                          Details emerge as they inquire about
+                                                                  additional information about constraints, material re
+                                                                  sources and functional issues regarding the design.
+3.   Computer Support for Collaborative                                                  The collaboration window allows students to enter
+Learning in McBAGELFigure 1 is a schematic diagram of the architecture of asoftwareenvironmentthatwearedevelopingtocomplement the McBAGEL approach in classrooms.Thisenvironmentprovidesanexternalmemoryforkeepingtrackofproblemspecifications,importantfacts and constraints, ideas about how to deal with theinto a collaboration environment that provides muchmore than mere communication facilities. It will provide an ability to enter into structured discussions ondifferent topics pertaining to the class and the problemat hand as well as to share multimedia resources withother members of the group and class. A user will beable to browse through past and ongoing discussionswhich are presented in a structured format to allow
+
+CSCL '95 Proceedings                                          249                                                                                             October 1995
+easy topic-based, time-based or author-based browsing,         this by recording those in the "facts" space. Similarly,
+and to contribute to those discussions by constructing         as they consider alternative solutions, they will make
+and sending different types of messages. This collabo          use of the "ideas" space.                                                               The problem-based learning
+ration facility will be made available to not only stu         methodology that this environment embodies explicitly
+dents, but also to teachers. It will provide teachers with     prepares students for self-directed learning by requiring
+a means to collaborate in conducting a course and to           them to identify their knowledge deficiencies in the
+share experiences and learn from each other. It can also       "need to learn" space and the actions they plan to take
+be a vehicle for student assessment based on their col         to remedy those deficiencies in the "action plan" space.
+laborative interactions.                                       Several buttons are found on the bottom of the screen
+      In addition to providing a work environment, this        that provide access to different tools that they will need
+system makes available scaffolding to help novices             to solve the problem. "Stage" is a pull-down menu
+with design, collaboration and reflection. Design scaf         which acts as a gateway to various kinds of software
+folding will vary as a function of the design stage stu        realized scaffolding tailored to different stages of prob
+dents are working on. For example when the students            lem solving.
+are working on problem formulation, the software will
+provide coaching to help them understand what is in
+volved in this stage: e.g., identifying the problem, formulating the problem, partitioning/decomposing theMcBRGEL 01Pnlll-lnfllrllllltlllnFACTSIDEAS          NLEEEDARTNO                 c..a:                            8Ulld11t\Olllll'n6ru1111:
+problem, and framing the problem. The collaboration                                                  u,eea to DWa an            p, 1n·tten sitearchaystadium 1:::;"J!rlil,e?             ACTION PLAN
+software will provide procedural facilitation to aid inthe development of collaboration skills. Reflection willSite has lo bepreparedBuild thestadium        HowbigtheyneedC".!:p thesideollobe?                               ·tt1·or         cases of otherstadiums
+be facilitated through the articulation that occurs dur                                               Site has big hilling collaborative problem solving and learning activiSite has lots of treesties.Trees preventerosionIn summary, this environment will provide meansSite has streamtoorganizeandmanageprojectsfromthestudents'Stmam has fishesHow do treespreYl!lll erosion?Learn more aboutarche,y fromWhat animals arefound In the streamEncyclopediaBrittanlcaand the woods?Talk to archeryInstructor at localcollege
+perspective (e.g., the main screen provides for explic                                                                                                                                    Call park ranger
+itly listing organizational and learning issues) and the
+teachers' perspective (e.g., tracking student progressand keeping records of student work). In addition, weenvision that the environment will be used for researchI, llmL:IIJWl.ml--2 I .. ,I,·--·I ft·
+purposes (e.g., archiving data such as the inter- and in
+tra-group communications and resource sharing that                                                                                 Figure 2. McBAGEL Workspace Screen
+took place during a course for later assessment, collect
+ing data to be used for student/group modeling in orderto devise better course- and student-specific on-lineMcBRGELQ!The Problem:I   1= Mo -re,nfom,-o,1o-n:-     !Overview:
+scaffolding and coaching methods, etc.). An initial pro                                                An IRhlrythdl1.1mn11dsto11,11umon 1
+totype of this environment has been developed with                                                     slt1cont1lnlng11h1ll,1st reemononesldeofththllond1otsoftnu.
+Hypercard on   the Macintosh platform, but it has notyet been tested in a classroom. Borrowing from the You n11dtodot wo             thing,:IStldlllmtl
+metaphor of the white board workspace of problembased learning found in medical schools, this prototype l)D1ctd1howtopnjllrltlle1lleforthfl1t1dl um(Eco1u1tem)toblbullt.l··1ult1... J2)Dtcld1howlollulld
+provides an electronic workspace that is split into four                                               tha1t11dl1,m1,
+regions. It also allows easy access to other tools and re                                                                                                          !Addltlonol Help     I
+sources. Figures   2 and  3 show    the workspace and                                                                                                              Encyclopedle of -thlllblldlfflopmllllHll'ICIIGf·CC1Mtruct1on 1 ngln1en
+problem screens of this prototype.                                                                                                                                 Try looking In ARCHIE for SDffll Df lharonow1n11 tanna: st.nums. llrCl\er,
+      Here is a brief scenario to illustrate how we imag                                                                                                           gn.icll ng problam.
+ine the students will use this environment. Students,
+who will be working in small groups, enter the envi
+ronment at the main window shown above, which rep                                                                                   Figure 3. McBAGEL Problem Screen
+resents their shared electronic workspace. They are
+provided with relevant information on the design prob
+lem they need to solve via the button "new problem".              While the structure of this environment is still
+In this case, it is to design an archery stadium for the       evolving, some of its components have already been
+Olympics. As students are initially formulating and            designed,                                                implemented                    and    individually                fielded                                            in
+understanding the problem, they will be encouraged to          classrooms. In the following two sections we elaborate
+identify data relevant to the problem from the informa         on these implemented components and describe future
+tion they have been provided with, and to articulate           directions for our research.
+
+CSCL '95 Proceedings                                       250                                                                                                                            October 1995
+4.  Implemented Components                                     collaboration  through procedural  facilitation. While
+· Case Libraries: Research on case-based reasoning             electronic mail merely allows team members to share
+[11]   provides guidelines  for indexing and making            ideas, CaMILE helps them to organize their ideas into
+available resources needed while problems are being            coherent arguments, relate their ideas to one another,
+solved, especially case materials. Case libraries orga         and use resources across the network to support their
+nize cases in ways that make it easy to access their           arguments.  CaMILE     was built  with   Hypercard   on
+most interesting parts, understand their implications,         Macintosh computers.
+and recognize the range of problems needing solving                · Exploratory Simulations: We have developed a
+and  the range  of solution methods  available.   Case         range of exploratory simulations [16] that enable stu
+studies are structured in terms of overviews, problems,        dents to learn through simulated  experience.    Key to
+stories, and responses. Each story discusses some prob         these simulations are tight integration with real world
+lem that arose in designing some artifact, the way that        problems and activities, and flexible specification of
+the problem was addressed, and the outcomes that re            simulation choices to allow for creative and sophisti
+sulted.  To make it easy for users to extract from sto         cated simulation problem solution. These simulations
+ries their important points, stories are presented with        have been constructed using the Smalltalk language.
+illustrative graphics, and several kinds of contextual
+information is associated with each story. Students can
+examine the full artifact that some story is associated        5. Future Directions
+with, can see a general description of the problem the         Learning from case libraries: As students are solving
+story addresses, a general description of the kind of so       problems, several kinds of resources are needed to help
+lution it provides, and can ask to follow links to other       them. Clearly, they need access to documentation, of
+stories that illustrate a similar problem or solution. The     the kind found in books and encyclopedias. But an
+stories help students discover which issues they should        other significant but often overlooked resource is codi
+be considering during design and help them to antici           fied prior experience: e.g., cases that describe solutions
+pate the results of carrying out their proposed designs.       to similar problems.   Our   approach    to supporting
+We have developed a number of case libraries in sup            learning from prior experience is to make on-line case
+port of design problem solving.                                libraries available from within the software environ
+     · Case Library Authoring Tool: DesignMUSE [5]             ment. Cases help with understanding a problem better,
+is a case library authoring tool that has been developed       suggesting solutions and parts of solutions, and evalu
+to allow easy construction of case libraries. During the       ating proposed solutions, thereby helping a student to
+1995 Winter Quarter it was used to create a library of         know where to focus his/her attention. Our research on
+environmental cases for use in our sustainable technol         case libraries will proceed in two directions. One is
+ogy classes. Thus, while existing case libraries act as        generating content: creating  the kinds  of cases   with
+intelligent information resources, this authoring  tool        which to populate these libraries in order to have max
+will allow students to construct their own case libraries      imum impact on learning. The other concerns issues of
+to record the design problems that they solve. Both the        information organization, presentation and navigation.
+authoring tool and the case libraries are built on Com         How can cases be organized and presented in ways that
+mon Lisp for Macintoshes.                                      make it easy to access their most interesting parts, un
+     · CaMILE:   Our collaboration software CaMILE             derstand their implications, and recognize the range of
+[8], based in principle on CSILE [18], integrates in           problems and the range of solutions available? While
+formation-gathering tools, communication tools, and            the existing case libraries provide one answer to this
+applications into a collaborative environment. CaMILE          question (another, for example, is provided by [9]), we
+provides a discussion environment into which the full          are currently revisiting this issue from the perspective
+range of text, graphics, spreadsheets, video, and so on        of students, who are novice practitioners. From this
+that reside locally or on the Internet can be incorpo          perspective we believe that additional capabilities such
+rated. It is designed to meet two goals. First, it serves      as access to definitions of the terms used by experts,
+as a collaboration and information indexing tool. Dis          access to explanations of what experts find it appro
+cussions are structured and annotated with links to ma         priate to focus on, guidance in choosing what to focus
+terial anywhere across the network. Second, it serves          on next, and allowing students to extend the libraries
+as a design support tool. Discussions about design             (or create new ones) are also required.
+problems can be annotated with links to actual ongoing             Supporting  collaborative  problem      solving and
+designs. The discussion trace can then serve as a de           learning:  Support for group communication and shar
+sign rationale and a case study of a design. It allows         ing will be provided by facilitating collaborative work
+students to collaborate in learning and problem solving        through the software environment. CaMILE was used
+by providing a facility for structured inter-group and         during the past two quarters in a junior-level design
+intra-group communications that are archived, and by           foundations course, taught in mechanical engineering
+providing a way to share multimedia documents easily           (ME 3110; Creative Decisions in Design). We have
+among collaborators. Like CSILE, CaMILE scaffolds              collected data on the system's usage and its effects, and
+
+CSCL '95 Proceedings                                       251                                             October 1995
+are in the process of analyzing this data. A World Wide       repertoire of strategies, and improves student under
+Web version, WebCaMILE, is also under development             standing and control of the design process.
+We plan to link case libraries and WebCaMILE so that             - Reflection-as-summary:      Student summarization
+students engaged in a design activity might use Web           at the end of a design process is an important learning
+CaMILE to discuss and exchange case-study materials.          activity for students and an important resource for fu
+Cases provide the kinds of information that a student         ture groups of students.    Our plan is for students to
+might point to as justification for some argument pre         summarize their group design projects such that sum
+sented to others, as a potential alternative to a design      maries from one class become cases in the library for
+decision, or as a rebuttal to someone else's design deci      the next class. Thus, students summarize not just for
+sion. Tailoring CaMILE's procedural facilitation to re        their own benefit but to help a future audience.
+flect more closely the content and nature of the prob            ·  Scaffolding  resource    identification and  use:
+lems students will be solving and investigating new           Case libraries support student exploration by providing
+ways of scaffolding collaboration are other topics of         multiple indices into cases. Students might begin by
+ongoing research.                                             looking at one case of interest and then explore related
+   Software-realized    scaffolding:     Of  particular       cases by a number of different dimensions, or begin by
+importance     in making     this integrated software         browsing all cases related to a problem. Students can
+environment work for students is providing software           gain perspective on what problems they are facing,
+realized scaffolding  to  support   student use of   the      what the parameters of the problems are, and how
+environment for learning. We have identified several          these parameters are explored in the cases in the library
+specific areas in which we can provide facilitation.          from case overviews.    We want case libraries to pro
+   · Scaffolding collaborative design and problem             vide support for an these kinds of searching and brows
+solving: Our environment will provide scaffolding for         ing, but coupled with support that helps in applying the
+design and problem-solving using several techniques:          found information  to   the task at hand  (e.g., linking
+   - By structuring the kinds of entries which can be         cases that highlight an important alternative solution to
+made in a group discussion, e.g., new theories or ideas,      the discussion on that alternative). In addition, we en
+alternatives,   comments,    rebuttals, and  questions.       vision the use of visualization tools to aid in resource
+When a student chooses one of these kinds of entries,         identification and use.
+an editor opens for their comments and a prompting               Integration:   As many of the critical components
+window opens with suggestions for useful entries to           of the software environment are being implemented
+make, e.g., for a rebuttal, suggestions might include         and used in classrooms, the most significant task ahead
+"The strengths of this idea are..." and "But the key          of us is integrating the different pieces into a single
+weakness is...".  This scaffolding guides the discussion      environment. This integrated environment supporting
+in useful directions defining the kinds of entries to be      the McBAGEL approach has to play several roles: fa
+made, asking students to choose one before entering an        cilitation of design problem solving and its constituent
+item into the discussion, and suggesting appropriate          components, facilitation    of learning, access   to re
+things to say.                                                sources, and access to teachers and fellow learners.
+   - By providing agents to actively review student           The software environment has to serve as both an elec
+work and suggest better ways to design and solve prob         tronic workspace and a learning environment providing
+lems. For example, agents may identify where connec           help with a variety of intellectual activities as students
+tions might be made between efforts, where additional         collaborate on design projects. We see a need for this
+resources exist that might aid an effort, and where ef        environment to promote reflection and summarization
+forts may be going astray [6].                                as well. Software-guided reflection is particularly im
+   - By providing menus of glossaries of relevant vo          portant in facilitating skill transfer between different
+cabulary and their definitions.                               problem domains. The construction of such an envi
+   - By providing means of visualization and making           ronment on Macintosh computers is currently under
+explicit the design process.                                  way.
+   0 Scaffolding reflection and learning:   We want to           Assessment:    The next step, slated to begin in Fall
+support two kinds of reflection in the environment be         1995, is to use and assess both the approach and the
+cause we believe that reflection can significantly facili     concomitant software environment in a series of design
+tate learning.                                                courses at Georgia Tech. We will use assessments to
+   - Reflection-in-action:   The students' articulations      determine what kind of learning has occurred and how
+in the discussion, the declaration of item type, and the      well students apply what they have learned. The goals
+linking of cases to discussion are all forms of reflec        of learning involve not merely acquiring a set of static
+tion-in-action.   These are kinds of reflection which are     facts to be recalled on a test but rather involve con
+integral to the design process and which support both         structing a coherent understanding of a domain that can
+the execution of a good design process and the learning       be flexibly transferred to new situations. The extent to
+about that process.  Reflection-in-action helps to make       which learning can be used in new situations (i.e.,
+strategies explicit and learnable, develops an expanded       transfer) allows assessment of how flexibly the stu-
+
+CSCL '95 Proceedings                                      252                                             October 1995
+dents have learned the content and are able to apply it                       Acknowledgments
+to complex problems. Students' learning will be evalu          Research reported here has been supported by ARPA
+ated on mastery, near-transfer, and far-transfer prob          under contract N00014-91-J-4092 monitored by ONR,
+lem-solving. Cognitive research suggests that because          ONR under contract N00014-92-J-1234, and by the
+problem-based instruction is geared towards complex            Woodruff Foundation's support of the EduTech Insti
+curricular objectives, assessments   need to include           tute.
+open-ended questions in which students explain what
+approaches they have to a problem and its solution [7].
+A variety of methods will be used to collect this dataincluding interviews and paper-and-pencil short answertests. This allows measurement of the products andprocesses of the students' learning. Some authentic performance assessments will also be devised. Students'presentations will be assessed to examine how theydefine the problems and justify their solutions as wellReferences1.Blumenfeld, P., Soloway, E., Marx, R., Krajcik,J., Guzdial, M., and Palincsar A. 1991. Motivation project-based learning: Sustaining the doing,supporting the learning. Educational Psychologist, Vol. 26,Nos. 3&4,pp. 369-398.
+as the quality of their solutions. Because transfer is notan all-or-none phenomenon, different types of transferwill be assessed and measures will be developed thatassess this. We will use measures of knowledge, skills,planning, and qualitative understanding as students areasked to justify their solutions. This will assess the2.Bransford,J.D.,andJohnson,M.K.1972.Contextualprerequisitesforunderstanding:Some investigations of comprehension and recall, Journal of Verbal Learning and Verbal Behavior, Vol. 11,pp. 717-726.
+flexibility of the knowledge that the students construct.For example, because of the emphasis onproblemsolving, we would expectincreased integration of thecontent they are learning into their problem-solving ontransfer problems.Because students are using the collaborative environment and gaining experience andfeedback in articulating their plans for problem-solv3.Brown,A.L.,andPalincsar.,A.S.1989.Guided,cooperativelearningandindividualknowledge acquisition. In Knowing, learning,andinstruction:EssaysinhonorofRobertGlaser, L. B. Resnick (Ed.). Erlbaum, Hillsdale,NJ , pp. 393-451.
+ing, we expect improvement in the students' planningskills as well.4.Chi, M.  T.    H., Bassok,   M., Lewis,   M. W.,
+                                                                     Reimann, P., and Glaser, R. 1989. Self-explana
+                                                                     tions: How students study and use examples in
+6. Conclusions                                                       learning to solve problems. Cognitive Science,
+Collaborative learning environments have the potential               Vol. 13, pp. 145-182.
+for helping students to construct usable knowledge and
+to learn strategies that prepare them for a lifetime of        5.    Domeshek, E.A., and Kolodner, J.L. 1992. A
+learning. To afford generative learning, such environ                case-based design aid for architecture. In Pro
+ments need to contain rich sources of information. In                ceedings of the Second International Conference
+addition, opportunities for student collaboration, articu            on Artificial Intelligence and Design.
+lation and reflection must be provided to help students
+think deeply about the problems they are working on            6.    Fischer, G., Lemke, A. C., Mastaglio, T., and
+and to learn to go beyond the given problems. The                    Morch, A. I. 1991. The role of critiquing in co
+McBAGEL approach is designed to meet these re                        operative problem solving. ACM Transactions
+quirements. Providing computational support to this                  on Information Systems,    Vol. 9, No. 3, pp. 123-
+approach requires the design of a software architecture              151.
+that integrates multiple tools and information resources
+with a structured electronic workspace. This paper de          7.    Glaser, R., and Silver, E. 1994. Assessment, test
+scribes our efforts on developing the theoretical and                ing, and instruction: Retrospect and prospect. In
+practical aspects of such an architecture. The focus of              Review of Research in Education, Vol. 20. Dar
+our current research is on refining and testing the com              ling-Hammond       (Ed.). American    Educational
+ponents further, and on fully implementing the inte                  Research Association, Washington D. C., pp.
+grated environment. Future research will focus on de                 393-419.
+ploying it in classrooms and conducting assessments of
+its impact on student learning.
+
+CSCL '95 Proceedings                                       253                                              October 1995
+8.   Guzdial, M., Rappin, N., and Carlson, D. 1995.         19.   Schmidt, H. G., DeGrave, W. S., DeVolder,    M.
+     Collaborative and multimedia interactive learn               L., Maust, J. H. C., and Patel, V. L. 1989. Ex
+     ing environment for engineering education. In                planatory models in the processing of science
+     Proceedings of the ACM Symposium on Applied                  text: The role  of prior knowledge   activation
+      Computing, pp. 5-9.                                         through small group discussion, Journal of Edu
+                                                                  cational Psychology, Vol. 81, pp. 610-619.
+9.   Hsi, S., and Agogino, A. M. 1994. The impact
+     and instructional benefit of using multimedia          20.   Spiro, R. J., Coulson, R. L., Feltovich, P. J., and
+     case studies to teach engineering design. Journal            Anderson, D. K. 1988. Cognitive flexibility: Ad
+     of Educational   Multimedia    and  Hypermedia,              vanced knowledge acquisition in ill-structured
+     Vol. 3, Nos. 3/4, pp. 351-376.                               domains. In  Proceedings of the Tenth Annual
+                                                                  Conference of the Cognitive Science Society,
+10.  King, A. 1992. Comparison of self-questioning,               Erlbaum, Hillsdale, NJ, pp. 375-383.
+     summarizing, and notetaking-review as strate
+     gies for learning from lectures. American Educa        21.   White, B. 1984. Designing computer activities to
+     tional Research Journal, Vol. 29, pp. 303-323.               help physics student understand Newton's laws
+                                                                  of motion. Cognition and Instruction, Vol. 1, pp.
+11.  Kolodner, J. 1993. Case-Based Reasoning. Mor                 69-108.
+     gan Kaufmann, San Mateo, CA.
+                                                            22.   Williams, S. M., Bransford, J. D., Vye, N. J.,
+12.  Koschmann, T. D., Myers, A. C., Feltovich, P.                Goldman, S. R., and Carlson,   K. 1993. Positive
+     J., and Barrows, H. S. 1994. Using technology to             and negative effects of specific knowledge on
+     assist in realizing effective learning and instruc           mathematical problem-solving. Paper presented
+     tion: A principled approach to the use of com                at the American Educational Research Associa
+     puters in collaborative learning. Journal of the             tion Annual meeting, Atlanta GA.
+     Learning Sciences, Vol. 3, pp. 225-262.
+13.  Lin, X.  1994.  Far-transfer problem-solving   in                    Authors' Addresses
+     hypermedia environment: The role of self-regulated learning processes. Paper presented at theAmericanEducationalResearchAssociationAnnual Meeting, New Orleans.N.HariNarayanan,CindyE.Hmelo,ValeryPetrushin,WendyC.Newstetter,MarkGuzdialandJanetL.Kolodner:EduTech Institute, College ofComputing, Georgia Institute of Technology, 801 At
+14.  Pea, R. D. 1994. Practices of distributed intelligence and designs for education. In Distributedlantic Drive, Atlanta, GA 30332-0280. {narayan, ceh,petr, wendy, guzdial, jlk}@cc.gatech.edu.
+      Cognitions, G. Salomon and D. Perkins (Eds.).
+     Cambridge University Press.
+
+15.  Pirolli, P., and Recker, M. 1994. Learning strate
+     gies and transfer in the domain of programming.
+     Cognition and Instruction, Vol. 12, pp. 235-275.
+
+16.  Rappin, N., Guzdial, M., Ludovice, P., and Re
+     alff, M. 1995. DEVICE: Dynamic environment
+     for visualizations in chemical engineering. In
+     Proceedings   of the  AI-Education  Conference,
+     (In Press).
+
+17.  Riel, M. 1993. Global discourse via electronic
+     networking.     Paper presented  at the Annual
+      Meeting of the American Educational Research
+     Association, Atlanta, GA.
+
+18.   Scardamalia, M., Bereiter, C., McLean, R. S.,
+     Swallow, J., and Woodruff, E. 1989. Computer
+      Supported Intentional Learning Environments.
+      Journal of  Educational  Computing   Research,
+     Vol. 5,  pp. 51-68.
+
+CSCL '95 Proceedings                                    254                                            October 1995
+

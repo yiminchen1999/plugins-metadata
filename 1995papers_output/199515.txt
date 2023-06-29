@@ -1,0 +1,231 @@
+                                       Shared Annotation
+                                for Cooperative Learning
+                                 James R. Davis1 and Daniel P. Huttenlocher2
+
+                                   1 Xerox Corporation, Design Research Institute
+                                  2 Computer Science Department, Cornell University
+
+                      Abstract                                     We   have been  experimenting    with   the  CoNote
+CoNote is a system that enables a group of people to           shared annotation system since the fall of 1994, and
+communicate     via   shared annotations   on   a  set of      have used it as the primary delivery vehicle for lecture
+electronic documents.     The system is implemented            notes and problem sets in Cornell's Computer Science
+using the World Wide Web, and operates with any                212 (CS212).  We have found that students are able to
+standard Web browser supporting forms.         This paper      easily locate relevant information because most of the
+describes the conceptual model for collaboration in            dialog is in the form of questions and answers referring
+CoNote,   and   discusses  our   experiences   using   the     to a particular problem on an assignment. In particular,
+system in an introductory college computer science             using CoNote we have rarely seen the same question
+course.  We have found that shared annotations of              being asked by different students, because they are able
+documents provide a richer communications forum                to find and understand other students' questions and
+than   electronic media   such as  newsgroups,    bulletin     answers.   In this paper we describe the conceptual
+boards   and email    distribution lists.  The    central      model for collaboration in CoNote and discuss our
+difference is that the documents provide a context for         experiences using the system for teaching.
+discussions, thereby enabling people to find relevant
+information more easily.
+                                                               2. Overview of CoNote
+Keywords-annotation, World-Wide Web.                           CoNote is based on the World Wide Web, and is thus
+                                                               accessible to anyone with a Web browser supporting
+                                                               forms.   No   special  client software      is required,
+1. Introduction                                                documents are read and annotations are viewed and
+CoNote is a computer supported cooperative work                posted using an ordinary browser such as MacWeb,
+system intended to facilitate communication within a           Mosaic, or Netscape. Documents and their annotations
+work   group    through shared   annotations   (marginal       may be written in plain ASCII text or in HTML.        In
+notes) on a set of documents.    The central idea is that      contrast to other Web based annotation systems, such
+shared    annotations        provide    an     effective       as Mosaic, CoNote annotations appear in-line at the
+communications       forum   for  groups  whose    work        place that they refer to rather than at the end of the
+involves frequent reference to some set of documents           document.   Actually, only links     to the annotations
+(e.g., teachers   and students,  field service  workers,       appear  in  the document;  the  annotations      can  be
+editors and publishers, standards organizations).  In our      accessed by navigating this link structure. Numerous
+experience, the shared annotations model provides a            word   processing systems  permit    annotations    (e.g.,
+richer  electronic   forum than   media   such  as news        Microsoft   Word  and  Adobe   Acrobat)     but  in such
+groups,  bulletin  boards  or  mailing  lists.  The key        systems the annotations modify the document, and are
+difference   is that  the documents    being   annotated       not shared. In contrast, CoNote annotations are seen
+provide a context for group discussions, thus enabling         by all members of a work group.          In the  CoNote
+people to find discussions on particular topics more           system, documents and users both belong to groups,
+easily.  The shared annotations model also provide a           which provides various levels of access control (as
+more structured forum than shared authoring tools,             discussed in the following section).
+because the documents play the role of a fixed context             Unlike  paper  annotations, CoNote      annotations
+for  the  discussions     rather  than  being   mutable        can't go just anywhere  in a  document,     but  only at
+themselves.                                                    places that the author of the document has designated
+
+CSCL '95 Proceedings                                        84                                              October 1995
+           Problem 1
+
+        There are 7 annotations
+        Primitive Function returne d from call to conference Student 1 Thu, 22 Sep 94 17:07:04 EDT
+                 BUG IN ps3 SOURCE CODE?????? Student 1 Thu, 22 Sep 94 22:47:46 EDT
+
+                        Definin g cs-advjsor TA Fri, 23 Sep 94 11:32:42 EDT
+        stategies Student 2 Sun, 25 Sep 94 16:45:39 EDT
+
+                        BUG WITH POWERMAC Professor Sun, 25 Sep 94 18:43:03 EDT
+        My stupidity hasn't improved.         Student 3 Mon, 26 Sep 94 17:42:19 EDT
+                 Don't use' Student 4 Mon, 26 Sep 94 18:16:30 EDT
+        You may add an annotation
+
+        Define    an    advisor  named      cs-advisor         that uses   some    meaningful       combination            of the
+     sample strategies we gave you in the code.            Call the conference function with your cs-advisor
+     and the interactive-student.                    For   Problem   1, turn   in the   listing of  your cs-advisor
+     definition and a brief sample of the advisor working correctly.
+
+      Figure 1. How annotations appear within a document.     The annotations list is delimited by horizontal rules. Note the
+             tree structure: the second and third annotations are both replies to the first, and are indented accordingly.
+
+as appropriate.   We refer to each such place as an               through a conversation using information about the
+annotation point.    When you are reading a document              subject, author and date of each related annotation.
+and reach an annotation point, you see links to all the           Below    the  list   of   related annotations            are  three
+existing annotations at that point.   Each link shows the         triangular navigation buttons, pointing left, upwards,
+title (or subject) of the annotation, the name of the             and down.    The left and right triangles take the reader
+person who made it, and the date. The annotations at a            to the chronologically previous and next annotation at
+given point are arranged into a tree, so that replies to a        that annotation point. Thus it is possible to follow the
+given  annotation    appear    immediately     below   and        discussion at a given point in chronological order,
+indented with respect to it.   Thus the structure of the          rather than in terms of the tree which encodes the reply
+display reflects the reply structure of the conversation.         structure. The upward triangle returns the reader to the
+     An example      of  how   an     annotation    point is      document     itself, at the   annotation point           where   the
+displayed    is shown    in Figure     1.     The   original      current conversation is rooted.
+document being displayed contains the text above and                  Users    add   annotations    by filling       out      a form,
+below the two horizontal rules.       The rules and the text      specifying a subject and text.     The date and name of
+between    them  are  inserted by     the CoNote    system,       the user are filled in automatically by the system.              By
+because the author has specified an annotation point              default, annotations      are entered  in plain          text,   but
+just after the  text "Problem   l 11. There   are a total of      people knowledgeable in HTML may enter HTML
+seven annotations at this annotation point, three of              formatting codes if they wish.     Each annotation point
+which annotate the document itself and the remainder              has a link to the form for adding an annotation, which
+of which are replies to other annotations.        The first       is denoted by the link add an annotation. There is also
+annotation has two replies to it, which are so indicated          a "Reply" button on each annotation.               Annotations
+by indenting them one level (replies to replies would             entered  as  replies    are automatically    linked           to the
+be further indented, and so on).  The "smiley face" icon          annotation that they pertain to.
+indicates  annotations   made    by    an   author  of    the         In addition to accessing annotations when reading
+document;    these   are referred     to   as authoritative       or browsing documents, it is often useful to be able to
+annotations.                                                      search   for  annotation      information    according            to
+     The annotation titles are active links.   Selecting a        attributes such as when the annotation was posted,
+link displays the annotation in full. An annotation               what document it was posted on, who the authors were,
+display shows the title, the name of the person posting           etc. Thus there is a forms-based search interface that
+the  annotation,  the   date and      the annotation   text.      searches   a given    set of  documents   for       annotations
+Following the text are links to those annotations that            matching some query, and then displays a tree structure
+refer to this one (if any) and those annotations that this        of just those annotations. The selected annotations can
+one refers to (if any).  This allows the reader to move           then be accessed in the normal fashion.
+
+CSCL '95 Proceedings                                           85                                                     October 1995
+3.  Conceptual Model                                             annotations, including any corrections or clarifications
+The CoNote model of the collaboration process is                 posted by course staff (document authors).             This tends
+based on the concept of a document group, which is a             to focus activity on the online versions of problem sets,
+set of people who share a collection of documents.               particularly as the due dates approach. For example, in
+Each person in a group has a certain    role with respect        the first 57 days of the current semester (from Jan 20,
+to the documents in that group.   The possible roles are         1995 to March 17, 1995), 428 annotations have been
+viewer,   reader,   u ser  and    author, where each of          made, and          these have    been    read   7704  times.         The
+these roles has more access to the documents than the            distribution of the number of annotations read over
+one   before.   A   viewer    may  view     an  annotated        time shows a strong correlation with the due dates of
+document, but can't see the annotations on it. A reader          problem sets, as illustrated in Figure 2.
+can also see the annotations, but can't add any. A user
+may read and add, and an author may read, add, and
+also delete annotations.  In addition, annotations added
+by an author are considered authoritative and marked
+as such .
+    A person may have a different role in different
+groups.   For example you might have the role of an
+author in one group and be a reader in another.     Groups
+can also define a "default" role, providing some level
+of access to unregistered users.   If there is no default
+role, then unregistered    users  are not permitted      any
+access to the documents or annotations in the group.
+    Although annotations appear to the user in-line in
+the document, they are stored in a separate database,and are interpolated into the document when it isdelivered to the user.Thus the document itself is not12*234Figure 2.Annotations read per day by problem set due date.Note the double dip for problem set two, which was postponed.
+changed in any way by the annotations, and indeed it is
+usually stored read-only.     This also means that the
+same document can appear in more than one document                   The 73 users of the system have read an average of
+group,    where each   group     has  a disjoint    set  of      105 annotations apiece in this two month time period.
+annotations on the document.                                     Some users read only a few, while a few read nearly all
+    A document group consists of a set of users, each            of them. Figure 3 shows the distribution of how many
+with a specified role, and a set of documents.      The set      users read a given number of annotations.
+of users is specified by a roles definition, which lists
+each user and the role he or she has for that document
+group.    The  documents   of  the   collection are  eachspecified by a document definition, which names the16.--..--....--.--,--r---.---.r--..--..--.
+document, lists the location in the file system where                            14
+the text is stored, and may also list the locations of the                       12
+annotation points within the document (see below).                               10
+      Each document in CoNote has a unique name,
+the   docid, which is a composite of the names of the                             8
+document   group and the document definition.    Further,                         6
+each annotation point has a name unique within the                                4
+document.     The   author assigns    these names   whendesignating potential sites for annotation.Finally,2
+annotations at a point are numbered chronologically.                              0  ...._.,__..,__....__.__.___.__._...._......._0306090 120150180210240270300330
+                                                                 Figure 3. Number of users who read between n and n+30
+                                                                 annotations.       The peak (16) shows that most people read
+4. ExperienceWe have used the CoNote system in Computer Science  between 30 and 60 annotations, with the number falling off moreor less linearly.Three users read 240 to 270 annotations.
+212 (CS212), since the Fall of 1994.      This class had
+about  90  students  last  semester,  and   has about    65          In using CoNote, we have observed a number of
+students  this  semester.     All of  the   lecture notes,       interesting things.          One of the authors (Huttenlocher)
+handouts and problem sets for the class are available            has taught CS212 for 6 years.            The Fall 1994 semester,
+on the CoNote Web server.      The definitive versions of        in which   we        used    CoNote  for    the first time,        had a
+the   problem  sets are   the online  versions;     that is,     considerably         tighter   grade distribution     than        in any
+students are responsible for the information in the              other semester he has taught the course.              In particular,
+
+CSCL '95 Proceedings                                          86                                                        October 1995
+there were many fewer students at the tail end of the                connections    (the remainder       will  be    activated this
+grade distribution.  Of course this could merely be                  summer).   Thus, we would expect that dorm access
+random fluctuation, but there is anecdotal evidence that             will  increase  further   in the    fall, as  many   students
+the shared annotations were particularly helpful to the              currently are not directly connected to the campus net.
+students at the lower end of the grade curve.   One of                    A major role of CoNote has thus been to enable
+the main problems for such students is that they get                 students to work as a group from their dorm rooms,
+stuck    on  the   problem   sets,  which   are   large              rather than having to go to a special laboratory with
+programming assignments.     Often they fail to complete             many   machines.       It provided        opportunities    for
+these assignments, which are nearly half of the grade in             "conversation" outside of the ordinary class- and lab
+the course.  This appeared to be much less prevalent.                room locations.    Many students listed this as a major
+Moreover, several students commented in office hours                 advantage of CoNote on the course evaluation forms
+that they   found  the annotations   useful because  it              from  last semester.      Another     advantage    from    the
+showed them that other students were also confused.                  instructors' point of view is that CoNote provides all
+Simply knowing that they were not alone seemed to                    the  students  with  the  same      access   to  information.
+make a big difference.                                               When many students are working in the lab room,
+     The annotations were clearly a part of the course               subgroups tend to share hints and information.          Often
+materials, students often referred to annotations when               these hints are wrong, and students can waste a lot of
+asking questions in lectures, recitations or office hours.           time as a result.   The   fact   that the    annotations   are
+Students also developed high expectations about the                  available to the entire class, and that both students and
+turnaround time for having questions answered. They                  staff can  correct   misunderstandings,         significantly
+would often send email to course staff pointing out that             improves on this.
+they had an unanswered annotation from a few hours
+ago. Prior to the use of CoNote, it would have been
+unrealistic for them to expect answers in less than a                5.  Conclusions
+day (as they would have to find a course consultant,                 Thus far, CoNote appears to be quite useful in teaching
+TA, or the professor). It should be noted that many of               and   learning.    We    have   found      that  the  shared
+the  questions    posted  on the   problem  sets  were               annotations   model    enables   people      to find relevant
+answered (correctly) by other students.     Thus, while              discussions easily, by embedding the discussions in the
+the system did put an extra load on the course staff in              context of a set of documents.        The system is being
+terms of having to check for unanswered questions in a               actively used by students in CS212, and has become an
+timely manner, it did not necessitate staff answering all            integral   part  of  the  course.         It is  particularly
+of the questions.                                                    encouraging to us that students have often been able to
+     Students used CoNote not just in the laboratory,                answer each other's questions.
+but also from home (dormitories or off-campus).  Table                    We  see   a number      of opportunities     for further
+1  shows    the number   of accesses to CoNote    from               investigation.     For   instance,   we    could   post   each
+various locations.                                                   student's solutions after the due date, allowing students
+                                                                     to compare their approach with that of others and to
+            Table 1. Number of CoNote Accesses.                      critique the style and format of other solutions.     Just as
+                                                                     in writing texts, there is much to be learned by reading
+            CS212 lab room            27,186                         and   commenting     on   writings    by     other   students.
+            dormitory net              15,328                        Second, we have a number of suggestions from the
+            Cornell dialup              7,641                        students to consider.     One common request was theability to delete one's own notes.We find a number of
+            CS department               5,624                        annotations   are  later followed    by    "oops"  messages.
+            other Cornell               2,520unknown or outside146   Should these publicly visible mistakes be removed onthe grounds that they are clutter, or should they remain,as encouraging evidence that even the best students
+            total accesses             58,445                        (and  even  course    staff)    are sometimes      confused?Third, we'd like to apply CoNote to other kinds of
+                                                                     collaborations.   In the teaching environment, there's a
+                                                                     clear distinction between the authors (course staff) and
+                                                                     users (students), in that authors are assumed to be
+     The course laboratory room was the most used site               authoritative. While this may be so in teaching, it is
+(about 46% of the accesses), but nearly 40% of the                   less likely true in other collaborative contexts.     Fourth,
+accesses came either from the dormitory network or                   we'd like to consider annotation of other media types
+the campus dialups (from students living off campus or               besides text, e.g.  graphics.   Finally, we are working on
+in dorms not yet wired to the net). Approximately 25%                a reimplementation of CoNote which will be both
+of   the dormitory  rooms    on campus  have    ethernet             faster and more secure than the current version.
+
+CSCL '95 Proceedings                                              87                                                    October 1995
+           Authors' Addresses
+Davis: Xerox Corporation, Design Research Institute,
+Cornell University, Ithaca, NY 14853;
+davis@dri.cornell.edu; Huttenlocher:  Computer
+Science Department, Cornell University, Ithaca, NY
+14853. dph@cs.cornell.edu.
+
+Further information about CoNote can be found on the
+CoNote home page:
+http://dri.cornell.edu/pub/davis/annotation.html.
+
+CSCL '95 Proceedings                                      88                                           October 1995
+
