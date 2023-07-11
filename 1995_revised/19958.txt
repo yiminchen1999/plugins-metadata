@@ -1,0 +1,185 @@
+                   Collaboration through Concept Maps
+
+                                Brian R. Gaines and Mildred L. G. Shaw
+
+                                          Knowledge Science Institute
+                                             University of Calgary
+
+                      Abstract                                 2. Concept Maps
+Concept    maps have  been used in education, policy           Many   disciplines                         developed      visual  languages                                                                                      for
+studies and the philosophy of science to provide a vi          'concept                         maps',    'cognitive    maps'   and 'argument
+sual representation of knowledge structures and argu           forms.' In education, Novak and Gowin [4] developed
+ment forms. They provide a complementary alternative           a system of concept maps that has been widely applied
+to natural  language  as a means  of  communicating            in the evaluation of students' learning in the school
+knowledge. In many disciplines various forms of con            system [5]-Figure 1 shows a map from these studies.
+cept map are already used as formal knowledge repre                                                           · /Gowin
+sentation systems, for example: semantic networks in                                    Concept
+artificial intelligence, bond graphs in mechanical and                                  Kelttlibll
+electrical engineering, Petri nets in communications,
+and   category graphs in mathematics. This paper de
+scribes the design and applications of groupware con
+cept mapping tools designed to support collaboration in
+dispersed learning communities.
+
+Keywords - Concept maps, World-Wide Web, col
+laborative learning.
+
+                                                                                                                                                                                                                           e.g.
+1. Introduction                                                                                                                             jc..,,!··1
+It is no coincidence that the words image and imagina
+tion have the same roots. It has been known from early
+times that visual imagery plays a significant role in the      Figure 1. Concept map of student's knowledge.
+creative processes of many people [l]. The availabilityoflow-cost,high-performancegraphicworkstationsand personal computers has made it possible to supportvisual thinking processes in a variety of ways across awide range of disciplines, and again has led to a majorliterature on visualization [2]. There is also a large andgrowing literature on the use of computer-based toolsto support visual languages for a wide variety of structures [3].The activities reported in this article are part of along-term program of research on the technology andA wide variety of different forms of concept maphave been applied in education [6]. In management,Axelrod proposed cognitive maps as a means of representing the conceptual structures underlying decisionmaking [7]. In the history of science, the dynamics ofconceptmapshavebeenusedtorepresenttheprocesses of conceptual change in scientific revolutions[8, 9]. In the philosophy of science, Toulmin [10] developed a theory of scientific argument based on typedconcept maps.
+applications of computer-based collaborative systemsto support individuals and groups in creative visualization.Thisreportfocusesonourstudiesofconcept3.KMap: A Concept-Mapping ToolWehavedevelopedageneralconceptmapping       tool
+mapping techniques, their implementation on personal           called KMap                           [11, 12] which     provides a  grapher                                                                                     for
+computers, their use in collaborative learning over digi       nodes and arcs that can be programmed by the user to
+tal networks, and their integration with World-Wide            support different forms of concept map. User interac
+Web (WWW) servers and browsers.                                tion with KMap takes place through the creation of
+                                                               statements in the visual language, and through interac
+                                                               tion with such statements through popup menus whose
+
+CSCL '95 Proceedings                                       135                                                                      October 1995
+content is specific to node type. The action initiated is                                                                        Figure 3 shows a user interacting with a map of
+context-sensitive: to the node selected for the popup, to       multimedia materials concerned with the identification
+nodes linked to it, and to other nodes preselected by           of birds. The map gives an overview of the topic and
+clicking on them. This allows complex activities to be          acts                                                              as an      index      to    available               material.        As the     user
+initiated by natural user actions.                              mouses over a node a popup menu symbol appears.
+    Figure 1 was drawn in KMap, and Figure 2 shows              Clicking on this displays a menu that can be used to
+one of local  applications     [11] in graduate education       access the material, display text, play a sound, run a
+where students are introduced to the structure of a re          movie, and so on. The menu is.generated from an un
+search program    through     an interactive concept map        derlying script, and user actions are reported to the
+that may be edited and linked to their own research.            script. The material accessed can be retrieved using
+The node types and content may be edited by the stu             either standard facilities for sound and movie playing
+dents, as may a database of information attached to the         within the application, or through commands which
+nodes that provides links to other concept maps and             initiate                                                             another     application                    and    appropriate              dataset.
+files, either locally or across the Internet. For example,      The actions can include the opening of other concept
+the student has moused over a node on objectives con            maps so that is possible to index a large body of mate
+cerned with the determination of the current state of the       rial through layers of connected maps.
+art, and moused down when the cursor changed to a
+popup menu icon to access a menu giving access to a                                                                               Sound                           Swallows
+local file of her supervisor's notes and a WWW file of                                                                             r:om:.,I
+her own notes put up as part of a course.                                                                                   T.,l
+                        slit
+
+                                                                Figure 3.                                                               Concept map of multimedia materials.
+                                                                                                                                 Figure 4 shows the generation of the visual lan
+                                                                guage used in Figure 3. The designer generates nodes
+                                                                of different types appropriate to the domain of materi
+                                                                als to be accessed. The visual features of each type can
+                                                                be designed to be distinctive and attractive. The script
+                                                                can associate simple retrieval activities for each type
+                                                                dependent on the data stored with each node, or, since
+                                                                it has full access to the concept map, can take context
+                                                                sensitive actions as appropriate.
+                                                                                                                                                                Swallows
+                                                                                                                                 S"o"un"d"'
+                                                                                                                                               IColorlR            I                                         I
+                                                                                                                                                 O Head    ® Body                                             k
+                                                                                                                                               OFremeOFill
+                                                                                                                                              ......                -CIiek   \o     IjRoctca,.l·I
+                                                                                                                                                                    IFra.ctl            fttorlzontal 1  
+Figure 2. Concept map on graduate research.                                                                                                                     1u...t1cal I           UU...tlcal D
+    KMap is programmable through the Apple high
+level object event protocol, and can be scripted by any
+of the languages in Apple's open scripting architecture.It can also run scripts triggered by user interaction. The                             T:!'°"I
+combination of these capabilities enables KMap to beintegrated with other applications, and user interactionwith graphical structures in the visual language to be··1Gett1ene1athctlon·...._, ..DoChlngo(a)·11!..·n ·"tr:T:-:::.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.
+used to control any activity supported on the host com          Figure 4.                                                               Entering concept map types to define a visual lan
+puter or network.                                               guage.
+
+CSCL '95 Proceedings                                        136                                                                                                                                         October 1995
+4. Collaborative Access to Concept Maps                           send a message to Netscape requesting that the url
+One of the major objectives of our research in the last           "http://ksi.cpsc.ucalgary.ca/PCP/PCP1nto.html#4"      be
+two years has been to port all our interactive systems,           fetched. This is a section of an HTML document that
+currently on personal computers and local area net                NetScape then displays. Clicking on other nodes in the
+works,  to  operate effectively in the open,   wide     area      concept map causes Netscape to navigate to different
+networking of the Internet, and, wherever possible, to            sections of this document.
+integrate seamlessly with World-Wide Web. However,                   KMap is currently implemented only for the Apple
+the graphic primitives necessary for interactive concept          Macintosh and hence can act as a client helper only on
+maps are not provided in HTML and it is a challenge to            Macintosh computers. We are currently working on
+port concept maps to WWW.                                         ports to Windows and Motif which will make KMap
+    It proved simple to operate KMap as a WWW                     helpers   available on all major  platforms. However,
+client  helper,  capable   of accepting concept        maps       there will always be users who do not have, or want to
+brought   across  the    WWW    by a browser    such     as       use, the helpers but where it is appropriate to provide
+Netscape, and of requesting arbitrary files, including            non-editable concept maps as clickable maps in HTML
+concept maps, to be fetched through messages sent                 documents. We have interfaced KMap as an auxiliary
+from KMap scripts to the WWW browser. Figure 5                    server  through the   common     gateway   interface  to
+shows  an   HTML    document    in Netscape  which      has       MacHTTP to allow the same concept maps to be used
+links to KMap documents.                                          as clickable maps.
+                                                                     Figure   6  shows   the file  fetched when the    user
+                                                                  clicks on the "access the same KSI material" in the
+                                                                  second paragraph of the document of Figure 5. KMap
+                                                                  converts the concept map to a GIF file and delivers it
+                                                                  as an image that Netscape can read.
+
+                                                                  Figure 6. KMap acting as a server through the common
+                                                                  gateway interface to MacHTIP.
+                                                                     Clicking on the node "Geometry of Psychological
+                                                                  Space" sends the coordinates of the point clicked back
+                                                                  to KMap on the server which then takes the same ac
+                                                                  tion as if the map had been clicked in a helper. Thus
+                                                                  KMap supports the use of concept maps on World
+Figure 5. KMap acts a client helper application to the            Wide Web through client helpers and server gateways
+Netscape browser.                                                 in an integrated way.
+    When the user clicks on the hypertext link "accessthe KSI material" at the top of the screen, NetscapefetchesaKMapfile"KSI.KSS"whichitpassestoKMap which open and displays it as shown in theKMap window at the middle right.Clicking on the node "Geometry of PsychologicalSpace" at the right ofthis map causes KMap to send amessage to Netscape requesting that the file with url"http://ksi.cpsc.ucalgary.ca/WebMap/Geometry.KSS"be fetched. This is a concept map of the structure of anarticle that opens in another KMap window shown atbottom right. Clicking on the node "Constructs andConcepts" in the center of this map causes KMap to5. Applications to Collaborative LearningWe have previously reported experience in the use ofconcept maps to support creative processes in collaborative learning situations [11]. Our approach has beento have individual students develop concept maps fortheir domain of interest and link them to associatedmaterials. Other students then critique these maps,modifying them, or adding to them, to provide alternative versions.Sometimesconsensualmapsaredevelopedbynegotiation.Atothertimestheabsenceofsuchconsensus is the major learning experience since it
+
+CSCL '95 Proceedings                                          137                                              October 1995
+demonstrates the plurality of incompatible perspectives      3.     Glinert, I.P., ed. Visual Programming Environ
+available.                                                         ments:   Paradigms   and    Systems. 1990,  IEEE
+    Students working in collaborative groups usually              Computer Society Press: Los Alamitos, Califor
+divide responsibility for the domain, and produce net             nia.
+works of linked maps and associated materials. These
+can grow to become very complex, particularly if they        4.   Novak,    J.D.,  A   Theory  of  Education.  1977,
+are part of long-term activitie such as those of a re             Ithaca, Illinois: Cornell University Press.
+search group.
+    One of the problems in the past has been to sup          5.   Novak, J.D. and D.B. Gowin, Leaming How To
+port concept mapping across distributed groups, and to            Learn. 1984, New York: Cambridge University
+make the materials developed more widely available.               Press.
+The move to World-Wide Web overcomes the limita
+tions of tools operating only on local personal comput       6.   Lambiotte, J.G., et al., Multirelational semantic
+ers, and the capability to use concept maps as WWW                 maps.  Educational   Psychology     Review, 1989.
+"clickable maps" makes it possible to provide access to           1(4): p. 331-367.
+material to anyone using any platform with a WWW
+browser.                                                     7.   Axelrod, R., Structure of Decision. 1976, Prince
+                                                                  ton, New Jersey: Princeton University Press.
+6. Conclusions
+Concept maps have a long history of being used in            8.   Nersessian, N.J., Conceptual change in science
+support of learners and, in general form, to support a            and in science education. Synthese, 1989. 80(1):
+wide variety of visual thought processes in individuals           p. 163-184.
+and groups. This article has shown how computer
+based concept mapping tools may be used to support           9.   Thadgard,    P.,  Conceptual     Revolutions. 1992,
+collaborative learning by sharing maps on personal                  Princeton, New     Jersey: Princeton  University
+computers, working together on linked maps on differ              Press.
+ent workstations, and sharing maps across World-Wide
+Web. In particular, it has shown that a single tool can      10.  Toulmin,     S., The   Uses   of Argument.   1958,
+be designed to have the flexibility to operate in all             Cambridge, UK: Cambridge University Press.
+these modes. The class library architecture used to im
+plement KMap is described in detail elsewhere [13].          11.  Gaines, B.R. and M.L.G. Shaw, Supporting the
+    The graphic capabilities necessary to support in               creativity  cycle through    visual  languages, in
+teractive  concept mapping  are currently missing   in             AAA]   Spring   Symposium:     Al and  Creativity.
+WWW protocols and browsers. We see them as a ma                   1993, AAAI: Menlo Park, California. p. 155-
+jor omission, and are committed to providing concept              162.
+map support on WWW, through client helpers for the
+major platforms that will ultimately support maps em         12.    Gaines, B.R.   and M.L.G.   Shaw,  Concept maps
+bedded in documents through OLE II and OpenDoc                    indexing multimedia knowledge bases, in AAAI-
+protocols.                                                        94 Workshop: Indexing and Reuse in Multimedia
+    We believe that concept mapping techniques ac                 Systems. 1994, AAAI: Menlo Park, California. p.
+cessible  through  the World-Wide Web  will   provide             36-45.
+significant support for many forms of collaborative
+learning.                                                    13.    Gaines, B.R., Class library implementation of an
+                                                                  open architecture knowledge support system. In
+                                                                  ternational Journal Human-Computer Studies,
+               Acknowledgments                                    1994. 41(1/2): p. 59-107.
+This work was funded in part by the Natural Sciences
+and Engineering Research Council of Canada.
+
+                     References                                             Authors' Addresses
+1.   Arnheim,   R.,  Visual Thinking. 1969, Berkeley,        Brian R. Gaines and Mildred L G. Shaw: Knowledge
+     California: University of California Press.             Science Institute, University of Calgary, Calgary, Al
+                                                             berta,  Canada     T2N     1N4.    {gaines,  mildred}
+2.   Nielson, G.M. and L. Rosenblum, ed. Visualiza           @cpsc.ucalgary.ca.
+     tion '91: Proceedings of the Second IEEE Con
+     ference on Visualization. 1991, IEEE Computer
+     Society Press: Los Alamitos, California.
+
+CSCL '95 Proceedings                                     138                                              October 1995
+

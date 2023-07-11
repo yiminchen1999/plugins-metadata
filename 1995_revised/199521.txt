@@ -1,0 +1,189 @@
+                                A Cooperative System
+                     for Collaborative Problem Solving
+
+                                  Gellof Kanselaar and Gijsbert Erkens
+
+                             Department ofEducational Sciences, University of Utrecht
+
+                     Abstract                                  mental process of internalization of social activities.
+In the DSA-project (Dialogue Structure Analysis of in          Furthermore notions like cognitive apprenticeship, an
+teractive problem solving) we are studying the relation        chored instruction and scaffolding partly seem to be
+ship between the cognitive aspects of information pro          based on a cooperative paradigm.
+cessing and the communicative process of information               As for the role computers play with regard to edu
+exchange during cooperative problem solving. On the            cation, the focus is on the construction of computer
+basis of analyses of dialogues of students collaborating       based, multimedia environments: open learning envi
+on a problem solving task, a prototype of an 'intelli          ronments  which may  give     rise to multiple authentic
+gent' computer-based cooperative system has been im            learning experiences [3].  The     cooperative aspect is
+plemented.                                                     mainly realized by offering computerized (intelligent)
+    This program, the 'Dialogue Monitor', is the cen           tools which can be helpful for collaborating students in
+tral part of a computer-assisted educational program,          solving the task at hand. Cooperative systems aimed at
+which acts as a simulated student and which collabo            working together in one way or another with a student
+rates with a human student in jointly solving this pro         or a group of students, is another approach. In this ap
+blem task. In this paper we will focus on crucial as           proach a computer-based 'intelligent' partner or a simu
+pects of cooperative  interaction in problem-solving           lated peer student is used to facilitate the effects of co
+learning situations, which we found hard to implement          operative learning [4, 7, 10]. In order to implement a
+in our system. These aspects concern the complex in            cooperative system as a partner in this sense, the em
+teraction between task strategies and communication            phasis will have to be on the requirements for commu
+processes during collaboration. Real collaboration re          nication and interaction between the collaborating part
+quires that the cooperating subjects acquire a common          ners, i.e. the system and the student(s).
+frame of reference in order to negotiate and communi               However, we lack specific knowledge about the
+cate their individual viewpoints and inferences.               way students communicate and thereby coordinate their
+                                                               information processing while collaborating in problem
+Keywords - cooperative learning, intelligent tutor             solving contexts. When students cooperate and com
+ing systems, human-computer interaction.                       municate  in natural language,      information  is ex
+                                                               changed, not only concerning the problem itself but
+                                                               also about meta-cognitive aspects such as the plausibil
+1.    Introduction                                             ity of the information and beliefs about the state of the
+Contemporary views on learning and technology stress           information of the other [8].
+the importance of collaborative   learning.  Computer
+and telematics based   environments  seem   especiallysuited for such learning.2.CooperativeProblem  Solving
+    Research on cooperative learning in education has          At the Utrecht University, the DSA-project ("Dialogue
+a long-standing tradition. In recent educational research      Structure Analysis of interactive problem solving") is
+cooperative learning is re-emphasized [2]. This empha          concerned with research on the relation between infor
+sis follows a reformulation of learning as a process of        mation processing and information exchange during
+enculturation in recent constructivistic or situated learn     cooperative problem solving. In this project a simula
+ing views on cognition and instruction [3, 5] Aspects          tion-program has been constructed that models a coop
+of cooperation play a central role in the constructivistic     erative peer student on a problem-solving task.
+approach of learning. Peer cooperation is seen in a Vy
+gotskian way as an intermediate stage in the develop-
+
+CSCL '95 Proceedings                                       191                                               October 1995
+2.1.  Cooperation     task                                     ter type of questions function, mostly, to check infor
+The task that is used to study the relation between in         mation exchanged. Furthermore, the students are very
+formation exchange and information processing during           concerned  with    the plausibility  or certainty     of the
+cooperative problem solving is called the "Camp Puz            propositions transferred or inferred by themselves or by
+zle". It is meant for students from the highest grades of      their partners (25% of the utterances have an explicit il
+elementary school (10-12 years old). The Camp Puzzle           locution part). Several plausibility levels (five in our
+may be compared to the so-called "Smith, Jones and             model) can be distinguished, depending on the source of
+Robinson" problems. In this kind of logical problems           information and on the depth and complexity of the in
+one has to combine different statements of information         ference procedure.
+in order to derive some characteristics of a specified
+group of individuals. However, in the Camp Puzzle              2.3. Dialogue      Monitor
+this task information has been split (in two 'letters' of      Based on analysis of the dialogue protocols a prototype
+children in this group) and has been distributed among         of a Dialogue Monitor for a cooperative system was
+the two cooperating partners. By this splitting of in          developed, simulating a cooperative student. The 'Dia
+formation cooperation becomes necessary in order to            logue Monitor' program has been experimentally used
+complete the task.   The students have to infer several        with 51  students  (10-12     years) of two elementary
+characteristics of the six children mentioned in the task.     schools. The architecture model advanced in this pro
+Each of the two partners receives a letter which con           gram  will be   used      for further   development      of
+tains different information about the children mentioned       'intelligent' computer-based cooperative systems. In
+in the task.                                                   the model of the Dialogue Monitor five components,
+                                                               functioning as separate modules, may be distinguished.
+2.2.   Cooperation     dialogues                                    The 'Problem      Solving   Component'   contains
+In two research projects the Camp Puzzle was assigned          knowledge about the content of the task and its domain
+to couples of students in the highest grade of elemen          and is able to apply inference procedures in order to
+tary school (72 and 20 couples). Their task-dialogues          solve this type of problems. The 'Dialogue Processor'
+were collected on video or audio tapes. By means of a          contains expertise about interaction processes in gen
+comprehensive system the utterances in the dialogues           eral and has strategies for generating communicative ac
+could be coded along three main characteristics: content       tions: i.e. argumentative, supporting and eliciting sce
+(in the form of a proposition), dialogue-act and illocu        nario's. In the 'Alter Component' a discourse history is
+tion. The dialogue-act represents the communicative ac         been updated in the ongoing dialogue. Based on this
+tion of an utterance, for example:   question, proposal,       history a belief-system about the current activities of
+denial, statement, etc. The illocution part of an utter        the partner is construed.
+ance provides the listener explicit information on how              The 'Central Focusing Processor' contains the co
+to interpret the information transferred. In most cases        operation strategies. The general task of the Central
+the illocution concerns the certainty of the information,      Focusing Processor is to interpret and check incoming
+for instance "I am not sure that..".                           utterances of the partner and to generate utterances itself
+     From analyses of the cooperative task-dialogues, it       in a reacting or initiating way. The communication
+was learned that mutual coordination and communica             with the program takes place with the 'Menu-Based
+tion of relevant information and inferences during o           'natural language' Interface'. By means of interconnected
+operative problem solving is a complex intertwined and         menu's the student can select constituents of the utter
+dynamically changing process. The topical structure in         ance he/she wants to make [9]. The selections made by
+the argumentative dialogues coincide with the sub              the student are translated into a grammatically correct
+problem structure of the task. However, the sequence of        sentence. With the interface a large amount of different
+sub-problems is not rigid and a solution path has to be        sentences can be made (about 3.2 million).
+found. For this purpose, topics have to be initiated,
+tried and evaluated in the ongoing dialogue. Remark
+ably, topics are seldom explicitly proposed, but are ini       3.   Implementation           of Interactivity
+tiated implicitly by exchanging relevant information
+concerning a topic.                                            3.1.  Coordinating
+     Most of the dialogue-acts in the Camp Puzzle are          When we look at sequences of communicative actions
+informative, supportive or argumentative. Contrary to          that occur frequently between human students, we can
+what one would expect, the dialogues contain very few          distinguish some prevailing dialogue-patterns. Every
+open questions (e.g. "Do you know the sports of Jan            phase in the problem solving process has its congruent
+?"). The students seem to hold on to another Coopera           pa..'1 in the topical structure of the task-dialogue:
+tive Principle (compare Grice, [6]): "If my partner has
+found something interesting, he will tell me, I don't
+have to ask for it!". Yes/No questions are found more
+frequently (e.g. "Does Jan play volleyball?"). These lat-
+
+CSCL '95 Proceedings                                       192                                              October 1995
+�    Problem definition - ProposingInitiating and agreeing about the next topic of disDialoguefragment(translatedfromDutch)
+     course, i.e. the next sub-problem to be tackled.
+                                                                I    M: "Let's search: the city of Peter."
+�    Information search - Informing                             2    M: "Children living in Haar/em, sleep next to each
+     Searching for relevant information in information               other; that is in my letter."
+     sources, including communicating and eliciting in          3    A: ''And Peter comes from Sittard; that is in my
+     formation from the partner.                                     letter."
+�    Inferencing - ArgumentingGetting a joint understanding about the way of4M: "Oh, ..."5M: "We can write that : Peter comesfrom Sittard."
+     combining the relevant information.                        6    M: "I'll write that!"
+                                                                     [i.e. fills the solution in the solution-matrix]
+�    Evaluation - ConcludingEvaluating and agreeing upon a possible solution.7A: "Peter does the same sports as Mary; I am sureof that."
+�    Finishing - Topic closure                                  8    M: "Oh..."
+     Writing down a solution or giving up.                      9    M: "The sport of Peter; that is not in my letter."
+                                                                IO   A: ''And only one child is playing  volleyball, that
+                                                                     is in my letter. "
+     Coordination occurs by means of signaling, asking          II   M: "Only one child is playing volleyball."
+for attention before new information is transferred, andby means of explicitly accepting and re-concluding before writing down the solution. By these means, bothpartners explicitly make sure that they share the same12M: "I don't know that."I3M: "ls only one child playing volleyball ?"14A: "Yes; that is correct."
+understanding of the problem. However, a lot of coor            16   M: "So, only one child is playing volleyball"
+dination is achieved by implicit means. With respect to         17   A: "Ann comes from Assen."
+the implementation in the Dialogue Monitor, we tried            I8   M: "Yes, Ann comes from Assen, that fits."
+to solve this by the interpretation of a verbal act ontwo levels: locally (the dialogue-act) and in regard to20M: "That is in the solution-matrix. "
+the topical structure (topic-step). In general however, a       Figure 1. Dialogue between a 12 year-old male student (A:)
+cooperative system should deal with this multiplicity           and the Dialogue Monitor   (M:).
+of functions of discourse acts in the situated context of
+the ongoing dialogue.
+                                                                     As can be seen in the fragment, the dialogue has a
+3.2.  Mixed   initiative                                        "natural" stance with a lot of implicit proposals, ellip
+Both system and student have to be able to take the ini         sis ("Yes",   "Oh"),    non-specific replies, plausibility
+tiative in interaction. They must be able to take initia        checking (13) and unexpected topic-shifts (7, 17) of the
+tive in asking questions, in making remarks, in trans           partner. In the first topic (the city of Peter) the monitor
+ferring information, in suggesting solutions. However,          takes the initiative (1) and the student follows. The
+questions for implementation concern the "when" and             second topic on the same subject (sports of Peter) is
+"what then" of taking initiative. When should the sys           initiated by the student (7) and accepted by the monitor.
+tem take the initiative? And how should the program             When this topic fails, the student initiates a sub-prob
+react on an initiative of the partner? Being concerned          lem (17), which already has been solved
+about taking initiative in the interaction is not a trivial
+matter, as most user-system interaction systems wait            3.3.  Checking
+for a reaction of the user ('press enter or OK-button').        One of the main findings of our analyses of the proto
+As a rule a cooperative system should take the initia           cols, is that students spend a great deal of their time in
+tive if it can contribute some interesting or helpful in        these task-oriented dialogues on coordinating activities
+formation.                                                      such as checking of plausibility and giving information
+     A fragment of a dialogue between the Dialogue              about the status of information transferred .
+Monitor and a student is given in Figure 1, which il                 Checking procedures were found to play an impor
+lustrates this aspect of mixed-initiative and flexibility       tant role in the coordination of actions in the analyzed
+in change  of focus.  A fragment,   literally translated        task-dialogues. We think that before information can be
+from Dutch, is shown of the interaction of the monitor          incorporated in a cognitive representation, this check
+with a 12-year old student.                                     ing process on relevance and coherence with earlier
+
+CSCL '95 Proceedings                                        193                                               October 1995
+knowledge is necessary. People can only relate external          2.   Brown, A.L. & Palincsar, A.S. 1989. Guided,
+information to their own knowledge if it is perceived as              Cooperative Learning and Individual Knowledge
+relevant, plausible and consistent [1]. The importance                Acquisition. In Knowing, Learning and Instruc
+of "checking" the information put forward by the part                 tion. Resnick,  L.B.   (Ed.). Lawrence   Erlbaum
+ner is reflected by a checking procedure by the central               Associates, Hillsdale, NJ, pp. 393-451.
+focusing processor of the Dialogue Monitor, which op
+erates on every incoming utterance.                              3.   Cognition and Technology Group at VanderBilt
+                                                                      1990. Anchored Instruction and Its Relationship
+3.4.  Negotiating                                                     to Situated Cognition. Educational Researcher,
+If cooperation also means the negotiation of knowl                    19, 6, pp. 2-10
+edge, this implies that under specified conditions the
+cooperative system will have to 'buy' the argumenta              4.   Cumming, G. & Self, J. 1991. Learner Model
+tion of its partner, even if it counters its own conclu               ing in Collaborative Intelligent Educational Sys
+sions. We think this is a difficult problem to solve as               tems. In Teaching Knowledge and Intelligent Tu
+it concerns belief revision. In contra-argumentation,                 toring.  Goodyear   P. (Ed.).  Ablex  Publishing
+disagreeing with the line of reasoning of the partner,                Corporation. Norwood, NJ, pp. 85-104.
+one of the cooperation partners should be convinced in
+the end. The problem is to specify the conditions underwhich the program will have to loose its faith in itsown line of reasoning. We are not satisfied with therigid, standardized way the program acts in situations ofcontra-argumentation at this moment. Contra-argumen5.Duffy,T.M.,Jonassen,D.H.1991.Constructivism: New Implications for Instructional Technology?,EducationalTechnology,May1991,pp. 7-12.
+tation will be accepted if the plausibility of the own informationisminimalorifthepartnerpersistsinchanging earlier found conclusions. More research onnatural argumentation and persuasion will be needed inorder to specify the negotiating of knowledge by a co6.Grice, H.P. 1975. Logic and conversation. InSyntax and semantics,vol.3: Speech acts.Cole,P. and Morgan J.L. (eds.). Seminar Press, NewYork, pp. 41-58.
+operative system                                                 7.   Kanselaar, G., Andriessen, J.E.B., Barnard, Y.F.
+                                                                      &  Erkens,  G.  1989.  Some   issues on  the con
+4.   ConclusionIn this paper we focused on some aspects of cooperation, which in our view are crucial, but hard to implestruction of cooperative ITS. In Instructional aspects of Intelligent Tutoring Systems. Pieters, J.(Ed.). TH-Twente, Enschede, pp. 45-65.
+ment in computer-based cooperative systems. Real collaboration requires that the cooperating subjects acquirea common frame of reference in order to be able to negotiate and communicate their individual viewpoints.Natural language communication is implicit by nature,viewpoints are not always advanced, task strategies arenot always open to discussion, and so forth. While implicitness may be ineffective because it masks differ8.Kanselaar, G. & Erkens, G. 1994. Interactivityin Cooperative Problem Solving with Computers.InTechnologyBasedLearningEnvironments: Psychological and Educational foundations. Vosniadu, S., De Corte, E. and Mandl, H.(Eds.). NATO ASI Series F,Springer Verlag,Berlin, pp. 55-66.
+ences in knowledge, viewpoints and attitudes, it alsoresults in efficient and non-redundant transfer of information. Coordination in information transfer is accomplished by multifunctional dialogue acts. With respectto the implementation of computer-based cooperativesystems, this puts a heavy burden on the interpretative9.Tennant,H.R.,Ross,K.M.,Saenz,R.M.,Thompson, C.W. & Miller, J.R. 1983. Menubased natural language understanding. Proceedings of the 21st Annual Meeting of the ACL.ACM, New York, pp. 151-158.
+and generative power of the program. Most notably, itshould deal with the functions of discourse acts in thesituated context when interpreting verbal acts of itshuman partner and it should use those same functionswhen generating its own verbal acts.10.VanLehn, K., Ohlsson, S. & Nason, R. 1994.Applications of Simulated Students: An Exploration. Journal of Artificial Intelligence in Education, Vol 5, no.2, pp. 135-175.
+
+                     References1.Ausubel, D.P. & Robinson, F.G. 1969. Schoollearning. Holt, Rinehart & Winston, New York.Authors'AddressesGellof Kanselaar and Gijsbert Erkens: Department ofEducationalSciences,Heidelberglaan2,3584CSUtrecht, Netherlands. {kanselaar, erkens} @fsw.ruu.nl.
+
+CSCL '95 Proceedings                                         194                                            October 1995
+

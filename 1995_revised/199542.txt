@@ -1,0 +1,194 @@
+        Collaborative Learning as Interplay between
+                Simulation Model Builder and Player
+                                 Kurt Schneider1 and Kumiyo Nakakoji1 2 ,
+  1Department of Computer Science and Institute of Cognitive Science, University of Colorado at Boulder, USA
+                 2Software Engineering Laboratory, Software Research Associates, Inc., Japan
+
+                     Abstract                                     interface allows players to interact with the simulation
+We present a simulation-based learning environment                (see Figure 2).
+that supports   collaborative    learning     as  interplay          Although we present our work in the domain of
+between a model builder and a player. The SESAM                   software   engineering     education,   we  expect    the
+system serves as a medium through which a model                   approach   and   its  computational    substrate   to be
+builder and a player communicate understanding and                applicable to   many   educational   domains   in  which
+experience about an evolving model.                               models are still evolving.
+Keywords    -    simulation-based     learning,     model         2. The Model Builder and Player Approach
+builder  player collaboration,   collaborative    environ         for Simulation-Based Learning Environ
+ment.                                                             ments
+                                                                  Models   are  formal   representations    that highlight
+                                                                  specific aspects of a much larger and more complex
+1. Introduction                                                   problem.   Models    omit   details not relevant   to the
+A  simulation-based   learning     environment     SESAM          current task and help people focus on problems at hand
+(Software Engineering by Simulation of Animated                   in "practical" situations.
+Models) has been developed to investigate software                   Most simulation-based educational systems [4, 9]
+engineering concepts and how to apply these concepts              do not support the evolution and refinement of underly
+to   practical  situations.   SESAM    simulates      the         ing simulation models. Many systems are based on the
+development cycle of a software development project,              assumption that an appropriate model already exists in
+allowing each player to participate in the role of project        the domain. Consequently, such systems completely
+manager.  The   system simulates     software     artifacts,      separate model   building   activities from   simulation
+various  types  of documents,      fictitious participants        playing activities.
+(including client and project members), and the project              In rapidly changing work domains, however, the
+evolution over time based on a model constructed by a             underlying model easily becomes obsolete. In domains
+model-builder.                                                    such as software engineering, for instance, building a
+     Our  approach   integrates     simulation      model         simulation model itself is a research activity. There is
+building and   playing with    a   learning   environment         little qualitative information available that is precise
+rather than separating the two activities. Mediated by            and unambiguous enough to base a model on. Models,
+SESAM, a model builder and a player collaboratively               rules -   any   explicit   representations     can never
+analyze   software    engineering     phenomena        by         completely cover reality [10]; some parts of current
+constructing,  validating,   and refining   a model   of a        affairs always remain tacit [6]. In these domains, not
+software project through a cycle of four processes: (1)           only students, but the model-builders themselves need
+a  model  builder  constructs    a model;     (2) a player        to learn about the domain by refining the model.
+interacts with a simulation based on the model; when                 To cope with this problem, a simulation-based
+the player experiences difficulties, he or she annotates          learning environment needs to support collaborative
+simulation runs with textual remarks and questions; (3)           learning as the interplay between a model builder and a
+the model builder analyzes the recorded simulation                player. This changes the view of collaborative learning
+run; and (4) the model builder and the player examine             from  the teacher-student    relationship  to  the model
+the  run together. The  system's    graphical     interface       builder-player relationship. As illustrated in Figure 1, a
+allows model builders to construct models via direct              model builder and a player interact through a simula
+manipulation    interaction. A text-based     menu-driven         tion-based collaborative learning environment.
+
+CSCL '95 Proceedings                                          291                                          October 1995
+   The simulation presents the consequences of the                them to adequate tasks, and by involving the client to
+player's interaction based on an underlying model. The            validate the evolving requirements." In what follows,
+player may make questionable decisions, or make mis               we present a scenario to describe how a player interacts
+takes that are anticipated by the model, which lead to            with the system through the player interface, followed
+consequential problems within the game. Making mis                by a brief overview of the model builder interface. See
+takes is a great opportunity for a player to learn. Expla         [3, 7, 8] for details.
+nations and information relevant to the problem can be
+provided, being  contextualized  within        the simulated      3.1. Scenario
+situation that the player is directly engaged in [2]. At          When Jane, a computer science student, first invokes
+the same time, it is possible that a player's actions             SESAM, a short project description is presented in the
+reveal a deficiency in the underlying model, which                What Happened window (see Figure 2-(a)). Although
+leads to implausible model behavior. Such breakdown               the given deadline and budget partially indicate how to
+situations provide a model builder with opportunities to          plan her project, she lacks important details to estimate
+analyze and refine the model by exposing tacit aspects            her project's effort. She has to take some actions using
+of practice. Thus, the model builder also learns.                 the Simulator window.
+                                                                                                                                            tubet lift  enett .·.
+                  SESAM collaborative learning                                                                              SCENARO                    Oat» Apnl3rd, 1995                   (,)
+                          environment
+
+                                                                                                                                                                               ""'06.04.flusw"     .                      ·
+                                                                                                                                                                               Ale!lrlrtiutlitthd.:.U)'Oll,aptl1l..lir1'fa,CVandm:ll'l"lt.
+
+Figure 1. Collaborative Learning between a Model Builderand a Player through SESAM.Figure1illustratestheSESAMarchitecture.The       Text··sEnglnWThoSffllltxlne.·Bo.-rcolorado, lsl,x,klrigl'ef-a hight,' i0rw.ll.Ath.t.W.1.t.1..d. dbfatretldonpgna,tnndtt1nanca1lort ansactlonswytah!eH,mls,L.NC.Ofillflf)lI:DlrtrlflfsY"l"u$nd.I"'"°Str,tHab'JOdc M.S 8.S',ln Cof'tf,. Sc!O..rSf,IpVolstl'lbotnolynoyuollol'a pptf_l'l)·'.I Nll'trto ann.aonuan·o· mitrt·o..ewtYo1.1nly,
+SESAM Machine interprets graphical models, produces                                                                                                                               Strt&Huic,xk'',
+textual simulation runs, automatically proceeds modeltime,applieseffectmodelswheneverappropriate,                                                                             _,Encl.:CV.,CVdSfflHancod,:
+keeps track of model evolution and triggers pseudorandom events.                           (c)  '----------"'                                                                  OSe Slgn). EnginHrlrQ.lti!p 0artjphasesd901twarepmjtd9(ana.l'/IIIB,E<luar.tlon:(d)B.S.tromHtwY<llkStlbe,UnlVffllly:
+
+3.SESAM                                                                                                                                 Figure 2. Screen Images of SESAM.
+SESAM was developed at the University of Stuttgart                Jane finds a long menu of possible actions (see Figure
+(Germany) as a tool for software engineering research             2-(b)).                                                             Some             of         them        (e.g.         "finish                          project") are
+and education. The system is written in Smalltalk 4.1and runs on several different platforms.A SESAM player manages a project by planningthe project, updating those plans, and then enacting theplans in fine-grained daily decisions. As project manager, players act on and react to changing situationsrepresentedbyfictitiousartifactsandstakeholders(clients and project members).Project evolution ismodeled based on the software quantum metaphor [1,7], which models functional completeness of softwareartifacts and documents quantitatively. Pre-stored statements from fictitious team members are triggered anddisplayed according to the project state and player'sinteraction.The goal of the player is "to produce required functionality and quality within the budget andschedulebymotivatingteammembers,byassigningobviously inadequate.Jane first wants to hire teammembers.She selects the "announce jobopening"entry, and the system asks her to specify the exact textof her job opening (see Figure 2-(c)).After she completes the job-opening specification,SESAMexecutesthesimulationaccordingtoheraction. At first nothing happens. Jane notices that themodel date (see the upper left comer of the Simulatorwindow in Figure 2-(c)) has been incremented by oneworking day. Writing the job opening costs her oneday.Jane takes several more actions; she introducesherself to the customer, plans and looks for informationin the company.Somesimulateddayslater(someminutes later in real time), a resume and CV appearson the screen. Steve Hancock applies for the job (seeFigure 2-(d)). Jane invites Steve for a job interview and
+
+CSCL '95 Proceedings                                          292                                                                                                                                                        October 1995
+decides  to hire   him.    Like  all  other  actions,  job     vi des  three  semi-graphical     editors         accordingly.
+interviews and hiring a developer take model time.             Building  models    does  not  require        any  significant
+      Later in the project, Jane finds herself left alone      programming.
+with very little feedback from Steve and the other team        The Entity-Relationship     (ER)  model           schema   (see
+members she hired. In meetings, she gets only superfi          Figure 3-(a)) defines entities and relationships that
+cial pieces of information on project progress (e.g.,          constitute the model world. In the situation model, the
+"We   have  about   10,000  lines  of code").   Jane  gets     initial  setup  for  the  simulation           is created    by
+frustrated and complains about this in an annotation:          instantiating  the entity types  (see       Figure   3-(b)). A
+"How    can I estimate    cost and   effort, if I have no      textual  description  of  this situation       represents    th,
+precise status information?" "What is the quality of my        context to the player. Effect model (rules) are used 11
+product? " and "What does it mean to have 10,000               describe  dynamic     behavior   of        simulated   projec
+Zoe?"   Desperate,    she invites  the  customer   for  a      participants, evolution of documents and artifacts (nc
+prototype review. To her surprise, the customer is not         shown).
+satisfied and requests several modifications. Now, all
+of Jane's   plans  must   be   updated,  all   documents
+(specification, design, code) must be reworked.      Soon      4. Discussions
+it becomes clear that the customer is good at findingflaws.At some point, however, Jane must decide tonevertheless continue development; otherwise she willSESAM allows both model builders and players to tittheir experiences and arguments to a common medium:the model and its simulated events. To foster this col
+risk schedule and budget slippage.                             laboration both in indirect (asynchronous) and face-to
+      After Jane finishes her simulation game, Jane's ad       face (synchronous) modes, the system keeps a record
+visor, Bill, reviews Jane's simulation. Because of her         of player actions together with model time stamps to
+annotation, Bill finds that Jane was frustrated by the         trace what has happened during the simulation. The
+sparing feedback from her team members. Bill also              accumulated    data  (player   actions,      invisible model
+finds that Jane's idea of inviting the customer was a          behavior,  and  final project   results)       is  a basis  for
+good    action, as it  allowed  Jane  to assess  product       discussing a simulation run in detail. When a run is
+quality. Bill explains to Jane that in reality, no one         reproduced     based  on   the  interaction          protocol,
+tells project   managers  about   their product  quality,      additional information can be captured and displayed,
+either.  Jane and Bill talk about quality assessmenttechniques that Jane could have used.Jane claims aincluding attribute value plots, effect model activationand deactivation information. Model builder and player
+real software developer would have given at least some         may also make modifications to the model and rerun it
+hint of the degree of work completion; the fictitiousteammemberStevedidnot.Bill agrees with heron the fly to see the consequences.SESAM mediates collaboration by making models
+comment and considers model extensions.                        accessible from two different perspectives: (1) a model
+                                                               builder initially accesses phenomena through the semi
+3.2. Model Builder Interface                                   graphical model notation, and (2) a player refers to tex
+The system uses three types of representations for a           tually  represented  events  that occurred         during   the
+simulation-model: entity-relationship model, rules, and        game.   The model    notations  used        in SESAM     are a
+particular situations. The model builder interface pro-        graphical, though formal representation of a project
+
+                       Figure 3. ER schema (a) and a situation graph (b) of a model used in the scenario.
+
+CSCL '95 Proceedings                                       293                                                October 1995
+                                                                                                                                                                                       OkDM.
+                                                                                                                                                                                       ODay,
+
+                                                                                                                                                                                      75 kDMI
+                                                                                                                                                                                      30 Days
+
+                                          " ""  ea F(EulleflmlleedntcaursytoRmaqeur irreaqmuelrnetmar ·........ :.,;==·nta) Budget overrun (kDM) Schedule OY81TUn (Daya)
+                                Figure 4. Overall results of the project management course.
+
+model. Informal annotation is provided to complement           isolated, mostly                                                                                           vague pieces           of advice, due  to    the
+those formal model aspects to provide expressiveness           general scope and audience they are written for.
+to players. Mediated by SESAM, model builders and                  Traditional instructionist knowledge transfer ap
+players  discuss  questions such  as "does  this  effect       proach is inadequate for such educational domains [5].
+really  occur in  software  projects?"  "what    are the       SESAM provides two perspectives on a single evolving
+reasons, and how are they represented in the model?"           model.    The model builder perspective offers semi
+and "why  is  it important  to know  this effect  and to       graphical interfaces for constructing a model to be used
+integrate it in an educational model?"                         for simulation.                                                                                           Players experience the model's dy
+    A study of SESAM with a graduate level course at           namic behavior in an adventure-game style through the
+the University of Stuttgart has demonstrated that the          player perspective.                                                                                          The system records the simulation
+approach was effective both for students (served as            runs, and players can annotate the simulation with cri
+players) and for faculties (served as model builders). In      tiques and  questions.                                                                                           Our            assessment studies have
+the study, the model used in the above scenario was            demonstrated that relatively simple models provided
+presented as an adventure game to 10 graduate students         opportunities to learn for both model builders and play
+of computer science in a project management course.            ers - in both reflective and experiential modes.
+All students were asked to play the same simulated
+project in independent, parallel games.   As illustrated                                                                                                                 Acknowledgments
+in Figure 4, results differed dramatically in terms of         We would like to thank the software engineering re
+quality  and  resource   consumption due   to different        search group at the University of Stuttgart and its head,
+management. Project distortions were tracked back to           Jochen  Ludewig,                                                                                           who   initiated         the SESAM      project.
+early  planning  or scheduling  mistakes.  The   project       We also thank Gerhard Fischer and the members of the
+which performed best (Project 2) had a project plan            lifelong  learning                                                                                          and  design            (L3D)   center at    the
+which   was  constantly  updated. Project 3 performed          University of Colorado. We thank Brent N. Reeves for
+worst; it spent a lot of effort unsystematically, which        constructive comments. This research was supported
+resulted in  large  overrun on  budget  and   the worst        by the German Academic Exchange Service (DAAD)
+quality delivered. For detailed description of the model       and Software Research Associates, Inc., Japan.
+and the course, see [1].
+    The upper part of Figure 4 represents functional
+completeness, which should be as high as possible. Thelower part gives the amount of obsolete functionality,thebudgetoverrunin1000DM,andthescheduleoverrun in days, the values of which should be as lowas possible.References1.Deininger, M.; Schneider, K. (1994): TeachingSoftware Project Management by Simulation -Experiences with a Comprehensive Model; Proceedings. of the Conference on Software Engi
+                                                                      neering Education (CSEE), Austin, Texas, Jan.
+5.  Conclusion                                                        1994
+We view learning as collaboration between a modelbuilder and a player mediated by computational environments.Softwareengineeringknowledgeisscattered. There is no concise, comprehensive modelthat is accepted by a wide range of researchers and2_Fischer, G. (1994): Conceptual Frameworks andComputationalEnvironmentsinSupportofLearning on Demand. in: C. Hoyles (ed.): TheDesignofComputationalMediatoSupport
+practitioners. Software engineering textbooks convey
+
+CSCL '95 Proceedings                                       294                                                                                                                                            October 1995
+     Explanatory Learning. Springer-Verlag, New                tation University of Stuttgart; vdf Hochschulver
+     York, NY.                                                 lag, Zurich
+
+3.   Ludewig, J. (1993): Problems in modeling the         8.   Schneider, K. (1995): Dynamic Pattern Knowl
+     software development process as an adventure              edge in Software Engineering. Proceedings of
+     game. in  H.D.   Rombach,  V.R. Basili, R.W.              the SEKE'95 Conference to be held in Rockville,
+     Selby (eds.):Experimental Software Engineering            MD; June 22-24, 1995
+     Issues:  Critical   Assessment  and    Future
+     Directions. Springer-Verlag,    Berlin  usw.,        9.   Tambe, M., Johnson, W.L., Jones, R.M., Koss,
+     Lecture Notes in Computer Science 706, pp 23-             F., Laird, J.E., Rosenbloom, P.S., Schwarnb, K.
+     26.                                                       (1995): Intelligent Agents for Interactive Simula
+                                                               tion Environments, AI Magazine, American As
+4.   McKeeman, W.M. (1989): Graduation Talk at                 sociation   for Artificial Intelligence, Vol.16,
+     Wang Institute, IEEE Computer, vol. 22, no. 5             No.l, pp.15-40.
+
+5    Papert,    S.,    Harel,  I.  (eds,    1993):        10.  Winograd, T., Flores, F. (1986): Understanding
+     Constructionism.    Ablex  Publishing   Corp.,            Computers and Cognition: A New Foundation
+     Norwood, NJ                                               for Design.     Ablex Publishing  Corporation,
+                                                               Norwood, NJ
+6.   Polanyi, M. (1966): The Tacit Dimension. Dou
+     bleday, Garden City, NY                                         Authors' Addresses
+                                                          Kurt Schneider and Kumiyo Nakakoji: Center for Life
+7.   Schneider,  K.  (1994):  Executable Models    of     Long Learning and Design, Department of Computer
+     Software Development (in German: Ausfilhrbare        Science and Institute of Cognitive Science, University
+     Modelle der Software-Entwicklung: Struktur und       of Colorado, ECOT 7-7, Campus Box 430, Boulder
+     Realisierung eines Simulationssystems); Disser-      CO 80309-0430, USA
+
+CSCL '95 Proceedings                                  295                                       October 1995
+

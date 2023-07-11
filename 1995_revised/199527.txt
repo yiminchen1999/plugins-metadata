@@ -1,0 +1,340 @@
+                A Collaborative Environment for Semi
+       Structured Medical Problem Based Learning
+
+                        Dirk E. Mahling, Bryan B. Sorrows, and lngjerd Skogseid
+
+                            Department of Information Science, University of Pittsburgh
+
+Abstract                                                      terns in the learning process.  The need to provide high
+                                                              quality group settings in education that allow to learn do
+Problem Based Learning (PBL) and Cooperative Learn            main and social skills is growing. Teachers are challenged
+ing are both supported in a rich environment for active       to give adequate support in group learning situations.
+group learning.   Groups of students are given a medical            The objective of this paper is to show that infor
+exploration environment to support learning by discovery      mation systems can support a wide pedagogical spectrum
+and exploration.  The environment implements a current        of group learning. In particular, problem based learning
+approach to problem based learning (PBL) and extends          (PBL) and cooperative learning are examined as good can
+it to support the joint reasoning and cooperation aspects     didates for educational theories for which generic system
+in medical teams.  An information system approach for a       support can be provided. A second objective is to show
+complete cooperative PBL environment, called Computer         that the generation of course-ware for such a generic sys
+Assisted Learning and Exploration (CALE), is based upon       tem can be done quickly and simply if a clear underlying
+these concepts. CALE acts as a multi-media repository for     model is chosen.
+case materials and manages the structured group access to           Section 2 introduces the general concept of problem
+those documents and user generated information. CALE          based learning while section 3 identifies ways in which in
+supports collaborative learning, exploration of facilitator   formation systems can aid PBL. Section 4 examines coop
+editable medical simulated patient cases, and access to ref   erative learning and establishes a connection to PBL. Sec
+erence materials. With the case presentation shell being      tion 5 presents the design and implementation of CALE, a
+the same for all cases, new cases can easily be added.        rich environment for active group learning. The underly
+      Keywords: Problem Based Learning, CollaborativeLearning, Exploration and Discovery Systems, Case andKnowledge Acquisition, Case Display, User Annotations,ing case structure and the design of new cases is describedin section 6, while section 7 describes a student sessionwith the system. Evaluations are reported in section 8.
+Group Support Systems, Group Tutoring Systems, Shared
+Information Spaces, CSCL Shells.
+                                                             2.    Problem Based Learning:                 A Can
+1.    Introduction                                                 didate for CSCL
+Computers are increasingly being used in education. Often     Problem based learning (PBL) differs from traditional ap
+they are used to teach computer concepts per se or tutoring   proaches to learning in that PBL centers around a problem
+programs are run to teach individual students about facts     that is presented in a context. In medical education this
+in a certain domain.  A number of educational software        context is provided by documents and views, simulating a
+packages exist, which are often developed as specialized      patient. Rather than learning facts by rote, students have
+course-ware, that is very cost- and time-intensive to pro     to apply their knowledge to work on defining hypotheses
+duce.  Rarely do   we  see computers used  to support   a     about the patient's problems, supporting those hypothe
+general learning approach and thus allow a generalized        ses with observation, facts, and background knowledge,
+approach to the production of course-ware.                    and eventually generating solution approaches. Facts and
+      The area of learning in a group, working together on a  knowledge are thus put into context and can be turned into
+problem, rather than learning facts, has received consider    medical skills [11]. In a medical school PBL environment,
+ably less attention than the above mentioned applications.    the students typically collaborate on a case in groups of
+The concept of socio-cognitive processes in learning [6, 8]   eight to twelve.  Guidance in the problem based learn
+can add a rich dimension to the quality of information sys-   ing process is provided by medical teachers who act as
+CSCL '95 Proceedings                                         218                                             October1995
+learning facilitators. The facilitators help student groups   dents group their ideas, observations, and questions into
+stay on track, provoke lateral thinking, aid in overcoming    categories: facts, hypotheses, and "need more informa
+mental blocks or dead-ends, and prevent students from         tion". Documentingthese important indicators ofprogress
+pursuing improbable avenues too far [9].                      for the next session becomes a problem in a conventional
+      Though PBL has been generally successful, the for       classroom setting. Records may differ, copies have to be
+mation ofstudent PBL groups in medicine has mostly been       made, and cross-references can not be established easily.
+a matter ofscarce resources, rather than a desired design     Worse than that, the observations that were made about a
+parameter.  Sufficient materials (X-rays, CT-scans, etc.)     certain document, say a blood-smear, are recorded sepa
+were not available to allow all students to work on the       rately from that smear. References to blots on the smear
+cases individually. Since the involvement offacilitators is   must be recreated in the next session. Cross-referencing
+extremely important, it is another constraint on the group    support and the ability to pull local and coordinated cen
+size. Yet physicians in hospitals or privatepractices rarely  tral information generated by students together with the
+work in an isolated manner. Doctors co-operate with other     supporting original documents becomes a major need for
+doctors, they rely on support personnel, and they interact    the advance ofPBL.
+within large organizations, such as hospitals or HMOs.              The use ofelectronic information systems can facil
+By acknowledging these facts, we can tum group learning       itate group communications, and can record the commu
+into an opportunity for learning joint reasoning skills and   nication as the group works through the case.    Annota
+practicing cooperation in a medical context.                  tions can be made directly on the x-rays, blood smears,
+      PBL has conventionally been supported by paper          etc.  when a student observes a certain fact or comes
+documents or "paper patient simulations" [2].   Recently      up with a new hypothesis.   To integrate this scattered,
+electronic information technology has been embraced to        student-generated information, a central notebook could
+aid in PBL (e.g., DxR, Harvard [1]). Systems have been        provide hyper-media links to the local notes and case and
+proposed to tackle various problems posed by the PBL pro      reference materials. Thus students would create a joint
+cess, such as document handling or visualization.   There     information space that records their individual and joint
+are many multi-media systems that had some success at         explorations. Asynchronous work is supported by leaving
+presenting a "high-fidelity" patient simulation [5]. There    pointers, hints, and findings for group members who can
+fore, group size is no longer dictated by the scarcity of     build on previous discoveries.
+resources. On the contrary,  information systems can di             For evaluation purposes and to give feedback to the
+rectly support and foster the learning of joint cognitive     group, the  system can  maintain a log  of the   materials
+skills and ofsocial medical cooperation.  Other types of      accessed.   Date, time, and user-id stamps can allow the
+systems to support learning and tutoring have been sug        evaluating facilitator to see the blind alleys tried, the in
+gested. In particular intelligent tutoring systems [7, 4).    tegration ofresults by individual, or the time used by the
+These systems will not be reviewed in detail here because     group to finish. This record need not be a static report.
+they need a large knowledge base rather than focussing on     Facilitators can use a play-back facility to see a time con
+tool and group aspects. In addition the focus ofthis paper    densed development ofthe groups reasoning process and
+is on learning rather than on tutoring. PBL can now be        how it unfolded starting with the initial problem presenta
+put to active use in the articulation and definition aspects  tion, unfolding through group action.
+ofcooperative learning [10).                                        The above review of PBL has identified PBL as a
+                                                              powerful method for learning skills.   Yet the lack ofex
+                                                              plicit acknowledgement ofgroup processes in the learning
+3.    Using Information Systems for Im                        ofskills became appearant. The next section address this
+      proving PBL                                             lack.
+One of the largest problems with current paper basedPBL is its lack ofcooperation support for student groups.4·SupportingCooperativeGroup
+Groups are formed because oflimitations on resources. If            Processes
+enough facilitators and materials were available, groups
+would   eventually consist ofonly a single student. This      Reviewing the research literature concerning the most ef
+view neglects the potential ofjoint cognitive and learning    fective methods of teaching, one finds that success de
+processes as well as the actual requirements ofworking in     pends on the learning objective, the individual student, the
+medical teams rather than as a singular practitioner. With    teacher, and the content [8]. Juggling these factors is al
+the arrival of information systems to support PBL, that       most an unconquerable demand even for a master teacher;
+argument no longer counts. Cooperative learning must be       it is even more so for an information system which at
+acknowledged as a goal in itselfand thus actively sup         tempts to model each ofthem. The next best method can
+ported.                                                       be seen in students teaching other students [8]. This ob
+      Student generated materials are an important factor     servation leads us to cooperative learning. Cooperative
+in problem based learning. While working on the case, stu-    learning is a structured form of collaborative learning.
+CSCL '95 Proceedings                                         219                                            October1995
+Thus it provides a theoretical framework and an item plan       Studies and Medical Decision Making" course2· The sys
+for support through an information system.       Hassard [6]    tem was designed to be flexible enough to support changes
+describes the benefits of cooperative learning as follows       and paradigmatic advances in the C-PBL curriculum as
+(page viii):                                                    it is further developed.         The approach taken by CALE
+                                                                gives each individual student the freedom to explore and
+     Educational  practitioners       such as David    and      discover, while tying their individual efforts into a coor
+     Roger Johnson, Robert Slavin, and Spencer Ka               dinated group learning process with a clear overall goal
+     gan reported that cooperative learning resulted            structure.
+     in high academic achievements; provided a ve                     CALE provides students with a very rich and not
+     hicle for students to learn from one another; gave         overly structured medical exploration ground.            The core
+     educators an alternative to the individual, com            of this discovery ground is specified by case designers,
+     petitive model; and was successful in improving            using a notation that allows concise description of salient
+     relationships in multiethnic classrooms.                   medical facts and relationships the students are expected
+                                                                to discover in working through a case.       Helpful probes
+     To allow more teachers to use this vehicle for more        and questions are specified that can keep the students on
+students, information       systems   can  incorporate and en   track so that the learning environment can be challenging
+hance many of the principles of cooperative learning men        without being frustrating. In addition, the case designers
+tioned in the quote.        Among the leading principles of     have feedback on how the case is actually used, so that
+cooperative learning that can be supported are:                 the case can be improved for its next use.    In these cases
+                                                                certain roles are created.       One may think of the case   as a
+   · Cooperation:         Heterogeneous small student groups    network of documents that is collectively unveiled by the
+     work toward a common goal via positive interdepen          students, with certain parts of the network necessary to
+     dence and individual accountability.                      unveil other parts. Yet these parts may only be accessible
+                                                               to students carrying the necessary role.      Thus CALE is
+   · Active Learning:       Structured assignments create dis   promoting positive interdependence.
+     cussions that lead to active learning.                           One of the goals of our system was that the students
+   · Prompt Feedback:       Feedback from peers and facilitators is received immediately, continuously, and to thepoint.should not always need to leave the C-PBL session environment to explore reference materials and find answersto their questions. There are many resources currently online that the students can access, and many others could
+   · High    Self-Expectation:      Self-esteem is  enhancedthrough an emphasis on peer tutoring and the respectfor diverse results, resulting in higher expectationsfor ones own achievements.also be made available through the system.The CALE system is both a "learning tool" and a"teaching tool".As such, its users fall into three categories: students, facilitators, and case designers. The goalis to link basic science aspects of medicine to the clinical
+   · Respect for Diversity:     Different learning styles are  environment. The students are presented with a case and
+     accommodated by peer teaching in the group from           can use the clinical documents that are available to analyze
+     their own special and particular perspectives, partic-    it.
+     ularly enhancing liking and respect among students               The facilitators evaluate the work of groups by hav
+     from different racial or ethnic backgrounds.              ing access to the notes students have written and answers
+                                                               to questions, along with a chronological listing of the deci
+                                                               sions a group has made as it works its way through a case.
+5.     CALE:     An Environment for Coop                       In addition, the facilitators assign individual students to
+     erative Problem Based Learning                            groups and indicate the session levels which the group isallowed to explore.
+                                                                      Case designers create the simulated patient case by
+Based on the requirements outlined in the last two sections,   defining the exploration environment.        They can attach
+an experimental information system to support coopera          materials to a case and specify the conditions that a group
+tive problem based learning (C-PBL) in medical teams was       must meet in order to gain access to those materials. The
+designed, implemented,        tested, and  anecdotically eval  goal of the design was to enable the case designers to
+uated.  The system specifically supports improved data         specify a complex environment for the C-PBL session
+administration, group       dynamics,  group  communication,
+and  cooperative learning.     The resulting implementation,        2The authors wish to thank the PBL committee of the UPMC for
+called Computer Assisted Learning and Exploration En             feedback on the relation between PBL and system design. We would
+vironment (CALE), is in operation' at the University ofPittsburgh School of Medicine for the "Integrated Caseespecially like to thank Drs.Troen, Kanter, and Williams for creatingthe opportunities that made CALE happen. We extend our appreciationto the software engineering students of class IS 2076 Spring 1993 for
+                                                                 participating in designing and implementing portions of the first CALE
+   1 Starting April 1994.                                        prototype.
+
+CSCL '95 Proceedings                                           220                                                  October 1995
+                                                Exploration Space
+
+  Facilitator                 Supports               Group                         Designer
+
+      Facts   Hypothesis    More Information    Who                   Access
+                                                         Answers      Log
+             Shared Information Space
+                                                     Repository
+
+                                                     Figure 1: Major Modules of the CALE System
+
+through the use of simple rules.                                                     The   students can access case materials,  reference
+    CALE is designed as an event driven system with                             materials and shared and individual note taking tools from
+a graphical    user       interface.          The    interface   presents  the  their principal control panel. This control panel is dynamic
+user with icons, labels, and buttons representing possi                         according to which categories are appropriate to the cur
+ble choices.    The       system can be used with a minimum of                  rent case. Text boxes are used by students to take notes,
+training. There are no deep menu trees or commands that                         as well as to answer questions.  The central blackboard
+must be remembered.           The flexibility of an event driven                acts as the coordination center for the students. This gives
+interface requires that the program handle any appropri                         structure to the discussion and allows individual students
+ate input at any time.        In addition, the "event loop" that                to tie observations made in an asynchronous session to
+allows input must be programmed in such a way that the                          the overall learning effort. CALE allows hyperlinks from
+system responds quickly enough so that the user finds it                        the document where the observation was made to the cen
+responsive.                                                                     tral blackboard [13].  Thus local information and central
+    A multi-user database is used to store the structure of                     coordination are achieved.   The blackboard follows the
+the case as well as a record of the individual's or group's                     PBL example of dividing information into three separate
+exploration of the case such as access attempts, answers to                     classes:"Observed Facts","Hypothesis", and "Need More
+questions, and notes.        This allows several students in the                Information". The implementation of discussion support
+same group to work on the same case on different work                           and structuring systems has been explored in a number
+stations, as well as allowing students to work at different                     of systems, such as gIBIS [3].  It has never before been
+times, and have access to the group's communication. By                         applied though to medical education and cooperation. We
+storing the structure of the case in the database, the cases                    also added another category to help the students coordi
+can be easily modified to emphasize different goals for                         nate themselves. Each entry on the blackboard, primarily
+exploring a    case.      When each          material has a cost or a time      those in the "need more information" category, could be
+attached, groups can evaluate themselves based upon these                       turned into an action item, which in turn would be assigned
+criteria, as well as on the patient outcome.                                    to a team member with a due date.   CALE  keeps track of
+    CALE is partitioned into several individual architec                        these commitments and thus allows students to structure
+tural modules which perform specific functions. There are                       the learning task.
+three principal modules:        the student interface, the facili                    In addition   to the note taking ability, during the
+tator interface, and the case designer interface (figure 1).                    course of an interactive session a student may be prompted
+
+CSCL '95 Proceedings                                                          221                                              October 1995
+by the CALE system to answer a particular question at            than one path.  Another problem with this approach is
+tached to a material or rule. The student can respond to         that the designers must cope with the "state explosion" by
+the question within a text window provided by CALE.              designing very linear exploration spaces, with an overly
+Each response is saved as part of the note/text repository       limited number of possible "solution paths". In extreme
+as textual information.                                          cases designers create one linear path with a small number
+    The case designer has control of the case material           of short cul-de-sacs branching off.
+repository and specifies access control for the case mate            To alleviate this problem, we developed a graphic no
+rials. The case material repository is made up of digitized      tation (figure /refnsfl) that allows case designer to specify
+documents, including x-rays, patient charts, slides, EKG         constraints on the access to materials in a case. This no
+strip charts.  These materials are stored with accompa           tation clearly shows how open or restrictive the access is,
+nying information such as date and type of medical data.         and allows the designer to envision the complete explo
+The repository also contains any reference materials that        ration space. All solution paths are implicitly contained
+are relevant to one or more cases,  such as portions of          in this graphical notation which simply shows constraints
+textbooks, journal articles and bibliographies.                  between documents and document sets.
+    The basic function of the access control module is
+to provide the necessary control to allow or deny access
+by the student to certain case materials. When a studentrequests access to a case material, CALE locates the record7.A Session with CALE
+in the materials table corresponding to the item selected.CALE then scans the request table to see if this materialhas been previously requested by the group or student andappends a new record to the request table noting the requestfor access.Then CALE checks the "question-material"table to see if the designer has entered any questions thatmust be posed to the student.The user is prompted withthe text of the question(s) and a text editor is displayed onthe screen in which the student types their answer. Finally,CALE checks for any other access constraints placed onTo provide an insight to the student interface, let us lookat a team tackling a case.It is the first session for a newcase. All of the nine students in this team are assembled,and huddle around CALE. As they log on in group modethey decide to first check the patients history.Figure 3shows the screen entities the student group sees after thisfirst menu selection.The patient history is shown in thewindow in the lower left hand corner, it consists of a videoclip of the patient and the following text: The patient understudy is a 4 1 /2 year old white male that has been refusing
+the material item by the designer (if the material item hasnot yet been seen).to walk for a considerable amount of time.The control panel is located in the upper left comer.
+                                                                 Several choices are available to the student at all times.
+6.  Case       Design     for   Problem          Based           These choices allow them to access reference materialsand the blackboard, and to use a toggle switch to change
+   Learning using the CALE system.                               between user and group mode.      The rest of the choices
+                                                                 displayed are dependent on what is available for the current
+It became apparent in the early case design work for CALE        simulated patient. Those are choices such as laboratory
+that a concise but powerful notation for specifying access       values, imaging, patient history and physical examination
+restrictions and precedence was needed. Natural language         findings.  The size of the control panel is dynamic and
+and structured description techniques are quite limited in       it can display as many or few of these patient specific
+their usefulness because it is hard to keep track of all of      categories as are appropriate.
+the alternatives and possible states which may arise during          On the right hand side of figure 3 is the notepad for
+the exploration of a case. In addition, it is difficult for the  local observation that relate to the patient history just seen
+designer to have a sense of the overall environment that         and heard. The top half of this window allows the students
+he or she is creating.                                           to enter their observations, while the lower half contains
+    We found that many case designers think intuitively          a read only display of all of the previous notes that this
+in terms of flowcharts.  This approach graps the idea of         student or other group members have made.    In figure 3
+semi-structured exploration of a document space rather ill.      the student has entered a comment on the notepad.
+Because of the complexity of the possible solutions to a             One of the students in the group suggests to fol
+problem, facilitators think of one "via regia".  The vast        low the hypothesis that the patient is suffering cerebral
+number of permutations that can be created by designing          problems. This is recorded under the hypothesis category
+paths through the document space lead case designers us          in the blackboard.    One of the case specific categories,
+ing flowcharts to overly linear structures. If at a certain      "Laboratory tests" has been chosen to follow up on this
+point students can either visit document 1 and then docu         hypothesis. A dynamic choice list has been displayed, list
+ment 2, or they could equally well visit document 2 and          ing all of the possible choices under that category. From
+then document 1, case designers need to use two paths to         this list a material, "CT-scan of the head" was selected
+show this.    The number of boxes in the flowchart keeps         triggering a question that the student must answer: "Have
+growing because necessarily documents appear on more             all necessary tests been performed?".
+CSCL '95 Proceedings                                        222                                                October 1995
+ CASE 1: SESSION 1
+
+                                             Figure 2: Case Design Graph.
+
+     A question can be linked to one or more materials, but      ity the two students establish contact (a later version of
+questions are usually developed and assigned specifically        CALE will allow   videoconferencing).  They discuss their
+to a single material. Another sample question might be:          latest findings and the consequences for the probabilities
+"Do you know of any third party payor who will pay for           of hypothesis. After this the local student logs off, while
+laboratory tests on a patient who was not examined?" [12]        the student at the remote campus keeps working on the
+The answer to questions can later be reviewed by the group       problem.   Tomorrow the group will come back together
+during the evaluation  phase, and by the   facilitator when      to meet with their facilitator and review their approach to
+assessing how the group did and how they can improve.            this case.
+      Our group answers the question just to see the mes
+sage display.   The hypothesis and the test are not related.
+ Our group now starts o take a more structured appr?ach.A number of hypothes1s are generated.aE ch resu 1ts mto aS.Evaluation and Future Research
+number of additional information requests. These requestsare recorded, like in a chauffeured meeting sessions, andstudent names are put behind the requests, to identify responsibilities.Thus our group has developed a first taskplan. We now leave our group and come back a day laterwhen one of team members returns to work individuallyin user mode.Our student reviews the blackboard to see which information she needs to find to rule out certain hypothesis.She decides that the CT-scan should now be permissiblebecause in the last session the group has conducted a number of test that usually precede a CT-scan. This reasoningshows to be correct and the CT-scan is presented.Thestudent enters her observations into the margin note thatpops up with the image.She thus leaves information forher team members and works on her own assignment. Herentry is linked to the central blackboard.As she is scrutinizing the CT-scans once more, another student logs in at a branch campus. This student canonly come once a week to the central university. His tasksdepend on the normalcy of the CT-scan, as now cerebralproblems are ruled out for the moment.Via a talk facil-CALE has been evaluated with two classes of medical students (ca.160 students each) and their facilitators at theUniversity of Pittsburgh.CALE had been introduced tothe Medical DecisionMaking course.This course represents the transition from the basic science to the clinicalpart of the curriculum.For each group of ten studentsthere was one facilitator and one reserved PBLroom withan X-terminal that was connected to a central DEC Alpharunning CALE. There were 16 such groups/rooms eachsemester.Each group worked on a total of thirteen casesin the course of the two months.Some cases thus ran fora week, other cases lasted less than a week.Duringthetwomonthdurationofthecourseweclosely followed the groups. In addition the students keptsending their impressions and observations about the system to the evaluators via email.A special suggestionsbutton was incorporated into the system for this purpose.During the use of the system students could thus report immediately their subjective observations and impressions ofthe system.The second source of data collection was anelaborative debriefing session after the course with students and facilitators.This session was semi-structured
+CSCL '95 Proceedings                                         223                                                 October 1995
+                   control Panel                                                                                                  General Notepad
+              Patient Profile                                                                                   
+              History                                                                                                New Notes:
+              Physical Examlnatio                                                                                     Pt. Is a 65 yr old male
+              Procedures
+              Laboratory Tests
+              Imaging
+              Special tests
+              Reports
+              Referral                                                       W.J.C. is a 65 year old                                                              Iretired male banker whoPrevious Notes:
+             Treatment PlanLearning ObjectivesNotepadHelpChange Password     presents for a routinephysical examination.Hehas had annual physicalexaminations since ager60, and has no specificcomplaints at this time.JFor Session#3 on Tue,Mar21 1995,cathy Smith wrote:It Is clear that he and mikeMIiiicanhave ca of Prostate. Question has ItSpread?<End of Text>For Session#ion Tue,Mar21 1995,l
+              Change session                                                                                          cathy Smith wrote:
+                                                                                                                      so far we do not know what hypthesls
+             suggestion Box                                                                                           to follow... only lead is the enlarged
+              About CALE                                                                                              prostate, maybe we should    follow upwith tests on that···
+              Exit                                                                                                    <End of Text>
+             Choose one:                                                                                                                                          I
+              vUser Mode
+
+                                                     Figure 3: Opening Screen
+
+following a topic and question list to assess subjective                                approach of cases where one and only one action must
+impressions.                                                                            follow the other.                       That of course means that most docu
+    Our major finding was that students enjoyed ma                                      ments are not available to the students. Upon identifying
+nipulating the CALE user interface and were generally                                   this problem and working with case authors the quality of
+excited by the opportunities offered by the system. Menus                               cases could be greatly improved by increasing the average
+and other tools were immediately understood and used                                    branching factor in the case graph.
+correctly.         Students would try a number of solution ap
+proaches to the problem given by CALE until the system
+aided them in narrowing the hypothesis space.                                 Students References
+commented on the appropriateness of this aid.                                 Experi
+enced facilitators observed the students using the system                                            [l]  Anonymous.                Multimedia:              A visual   approach  to
+and commented on the qualitative improvements over the                                                    teaching medicine.                  Syllabus,        (28):2-8,  May/June
+paper based implementation.                                                                               1993.
+    Students noted that some of the cases were overly
+linear. This linearity was embodied in the number of doc                                             [2]  Howard  S.            Barrows.            Simulated         Patients (Pro
+uments that were not accessible upon request.                                 Students                    grammed Patients). Charles C. Thomas, 1971.
+commented that this repeated rejection was frustrating.
+During the discussion of this problem in some of the cases                                           [3]  M. Begeman and J.                   Conklin.       The right tool for the
+we discovered that the problem was not inherent in the                                                    job. byte, October 1988.
+CALE-approach but had to do with the experience of the
+case authors. CALE allows to build a very open and excit                                             [ 4] C. Bereiter and M. Scardamalia. Intentional learning
+ing environment.              Yet authors do not immediately realizethe potential of the system and follow the simpler linearas a goal of instruction, pages 361-392.      Erlbaum,Hillsdale, NJ, 1989.
+CSCL '95 Proceedings                                                                  224                                                                                 October 1995
+           Control
+                                                CT scan of I he Head
+ I    Control  PanelIntroducti.on   I close I
+ I        History
+ I I !PhysicalExaainatHematologyIIChemistryImagingIII                          IForSession41atFriJan2119:44:461994.
+  I   Microbiology       I               Cathy   Smith wrote:
+ I    Special   tests I                  The  CT appear:5: normal.<EndofText>
+  !Learning   ObjectivS
+     Patient  ProfileNotepadReferenceI II
+           Help       I
+           Exit       I
+
+                                                                       Three   weeks  prior   to St.   Vincent's   Hospital
+                              ,----------11tahdatJ.sisitonh,urhteibnehgiasn                      refusingfeetandtowalk,                                                   sayingtheloweraspects
+                                                                     · of  hismotherlegswhenhenoticedthatattemptedtowalk.hewouldbefairly                                   Hisactive
+                                                                       ::   :: 0btc:pi:t d;s ar:                                                                        e    0        r;fst::k
+                              1:============;I and seemed listless and than his usual baseline. generally        less                                                     active
+
+                                               Figure 4: Sample screen from student interface
+
+ [5] Linda      H. Distlehorst   and   Howard           S.  Barrows.          A    [10]    K. Schmid and L. Bannon.                                                                      Taking cscw seriously.
+     new tool for problem-based, self-directed learning.                                   Computer Supported Cooperative                                                                     Work: An Inter
+     Journal       of Medical    Education,         57(468-488):468-                       nationallournal, 1:7-40, 1992.
+     488, 1982.                                                                    [11]    Henk     G. Schmidt.                                                           Foundations of problem-based
+ [6] J. Hassard.      Science experiences:         cooperative learn                       learning: some explanatory notes. Medical Educa
+     ing and the teaching of science.                  Addison-Wesley,                     tion, 27:422-432, 1993.
+      1990.                                                                        [12]    Nina F. Schor. Pb! case:                                                             Nfs-1.     4 1/2 year old male.
+ [7]  S. Lajoie and A. Lesgold.               Apprenticeship trainingin the workplace: computer-coached practice environment as a new form of apprenticeship. Machinemediated learning, 1(3):7-28, 1989.[13]F. Shipman, R. Chance, and G. Gorry. Distributed hypertext for collaborative research: The virtual notebook system. In Hypertext'89 Proceedings, 1989.
+ [8] W.J.     McKeachie,       P.R. Pintrich,       Y.     Lin, and       D.A.
+      Smith.    Teaching and learning in the college class
+     room:      a review of the research literature.            The Uni
+     versity of Michigan, 1986.
+ [9] A. Myers,        H.   Barrows, T.       Koschmann,       and      P. Fel
+     tovich.      The facilitation of problem-based learning
+     in medical education through a computer-mediated
+     tuturial laboratory. In Proceedings of 1990 SCAMC,
+     1990.
+CSCL '95 Proceedings                                                             225                                                                                                                October 1995
+

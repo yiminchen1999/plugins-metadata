@@ -7,9 +7,9 @@ import fitz
 import os
 import pandas as pd
 #记得改地址
-txt_directory = "1997papers_output"
-xlsx_file = "CSCL_1997_fullcopy.xlsx"
-df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1997.xlsx', engine='openpyxl')
+txt_directory = "1995_revised"
+xlsx_file = "CSCL_1995_revised.xlsx"
+df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1995.xlsx', engine='openpyxl')
 df["content"] = ""
 
 #

@@ -25,26 +25,34 @@ with open('config.json') as config_file:
 #check the key
 #for key, value in os.environ.items():
     #print(f"{key}={value}")
-
+import tiktoken
 tokenizer = tiktoken.get_encoding('cl100k_base')
 # Load the dataset or read the Excel file
-df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1995_fullcopy.xlsx', engine='openpyxl')
-
+df = pd.read_excel('/content/CSCL_1995_fullcopy.xlsx')
+tiktoken.encoding_for_model('gpt-3.5-turbo')
+def embed_query(texts):
+    embeddings = embed.embed_documents(texts)
+    return embeddings
 # Create the length function
 def tiktoken_len(text):
-    tokens = tokenizer.encode(text)
+    tokens = tokenizer.encode(
+        text,
+        disallowed_special=()
+    )
     return len(tokens)
 
+
+
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 # Split the text into chunks
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=400,
-    chunk_overlap=20,
+    chunk_size=1100,
+    chunk_overlap=40,
     length_function=tiktoken_len,
     separators=["\n\n", "\n", " ", ""]
 )
-
-chunks = text_splitter.split_text(df['content'])[:3]
-print(chunks)
+chunks = text_splitter.split_text(df[2:3]['text'])[:3]
+chunks
 
 print(tiktoken_len(chunks[0])) # 201
 print(tiktoken_len(chunks[1])) # 198

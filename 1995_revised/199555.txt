@@ -1,0 +1,300 @@
+               Teaching Computer Science Students
+                                  How to Work Together
+
+                          Kathleen M. Swigger, Robert Brazile, and Dongil Shin
+
+                                         Departmen of Computer Sciencet
+                                                University of North Texas
+
+                       Abstract                                       The underlying model for this system states that
+  As the number of jobs in which shared rather than in           effective cooperative problem solving is dependent on
+  dividual work continues to grow, we are being forced to        effective group competencies (Barge Hirokawa, 1989).
+  re-examine the waywe teach students to work. This pa           An effective group competency is defined as a specific
+  per suggests that in today's workplace, computer sci           skill that helps a group complete a task (in this case,
+  ence students must be adept at both technical as well as       requirements elicitation) more effectively. Group com
+  cooperative skills. Towards this end, we developed a           petencies include, but are not necessarily limited to, es
+  computer supported cooperative problem solving envi-           tablishing operating procedures, analyzing problems,
+. ronment designed to teach undergraduate computer sci           selecting criteria for good solutions, generating alterna
+  ence majors how to elicit software requirements. We            tive solutions, and evaluating     solutions  (Hirokawa
+  believe that requirements elicitation and cooperative          Scheerhom, 1986). We selected this particular model,
+  skills are highly interrelated and, as such, can be taught     as opposed to other models of computer-supported co
+  more effectively through the use of a computer-sup             operative work (Aiken Carlisle, 1992; Dewan      Riedl,
+  ported cooperative environment. The environment en             1993; Dykstra Carsik, 1991; Malone, Crowston, 1994;
+  courages cooperative work, and yet provides instructors        Moran   Anderson,   1990; unamaker,     Dennis,  Vogel
+  with the ability to monitor both individual and group          George, 1991; Winograd, 1986), because it provides a
+  performance. From our study, we found that students            link between group interaction and problem solving ef
+  who used the computer-supported cooperative environ            fectiveness. Such a model is necessary given that our
+  ment to elicit requirements performed better than those        goal is to improve cooperative problem solving. Thus,
+  students who did the same task face-to-face.                   it is proposed that cooperative problem solving is not
+                                                                 only a matter of willingness, attitude, or direction; it is
+                                                                 a skill that can be taught, assisted, and enhanced. Fur
+  1.  Introduction                                               thermore, we believe that effective group problem solv
+  The primary goal of this research is to teach student          ing skills are instructable, if the particular skills in
+  programmers how to work together via a computer                volved can be articulated and practiced under circum
+  supported cooperative problem solving environment. It          stances that require their use.
+  was designed to achieve this goal by enhancing stu                  In order to test these theories, we built and evalu
+  dents' cooperative skills within the specific domain of        ated a special interface to support Computer-Supported
+  requirements elicitation. The specific task addressed by       Cooperative Training (CSCT). The system serves as a
+  this research is one in which student programmers lo           training environment where students learn to engage in
+  cated in different geographical sites develop require          technical, cooperative tasks such as working together
+  ments for a large software project. Thus, cooperative          on large programming projects. In addition to support
+  problem solving in this context refers to the shared,          ing network capabilities, the system has a series of
+  systematic behaviors displayed by two or more pro              shared windows or tools that represent and are linked to
+  grammers as they develop a requirements document. In           each of the above competencies for successful group
+  order for the students to communicate in this environ          problem solving.
+  ment, a computer is used to assist the group in the per             After building the interface,   we tested whether
+  formance of the task. As such, this particular com             there were noticeable differences between "successful"
+  puter-supported environment allows for synchronous             and "unsuccessful" groups and related this to the use of
+  communication between students who are separated by            the interface. Specifically, we asked: Can successful
+  geographical  distances  (i.e., same time,    different        problem-solving   groups be     distinguished from less
+  places).                                                       successful  problem-solving     groups on the  basis of
+
+  CSCL '95 Proceedings                                       356                                              October 1995
+which shared tools are used in the problem-solving in          requirements elicitation. Through such a system, stu
+teraction and how often these tools are used? We found         dents could learn how collaboration supports the pro
+that the better groups showed more activities using            gramming task.
+tools that help generate and evaluate alternative solu
+tions, more frequent use of tools that tested current          2.2.   Description of    System
+knowledge, and more systematic use of all shared tools         Having been convinced that requirements elicitation
+for problem solving (Swigger, Brazile   DePew, 1993).          was an appropriate context for teaching collaboration,
+     Results of these case studies were then used to           we then built a special interface to support this task.
+make the shared tools more active. That is, we gave the        The CSCT environment is a highly interactive pro
+system the ability to explain how each shared tool can         gram, allowing student programmers to pose questions
+be used to enhance a particular group problem solving          and conduct exchanges within the computer environ
+skill. Thus, the system contains knowledge about a             ment, testing and enriching their knowledge of group
+group competency as embodied in the different shared           skills by manipulating various shared windows. The
+tools and knowledge about how to improve that com              physical components of the current system include
+petencies. When    groups  fail to  display appropriate        486-based workstations running Windows and con
+group behaviors through the use of one or more of the          nected to a Local Area Network (LAN).    The CSCT
+shared tools, the system intervenes and suggests alter         environment is provided by three program modules, a
+native actions.                                                graphical user interface, LAN communications support,
+     The next section explains the rationale for select        and a database management system. Group problem
+ing the specific domain of requirements elicitation and        solving is accomplished   by displaying information
+provides a general overview of the cooperative problem         concurrently to all members of the task group. Each
+solving interface. The following two sections describe         workstation logs the message content, time, date, etc.,
+the procedures used to build and enhance the training          in a database that can be accessed for analysis at a later
+portion of our system. The last section concludes with         time. All users can react to the actions of others (i.e.,
+a brief discussion and summary of the research.                text or graphics) immediately through shared displays.
+                                                               The interface permits a logical dialogue to occur by
+                                                               providing participants with the ability to access any of
+2.   System      Overview                                      the shared displays (i.e., tools) at any time during the
+                                                               conversation. All behaviors are stored in a database
+2.1.   Collaboration     and    Requirements    Elici          which is extremely helpful when analyzing the conver
+tation                                                         sational quality of the messages at a later time.
+The context for our computer-supported cooperative in               As previously stated, effective cooperative problem
+terface is programmers engaged in eliciting require            solving skills were delineated using a model of group
+ments from users. The reason we selected this particu          competency as developed by (Hirokawa    Scheerhorn,
+lar learning task was; a) it is a particularly difficult       1986; Hirokawa,  1983).   The specific  examples      of
+skill to teach, and b) it requires students to work to         "good" cooperative skills that were selected are: analyz
+gether. Wexelblat (1987), for example, defines the             ing problems, using correct operating procedures, stat
+software   elicitation phase as    "one of  refinement         ing criteria, generating alternatives, and evaluating the
+through conversation" (p. 6) and argues that the prob          solutions.
+lem space must be explored and shared between the user              These behaviors were then encoded into the system
+and analyst. By engaging in the group dynamics be              via a series of shared tools or windows that represent
+tween programmer and user and programmer and pro               each of the ommunication competencies. Thus, there is
+grammer, the software developer learns to translate am         an shared tool that aids in problem orientation; another
+biguous, missing,  or   conflicting specifications into        that helps in the establishment of criteria; a third that
+something   resembling   a fully   developed  program          aids in the establishment of correct operating proce
+(Boland, 1978; Sommervile, 1992). As research notes,           dures; a fourth that helps solution generation and eval
+it is difficult to teach software elicitation at the intro     uation. The global cooperative tools can be accessed by
+ductory level, largely because so much of the student's        participants at any time during the interaction. In addi
+energies are focused on learning the mechanics of pro          tion there are several private tools that facilitate and
+gramming and not on mastering the communication                enhance the shared tools. A more detail description of
+skills necessary for group work (Leite, 1987). There is        these tools now follows.
+also the problem of trying to teach and monitor collab
+oration within  an introductory    programming  course         2.2.1   Collaborative     Tools
+and, at the same time, cover specific content. Thus, it        A user, begins by selecting one of the available shared
+would be helpful if someone could develop an envi              tools (i.e., Procedural Activity, Problem Definition,
+ronment that would allow students to master collabora          Criteria Establishment, or Solution Activity).
+tive skills and, more importantly, exercise those skills
+within the context of a computer science task such as
+
+CSCL '95 Proceedings                                       357                                           October 1995
+                                                                  The Problem Definition Definition Tool is used to
+                                                              analyze the group problem/task (Fig. 2). Group mem
+                                                              bers enter their ideas via this tool and are able to indi
+                                                              cate the extent or seriousness of the problem. Partici
+                                                              pants enter criteria for their requirements either directly
+                                                              into the Criteria Establishment     Tool   or by selecting
+                                                              one of the pre-defined criterion listed in the Criteria
+                                                              Dictionary subtool (Fig. 3). They must also assign a
+                                                              priority value to each criterion.
+
+        Figure 1. Procedural Activity Tool.
+
+   The Procedural Activity Tool is designed to help
+the group establish correct operating procedures (Fig.
+1) and set an agenda. Voting and floor management are
+available that permit the group to structure and orga
+nize the discussion. Floor management styles include;
+a) choose a chairperson who manages the order of dis
+cussion (chairperson), b) allow the person in control to
+select the next speaker (sequential), c) submit a request
+in a simple linear, sequential, queuing order according
+to first-come, first-serve (competitive). The two voting options are majority rule and unanimous decision.Figure 4. Solution Activity Tool.
+                                                                  Participants enter the actual requirements for the
+                                                              software specification problem through the Solution
+                                                              Activity Tool (Fig. 4). Participants specify a particular
+                                                              priority value with the requirement.    Once    all the re
+                                                              quirements have been entered, a voting tool allows
+                                                              members to approve the various requirements.
+                                                                  After developing the different shared tools, we cre
+                                                              ated a list of specific performance indicators that mea
+                                                              sure the various group competencies as defined by the
+                                                              shared tools. These performance indicators are lists of
+                                                              actions identified with the use of the shared tools and
+                                                              are intended to capture differential performance in this
+                                                              environment. For example, the performance indicators
+                                                              for the "Generation of Alternatives" competency in
+        Figure 2. Problem Definition Tool.                    clude;   the number of  times     the tool was   used,  the
+                                                              number of different modifications made while using the
+                                                              tool, the number of different members interacting with
+                                                              this tool, etc. The performance indicators are recorded
+                                                              in a group history file that is stored for each team.
+
+                                                              3. Determining       Optimal          Behaviors     for
+                                                              Teaching
+                                                              Our first research task was to determine whether we
+                                                              could distinguish among different performers in this
+                                                              environment. More specifically, we wanted to be able
+                                                              to recognize the difference between effective and ineffec
+                                                              tive behavior so that we could remediate those groups
+                                                              who were performing poorly. We, therefore, asked the
+                                                              question:    In terms of the specific performance indica
+       Figure 3. Criteria Establishment Tool.                 tors, what are the characteristics of those groups who
+
+CSCL '95 Proceedings                                      358                                                October 1995
+are more successful in this particular environment?            This information was then used to create the "teaching"
+     This question was answered by examining the data          portion of the interface.
+from a series of computer problem solving sessions
+which recorded the performance of student programmers
+using the software. Forty-five computer science majors         4. Training      Students       to  Collaborate
+enrolled  in an   undergraduate software   engineeringcourse at the University of North Texas were assignedthe task of writing a requirements specification document for developing a database for a ski resort.Thesubjects were randomly assigned to fifteen, three-memAs previously mentioned, the CSCT environment hasthe instructional goal of teaching group problem solving skills. The system accomplishes this goal by constantly monitoring a group's use of the shared tools,comparing the group's activities to a model of good and
+ber teams. One of the members of the group was as              poor performance, and then coaching team members to
+signed the role of the user, while the other two mem           use the shared tools more effectively. The system keeps
+bers were asked to be programmers. Each member of              a detailed history list of how each of the shared tools
+the team was escorted to a separate room where he/shewas asked to communicate with the other team membersusingonlythecomputer-supportedcooperativetraining environment.For the requirements elicitation task, group effecwasused.Thesystemdiagnosessolutionqualitybycomparing the group's actions to a list of effective behaviors as specified in the previous section. Any suboptimal behaviors are collected into lists of potentialproblem areas and passed on to a coach for possible
+tiveness was determined as the number of relevant requirements specified. These estimates were derived byasking three "expert" software engineering teachers toperform the exact same requirements elicitation taskand then comparing the experts' lists to the subjects'list. After performing the task, the experts came together and developed a single list of approved requireremediation.For example, the model sequence of "good" behaviors in the requirements elicitation task involves: exploring the world informally and developing the problem for investigation (i.e., using the Problem Orientation tool); establishing the group's procedures by deciding how the interaction will take place, how it will
+ments. A   comparison   between  our    experts' requirements and each of the group's requirements was thenmade, and a ratio of relevant requirements was computed for each group. Thus, a given group's problemsolving effectiveness rating was based on a requirements score --- the higher the score, the more effectivethe group was assumed to be; the lower the score, thelesseffective the group was assumed to be.reach consensus, and how it will manage the exchange(i.e., using the Procedural tool); determining the criteria of the requirements and its various constraints (i.e.,using the Criteria tool); clarifying requirements, reorganizing the information, and determining if the requirements confirm or negate the user's idea of theproblem (i.e., using the Solution Activity tool). Wepaidparticularattentiontothosegroupbehaviors
+                                                               deemed "most" predictive of problem solving effective
+                                                               ness.
+ Table 1.   Correlations between shared tools and group             Using the above model and the list of performance
+                  effectiveness scores.CommunicationCompetencyI Corr.(r)indicators, we encoded tests, called "critics," that areused to determine the group's systematicity in using
+Problem OrientationEstablishment of CriteriaGeneration of AlternativesSolution EvaluationEstablishinO eratinProcedures*p<.01.59 *.06.48 *.49 *-.37various shared tools (i.e., group competencies). A criticcan be considered a program (or method) stored with theshared tool that tests the sequences of a group's actions.In addition, each shared tool contains tests that indicatewherethegroupmembersmightgoastray.Forinstance, the critic for testing the group competency of"Generating Alternatives" checks whether the shared
+     We then examined the activity level for the group         tool  was  invoked  after   the group  set  criteria and
+competencies as characterized by the use of the shared         procedures, and whether there was a sufficient number
+tools for the groups. We first collapsed the performance       of members who generated alternatives, an adequate
+indicator data for each group into a single index foreach of the five competencies. The correlations of thesenumber of items that were generated, and a sufficientnumber of items modified.
+five indicators with our effectiveness scores can be seenin Table 1. From this data, it is apparent that the perAll competencies failing to reach a predeterminedlevel of success or criterion performance become candi
+formance indicators relating to problem orientation,           dates for possible assistance. In the event that there are
+generation of alternatives, and evaluation of solutions        several ineffective behaviors, the system uses a conflict
+were the most highly correlated with successful cooper         resolution strategy to make a decision as to which one
+ation. In addition, spending too much time managing            needs addressing first.
+the shared Procedural Orientation Tool seemed to have               The  main   question  underlying  this  part of our
+a slightly negative effect on subsequent cooperation.          work was whether fostering the use of specific collabo-
+
+CSCL '95 Proceedings                                       359                                              October 1995
+rative skills would facilitate the learning of specific         ·     We developed a prototype based on a group compe
+domain knowledge: in this case, requirements elicita                  tency model that allowed us to gather evidence on
+tion. This was tested by the interaction between testing              how groups use a computer to solve problems to
+occasion (i.e., requirements scores) and the instruc                  gether.
+tional treatment (i.e., groups interacting with the fullCSCT environment, groups who used a face-to-face·Wedevelopedsharedtoolsrepresentinggroup
+technique, and groups using the CSCT environment                      competencies designed to model effective problem
+without the critics). We again asked students enrolled                solving strategies.
+in our undergraduate software engineering course to engage in a requirements elicitation project. Fifty-four·Wethenusedthisinformationtoaugmentthe
+subjects were randomly divided into sixteen, three                    shared tools with knowledge about how and when
+member groups. One-third of the groups were asked to                  to use the tools to improve task performance.
+perform their requirements elicitation task using face
+to-face methods, one-third were asked to use the inter                In our computer-supported cooperative environ
+face without the critics, and one-third the groups inter        ment, groups had the opportunity to engage in an ac
+acted with the full CSCT environment.                           tive, exchange   of  information.   Overall, the system
+    The criteria used to evaluate the quality of the            worked as intended. First, it showed that meaningful re
+group solutions for all groups was again the number of          lationships exist between the group behaviors as ex
+requirements as compared to our experts requirements.           emplified through shared tools and computer-supported
+After completing the experiment, the data were ana              cooperative problem-solving effectiveness. For exam
+lyzed to determine whether there were any differences           ple, we found that the more effective groups tended to
+among the three groups. A group means for the three             use the tools differently than those groups who were
+groups are presented in Table 2. This interaction was           less effective. These findings seem to confirm previous
+significant when an ANOVA was computed on these                 studies that the more effort spent in understanding the
+data (F = 5.66; p < .001).                                      problem, generating ideas, and evaluating solutions the
+                                                                more likely the group will derive a correct solution
+     Table 2.  Com     arison of Effetiveness Scores.GrouMeanScore(McBurney    Hance, 1939). From these data, we wereable to build critics that could facilitate computer-supported cooperative training, as evidenced in the second
+Computer-Supported with Critics       69.8                      part of our study where effectiveness scores for the
+Computer-Supported without Critics    61.4                      CSCT groups using the critics were higher than the
+Face-To-Face                          47.3                      face-to-face groups and the CSCT groups without crit
+                                                                ics.
+                                                                     Results  from  this  study are now being    used to
+    Subsequent   analyses   were also conducted         on      modify the system further. We intend to run our exper
+planned comparisons between the different treatment             iments on a much larger sample to determine whether
+groups. The first comparison between groups using the           our initial results can be more fully substantiated. Ex
+computer-supported interface with and without critics           perimental work on the modified system also includes
+and the face-to-face groups was significant (p < .001).         an examination of the relationship between group effec
+In addition, the comparison   between the    Computer           tiveness and the use of shared tools during different
+Supported groups using the critics versus those with            phases of the interaction.
+out was also significant (p < .05). Thus, the perfor                  Teaching cooperative skills, as characterized by
+mances of all groups using the computer-supported en            special shared tools, has been the focus of this particu
+vironment exceeded the performance of the face-to-face          lar work. We believe that the current study shows that
+groups, and the computer-supported groups who used              it is possible to improve requirements elicitation skills
+the interface with the critics outperformed the groups          through tutoring on the cooperative problem solving
+who used the interface without the critics.                     skills. Thus, our goal is to use these results for devel
+                                                                oping broad-based systems that can be used in courses
+                                                                throughout the computer science curriculum. It is our
+5.   Conclusion                                                 observation that the need for cooperative skills occursfrequently in this technological society. Yet rarely do
+In this research we assumed a situation for which there         we teach people how to develop cooperative skills, nor
+was a definite need for computer assistance: a system           do we provide proper tools for them to communicate in
+that would teach undergraduate computer science majors          this mode. As such, this research should provide in
+how to become more effective cooperative problem                sight and software tools for teaching students how to
+solvers while engaged in the task of requirements elici         use a computer to work together and solve problems.
+tation. We then built and evaluated just such a com
+puter-based assistant:
+
+CSCL '95 Proceedings                                        360                                              October 1995
+              Acknowledgments
+The research reported herein was supported, in part,                 12.  Nunamaker,   J.F., Dennis, A.R.,     Vogel, D.R.
+with funds from the National Science Foundation under                     and  George,  J.F. (1991): Electronic   meeting
+contract IRI-9109547, DUE -9350722, DUE-9254068.                          systems  to support group  work,   Comm.    of the
+                                                                          ACM, vol. 34, pp. 40-61.
+
+                  References                                         13.  Sommervile, I. (1992): Software Engineering,
+1.   Aiken,   M.     and Carlisle,   J. (1992):             "An           4th Edition, Addison Wesley, Reading, Ma.
+     automated idea consolidation tool for computersupportedcooperativework,"InformationManagement, vol. 23, pp. 373-382.14.Swigger, K., Brazile, R. and Depew, T.(1994):A computer-supported cooperative environmentfor requirements elicitation, In Proceedings ofthe
+2.   Barge, J.K. and Hirokawa, R. (1989): "Toward acommunication competency model of group leadership,"SmallGroupBehavior,vol.20, pp.167-189.ThirdIEEEWorkshoponEnablingTechnologies: Infrastructure for CollaborativeEnterprises,Morgantown,WestVirginia,pp.180-189.
+3.   Boland, R. (1978): "The process and product of                  15.  Wexelblat, A. (1987): Report on scenario tech
+     system design," Management Science, vol. 24,pp. 887-898.             nology,  MCC   Technical   Report    STP-139-87,MCC, Austin, Texas.
+4.   Dewan, P. and Riedl, J. (1993): "Toward com                     16.  Winograd, T. (1986): A language/action perspec
+     puter-supported concurrent software engineering,"IEEEComputer, January,pp. 17-27.tiveonthedesignofcooperativework.  InCSCWProceedings .CommunicationsoftheACM, New York, pp. 203-220.
+5.   Dykstra,  E. and    Carsik, R.  (1991): "Structure
+     and support in cooperative environments. TheAmsterdam Conversation Environment," Int. J.Authors'Addresses
+     Man-Machine Studies, vol. 34, pp. 419-434.                      Kathleen  M. Swigger,   Robert  Brazile,  and Dongil
+                                                                     Shin: PO Box 13886, Department of Computer Sci
+6.   Hirokawa,    R.  and   Scheerhorn,   D.     (1986):             ence, University of North Texas, Denton, TX 76203.
+     "Communication in faulty group decision-mak                     {kathy, brazile, dshin} @cs.unt.edu;
+     ing," In Randy Hirokawa and Marshall Poole,
+     (eds.), Communication       and Group   Decision
+     Making, Sage Publication, Beverly Hills, 1986,
+     pp. 34-90.
+
+7.   Hirokawa,   R.  (1983): "Group     communication
+     and     problem-solving      e ffe c t i v e n e s s :  An
+     investigation    of  group   phases,"    Human
+     Communication Research, vol. 9, pp. 291-305.
+
+8.   Leite, J. (1987): A survey on requirements analy
+     sis, University of California at Irvine, Irvine,
+     California.
+
+9.   Malone, T. and Crowston, K. (1994): "The inter
+     disciplinary study of coordination," ACM Com
+     put. Surv. vol. 26, pp. 87-119.
+
+10.  McBurney, J. and Hance. K. (1939): Discussion
+     in Human Affairs, New York: Harper.
+
+11.  Moran, T. P. and Anderson, R. J. (1990): "The
+     workaday     world  as  a   paradigm    for CSCW
+     design,"     In     CSCW        Proceedings,
+     Communications of the ACM, New York, pp.
+     381-393.
+
+CSCL '95 Proceedings                                             361                                             October 1995
+

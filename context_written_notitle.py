@@ -6,14 +6,12 @@ import re
 import fitz
 import os
 import pandas as pd
-#记得改地址
-txt_directory = "1997papers_output"
-xlsx_file = "CSCL_1997_no_title.xlsx"
-df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1997.xlsx', engine='openpyxl')
+
+txt_directory = "1995papers_output"
+xlsx_file = "CSCL_1995_revised.xlsx"
+df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1995.xlsx', engine='openpyxl')
 df["content"] = ""
 
-
-# Iterate through each row in the DataFrame
 for index, row in df.iterrows():
     # Get the ID from the first column
     id_value = str(row["id"])
@@ -21,23 +19,19 @@ for index, row in df.iterrows():
     # Create the path to the corresponding TXT file
     txt_file_path = os.path.join(txt_directory, id_value + ".txt")
 
-    # Check if the TXT file exists
     if os.path.isfile(txt_file_path):
-        # Read the content from the TXT file, handling single-column and two-column formats
         with open(txt_file_path, "r", encoding="latin-1") as txt_file:
             lines = txt_file.readlines()
 
-            # Identify the format based on the number of columns (assumes lines are tab-separated)
+            # Identify the format
             num_columns = len(lines[0].split("\t"))
             if num_columns == 1:
-                # Single-column format
+                # single-column
                 content = "".join(lines[3:])  # Skip the first 3 lines (title, author, abstract)
             elif num_columns == 2:
-                # Two-column format
-                content = "".join(
-                    line.split("\t")[1] for line in lines[3:])  # Skip the first 3 lines and take the second column
+                # Two-column
+                content = "".join(line.split("\t")[1] for line in lines[3:])  # Skip the first 3 lines and take the second column
             else:
-                # Unsupported format (handle accordingly)
                 content = ""
 
             # Find the line index where the introduction part starts
@@ -50,18 +44,22 @@ for index, row in df.iterrows():
                     introduction_start_index = i
                     break
 
-            # Join the lines from the introduction part onwards
+            # Join the lines
             content = "".join(lines[introduction_start_index:])
 
-            # Normalize spacing and remove extra spaces between words
+            # Normalize spacing
             content = re.sub(r"\s+", " ", content).strip()
-            if abstract_found:
-                content = re.sub(r".*abstract", "abstract", content, flags=re.IGNORECASE)
 
-        # Assign the content to the "content" column in the DataFrame
-        df.at[index, "content"] = content
+            # Get the first line of the content
+            first_line = content.split("\n")[0].strip()
 
+            # Match the first line with the title column
+            title_match = df[df["title"] == first_line]
 
-# Save the modified DataFrame back to the XLSX file
+            # If there is a match, update the content column with the matched title
+            if not title_match.empty:
+                df.at[index, "content"] = title_match["title"].values[0]
+
 df.to_excel(xlsx_file, index=False)
+
 
