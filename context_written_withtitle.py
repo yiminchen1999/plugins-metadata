@@ -7,10 +7,10 @@ import fitz
 import os
 import pandas as pd
 #记得改地址
-txt_directory = "1995_revised"
-xlsx_file = "CSCL_1995_revised.xlsx"
-df = pd.read_excel('/Users/chenyimin/PycharmProjects/plugins-quickstart/CSCL_1995.xlsx', engine='openpyxl')
-df["content"] = ""
+txt_directory = "1997papers1"
+xlsx_file = "CSCL_1997_revised.xlsx"
+df = pd.read_excel('CSCL_1997_revised_11.xlsx', engine='openpyxl')
+df["text"] = ""
 
 #
 for index, row in df.iterrows():
@@ -55,8 +55,11 @@ for index, row in df.iterrows():
             # Normalize spacing
             content = re.sub(r"\s+", " ", content).strip()
 
-        # Assign the content to the "content" column in the DataFrame
-        df.at[index, "content"] = content
-
+        # Assign the content to the "text" column in the DataFrame
+        df.at[index, "text"] = content
+df["id"] = "1997" + df["id"].astype(str)
+df.rename(columns={'dc.contributor.author[]': 'author'}, inplace=True)
+df.rename(columns={'dc.identifier.uri': 'uri'}, inplace=True)
 df.to_excel(xlsx_file, index=False)
+
 
