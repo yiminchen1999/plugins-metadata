@@ -1,7 +1,8 @@
-import os
+
+import pandas as pd
 import os
 
-folder_path = "1997papers1"  # Replace with the actual folder path
+folder_path = "2005"  # Replace with the actual folder path
 
 for filename in os.listdir(folder_path):
     if filename.endswith(".txt"):
@@ -10,5 +11,4 @@ for filename in os.listdir(folder_path):
         new_filename = start_point + ext
         os.rename(os.path.join(folder_path, filename), os.path.join(folder_path, new_filename))
 
-
-print("Files renamed and saved to the '1997_revised' folder.")
+print("Files renamed and saved .")

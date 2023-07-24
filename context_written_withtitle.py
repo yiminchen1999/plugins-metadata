@@ -1,5 +1,3 @@
-
-import pandas as pd
 import urllib.request
 import io
 import re
@@ -7,14 +5,14 @@ import fitz
 import os
 import pandas as pd
 #记得改地址
-txt_directory = "1997papers1"
-xlsx_file = "CSCL_1997_revised.xlsx"
-df = pd.read_excel('CSCL_1997_revised_11.xlsx', engine='openpyxl')
+txt_directory = "2005"
+xlsx_file = "CSCL_2005_revised.xlsx"
+df = pd.read_excel('CSCL_2005_revised_11.xlsx', engine='openpyxl')
 df["text"] = ""
 
 #
 for index, row in df.iterrows():
-    # Get the ID from the first column
+    # Get the ID
     id_value = str(row["id"])
 
     # Create the path to the corresponding TXT file
@@ -57,7 +55,7 @@ for index, row in df.iterrows():
 
         # Assign the content to the "text" column in the DataFrame
         df.at[index, "text"] = content
-df["id"] = "1997" + df["id"].astype(str)
+df["id"] = "2005" + df["id"].astype(str)
 df.rename(columns={'dc.contributor.author[]': 'author'}, inplace=True)
 df.rename(columns={'dc.identifier.uri': 'uri'}, inplace=True)
 df.to_excel(xlsx_file, index=False)
