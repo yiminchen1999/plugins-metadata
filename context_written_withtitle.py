@@ -5,9 +5,9 @@ import fitz
 import os
 import pandas as pd
 #记得改地址
-txt_directory = "2011"
-xlsx_file = "CSCL_2011_revised.xlsx"
-df = pd.read_excel('CSCL_2011_revised_11.xlsx', engine='openpyxl')
+txt_directory = "2010"
+xlsx_file = "CSCL_2010_revised.xlsx"
+df = pd.read_excel('CSCL_2010_revised_11.xlsx', engine='openpyxl')
 df["text"] = ""
 
 #
@@ -55,7 +55,7 @@ for index, row in df.iterrows():
 
         # Assign the content to the "text" column in the DataFrame
         df.at[index, "text"] = content
-df["id"] = "2011" + df["id"].astype(str)
+df["id"] = "2010" + df["id"].astype(str)
 df.rename(columns={'dc.contributor.author[]': 'author'}, inplace=True)
 df.rename(columns={'dc.identifier.uri': 'uri'}, inplace=True)
 df.to_excel(xlsx_file, index=False)

@@ -2,7 +2,7 @@
 import pandas as pd
 import os
 
-folder_path = "2011"  # Replace with the actual folder path
+folder_path = "2010"  # Replace with the actual folder path
 
 for filename in os.listdir(folder_path):
     if filename.endswith(".txt"):

@@ -24,6 +24,6 @@ def merge_xlsx_files(input_folder, output_file):
     print(f"Successfully merged {len(files)} files into {output_file}.")
 
 if __name__ == "__main__":
-    input_folder = "path/to/your/input/folder"
-    output_file = "path/to/your/output/file.xlsx"
+    input_folder = "revised all year paper"
+    output_file = "merged_paper.xlsx"
     merge_xlsx_files(input_folder, output_file)
