@@ -1,0 +1,511 @@
+Proceedings of CSCL 2002                                                                                               page    92
+
+            OCAF: An Object-oriented Model of Analysis of
+                               Collaborative Problem Solving
+                         N.M. Avouris1, A. Dimitracopoulou2, V. Komis1, C. Fidas1
+                                         1University of Patras, Patras, Greece
+                                      2University of the Aegean, Rhodes, Greece
+      N.Avouris@ee.upatras.gr, adimitr@rhodes.aegean.gr, komis@upatras.gr, fidas@ee.upatras.gr
+ABSTRACT
+Computer-supported collaborative problem solving requires new methodological approaches of interaction and problem
+solving analysis.   Usually  analysis of collaborative    problem   solving  situations is done  through   discourse  analysis or
+interaction analysis,  where   in the center   of attention   are  the  actors involved  (students, tutors etc.). An   alternative
+framework, called "Object-oriented Collaboration Analysis Framework (OCAF)" is presented here, according to which the
+objects of the collaboratively developed solution become the center of attention and are studied as entities that carry their
+own   history. This   approach produces  a   view   of   the process,  according to  which   the solution  is made  of structural
+components that are `owned' by actors who have contributed in various degrees to their development. OCAF is based on
+both actions and dialogues of actors, providing qualitative as well as quantitative indicators of collaboration and solution
+quality. The paper presents first the framework notation. Examples of its use in analysis of distance groups and face-to-face
+collaborative activities are provided next, followed by the dimensions of the framework supported analysis for teachers and
+researchers. Web-based tools supporting the OCAF approach are also presented.
+
+Keywords
+Collaborative problem solving analysis, face-to-face collaboration analysis, dialogue-action analysis, web-based analysis
+tools
+
+INTRODUCTION
+The methodological issues of collaboration analysis are important to the effectiveness of the collaborative learning process,
+the designation of appropriate learning activities and settings, as well as the design of collaborative technology-based
+learning environments. Analysis of collaborative problem-solving situations is usually done through discourse analysis
+(Baker et al., 1999), task analysis interaction analysis, or even a combination of methods (Komis, Avouris & Fidas, 2001),
+with the objective to evaluate the situation, the learning process and often the tools used. A number of different approaches
+have been developed for the analysis of collaborative activities in different mediums and environments. Some of them are
+focused on problem solving strategies or on plan recognition (Hoppe & Ploetzner, 1999), others on the evaluation of
+partners' involvement (Simmof, 1999), or on the process of mutual understanding and the learning effects (Baker et al.,
+1999).  There  are  approaches  of  analysis implemented      after the interaction  and others  that are  applicable during   the
+evolution of the collaborative process, thus providing assistance tools that are able to evaluate personal contribution and
+visualise collaboration patterns (Simmof, 1999).
+It seems that in this research field, collaboration analysis is mainly based on analysis of naturally occurring dialogue, due to
+a remaining dominant psychological interest in answering general questions related to understanding collaborative learning.
+It is interesting to  examine  the main  analysis   approaches,    in  the specific category of  technology-based   collaborative
+problem solving systems related to `diagrammatic solutions', a category where the actions of collaborative partners are of
+main importance. This is due to the fact that these actions reveal information on the quality of involved concepts and
+strategies of  pupils in a  learning  process. In   this category,  representative  research and  analysis approaches   are: The
+networked collaborative concept mapping system produced by CRESST (Chung et al., 1999), the CardDalis prototype
+(Muehlenbrock & Hoppe, 1999) interesting in terms of group action-driven interaction analysis, the research related to the
+C-CHENE system (Baker et al., 1999), designed to support dyads of students collaborating in the construction of diagrams
+of energy   chains,  and the BELVEDERE         v.2, a  networked    software   system, allowing  students  to collaborate during
+scientific inquiries (Suthers, 1999). Dominant approach of analysis in relevant experimentations, is the dialogue-oriented
+one. Even if in some cases, like the COLER system experimentations (Suthers & Hundhausen, 2001), common transcripts
+of dialogues and actions are reported, a well coordinated analysis related to the components of the reported solutions is not
+included. Moreover, in all these analysis techniques the center of attention are usually the actors (students, teachers etc.)
+and the dialogues, while the developed objects often enter the scene only as items on which operations are effected and as
+subjects of discussion.
+An alternative and complementary framework of analysis is presented here, according to which the objects of the solution,
+that is the objects that exist in the `micro world', become the center of attention and are studied as entities that carry their
+Proceedings of CSCL 2002                                                                                               page   93
+
+own history and are acted upon by their owners. This perspective produces a new view of the process, according to which
+the solution is made up of structural components that are "owned" by actors who have contributed in various degrees to the
+produced solution. This view of the world, which is a reversed view of the one we usually build of the problem solving
+process, can be useful, as it reveals the contribution of the various actors in parts of the solution, identifies areas of intense
+collaboration in relation to the final solution and can relate easily to other analysis frameworks like interaction analysis.
+According to this view an operational framework of analysis and evaluation of collaborative problem solving has been
+defined called `Object-oriented  Collaboration   Analysis Framework"     (OCAF),    also described   in Avouris   et al. (2001).
+OCAF's corresponding analytic model identifies patterns of interaction and relates them to objects of the shared solution.
+The model provides a new way of representing collaborative problem solving activity, taking into account both actions and
+dialogues  of partners and supports  qualitative and quantitative representations    that  can   be used as   meta-analysis   and
+evaluation tools. The  framework   has   been used  for the analysis    of various   kinds   of collaborative problem    solving
+environments based on jointly developed diagrammatic `solutions', made of well distinguished objects, such as concept
+maps, entity-relationship diagrams, diagrams of specific modeling formalisms, architectural diagrams, etc. It is shown that
+this approach can be applied both in synchronous distance-collaboration environments (dialogue via written messages) and
+in co-located group collaboration when a more oral-dialogue oriented collaboration occurs.
+The proposed analysis framework proposes a model that can be generated and further processed by adequate tools, attached
+to a collaboration support environment. These tools could be used not only by researchers but also by teachers managing
+on-line distance collaborative problem solving or by students, in an appropriate form, as a meta-cognitive or collaboration
+meta-analysis tool, helping them self-regulate their actions and their involvement.
+Most of the existing collaboration systems present limitations when used by young students in real school settings. Some of
+the limitations are attributed to the fact that the teacher who is in charge of several students, fails to interpret the enormous
+number of complex interactions that can take place simultaneously. Acknowledging this limitation, researchers have started
+to work on addressing this problem. Systems that aggregate the interaction data of logfiles into a set of high-level indicators
+and present them to the participants or the teacher have been proposed. From these systems, we could distinguish three
+main categories: (a) Systems that present or visualize indicators concerning exchanged patterns in a discussion. The system
+proposed by Simmof (1999) visualizes in an innovative way discussion threads with nested boxes exploiting quantitative
+information on participation rates in exchanged messages. In MarCo, a dialogue oriented system (Tedesco & Self 2000), a
+mechanism detects disagreements and conflicts between users' beliefs or intentions, on the basis of selected dialogue acts.
+(b) Tools based on qualitative analysis of members actions, deriving higher order descriptions of group activities, such as
+the CardDalis system (Muehlenbrock & Hoppe 1999) were applied in the low level conceptual task of puzzle resolution.
+FACT (More & Moriyon 2001) is another framework that produces tree-like histories, related to actions. (c) Systems that
+analyse messages   and  actions such as  the system  under  development    by Jermann     et al. (2001)  that displays   separate
+indicators of participation rates on messages and others on actions. Other systems, such as EPSILON (Soller & Lesgold,
+2000) and COLER (Constantino-Consalez & Suthers, 2001), analyse data from actions and messages and monitor directly
+group members by appropriate messages, without presenting the derived information to users (students or teachers).
+
+In order to develop effective analysis frameworks and tools for collaborative problem solving, the research community
+needs to investigate some key questions:
+How to coordinate the analysis of actions and dialogues?
+How to inter-relate collaboration features with problem solving content and process?
+How  to  go   beyond simple quantitative  indicators (e.g. participation   rates) to more    sophisticated  ones, such   as   role
+distribution that involve analysis of semantic aspects of interaction?
+·   How to provide a rich variety of analysis output, to assist facilitators or experienced learners?
+This paper makes an attempt to explore some of the above issues. First the OCAF framework and its model in textual and
+diagrammatic form are presented. Subsequently, some analysis examples are presented, through two different case studies,
+involving a synchronous distance-collaboration environment and a co-located group collaboration. The analysis dimensions
+of these cases are discussed in view of OCAF applicability and usefulness in research and teaching issues. The main
+functionality of a tool supporting the OCAF framework is also presented.
+
+THE OCAF FRAMEWORK
+The proposed framework is based on two basic considerations, one related to the object oriented view of collaborating
+actors' roles and contributions and the other to the unified analysis of dialogues and actions on objects.
+a) The diagrammatic solution of the problem is a representation of the shared effort of the involved partners as well as of
+their shared memory. In OCAF we shift the center of attention on these objects of the solution. That implies that these
+objects, constitutive of the solution, are studied as entities that carry their own history and are acted upon by their owners
+(the actors involved in their conception, creation, modification and inter-relation in the specific diagrammatic solution built
+Proceedings of CSCL 2002                                                                                                  page    94
+
+by them). This perspective produces a new view of the process, according to which the solution is made up from structural
+components that are "owned" by actors who have contributed in various degrees to the produced solution. This "object
+oriented view" focuses on the ownership of the constitutive objects of the solution, covering also parts of the solution that
+have not been completed or have been rejected in the process.
+b) Previous research has shown (Baker et al., 1999) that mutual understanding among the collaborative agents takes place
+via a combination of perception of graphical action and communication. Furthermore, depending on the provided tools
+facilitating dialogue, the collaboration mode can vary from a more action-dominant mode to a more discussion-based mode.
+For these reasons, it is argued that there is a need to apply a unified analysis and interpretation of both dialogue and actions
+related to the solution objects, in order to analyze and evaluate collaborative activities in diagrammatic problem solution.
+From the resulting framework of analysis, a model M of the solution is defined, conceived in this context, as a formal
+model, that can be used to analyze or reconstruct certain aspects of both actions and dialogues occurring in the problem-
+solving group. This model of ownership of the solution is based on the notion of ownership of the components of the
+diagrammatic solution. Such a diagram in many cases is made of objects (entities) that are shown in the diagram in abstract
+or pictorial form. These can be related through relationships often shown or implied in the solution. The entities have
+attributes or properties that are associated to them. The entity/relationship/attribute constructs could be the basic objects that
+make a diagrammatic solution according to the proposed notation of the framework. The proposed model according to
+OCAF has been formalized in textual and diagrammatic form as follows:
+Let a given Solution S of a problem X be: S(X) = { Ei , Rj, Am,} , Where E represent the node entities of the solution, ( i=1,
+..., k) R the relationships connecting them (j=1,...,l) and A the attributes of the entities (m=1, ..., n) that participate in the
+solution.
+The model of the solution can be:
+     M (S)= { Ei       * i /Pi fj, Pk fl , ... Rj  * i / Pi fj, Pk fl , ...,  Am * i / Pi fj, Pk fl , ...;
+            -Ei  * i / Pi fj, Pk fl , ..., -Rj * i / Pi fj, Pk fl , ..., -Am * i / Pi fj, Pk fl , ... }
+Where: E, R, A, are the entities, relations and attributes that are part of the final solution, while with ­E, -R, -A the items
+discussed during the problem solving process, but not appearing in the final solution, are shown. i is an index of the item,
+as implied by its initial action of insertion or by its discussion in the timeline of the problem solving process.
+To each item a sequence of Pi fj is associated. Each Pi fj represents the human agent Pi (e.g. a student, teacher or facilitator)
+participating in a direct or indirect way in the problem solving process and his/her functional role fj related to the particular
+part of the solution.
+The different functional roles f used in OCAF are described in Table 1. It should be noticed that two functional roles
+concern the initial proposition to insert the item (by action (I) or by dialogue (P)), while the others express the discussion on
+each item. Also testing of the proposed solution is done through argumentation (A) in the case of static-diagrammatic
+solutions, while testing can involve use of alternative representations and provided testing tools in case of development of
+dynamic models of the solution (T).
+So for example: [E (Storehouse)]=AP BM AI indicates that the entity Storehouse has been produced from interaction of
+Agents A and B. Agent A made the initial proposal (AP), which was modified subsequently by Agent B (BM), finally Agent
+A inserted the object in the shared Activity space (AI), accepting the final solution.
+It has to be noticed that the actors' functions in interaction have been defined as `functional roles' of `communicative acts'.
+Initially, the `functional role', was a term      used in dialogue analysis      in linguistics (Moeschler,    1992), transferred in
+educational research (Sabah et al., 1999) in the context of verbal dialogues. A `communicative act' (Bunt, 1989; Baker &
+Lund, 1997; Burtin, Brna & Pilgington, 2000) was a term referred on both oral and written communication. In our context,
+the term of `communicative act' refers not only on messages (written dialogues during collaboration by distance), and oral
+utterances (during face to face collaboration), but also on actions of collaborative agents, given that during a synchronous
+collaborative activity these actions have a strong communicative value. Consequently, in our context of computer-based
+collaborative problem solving, a functional role reports the purpose of a `communicative act', from the point of view of its
+`actor' or `interlocutor', thus constituting an interpretation of the actors/interlocutors intention in communication.
+Proceedings of CSCL 2002                                                                                                                                  page 95
+
+                           ID    Functional Role                   Derived from :                 Example
+                           I=    Insertion of the item in the      action analysis                Action: `Insertion' of Entity "Velo"
+                                 shared space
+                           P=    Proposal of an item or            dialogue analysis              Message: "I believe that one entity is the
+                                 proposal of a state of an item                                   firm `ABC'" or "let us put the value of entity
+                                                                                                  flow to state locked"
+                           C=    Contestation of the proposal      dialogue analysis              Message: I think that this should be linked to
+                                                                                                  the entity B by the "analogue to" relation
+                           R=    Rejection / refutation of the     action and/or dialogue         Message: "What their attributes will be ? I
+                                 proposal                          analysis                       don't agree".   Or
+                                                                                                  Action: `Delete' Entity "Velo"
+                           X=    Acknowledgement/                  Action and / or dialogue       Message: "That's right" or
+                                 acceptance of the proposal        analysis                       Action: Insertion of a proposed enitity
+                           M=    Modification of the initial       action & dialogue analyses     Message: I suggest we put the state to
+                                 proposal                                                         "unlock"
+                                                                                                  Action: "Modify"
+                           A=    Argumentation on proposal         dialogue analysis              Message: "I believe that I am right because
+                                                                                                  this is ..."
+                           T=    Test/Verify using tools or        actions & dialogue analyses    Message: Let us run this model to observe
+                                 other means of an object or a                                    this part of the model behavior
+                                 construct (model)                                                ction: Activate `Graph Tool' , or `Barchart
+                                                                                                  Tool''
+
+Table 1. Unified "functional roles" definitions
+An alternative, diagrammatic representation of the model involves association of the solution items to their history as
+shown in the figures of next section. The advantage of the textual representation is that it can be produced and processed by
+an adequate tool, while the diagrammatic representation is easier for the human to study. The two representations of the
+model are equivalent.
+
+CASE STUDIES OF OCAF APPLICATION
+In this section application of the OCAF framework is presented in two different collaborative problem solving settings. In
+the following typical extracts of analysis are included. Subsequently, a discussion on the analysis dimensions is provided.
+
+Case A : Collaborative distance problem solving
+The first case study  involves     use     of    Representation      V.2.          (Komis,     Avouris     &    Fidas,   2001),        a  system   for synchronous
+collaborative problem solving, expressed through semantic diagrams. The system supports the simultaneous development
+of these diagrams by partners situated at a distance, through the use of a shared `Activity Space'.
+The case study, discussed more extensively by Komis, Avouris & Fidas (2001), is taken place in the context of a University
+undergraduate course. The problem solving task involved the collaborative building of a data model of the activities of an
+imaginary goods transport company (ABC) that supplies the stores of a supermarket chain (VELO), transporting goods
+from a number of storehouses owned by the supermarket company to the supermarket stores. The purpose of this model is
+to be used in the design of a database to support the companies involved in scheduling their trucks and delivery of supplies.
+The students had to express the model as an entity-relationship (ER) diagram, a representation often used in data modeling.
+The main objective of the experimentation was to study the degree of collaboration and the development of problem
+solving strategies. Main sources of data for our analysis have been the log files, which contain details of inter-group
+communication acts (chat messages) and shared activity space actions, as well as the produced ER diagrams of the students.
+An extract of a log file, as well as its interpretation in terms of OCAF functional roles is shown in Table 2.
+Proceedings of CSCL 2002                                                                                                                                   page  96
+
+                              Partner E                                Partner F                     Functional roles          i
+                         (Actions & Messages)                  (Actions & Messages)
+                    E: ... about the entities, strong                                          ABC : EP                        1
+                    entities are ABC and VELO                                                  VELO: EP                        2
+                                                                                               ABC : FA
+                                                                                               VELO: FA
+                                                           F: Yes and also TRUCKS,             TRUCK : FP                      3
+                                                           STOREHOUSES and STORES              STOREHOUSE : FP                 4
+                                                                                               STORES : FP                     5
+
+                   E: Attributes of (supermarket )                                            VELO.STOREHOUSE :        EP       6
+                    VELO are the STOREHOUSES                                                  VELO. STORES : EP                7
+                    and the STORES
+                                                           F: and attributes of ABC the       ABC.TRUCK : FP                   8
+                                                           TRUCKS
+                    Added rectangle object
+                                                                                              VELO.STOREHOUSE :        FC
+                                                           F: No they are not attributes they VELO. STORES : FC
+                                                           are weak entities                   STOREHOUSE : FA
+                                                                                               STORES : FA
+                     E: ...and for ABC the TRUCKS                                             ABC.TRUCK : EX
+                      (are attributes) and we need to
+                      show the JOURNEYS somehow
+                    The rectangle object is named                                             VELO : EI
+                    VELO
+                                                           F: I cannot see what you are         (Control statement)
+                                                           doing
+                    Added object- named object ABC                                             ABC  : EI
+                                                           Could you pass me the action        (Control statement)
+                                                           key please?
+
+Table 2. Extract of interaction between partners E and F, in case study A [i = index of solution items]
+An example of analysis of collaborative solution is presented here. The problem solving team studied in this section is
+made of students E-F. The produced solution by this group is modeled, according to the OCAF framework, as shown in
+Figure 1. The last five items of MEF concern objects discussed during problem solving process but not reported in the final
+solution due  to  conflicts        between            collaborating          agents     or    not  completed         negotiation.    The same  model   is shown     in
+diagrammatic form in the same figure
+Analysis supported by the model : From this descriptive model, firstly, a qualitative analysis on the content of solution may
+concern  the appropriateness        and        completeness            of    the  proposed        solution.        So, regarding    the `objects' of the  solution, a
+researcher or teacher, can identify that for instance the object `relation Storehouse owns Trucks' is not correct, since such
+ownership  is not included         in      the problem           description:       the       correct    relationship     could    have been Trucks  are  loaded    at
+Storehouses. In parallel, regarding the `object' history related to collaboration, one can observe that this relationship has not
+been subject of strong collaboration. Another important aspect to study in a solution process, is the parts of the solution that
+lead to conflicts and did not take part in the final solution. For instance Actor E proposed Store as an attribute of entity
+VELO that was abandoned in favor of inserting Store as a separate entity, a solution that is more appropriate for the specific
+problem.
+The model, can also, support a global quantitative analysis orientated to the solution items: Number of items in the model =
+20, Number of items discussed and not included in the final model = 5, Number of items of unresolved conflicts =4.
+Concerning the collaborative history of the produced solution, we could firstly, examine the history of each object of the
+  solution. A quantitative analysis oriented to interaction patterns can identify (10) different interaction patterns in the
+  model. The items produced per interaction pattern are:FI = 5 (item inserted by F implicitly accepted by E), FIM = 4 (item
+  inserted by F, subsequently modified by same actor), FPI = 3 (item proposed by F and subsequently inserted by the same
+  actor), EP FI = 2 (proposed by E and inserted by F), FP EC FA FI = 2 (item proposed by F, contested by E, acknowledged
+  argument by F and finally inserted by F), EP FR = 2, EP FC = 2 (item proposed by E and proposal rejected or contested
+  by F with no further discussion) while five more patterns occurred once.
+Proceedings of CSCL 2002                                                                                                                                                                 page 97
+
+MEF = {
+Entities=      E (ABC) =                1/EP, FA , EI
+               E (VELO) =               2/ EP, FA , EI
+               E (TRUCK) =              3/FP, FI
+               E (STOREHOUSE) = 4/FP EC, FA, FI
+               E (STORE) =              5/FP EC, FA, FI
+               (DELIVERY)=            11/ FP, EX, FI
+Relations=     R (VELO-owns-SH) = 9/FPI
+               R (VELO-owns-ST) = 10/FPI
+               R(TRUCK-transports- DELIVERY)=17/ EP, FI, ECR(SH-are-suppplied-by-TR) = 18/ FIMA (storehouse)    A (store)                              A(id)
+               R (ABC-owns-TR) =        25/ FPI                                           6/EP, FC             7/EP, FC                           24/ FI               A (truck)
+               R(ST-owns-SH) =          24/ EP FP FI   EC, EMR (ABC-owns-TR) =25/ FPIAttributes=A (DEL.id) =13/FIME(VELO)R             E(STORE-                      8/FP, EXHOUSE)
+               A (DEL.volume) =         14/FIM                     2/EP, FA , EI                             9/FPI                    4/FP EC, FI
+               A (DEL.Weight) =         15/FI                                                                                                             E(ABC)
+               A (DEL.Destination) = 16/FI                           R                                     R                 R                           1/EP, FA , EI
+               A (TR.Max_Weight      ) = 19/FIA (TR.id)=21/EP , FI                                                                            R10/FPI24/EP FPI, EM18/FIM25/FPIR
+               A (TR.Journey_id     ) = 23/FI                                                                                                                        12/EP, FR
+               A (TR.volume     )=      20FIM                         E(STORE)A (SH.id ) =24/FI5/FP , EC, FAIItems not in the final solution             E(DE-E(TRUCK)RLIVERY)EP, FI17/EP,FI,EC11/FP, EX, FI
+               -R (SH-DEL) = 12/EP , FR ,-A(VELO.Storehouse)=6/ EP , FC                          A(Max_               A(Journey                  A(Id)              A(volume)weight)id)
+               -A(VELO.Store)=          7/ EP , FC                                           19/FI                          23/FI             13/FIM                   14/FIM
+               -A(ABC.Truck)=           8/ FP , EX                                A (max--A (TR.max_journeys_per_week) = 22/EP , FR }journeys/weekA(volume)22/EP, FR20/FI,MA(id)A(Weight21/EP, FI15/FIA(destination)16/FI
+                  Figure 1. The solution expressed as OCAF model in (a)textual and (b) diagrammatic form
+In relation to the contributors (in this example students E and F), one can determine that in this collaborating team, 25
+items have been discussed, of which 12 have one owner and 13 two owners. The distribution of items proposals among the
+agents involved is: E=4 (20%), F=16 (80%), while 4 more items proposed by E and 1 proposed by F did not take part in the
+final solution. Such a distribution provides a strong indication of ownership and involvement.
+Regarding the functional roles of each member, we can observe that member `F' takes stronger action roles (e.g. I, M),
+while the observer (F) takes stronger verbal roles (e.g. P, C). Taking into account that the possession of the action-enabling
+key (permitting actions on the shared workspace to its owner) was 40% of the time for E and 60 % for F, one can infer the
+collaborative mode adopted by the group.
+If the analysis is orientated towards examination of the `subject' of collaboration (where the group has focused ), we could
+examine for instance the items of the solution in relation to ownership. In the presented example it is observed that the most
+important items of the developed solution (i.e. entities and relationships) are 8 of dual ownership (67%) and 4 of single
+ownership. In other words there has been stronger interaction in the process of creation of the backbone parts of the solution
+than the secondary parts (i.e. attributes).
+
+Case B: Face to face collaborative problem solving
+This case study involves a group of two 15 years old pupils (A and B) working as a group, in the presence of a facilitator F
+(a teacher-researcher). The experimentation took place in a laboratory. The students were asked to study a simple situation
+where a barrel can be filled by the water of a tap and build a model of the relations involved using MODELSCREATOR, a
+learning environment allowing creation and testing of models using pre-defined objects (Dimitracopoulou et al. 1999,
+Komis et al. 2001). The environment is a single-user tool, so one of the pupils is the operator of the tool, while the second
+pupil and the facilitator are observers. In order to build a solution, the pupils have to determine the relevant entities, their
+properties and the relations between them.
+Proceedings of CSCL 2002                                                                                                                                                                                                                                                                          page 98
+
+                                                                                                                   R                                                       E(TAP)                                                                            E
+                                                                                                             (proportional                                                                                                       I                        (BARREL)
+                                                                                                              ­constant)                                                1 /KIMCFCMX KX
+                                                                                                             13/BP AC                                                                                                                                         2/KI
+                                                                                                                                                                                                                                    R
+                                                                                                                                                                           A(FLOW)                         (proportional-           to)                       A(WATER -
+                                                                                                                   R(inverse -proportional)                                                                                                                   VOLUME)4 /MP MI FP= KP=4/KP MIKT=ALOCK KP KT=LOCKKT=BARCHARTKA MX3 /MP KIK T=- SIMULATIONK AMAKA
+                                                               9 /BP AI AT=M-SIM AR FA AI FP=T AT=-SIMAT=SIMF PT AT=STEP-SIM BA AAFC AA                                                                E(CLOCK)
+                                                               FP=T                                 AT=SIM   AR   FC BA   FP=T  FT=-        SIMFT=- SIM BR FM                  R(inverse-proportional-                                                       R(proportional-3 /BPAXAIto)
+                                                                                                                   R                                                           to)
+                                                                                                                 (square-
+                                 E(TAP)                                                                      proportional )                                    E    9 / KP MI MT= SIMULATION               A(TIME)                                   5 / KP KI MT=TABLE VALUE MT= GRAPH
+                                                                                                   12  /AP   AI  AP=T  AT=BARCHART                      (BARREL)
+                               2 /AIACFCBX AX                                                      AC BP AR AM                                                                                       9 / MP MI MT= M-SIMULATION
+                                                                                                                                                               1/AI           R(proportional                                                         (b)
+                                                                                                                   R                                                       ­constant)
+                                   A(FLOW)                                                                   (proportional-to)                           A(WATER-      10 /KI MA KA MR
+                                                                                                                                                         VOLUME)
+                                 4 /AP AI FP= BP=                                                      11/AP AP AI FP=TAT=LOCK AP AT=LOCKAT=BARCHARTAABA   5 /BP AI
+                                    AT=- SIMULATION                                                                                                         AABAAA
+
+                                                                                                            E(CLOCK)
+                                      R   (inverse-proportional-                                                                                           R(proportional-6 /BPAXAIto)
+                                             to)                                                                                                8/AP AI FC AA P=    AT=-SIMULATION
+                                  14/AP AI                                                                   A(TIME)                            AT= SIMULATION FP=T AT=- SIMULATIONAT= SIMULATIONARAI AR FAAI
+                                                                                                       7/AP A1 AA BP=
+                                    R  (proportional                                                   AT=LOCK    AT=-SIMULATION                        E              (a)
+                                        ­constant)                                                                                                 (CISTERN)
+
+                               10 /AI FA AA AR
+                                                                                                                                                3 /APFC BC AP FC BP AP FC
+                                                                                                                                                          AA AR
+
+Figure 2, OCAF model for case study B. (a) students A,B, (b) students K,M
+Typical models of this study are represented in diagrammatic form in figures 2a, 2b. From the model of figure (2a), an
+initial qualitative analysis, concerning the items themselves, can determine the appropriateness and completeness of the
+proposed solution. In order to interpret the conceptual difficulties of students or their mental models about implicated
+concepts, it is useful to consider a time dimension in the problem solving process, exploiting information derived from the
+order/index of items discussion (variable i in OCAF model). For instance, the central entity CLOCK (i=6) is inserted with
+some delay, due perhaps to the abstract nature of the concept of time. Additionally, it can be examined in which phases of
+the problem solving process the presence of facilitator (teacher) appears decisive. Examining the index of items discussion,
+in the presented example could be observed that the presence of F (facilitator) appears decisive in early stages (e.g. items 3,
+8, 9), while the rejection of incorrect parts of the solution at a later stage (e.g. items 12 and 13) is done by the pupils
+themselves with no intervention of the facilitator.
+Qualitative analysis oriented to the collaboration can be derived examining the history of collaboration of each solution
+`object'. Observing the OCAF model, one can see that a number of solution items have been the subject of very strong
+exchanges. Additionally,                              a global                                              quantitative                         analysis              identifies,             a wide                               variety      of interaction                patterns,     with multiple
+exchanges. The rich interaction that took place is eventually due to the co-location of actors, the presence of the facilitator,
+and the existence of multiple tools that were used to validate alternative solutions.
+If the analysis is oriented more specifically to each contributor (A, B and F), one can determine that in this collaborating
+team, 14 items have been discussed, of which 2 (14%) had one owner, 7 had two owners (50%) and 5 three owners (36%).
+From the objects of multiple ownership most of them have been assigned long interaction patterns, indication of strong
+interaction about the concepts involved.
+
+Regarding the functional roles of each member contribution, we can account the distribution of items proposals among the
+  agents participating that provides an indication of ownership and involvement. In this example, it was as following:
+  A=10 (71%), B=4 (29%), F=0, ratio=2,5. It infers that actor A was mainly the operator ('Insertions' from A=15 and
+  'Insertions' from B=0, so this non-uniform distribution of ownership reflects these roles. Examining closer other `roles',
+  we can distinguish some problem solving strategies concerning the evaluation process of the produced solution: for
+  instance, it can be observed that the pupils have tested parts of the solution (e.g. the relations) by using mostly manual
+  simulation (Tool: M-SIMULATION) and did not validate the overall model (absence of tool `RUN'), due perhaps to the
+  simple structure of the developed model. Examining the indices of T(est) role, we have observed that only some of the
+  available alternative representations (graphs, Bar charts, tables of values), have been used, and this in a limited degree.
+From this analysis, one can deduce that most collaborative activity concerns the relationships (R). The objects themselves
+are inserted without many objections and therefore they do not become objects of discussion. Another observation on the
+Proceedings of CSCL 2002                                                                                            page   99
+
+density of collaboration is that there is a lot of interaction on objects not inserted in the model (e.g. relationship inverse-
+proportional between water-volume and tap-flow and on entity Cistern, see figure 2a).
+The above analysis is focused on the exploitation of OCAF model's information related to a specific solution. Researchers
+and teachers can also derive significant information comparing two or more models of the same problem solutions provided
+by different groups. For instance, comparing the diagrammatic model of the solution of group AB (see figure 2a) with this
+corresponding of group KM, shown in figure 2b, one can distinguish differences in objects involved in each solution, in
+conflict points, identify items of intense collaboration in one group and low collaboration in the other group and so on.
+
+TOOLS TO SUPPORT OCAF
+An attempt has been made to support the OCAF Framework through a logging data storing and presentation tool. The tool
+has been implemented in the case of an environment of distance collaboration, where interaction was based on exchange of
+text messages and actions in the common activity space. The events are serialized and stored in a database. Actions are
+categorized according to the functional roles of Table 1. Classification of text messages is left to the researcher, since no
+structured dialogue tool has been used in this case. A web-based interface has been built, through which inspection of these
+log files and grouping of information is achieved. Views of interaction as presented by this tool are shown in figure 3.
+
+   Figure 3. OCAF tool for log file visualization
+In figure 3(a) interactions are presented according to the time dimension. Every time a new object is inserted in the activity
+space, a hyperlink is built to it, which allows the researcher to see the object view of this particular item, as shown in figure
+3(b). Alternative views are also created according     to actors, items of the solution, structure of the solution, etc.   An
+interesting aspect is that these views are created automatically; since the information is built in a database and the web
+interfaces shown in figures 3 are created dynamically through queries to the database. The tool was proven useful to the
+analysis described in the previous section, while new functionality is planned to be built relating to the run-time use of the
+log files. Complementary tools are planned to be developed enabling an automated production of diagrammatic models of
+OCAF framework.
+
+DISCUSSION
+Collaboration is a phenomenon for which we lack adequate analytic models. It is not claimed that the complex phenomena
+of social interaction and particularly of collaborative learning can be comprehensively reconstructed by analytic models.
+These models are bound to be partial, capturing only specific facets of actions or interactions in groups. The value of an
+analytic model like OCAF, is related to its capacity to bring up interesting points of view and thus provide information to
+researchers relating to some of the following issues:
+
+A) The quality of the solution: firstly it can identify solution items that take part of the solution. Further information that
+can help to interpret the solution and infer mental models of students are: (a) Items discussed and rejected and items that
+were abandoned due to a conflict. (b) The collaborative history of objects, for instance non appropriate solution items that
+have been derived from low collaboration, (c) The order of each item discussion (). Information on the problem solving
+strategy can be extracted by the study of some `functional roles' of objects' solution history related to testing approaches
+and tools used (see analysis of Case study B)
+B) Collaboration modes and quality of collaboration,: Information that can be derived can concern among others the
+following: (a) Degree of participation of group members, based on indicators such as distribution of solution items per
+member, (b) Contribution of group members to the developed solution, (c) Determination of roles of group members, and
+Proceedings of CSCL 2002                                                                                                 page  100
+
+the  degree  of  their involvement,    (d) Existence   of some  functional    roles (e.g. argumentation    or test) (d) Density  of
+interaction; (e) Identification of interaction patterns per item of solution.
+Some of the above points are related to quantitative aspects of interaction, and appear often in studies of collaborative
+distance learning environments, while others relate to a more cognitive and meta-cognitive view, as for instance is the case
+of  solution validation   strategies. These   questions  have been   effectively tackled   using OCAF,     as demonstrated  in   the
+presented case studies.
+
+A second point relates to the diagrammatic form of the OCAF model. This contributes in a supplementary way to the
+analysis, providing a perceptual view. A teacher that examines and compares two diagrammatic OCAF models of solutions,
+can directly distinguish, for instance, solution objects that are not appropriate and were not discussed in a group, or others
+that were discussed a lot and revised. Such information can support teachers to propose intra-group collaboration in order to
+discuss specific issues.
+The teachers can identify conflict points, not appropriate approaches and give advice on topics of the debriefing session
+internal to the group and recognize semantically significant differences between approaches on problem solving and advice
+further intra-group discussions.
+Related to the diagrammatic form, one can consider this view as an attempt to relate the time dimension (predominant in
+interaction  analysis)    to  the   space   dimension     (predominant  in    diagrammatic     solution  representation).  Various
+transformations   of   this view  can  make   it suitable for different users. For   instance, by  adequate   color-coding  of   the
+participants and their roles, the association of ownership to solution items could become vivid,. Even if the presented
+abstract form   of this     diagram may    be useful  to  researcher or  teachers,   may   not be appropriate    to  students. This
+representation can increase their cognitive load. In this case, alternative representations can be used, like the diagram of the
+produced solution itself, with associations to the history of interaction to each `object' involved.
+The framework was applied in two cases both of them involving diagrammatic problem solutions where the constitutive
+items of the solution were entities, relations and attributes or properties. It is believed that using the framework, similar
+models can be produced containing various kinds of solution items, the only restriction being that the problem solution is
+made of independent items. So many diagrammatic or object-based solutions, like diagrams, puzzles, etc., can be analyzed
+In contrary, this framework cannot easily be applied in text-based or algebraic solutions.
+In conclusion the presented work is part of a research agenda that seeks to conceive and develop flexible and open tools,
+able to  assist users  of   collaborative learning  environments  to monitor   and/or  self-regulate  their actions. The  tools  are
+designed to be open in order to allow a substantial adaptation of participants' functional roles, and are designed to be linked
+with different kinds of systems, based on various dialogue interfaces among collaborators.
+
+ACKNOWLEDGMENTS
+Financial support has been provided by the Représentation Project, Educational Multimedia - Task Force (project 1045)
+and  IST2000-25385     ModelingSpace      Project  of the EU  and Programs     Seirines   and Pinelopi  of  the Greek   Ministry of
+Education.
+
+REFERENCES
+Avouris N.M., Dimitracopoulou A., Komis V., (2001, Submitted). On analysis of collaborative problem solving: An object-
+         oriented approach, Int. J. of Interactive Learning Research.
+Baker M., Hansen T., Joiner R., & Traum D. (1999). The role of grounding in collaborative problem solving tasks. In P.
+         Dillenbourg    (Ed)   Collaborative-learning:    Cognitive  and  Computational      Approaches.    pp. 31-64,  Pergamon,
+         Elsevier.
+Baker M., Lund K., (1997). Promoting reflective interactions in a computer-supported collaborative learning environment,
+         Journal of Computer Assisted Learning, 13 (3), 175-193.
+Bunt  H.C.   (1989).   Information    dialogues  as communicative    action in   relation to  partner modelling   and   information
+         processing, in (Eds) MM. Taylor, et al., The Structure of Multimodal Dialogue, pp. 47-74. Elsevier Sciences
+         Publishers, North-Holland.
+Constantino-Conzalez      M.A.   &    Suthers D.(2001)    Coaching   Collaboration    by  Comparing     Solutions   and  Trackning
+         Participation, in Proc. of European Conference on CSCL, Maastricht, NL, March 2001. pp.173-180.
+Chung W.-T., O'Neil H.F., & Herl H.E. (1999). The use of computer-based collaborative knowledge mapping to measure
+         team processes and team outcomes. Computer in Human Behavior, 15, pp. 463-493.
+Dillenbourg P. (1999). What do you mean by collaborative learning ? In P. Dillenbourg (Ed) Collaborative-learning:
+         Cognitive and Computational Approaches, pp. 1-20, Pergamon, Elsevier.
+Proceedings of CSCL 2002                                                                                    page  101
+
+Dimitracopoulou A., Komis V. Apostolopoulos P. & Politis P. (1999). Design Principles of a New Modelling Environment
+       Supporting  Various Types  of Reasoning      and Interdisciplinary Approaches, Proc. of 9th Int. Conference of
+       Artificial Intelligence in Education, IOS Press, Ohmsha, pp. 109-120.
+Hoppe U. & Ploetzner R. (1999). Can Analytic Models Support Learning in Groups? In P. Dillenbourg (Ed) Collaborative-
+       learning: Cognitive and Computational Approaches., pp. 147-169, Advances in Learning and Instruction series,
+       Pergamon, Elsevier.
+Jerman P., Soller A. & Muhlenbrock M. (2001). From Mirroring to Guiding: A Review of State of the Art Technology for
+       Supporting Collaborative Learning, Proc. of EuroCSCL, Maastricht, NL, pp.324-331.
+Komis V., Avouris N, & Fidas C. (submitted, 2001). Computer Supported Collaborative Problem Solving: nteraction
+       through diagrammatic and free-text communication, Computers and Education.
+Komis V., Dimitracopoulou A., Politis P., & Avouris N. (2001). Expérimentations exploratoires sur l'utilisation d'un
+       environnement informatique de modélisation par petits groupes d'élèves, Sciences et Techniques Educatives,. 8,
+       (1-2), Avril 2001, pp.75-86 (in French).
+Mora M.A. & Moriyon R. (2001). Guided Tutoring Through Learning History Analysis: the FACT Framework. Proc. of
+       European Conference on CSCL, Maastricht, The Netherlands, March 2001. pp.680-681
+Muhlenbrock M. & Hoppe U. (1999). Computer Supported Interaction Analysis of Group Problem Solving. In C. Hoadley
+       & J. Rochelle (Eds). Proceedings of 3rd Conference on CSCL, December 12-15, 1999.
+Ploetzner R., Hoppe  H.U., Fehse E., Nolte      C., Tewissen F. (1996).   Model-based  Design  of Activity Spaces  for
+       Collaborative Problem Solving and Learning. Proc. European Conf. on AI in Education, pp. 372-378, Lisbon:
+       Colibri.
+Simmof S. (1999). Monitoring and Evaluation in Collaborative Learning Environments. In C. Hoadley & J. Rochelle (Eds).
+       Proc. 3rd Conference on CSCL, Stanford, December 12-15, 1999.
+Soller A. & Lesgold A. (2000) Knowledge acquisition for adaptive collaborative learning environments. Proceedings of the
+       AAAI Fall Symposium: Learning How to Do Things, Cape Cod, MA.
+Suthers D., & Hundhausen (2001). Learning by constructing collaborative representations: An empirical comparison of
+       three alternatives. Proc. of EuroCSCL, Maastricht, The Netherlands, March 2001. pp.577-584
+Suthers D., (1999). Effects of Alternate Representations of Evidential Relations on Collaborative Learning Discourse In C.
+       Hoaley & J. Rochelle (Eds). Proc. 3rd Conference on CSCL,, Stanford, December 12-15, 1999.
+

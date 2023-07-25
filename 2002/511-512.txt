@@ -1,0 +1,96 @@
+Proceedings of CSCL 2002                                                                                          page  511
+
+                      Mathematical Discussion System
+                                                     Gabe Johnson
+                                                 University of Colorado
+                                                johnsogg@cs.colorado.edu
+ABSTRACT
+The Mathematical Discussion System (MDS) enables students and instructors to hold embedded discourse in an online
+electronic text. These contextualized conversations are recorded and are able to improve the value of the text for students,
+instructors, authors, and publishers.
+
+Keywords
+embedded discourse, hypertext, SER, collaborative learning, discussion moderation
+
+INTRODUCTION
+While studying, students may encounter breakdowns in comprehension, and they may need to consult other resources
+before being able to move forward. In these cases, many people find a friend or a teacher that may be able to help. Another
+outlet for a struggling student can be the Internet. In both cases, the cause of the breakdown as well as the solution are
+rarely recorded. The MDS addresses this problem by reducing the distance between the source of the breakdown and a
+subsequent discussion. The discourse is recorded in the MDS for others so that if they need help on the same topic, there
+may be a discussion embedded in the relevant portion of the text. In a way, the text becomes a well-known place in which
+students and instructors can discuss course material without needing to be temporally or spatially collocated.
+The MDS naturally supports the Seed-Evolve-Reseed [Fischer, et. al] process. Because the conversations are recorded
+within the original text, these discussions add value to the material. From the student point of view, using an online text that
+has conversations about the material may be much more useful than the same text without such embedded conversation.
+For instructors, the discussion forums can serve as an excellent way to understand what the students are struggling with, so
+that those topics can receive more attention in class. For book authors or publishers, embedded discourse can serve as
+embedded reader feedback, suitable for reference in future revisions. The original text serves as a seed; the discussions
+provide an evolution process for that seed; and the act of reflecting and changing teaching behavior, or the text itself, can be
+seen as reseeding.
+
+PROTOTYPE DEVELOPMENT
+During the summer of 2000, we built a prototype system to be used by an undergraduate differential equations course at the
+University of Colorado. We wanted to study how well such a prototype would facilitate learning and discussion between
+classmates and instructors.
+In one manner of thinking, the electronic text provides a sort of "virtual place" for students and instructors to discuss course
+material within the context of course material. The electronic text becomes a location where readers can expect to find
+topical conversations. The discussion forums are very similar to today's Internet newsgroups, the MDS prototype provides
+a number of features (discussed below) to the discussion forums that extend the utility of standard newsgroups.
+Due to the  inherent attributes of    an ASCII   newsgroup, many  students have found  them to be  inadequate      modes of
+communication. For example, it is difficult to relate mathematical equations or other symbols not found on a QWERTY-
+keyboard. The MDS enables people to insert such symbols into their messages--addressing the limitation of ASCII-only
+newsgroups.
+One major limitation of web-based discussion forums stems from the pull nature of web sites. In general, people happen
+upon discussions that interest them by browsing. It can be difficult to remain engaged in these forums because the user
+must actively look for new messages, rather than receiving them passively, as is the case with email [dePaula 2001].
+People reading an MDS text are presented with colored squares next to each paragraph. These squares represent places
+where  conversations  take   place    regarding the surrounding paragraph.  We  call these squares hooks,       because  the
+conversations are thought to be hanging off the main text. These hooks are color coded to indicate activity. If there are new
+messages relating to the paragraph, the hook is red. Otherwise, the hook ranges from light blue (indicating a few messages)
+to dark blue (indicating many messages). When the reader clicks on a hook, a discussion forum interface is presented.
+Users may not place their own hooks. In initial designs of the MDS, users were given the ability to create their own hooks
+based on arbitrary portions of text. Users could select a few words, sentences or even paragraphs, and comment on the
+selected text. This was problematic because after a number of people had created their own hooks, the page was visually
+cluttered. The hooks began to distract from the text of the page. We chose to give the page author the responsibility of
+marking up the page with hooks in order to avoid this problem.
+Proceedings of CSCL 2002                                                                                          page 512
+
+Another problem inherent in online discussion forums is the presence of a large number of poorly thought out or erroneous
+postings. It is possible that a posting with incorrect content can lead students to believe things that are not true, but it is also
+possible that these `bad' postings can be used to understand student's misconceptions and to use them as opportunities to
+set things straight. We have implemented a moderation system in the MDS which is very similar to the moderation system
+used by Slashdot [http://slashdot.org]. When a person reads a message and finds it to be particularly good or bad, he or she
+can give or take away a moderation point. After a number of people have read a message, it may achieve a good or bad
+moderation score. This score can be used to filter messages so that only messages above a certain threshold are displayed.
+Each user may set his own moderation threshold, so that all posts may be shown, or only the most highly rated posts are
+shown. This      helps users sort out the potentially good  messages from the  large numbers  of superfluous posts  that are
+common within so many of today's newsgroups.
+
+FUTURE WORK
+The current MDS system remains a prototype. To better understand how the MDS can enhance learning, the prototype
+should be improved to a state that it can be used by a large number of students. Initially, we intended to use the MDS in a
+differential equations course at the University of Colorado, Boulder. Clearly, the MDS can be used outside of the domain of
+mathematics. We would like to study how the MDS is used by students in different fields such as engineering, the arts, and
+literature.
+A clear design flaw in the current implementation of the prototype is that the seed text must be marked up by hand so that it
+can be used by the MDS. First, the text must be converted to HTML, then hooks must be inserted into that. This is a
+complicated process, and for our implementation to become more widely used, an easier method of marking up documents
+must be created. We would like to create a web page that serves as a proxy for marking up arbitrary HTML pages on the
+Internet so they can be used with the MDS. This way, authors can save their documents as HTML and put them on web
+pages, without having to convert their work for use with the MDS. In fact, authors may not even be aware of the MDS's
+existence--people could distribute a URL and ask other people to discuss that web page via the MDS proxy service.
+The true    test of the  MDS   prototype  would be    to conduct a full-scale study of the system within a   real classroom
+environment. The primary aspect of the prototype we wish to study is the embedded discourse, but we would also like to
+study the usefulness of the features of the discussion forum enumerated above.
+
+ACKNOWLEDGEMENTS
+I would like to thank Dr. James Curry of the Applied Mathematics department for his support of this project. Thanks to Eric
+Wright and Rian Bogle for their role in building the MDS concept and prototype.
+
+REFERENCES
+Fischer, G. (1998) "Seeding, Evolutionary Growth and Reseeding: Constructing, Capturing and Evolving Knowledge in
+     Domain Oriented Design Environments," Automated Software Engineering, 5(4), pp. 447-464
+dePaula, R., Fischer, G., Ostwald., J. (2001) "Courses as Seeds: Expectations and Realities," Proceedings of the European
+     Conference on Computer-Supported Collaborative Learning 2001 (Euro-CSCL 2001) pp. 494-501
+

@@ -1,0 +1,445 @@
+                                           ICLS 2010   ·  Volume 1
+
+       A Visualization of Group Cognition: Semantic Network
+                          Analysis of A CSCL Community
+       Li Sha, The University of Hong Kong, Pokfulam Road, Hong Kong, lishahn@yahoo.com
+    Christopher Teplovs, Ontario Institute for Studies in Education, University of Toronto, Canada,
+                                        chris.teplovs@utoronto.ca
+     Jan van Aalst, The University of Hong Kong, Pokfulam Road, Hong Kong, vanaalst@hku.hk
+
+         Abstract: This paper reports our progress in using the Knowledge Space Visualizer
+         (KSV)   as  a tool  for  formative   assessment   of  online   discourse. Whereas    social
+         network  analysis   has  been used   in research  on  computer-supported      collaborative
+         learning, it only examines the social structure of discourse participants, and does not
+         provide information about the content of the discourse. We discuss two types of
+         networks   as they  relate to online   discourse:  structural  and  semantic.  The   initial
+         findings indicate   that the  KSV    can   be   used  to visualize  a Knowledge    Forum
+         database, and can provide a fine-grained semantic analysis that may enable teachers
+         and students  to  locate the  key ideas    around which    collective learning   may  takes
+         place.
+
+Introduction
+Sawyer (2006) identifies knowledge building as one of five major educational models produced by the
+learning sciences. As an educational framework, it aims to make the processes by which experts create
+new knowledge more prominent and feasible in schools (Bereiter & Scardamalia, 1993; Scardamalia &
+Bereiter, 2006). One of the most important features of the model is that students' effort is directed at
+advancing  the  collective  knowledge   in  a   community     (Scardamalia,   2002). Students   are   not just
+attempting to understand things for themselves, but aim to add something new to what is known in the
+community.   In  most   implementations    in   schools, students   use Knowledge      Forum®,    a   software
+environment specifically designed to support knowledge building, to share and collaboratively improve
+and synthesize   ideas (Scardamalia,    2003).   Knowledge     Forum    also provides   a trace of    how  the
+community's ideas develop over time.
+        Although    considerable  progress  has  been    made  in  the  last decade  to   develop  innovative
+classroom  practices   based on   the knowledge-creation      model  in a  variety of  school   subjects  (see
+www.ikit.org and kbtn.cite.hku.hk), advances in assessment of electronic discourse have lagged. We
+believe that the development of a suite of assessment tools is urgent, particularly tools that teachers and
+students can use to self-assess and reflect on the nature of their work on Knowledge Forum. Previous
+studies have used content analysis to examine a variety of issues including knowledge advancement
+(Hakkarainen, Lipponen, & Järvelä, 2002; van Aalst, 2009; Zhang, Scardamalia, Lamon, Messina, &
+Reeve, 2007), but these methods are too labor-intensive to inform how students can improve their own
+knowledge-creation efforts. Analysis tools have been available for the last decade which students and
+teachers can use to examine participation patterns, such as note writing and reading and social network
+analysis (Burtis, 1998; de Laat, Lally, & Lipponen, 2007). While these techniques provide information
+about the social structure of students' collaborative discourse, they reveal little about how ideas are
+developing. They do not, for example, provide insight into questions such as "are the ideas of students
+becoming   more   coherent   with one  another   other   over  time?"  Computer-assisted   visualizations  or
+representations that capture both social and semantic features of the online discourse appear to hold
+much promise tools for self-assessment and reflection on knowledge-creation efforts at the community
+level.
+        The goal of this paper was to consider the nature of such representations and to explore the use
+of one  visualization  and   assessment   tool,  the   Knowledge   Space   Visualizer  (KSV;    Teplovs   and
+Scardamalia, 2007; Teplovs, 2010). This work is part of a larger project, which will study the formative
+assessment  practices  by  teachers   and  students,   and will   seek  to develop   a  theory  of  formative
+assessment that uses data embedded in online environments like Knowledge Forum. However, in the
+present paper we report our initial exploration into the nature of the representations and what they
+reveal about the extent to which knowledge creation was occurring.
+
+Background
+
+Formative Assessment
+
+                                                929  ·  © ISLS
+                                             ICLS 2010   ·   Volume 1
+
+In various forms, assessment drives educational practice (Biggs, 1996). It is therefore important for
+innovative educational approaches from the learning sciences to demonstrate that quality outcomes are
+obtained. However, it is equally important to understand how collaborative processes contribute to
+such outcomes. For example, how do we know whether discourse in Knowledge Forum is likely to lead
+to collective knowledge advances? How does new knowledge diffuse in a database?
+       We use the concept of formative assessment to frame our work: assessment that is used by
+students and the teacher to enhance learning, while the learning process still is in progress (Scriven,
+1967). Interest in formative assessment received a new boost after the major review by Black and
+Wiliam  (1998),    who    showed   substantial   positive   impacts   of   formative assessment     on learning.
+However, these practices seem to focus on such the provision of feedback on student work (e.g., tests
+and projects) and in-class questioning. Several authors have criticized the theoretical underpinnings of
+formative assessment (Perrenoud, 1998; Taras, 2005), and Black and Wiliam (2009) have recently
+proposed a theory of formative assessment that refers to self-regulated learning and situates formative
+assessment   in   an   overall pedagogical    framework.     Most   authors   treat  formative   assessment    as
+something that stands apart from the learning process. We rather consider it as a form of inquiry and as
+part of knowledge creation itself. Regardless of whether students are assessing their own work or
+whether they are advancing community knowledge by, for example, determining if forest fires are
+caused by human activities, the underlying process is the same:            they use available evidence to ask
+questions   and   test hypotheses.  This perspective     requires that   students have   data   about  their own
+inquiry, which they can use to reflect on their progress and plan future actions. Such data are available
+but very complex. Students and teachers need sufficiently simple representations that can inform their
+reflection.
+
+Latent Semantic Analysis and the KSV
+In the last decade, much attention has been given to "assessing" information on the Web to improve the
+performance of search engines. One example is Google's use of the PageRank algorithm to analyze the
+structure of the Web to identify the most influential Web pages, in combination of an index of the
+relevance of a Web page to a query (Brin & Page, 1998; Maslov & Redner, 2008). Latent Semantic
+Analysis (LSA) is another approach to the problem that uncovers the underlying semantic structure
+(meanings) of a network of documents (Landauer, 2007).
+       LSA is a vector space approach. One constructs a matrix (a table) in which the columns are
+types documents (e.g., books, chapters, essays, paragraphs, or computer notes) and the rows different
+terms (words    or phrases);   the entries   are the  numbers  of   occurrences   of the terms   in each of   the
+documents. This matrix generally has a very large number of dimensions (e.g. when the "documents"
+are all the novels written in English or the entire Web), so mathematical techniques are used to produce
+a matrix of more manageable dimensions that is a reasonable representation of the whole vector space.
+The most common technique is Singular Value Decomposition (SVD). To make an assessment, one
+then constructs and compares vectors in the SVD. Vectors can contain information about the terms in a
+document, about the documents that use a specific term, or a combination. Geometrically, vectors are
+"similar" if they can be said to point in the same general direction, and if their lengths are comparable.
+For example, if the cosine of the angle between two vectors is 0.866 (in which case the corresponding
+angle is 30 degrees), the vectors can be said to point in the same general direction; if the length of one
+is 1.45 and the other 1.52 (rather than, say, 4.45 and 0.15) that would provide another indication of
+their similarity.
+       The Knowledge Space Visualizer (KSV; Fujita & Teplovs, 2009; Teplovs, 2010) is a Java-
+based tool   that  was   developed  to visualize     networks  of   Knowledge     Forum  notes.  It uses visual
+representations as well as quantitative network metrics to characterize idea-based networks. Exhaustive
+similarity measures between notes are recorded as latent semantic links between notes.              These links,
+and the explicit semantic links afforded through referencing, rising-above and building-on functionality
+of Knowledge Forum, are then made available to the KSV. The KSV is capable of recreating the two-
+dimensional representation of collections of notes in Knowledge Forum, but it also provides computer-
+assisted positioning algorithms to facilitate the visualization of networks of notes.
+
+Collective Knowledge Advancement
+According to Bereiter and Scardamalia's knowledge creation theory (Bereiter, 2002; Scardamalia &
+Bereiter, 2006), students in a knowledge creation classroom work progressively and collaboratively on
+a number of shared topics, and their collaborative inquiries lead to the advancement of individual and
+collective  knowledge.    Knowledge    advancement       is treated as   a community     rather than   individual
+achievement   (Scardamalia     &   Bereiter, 2006).   Collective  knowledge   resides  in conceptual    artifacts
+(ideas and theories) in the community's discourse rather than inside individual minds. Also, according
+
+                                                  930  ·  © ISLS
+                                               ICLS 2010   ·   Volume 1
+
+to Stahl's (2006) notion of group cognition, collective knowledge is interactively achieved in discourse
+and cannot be simply attributable to any particular individual mind.
+         These   ideas   suggest   that    any   theoretical    exploration,   or  practical   assessment,     of  the
+advancement of community knowledge depend on the degree to which researchers and teachers are
+able  to accurately   describe   and evaluate       the content    of  discourses    occurring   in a   collaborative
+knowledge creation community. However, despite emphasis and progress in developing collaborative
+inquiry in CSCL research, little attention has been given to the assessment of collective learning (van
+Aalst  &  Chan,   2007). Thus,     little is known      about  the   nature of collective  knowledge       and group
+cognition, and in practice teachers are still limited in their ability to assess how collective knowledge
+actually is formulated and advanced, although CSCL researchers and classroom teachers have put great
+efforts to design various technology-enhanced collaborative learning environments.
+
+Network analyses of CSCL
+There are at least two significant factors underlying the above issues. First, research on CSCL often
+epistemologically focuses on individual learning outcomes rather than collective knowledge growth
+(Stahl,  Koschmann,    & Suthers,   2006).     Perhaps    this problem    can  be  attributed  to   the influence   of
+cognitivism,   which   stresses  individual      learning  and    personal   cognition.  Second,    methodological
+alignment   with  the  social nature      of collaborative    learning   has  led  many   researchers    to   examine
+interactions and participation patterns, using social network analysis (SNA; de Laat, Lally, Lipponen &
+Simons, 2007; Cho, Gay, Davidson, & Ingraffea, 2007). SNA considers a CSCL community as a
+network in which individual learners are represented as nodes, and the relationships between learners
+are represented as edges connecting those nodes. The edges indicate collaborative actions such as note
+reading, building-on, and referencing other notes. Current studies on the application of SNA to CSCL
+research converge at two basic aspects: network properties of a CSCL community, and participatory
+characteristics of individual learners. The first of these is mainly concerned with the issues such as
+network density of a collaborative learning community, and emergent cohesive cliques. The second
+aspect  seeks  answers   to the  following    questions    (de  Laat,  et al,  2007):  Who    is involved     with the
+collaborative learning task? Who are the active participants? And who is participating peripherally?
+Current SNA studies rely primarily on mathematical computations of the frequency of ties between
+learners, and ignore the content of artifacts notes and the connections in meaning between the notes
+(Stahl, 2006).
+         For  formative  assessment,      it  is necessary     to locate  and   describe  knowledge      creation   in
+collaborative discourse. In network models of cognition, knowledge is represented as a network in
+long-term   memory,   in which     nodes     correspond    to the  cognitive  units  (in the  form  of  concepts    or
+schema), and the relations between the cognitive units are represented as links (Bruning, Schraw, &
+Norby, 2004). By analogy, group cognition can be defined as a network of the conceptual artifacts
+collectively  created in a   collaborative    learning    process.   As  information   units,  conceptual     artifacts
+(Bereiter, 2002; Scardamalia & Bereiter, 2006) are the objects of collaborative work on knowledge
+creation, which take the form of notes created and posted by individual learners in Knowledge Forum.
+This implies that collective knowledge and group cognition can be studied and assessed from the
+perspective of network analysis. Therefore, we differentiate two types of networks existing in a CSCL
+community: networks of people and networks of notes. The former can serve to assess the interactive
+and  participatory  patterns  of   students,     the   latter can    function as   a representation     of  collective
+knowledge and group cognition.
+         However, as noted earlier, most research has concentrated on the patterns of social interaction
+between students rather than networks of conceptual artifacts. Of course, one may argue that a social
+network of people in a CSCL community operationally corresponds to a profile of the network of notes
+created  by  those people.   Social  networks       of people   only  capture  at  most   two  features    of notes ­
+authorship or readership. Most SNA studies in CSCL examine patterns of social interaction between
+the CSCL participants, rather than the relation between students' ideas embedded in the notes from the
+perspective   of  collective  knowledge       and    group    cognition.  Therefore,     comprehensive      formative
+assessments of collaborative learning must entail a multi-faceted network analysis of notes generated in
+a CSCL discourse. Stahl (2006) pointed out that the meaning of the group-level constructs such as
+group   cognition  constitutes   a network       of  semantic   references    within  the group     interaction,   and
+collaborative learning can be viewed as the interactive construction of this referential network. In this
+sense, collective knowledge and group cognition produce a semantic network of conceptual artifacts
+(notes), that is, a network system based on shared meaning (Doerfel & Barnett, 1999).
+         We   may  ask   what  a   semantic   network      of notes  looks   like, how   researchers    or classroom
+teachers can identify the semantic networks of notes that emerge in a CSCL process, and what is the
+role of semantic network of notes in assessing collective knowledge advancement and group cognition.
+
+                                                    931  ·    © ISLS
+                                            ICLS 2010  ·  Volume 1
+
+This paper introduces our preliminary attempt to address these issues related to formative assessments
+of CSCL. Taken together, the above analyses of the distinction between the network of people and
+network of notes suggest that networks of notes can be established in two manners. Furthermore, we
+propose two sub-types of network of notes: structural (physical) network and semantic network. A
+structural network of notes or people refers to a visible network of notes or people whereby the linkage
+between notes or people is physically established by any one of the collaboration operations, such as
+note reading, building-on, and referencing in a Knowledge Forum database. An inquiry thread (Zhang,
+et al., 2007), defined as a series of notes that share a problem and constitute a conceptual stream in a
+collaborative inquiry, manifests the limitations of the studies on the spatial threads of notes, as well as
+structural network of notes in understanding the formation and advancement of collective knowledge
+and group   cognition in a   collaborative  inquiry   discourse. An  inquiry thread   represents a semantic
+connection   between  notes  by content analysis    of  each individual   note, namely,   and  therefore is a
+semantic  network  of  notes  from a   network    analysis   perspective.  Similarly, Manca,    Delfino,  and
+Mazzoni (2009) introduced a semantic coding scheme aiming to obtain a relatively complete picture of
+social interactions among people in a web forum that the structural (physical) network construct cannot
+provide. However, these methods require manual coding of note content, which is very labor-intensive.
+Because  of  the two  considerable drawbacks--the        amount  of labor  involved   and their  reliability--
+teachers may hesitate to use them for formative assessment. Our study is an attempt to meet this
+challenge, and uses the KSV, an innovative visualization and assessment tool of collective knowledge,
+to automatically  identify the  emergent    semantic   networks  of notes   under a   pre-set condition  with
+reference to semantic closeness between them, and the as structural networks of notes in a CSCL
+discourse. !
+
+Research Context and Methods
+The KSV was used to study part of a Knowledge Forum database created by a class of 41 Form 4
+(Grade   10) students  taking   physics at    a  secondary   school  in   Hong   Kong.   The   database   had
+approximately    880  notes, which   were     distributed  over   several  views  (shared     workspaces)   in
+Knowledge Forum. The teacher had several years of prior experience with Knowledge Forum, and was
+attempting to align her classroom teaching more with the knowledge-creation model, particularly by
+encouraging student-to-student classroom talk. The students' presentations and the talk that followed
+appeared to break with the more typical classroom discourse in Asian classrooms in which students do
+not ask  many    questions (Li, 2009).  The     curriculum  consisted of   three  units of  study: heat   and
+temperature (3 months), mechanics (6.5 months), and waves (1.5 months).
+         In this classroom it was difficult to integrate the use of Knowledge Forum on a daily basis.
+Rather, it was used during specific periods to follow up classroom learning and to support the two
+projects. For example, during the heat and temperature unit, the class as a whole discussed thermal
+questions such as how to keep a drink warm as long as possible (Linn & Hsi, 2000) and why people
+lived in igloos,  which  are  made   from    ice and   would   intuitively seem   cold. Students   also  used
+Knowledge Forum to discuss their solar cooker designs, and in this, they were asked to refer to physics
+concepts and phenomena such as the greenhouse effect and methods for focusing energy from the sun
+on a beaker of water at the center of their solar cooker. During the mechanics unit, students similarly
+used Knowledge Forum to discuss puzzlements about Newton's laws and their analysis of motion on
+rides at an amusement park. Although the amount of work in Knowledge Forum was not as extensive
+as in some published studies, the computer notes that were generally focused on the tasks at hand and
+contained explanations in which students used relevant science ideas, although a substantial number of
+notes dealt with the logistics of projects.
+
+Results
+The Knowledge Forum database had several comprehensive views for two units of study: heat and
+temperature,  and mechanics.    Each unit    had several  sub-topics. For   example,    the students studied
+mechanics by discussing how the cable car works in the view called `Cable Car'. This view was
+spatially separated from the `Mechanics' view.!
+
+Two Types of Network of Notes
+Two kinds of network were generated with the KSV. Figure 1 shows structural networks, and Figure 2
+semantic networks. The directional lines in the structural network represent links between notes by
+note building-on. The lines in the semantic networks in Figure 2 are non-directional, suggesting that
+the notes are linked to one another in meaning, which is reciprocal. The color of node denotes a
+participant in Knowledge Forum (electronic version of the paper).
+
+                                                932  ·  © ISLS
+                                         ICLS 2010  ·  Volume 1
+
+        Mathematically, semantic closeness between notes in KSV is quantified as the cosine between
+vectors representing  their content. High  cosine   values  denote  semantically similar  note content
+(Teplovs & Scardamalia, 2007). The KSV allows us to set a link visibility threshold. When the cosine
+between any two notes exceeds this threshold, the KSV joins the notes with an edge (shown in Figure
+2). The lower the threshold is, the more semantic links between notes in the network are displayed. In
+this study, the semantic coefficient was set at 0.75. Semantic links between notes are invisible in Figure
+1 because KSV allows users to choose either of the two types of network.
+
+                     Figure 1. Obtained structural network in the Cable_car view
+
+                     Figure 2. Obtained semantic network in the Cable_car view
+
+        Visually, the number of lines in the structural network is obviously much less than that in the
+semantic network, implying that many notes are linked to one another semantically but not structurally.
+This finding can be quantitatively reinforced by the contrast of the network properties between them.
+The Cable_car view contains 52 notes, 2391 words in total. The average size of note (i.e., words/notes)
+is 45 words. There are 22 lines (physical note links) in the structural network, which correspond to 22
+physical actions (i.e., note building-on or referencing) that took place while the students collaboratively
+worked on that topic in Knowledge Forum. There are 281 links in the semantic network. In SNA,
+degree refers to the number of lines incident with each node in a graph; network density is defined as
+the ratio of the actual number of lines to the maximum possible lines, with a value falling within the
+range between 0 and 1 (Wasserman & Faust, 1994). The density of the semantic network is .212; the
+density of the structural network is .017, much less than the former. This finding implies that for a
+collection of notes in the Cable Car view, its semantic network is much cohesive than the structural
+network. The notes that are not linked to one another by a physical collaborative learning action are not
+necessarily disconnected with each other semantically.
+
+Visualization of Group Cognition
+In the  design of a  KF database, the  notes embedded     within  a  view often  converge at the same
+discussion topic. For example,   the  Heat view     was intended  to be   a workspace where    students
+
+                                             933  ·  © ISLS
+                                         ICLS 2010  ·    Volume 1
+
+collaboratively learned the concept of heat. In practice, a classroom teacher may want to examine how
+student online discussions in Knowledge Forum unfolded around the shared topic.
+
+                    Figure 3. Obtained semantic networks within the Heat view
+
+Table 2: The main overlapping words in each sub-semantic network
+
+Sub-networks     Main overlapping words
+N1               clothes (24) body (17) air (16) energy (14) warm (10) feel (6) transfer (6) cold (5)
+                 theory (5) trap (5)
+N2               ice (11) live (7) house (4), outside (3)
+N3               ice (16) energy (14) lemon (12) tea (11) loss (9) heat (8) specific (7) water (6)
+N4               heat (10) copper (9) water (7) specific (6) energy (5) capacity (5) conductor (3)
+N5               free (10) conduct (5) electrons (5) electron (5) metal (4) energy (4) shell (4) atom (3)
+                 heat (3)
+N6               air (17) copper (9) water (9) gravity (7) flame (6) electrons (6)
+N7               theory (33) air (23) energy (22) heat (20) liquid (13) ice (12) water (11) density (11
+
+                 Figure 4. Sub-topics in the semantic network of notes in the Mechanics view
+
+        Figure 3 shows    that the KSV  revealed    that  there were  seven clusters   of notes within the
+general semantic network   of  the Heat view.    These   clusters can  also be viewed     as semantic sub-
+networks. Table 2 shows the major theme for each semantic sub-network. For example, the students
+who wrote the notes within N1 primarily were trying to understand the concept of Heat by connecting
+it to the daily life phenomena such as clothing from the perspective of heat transfer. Shared meaning of
+the notes in N3 seems to converge on heat transfer in liquids such as lemon tea, and water. Similar
+findings can be seen from the semantic network of another view in the same KF database shown in
+Figure  4 (Mechanics). Three   themes  in the view    Mechanics    can be   identified by  latent semantic
+
+                                             934  ·  © ISLS
+                                           ICLS 2010   ·   Volume 1
+
+analysis: Roller   Coaster,   Cable Car,   and  Abyss.     Similarly,   this finding  suggests  that   students
+collectively worked on several sub-topics under the Mechanics view.
+        We conducted an inquiry thread analysis (Zhang et al., 2007) on the Heat view, and found
+seven inquiry threads (i.e., principal problems). Four themes identified in the inquiry thread analysis
+correspond to the first five semantic networks (i.e., sub-discussion topics) shown in Table 2. This
+provides  some  preliminary    evidence  that  the  KSV    can reliably uncover    sub-discussion   topics that
+emerge in the discourse of collaborative knowledge creation.
+
+Conclusion
+This study demonstrates a combination of computer-assisted content analysis and network analysis for
+formative   assessments    of CSCL,    which   is   aligned  with   the appeal    for developing    innovative
+methodologies for analyzing participation and discourse processes in CSCL (Lipponen, Rahikainen, &
+Hakkarainen, 2002).
+        We can draw at least the following tentative conclusions. First, semantic network analysis
+offers an alternative approach for examining the relationship among the computer notes in a CSCL
+community in terms of shared meaning making, other than the traditional network analyses that mainly
+concentrate on the participation patterns of students. This expands the scope of formative assessments
+of collaborative learning by empirically revealing and conceptualizing two kinds of network of notes
+(i.e., structural network vs. semantic network). Second, various sub-discussion topics uncovered by
+latent semantic analysis in the heat view reveals the complexity of collaborative learning dynamics.
+This  finding implies  that   collective learning   in this class   unfolded   by  breaking  down    a general
+concept/theory (e.g., Heat, Mechanics) into a number of sub-discussion topics (i.e., inquiry threads).
+Third, the notes with a certain semantic closeness may illustrate the workplace whereby collective
+knowledge might be forged due to the shared meaning of those notes. The overlapping words in a
+semantic network to some degree facilitate the visualization of the key meanings of the conceptual
+artifacts of group cognition. For the purpose of formative assessment of collective learning, the use of
+the KSV as an assessment tool provides a fine-grained semantic analysis that may enable teachers and
+students to locate the key ideas around which collective learning may takes place. It was found in this
+study  that identification of  the  sub-topics  within   a view  is generally   aligned  with  inquiry  thread
+analysis (Zhang et al., 2007). However, thread analysis used in that study was time consuming, because
+the theme of each thread of notes (shared topic) required labor-intensively content analysis of each
+Knowledge Forum note. Fourth, many current studies in assessment of CSCL use a whole CSCL
+community    as unit  of analysis,  which   might   be   appropriate   when   research  is to  assess  student
+participation patterns by SNA throughout a CSCL process. Our study suggests that individual views as
+unit of   analysis be appropriate   as   well  for  assessing  the  processes   of collaborative    knowledge
+construction and creation.
+        Our   preliminary     analyses   using the   KSV    have    yielded   some    findings regarding   the
+characteristics of semantic network and the potential for further exploring the role of this kind of
+emergent networks in assessing how knowledge creation proceeds collaboratively in a Knowledge
+Forum database. Thus far, we still know little about the role of these emergent semantic networks in
+formative assessments of collaborative knowledge creation. The present study is just starting point
+along this direction. We believe that in order to have efficient and productive formative assessments of
+CSCL, semantic network analysis should be adopted along with other types of analysis such as content
+analysis of the notes within a selected semantic network.
+
+References
+Bereiter, C., &    Scardamalia,  M.    (1993).  Surpassing   ourselves:   An   inquiry  into   the nature  and
+          implications of expertise. Chicago, IL: Open Court.
+Biggs, J. (Ed.). (1996). Testing: To educate or to select? Education in Hong Kong at the crossroads.
+          Hong Kong, China: Hong Kong Educational Publishing Company.
+Black,  P., &   Wiliam,  D.   (1998).  Assessment    and   classroom    learning. Assessment   in   Education:
+          Principles, Policy, & Practice, 5, 7-74.
+Black,  P., &   Wiliam,  D.   (2009).  Developing    the   Theory   of Formative   Assessment.     Educational
+          Assessment, Evaluation and Accountability, 21(1), 5-31.
+Brin, S., & Page, L. (1998). The anatomy of a large-scale hypertextual Web search engine. Computer
+          Networks and ISDN Systems, 30, 107-117.
+Burtis, P. J. (1998). Analytic toolkit for Knowledge Forum. Toronto, ON.
+Cho, H., Gay, G., Davidson, B., & Ingraffea, A. (2007). Social networks, communication styles, and
+          learning performance in a CSCL community. Computers & Education, 49(2), 309-329
+
+                                                935  ·  © ISLS
+                                            ICLS 2010  ·  Volume 1
+
+de Laat, M., Lally, V., Lipponen, L., & Simons, R-J. (2007). Investigating patterns of interaction in
+         networked learning and computer-supported collaborative learning: A role for Social Network
+         Analysis. Computer-Supported Collaborative Learning, 2, 87-103.
+Fujita, N. and Teplovs, C. (2009). Automating the Analysis of Collaborative Discourse: Identifying
+         Idea Clusters. Paper presented at CSCL 2009.
+Hakkarainen, K., Lipponen, L., & Järvelä, S. (2002). Epistemology of inquiry and computer-supported
+         collaborative learning. In T. Koschmann, R. Hall & N. Miyake (Eds.), CSCL 2: Carrying
+         forward the conversation (pp. 11-41). Mahwah, NJ: Lawrence Erlbaum Associates.
+Landauer, T. K. (2007). LSA as a theory of meaning. In T.K. Landauer, D.S. McNamara, S. Dennis &
+         W.   Kintsch    (Eds.). Handbook    of  Latent  Semantic   Analysis  (pp.  3-34). Mahwah,      N.J. :
+         Lawrence Erlbaum Associates.
+Li, J. (2009). Learning to self-perfect: Chinese beliefs about learning. In C. K. K. Chan & N. Rao
+         (Eds.), Revisiting the Chinese learner: Changing contexts, changing education (pp. 35-69).
+         Hong Kong: Springer/Comparative Education Research Centre.
+Linn, M. C., & Hsi, S. (2000). Computers- teachers, peers: Science learning partners. Mahwah, NJ:
+         Lawrence Erlbaum Associates.
+Lipponen, L., Rahikainen, M., & Hakkarainen, K. (2002). Effective participation and discourse through
+         a  computer     network:  Investigating elementary     students' computer   supported     interaction.
+         Journal of Educational Computing Research, 27(4), 355­384.
+Manca, S., Delfino, M., & Mazzoni, E. (2009). Coding Procedures to Analyse Interaction Patterns in
+         Educational Web Forums. Journal of Computer Assisted Learning, 25(2), 189-200.
+Maslov, S., & Redner, S. (2008). Promise and pitfalls of extending Google's PageRank algorithm to
+         citation networks. The Journal of Neuroscience, 28, 11103-11105.
+Perrenoud,  P.   (1998).  From   formative  evaluation   to a controlled  regulation of   learning processes.
+         Towards a wider conceptual field. Assessment in Education: Principles, Policy & Practice,
+         5(1), 85-102.
+Sawyer, R. K. (2006). The Cambridge handbook of the learning sciences. New York, NY: Cambridge
+         University Press.
+Scardamalia, M. (2003). Knowledge building environments: Extending the limits of the possible in
+         education and knowledge work. In A. DiStefano, K. E. Rudestam & R. Silverman (Eds.),
+         Encyclopedia of distributed learning (pp. 269-272). Thousand Oaks, CA: Sage Publications.
+Scardamalia, M. (2002). Collective cognitive responsibility for the advancement of knowledge. In B.
+         Smith (Ed.), Liberal education in a knowledge society (pp. 67­98). Chicago: Open Court.
+Scardamalia, M. & Bereiter, C., (2006). Knowledge building: Theory, pedagogy and technology. In R.
+         K. Sawyer (Ed.), The Cambridge handbook of the learning sciences (pp. 97­115). New York:
+         Cambridge University Press.
+Scriven, M. (1967). The methodology of evaluation. In R. Tyler, R. Gagne & M. Scriven (Eds.),
+         Perspectives on curriculum evaluation. Chicago, IL.: Rand McNally and Co.
+Stahl, G.   (2006).  Group     cognition:   Computer     support   for  building  collaborative    knowledge.
+         Cambridge, MA: MIT Press.
+Taras, M.   (2005).  Assessment    - Summative    and    formative  -  Some  theoretical  reflections. British
+         Journal of Educational Studies, 53(4), 466-478.
+Teplovs, C.   and  Scardamalia,   M.  (2007).   Visualizations  for knowledge    building assessment.   Paper
+         presented at the AgileViz workshop, CSCL 2007.
+Teplovs,   C.    (2010). Visualization   of  knowledge   spaces     to enable concurrent,   embedded     and
+         transformative    input  to knowledge   building   processes.   Unpublished  doctoral   dissertation.
+         University of Toronto.
+van Aalst,  J.,  &  Chan,  K.K.C.    (2007). Student-directed    assessment   of  knowledge  building   using
+         electronic portfolio. The Journal of Learning Sciences, 16, 175-220.
+van Aalst,    J. (2009).  Distinguishing    knowledge    sharing,   construction, and   creation   discourses.
+         International Journal of Computer-Supported Collaborative Learning, 4, 259-288.
+Zhang, J., Scardamalia, M., Lamon, M., Messina, R., & Reeve, R. (2007). Socio-Cognitive Dynamics
+         of Knowledge      Building   in the  Work    of 9-   and  10-Year-Olds.   Educational   Technology
+         Research and Development, 55, 117-145.
+
+Acknowledgments
+This research was supported by a grant from the Research Grants Council of Hong Kong to the third
+author (Grant No. HKU 752508H). We also thank the teacher and students whose Knowledge Forum
+database we analyzed.
+
+                                                936  ·   © ISLS
+

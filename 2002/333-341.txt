@@ -1,0 +1,483 @@
+Proceedings of CSCL 2002                                                                                               page   333
+
+J. (TECHNOLOGY TRACK): SYNCHRONOUS COLLABORATION SUPPORT
+FOR CHILDREN
+
+   Understanding Children's Interactions in Synchronous
+                                        Shared Environments
+                               Stacey D. Scott, Regan L. Mandryk, Kori M. Inkpen
+                                                           EDGE Lab
+                                             School of Computing Science
+                                                  Simon Fraser University
+                                             Burnaby, BC V5A 1S6 Canada
+                                                     +1 604 291 3610
+                                        {sdscott, rlmandry, inkpen}@cs.sfu.ca
+ABSTRACT
+Traditional computer technology offers limited support for face-to-face, synchronous collaboration. As a result, children
+who wish to collaborate using computers must adapt their interactions to the single-user paradigm most personal computers
+are based on. More recently, co-located groupware systems offering support for concurrent, multi-user interactions around a
+shared   display have   become    technologically feasible.  Unlike   traditional  groupware   systems   that provide  multi-user
+interaction through   the  use of  separate computers,  these systems   share the  physical   workspace,  as  well as  the virtual
+workspace. These systems provide a unique mechanism through which children can interact with each other. However,
+ways to best utilize the technology in this manner has not been fully evaluated. This paper investigates how technological
+support for children's synchronous interactions facilitates their collaborative activities. In particular, we examined whether
+a shared workspace facilitates the development of a shared understanding during a computer-based collaborative activity.
+We present a field study that observed pairs of children playing an educational game in several display configurations. The
+findings from this research suggest strengths and weaknesses of various types of support for synchronous interactions and
+discusses issues related to the design and development of more effective computer systems to support children's face-to-
+face interactions.
+
+KEYWORDS
+Shared   environments,  co-located  collaboration,  Computer    Supported Cooperative     Work   (CSCW),    Computer   Supported
+Collaborative Learning (CSCL), educational games, children, experimental evaluation, communication
+
+INTRODUCTION
+Despite the many technological advances to support distributed interactions, people still spend a great deal of time traveling
+to meet   face-to-face with  colleagues, family,  and  friends. Interacting in   a face-to-face  environment   is very engaging.
+Numerous    research   and  commercial  endeavors   have   investigated technological   advances  in  an attempt   to capture  the
+essence of face-to-face interactions when supporting people working at a distance (Fish et al., 1992; Gutwin et al., 1996;
+Inoue et al., 1997). Most groupware research assumes that face-to-face collaboration provides a richer experience and thus
+distributed groupware systems are often designed to recreate the feeling of "being there" (Gutwin et al.; 1996, Hollan &
+Stornetta, 1992; Inoue et al., 1997). However, an equally important endeavor is the exploration of how technology can
+enhance   and  improve    users' co-located  interactions. This is especially  important   when  considering   children's  use of
+technology. Emergent environments such as home-use and portable computing are causing researchers to question the
+fundamental designs that society has adopted as representative of a computer. Traditional interaction paradigms, such as the
+one-keyboard one-mouse paradigm can be constraining to users and are slowly giving way to more flexible technologies,
+such as large screen displays (Pedersen et al., 1993; Streitz et al., 1994; Tani et al., 1994) and handheld computers (Myers
+at al., 1998). Still, these new    technologies are not sufficiently  addressing   the  needs of all users, specifically multiple
+children sharing machines in the classroom (Inkpen et al., 1999).
+Distance learning is currently a major research and industrial focus worldwide while the re-design of hardware and software
+to support  co-located    learners in a  classroom   environment   is   explored   less frequently.  In most   classrooms  today,
+synchronous collaboration is supported in three different ways: 1) children working together at the same computer; 2)
+children working together on side-by-side computers; and 3) children working with others at a distance through networked
+computers. Understanding students' communication and interaction patterns in these three configurations can help us gain
+Proceedings of CSCL 2002                                                                                               page   334
+
+new insights into the strengths and weaknesses of each approach and discover issues related to the design of more effective
+interactive systems for face-to-face collaboration.
+Our work investigates children's interactions while playing a puzzle-solving mathematics game in various collaborative
+configurations. We    examine  issues  surrounding  a shared  understanding    in a collaborative    task. Much  of the   previous
+literature on cooperative learning suggests that shared goals, tasks, resources, and roles enhance shared understanding and
+allow for an effective cooperative learning experience (see Hymel et al., 1993 for an overview). This paper presents
+research related to co-located collaboration followed by a description of our field study, the methodology used, and the data
+collected. Empirical results are presented and analyzed. Finally, we discuss the impact of this work for supporting co-
+located collaboration, along with directions for future work.
+
+BACKGROUND
+The rich information available in co-located collaborative environments has spurred researchers to find novel ways of
+supporting   multiple people working    together around   a shared display.   Research   in Single   Display  Groupware    (SDG)
+(Stewart et al., 1999) has explored the development of co-located multi-user environments including connecting individual
+computers to one large, passive display (Tatar et al., 1991, Tani et al., 1994), creating large, shared interactive displays
+(Pedersen et al., 1993, Streitz et al., 1999), and providing multiple peripherals on a shared computer (Stewart et al., 1999,
+Myers et al., 1998).
+These aforementioned studies have been primarily focused on supporting co-located collaboration in the workplace. While
+this is  important groundwork,     the  domain   of  children working    together   in the  classroom   has   unique   issues and
+considerations. Children are smaller than adults, have no access to resources beyond what is provided at school or through
+their parents, and have different goals. While professionals and students both have the motivation of deadlines imposed by
+organizations or teachers, children need to experience enjoyment from their computer interactions in order to continue
+investigating the possibilities that technology has to offer (Inkpen et al., 1997). There are many exciting toys and leisure
+activities competing for children's time and interest. Children enjoy playing together and studies have shown that social
+interactions in a learning environment lead to significant learning benefits and that there are positive academic and social
+benefits to having children work together in groups (Hymel et al., 1993; Johnson et al., 1981).
+In order to support children working together while maintaining the existing technological infrastructure available in most
+schools, current systems  have  been    extended  to  accommodate     multiple children  using    one  computer.  This  has   been
+accomplished using peripheral devices, such as styli (Bier & Freeman, 1991), joysticks (Bricker et al., 1999), and mice
+(Scott et al., 2000; Stewart et al., 1999), to provide multi-user interaction. However, most of these solutions still require
+specialized software development since most commercial software has been designed and implemented for use by a single
+user. Other research has investigated the use of smaller and less expensive handheld computers in the classroom to support
+collaborative educational  activities  (Mandryk  et  al., 2001), however,   these   devices are   often not  available  in school
+environments.
+Previous research suggests that shared displays provide certain advantages when computers are being used for collaboration
+(Inkpen et al., 1995). Sharing a display provides a shared artifact for collaborators to use in their conversation, which has
+been shown to increase attention and involvement during a collaborative task (Bly, 1988). Furthermore, research suggests
+that users subconsciously respond to computers as social actors, potentially complicating the task of discussing shared
+objects located on different screens (Reeves & Nass, 1996).
+Although    providing a shared display  for co-located    collaboration seems  intuitive (i.e. it is a  natural way  to interact),
+research has not clearly demonstrated that a shared display system supports concurrent multi-user interaction as well as
+alternative display configurations such as side-by-side monitors, or distributed, networked computers. Children are very
+good at engaging in rich face-to-face social interactions. Research has shown that students can become more motivated and
+successful when these interactions are supported (Inkpen et al., 1999). Our study employed both quantitative and rich
+qualitative measures to elucidate why these designs are successful and to evaluate the effectiveness of several display
+configurations on a collaborative task.
+
+FIELD STUDY
+To   better understand  children's interactions  in   synchronous  shared   environments,    we   observed    children  playing a
+collaborative  mathematical   computer   game.   The  children   were   given the   opportunity   to play   the game   in  various
+configurations to support their collaborative interactions.
+
+Students and Setting
+Twenty-four grade seven students aged 11 to 13 (14 girls and 10 boys) from Lord Nelson Elementary School volunteered to
+participate in the study. Lord Nelson is located in a lower socioeconomic, culturally diverse area of Vancouver, British
+Columbia, Canada. Consent to participate was obtained from all children and their parents. The children played the game in
+Proceedings of CSCL 2002                                                                                          page  335
+
+the a small room off the school's library and the researchers remained in the room to monitor the equipment, address issues
+with the software, and take field notes of the children's interactions.
+Children played the game using a personal computer with two universal serial bus mice. They used either one or two 19-
+inch monitors, depending on which collaborative setup they were playing in. When each student was given their own
+monitor, a VGA splitter was used to send the same output to the two monitors to simulate networked computers. This
+ensured that the hardware performance was consistent across all three playing conditions. Observations of the children's
+play were recorded by two video cameras, each with a lavaliere microphone. The children also wore audio headphones
+through which they could hear the output from their partner's microphone. While this was necessary in the distributed
+condition, it was also provided in the other configurations to minimize the novelty effect if the audio equipment. Although
+this decision was important for the quantitative analyses, it may have negatively impacted the qualitative data gathered
+from the non-distributed configurations.
+
+Play Conditions
+Children played the game in three different collaborative configurations: shared, side-by-side, and separated. In the shared
+configuration  the subjects   were seated beside   each other,  sharing    a monitor  (see Figure   1a). In the side-by-side
+configuration the subjects were seated beside each other, each having their own monitor (see Figure 1b). In the separated
+configuration, subjects were seated in the same room, each with their own monitor attached to the same computer, but
+visually separated by a divider (see Figure 1c). In each collaborative configuration, the children had their own mouse to
+control their own on-screen character.
+
+Game Description
+The game the children played was a mathematical game called Prime Climb (see Klawe, 1998), originally developed as a
+part of a distributed multi-player game,  Avalanche.  Prime    Climb    was  modified to produce  a stand-alone version that
+supported multi-user interactions on a single computer. The MID Java API (Hourcade & Bederson, 1999) was used to
+support concurrent, multi-user interactions within the game.
+The goal of Prime Climb is to guide a pair of climbers to the top of a mountain, and to complete as many mountains (levels)
+as possible. To finish a level, players must work together to move on-screen characters to the top of a mountain consisting
+of stacked hexagon    blocks. Players  move to new  positions   by mouse-clicking  on    hexagons containing  numbers.  Two
+climbers are displayed on the screen (red and blue), each controlled by a cursor of the corresponding colour. The climbers
+are connected by a rope that can span at most three hexagons. Climbers can move only to a space adjacent to their current
+location and must avoid obstacles (goats, rocks, and trees).
+The main rule of the game is that the two climbers can never be positioned on numbers that have a common factor other
+than one. If a player chooses an illegal number, their climber falls off of the mountain and begins swinging by the rope two
+levels below his/her partner. A swinging player must select a nearby number on the mountain to stop swinging. If a
+swinging player chooses an illegal number again, his/her partner falls and begins swinging. An additional feature of the
+game is an ice pick, located in the upper-left corner of the game window. Dragging the ice pick to the mountain and
+dropping it onto a hexagon decreases the value in the hexagon by one, to a minimum of one. When the players reach the top
+of a mountain, a new mountain appears for the next level of the game. Levels increase in difficulty by adding more
+obstacles, using larger numbers, and increasing the height of the mountains.
+
+           (a)                                 (b)                                 (c)
+Figure 1: Kids played the game in three different display configurations. a) Shared display configuration,
+b) Side-by-side display configuration, c) separated display configuration.
+Proceedings of CSCL 2002                                                                                        page      336
+
+                                 Figure2 : Screen shot of the Prime Climb game.
+Game Playing Sessions
+Each pair of students was excused from class on three separate occasions and were given the opportunity to play the game
+in each of the collaborative configurations. During the first session, the students completed a background questionnaire to
+gather information on their exposure to computers and games. Following this, the rules of the game were explained and the
+children were given 15-minutes to play the game in one of the collaborative configurations. The children then returned for
+two additional   15-minute sessions   to play in the remaining two collaborative configurations. After    each session,   the
+children filled out an interface evaluation questionnaire to elicit opinions on game difficulty, enjoyment level, and mutual
+understanding during their play. When a pair of students had completed all conditions, they filled out a post-experiment
+questionnaire to determine overall impressions of the game and feedback on the three collaborative configurations.
+The study spanned two weeks, during which pairs did not play in more than one session on the same day. The order in
+which the children played the collaborative configurations was counterbalanced to avoid any order effects. Due to illness,
+two pairs were unable to complete the experiment and data for only 20 children were fully collected.
+
+Data Analyses
+Both quantitative and qualitative data were gathered from several sources during the study, including field notes, video,
+questionnaires, and computer logging. Computer log files tracked performance data including the number of mountains
+completed, the game events, and the number of errors. Verbal and non-verbal communications were analyzed from the
+video data using the MacShapaTM video analysis system. Inter-rater reliability was found to be high for both the verbal and
+non-verbal coding schemes. Video data for a subset of the participants were transcribed and annotated with corresponding
+field notes and computer log data. The conversation and gestures were coded and analyzed iteratively using the NVivoTM
+qualitative analysis software package (Richards, 1999). Three pairs, two female pairs and one male pair, were selected
+based on the order in which they performed the experimental conditions. Finally, questionnaire data from all pairs were
+analyzed to provide further insights.
+The decision   to employ   qualitative techniques together with quantitative research methods is     well supported  in   the
+literature. Both  methods have their   own strengths and are best used to address their corresponding     research purposes
+(Maxwell, 1996). Quantitative methods are best used to examine the differences between experimental conditions whereas
+qualitative methods are best used to examine the process across or within experimental conditions. Both methods are
+empirical in that they involve rigorous and systematic inquiry that is grounded in the data. Used together, the two methods
+can be quite complementary (Firestone 1987; Miles & Huberman, 1994).
+
+DISCUSSION OF RESULTS
+The goal of the present study was to gain insight into the strengths and weaknesses of sharing a display, when support for
+concurrent activity is provided. Data were collected to promote understanding of students' interactions and communication
+patterns when collaborating in different display conditions. After a brief vignette, we present and discuss some of the
+insights gained during the study and subsequent analyses of the data. The vignette illustrates the type of interactions that
+occurred during the game play.
+Betty and Sarah are trying to finish a difficult level as fast as they can and are finding it difficult to make it up the
+mountain without falling. Sarah is instructing Betty where she should go by calling out the numbers of where she
+wants Betty to move. Betty falls when she and Sarah move simultaneously without conferring on where to go. She
+Proceedings of CSCL 2002                                                                                           page     337
+
+suggests that they should use a strategy where she stays on odds and Sarah stays on evens. They take turns moving up
+the mountain and then begin to play in parallel when they are comfortable with their new strategy, sometimes calling
+out their intent by simply saying a number. Unfortunately, Sarah falls near the top and has nowhere to land without
+making Betty fall. Betty grabs the `pick' and decrements a number above where Sarah is swinging so that Sarah could
+safety land there. Together they finish the level and Sarah does a `chair dance' of excitement.
+
+Multi-User Interaction Styles
+When children   work together,   they  often  use a variety    of collaboration styles, such as divide and  conquer,    or group
+consensus. The collaboration styles that are available to children working on a typical computer are restricted by the
+interaction technology (e.g., only one mouse and one keyboard). In this field study, the technology supported simultaneous
+multi-user   interaction. Providing the children  with this    additional resource increased  the potential flexibility of  their
+collaboration process. However, the constraints of the game were determining factors as well. In particular, two rules of the
+game that affected the children's collaborative interactions were: 1) the players could move at most three positions away
+from each other; and 2) the validity of the number chosen by one player was related to the current position of the other
+player. These rules forced tightly coupled play and made it challenging to interact simultaneously. Nonetheless, informal
+observations during the children's sessions indicated that some pairs chose to interact concurrently. To help understand the
+type of interactions used by the children, including when they took advantage of the ability to interact simultaneously, we
+performed in-depth analyses of the experimental sessions for three of the ten student pairs. These analyses were based on
+the rough picture of the students' on-screen interactions that was provided by combining the computer logs with the session
+transcripts.
+Given the rules of Prime Climb, the simplest interaction style is strict turn-taking. This allows the students to evaluate the
+partner's current number before choosing a new position. Interestingly, the pairs did not always use this interaction style.
+Although the players started the experiment using strict turn-taking, some players preferred to make multiple moves per
+turn, some pairs developed strategies that allowed players to select numbers independently of the partner's current position,
+and some pairs preferred to move up the mountain quickly, in parallel. The parallel interaction style required each player to
+anticipate the partner's next move and then to quickly choose a compatible number.
+To mitigate the challenges of interacting concurrently within the game, some of the pairs negotiated play strategies. One
+pair developed a strategy based on the type of numbers each player should land on, creating an "odds or evens" strategy.
+This strategy worked well until the numbers became large. Others used short-term strategies that were sometimes unrelated
+to the numbers and therefore not particularly successful. For instance, players would climb along the edge of the mountain
+because they felt it would be easier. The players' goals also influenced their interaction styles. For example, the primary
+goal of two of the pairs who interacted concurrently seemed to be to finish as many mountains as possible during the
+session. Conversely, the players in a third pair had conflicting goals and rarely interacted simultaneously. One girl appeared
+intent on reaching the top of the mountains quickly, but her partner seemed more intent on having fun by antagonizing her.
+Overall, the goals of the players affected their game strategy and the game strategy often affected the interaction style used
+by the players. Consequently, the children interacted in a variety of ways with the same hardware and software. Although
+the in-depth qualitative analyses were only performed on three pairs, the findings support informal observations made of
+the other 17 pairs during the experiment. This indicates that technology, especially multi-user technology, needs to be
+flexible to account for this variation in interaction styles.
+
+Communication
+Our presupposition with regard to display conditions was that a shared display would lead to a shared understanding of the
+workspace. When people view shared objects in the physical world, an individual has an understanding of both where the
+object is and where their partner is in relation to themselves. This helps provide an implicit understanding of how their
+partner views the object, potentially leading to a better shared understanding of the workspace. If artifacts in a virtual scene
+are analogous to objects in the physical world, this same result may hold for virtual objects on a shared display. However, it
+is unclear whether or not this phenomenon extends into shared virtual workspaces when users have separate visual displays
+or are in separate physical locations.
+The results of this study suggest that reaching a shared understanding of the workspace was more difficult when the
+children were discussing on-screen objects in the conditions where they had separate visual displays. Consider Excerpt 1,
+which was taken from one pair of children playing in the side-by-side display condition. In this excerpt one player, Scott,
+has just tried to move to a number that shares a factor with his partner's current position. This action causes Scott's climber
+to fall off the mountain and start swinging below David's player. David suggests that Scott move to "the 7" and he points at
+that position on his own screen. Scott does not see where David is pointing though because Scott is still looking at his own
+display. While clarifying his suggestion, David looks at the mountain on Scott's screen, even though their two displays are
+showing the identical scene. This excerpt suggests that reaching a shared understanding regarding on-screen objects could
+be facilitated by sharing a physical display.
+Proceedings of CSCL 2002                                                                                                    page  338
+
+Excerpt 1. Two children playing the game in the side-by-side display condition.
+             [Scott's climber falls. David and Scott are both looking at their own displays.]
+    David:   Oh...come up! [David points to his own display to show Scott where he should "come up". Scott is still
+             looking at his own display]... oh [David seems to realize that Scott did not see where he was pointing]
+             [David leans back from his own monitor and turns to look at Scott's screen]
+    David:   Go to the 7...the bottom one. [Scott continues to try to get his climber back on the mountain]
+    Scott:   This one? [Scott is still looking at his own screen]
+    David:   Yeah. [Scott's climber is back on the mountain. David turns back to his own screen and resumes
+             playing]
+
+Data gathered from the questionnaires also supports the notion that a shared display can facilitate collaboration. After
+completing each display condition, the students were asked to rate how well they understood their partner, on a five-point
+scale (one corresponded to `always' while five corresponded to `never'). A Friedman two-way analysis of variance revealed
+a marginally significant difference between the display conditions, 2(2,N=20)=5.5, p=0.063. On average, students reported
+more strongly that they understood their partner in the shared condition (M=2.3, SD=1.3) than either in the side-by-side
+condition (M=2.7, SD=1.3) or in the separated condition (M=2.6, SD=1.4). A similar trend was also apparent in student's
+responses when asked, in each condition, how well they felt their partner understood them. These differences, although
+subtle, support the notion that a shared display can help foster a shared understanding. Students felt strongly that there was
+mutual comprehension in their communication when they viewed the virtual scene on the same physical display. However,
+in the side-by-side and separated condition, even though the virtual scene was identical when viewed on separate screens,
+these display configurations did not appear to evoke the same degree of response.
+
+Effect of Display Condition on Student's Game Perception
+If a shared display leads to a shared understanding of the workspace, it can be argued that it should be easier for students to
+work together and solve puzzles. After each experimental condition, the students were asked to rate how easy the game was
+to play on a five-point scale (one corresponded to 'easy' and five corresponded to 'hard'). A Friedman two-way analysis of
+variance revealed a significant difference for perceived ease of use between the display conditions, 2(2, N=20)=10.7,
+p<.01. The students, on average, rated the shared condition as being easier to play (M=2.3, SD=0.9) than the side-by-side
+(M=2.8, SD=0.8) or the separate condition (M=2.9, SD=0.8). Since the students only played for a short amount of time (15
+minutes), and because the software crashed during some of the sessions, it was not possible to compare the number of
+mountains (game levels) completed in each condition. As a result, the performance data could not be used to validate the
+students' perceptions of how easy it was to solve puzzles in each of the conditions.
+Although   these  results are subjective,     and may   have  been  influenced by   external factors  unrelated         to the  display
+configuration (e.g. time of day, mood, partner's behaviour), they are also supported by the post-experiment questionnaire1.
+Fifteen of the twenty children stated that the shared condition was the easiest of the three display conditions to solve
+puzzles in (2(2, N=20)=16.3, p<.001). Thus, the children's perception that it was easier to play in the shared condition was
+consistent for both the evaluation of the interface after each condition, and the overall evaluation at the end of the study.
+
+On the post-experimental questionnaire, the children reported why they found it easiest to solve puzzles in the shared
+condition. The majority of their comments related to the fact that they could communicate more effectively and could help
+each other when they were "right beside each other", in the shared display configuration. Table 2 groups the children's
+responses into several categories for each display configuration along with an example remark for each.
+           Table 2: Why children found the game easier to play in the different display configurations.
+                   Why                       # of Remarks                       Example Remark
+
+ Shared display:
+ Close to partner                                     7   "We were right beside each other so we knew what to do"
+ Ability to point and do things for partner       3       "If your partner didn't understand, you could do it for them"
+
+1 The post-experiment questionnaire was completed after all three display conditions were played. This allowed the children
+ to express  their  preferences across       display conditions. This questionnaire was in   addition to the      one      the children
+ completed after each condition to evaluate the specific display condition in which they had just played.
+Proceedings of CSCL 2002                                                                                                 page    339
+
+ Better communication                            2       "We could see each other and communicate better"
+ Same display                                    2       "Because we had the same screen"
+ No reason given                                 1
+
+ Side-by-side display:
+ Separate displays                               2       "You get your own screen"
+ Ability to point                                1       "They could point out what you're doing wrong"
+ Better understanding                            1       "If you win you can see if she's happy or not, then you know what
+                                                         happened"
+
+ Separated Displays:
+ Order related                                   1       "We did it last so we were getting used to the game"
+
+Non-verbal Interactions Between Students
+The   impact   of the   display configurations  on  the children's non-verbal   interactions with each        other is  important  to
+understand. In the physical world, our non-verbal interpersonal interactions are very refined and play an important role in
+our activities. How a computer environment enhances or impedes these interactions will ultimately impact its effectiveness
+as a collaborative environment.
+
+Pointing
+The number of times children pointed in the various display conditions was gathered in the non-verbal coding of the video
+data. In general, the children rarely pointed in any of the display conditions. Overall, six occurrences of pointing were
+recorded in the shared condition, compared to two occurrences in the side-by-side condition, and one in the separated
+condition. In face-to-face activities, pointing while interacting with shared artifacts is common and often helps to augment
+the verbal  communication.      Our results, however,   showed  that this mode  of  communication       was   rarely   utilized when
+children played in either of the two face-to-face conditions. This may be explained by the introduction of a virtual non-
+verbal communication channel, which becomes available when users are provided their own on-screen representation, e.g.
+their own  cursor.   It is possible  that  children chose  to "point" using  their cursor  as opposed     to   their   hand. Further
+investigation is required to understand how this extra communication channel augments or replaces physical gestures.
+
+Looking at Their Partner
+In both the shared display and side-by-side conditions, it was possible for the players to see their partner. However, video
+analyses revealed that players looked at their partner more often in the side-by-side display configuration (105 occurrences)
+than in the shared configuration (85 occurrences). Although this difference was not statistically significant, qualitative
+observations suggest that this trend is a result of students looking at their partner to increase awareness of their partner's
+actions in the side-by-side condition. Visual focus may also have played a role in the users' awareness of each other's
+actions. In the shared display configuration, the students' attention was focused on the same physical artifact (the computer
+screen); thus, their  partner   was relatively close to the player's  center of visual focus. Conversely,       in  the side-by-side
+condition, both the separate displays and the increased distance between players caused partners to be further away from
+each other's center of visual focus when looking at their own displays. As a result, a player's awareness of their partner's
+actions may have decreased in the side-by-side condition causing them to actively look at their partner more often to see
+their partner's physical actions.
+
+Enjoyment
+After playing in each condition, students were asked to rate how much they enjoyed playing the game on a five-point scale
+(one corresponded to `fun' while five corresponded to `not much fun'). No significant differences between the conditions
+were found, 2(2, N=20)=4.1, ns, and in general, the students rated all three conditions as being somewhat fun (shared:
+M=2.4, SD=1.4; side-by-side: M=2.75, SD=1.52; separated: M=2.6, SD=1.4). After playing in all conditions, students were
+asked to choose which condition was the most fun to play. Of the twenty students, nine chose the separated condition, six
+chose the shared condition, and five chose the side-by-side condition. This difference was not found to be significant,
+2(2,N=20)=1.3, ns. The children's explanations of their choices were grouped into several categories for each display
+configuration. These are shown in Table 3, along with an example remark for each category. The high variability of these
+results, compared   with   the  results of which   display condition  was  easiest to use, indicates    that   the  children do   not
+necessarily equate the easiest collaborative environment to the most fun environment. In fact, four students commented that
+they enjoyed the challenge of the separated display configuration.
+Proceedings of CSCL 2002                                                                                                     page 340
+
+           Table 3: Why children found the game more fun to play in the different display configurations.
+
+        Why                                     # of Remarks                         Example Remark
+        Shared display:
+        Sharing a display made it easier               3       "It was easier with one monitor which made it more fun"
+        Can point at the display                       1       "She can point out which ones for me to go to"
+        Miscellaneous                                  2       "It was the first time I played the game"
+
+        Side-by-side display:
+        Beside each other, but had own display         2       "You have your own monitor but you can see your partner"
+        Can see partner                                3       "You can see the expression on their face when you mess up"
+
+        Separated Displays:
+        Needing the microphones                        2       "You actually needed the mikes and it was cool"
+        Being separate was more challenging            4       "We couldn't see each other so it was more challenging"
+        Couldn't see partner's actions                 2       "You couldn't see what the other was doing"
+        Miscellaneous                                  1       "It was similar  to an Internet  game  and  talking to  a friend
+                                                               combined"
+A second factor that contributed to children preferring the separate display configuration was the necessity of the audio
+equipment   (headphones   and     microphones)    for  communication    in  that   condition.   The   ability to   use technology   to
+communicate with a partner, when they were separated, was very engaging for the children. As a result, several children
+mentioned this novelty factor as their reason for preferring the separated condition. In contrast, the use of audio equipment
+in the other two configurations was not essential for communication given that they were face-to-face. Consequently, even
+though audio equipment was utilized in these two conditions, it appeared to be less of a contributing factor to children's
+engagement.
+Playing with a partner also added to the children's enjoyment of the game. Analysis of the post-experimental questionnaires
+revealed that many of the students felt that having a partner made it easier to finish mountains (levels) in the game. This
+preference was expressed by fifteen students when they played the shared and the side-by-side conditions but only eleven
+students   when they    played   the separated  condition.    This   difference was   found    to be  marginally    significant,  2(2,
+N=20)=5.3, p=0.069. Providing children with technology that supports multiple users allows children the option of playing
+or working on computers with friends.
+
+CONCLUSIONS AND FUTURE WORK
+The results  of this work   further    our understanding   of  how   children   interact in  synchronous   shared   environments.   In
+particular, the physical proximity of participants, the ability to utilize gestures, and the use of a shared physical workspace,
+all positively influenced the students' collaborative experiences. In the physical world, these interactions are a natural part
+of our daily lives. Unfortunately, current technologies do not adequately support these interactions in a seamless manner.
+Continued work in this area is needed to fully understand its full potential for collaborative learning environments.
+Although we observed many interesting trends, these results must be interpreted with caution. The small sample size,
+limited playtime, and high variability among the pairs limited these analyses. Although there were hints of behavioural
+change, fifteen minutes of play may not have been long enough for the children to develop an interaction style suited to a
+particular display configuration.    Future   longitudinal   studies where  subjects     are given   time to  adapt   to each   display
+condition will help address such issues.
+Other areas for future investigation include the type of collaborative task and the application domain. The present study
+required users to work together to reach the top of the mountain by solving mathematical problems. With such tightly
+coupled  group  work,   partners  may    not have    had the opportunity to   explore    alternative collaborative  interaction  styles
+afforded by each of the display configurations.
+Most importantly,  beyond     all of the   intricate analyses, we  ultimately   cannot   forget  the preferences   of  those who  will
+inevitably interact with these systems. Some students vocalized that they preferred the shared display simply because they
+"had the same screen", but could not articulate why this configuration was important to them. Others were able to describe
+the essence of the shared display configuration. One student felt that the physical proximity and shared screen enhanced
+communication,   while   another     commented    that   the shared   display   was   easier  to  use  because   "cooperation    [was]
+Proceedings of CSCL 2002                                                                                        page 341
+
+dynamically increased". Although this is a complex research endeavor, the children effectively captured the spirit and
+fundamental quality of the experience ­ having fun.
+
+ACKNOWLEDGMENTS
+This project was funded by NSERC and the TeleLearning NCE. We would like to thank the E-GEMS group at UBC for
+allowing us to use Prime Climb and for their assistance during our modifications. We would also like to thank Garth
+Shoemaker, Daryn Mitchell, Wai-ling Ho Ching, and Michelle Daly for their assistance with software development and
+video analysis. Thanks also to the other members of the EDGE lab for their assistance.
+
+REFERENCES
+Bier, E.A., & Freeman, S. (1991). MMM: A User Interface Architecture for Shared Editors on a Single Screen. In Proc. of
+        UIST '91. 79-86.
+Bly, S. (1988). A Use of Drawing Surfaces in Different Collaborative Settings. In Proc. of CSCW '88, 250-256.
+Bricker, L.J., Bennett, M.J., Fujioke, E., & Tanimoto, S.L. (1999). Colt: A System for Developing Software that Supports
+        Synchronous Collaborative Activities. In Proc. of the Ed-Media Conference, 587-592.
+Firestone W. (1987). Meaning in method: The rhetoric of quantitative and qualitative research. Educational Researcher,
+        (16), 16-21.
+Fish, R.S., Kraut, R.E., & Root, R.W. (1992). Evaluation Video as a Technology for Informal Communication. In Proc. of
+        CHI '92, 37-48.
+Gutwin, C., Greenberg,   S.  &  Roseman,   M.  (1996).  Workspace  Awareness    in     Real-Time Distributed  Groupware:
+        Framework, Widgets, and Evaluation. In Proc. of HCI '96, 281-298.
+Hollan, J. & Stornetta, S. (1992). Beyond Being There. In Proc. of CHI '92, 119-125.
+Hourcade, J. & Bederson, B. (1999). Architecture and Implementation of a Java Package for Multiple Input Devices (MID).
+        Technical Report CS-TR-4018 University of Maryland.
+Hymel S., Zinck B.,   &  Ditner E. (1993). Cooperation  versus competition  in the   classroom.  Exceptionality Education
+        Canada, 3:1-2, 103-128.
+Inkpen, K., Booth, K.S., Klawe, M., & Upitis, R. (1995). Playing together beats playing apart, especially for girls. In Proc.
+        of CSCL '95, 177-181.
+Inkpen, K. (1997). Three Important Research Agendas for Educational Multimedia: Learning, Children and Gender. Proc.
+        of Educational Multimedia '07, Calgary AB, June 1997, 521-526.
+Inkpen, K.M., Ho-Ching, W., Kuederle, O., Scott, S.D., & Shoemaker, G.B.D. (1999). "This is fun! We're all best friends
+        and we're all playing.": Supporting children's synchronous collaboration. In Proc. of CSCL `99, 252-259.
+Inoue, T., Okada, K., & Matsushita, Y. (1997). Integration of Face-to-face and Video-mediated Meetings. In Proc. of
+        GROUP '97, 405-414.
+Johnson D.W., Maruyana G., Johnson R,T, (1981). Effects of cooperative, competitive, and individualistic goal structures
+        on achievement: A meta-analysis. Psychology Bulletin, 89(1), 47-62.
+Klawe, M. (1998). When does the use of computer games and other interactive multimedia software help students learn
+        mathematics? In Proc. of the Technology and NCTM Standards 2000 Conference.
+Mandryk, R.L., Inkpen, K.M., Bilezikjian, M., Klemmer, S.R., & Landay, J.A. (2001). Supporting Children's Collaboration
+        Across Handheld Computers. In Extended Abstracts of the Proc. of CHI'01, 255-256.
+Maxwell J.A. (1996). Qualitative Research Design: An interactive approach. Thousand Oaks: Sage.
+Miles M.B. & Huberman A.M. (1994). Qualitative Data Analysis (2nd Ed.). Thousand Oaks: Sage.
+Myers, B.A., Stiel, H., & Gargiulo, R. (1998). Collaboration using multiple PDAs connected to a PC. In Proc. of CSCW
+        '98. 285-294.
+Pedersen, E. McCall, K., Moran, T., & Halasz, F. (1993). Tivoli: An Electronic Whiteboard for Informal Workgroup
+        Meetings. In Proc. of InterCHI '93. 391-398.
+Reeves, B., & Nass, C. (1996). The Media Equation, Cambridge University Press.
+Richards, L. (1999). Using NVivo in Qualitative Research, SAGE Publications, London.
+Scott, S.D., Shoemaker, G.B.D., & Inkpen, K.M. (2000). Towards Seamless Support of Natural Collaborative Interactions.
+        In Proc. of Graphics Interface 2000, 103-110.
+Stewart, J., Bederson, B.B, & Druin, A. (1999). Single Display Groupware: A Model for Co-present Collaboration. In Proc.
+        of CHI `99, 286-293.
+Streitz, N.A., Geibler, J., Haake, J.M., & Hol, J. (1994). DOLPHIN: Integrated Meeting Support across Local and Remote
+        Desktop Environments and Liveboards. In Proc. of CSCW '94. 345-358.
+Streitz, N.A., Geibler, J., Holmer, T., Konomi, S., Müller-Tomfelde, C., Reischl, W., Rexroth, P., Seitz, P., & Steinmetz, R.
+        (1999). i-LAND: An Interactive Landscape for Creativity and Innovation. In Proc. of CHI '99, 120-127.
+Tani, H., Horita, M., Yamaashi, K., Tanikoshi, K., & Futakawa, M. (1994). Courtyard: Integrating Shared Overview on a
+        Large Screen and Per-user Detail on Individual Screens. In Proc. of CHI '94. 44-50.
+

@@ -1,0 +1,471 @@
+Proceedings of CSCL 2002                                                                                            page  255
+
+    Why Scaffolding Should Sometimes Make Tasks More
+                                       Difficult for Learners
+                                                    Brian J. Reiser
+                                               Northwestern University
+                                               Reiser@northwestern.edu
+ABSTRACT
+There has been much interest in using software tools to scaffold learners in complex tasks, that is, to provide supports that
+enable students to deal with more complex content and skill demands than they could otherwise handle. Many different
+approaches to scaffolding techniques have been presented in a broad range of software tools. I discuss two mechanisms to
+explain how software tools can scaffold learners. Software tools can help structure the learning task, guiding learners
+through key components and supporting their planning and performance. In addition, tools can shape students' performance
+and understanding of the task in terms of key disciplinary content and strategies, thereby problematizing this important
+content. While making the task more difficult in the short term, by forcing learners to address these ideas, such scaffolded
+tools make this work more productive opportunities for learning.
+Keywords
+caffolding, interactive learning environments, science education
+INTRODUCTION
+There  is much   interest in education reform   in using technology  to  support  learners. One  aspect  of the argument     for
+technology has been that software can be used to scaffold students, that is to provide enough support to enable learners to
+succeed in more complex tasks, and thereby to extend the range of experiences from which they can learn (Davis & Linn,
+2000; Edelson, Gordin, & Pea, 1999; Guzdial, 1994; Quintana, Eng, Carra, Wu, & Soloway, 1999; Reiser et al., 2001).
+Scaffolding is a key element of the notion of cognitive apprenticeship, in which students can learn by taking increasing
+responsibility and  ownership   for their role  in complex   problem    solving, with the   structure and  guidance   of more
+knowledgeable mentors or teachers (Collins, Brown, & Newman, 1989).
+There are many different approaches to scaffolding, and no common framework has yet emerged that can be used to
+provide design guidelines for scaffolded software. In this paper, I propose two general mechanisms by which software tools
+can shape  tasks for learners  in a way   that makes  their problem  solving more    productive, and   thereby scaffolds  their
+learning.
+
+Traditional Approaches to Scaffolding
+The term scaffolding has traditionally been used to refer to the process by which a teacher or more knowledgeable peer
+assists a learner, altering the learning task so the student can solve problems or perform tasks that would otherwise be out of
+reach. The conception is associated with Vygotsky's notion of the zone of proximal development, which characterizes the
+region of tasks between what the learner could accomplish alone and what he or she could accomplish (and master) with
+assistance (Rogoff, 1990; Vygotsky, 1978). It is important to stress the dual aspects of both (a) accomplishing the task and
+(b) learning from one's efforts, i.e., improving one's performance on the future tasks in the process. If learners are assisted
+in the task but are not able to understand or take advantage of the experience, the assistance will have been local to that
+instance of scaffolding, but will not have provided support for learning. Thus, scaffolding entails a delicate negotiation
+between   providing support  while  continuing  to engage   the learner actively in the process  (Merrill,  Reiser, Merrill, &
+Landes, 1995).
+In recent design research on interactive learning environments, this notion of scaffolding has been generalized to refer to
+aspects of software tools that assist the learners in making progress on what would otherwise be tasks out of their reach.
+Software scaffolding provides some sort of structure that helps make the learning more tractable for learners. For example,
+the software might provide prompts to encourage or remind students what steps to take (Davis & Linn, 2000), graphical
+organizers or other notations to help students plan and organize their problem solving (Quintana et al., 1999), automatic
+execution of lower level processes, or representations that help learners track the steps they have taken in the problem
+solving process (Collins & Brown, 1988; Koedinger & Anderson, 1993). In all these cases the software provides additional
+assistance beyond what a simpler, more basic tool would have provided, to allow learners to accomplish more ambitious
+tasks.
+This work on scaffolded software tools has been very encouraging, and promises to be an important benefit in integrating
+technological tools into classrooms. However, there have been a wide range of approaches to designing software scaffolds,
+and almost as many design principles as there are working systems. Development of general guidelines for the design of
+Proceedings of CSCL 2002                                                                                              page   256
+
+software scaffolds first requires a general theoretical framework to characterize how tools can scaffold learners. How can
+we characterize the mechanisms by which software scaffolds assist learners?
+There are a number of different ways one could carve up the space of software scaffolds. We could attempt to organize
+scaffolds  according  to  the  nature of   the interface  feature  involved, such  as      text-based prompts,   or  hyperlinked
+representations. We could enumerate different functions scaffolds can serve, such as linking representations or helping
+learners break down complex processes into their subcomponents. Such analyses have clear utility. However, a principled
+articulation of scaffolding approaches must begin with a model of the task and the identification of the obstacles that
+learners face in performing the task (Quintana, 2001; Quintana et al., 1999; Reiser et al., 2001). A delineation of scaffolding
+strategies must be based on an analysis of what the target domain requires of learners, why the task is difficult, and finally
+how interacting with the tools can help learners overcome these difficulties, both to accomplish the task and to learn more
+effectively from the experience.
+In this paper, I argue that there are two principal mechanisms by which software scaffolds can assist learners in mastering
+complex   tasks. Following discussion   of these   two scaffolding  mechanisms,  I present     some   specific design  principles
+consistent with this model, and describe their implementation in learning environments. To construct this argument, I will
+focus on scaffolding in the discipline of science. Much of the work on scaffolding tools has taken place in this domain, and
+there is a rich literature on the obstacles learners face. Furthermore, tools to access and interpret data are a central part of
+scientific investigations, so this domain is a productive context in which to explore the design of scaffolded tools.
+
+THE NEEDS OF LEARNERS
+Modern instructional approaches in science and mathematics emphasize learning by engaging in knowledge construction
+practices. In the case of science, this entails learning in the context of scientific investigation and argumentation (Edelson,
+2001;  Olson   &  Loucks-Horsley,  2000;   Singer,  Marx,  Krajcik, &  Chambers,   2000).      These  investigations often entail
+students learning general principles in the context of specific problem scenarios. Designers have developed approaches of
+problem-based learning (Cognition and Technology Group, 1990; Schank, Fano, Bell, & Jona, 1994; Williams, 1992) and
+project-based science (Blumenfeld et al., 1991) as a way of engaging learners in acquiring disciplinary knowledge in the
+context of solving particular problems, such as learning genetics by working through the tasks of being a genetic counselor
+(Bell, Bareiss, & Beckwith, 1994) or learning introductory physics by analyzing the quality of air in one's community
+(Singer et al., 2000). These approaches, while providing the potential to connect knowledge more effectively to real world
+contexts, also pose a particular type of challenge for learners. For this approach to be successful as a learning approach,
+students must not only construct solutions to the particular scenario, but must construct and analyze their solutions in terms
+of more general disciplinary content. In particular, students need to ground their reasoning in more general disciplinary
+strategies, and connect the explanations or arguments they construct to more general disciplinary frameworks. For example,
+if students are learning about mass and density by designing toy boats to carry loads, they need to analyze and synthesize
+their results and  work  toward  physical  explanations,  rather than focusing only on       the goal of the   boat-building task
+(Schauble, Klopfer, & Raghavan, 1991).
+Performing an investigation is a complex cognitive task that pushes the boundary of learners' content knowledge and
+processes. For example, the current education standards characterize the iterative processes of designing an investigation,
+collecting data,  constructing and revising    explanations  based  on data,  evaluating     explanations, and   communicating
+arguments (Olson & Loucks-Horsley, 2000). This requires coordinating domain-specific processes and content knowledge,
+and metacognitive processes to plan, monitor, evaluate and revise these investigation plans. Thus, learners face challenges
+at several levels. The   knowledge students    are mastering includes  conceptual  knowledge,      basic domain  process   skills,
+domain-specific strategies, and more general metacognitive processes.
+Along with efforts to bring more ambitious science practices into classrooms, there has now been a rich set of empirical
+studies documenting the challenges that learners face. We briefly consider the main findings here in order to motivate the
+nature of  the solutions that scaffolds can  provide   to these problems. Where   does     the complexity  arise for  learners in
+science?
+Tacit expert knowledge: Sophisticated problem solvers relies on strategies for planning and guiding the reasoning. These
+heuristic strategies in science are needed to plan investigations, select data comparisons, and synthesize findings. These
+strategies are built upon on discipline-specific explanatory frameworks (Reiser et al., 2001; Tabak, Smith, Sandoval, &
+Reiser, 1996). A key challenge is that this knowledge is typically tacit for more experienced reasoners, and very much
+taken for granted. Instruction often fails to make these strategies explicit for learners.
+Non-reflective work: Learners tend to focus on products rather than on explanatory and learning goals (Perkins, 1998;
+Schauble, Glaser, Duschl, Schulze, & John, 1995). The difficulty in managing investigations leads to little attention being
+given to reflection and reevaluation (Loh et al., 2001). Lack of content knowledge further complicates the process of
+evaluating the progress of an investigation.
+Proceedings of CSCL 2002                                                                                          page  257
+
+Fragile and superficial understanding. Learners tend to focus on surface details, and have difficulty seeing the underlying
+structure (Chi, Feltovich, & Glaser, 1981). They may have difficulty mapping between related representations and instead
+become overly reliant on particular forms.
+In summary, the task demands of engaging in scientific investigations reveal a system of challenges for learners. The
+ongoing cycle of planning and monitoring, sense making, and communication requires a number of processes that are likely
+contexts where assistance will be needed. Investigations require planning, in which students need to coordinate reasoning
+about hypotheses and reasoning about experiments or data comparisons that can be constructed to test hypotheses (Klahr &
+Dunbar, 1988). Constructing and pursuing that plan requires new disciplinary strategies, and poses metacognitive demands
+in continually monitoring, evaluating and revising that plan. In addition to help in managing this process, learners may need
+assistance in thinking through their own solutions in terms of the disciplinary content, so that they can learn about the
+discipline from the experience. Making sense of the data collected may require deep subject matter knowledge to interpret
+observations in light of disciplinary frameworks. Learners may need prompting to consider alternatives in light of initial
+support for a line of argument. They may need assistance in exploring the implications of the evidence they collect for the
+hypotheses they consider. They may not articulate their ongoing understanding, focusing instead on pragmatic goals of
+creating required products. They may need assistance in scientific discourse to move beyond description and communicate
+a scientific argument. In all these processes, the challenges of more superficial understanding, lack of access to tacit expert
+strategies, and a tendency toward non-reflective work create the need and opportunities for more supportive environments.
+
+HOW CAN TOOLS HELP LEARNERS?
+While traditional views of scaffolding have focused on social interactions as the source of assistance, the focus of the last
+two decades of research on the cognitive science issues in technology design has illuminated ways in which technological
+tools may provide some types of scaffolding functions. In considering how to help learners with these challenges, it is
+important to reconceptualize the learning problem from that of an individual working on tasks, perhaps with assistance of
+another more knowledgeable other, to focusing on the context in which the people are acting, the tools they use, and the
+knowledge embedded in this context. Rather than considering what the individual can accomplish, this view of distributed
+cognition focuses on what the system of person and tool can accomplish (Hollan, Hutchins, & Kirsh, 2000). The structure
+of a tool shapes how one interacts with the task and affects what can be accomplished.
+One clear possibility for more supportive tools lies in automating aspects of tasks, and thereby restricting the part of the
+task for the learner needs to perform, potentially enabling them to focus on more productive parts of the tasks (Salomon,
+Perkins, & Globerson, 1991). This is the perhaps the most straightforward sense of scaffolding. For example, calculators
+can  offload simple    computations, allowing people  to    focus  on other  parts of the data  manipulation  tasks, such as
+considering what calculations to compose together to solve a problem. Word processors with spelling checkers can allow
+writers to focus more on the construction of their prose rather than devoting time to checking spelling in dictionaries. If
+offloading these aspects of the task enable learners to focus more effectively on the conceptually important aspects, and
+thereby learn from their experience, the tool has scaffolded that learning.
+Tools can have even more dramatic effects on tasks in the way they shape the task itself. In fact, the nature of the tools we
+use can be a critical factor in how people think about the tasks they perform (Hutchins, 1995; Norman, 1987). This is
+particularly true when   tasks involve accessing, manipulating,    storing, or reasoning  about information. Norman   (1987)
+describes cognitive artifacts, or tools that are used to represent and manipulate information in a task. These tools can
+change the task in fundamental ways. The cognitive artifact becomes the vehicle through which the person interacts with
+the environment. It provides the representation of external states and the vehicle for manipulating the environment. Because
+of the central role of tools in effecting actions in information domains, the task cannot really be defined independent of the
+tools people use in the practice of that task (Bannon & Bødker, 1987). Thus, the nature of the task emerges from the
+interactions of people, subject matter, and tools, and the nature of the tool clearly affects how tractable the performance of a
+task is for learners.
+Norman describes the problem of mapping between the external representation and what it represents. The goal of human-
+computer interaction design research is to make that mapping as transparent as possible. Cognitive artifacts can change the
+task for users in  the  way in  which  they represent and    allow people   to manipulate information. For   example, direct-
+manipulation interfaces allow users to control a process by appearing to act upon it directly, through the visual metaphor
+(Hutchins, Hollan, & Norman, 1986). Visualization tools are designed to help users form deep models of an underlying
+system (Hollan, Bederson, & Helfman, 1997).
+In the design of scaffolded tools, we can use this mapping to our advantage. Rather than striving only for transparency
+between the representation and the world it represents, we can bend that representation to instructional purposes. Cognitive
+artifacts provide a lever for designers to shape how learners think about tasks. In the next section, we consider how
+cognitive artifacts can be used to instructional advantage.
+Proceedings of CSCL 2002                                                                                             page   258
+
+MECHANISMS OF SCAFFOLDING: STRUCTURE AND PROBLEMATIZE
+How can tools provide scaffolding? First, let us revisit the definition of scaffolding as applied to science. There are two
+critical notions in scaffolding: (1) learners receive assistance to succeed in more complex tasks that would otherwise be too
+difficult; (2) learners draw from that experience and improve in process skills and/or content understanding. Focusing on
+the representational properties of tools puts us in a position now to consider how the specific design of the tool can support
+learning tasks.
+I propose two complementary aspects of scaffolding in software tools -- it can help structure problem solving, and it can
+provoke learners to devote resources to issues they might not otherwise address. We consider each of these in turn.
+Structuring the Task
+The first sense of scaffolding is the most straightforward -- if reasoning is difficult due to complexity or the open-ended
+nature of the task, then one way to help learners is to make the task more structured. This may be done by providing
+structured workspaces, graphical organizers, decomposing functionality according to conceptual processes, or providing
+prompts. The structure of the tool may provide guidance as to what actions to take, their order, necessary aspects of work
+products, and so on. This type of structuring is a key characteristic of a number of different scaffolding approaches. For
+example, in KIE, structured prompts reminds students of aspects of the process they may otherwise neglect to perform
+(Davis & Linn, 2000). Model-It structures the task of modeling into plan, build, and test processes, and organizes relevant
+functions in each of those modes (Jackson, Krajcik, & Soloway, 1998). In the BGuILE ExplanationConstructor, structured
+workspaces can be used to remind students of the necessary components of their explanations, and can remind students
+about the criteria they should apply to evaluate their own work (Reiser et al., 2001; Sandoval, 1998). In these cases, the
+scaffolded tool addresses the obstacles of the investigation task by helping learners construct their plans, consider the
+possible actions relevant to each stage of the process, monitor the plan, and tie in relevant disciplinary ideas as they make
+sense and communicate about their data.
+
+Problematizing Concepts
+The second general approach is to make something in students' work more problematic (Hiebert et al., 1996). That is, the
+software tools help students see something as problematic that they might otherwise overlook. Rather than simplifying the
+task, the software forces students to encounter important ideas or processes. For example, if students are forced to use a
+menu   to categorize  the data they have  collected,  they need    to consider the  significance  of the data.  In  the BGuILE
+ExplanationConstructor (Sandoval, 1998), students must make conceptual distinctions between the type of argument they
+wish to construct. In these cases, forcing students to apply these distinctions, which represent key conceptual ideas in the
+target discipline, can provoke debate, deliberations, and decisions that are all productive for students as they make sense of
+the findings of their investigation and manage its progress.
+In this way, scaffolds can provoke students, "rocking the boat" when they are proceeding along without being mindful
+enough of the rich connections of their decisions to the domain content. This provocation may occur as the tools force them
+into decisions or commitments required to use the vocabulary and machinery of the interface. This type of scaffolded tool
+may create short-term costs, preventing students from rushing through their work in a problem without being mindful of the
+subject-matter issues that are the goal of the instruction. While this may be a short-term challenge rather than directly
+assisting with more expeditious solutions, such a tool may make the students' efforts in the problem a more productive
+learning opportunity.
+The social context of collaborative problem solving is often integral to the problematizing nature of the tool. Students must
+make   their understanding  public when   using tools that   represent conceptual   distinctions explicitly. Such   tools require
+students to discuss disciplinary ideas decisions in order to effect actions in the tool. In this way, the artifact students use to
+examine data and record their interpretations becomes a vehicle for negotiation of understanding about the disciplinary
+ideas and their application to the task at hand (Roschelle, 1992).
+These two mechanisms of structuring and problematizing are often complementary. The same characteristic of a tool
+designed to help structure students' engagement in a task, for example, by providing guiding prompts or making explicit a
+set of subtasks, may  also  problematize  the disciplinary   ideas, by requiring students to make    sense   of the options  and
+connect their own work to these disciplinary ideas.
+In summary, through these two mechanisms, scaffolds can help learners overcome some of the challenge of the complexity
+in the domain. Their work can be more productive and more effectively guided by expert strategies and understanding. In
+the  next  section we   provide   examples  from  our  work    on     BGuILE   learning environments     that   exemplify  these
+complementary functions of guiding and problematizing in students' scientific investigations.
+
+DESIGN PRINCIPLES: USING TOOLS TO MAKE THE TASK EXPLICIT
+The  design  principles I present  here address the  learner obstacles   of fragile understanding    and accessing  tacit  expert
+knowledge. The key to the design approach is to help make the structure of the task more accessible to learners through the
+Proceedings of CSCL 2002                                                                                              page  259
+
+tools they use  and  the artifacts they create. Articulation  plays  a central  role in  the  approach.   We  will help  learners
+understand  the  tasks by   requiring them  to  articulate their actions  and  encode   their results  in terms of  disciplinary
+frameworks.
+I  will present two   types  of designs  that attempt   to help  students understand    and   practice these  investigation   and
+argumentation strategies by making them explicit in both the tools students use and the work products or artifacts they
+create. We call these strategic tools and strategic artifacts (Reiser et al., 2001). I describe these two types of design features
+and then present examples of scaffolded tools that employ these strategies.
+Strategic Tools: We structure the tools students use to access, analyze, and manipulate data so that the implicit strategies of
+the discipline are visible to students. When students interact with these tools they are led to articulate their interaction in
+terms of these strategies. For example, when students construct data queries they articulate their query in terms of the key
+distinctions in the types of comparisons used to build theory in the domain, rather than solely in terms of surface data
+parameters.
+Strategic Artifacts: We design the work products that students create to represent the important conceptual properties of
+explanations and models in the discipline. For example, we have students construct hypermedia documents that make
+explicit the rhetorical structure of their arguments.
+
+Figure 1. The query screen from The Galapagos Finches. The student has selected a comparison between seasons (first
+panel), and has selected "individual differences" as the comparison type (second panel). The particular constructed query is
+assembled at the bottom of the screen.
+
+Strategic tools
+Scaffolded tools can help represent more of the structure of the task for learners. We have designed the structure of The
+Galapagos Finches software as a strategic tool (Reiser et al., 2001; Tabak & Reiser, 1997; Tabak et al., 1996). The
+Galapagos Finches enables learners to investigate changes in populations of plants and animals in an ecosystem, and serves
+as a  platform  for learning principles of  ecology   and  natural selection. The tool  makes   explicit  the key  strategies for
+examining   ecosystem  data  --  scientists can study   a  population  through  time  (a longitudinal   comparison)   or split a
+population according to some dimension of interest, such as comparing male to female or young to adult (a cross-sectional
+comparison). These two families of comparisons are options students must select when constructing a query (shown as the
+choices "seasons" and "subgroups"). Similarly, students must articulate what type of comparison they wish to perform
+(looking at individual differences, relationship between two variables, and so on). In this way, students are led to articulate
+the strategic intent of a data comparison, rather than phrasing their action in terms of the surface details (see Figure 1).
+Similarly, in the ExplanationConstructor, disciplinary frameworks are represented in explanation guides that students use to
+ensure that their explanations address the key features of the framework (see Figure 2).
+Proceedings of CSCL 2002                                                                                              page   260
+
+Figure 2.  The  ExplanationConstructor    used  to articulate questions, explanations,   and  backing   support. The   outline of
+questions, subquestions, and explanations is shown in the upper left Organizer panel. Explanation guides are shown in the
+upper right.
+The following example from a group of high school students using the Galapagos Finches and ExplanationConstructor
+demonstrates  how   the explanation    guides can  help  structure students' analysis  of  their findings. In this example,    the
+students' attempt to satisfy the explanation guides provokes debate on one of the key ideas in the domain, the nature of
+traits. In considering whether their finding fits the goal of identifying traits, the group disagrees about whether food choice
+qualifies as a trait. In the course of this debate, the group brings in key ideas about physical traits and the relation between
+structure and function. This is an example of the problematizing nature of the scaffold -- having to structure their analysis
+of their  findings in terms    of the  theoretical framework    embedded     in  the tools forced   students  to structure their
+understanding of the specifics of the case in terms of principles of the domain.
+     Evan: (reading prompt) "Environment causes..."
+     Janie: No!
+     Evan: Yeah, "to be selected for..."
+     Janie: Yeah, but that means like...
+     Evan: // what food they eat //
+     Janie: ... organism with these trait
+     Evan: // the trait being the food
+     Franny: Yeah, that's right.
+     Janie: No, because like, if my trait is to eat steak, and there's no steak, I'm immediately gonna go to something
+     else.
+     Evan: If you're only a vegetarian and you only eat... you don't eat meat, you're not gonna eat meat. Well, that
+     depends...//
+     Janie: Are you insane!?
+     Franny: OK, OK. Don't think of people. Think of these guys (the finches). If they only eat one type of seed with
+     their beaks and that seed is gone then they can't live anymore.
+This example demonstrates the type of discourse we aim to create through the scaffolds. The structure they impose on
+students' work causes them to grapple with key disciplinary ideas such as the nature of a trait and the difference between a
+species' characteristic traits and  learned   behaviors. Decisions   about   the use  of  the artifact became    the context   for
+negotiation  between  the students  of  these important  disciplinary  ideas. Both   sense making   (interpreting  the observed
+differences in individuals as candidates for traits supporting differential survival) and articulation were supported by the
+problematizing nature of the strategic tool.
+
+Strategic artifacts
+Just as the tools students use are structured to help them understand the task, we also structure the key work products
+students create to clearly represent important conceptual distinctions and task structure. Just as transparency in cognitive
+Proceedings of CSCL 2002                                                                                          page      261
+
+artifacts that people use can affect the ease with which they can achieve their desired ends in actions in the interface, here
+we aim for transparency in the artifacts people create. Our goal is for students to create artifacts that clearly represent the
+important strategic and disciplinary thinking they have performed in creating the artifact. Contrast this with more traditional
+artifacts such as verbal essays, in which the research behind the essay and the deeper argument structure embedded in the
+essay may be very difficult to discern.
+In the Animal Landlord, students study examples of animal behavior to isolate and analyze the key components of complex
+animal behavior (Smith & Reiser, 1998). Students study examples of behavior sequences such as hunting or eating and
+deconstruct the complex sequence into what they see as the important causal events. For each event, students record their
+observation of the event and their inference of the importance of that event (see Figure 3).
+
+Figure 3. Strategic Artifacts from  the   Animal  Landlord. Students  decompose     complex   behavior into its constituents,
+categorize each constituent, and record their observations and interpretations.
+The artifacts students create are structured  to represent  key aspects of the   task. Students study  complex  behavior     by
+decomposing a sequence into its constituents, represented by the rows of actions, and categorize each constituent, indicated
+in the label attached to the frame. Their analyses are structured into Observations (what we can see in the data) and
+Interpretations (what we infer from these observations) a key distinction in the scientific practice students are learning.
+Again  this provides   both structure   and problematizing. The  structure prompts     students to perform  the  subtasks     of
+observation an interpretation. In addition, forcing them to categorize their observations pushes students to articulate their
+understanding and represent it in the artifact. The explicit distinction between observation and interpretation facilitates
+discussions geared at understanding the relationship between the two.
+The following episode illustrates how the structure of the artifacts forces students to grapple with disciplinary content
+(Golan, Kyza, Reiser, & Edelson, 2001). This debate was recorded from a group of three 7th grade students who were
+watching a clip featuring two Golden Lion Tamarin monkeys eating a grape. One of the monkeys (the female) had the
+grape first and then the male took it away from her, jumped over her and moved to another branch. The students were
+arguing about the part in which the male Tamarin jumped over the female. Two of the students believed that was an
+instantiation of the "mount" behavior, while the third student did not agree. In essence this argument was about what
+"mount" means, is it merely contact between two animals or more than that?
+
+    S2: What did we observe as mount? (reading)
+    S1: No, that one is yours because I totally disagree with you guys!
+    S2: Good for you! Come on man, you see in the clip it just looks mounting, they got on top of each other.
+    S1: No, he jumped over her.
+    S3: She, she jumped over him...
+    S1: Whatever, she jumped over him.
+Proceedings of CSCL 2002                                                                                                  page  262
+
+     S2: I know, but still, the contact...
+     S1: She jumped over him, doesn't matter, contact is not what you guys are talking about. Shoot, you are talking
+     about like getting on top of each other and staying on top for a couple of minutes.
+     S3: No, no, no. We are not talking about that!
+     S2: No, no, not that, no, no, that's not. See, look, watch this contact. Boom! Look at that!
+     S1: Jumping over! Over!
+
+This argument was finally settled by one of the researchers explaining to the students what the behavior "mount" means in
+the domain of animal behavior. This discussion surfaced students' implicit definitions of the behavior, an important step in
+learning to apply a categorization scheme. Again making these decisions as part of their analysis, and clearly representing
+these distinctions in the artifacts they create provoked these and similar arguments, surfacing disagreements and eventually
+refining students' definitions of these behaviors.
+It is interesting that this disagreement had been brewing for some time in the group, but it had not been addressed. Had the
+group merely been asked to report a summary of their observations, it is possible this discussion would not have occurred.
+Forcing students to articulate their understanding and represent it explicitly using menu item labels and the Observation and
+Interpretation structure finally surfaced the differences in interpretation and provoked these productive discussions.
+
+CONCLUSIONS
+I have argued that scaffolding may occur through two complementary mechanisms, structuring and problematizing. Most
+accounts of  scaffolding  define  support   that helps   students   proceed  through   tasks. However,   given the    importance   of
+connecting   students' problem  solving    work  to  disciplinary   content, skills, and strategies, it may also    be important   to
+provoke  issues in  students,  veering them    off   the course   of non-reflective   work,   and forcing   them   to  confront key
+disciplinary ideas  in their solutions to  problems.     The artifacts students  use   and create can   be  designed   to map   onto
+important disciplinary ideas and strategies, thereby problematizing these ideas as students use the tool to work through the
+task and represent the products of their work.
+
+ACKNOWLEDGMENTS
+This paper   builds upon  the  design  research   of the  BGuILE     group   at Northwestern    University, and   I am    grateful to
+conversations  with  my  colleagues   Iris  Tabak,   Brian   Smith,  William    Sandoval,  Ravit  Golan,   and Elena   Kyza   about
+principles of scaffolding in learning environments. I am also grateful to my colleagues in the KDI/ASSESS group for
+discussion of these ideas, Joseph Krajcik, Danny Edelson, Elliot Soloway, Chris Quintana, and Betsy Davis, and to Bruce
+Sherin for many fruitful discussions. This research was funded by the James S. McDonnell Foundation, Cognitive Studies
+for Educational Practice, and by the National Science Foundation under grants #REC-9720383 to the Center for Learning
+Technologies in Urban Schools and #REC-9980055 to the KDI/ASSESS project. The opinions expressed herein are those
+of the author and not necessarily those of these foundations. For additional information about BGuILE software or curricula
+see: http://www.letus.org/bguile/
+
+REFERENCES
+Bannon, L. J., & Bødker, S. (1987). Beyond the interface: Encountering artifacts in use. In J. M. Carroll (Ed.), Interfacing
+         thought: Cognitive aspects of human-computer interaction (pp. 227-253). Cambridge, MA: MIT Press.
+Bell, B., Bareiss, R., & Beckwith, R. (1994). Sickle Cell Counselor: A prototype goal-based scenario for instruction in a
+         museum. The Journal of the Learning Sciences.
+Blumenfeld, P. C., Soloway, E., Marx, R. W., Krajcik, J. S., Guzdial, M., & Palincsar, A. (1991). Motivating project-based
+         learning: Sustaining the doing, supporting the learning. Educational Psychologist, 26, 369-398.
+Chi, M. T. H., Feltovich, P., & Glaser, R. (1981). Categorization and representation of physics problems by experts and
+         novices. Cognitive Science, 5, 121-152.
+Cognition and Technology Group.    (1990).   The    Jasper   series as an    example  of anchored    instruction: Theory,  program
+         description, and assessment data. Educational Psychologist, 27, 291-315.
+Collins, A., & Brown, J. S. (1988). The computer as a tool for learning through reflection. In H. Mandl & A. Lesgold
+         (Eds.), Learning issues for intelligent tutoring systems (pp. 1-18). New York: Springer-Verlag.
+Collins, A., Brown, J. S., & Newman, S. E. (1989). Cognitive apprenticeship: Teaching the crafts of reading, writing, and
+         mathematics. In L. B. Resnick (Ed.), Knowing, learning, and instruction: Essays in honor of Robert Glaser (pp.
+         453-494). Hillsdale, NJ: Erlbaum.
+Proceedings of CSCL 2002                                                                                         page   263
+
+Davis,  E.   A., &  Linn,  M. C.   (2000). Scaffolding   students' knowledge   integration: prompts for  reflection in KIE.
+         International Journal of Science Education, 22, 819-837.
+Edelson, D. C. (2001). Learning-for-use: A framework for integrating content and process learning in the design of inquiry
+         activities. Journal of Research in Science Teaching, 38, 355-385.
+Edelson, D.   C.,  Gordin, D.  N., &  Pea,  R.   D.  (1999). Addressing   the challenges of  inquiry-based learning through
+         technology and curriculum design. The Journal of the Learning Sciences, 8, 391-450.
+Golan, R., Kyza, E. A., Reiser, B. J., & Edelson, D. C. (2001). Structuring the task of behavioral analysis with software
+         scaffolds, Paper presented at the Annual Meeting of the National Association of Research in Science Teaching. St.
+         Louis, MO.
+Guzdial, M. (1994). Software-realized scaffolding to facilitate programming for science learning. Interactive Learning
+         Environments, 4, 1-44.
+Hiebert, J., Carpenter, T. P., Fennema, E., Fuson, K., Human, P., Murray, H., Olivier, A., & Wearne, D. (1996). Problem
+         solving as a basis for reform in curriculum and instruction: The case of mathematics. Educational Researcher,
+         25(4), 12-21.
+Hollan,  J., Hutchins, E., &   Kirsh, D.   (2000).  Distributed cognition:  Toward a   new  foundation for human-computer
+         interaction research. ACM Transactions on Computer-Human Interaction., 7, 174­196.
+Hollan, J. D., Bederson, B. B., & Helfman, J. (1997). Information visualization. In M. G. Helander & T. K. Landauer & V.
+         Prabhu (Eds.), Handbook of human-computer interaction (pp. 33-48). Essex, UK: Elsevier Science Publishers Ltd.
+Hutchins, E. (1995). Cognition in the wild. Cambridge, MA: MIT Press.
+Hutchins, E., Hollan, J. D., & Norman, D. A. (1986). Direct manipulation interfaces. In D. A. Norman & S. Draper (Eds.),
+         User centered system design: New perspectives in human-computer interaction. Hillsdale, NJ: Erlbaum.
+Jackson, S. L., Krajcik, J., & Soloway, E. (1998). The design of guided learning-adaptable scaffolding in interactive
+         learning environments. In C.-M. Karat & A. Lund & J. Coutaz & J. Karat (Eds.), Proceedings of CHI 98: Human
+         Factors in Computing Systems, (pp. 187-194). Reading, MA: Addison-Wesley.
+Klahr, D., & Dunbar, K. (1988). Dual space search during scientific reasoning. Cognitive Science, 12, 1-48.
+Koedinger, K. R., & Anderson, J. R. (1993). Reifying implicit planning in geometry: Guidelines for model-based intelligent
+         tutoring system design. In S. P. Lajoie & S. J. Derry (Eds.), Computers as cognitive tools. Hillsdale, NJ: Erlbaum.
+Loh, B., Reiser, B. J., Radinsky, J., Edelson, D. C., Gomez, L. M., & Marshall, S. (2001). Developing reflective inquiry
+         practices: A case study of software, the teacher, and students. In K. Crowley & C. D. Schunn & T. Okada (Eds.),
+         Designing for science: Implications from everyday, classroom, and professional settings (pp. 279-323). Mahwah,
+         NJ: Erlbaum.
+Merrill, D. C., Reiser, B. J., Merrill, S. K., & Landes, S. (1995). Tutoring: Guided learning by doing. Cognition and
+         Instruction, 315-372.
+Norman,    D. A.  (1987).  Cognitive  artifacts. In J. M. Carroll  (Ed.), Interfacing thought: Cognitive aspects of  human-
+         computer interaction (pp. 17-38). Cambridge, MA: MIT Press.
+Olson, S., & Loucks-Horsley, S. (Eds.). (2000). Inquiry and the national science education standards: A guide for teaching
+         and learning. Washington, DC: National Academy Press.
+Perkins, D. (1998). What is understanding? In M. S. Wiske (Ed.), Teaching for understanding: Linking research with
+         practice. San Francisco, CA: Jossey-Bass Publishers.
+Quintana, C. (2001). Symphony: A case study for exploring and describing methods and guidelines for learner-centered
+         design. Unpublished Ph.D. dissertation, University of Michigan.
+Quintana, C., Eng, J., Carra, A., Wu, H.-K., & Soloway, E. (1999). Symphony: A case study in extending learner-centered
+         design through process space analysis. In Proceedings of CHI 99 Conference on Human Factors in Computing
+         Systems, (pp. 473-480).
+Reiser, B. J., Tabak, I., Sandoval, W. A., Smith, B. K., Steinmuller, F., & Leone, A. J. (2001). BGuILE: Strategic and
+         conceptual scaffolds for scientific inquiry in biology classrooms. In S. M. Carver & D. Klahr (Eds.), Cognition
+         and instruction: Twenty-five years of progress (pp. 263-305). Mahwah, NJ: Erlbaum.
+Rogoff, B. (1990). Apprenticeship in thinking: Cognitive development in social context. New York, NY: Oxford University
+         Press.
+Roschelle, J. (1992). Learning by collaboration: Convergent conceptual change. The Journal of the Learning Sciences, 2,
+         235-276.
+Proceedings of CSCL 2002                                                                                      page  264
+
+Salomon, G., Perkins, D. N., & Globerson, T. (1991). Partners in cognition: Extending human intelligence with intelligent
+        technologies. Educational Researcher, 20(3), 2-9.
+Sandoval, W. A. (1998). Inquire to explain: Structuring inquiry around explanation construction in a technology-supported
+        biology curriculum. Unpublished Ph.D. Dissertation, Northwestern University, Evanston, IL.
+Schank, R. C., Fano, A., Bell, B., & Jona, M. (1994). The design of Goal-Based Scenarios. The Journal of the Learning
+        Sciences, 3, 305-345.
+Schauble, L., Glaser, R., Duschl, R. A., Schulze, S., & John, J. (1995). Students' understanding of the objectives and
+        procedures of experimentation in the science classroom. The Journal of the Learning Sciences, 4, 131-166.
+Schauble, L., Klopfer, L. E., & Raghavan, K. (1991). Students' transition from an engineering model to a science model of
+        experimentation. Journal of Research in Science Teaching, 28, 859-882.
+Singer, J., Marx, R. W., Krajcik, J., & Chambers,     J. C. (2000). Constructing extended  inquiry projects: Curriculum
+        materials for science education reform. Educational Psychologist, 35, 165-178.
+Smith, B. K., & Reiser, B. J. (1998). National Geographic unplugged: Designing interactive nature films for classrooms. In
+        C.-M. Karat & A. Lund & J. Coutaz & J. Karat (Eds.), Proceedings of CHI 98, (pp. 424-431). New York: ACM
+        Press.
+Tabak, I., & Reiser, B. J. (1997). Complementary roles of software-based scaffolding and teacher-student interactions in
+        inquiry learning. In R. Hall & N. Miyake & N. Enyedy (Eds.), Proceedings of Computer Support for Collaborative
+        Learning '97, (pp. 289-298). Toronto, Canada.:
+Tabak, I., Smith, B. K., Sandoval, W. A., & Reiser, B. J. (1996). Combining general and domain-specific strategic support
+        for biological inquiry. In C. Frasson & G. Gauthier & A. Lesgold (Eds.), Intelligent Tutoring Systems: Third
+        International Conference, ITS '96, (pp. 288-296). Montreal, Canada: Springer-Verlag.
+Vygotsky, L. S. (1978). Mind in society: The development of the higher psychological processes (A. Kozulin, Trans.).
+        Cambridge, MA: Harvard University Press.
+Williams, S. M. (1992). Putting case-based instruction into context: examples from legal and medical education. The
+        Journal of the Learning Sciences, 2, 367-427.
+

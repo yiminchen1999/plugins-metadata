@@ -1,0 +1,102 @@
+Proceedings of CSCL 2002                                                                                              page    583
+
+Coaching Collaboration in a Computer-Mediated Learning
+                                                     Environment
+María de los Angeles Constantino-González                                        Daniel D. Suthers
+           Dept. of Computer Sciences                           Dept. of Information and Computer Sciences
+               ITESM Campus Laguna                                        University of Hawai`i at Manoa
+          aconstan@campus.lag.itesm.mx                                         suthers@hawaii.edu
+ABSTRACT
+We  evaluated    a pedagogical    agent  that coaches  collaborative  problem  solving   by tracking   student  participation and
+comparing   students'  individual and    group  solutions.  The software   coach  encourages  negotiation  when   differences  are
+detected between solutions, and encourages participation in other ways. Evaluations based on expert judgment and on
+students' behavior shows that the quality of the advice was good and that the coach helped guide the collaborative session,
+although specific areas for improvement were identified.
+
+Keywords
+collaborative distance learning, intelligent agents, entity-relationship modeling, socio-cognitive conflict
+
+INTRODUCTION
+A  communication     channel   by itself does  not   guarantee  effective collaboration between  distance  learners. Participants
+should be guided to help students leverage the advantages of learning with others. Yet it is difficult for human facilitators to
+guide many teams working synchronously. Several systems have been designed to guide online synchronous collaboration
+(Jermann, Soller & Muehlenbrock, 2001). Most of these systems use restricted menu-driven or sentence-opener interfaces
+to track students' dialogue and give guidance based on dialogue models. Wanting an approach that would not excessively
+restrict natural   language  interaction  and  would   not  require extensive  knowledge    engineering   for  each  domain,   we
+investigated the potential of a basic ability to detect semantically interesting differences between two representations of
+problem solutions, coupled with simple tracking of individual's quantity of participation, feedback given, and discussion. A
+software coach was designed based on the Socio-Cognitive Conflict and Cognitive Dissonance theories, and implemented
+as part of a computer-mediated environment in which students construct Entity-Relationship (ER) diagrams as solutions to
+database modeling problems. ER modeling was selected due to its collaborative nature and its use of easily compared
+representations. This paper reports on how students used and evaluated the coach's advice.
+
+COLER
+COLER (COllaborative Learning environment for Entity-Relationship modeling) is a web-based collaborative learning
+environment in which students can solve database-modeling problems. COLER is designed for sessions in which students
+first solve problems individually, and then work synchronously in small groups to develop group solutions. A personal
+coach    gives advice based  on   conflicts between    the contents of individual  and  group diagrams    and  on imbalances    in
+students' participation. Several heuristic control strategies were specified to recognize relevant learning opportunities and to
+provide   for  the selection of appropriate    advice. Details  are provided   in Constantino-González     &  Suthers (2001)    or
+Constantino-González et al. (2001).
+
+EVALUATION
+COLER's performance was judged by comparison to expert judgment, student impressions, and how students responded to
+the advice. Five sessions were conducted, each with a different team of three students who were taking or had taken a
+database  course.   A domain    expert   also participated. Participants  were located  in  different rooms,   each  containing a
+computer with COLER installed and Internet access. Students worked on an ER modeling problem individually for about
+30 minutes.    Then  they initiated the   collaborative  session. At the   end of  the  two-hour  session, students  answered   a
+questionnaire regarding COLER's performance. The papers cited above reported on evaluations of the quality and coverage
+of advice and of the role of various knowledge-sources in generating this advice. This paper focuses on how students used
+and evaluated the coach's advice.
+COLER's advice was codified according to videotapes and chat transcripts. Advice was codified as Taken if the coached
+student performed the action suggested by COLER; Ignored if the coached student didn't follow the advice; Not Longer
+Needed    when   the situation changed   just  after the advice  was given;  and  Not   Evaluated when    there was  not enough
+information to empirically determine the advice status or when system failures occurred. The students took 40% of the total
+advice instances while 28% was ignored. Not Longer Needed advice represented 21% of the total advices, and 11% could
+not be evaluated. Overall, students took 59% of the evaluated advice that was still needed at the time it was given. The
+Proceedings of CSCL 2002                                                                                           page  584
+
+Expert categorized most   of the advice    taken by the students as   "reasonable." Some   ignored  advice was   evaluated  as
+reasonable while others as "so-so." Most of the ignored reasonable advice suggested discussion of a difference without
+mentioning its specific type. So-so ignored advice was computed because of misspellings in names. Several Feedback and
+Continue Task advices, which are based on timeouts, were not longer needed since they were given just when conditions in
+the environment changed. This problem can be eliminated by re-checking conditions before giving the selected advice.
+Advice rated by students as "useful" included pointing out differences between their solutions, encouraging them to share
+and discuss their ideas, to explain their reasoning, and to contribute to the group diagram, and suggesting that they verify
+their work when their contribution to the group was different from their own individual work. Advice was generally rated
+as useful only when students could do something in response. Almost all of the advice was given at appropriate times;
+however, some advice was given just after the action suggested was performed. Most of the students thought that the
+presence of a coach during the session helped guide and coordinate the collaborative session and establish the group
+dynamics required in collaborative learning. Most students said they reaffirmed their ER knowledge and learned about
+collaboration during the session. Some students suggested that more specific advice be given, and that additional types of
+messages be included, for example helping to solve the problem, indicating common mistakes in the diagram and giving
+feedback on how they are doing. Other students suggested that the coach compare individual solutions and then give
+suggestions related to what it finds different. Students also indicated that sometimes advice should be given to the whole
+group instead of just to individuals.
+
+CONCLUSIONS
+We found that reasonable advice could be generated based primarily on comparing students' individual and group solutions
+and on tracking student participation, although some refinements are needed to eliminate sensitivity to spelling errors and
+ensure that the advice is still applicable before it is given, and other knowledge sources will help increase the range of
+advice given. The approach should generalize to all domains in which students construct formal representations of problem
+solutions that can be compared for significant differences.
+
+ACKNOWLEDGMENTS
+Constantino-González   was   funded   by ITESM    Campus    Laguna    and by  CONACYT,     and Suthers   was   funded by    the
+Presidential Technology Initiative and NSF's Learning and Intelligent Systems. We thank our many colleagues at ITESM
+and the University of Pittsburgh for their collaboration and support.
+
+REFERENCES
+Constantino-González,  M.  A.,   Suthers,  D. D.  &  Icaza, J. (2001).  Designing   and  Evaluating  a Collaboration  Coach:
+        Knowledge    and  Reasoning.    In J. D.  Moore, C.  L.  Redfield,  W.  L.  Johnson  (Eds.) Artificial Intelligence in
+        Education, Proc. 10th Conference on AI-ED, San Antonio Texas, May 19-23 2001, Amsterdam: IOS Press, pp.
+        176-187.
+Constantino-González, M. A., & Suthers, D. D. (2001). Coaching Collaboration by Comparing Solutions and Tracking
+        Participation. In P. Dillenbourg,     A. Eurelings, K.  Hakkarainen   (Eds.) European   Perspectives   on Computer-
+        Supported Collaborative Learning, Proc. First European Conference on CSCL, Universiteit Maastricht, Maastrict,
+        the Netherlands, March 22-24 2001, pp. 173-180.
+Jermann, P., Soller, A., & Muehlenbrock, M. (2001). From Mirroring to Guiding: A Review of State of the Art Technology
+        for Supporting    Collaborative   Learning. In  P.  Dillenbourg,   A. Eurelings,  K. Hakkarainen   (Eds.)  European
+        Perspectives   on Computer-Supported      Collaborative  Learning,    Proc. First European   Conference    on CSCL,
+        Universiteit Maastricht, Maastrict, the Netherlands, March 22-24 2001, pp. 324-331.
+

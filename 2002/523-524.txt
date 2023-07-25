@@ -1,0 +1,81 @@
+Proceedings of CSCL 2002                                                                                               page      523
+
+     Mediating Collective Discussions Using an Intelligent
+                          Argumentation-Based Framework
+     Marco A. Eleuterio (*)                    Jean-Paul Barthès                           Flávio Bortolozzi
+         PUC-PR/UTC                                  UTC, France                           PUC-PR, Brazil
+        marcoa@hds.utc.fr                            barthes@utc.fr                   fborto@ppgia.pucpr.br
+
+ABSTRACT
+This  paper  briefly  describes   AMANDA(1),    a    framework  for   mediating collective    discussions   in distance    learning
+environments. The objective of this framework is to help tutors achieve better results from group discussions and improve
+knowledge transfer among the participants. The overall idea is to organize the group discussion in an argumentation tree
+and involve the participants in successive discussion activities. The coordination of the discussion is made by a set of
+intelligent mechanisms which reason over the discussion and propose new interactions among the participants. AMANDA
+advances the discussion by generating progressive discussion cycles until a desired set of target conditions are observed. At
+each  discussion   cycle, the system   redistributes discussion tasks  among  the participants   to  ensure a  desired degree     of
+agreement and participation among them. In this short paper we describe the underlying coordination principles and the use
+of knowledge models for producing natural language questions.
+
+AN ARGUMENTATION-BASED STRUCTURE FOR
+THE DISCUSSION
+The  discussion  is organized   by  an argumentation    tree which   links
+questions, answers   and   arguments.  Each  question   proposed   by  thesystem (DE node) is linked to a set of answers (ALT nodes) given byDE-1DE-nDiscussionelements
+the  participants.  Each   answer   has  a  corresponding    sub-tree  of                                           Alternatives
+arguments   (ARG    nodes).   The ARG    nodes express  the  intention to            Alt-1        Alt-n             (direct answers)
+support or refute a given position presented by another participant. An          +          -
+ARG node is formed by its intention (full/partial support, full/partial         Arg-1      Arg-nrefute)andbyafreetextexpressingthepropositionthatholdstheargument. The reasoning over the distribution and the nature of the-++Argumentationlevels
+ARG nodes is the basis for coordinating the discussion.                               Arg-1      Arg-n
+
+                                                                                       Figure 1: The discussion tree
+
+THE TEMPORAL PROGRESS OF THE DISCUSSION
+The discussion advances in periodic cycles, where the system distributes to each participant a specific discussion sheet
+(figure 3) containing either questions to be answered or propositions to be analyzed. At each cycle, the system receives the
+discussion sheets from all participants and builds the next discussion cycle by producing new discussion sheets (figure 4).
+The construction of a discussion sheet is intentionally made so as to promote the maximum degree of knowledge exchange
+among the participants. For this purpose, AMANDA uses a set of assignment mechanisms that reason over the discussion
+tree and  propose   new   interactions among   the   participants. Some    mechanisms  attempt    to detect potential  discussion
+situations, such as participants that disagree over a certain answer, answers given by different participants to the same
+question and highly polemic positions. Other mechanisms attempt to assure that each participant takes part of all discussion
+elements with similar workloads. The discussion is advanced in cycles until a satisfactory set of conditions is achieved.
+
+THE COORDINATION PRINCIPLE
+The heart of the system is the way that AMANDA builds the discussion sheets at each discussion cycle. When opening a new
+discussion cycle, AMANDA analyses the current configuration of the discussion tree and decides to re-launch certain nodes,
+i.e. to create new nodes and strategically assign them to the participants. The choice among which nodes to re-launch is
+
+* Sponsored by CNPq, Brazil
+(1)AMANDA - Agent de Modélisation et ANalyse de Dialogues Argumentés - is a joint R&D effort between the Pontifical
+ University of Paraná, Brazil (PUC-PR), the Technology University of Compiègne, France (UTC) and their respective
+ partners Siemens Telecomunicações, Brazil and Cegos, France.
+Proceedings of CSCL 2002                                                                                    page 524
+
+done by evaluating each node with respect to its sub-tree and assigning it a "re-launch priority value". The nodes chosen to
+be re-launched are then assigned to the corresponding participants as a result of the assignment mechanisms, as mentioned
+above. AMANDA is now ready to build the personal discussion sheets for the new discussion cycle. These discussion sheets
+are made available in HTML format to be fulfilled and sent back by the participants.
+
+DOMAIN MODELING
+The system uses a domain ontology and a task structure to represent the domain of discussion. They are used to produce
+natural language questions that can be turned into discussion elements, i.e. DE nodes for the discussion tree. The questions
+are produced based on the existing links among the concepts of the ontology, among the sub-tasks of the task structure and
+between the task structure and the ontology. This feature was proposed to help the tutors elaborate the questions to be
+launched for collective discussion. In practice, we were surprised how well the system can perform in producing well
+formulated questions provided that the models are well constructed. We also noticed that the quality of a question can also
+measure the quality of the domain modeling.
+
+THE PROTOTYPE
+AMANDA was developed in LISP and put into practice in four actual training situations. The results are promising and show
+that the system can efficiently coordinate a group discussion with very low effort from the tutor and a good degree of
+knowledge transfer among the participants. The prototype includes a tutor interface to view and edit the discussion tree
+(figure 2) as well as an editor for building the ontology and the task structure (figure 5). The system also features an HTML
+module (http server, PHP scripts and html files) which allows access to the system over the Internet. Below are some
+sample screens of the system.
+
+              Figure 2: The tutor interface
+
+                                                                      Figure 3: A discussion sheet
+
+  Figure 4: The interface for opening a new discussion cycle       Figure 5: The domain model editor
+

@@ -1,0 +1,108 @@
+                                                ICLS 2010   ·  Volume 2
+
+                         Overherd: Designing Information Visualizations to
+                             Make Sense of Student's Online Discussions
+
+ Libby Hemphill and Stephanie Teasley, University of Michigan School of Information, 1075 Beal Ave., Ann
+                                                Arbor, MI, 48109
+                                        Email: {libbyh,steasley}@umich.edu
+
+        Abstract: Overherd is an information visualization tool that makes patterns of interaction and
+        activity in online discussion boards visible so that instructors can more easily analyze their
+        students' contributions. Our system uses the forums tool from the Sakai learning management
+        system (LMS) to create visual representations of online behavior. We describe the design and
+        development of Overherd, and provide design recommendations for "mashups" that extend the
+        functionality of LMS yet rely on existing data within these learning environments.
+
+Introduction and Motivation
+With the nearly ubiquitous use of Learning Management Systems (LMS) in higher education, instructors are
+increasingly turning to online discussion boards to augment classroom discussion ­ some even require that
+students participate to earn part of their grade. In this form of "blended learning" (Garrison & Kanuka, 2004),
+online discussion boards provide a number of advantages for both students and teachers (see, e.g., Xie, 2006),
+including improved student performance (Krentler & Willis-Flurry, 2005). However, discussion boards present
+a number of problems as well. For instance, making sense of the posts in an online discussion board can be
+difficult, even when the conversation is threaded (Kay, 2006). The general use statistics most boards make
+easily available, such as counts of posts or words, are poor measures of the quality of learning taking place in
+those discussions (Mazzolini & Madison, 2005) and incorporating online discussions into existing teaching
+practices can increase the course's workload for both students and instructors (Brush, et al., 2002). In an effort
+to help instructors make sense of the discussions happening on a board and to ease their workload, we designed
+an information visualization tool called Overherd. We designed Overherd using the metaphor of herd behavior
+to visualize what   students are talking  about by providing       different views that show   aggregation patters of
+students, topic, and keywords.   The goal of Overherd is to make it easier for instructors to get an overview of
+what their students are talking about in online discussions by displaying visualizations that include post content,
+author information, and connections among posts (e.g., replies). These visualizations allow instructors to answer
+questions such as, "Are students using new terms introduced in class?" and "What course concepts are students
+most  interested in discussing?"  Overherd     enables    instructors to  check for  students' understanding  and  to
+diagnose topics that may need additional discussion during face-to-face instruction.
+
+Designing and Studying Overherd
+Overherd is an extension of a Sakai-based LMS that includes a Forums tool for online discussions. In designing
+Overherd, we had very specific users and goals in mind ­ instructors of large lecture courses who used online
+discussions to extend classroom instruction. By limiting our design space, we were able to build a flexible
+platform that can still be extended to meet the goals of additional users in the future. In order to ground our
+design, we interviewed four instructors about their use of online discussion boards and later discussed paper
+prototypes of our designs with them. Overherd's goals are to
+    ·   facilitate faculty exploration of their classes' overall understandings of a concept or concepts, and
+    ·   assess student contributions and understanding for grading purposes.
+In order to address these goals, Overherd displays visualizations that include both content (e.g., the text of
+individual posts) and context    (e.g., author information,    timestamps).    Table 1  provides an overview   of  the
+specific needs each visualization is designed to address. Figure 1 shows the design of Overherd.
+        Overherd    will be  evaluated   in two stages:   first, a  pilot user study where we    display data from  a
+completed course and ask instructors to evaluate the tool and second, a field study where Overherd will be
+deployed in several courses. These studies will explore whether Overherd helps instructors make sense of their
+students' online discussions and reduces the instructors' workloads.
+
+Table 1: Addressing user needs with visualizations
+User Need                                                     Visualization
+Overview of topics being discussed                            Treemap organized by term or person
+Determine which students use which terms                      Term/person node diagram
+See lists of posts that meet instructor's search criteria     Clustered list window
+Read posts that meet criteria                                 Prose view window
+
+                                                    302   ·  © ISLS
+                                               ICLS 2010  ·  Volume 2
+
+         Figure 1. Overherd Interface v0.1
+
+Mashups and Learning Management Systems
+Many LMS such as Sakai, Moodle, or Blackboard provide tools that support discussion management. Because
+LMS    are enterprise  systems ­ whole   campuses  rely   on their  stability and   infrastructure ­ it  is difficult to
+experiment with new features and add-ons within the LMS itself (Severance, Hardin, & White, 2008). LMS
+capture and   generate large   amounts  of data  about use   and   content  but   do  not provide   easy access   to  or
+manipulation  of  that data  outside the LMS.   As  technical  barriers  to  building  and  experimenting    with web
+applications decrease, the importance and usefulness of an application programming interface (API) for making
+LMS data available increases and creates opportunities for extending the tool sets available to support learning.
+
+Future Research
+Our future work will explore how instructors use Overherd to see whether it meets the goals of 1) allowing
+instructors to more easily get an overview of online discussions, and 2) reducing the overhead required for using
+online  discussions.  How instructors  should participate   in online  discussions    with their students   is an open
+question (see Mazzolini and Maddison, 2005) Overherd will help answer. We will also explore the use of
+visualizations with students. A future version of Overherd will be student-focused and will allow students to
+search for terms and concepts within the discussion. We will explore whether those visualizations help students
+with self assessment and in finding answers to their questions about course concepts.
+         Overherd is a technical research project as well, and we will continue to study the development of
+information visualizations for use in learning environments and to develop mashup tools that extend learning
+management    systems.  For  example,  future work  will  explore   best practices    for APIs that  make    LMS  data
+available to external applications while protecting the personal and copyrighted information they contain. The
+lessons learned from Overherd's development and field study will also inform future research on the usefulness
+of information visualization for other online discussions, such as support forums and email archives.
+
+References
+Brush, A. J. B., Bargeron, D., Grudin, J., Borning, A., and Gupta, A. (2002).      Supporting Interaction Outside of
+         Class: Anchored Discussion vs. Discussion Boards. Proceedings of CSCL 2002, 425-434.
+Garrison,  D. R.; H.   Kanuka   (2004).  "Blended  learning:   Uncovering     its transformative   potential in higher
+         education". The Internet and Higher Education, 7 (2), 95-105.
+Kay, R.H. (2006).     Developing a comprehensive metric for assessing discussion board effectiveness. British
+         Journal of Educational Technology, 37(5), 761-783.
+Krentler, K.A. Willis-Flurry, L.A. (2005). Does Technology Enhance Actual Student Learning? The Case of
+         Online Discussion Boards. Journal of Education for Business, 80(6), 316-321
+Mazzolini, M. and Maddison, S. (2005).        When  to jump    in: The  role  of  the instructor in online   discussion
+         forums. Computers & Education, 49(2), 193-213.
+Severance,  C.,  Hardin, J.  &  Whyte,   A. (2008). The     coming   functionality    mash-up  in  Personal    Learning
+         Environments. Interactive Learning Environments, 16 (1), 47-62.
+Xie, K.,   Debacker,   T.K., and  Ferguson,   C. (2006).    Extending   the   traditional  classroom  through    online
+         discussion: The role of student motivation. Journal of Educational Computing Research, 34(1), 67-89.
+
+                                                   303  ·  © ISLS
+

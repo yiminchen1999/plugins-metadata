@@ -1,0 +1,101 @@
+Proceedings of CSCL 2002                                                                                           page 564
+
+    Synchronizing Group Interactions with Lecturing Video
+         in Agent-based Asynchronous Virtual Classroom
+                                 Hiroaki Ogata, Kenji Matsuura, Yoneo Yano
+                                   Faculty of Engineering, Tokushima University
+                               2-1, Minamijosanjima, Tokushima, 770-8506, Japan
+                                         Email: ogata@is.tokushima-u.ac.jp
+                                    URL: http://cscl.is.tokushima-u.ac.jp/ogata
+ABSTRACT
+This paper tackles to develop and evaluate the asynchronous virtual classroom, called AVC, which enables learners to
+participate in at anytime and from anywhere. Its environment provides on-demand multimedia learning-materials, e.g.
+videos of the lecture, slides  and web   pages. To  utilize  the two types of  learning resources, on-demand  materials  and
+asynchronous interactions, the system synchronizes links and reproduces them toward efficient learning. To realize that, a
+software agent participates to the classroom behalf of a real learner and replays the past interactions along with the video.
+Besides this, we propose the model that a software agent recommends the suitable interactions for the current learner
+according to his/her interest.
+Keywords
+Asynchronous virtual classroom, Video on demand, Collaborative annotation, and Software agent.
+
+INTRODUCTION
+We have proposed the system, called AVC (Asynchronous Virtual Classroom), which allows learners to use at anytime and
+anywhere (Matsuura et al., 1999; 2000). The system provides multimedia learning materials, e.g., video of the lecture,
+slides, and text-based communication tools such as a bulletin board system. The basic idea is that the AVC system enables
+learners to share the past interactions about the leaning material, and reuses them appropriately for the later participants. To
+utilize the past action logs (question, answer, and annotation) that were stored in the same classroom, the system employs a
+software agent, which simulates the past interactions as an animation. In the reproduction, each statement appears on a
+series of relative time in the virtual classroom. The past activities have to be synchronized with the learning material. As is
+often case with an asynchronous system, it is easily figured out that the difficult situation to communicate with others (e.g.,
+unless anyone asks another person, none exists at the same time) will occur among asynchronous participants (Ogata et al,
+1996; 2000). Therefore, the system bridges asynchronous participants by notifying others' activities in her/his absence at
+the same  classroom and   by    reproducing their activities in  order of the relative timestamp   when s/he joins the  same
+classroom again.
+Through the past experimental use, we found a critical problem to be solved that the subsequent learners often felt stress to
+read past discussions with a video. This problem was caused in a case that many topics were included in one discussion
+room  and some   contexts appeared    at random   based on    absolute  timestamp. However,   this was  originated from   the
+framework itself essentially. The most characteristic point of the AVC system is to synchronize the past interactions with
+on-demand learning materials. In other words, the system must update the contents of the past interactions on the video's
+time-line. Nevertheless, both of them have their own time span. Hence, this paper proposes the new idea to solve this
+problem, which is the adaptive support for synchronizing interactions with on-demand video-based learning materials in an
+asynchronous virtual classroom.
+Figure 1 shows an example of AVC interface. A learner can watch on the video in frame (A), where the learner can control
+the video, e.g., jumping to a video section. Frame (B) shows slides or web pages of the lecture with the video synchronized.
+The learner can annotate on them. Frame (C) and frame (D) shows a 3D virtual classroom. The learner can walk around in
+the virtual space. Frame (E) shows the animated reproduction of the asynchronous dialogues among learners along with the
+video time line. The system sorts out the discussions based on her/his curiosity. In this frame, the picture of each user is
+shown in the left side and his/her statement is shown in the left side. A learner can add the statement by clicking one of the
+statements in (E). Moreover, the leaner can enter the statement in frame (F) after stopping the video and selecting the type
+of his/her agent's face and its behavior and the type of statements. In this way, the asynchronous dialogues can augment.
+Proceedings of CSCL 2002                                                                                                                page 565
+
+  (F) Entering an argument                      (A) Streaming video                         (B) Slide
+
+                                                                                                                               Video time
+     Course name:   XML                                                                                                         00:12.57
+     User name:      Kenji                                                                                                        Start
+               Edit user profile
+
+      Face:        Behavior: Rise hand
+
+         Edit your action (AACML)
+
+     What do you mean?
+
+      Intention:  Question           Enter
+
+            (Q) What is XML?
+
+            (A) A kind of SGML.
+
+            (Q) What is SGML?
+
+                                                                                                  Help
+            (A) Standard Generalized Mark
+                 up Language.
+
+            (Q) Is this an international
+                 standard?
+
+  (E) Replaying dialogue.                      (C) Virtual classroom from the learner view.   (D) Virtual classroom from a birds-eye view
+                                                       Figure 1: A screen snapshot of AVC.
+
+CONCLUDING REMARKS
+This paper introduces the interface agent to act for real learners in a same classroom. This agent reproduces the past
+interactions to the current learner on behalf of the absentees. These reproduced dialogues are sorted based on the priority of
+each learner's curiosity and filtered by the time span of section of the video. This work was partly supported by the grant to
+the research     project   at    Doshisha    University named  "Intelligent   Information     Science   and  It's Applications to        Problem
+Solving     in   Engineering      Fields",    and  the  Grant-in-Aid     for Scientific     Research   No.13780121,    No.12558011,           and
+No.11878032 from the Ministry of Education, Science, Sports and Culture, Japan, from the Ministry of Education.
+
+REFERENCES
+Matsuura, K., Ogata, H., & Yano, Y. (1999). Agent-based Asynchronous Virtual Classroom, Proceedings of International
+        Conference         on    Computers     in Education  1999,    in Cumming,  G.,      Okamoto,    T., Gomez,   L., (Eds.),        Advanced
+        research in computers and communications in education, Vol.1, pp.133-140.
+Matsuura, K., Ogata, H., & Yano, Y. (2000). Agent's contribution for an Asynchronous Virtual Classroom, Proceedings of
+        ITS 2000, in Gauthier, G., Frasson, C., VanLehn, K. (Eds.), LNCS1839, Intelligent Tutoring Systems, pp.344-353.
+Ogata,  H.,    Matsuura,         K., &     Yano,  Y. (1996). Knowledge       Awareness:      Bridging   between   Shared  Knowledge           and
+        Collaboration in Sharlok, Proceedings of Educational Telecommunications 1996, pp.232-237.
+Ogata, H. & Yano, Y. (2000) Combining Knowledge Awareness and Information Filtering in an Open-ended Collaborative
+        Learning Environment, International Journal of Artificial Intelligence in Education, Vol.11, pp.33-46.
+

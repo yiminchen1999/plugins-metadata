@@ -1,0 +1,105 @@
+Proceedings of CSCL 2002                                                                                            page 698
+
+     L³ - An Infrastructure for Collaborative Learnflow
+                           Martin Wessner, Peter Dawabi, Jörg M. Haake
+             GMD ­ German National Research Center for Information Technology
+                Integrated Publication and Information Systems Institute (IPSI)
+                             Dolivostr. 15, D-64293 Darmstadt, Germany
+                             {wessner, dawabi, haake}@darmstadt.gmd.de
+ABSTRACT
+In this paper we sketch an approach to integrate courses for individual learning into a powerful CSCL environment by
+using the Point of Cooperation (PoC) approach. We show how PoCs can be set up to create a collaborative learnflow,
+which exploits individual learning phases as well as different phases of asynchronous and synchronous collaboration. The
+implementation of the PoC approach in the L³ project is presented.
+
+Keywords
+CSCL, collaborative learnflow, Point of Cooperation (PoC), L3.
+
+MOVING FROM INDIVIDUAL TO COLLABORATIVE LEARNFLOW
+How can new learning technologies support cooperative learning? In general, three basic types of learning processes can be
+differentiated in computer supported learning: Individual learning, synchronous and asynchronous collaborative learning:
+Individual learning describes a scenario with a single learner performing a learning activity without others (such as peer
+learners or tutors). This includes activities such as reading a text, watching a video, reflecting on a picture or writing a
+summary. The learner can control the learning process, e.g., the speed and the number of iterations.
+Synchronous collaborative learning is based on immediate learning together with peer learners or tutors. Here, the learner
+has less control over the learning process. Activities must be coordinated with the other group members.
+Asynchronous collaborative learning happens when a learner manipulates an artifact (such as a document or a message),
+which has been or will be handled by one or more peers or tutors at a different point in time. Here, the learner has more
+control over the learning process opposed to synchronous collaboration, e.g. w.r.t. time and place.
+Usually, a learner is confronted with different kinds of problems while working on a course. In order to deal with these
+problems without switching between different learning environments, an ideal learning environment should support flexible
+coupling and combination of the mentioned learning scenarios during a learning process. Concretely, the learner should be
+able to switch between synchronous and asynchronous communication in an intuitive way: If the learner needs immediate
+connection, the required tools should provide the demanded communication channels instantly. Alternatively the learner
+should have immediate access to asynchronous communication channels if there is no need or opportunity for real-time
+communication with a peer learner or a tutor.
+                                                               We consider a course as a set of learning objects interlinked
+                                                               by  relations.    Each learning   object describes   a learning
+                                                               activity  to   be   performed   (such    as  reading   material,
+                                                               performing     an exercise). The  course  resembles  a  schema
+                                                               definition of potential learner behaviour, i.e. in each phase
+                                                               of the learning process the learner can proceed to another
+                                                               learning  object   to  extend her  knowledge.  The     learnflow
+                                                               describes a concrete sequence of activities in that schema.
+                                                               During individual learning in a course, the learner initiates
+                                                               his learnflow by performing the start activity, e.g. reading
+                                                               the title page    of  the course.  He extends   his  individual
+                                                               learnflow  stepwise    with   each new    learning  activity he
+ Figure 1: Collaborative learnflow of the learners L1 and      performs in the course; the learnflow consists of a sequence
+ L2                                                            of activities.
+                                                               If a course can be used by a learning group in the way that
+                                                               learners perform (some of the) course's activities together
+then we define the collaborative learnflow as the graph consisting of the individual learnflows where activities, which are
+performed collaboratively, are merged. Figure 1 shows the collaborative learnflow of two learners, which collaborated on
+Learning Object #4. During cooperative learning, the collaborative learnflow defines the joint behaviour of the learning
+group and the interactions between the learning partners.
+Proceedings of CSCL 2002                                                                                            page    699
+
+We call an oportunitiy to cooperate given a specific learning context a Point of Cooperation (PoC) (see Wessner & Pfister,
+2000 for more details). We call a cooperative activity an intended cooperation if it is logically and didactically incorporated
+into a course at a specific position in the course. The corresponding component in the learning environment is called an
+Intended Point  of Cooperation   (IPoC). From  a      structural point of  view IPoCs    are treated in the  same way  as   non-
+collaborative learning objects: IPoCs are related to other learning objects of the course. With IPoCs the course author can
+define "when", i.e. at which position in the locigal course structure, "what" cooperative activity should be performed. The
+cooperative activity is defined by a set of parameters, such as group size, duration, instructions, learning material, tools, and
+structure (a system-controlled cooperative learning method). Depending on the nature of the cooperative activity the group
+has to perform,  we distinguish  a number  of  IPoC    types.,   e.g. group discussion,  collaborative  brainstorming, pro/con-
+dispute, cooperative text processing. An IPoC is integrated into a course as a learning object. Thus, an IPoC can use the
+knowledge about the author's intentions to support the user in his collaboration. Using PoCs smooth transitions between the
+individual and collaborative learning scenarios can be achieved: A user starts in individual learning. If the user encounters
+an IPoC in the course, the user can initiate an intended collaborative learning activity. Because the actual performing of the
+collaborative activity depends on runtime requirements, especially the availability of peer learners, encountering an IPoC
+and activating it are two separate steps. Otherwise the non-availability of peers would block the learner. Upon ending the
+IPoC tool the learner is back to individual learning.
+
+IMPLEMENTATION: THE L³ PROJECT
+In the L³ project, which stands for `lifelong learning', twenty organizations cooperate to develop an integrated Internet-
+based  learning infrastructure for life-long learning    and     continued  training. The partners   include infrastructure and
+technology providers, content providers, training organisations, and research institutions with a didactical or technical
+focus. In L³, web-based courses consists of a number of learning objects. Especially, a learning object can be an IPoC, as
+explained previously. IPoCs are defined as learning objects by the author during the course design using an IPoC editor.
+E.g. for a brainstorming activity definition, the author defines group size, duration, topic, seed words and instructions for
+the intended brainstorming activity. The course material is presented in a web browser to the learner. An additional tool, the
+L³ Communicator provides the means to start IPoCs after they have been reached in the course material by the learner. The
+so-called PoC-Pool, a view of the L³ Communicator, is used to manage all IPoCs of a learner. The actual instantiation of an
+IPoC is a non-trivial task, e.g. participants need to be selected according to appropriate criteria, matching communication
+tools have to be activated, and the results of the cooperation processes need to be handled. Learning groups are formed
+manually by a tutor or automatically by the system. A number of tools supporting specific cooperative learning methods,
+i.e. the IPoC types mentioned above, have been developed. Currently, version 2 of the platform has been deployed to ten
+learning centers throughout Germany in 2001. Authors were trained in special workshops to integrate collaborative learning
+into their courses. We are preparing a large-scale evaluation of the L³ environment to learn about the usability and the
+acceptance of the PoC approach.
+Compared   to   existing CSCL   environments   an     environment     based on  the   PoC    approach  supports individual  and
+collaborative learnflows. With PoCs, course authors can flexibly define collaborative activities integrated with the course
+w.r.t. to group size, learning method, duration etc. Thus, in the environment presented here, learnflows cover individual and
+collaborative learning scenarios and feature a variety of collaborative learning methods. In general, this approach allows
+new ways to represent and analyse group learning behaviour.
+
+ACKNOWLEDGEMENTS
+Thanks go to Daniel Tietze, Badie Garzaldeen, Martin Mühlpfordt, and Jessica Rubart for help with implementing the L³
+software. The L³ project is funded by the German Ministry of Education and Research (grant 21B8196B).
+
+REFERENCES
+Wessner, M., Pfister, H.-R. (2000). Points of cooperation: Integrating cooperative learning into web-based courses. Proc. of
+         the Workshop "New Technologies for collaborative learning" NTCL 2000, Japan, November 2000.
+

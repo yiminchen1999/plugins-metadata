@@ -1,0 +1,99 @@
+Proceedings of CSCL 2002                                                                                        page 671
+
+          A. COLLABORATIVE WORKSPACES
+
+      Virtual CSCL 2002: Making the Most of CSCL 2002
+                                    by Extending it Virtually
+                                        Elke Hinrichs, Marcus Specht
+                      Fraunhofer Institute for Applied Information Technology FIT
+                               {elke.hinrichs, marcus.specht}@fit.fraunhofer.de
+"Virtual CSCL 2002" is aimed at extending the process of knowledge sharing and creation by conference participants,
+organizers, tutors and authors before, during and after the conference. We will provide a collaborative learning support
+server, ALE-BSCW. ALE-BSCW consists of a course authoring and learning environment (ALE) and a Shared Workspace
+System (BSCW). Conference participants may register with the ALE-BSCW server and may view the uploaded material,
+comment on it, add their own documents, engage in discussion forums and much more; any Web browser will suffice to
+access ALE-BSCW. The server will remain available after the conference for participants to stay in contact and cooperate.
+In the following, we will very briefly describe the two components of the "Virtual CSCL 2002" server: ALE and BSCW.
+
+ALE ­ ADAPTIVE LEARNING ENVIRONMENT
+The ALE framework utilizes hypermedia technology and AI (Artificial Intelligence) methods to deliver individualized
+hypermedia instruction. The framework is comparable to our previous ACE framework described in (Specht, Oppermann,
+1998). Two different learning strategies are supported by ALE: expository learning, where students follow predefined paths
+through learning material, and exploratory learning, where students explore learning material on their own. Furthermore,
+awareness information integrated into the ALE learner portal and course interface support synchronous and asynchronous
+learning in learner groups.
+Besides the adaptation of a goal oriented instructional process, the integration of cooperative learning components into ALE
+enables the support of a wider range of learning activities and the support of individual styles of learning. Students can
+learn in ALE not only by discussing with other students but also by following the individualized guidance of a pedagogical
+agent through all available learning material. The only criteria for a successful learning path are the test results of a student
+at the end of a learning unit or even a curriculum.
+The ALE architecture consists of four main models: the structural model describes the learning units of the domain and
+their interrelations and dependencies, the content model comprises the concepts to be learned, the pedagogical model
+contains pedagogical strategies and diagnostic knowledge and the learner model stores the preferred settings of a learner,
+the domain concepts and learning units a learner worked on, and the interface components used by the learner.
+When students log into ALE they enter an individualized learner portal, where they may book courses, contact courseware
+authors and other learners, maintain and update their profile, and access a collection of resources linked to that page.
+Additionally, students get awareness information about current online discussions, teachers' online lessons in their courses
+booked, and co-learners that are present on the ALE server. From their personal ALE portal they start working on their
+courses booked.
+Based on the learner model,     the content model,    the structural model, and the pedagogical model, the    presentation
+component of ALE selects appropriate learning units and generates individual hypermedia documents. When a learner
+requests information about a learning unit, the ALE system checks if the learner has already mastered the requested unit or
+has seen some material about this unit. In a second step the system looks up relations and available material for the
+requested unit. In a third step the presentation component retrieves a plan for presenting the unit depending on the available
+learning material for this unit, the knowledge of the learner, and the teaching rules and pedagogical specifications of the
+course author. The retrieved plan describes the presentation of the requested unit, which is translated into HTML by the
+presentation component. Throughout the whole course the learner's knowledge is tested so that the system can adapt to the
+dynamically changing knowledge, interests, and preferences of the learner.
+
+BSCW ­ BASIC SUPPORT FOR COOPERATIVE WORK
+The BSCW system is a Web-based groupware system around the shared workspace metaphor. A BSCW server (a standard
+Web server extended by the BSCW functionality through the Common Gateway Interface) manages a number of shared
+workspaces ­ repositories for shared information, accessible to the members of a group via any normal Web browser.
+Registration with a BSCW server and administration of a workspace user group is performed in a self-organized manner:
+Proceedings of CSCL 2002                                                                                            page 672
+
+by default no system   administrator's action is  required for user   administration    and  workspace set-up.  The only pre-
+requisites to become a BSCW user are an email address and a Web browser.
+A workspace may contain different kinds of information, represented as information objects arranged in a hierarchical
+order. A shared workspace can contain different kinds of information such as documents, graphics, audio/video, URL links
+to other Web pages, threaded discussions, member contact information and more. The contents of each workspace are
+represented as information objects arranged in a folder hierarchy.
+The main features of the system are (for details see (Appelt, 1999), (Bentley, 1997) and http://bscw.gmd.de/):
+    ·   Authentication and security: Identification of clients by basic name/password scheme or X.509 Client Certificates.
+        BSCW runs well with SSL (Secure Socket Layer) compatible Web servers and thus supports encrypted data
+        transfer.
+    ·   Version management: For joint document production, documents may be put under version control. Additionally,
+        documents may be locked to prevent document replacement or upload of new versions by other users.
+    ·   Discussion    forums: Threaded  discussion  forums  may    be set up     in  any  shared workspace  for closed group
+        discussions in context. Discussion forums may additionally be attached to documents like "post-its".
+    ·   Group awareness: The event service of the BSCW system provides users with information on the activities of
+        other users. Events are triggered whenever a user performs an action in a workspace, such as uploading a new
+        document, reading an existing document, editing a document etc. The system records the events and presents the
+        recent events to each user. Event notification may be individually configured to be rendered in-system by event
+        icons or via email, both direct or in aggregated daily activity reports.
+    ·   Access rights management: The system contains a role concept which allows for flexible and fine-grained access
+        rights settings. While some roles are system-defined (manager, administrator, member, anonymous user), others
+        may be defined by the users themselves: for instance the roles of teacher and student.
+    ·   Interface  to synchronous   communication:  Through    this interface    users  can specify synchronous sessions  and
+        launch respective tools, e.g., audio/video conferencing software or shared whiteboard applications.
+    ·   Customization: Through user preferences the users can modify the system interface to some extent, e.g. to what
+        detail information on the server should be displayed. Additionally, system administrators may almost entirely
+        replace the user interface by providing their own XHTML and CSS user interface templates.
+    ·   Multi-language support: The interface of the system can be tailored to a particular language by straight-forward
+        extensions. Various language versions have been created and published by users of the system.
+The Fraunhofer FIT institute is operating a public BSCW server since October 1995 where everybody is invited to register
+and create workspaces free of charge. As of October 2001, more than 70,000 users have registered on FIT's public BSCW
+server and the server software for local installation has been downloaded several thousand times.
+
+REFERENCES
+Appelt, W.  (1999)    WWW     based collaboration with the  BSCW     System      in: J. Pavelka, G. Tel, M.  Bartosek  (Eds.),
+        SOFSEM'99: Theory and Practice in Informatics, Springer Lecture Notes in Computer Science 1725, Berlin.
+Bentley, R., Appelt, W., Busbach. U., Hinrichs, E., Kerr, D., Sikkel, S., Trevor, J., Woetzel, G. (1997) Basic Support for
+        Cooperative Work on the World Wide Web. International Journal of Human-Computer Studies, 46, Special issue
+        on Innovative Applications of the World Wide Web, 827-846.
+Specht, M., and   Oppermann,    R.  (1998) ACE,   Adaptive   courseware   environment.      New  Review  of Hypermedia   and
+        Multimedia, 4, 141-161.
+Specht, M. (1998) Adaptive Methoden in computerbasierten Lehr/Lernsystemen. Psychology, G.R. Series, 1, University of
+        Trier, Trier.
+

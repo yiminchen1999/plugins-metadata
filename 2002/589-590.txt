@@ -1,0 +1,104 @@
+Proceedings of CSCL 2002                                                                                                    page  589
+
+         Modelling and Supporting Learning Activities in a
+                               Computer-integrated Classroom
+                                                Andreas Lingnau, Ulrich Hoppe
+                                                University of Duisburg, Germany
+                                            {lingnau,hoppe}@informatik.uni-duisburg.de
+
+ABSTRACT
+We have implemented ubiquitous computing technology in a primary school setting to support rich classroom activities
+particularly in the field of early literacy. After initial tests have corroborated the benefit of this technology with respect to
+attaining curricular goals and to better supporting learner-centred classroom methodologies, we are now exploring specific
+intelligent  support  mechanisms,     e.g.,  to inform   participants   - both teachers  and pupils   - about  automatically assessed
+learning opportunities.
+
+Keywords
+Early learning, literacy, intelligent support, collaborative learning analysis, ubiquitous computing
+
+INTRODUCTION
+Computer supported collaborative learning is often identified with "virtual learning" in distance scenarios. In contrast to
+this, we have pursued the idea of enriching face-to-face classroom situations with embedded computing technologies. The
+technological approach was deliberately subordinated to grown curricular goals and pedagogical traditions. Recently, we
+have been    able  to demonstrate     the   benefits of  such    "computer  integrated  classrooms"   in a specific learning  domain
+(Tewissen et al., 2001). In this paper, we elaborate how specific forms of online support can be generated in computerised
+classroom environments. The classroom as such is a collaborative scenario with different roles (e.g., teachers, learners, peer
+helpers) and resources (network, archives, software tools, physical devices). In our view, automatic support functions are
+not meant to guide and control classroom learning processes globally but to locally enrich the situation, e.g., by informing
+participants about learning opportunities and affordances.
+Within   the European    NIMIS    project    ("Networked     Interactive
+Media   in   Schools",  cf. NIMIS,     1998),    computer    integrated
+classrooms   have   been   set up   in associated    primary   schools.
+Both    hardware    selection    and  software    design     have   been
+orientated   towards   the  special   needs   of early   learners.  The
+classroom    design   was   based    on   principles    of  "ubiquitous
+computing"   (Weiser,   1991)    (Fig. 1).  To   give   the pupils  easy
+access   to  our   computing     facilities a   special  JAVA      based
+software    has been   developed     which    replaces   the  Windows
+desktop. As a standard mode the desktop supports partner work
+by allowing     two   children to be   logged    in  at a   time at one
+workplace.
+The  concept    of  a "computer    integrated    classroom"   (CiC)    is
+essentially targeted at fostering collaboration between pupils. In
+Duisburg, the focus was set on the process of learning how toreadandwrite.Adaptinganewmethodcalled"LesendurchSchreiben" (Engl.: Reading Through Writing, RTW) which wasFig.1TheNIMISclassroominDuisburg
+originally   introduced  in Switzerland      (Reichen,     1991)   the application T³   ("Today's Talking     Typewriter")   has been
+developed. It is a phonetics based approach for teaching reading and writing. Pupils get access to the complete range of
+phonemes in the form of a palette with letters from the very beginning. Thus children are able to write words by combining
+letters from  a  "phoneme     table",  even   though    they are   not yet able to read. In  abstract   terms RTW   inverts  the usual
+sequencing of the analytic task of de-coding (reading) and synthetic task of encoding (writing). T³ is designed for usage
+with pen    based  interactive   screens  and   behaves    similar to  the known   procedure with   pencil and  paper in  the normal
+classroom. (Fig. 2, cf. Tewissen et al., 2000).
+Proceedings of CSCL 2002                                                                                            page 590
+
+INTELLIGENT SUPPORT
+T³ is enhanced to provide two different kinds of intelligent support,
+using the  Support Agent    Architecture  developed   by Prada   et al.
+(2000). It facilitates intelligent agents  which  are   not explicitly
+visualised but functionally embedded in the T³ workspace.
+
+Phonetic diagnosis
+To provide automatic support for the children's' phonetic writing it is
+important that target words are known by the system. (In phonetic
+writing, it is practically impossible to infer a target word from only
+two or three starting letters.) If a target word is known, a phonetic
+diagnosis  can  be   performed  by    comparison  which    allows   for       Fig. 2 Phonetic writing with T³
+sophisticated  forms   of intelligent feedback.  T³   provides a  pre-
+selection of target words on so called "theme pages". The phonetic
+comparison between the target word and the writing product of the child is done by an algorithm that is based on a phonetic
+classification. It detects incorrect substitutions, missing and "wrong" phonemes.
+
+Writing Support
+There are two different intelligent agents in T³. Both use the phonetic diagnostic algorithm. The first agent provides an
+embedded, "implicit" feedback during the writing process. Depending on the learning phase, the writing agent will first
+only analyse phonemes which are clearly pronounced and later also those which are not emphasised. The agent gives hints
+by "moving" the letters in the workspace to form a gap at the position where a phoneme is missing.
+The second kind of support offers a selection of "peer experts" to those children who have problems detecting correct
+phonemes in a target word. The phonetic diagnosis determines the correctness values from the content of the workspace. If
+the score of the writing result exceeds a predefined limit the information is stored in a database. From this database, peer
+helpers will be selected according to their specific strengths. The mediation of peer helper is based on the methodology of
+"multiple student modelling" (Hoppe, 1995). The offer of peer helpers stimulates collaboration, which can take place
+outside the system in the classroom (by natural face-to-face communication) as well as inside the system in a special
+collaborative mode of T³.
+
+PERSPECTIVES
+The intelligent support will be evaluated and improved in close cooperation with teachers. The indicators for the different
+stages of writing skills will be tested and checked against the teachers' expectations and observations in the classroom. A
+specific challenge lies in determining the point in time when learners start to read. This is particularly difficult since the
+overt actions in the system are only writing actions.
+
+ACKNOWLEDGMENTS
+Parts of this work has been funded by the European Esprit project No. 29301, "NIMIS". We thank our NIMIS partners and
+especially the teachers and pupils of the associated schools for their participation and creative input.
+
+REFERENCES
+Hoppe, H.U. (1995). Using multiple student modeling to parameterize group learning. In Proc. of AI-ED '95, 234-241,
+        Washington D.C., August 1995: AACE.
+Prada, R., Machado, I. & Paiva, A. (2000) TEATRIX: Virtual Environment for Story Creation. In Proc. of ITS 2000, 464-
+        473, Montreal, June 2000: Springer.
+Reichen, J. (1991). Lesen durch Schreiben. ("Reading through Writing"). Zürich, Switzerland: Sabe
+Tewissen, F., Lingnau, A. & Hoppe, H.U. (2000). "Today's Talking Typewriter" Supporting Early Literacy in a Classroom
+        Environment. In Proc. of ITS 2000, 252-261, Montreal, June 2000: Springer.
+Tewissen,  F., Hoppe,   H.U., Lingnau,   A., Mannhaupt,   G.,  Nischk,  D. (2001).  Collaborative Writing     in a Computer-
+        integrated Classroom for Early Learning. In Proc. of E-CSCL 2001, Maastricht, Netherlands, March 2001.
+Weiser, M. (1991). The computer for the 21st century. Scientific American 9/91, 66-75.
+

@@ -1,0 +1,457 @@
+Proceedings of CSCL 2002                                                                                              page   408
+
+       Learning Via Distributed Dialogue: Livenotes and
+                             Handheld Wireless Technology
+                        Alastair Iles, Daniel Glaser, Matthew Kam, John Canny*
+                     (iles@nature + dcg@cs + mattkam@cs + jfc@cs).berkeley.edu
+                                         University of California at Berkeley
+ABSTRACT
+This paper introduces a new learning technology for in-classroom and remote learning. The system and practice is called
+"Livenotes" and is motivated by the empirical success of peer learning methods, and by theoretical considerations of
+distributed dialogue among student peers as a facilitator of learning. The technical part of Livenotes is a collaborative
+whiteboard running on wireless handheld computers. We describe the system and the affordances we have developed for it
+to support the distributed dialogue model. We then examine the interactive dialogue that resulted from two classroom trials,
+using transcript captures, and analyze how users developed ways to navigate between pages, organize space on screens,
+determine whether the system was operational, and create social rapport. Finally, we suggest several issues that researchers
+can consider in designing collaborative software.
+keywords
+Livenotes, peer learning, distributed dialogue, shared whiteboard, collaborative note-taking, wireless handheld.
+
+INTRODUCTION
+Peer  discussion is one of  the most    potent facilitators of classroom   learning. Several previous   studies  of collaborative
+learning via computer support ­ such as the Distributed TVI experiments at Stanford (Dutra et. al. 1999) ­ suggest that
+fostering peer dialogue through technological aids can lead to better outcomes than traditional in-class instruction. They
+also show that ­ as in a synchronous newspaper editing system (Tanikawa et. al. 1999) ­ groups of students can work
+together to solve problems more effectively through peer dialogue with ample feedback and interactions than with a single
+central authority directing the process. They imply that seemingly non-sequitur conversation during less structured peer
+dialogue can actually lead to greater attention and thought by students. In addition, there is extensive evidence that learning
+is facilitated in small groups (e.g. Resnick et. al 1991; Slavin 1990).
+These facts motivate further exploration of distributed dialogue during in-class learning. Livenotes is such an exploration.
+Developed by Matthew Kam at the Department of Computer Science at the University of California at Berkeley, Livenotes
+uses wireless communication and handwriting to allow a real-time conversation within a small group of students during a
+normal lecture, independent of the number of students in the physical classroom. We have tested this software in two
+graduate classes ­ one a lecture and the other a seminar ­ which we report on here. The program was originally designed
+for small groups of students to carry on a live discussion during the course of a lecture or presentation to supplement what
+they  were  learning directly  from the  instructor. Later,    after user testing,  we noticed   that the technology  would   be
+appropriate for other kinds of discussion settings. Along with our pre-designed practice, we observed the emergence of a
+rich new practice among the users of Livenotes as they developed ways to communicate and coordinate their note-taking.
+Following  an  introduction to  Livenotes, this  paper  looks  at how   learning   depends on    the development  of  "rules" for
+communication in the Livenotes medium. It also investigates how groups of both designers and users chose to adapt and
+think about,  dialogue-supporting   technology   in distributed   ways.   As such,  we  define   distributed dialogue as a   non-
+localized, yet collaborative  activity. Such   distributed  dialogue   may   reveal  unexpected,  non-text-based  patterns (e.g.,
+highlighting points or deciding where to put input on a screen) in communication between people that verbal dialogue in
+the context of a classroom situation may obscure. Enabling these patterns to emerge in a classroom context can ease
+constructive dialogue in which students can engage in different threads of conversation and help teach each other through
+clarifying or adding to the teacher-led discussion. In this paper we reinforce the argument that: "Learning occurs as the co-
+construction (or reconstruction) of  social    meanings from   within   the  parameters of emergent,    socially negotiated,  and
+discursive activity" (Hicks 1996, p. 136).
+Our approach of writing on multiple graphic screens linked by wireless technology is similar to other approaches looking at
+distributed learning environments such as chat rooms or bulletin boards since it allows for free-from discussion. It extends
+longstanding educational arguments that students learn best by actively engaging each other in conversation, and recognizes
+
+* Alastair Iles is a deaf postdoctoral fellow at the Energy and Resources Group. Daniel Glaser is an doctoral candidate in Information
+ Design. Matthew Kam obtained his B.S and B.A. degrees from Berkeley in Spring 2001 and has enrolled in Berkeley's M.S. in
+ Computer Science this Fall 2001. John Canny is Professor in the Department of Computer Science.
+Proceedings of CSCL 2002                                                                                         page 409
+
+that each student has his or her own resources to contribute but may not have the opportunity to do so (e.g. as argued
+through Scardamaliea and Bereiter 1991). Wireless supported dialogue differs greatly from existing approaches because it
+not only involves people speaking by handwriting with each other in real time within a physical group situation, but also
+can support uncontrolled small group conversation in parallel with a broader level of controlled discussion (such as a
+lecture). Moreover, the wireless technology does not fully define what may be communicated and how, but allows users to
+develop potentially widely diverging styles of communication by themselves. In contrast, chat rooms and other similar
+media are heavily based on typed text, and operate via relatively centralized and fixed communication systems.
+The initial results of testing Livenotes in the two graduate classes help illuminate some of its possibilities and problems in
+supporting distributed dialogue. We conclude that certain simple features are fundamental to creating an infrastructure
+where users can develop rules for negotiation and collaboration through free form, relatively unstructured dialogue. These
+features, however, are related to each particular context of use and may not be the same across different groups of users.
+We also analyze several key "socio-technical" features of the ways in which the technology was introduced and operated,
+with a view to assessing its benefits in small group collaboration and improving Livenotes later in 2001.
+
+WHAT IS LIVENOTES?
+Livenotes is a research software prototype and practice for collaborative note taking. It is a Java program that runs on Clio
+handheld tablets connected over a wireless TCP/IP network. The tablets and software are designed to be unconstraining and
+low-profile in their use. They can be used in many classroom settings without the necessity for direct access to computers
+(Figure 1a). Students can record handwritten notes on graphic screens that appear in real time on the Clios of their group
+members who are also running the software. Students, then, can exchange annotations and comments in the midst of the
+presentation. We chose Clio tablets because they were inexpensive, sufficiently small, light and portable to be used in a
+classroom setting, and their Windows CE 2.11 operating system could support a Java Virtual Machine. Livenotes was
+implemented in Java since it supported many Application Programming Interfaces (APIs) essential to the needs of this
+software such as multithreading, networking, and the Abstract Windowing Toolkit. In addition, Java programs, unlike their
+native code counterparts, are sufficiently hardware independent to run on most platforms. This is important for future
+flexibility in choice of hardware. Finally, the tablets that we currently chose can run on battery power for up to eight hours,
+thus facilitating prolonged note-taking.
+Several important design choices were made to guide the anticipated collaborative learning. The program consists of a large
+shared whiteboard canvas, navigation bar, and a menu with a variety of options (Figure 1b). The canvas permits users to
+draw directly onto the canvas, using the stylus, with differently colored inkstrokes to identify each user. The inkstrokes are
+updated across all Clios belonging to the session via the wireless network connections. The navigation bar uses a "page"
+metaphor to signify that   the main drawing   area   is only one of many numbered, sequential canvases.     This navigation
+structure was chosen since we felt that users may get lost with a single scrollable page and it is a common strategy for
+electronic whiteboards. The menu bar is used to connect machines, save and load sessions, choose colors, and also to bring
+up a "presence indicator" window. This window helps users identify who else is online and what page they are currently
+looking at. A transcript of the note-taking can be saved for future reference, and can be exported to HTML. If desired, the
+transcript can be "played back" by being loaded onto the handhelds, though this is currently time consuming for client
+tablets due to network and hardware limitations of the Clio tablets. Various design options can be added to Livenotes as
+users desire: connection to a TV screen for broadcast to a room, private screens for separate conversation threads, and
+HTML export to websites or email for use by participants as notes. Further features may be added from time to time in
+response to user feedback.
+A collaborative session is started by delegating a server role to a particular Clio or lap-top and connecting (multiple) clients
+to it, thus forming a star topological network. A computer can act both as a client and a server. Data compression has been
+an active area of research for allowing for responsive updating among the Clios on the wireless network. Tradeoffs between
+a highly reduced data format, low-cost compression schemes for the microprocessor, and data integrity of the inkstrokes has
+led us to a 50% savings in data format. In addition, thread timing and coordination is also being explored to find a more
+balanced updating scheme that will not overload individual machines and the network. For one user study, the wireless
+bridge between the Clio handhelds was already part of the computer science building while for another we brought in a
+small bridge for each session.
+
+One precedent of a collaborative system using a shared graphical space is Belvedere (Suthers et. al 1997). Like Livenotes it
+allows for simultaneous access to a graphical space where users are able to create arguments. It differs from Livenotes
+though, since participants use a toolbar to create data, hypotheses, or unspecified textual input, which can be placed at a
+location on the whiteboard that they determine. Aside from keyboarding text, users can also create arrows between text
+boxes to agree, disagree, or join statements. There also is a window for bringing up hints--either through direct interaction
+with the instructor, or with an intelligent system.
+Proceedings of CSCL 2002                                                                                             page   410
+
+Other precedents include the Distributed TVI (DTVI) experiments at Stanford University. These included probably the
+most comprehensive evaluations of a learning technology to date, but this is under the framework of students learning and
+being evaluated in a traditional lecture mode. DTVI allows small groups of students and a tutor to remotely collaborate
+through multiple video and audio channels to learn from a videotaped lecture (Dutra et. al. 1999). Although users are free to
+interact through audio and voice channels, there is no notion of collaborative drawing since the viewports are separated
+from each other. In DTVI, students regularly discuss the material, and half the students participate in roughly half of the
+discussions, so there is a high degree of participation. Outcomes correlate with the amount of interaction in the group. But
+surprisingly, there is no significant correlation with the relevance of the dialogue to the course material. Even apparently
+non-sequitur conversations   among    students enhance  their  learning.  A second powerful   peer  learning technique  is  peer
+instruction (Mazur 1995). Peer instruction employs short episodes of dialogue in groups of students in a normal lecture
+classroom in response to questions from the instructor. Like DTVI, peer instruction has shown improvements in outcomes
+across many course topics.
+DTVI and peer instruction have one feature in common: regular dialogue between a small group of students (less than
+seven) while the students are first encountering new material. In both cases, there is a practice to "steer" the dialogue
+toward the course material. In DTVI, a teaching assistant prompts students about the material, answers, and questions. In
+
+       Figure 1. a) (left) A Livenotes session--three users communicating as a small group. b)
+       (right) What a screen capture of Livenotes looks like.
+
+peer instruction, the  instructor poses specific   questions  that the students  must  address   during pauses  in  the lecture.
+Livenotes differs from these precedents because it is designed to run concurrently with a larger classroom conversation and
+tries to move the distributed dialogue to a number of tablets simultaneously without any central screen or authority (except
+a server to  support  the interplay). Consequently,    differences  in user  personality and  user  familiarity with  `rules' of
+communication may affect how Livenotes is used in practice. Livenotes does not provide prefixed rules of communication
+so users are likely to make up these rules in the course of learning to use the technology.
+
+USER ANALYSIS
+
+BACKGROUND
+Livenotes   was first deployed in  a  graduate  seminar  in  Human   Centered   Computing    (HCC)   in Berkeley's   College  of
+Engineering and then in an advanced seminar in Science and Technology Studies (STS) through the Energy and Resources
+Group. In both cases the technology was brought in after classes began (12th week in the HCC course, 5th week in the STS
+seminar) and hence played a supplementary role in structuring classroom activity. The analysis for the HCC course is based
+upon in-classroom observations of participant interactions by three of the paper's authors* and transcript analysis. The STS
+course analysis   was  also through   observations  of two  of the  paper's  authors, in   class discussion of  the technology,
+unsolicited e-mail dialogue with classmates, transcript analyses, and questionnaires.
+Starting in September   2000,  the focus   of  the HCC  course  was    to expand the  theoretical  foundations  for research  on
+computers and people through social systems that are broader than what is typically offered by a graduate computer science
+course on   human-computer    interaction. The     HCC  class  was  organized  such   that a student  would  first  present  and
+summarize the reading for that session, before the instructor further developed the topic and posed questions. Then small
+groups of about 4 students each would be formed to work out their responses and share them with the rest of the class.
+There were approximately 12 students in the class and most were affiliated with the College of Engineering.
+
+* This is an acceptable data collection for educational researchers (e.g. Ball 1993)
+Proceedings of CSCL 2002                                                                                                 page    411
+
+During   the   12th week   of class,  Livenotes    was  introduced into   the  class. The  intention was    to   provide  a  parallel
+communication channel for students to concurrently discuss and clarify points during the student presentation and instructor
+lecture while it was happening. For that session 10 students were present and each of them was provided with a Clio tablet
+with the Livenotes software installed. The class separated into two user groups (and client-server networks), and used the
+Clio   tablets extensively   during both  the student   and professor's   presentations. This was    not surprising   since  all the
+participants were highly familiar with computer technology and there was an expectation that Livenotes would be used at
+some   point.  As   the next  section illustrates, even though   the lecture   was instructor-led, the students   used   the tablets
+selectively to discuss the material in a distributed fashion. During face-to-face group discussion, the Livenotes software lost
+the attention   of  students since  they could not   keep up  with   this fast paced  environment.   Livenotes   lost the students'
+attention because they preferred to communicate verbally, and could not easily focus on the parallel distributed dialogue.
+During group summaries, one team leader used the tablet to read off his ideas to the instructor. The tablets were only used
+for one class, and a total of 13 pages were recorded for our analysis.
+The STS seminar in Spring 2001 brought participants from a diverse set of disciplines together to discuss science as social
+and cultural practices. This was a high-level research seminar of 10-12 participants who engaged in extensive face-to-face
+interaction throughout. Participants came from a variety of disciplinary backgrounds (energy and environmental policy,
+medical sociology, political science, and education) and had different levels of familiarity with the subjects discussed. In
+each seminar session, participants took turns to present 3-4 readings each week, with another class member providing
+commentary, before opening the meeting up to discussion of several research questions posed by the leader. The aim was to
+generate input into each participant's dissertation or research project. One aspect of the seminar was taking notes for a deaf
+post-doctoral fellow who relied on peer note-taking to follow class discussion. Prior to the introduction of Livenotes, this
+note-taking took the form of recording by pen and paper, with the responsibility of being the scribe rotating between
+individual participants each week.
+In the 5th week, Livenotes was introduced. The tablets were used for three classes, which generated 26, 34, and 28 pages of
+transcripts  respectively  that we  could  analyze.  In contrast to  the  HCC    class, many  participants  were  unfamiliar   with
+wireless computer technology. Additionally, not every seminar participant used Livenotes; some participants observed how
+their peers were using Livenotes but did not attempt to use Livenotes themselves. In the first class, three Clios were used,
+with two people taking notes for the deaf participant. In the second class, different people performed this note-taking role,
+but also engaged in distributed discussion. In the third class, the deaf participant was the session presenter and sought to
+make Livenotes a central part of the discussion. Five people participated actively, with four others observing passively for
+most of the time. We noticed that some people also joined the network by looking over a user's shoulder.
+
+THE PROCESS OF INTRODUCING LIVENOTES
+In both cases, the decision to introduce Livenotes into the class was top-down, made by the professor in cooperation with
+one or two students interested in the technology. There was little discussion of whether participants wished to try Livenotes
+out, or of what Livenotes might contribute to their classroom experiences. This may have affected the responses of the
+participants,  in  that some  people--particularly   in the  STS   seminar--expressed     concern  about  the  lack   of discussion
+regarding   the  deployment   of   Livenotes. For   them, the tablets  simply    appeared  mysteriously   in   a meeting,    without
+explanation as to why they were being used. In fact, one of the professors was worried that the way in which Livenotes was
+introduced may have influenced the seminar's social dynamics adversely.
+
+KEY USAGE ISSUES
+We observed many interesting phenomena during the trials, but choose to discuss three examples that bear particularly on
+future design considerations of Livenotes that may better support collaborative learning. We will refer to both trials because
+similar issues were raised by both seminar and lecture formats, and as such, may be relevant to any usage of Livenotes in
+general.
+
+CONNECTING UP AND GETTING ON THE SAME PAGE
+When starting Livenotes for the first time in a session, participants did not know whether Livenotes was operational. They
+did not know who were participating. The whiteboard canvas by itself could not indicate whether the network was working
+or  if everyone   was   receiving and sending  any   handwritten   messages.   Additionally, throughout   a session,  people  were
+repeatedly uncertain, on moving to a new page, whether others had also advanced to the page, or were still looking at
+earlier pages. It was possible for participants to open the "presence indicator" window to check if the individual Clio was
+connected to the server, who else were on-line, as well as the pages that these individuals were currently looking at.
+However, it was difficult for participants not already aware of this option to make use of this window.
+Proceedings of CSCL 2002                                                                                          page   412
+
+                                                                                               In   both the     lecture and
+                                                                                               seminar   meetings,   it  was
+                                                                                               observed       that     many
+                                                                                               participants    wrote     brief
+                                                                                               messages       to  determine
+                                                                                               whether     or      not    the
+                                                                                               wireless  connection      was
+                                                                                               transmitting              these
+                                                                                               messages to the rest of the
+                                                                                               user group. Such opening
+                                                                                               messages   included:      "Can
+                                                                                               you  receive?",    "Hi",   "Is
+                                                                                               this      working?",        or
+                                                                                               "Namaste".        Sometimes,
+                                                                                               especially in the seminar,
+                                                                                               certain individuals     would
+                                                                                               make    little drawings     to
+                                                                                               see  if   others   could,   or
+                                                                                               would,     declare        their
+                                                                                               presence by adding to the
+                                                                                               images.    When      moving
+                   Figure 2. Greetings dominated the first page of each session.               between pages, individual
+                                                                                               users might write: "Is this
+page current?" or "Can anyone read this!?" The important observation is that users were able to create rules to decide
+whether or not the network was operational, based on their communication, rather than on the technology per se. Figure 2
+illustrates the first page of one such session.
+
+NAVIGATION AND SPACE MANAGEMENT
+Two of the most pressing communication challenges that Livenotes poses are the distributed decision-making involved in
+navigating between and within pages, as well as in dividing up a page so that more than one user can participate. We found
+that although many different conversations and topics were jumbled together on the one page, users were nonetheless
+mostly able to coordinate how they would share their space and to work out ways to distinguish between the various
+conversation threads to a reasonable extent. Two observations were especially important.
+First, people sitting far apart in the classroom often did not know whether or when they should move to a new page.
+However, they tested various symbols to either signal the need to change pages, or to ask if other people had changed
+pages. For example, in the 2nd seminar session, people used "Now we go to a new page", "page 4    ", "p5?", "    ", or "I got
+it!" in one corner of the page to communicate in this way. One user drew little arrows at the base of the page as if it was a
+continuous scrolling page.
+Proceedings of CSCL 2002                                                                                          page 413
+
+Second, people did not always know whether or not others were paying attention to their input, or whether what they wrote
+was visible in the jumble of writing to the others. They could not rely on the kinds of cues that verbal, face-to-face
+communication can often provide. The conversation threads might not be easy to connect together. This differs from trying
+to find out if participants are all "on the same page", in that specific people may be concerned that their contribution is not
+being read or evaluated by the group. The social context matters greatly for how users resolve this issue.
+We observed that a seminar session that was primarily note-taking by one or two people was fairly simple: the users would
+
+                                               a             b
+
+            c
+
+         d
+
+       Figure 3. A screen capture showing a variety of elements including (a) linking together disjoint
+       spaces of conversation (b) marking territory (c) highlighting someone else's points (d) highlighting
+       one's own points for attention.
+
+write in temporal sequence down the page in "sentences", with the inkstroke colors distinguishing between scribes. It was
+easy to follow the conversation thread, because there was just one, sometimes with little annotations by the deaf participant
+at the side. But when the sessions turned into a distributed discussion involving up to five people, space management
+changed markedly and new rules began to emerge. People would write phrases all over the page. They often highlighted
+specific parts of the page by drawing boxes or circles around their input (Figure 3a). In doing so, they tried to mark off
+territory for their input (Figure 3b). Quite commonly, participants underlined phrases to emphasize points (Figure 3c).
+Occasionally, a user would simply draw lines under two different contributions. Moreover, people often drew arrows or
+lines across the page to connect up widely scattered phrases to continue the thread and to pick up what they were saying
+because someone else was writing in the space (Figure 3d). Or they might put in a series of numbers next to phrases. These
+non-textual inputs help make Livenotes quite different from most other technologies for collaborative learning.
+
+DISCUSSION, PLAY AND DRAWING
+Proceedings of CSCL 2002                                                                                       page 414
+
+The kinds of communication that Livenotes enables can be multi-layered and reflect mutual teaching and clarification of
+points. We observed that users in the seminar would sometimes engage in overlapping dialogue: taking summary notes of
+the presentation (Figure 4a), commenting on issues raised by the presentation and perhaps "training" people less familiar
+with the topic (Figure 4b), engaging in "side" conversation    unrelated to the topic (Figure  4c), or making  humorous
+contributions (Figure 4d). However, it could be difficult for participants to determine whether or not a given input was
+related to the topic. Sometimes, users would identify a speaker by name to suggest that the reference was part of the group
+discussion. Nevertheless, even when a point followed the larger class discussion, there was a risk that it would not be
+resolved within the same time period and depth as the larger discussion. For example a user asked to clarify a small lecture
+point "can somebody give me an example of some `organizational knowledge' that differs from individual knowledge?",
+while no less than seven responses over three full pages were provided. At the end of this heated exchange while turning
+back to the relatively laconic lecture a user unsurprisingly asked "so is anyone else having trouble listening & writing?".
+Simultaneously, Livenotes can also provide a space for drawings and playfulness that do not necessarily follow the lecture
+or presentation, but that allow users to add a social dimension to their writing. People sometimes drew images on the page
+
+                                        d
+
+          c                                                                                    a
+
+          b
+
+  Figure 4. Transcript showing (a) summing up the lecture, (b) expanding on or developing lecture themes   (c)
+  an unrelated topic and (d) humorous interludes and drawings
+
+alongside the textual discussion. These images could be humorous interludes or surprisingly novel attempts at clarification
+of discussion points. For example, an instructor in the STS seminar drew an egg representing a technical norm, while
+another less familiar with the literature in contempt of the idea drew Sigourney Weaver attacking the egg (as an alien), and
+the first participant responded, "the larva is in you" referring back to the topic of embodied knowledge. Similarly, Figure 4
+shows drawings associated with Pooh the Bear (Figure 4d) while Figure 2 shows how participants in the HCC class drew
+ants creeping across the page and being devoured by a monster.
+Strikingly, these drawings did not appear in the session where only one or two members were taking notes for the deaf
+participant. Usually, the humorous episodes were at the start or end of a session, so people may have been implicitly using
+these drawings as a means of getting accustomed to the wireless technology and to creating a rapport without necessarily
+talking verbally to each other. This illustrates how some participants may use drawings or play as a way to facilitate social
+interaction and to attract the attention of each other. Livenotes has the capacity to support this kind of activity because of its
+graphics-based interface, which permits free-form and informal expressions, whereas text-based interfaces are unlikely to
+permit it. However, we observed that some participants seemed to see such drawing and playfulness as detracting from the
+session's verbal dialogue, without considering how jokes may form part of this conversation.
+In all these cases, participants actively created (or negotiated) solutions in the form of "rules", symbols, and governance of
+exchanges to be distributed across the participants. These solutions were based on communication and social norm-making
+that substituted for technical features not already built into Livenotes or the Clios. Interestingly, the behavior observed was
+Proceedings of CSCL 2002                                                                                          page   415
+
+often similar to the conventions generated by the deaf participant in his written conversations, in that he used arrows,
+underlining, circling, and other space management features.
+
+QUANTITATIVE ANALYSIS
+We performed an initial quantitative analysis of the third STS session transcript to start developing indicators of learning
+and user activity for our future research. First, we developed units of analysis based on our observations of user behavior,
+as described above. We counted the number of stylus marks that each user made on each canvas page, relying on pen
+colors. Next, we distributed these marks into two categories: management (how users control dialogue on the canvas) and
+content (what users say  in  relation to  the classroom presentation).   We then allocated the  marks    to the specific sub-
+categories that we created in analyzing the examples above, distinguishing between marks according to our judgment of
+how they fit into the overall dialogue. Our major conclusions were that:
+    ·    Management marks were almost as many as content marks (46.82% compared to 53.18%), suggesting that users
+         not only discussed the lecture but also worked to manage their dialogue;
+    ·    The vast majority of content marks (83%) related directly to the lecture in some way, with only 12% of marks
+         being on unrelated topics and humorous interludes, implying that Livenotes did facilitate in-group discussion, and
+         that perceptions of Livenotes as dominated by play were ungrounded;
+    ·    One person (the presenter of the session: 45%) was expertly managing the dialogue ­ through linking points and
+         marking territory ­ with the assistance of two other persons (who acted as notetakers for the presenters: 20% and
+         12%  respectively), suggesting   that  Livenotes dialogue  can  be structured, and also   that  some   users  control
+         whiteboard space more than others;
+    ·    In contrast, the same three users were more even in the number of their highlighting marks (31%, 28% and 28%
+         respectively), yet produced far more such marks than other users, suggesting that highlighting is not only used
+         more by some users but also differs from marking territory as a way to make dialogue clearer to other users;
+    ·    Two people out of six users produced almost all the drawing errors (74%), implying that they differed markedly
+         in their ease with the technology from the others; and
+    ·    The vast majority of humorous interludes and drawings came in the first four pages of the transcript and one
+         person accounted for 41%, suggesting that these not only are dependent on personality factors but also on the
+         context (whether dialogue is starting, or is underway).
+Breakdowns in use
+We noticed several types of breakdowns in the usage of Livenotes -- from the most basic technical failure of hardwire and
+wireless signals, to more socially contingent examples like users disengaging from the technology when they become
+overwhelmed   in keeping up   with    the verbal and  distributed  whiteboard  forms of  discourse  during    classes. These
+breakdowns and, in some cases, recovery methods include:
+   ·    Temporary   technical disruptions:    Users experienced   a number   of  interruptions including    slow  whiteboard
+        responses to stylus inputs and server lag. Although it is often slower to write on the wireless tablets than with
+        paper and pencil, some users took advantage of parallel note-taking--namely two or more people could write at
+        once to track fast moving conversation. They could fill in information gaps side by side.
+   ·    Multiple tasks and finite concentration: People had various degrees of trouble following the discussion in the
+        Livenotes user group Livenotes and the instructor-led discussion in the classroom. For some people, one means of
+        coping with this was to abandon Livenotes altogether. Other users, however, appeared to be comfortable with
+        switching between Livenotes and verbal conversations.
+   ·    Frustration at the play witnessed: Non-participants sometimes complained that the occasional smiles or laughter
+        by the Livenotes users were at their expense. The sense of parallel conversations, which were often perceived as
+        being unrelated to the session's topic, contributed to the tension between users and non-users of Livenotes. Non-
+        users who had many users in their field of view but could not see the contents of the tablets were more critical than
+        non-users who could share or look over a shoulder of a user to see the proceedings of the conversation within a
+        Livenotes group.
+These breakdowns further imply that the ability of the participants to engage in negotiations of the rules and symbols to
+facilitate the use of Livenotes is crucial in helping make the technology workable. This ability is affected by several
+variables that we plan to investigate in future trials and which we were not able to resolve through the few, yet varied, STS
+survey respondents. For example, one person described the stylus as being "completely too slow... uncomfortable" while
+another "liked it". A respondent wrote: "It was too hard to try to write coherently ... I was always mentally very behind the
+discussion" while another "didn't think it was a problem [coordinating both conversations]". Nevertheless, there was some
+agreement where they did not like the idea of private notes since it would splinter the group even more.
+Proceedings of CSCL 2002                                                                                            page 416
+
+DISCUSSION AND CONCLUSIONS
+We conclude that, through Livenotes and handheld wireless screens, students can learn from each other during the course of
+a lecture or seminar in distributed and "horizontal" ways otherwise not possible. They can actively engage in discussion and
+commentary on lectures or presentations as these occur, thus enhancing their comprehension and ability to participate.
+Livenotes differs markedly from existing approaches to distributed learning that rely on typed text and relatively fixed
+technical and communication modalities. It is interactive dialogue that is distributed across a number of people, can take
+place in real time, can have many threads that can appear or vanish within a session, and can readily change in response to
+user participation. Wireless-supported dialogue allows much greater control over content and communication features to be
+given to users, instead of being imposed and moderated from the top-down.
+This dialogue ­ as seen in Figure 4 for example ­ is often multi-layered, with people taking notes of the session, more
+experienced members explaining ideas to other, less knowledgeable people, and members engaging in what may seem to be
+peripheral conversation that nevertheless helps illuminate session topics. Even if students make erroneous statements of
+knowledge, they can be immediately corrected by other users or by teachers who may be involved, and their dialogue can
+be posted in various forms (email, web, or print) for further distributed comment and scrutiny. The inherent flexibility and
+whiteboard nature of Livenotes enables such free form, mutually correcting dialogue. In contrast, the enhanced, but text-
+based, DVTI system appears to be primarily based on lecture summaries instead of interactive dialogue (according to
+published transcripts available from www.sun.com/research.ics.notes.html). It is easier to maintain control over content
+through centralized and text-based systems, but this may inhibit the emergence of dialogue in small groups such as those
+that we observed.
+In turn, we conclude that users can generate significant non-technical modifications to systems through engaging in the
+communication and social interaction enabled by Livenotes. We have found the effectiveness of the technology is highly
+contingent on the social context that it is being used in. In particular, users appear to generate social "rules", symbols, and
+conventions (often expressed in graphical or text-graphical forms) that fill in for missing or inaccessible technical features,
+and that enable communication to take place effectively. Livenotes allows this process of generation to occur because it is
+not "finished", depends on free form whiteboards, and has great flexibility built in. We have also realized that the ways in
+which deaf people engage in written conversations can provide valuable insight into how Livenotes might work in settings
+where hearing users write on handheld whiteboards and as a media for comparative purposes with the current development
+of Livenotes.
+Designers of learning support systems, then, can gain much fruitful insight from studying how users work with technology.
+Drawing on the insights of the two trials to date, we recommend that, to make further advances in developing collaborative
+learning systems, designers consider the following:
+·   Systems need to be designed with flexibility and "unfinished" (comparatively unspecified) features to allow users to
+    develop   modifications through    their communication  activities. This facilitates negotiations between   users in each
+    particular context or use setting.
+·   Because some users became frustrated with the tablets since they demanded too much attention, different features
+    should be added so that the user can participate at different levels of engagement. For example, their collaborative
+    whiteboard could simply be tied to a group leader so that they do not need to worry about keeping up with navigation.
+·   Systems need to be designed to take account of how users may rely on communication and negotiation to deal with
+    issues such as navigation between pages, space management on pages with multiple conversation threads and jumbled
+    writing, and working out if users are "on the same page".
+Finally, we are developing evaluation metrics for both adaptation and learning benefits of using Livenotes. This will
+include a typology of users, development of a protocol analysis to capture the multi-modal interactions with this media, and
+assessments on the utility of Livenotes in learning. Some of these indicators can be seen in our initial quantitative analysis.
+From our first trials, we identified familiarity with computer technology, preferences for typing versus handwriting, and the
+personality and multi-task capabilities as relevant user dimensions. Although we were able to make comparisons between
+the verbal and Livenotes conversations in section 3 of this paper, we are planning to set up video cameras to record
+classroom dialogue (with and without the use of Livenotes), to augment the data logs captured by Livenotes (e.g., to
+provide time logs of when users write on the canvas) with contextual information, and to interview participants before and
+after the introduction of Livenotes. We plan to cross-check these data sources against each other according to the timeline
+of the transcripts. We  will  also develop     software tools to automate    this analysis to some    extent. These technical
+developments will play an important role in developing evaluation metrics with teachers on the effectiveness of Livenotes
+in the classroom.
+REFERENCES:
+Proceedings of CSCL 2002                                                                                      page  417
+
+Ball D. (1993) Halves, pieces, and twoths: Constructing and using representational contexts in teaching fractions. In T.P.
+         Carpenter, E.  Fennema and T. A.   Romberg (Eds.), Rational numbers: An integration     of research. Studies in
+         mathematical thinking and learning (pp 157-195). Lawrence Erlbaum Associates, Inc, Hillsdale, NJ.
+Dutra, J. Gibbons, J., Pannoni, R., Sipusic, M., Smith, R., Sutherland, W. (1999), "Virtual Collaborative Learning: A
+         Comparison between Face-to-Face Tutored Video Instruction (TVI) and Distributed Tutored Video Instruction
+         (DTVI)" Sun Microsystems Research Technical Report TR-99-72.
+Hicks, D. (1996) Contextual inquiries: A discourse-oriented study of classroom learning. In D. Hicks (Ed.), Discourse,
+         Learning, and Schooling (pp. 104-141). New York: Cambridge University Press.
+Mazur, E., (1997) "Peer Instruction: A User's Manual", Prentice Hall, Upper Saddle River, NJ.
+Resnick, L. B., Levine, J. M., Teasley, S. D. (Eds.) (1991), Perspectives on socially shared cognition. Washington, DC:
+         American Psychological Association.
+Scardamalia, M., Bereiter, C. (1991) "Higher levels of agency for children in knowledge building. A challenge for the
+         design of new knowledge media". The Journal of the Learning Sciences, 1:37-68.
+Slavin R.(1990) "Cooperative Learning: Theory, Research, and Practice", Prentice Hall, Englewood Cliffs, NJ.
+Suthers, D., Toth,  E., Weiner, A.  (1997),  "An Integrated Approach  to Implementing     Collaborative Inquiry  in   the
+         Classroom", CSCL '97 Proceedings.
+

@@ -1,0 +1,102 @@
+Proceedings of CSCL 2002                                                                                           page 535
+
+    AudioExplorer: Multiple Linked Representations for
+                                                Convergence
+                                                     Jochen Rick
+                                      College of Computing / GVU Center
+                                         Georgia Institute of Technology
+                                            jochen.rick@cc.gatech.edu
+ABSTRACT
+The problem   of convergence   is an  important one  for designing   collaborative-learning environments.   Ideally, learning
+environments allow novices to work together to achieve convergence of correct understanding, without constant support
+from experts. In order to achieve this, software designers need to investigate properties of the environment that support
+convergence. One of these properties is multiple linked representations (MLRs). In this paper, I describe AudioExplorer, a
+learning environment where students, working in pairs, explore the physics of music. AudioExplorer is remarkable in its
+use of many linked representations; thus, it is a good environment to research the role of MLRs in the convergence process.
+
+Keywords
+Representation, software design, convergence, audio, inquiry-based learning
+
+CONVERGENCE AND MULTIPLE LINKED REPRESENTATIONS
+Jeremy Roschelle proposes that the "crux of collaboration is the problem of convergence (Roschelle, 1996)." Can two (or
+more) people working together reach convergence of understanding? Furthermore, is that convergent understanding closer
+to real understanding than the members of the group could have reached without collaborating? Roschelle shows that
+students (working in pairs) can achieve convergent conceptual change, using the Envisioning Machine (EM) software. EM
+is a direct-manipulation graphical simulation of particle dynamics (velocity and acceleration of a particle). Students are
+asked to manipulate position, velocity, and acceleration of a particle to match the motion of a simulated ball. Though
+students did not converge on everything that scientists know about velocity and acceleration, they did manage to work
+together to achieve better understanding. Since a typical classroom environment contains few experts (for the most part, one
+teacher) and many novices (students), creating learning environments where collaboration among novices is productive
+becomes necessary. So, what features of a learning environment support the convergence process?
+MLRs can support the convergence process. In many scientific fields (such as mathematics and chemistry), phenomena can
+be looked at from different perspectives. For instance, in mathematics, a two variable relation can be looked at as an
+equation, graph, or table (Kaput, 1989). In chemistry, a chemical reaction can be looked at as the physical chemicals, the
+underlying reaction equations, the results of spectroscopy, etc. (Kozma et al., 2000). The power of multiple representations
+is that they emphasize different aspects of the same system. To understand each representation and how they are linked
+together is to understand the domain more completely than any one individual representation.
+Both Kaput and Kozma assert that connecting multiple representations in a learning environment should be helpful for
+student understanding. This is based on the theory that students should be able to move between different representation
+and that each can  inform  the other. In chemistry,  Kozma   finds   that experts move  easily   and often between   different
+representations, while novices tend to get fixated on one representation (Kozma, 2001). Offering clear linkages between the
+representations should be a way to scaffold novices to go between them. As for convergence, MLRs offer the opportunity
+of different ways of exploring the same domain. Since the evidence displayed by the environment is multiple (more than a
+single representation), there is a greater chance that useful convergence dialogue will occur.
+
+AUDIOEXPLORER
+AudioExplorer  is a computer   environment  to  explore  the physics  of  sound   by examining   the frequency  domain. The
+frequency domain    is a transformation  of the  sound   signal into  its frequency  components.   Since   our ear perceives
+frequencies, examining the frequency domain is a useful way to understand the properties of music. The system consists of
+a music keyboard giving sound input into the computer (Figure 1); the AudioExplorer software displays the signal on the
+screen, which can then be analyzed by the students.
+AudioExplorer is a tool for inquiry-based learning. The environment gives the users the opportunity to explore the subject
+(audio and music) and thereby discover the principles of the subject rather than passively learn about them. Thus, learning
+is active and students are encouraged to construct their own meaning.
+Proceedings of CSCL 2002                                                                                           page   536
+
+                                                            First, the student strikes a key on the music keyboard
+                                                            (point    1). This  produces   a sound    (point 2).  That
+                                                            sound is converted by FFT (Fast Fourier Transform
+                                                            algorithm)    to an  instantaneous   frequency   response
+                                                            notation (point 3), where sonic energy is indicated by
+                                                            length    of   the  line.  The   frequency   response   is
+                                                            recorded over time (point 4), energy being indicated
+                                                            by darkness. Then, the student can use the analysis
+                                                            line to find out the frequency of the harmonics (point
+                                                            5);   the students  can   drag the analysis  line up   and
+                                                            down by dragging on the spectrum graph to measure
+                                                            the   exact   frequencies.  The    calculations  that  the
+                                                            software shows (at point 5) convert that frequency to
+                                                            the   matching   key and   highlight  it on the  display's
+                                                            keyboard (point 6). In the example in Figure 1, the
+                                                            fundamental      harmonic   is the   key  that was   stuck
+                                                            originally by the student (point 1). Thus, the multiple
+                                                            representations come full circle.
+
+Figure 1: AudioExplorer usage set-up with numbers indicating representations
+Each representation has different features that allow the users to look at the sound phenomena from different perspectives.
+So, each representation has different affordances that allow the user to better examine the domain. Each representation
+suppresses some aspects of the domain and emphasizes others, thereby supporting different forms of approaching the
+material. Perhaps most importantly, the linking of these representations creates "a whole that is more than the sum of its
+parts (Kaput, 1989)."
+
+EVALUATION
+In the extended on-line version of this paper, a formative evaluation of AudioExplorer is detailed. Students (working in
+pairs) were able to use AudioExplorer to engage the subject. They moved easily between the multiple representations and
+were able to understand  the links between  them. MLRs  supported     the  convergence   process.    Significant learning was
+achieved with two learners and a supportive learning environment.
+
+ACKNOWLEDGMENTS
+My thanks go to the volunteers who used AudioExplorer, to Henry Valk who gave me guidance and an opportunity to test
+this software on a real audience, to Amy Bruckman's CS7465 class that gave me feedback on the design, to John Maloney
+and the Squeak  community    for their programming support, and    to many     who have    given me   insightful feedback  on
+AudioExplorer.
+
+REFERENCES
+Kaput, J.J. (1989) Linking representations in the symbolic systems of algebra. Research agenda for mathematics education:
+        Research issues in the learning and teaching of algebra, edited by S. Wagner & C. Kieran, pp. 167-194.
+Kozma, R. (2001) Material and social affordances of multiple representations for science understanding. AERA2001.
+Kozma, R., Chin, E., Russell, J., & Marx, N. (2000). The roles of representations and tools in the chemistry laboratory and
+        their implications for chemistry learning. Journal of the Learning Sciences, 9(2), 105-143.
+Roschelle, J. (1996) Learning by collaborating: Convergent conceptual change. CSCL: Theory and practice of an emerging
+        paradigm, edited by T. Koschmann, Chapter 9, pp. 209-248.
+

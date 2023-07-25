@@ -1,0 +1,482 @@
+Proceedings of CSCL 2002                                                                                     page           425
+
+       Supporting Interaction Outside of Class: Anchored
+                         Discussions vs. Discussion Boards
+ A.J. Bernheim Brush+*, David Bargeron+, Jonathan Grudin+, Alan Borning*, Anoop Gupta+
+                Microsoft Research+,                                    University of Washington*
+         {davemb, jgrudin, anoop}@microsoft.com                       {ajb, borning}@cs.washington.edu
+
+ABSTRACT
+Newsgroups and online discussion boards have long been used to supplement class discussions. We describe a study
+comparing the use of two systems, WebAnn and EPost, to support class discussion of technical papers in a graduate course.
+WebAnn    is a shared  annotation system that supports anchored     discussions on web pages, and allows users to   easily
+associate comments with a particular paragraph, phrase, or word in the paper being discussed. EPost is a high-quality
+conventional discussion board system. In our study, students contributed almost twice as much to the online discussion
+using WebAnn. WebAnn also encouraged a different discussion style, focused on specific points in the paper. We expected
+WebAnn discussions to serve as a starting point for in-depth discussions in the classroom; but in fact, online discussions
+often competed with classroom discussions. We conclude with implications of the study for technology design and the
+process of its use.
+
+Keywords
+Annotations, online discussion forums, computer-mediated communication, educational technology
+
+INTRODUCTION
+Students and instructors are spending more time online. Many see this as a significant opportunity to encourage more
+educational interaction outside the classroom. Tools that support asynchronous collaboration hold potential as a convenient,
+flexible means of doing just that. Various systems, for instance online discussion boards, have long supplemented class
+discussions, but their use typically has been limited and optional, because not all students were assumed to have access to a
+system or the skills to use it. Today these restrictions are fading away, and we can harness the increasing ubiquity of online
+access and tools to promote educational discussion beyond the classroom door. But what is the best way to proceed?
+Tools that support asynchronous collaboration allow discussion to happen when and where it is convenient, and help link
+what goes on outside of class while students do homework to what goes on in class. For instance, students can begin to
+discuss a reading assignment while they are reading it, instead of taking notes and waiting until they get to the classroom to
+express their reactions.
+Online discussion boards have supported this in the past, but discussion board posts are divorced from the context of the
+assignment. To contribute a comment or question students must manually reconstruct the context of their remark before
+making it. That is, they must identify not only the paper or document being discussed, but perhaps also the section,
+paragraph, sentence, or word. Only after this is done can a discussion thread ensue. Further, the resulting discussion will not
+be readily available to other students as they read the paper.
+Our shared annotation system, WebAnn, takes a different approach. It supports fine-grained annotation of web pages, so
+that students' remarks can be made and seen in the context that inspired them. Furthermore, annotations are shared, and can
+serve as anchors for threaded discussions. In this way, discussions around class material outside of class are captured for all
+to see, and they are directly linked to the materials--and the precise location within the materials--that they reference. This
+paper presents a study we conducted to evaluate the efficacy of WebAnn for supporting ongoing discussion outside of
+class.
+The process of use that we envision for WebAnn is as follows. A student reads a paper on-line, and can at any point
+identify some text and type in a comment or question. This annotation then appears alongside in a separate frame with a
+visual indication of the associated text. It can either be a personal note or an entry in a public class discussion. The student
+will also see annotations left in the class discussion by previous readers, and can reply to those. With this facility questions
+can be asked or answered, opinions made known, issues identified, and discussions started. Using the WebAnn system,
+students can more easily participate in discussions of class materials, and discussion outside the classroom will flourish.
+At least, that was the theory. To put our hypothesis to the test, we conducted a study in a graduate university course
+comparing WebAnn with EPost, a high quality discussion board system (EPost, 2001). The course focused on lectures and
+discussions of published research papers, and student assignments included making comments on the readings using the
+two systems. The study provided many insights into the value and appropriate uses of tools for support of discussion
+outside the classroom. For a variety of reasons, including access and the granularity of the discussion, student preference
+Proceedings of CSCL 2002                                                                                           page  426
+
+appears to slightly favor EPost. However, students contributed almost twice as much to the discussion using WebAnn. The
+nature of the class discussion was affected in ways not anticipated by the class or instructor. Based on our results we
+identified enhancements that will improve WebAnn, as well as important considerations for the process of using it.
+The remainder of the paper is organized as follows. The next section briefly reviews related work. Then we describe the
+salient features of the WebAnn and EPost systems. We then outline the study we conducted to assess the efficacy of
+WebAnn in promoting discussion outside of class, and present the results. Finally, we discuss some of the implications of
+our findings, and provide some concluding remarks.
+
+RELATED WORK
+In this section we focus primarily on systems studied in an educational context. Word processors and co-authoring tools
+have gradually added commenting and revision features, although they are not yet as convenient as pen and paper. WebAnn
+incorporates  some   features of  these systems. Like  the commenting    feature in Word,  WebAnn     allows comments   to be
+attached to specific words or passages and it supports the viewing of the annotations and the original document in a single
+window.    In contrast, CaMILE    (Guzdial  &  Turns,  2000), Col·laboració   (Col·laboració, 2001),  and CoNote   (Davis  &
+Huttenlocher, 1995) support coarser granularities of context, with anchors to a threaded discussion of an entire web page or
+a section of a page or document. The first displays comments below the text, the second embeds a link to the discussion in
+the page, and the third is a discussion board in which a thread contains a link to the object being discussed. As our study
+indicates, tradeoffs affect   design decisions regarding   annotation granularity and presentation of  source  material. One
+solution may not be ideal for every setting. WebAnn allows us to explore the way people respond to the ability to identify
+precisely the context for a comment.
+The intended user of annotation systems varies. Many systems that provide anchored comments or discussions, such as
+Quilt (Leland et. al, 1988), Prep (Neuwirth et. al, 1990) and Col·laboració, are intended to support co-authoring. The
+authoring and editing process is also a principal focus of commenting with Word (Cadiz et. al, 2000), which in its most
+recent versions supports anchored discussion threads. While WebAnn could be used for authoring and editing, in this paper
+we focus on its use for commenting.
+In the educational context, bulletin boards and chats and other real-time communication systems have been used in distance
+education and to supplement face-to-face classes. In contrast to our study, studies of anchored online annotation systems
+have primarily focused on editing and commenting on student or instructor work. Hewitt and Teplovs (1999) is a nice study
+of the use of one such discussion board, CSILE, across many courses. In a study of CoNote (Davis & Huttenlocher, 1995),
+students were required to use the system to comment on project sites constructed by 3 others sets of students. CaMILE
+(Guzdial   &  Turns, 2000)    was used  to discuss short descriptions  of assignments  and  review outlines  for  exams. The
+Collaboratory Notebook / CoVis system (O'Neill et. al, 1995) includes student-created notebooks on which instructors
+commented, as well as discussion boards.
+One exception is CLARE (Wan & Johnson, 1994), in which a tool is used collaboratively to analyze scientific papers
+online through   the creation  of a  highly structured hypertext of   labeled annotations  describing portions of the text as
+problems, claims, evidence, theory, concepts, and so forth. It also allows more general annotations categorized as critiques,
+suggestions, and questions. The interface and process of use of CLARE is very different from that of WebAnn: it is not first
+and foremost a discussion. Students first privately analyze the text, then view each other's analyses, at which point they can
+comment by creating new links. Threads are not presented visually. However, CLARE resembles WebAnn in the way that
+it anchors annotations on online representations of core course content.
+Anchoring and context in education are used in a different sense in the anchored instruction paradigm developed by the
+CTGV group (CTGV, 1993). They discuss using materials such as videos to anchor assignments in the context of students'
+daily lives. We focus on anchoring discussions in the context of the text being discussed.
+
+DISCUSSION SYSTEMS
+In this section, we describe WebAnn, the online discussion system we implemented, and EPost, a discussion board that is
+part of the UW Catalyst toolkit.
+Proceedings of CSCL 2002                                                                                                       page 427
+
+ Figure 1: WebAnn interface embedded in Internet Explorer. On the right is the webpage being annotated, on the left is the
+ index of notes and replies. Student names are blacked out to provide anonymity.
+
+  Figure 2: EPost, a threaded discussion board from the UW Catalyst toolkit. The left pane is the index of posts and replies.
+  The right pane is the text of the selected message. Student names are again blacked out.
+
+WebAnn
+WebAnn allows text annotation on any web page. It is designed to support shared persistent threaded discussions that occur
+in a precise context. WebAnn is embedded in Microsoft Internet Explorer, and can be easily installed on any computer
+running Windows 2000. As shown in Figure 1, the web page being annotated is displayed on the right, and discussions on
+the page are shown in the index window on the left. WebAnn is adapted from an earlier system we built to experiment with
+robust annotations on web pages (Brush et. al, 2001).
+To create a new note, a user selects the text to be annotated and chooses to "Add a Note" from a popup menu. A dialog box
+appears, into which the user types the note. The user can optionally make the note private. The new note is added to the
+index, and the text to which it corresponds in the    page is outlined  with       a color    unique to that user. Annotations       are
+automatically made persistent in an internet-based annotation store.
+Once an annotation has been created, it is available as a navigational aid in both the index and the page, so that clicking on
+it in the index, for instance, scrolls the web page until the outlined text is in view. Later on, the user can go back and edit or
+delete his or her notes (provided they do not have replies). To add a global note that applies to the entire web page, the user
+clicks the "Add Summary" button and follows the same procedure.
+Threaded discussions grow when users reply to existing notes. To reply to a note, a user clicks the arrow menu next to the
+note (either in the index or the web page) and chooses "Reply." Replies are added to the index directly below the original
+note.
+Proceedings of CSCL 2002                                                                                                page 428
+
+EPost
+EPost, a University of Washington (UW) "Catalyst" tool (EPost, 2001), is a high-quality web-based threaded discussion
+board similar to a traditional newsgroup browser. EPost discussion boards are widely used at UW, and can be accessed
+using any HTML browser.
+As shown in Figure 2, the left side of the EPost interface lists the original messages and replies, while the contents of the
+selected message is displayed on the right. To post a message, the user clicks on the "Post New Message" link at the top
+left, and to reply on the "Reply to Message" link. EPost supports several useful features, including filtering and notification
+options. For the class we studied, an EPost discussion board was created for each reviewed paper.
+
+STUDY
+To examine the tradeoffs between discussions anchored in-context and traditional discussion boards, we compared the use
+of WebAnn and EPost in a graduate-level Human-Computer Interaction (HCI) class taught at University of Washington
+during Spring Quarter, 2001. Two of the authors, Alan Borning and A.J. Brush, taught the course and served as teaching
+assistant (TA). In general, we wanted to assess the efficacy of WebAnn for promoting discussion outside of class and to see
+how this affected subsequent discussion in class. Would the use of WebAnn increase the overall amount and quality of
+discussion   and   participation? Other studies have   found that anchored     discussions  lead to  longer  threads  and  greater
+participation (Guzdial & Turns, 2000). Beyond this, would WebAnn engage students more by encouraging more specific
+and   pointed  comments    and  stimulate more  engaging    discussion  in class? We   expected    that  the online   and  in-class
+discussions would be complementary, since the online discussion could be used to inform the in-class discussion.
+
+Study Design
+During the class students were assigned to read 2 or 3 papers per week as homework. For each paper, students wrote a brief
+review with two parts: a summary and some personal reactions to the paper. Students were also required to respond to at
+least one other student's comments for each paper. The total length of each review was expected to be equivalent to two or
+three paragraphs, and students could skip up to five reviews during the quarter. Reviews were 25% of a student's course
+grade, and it was expected that all students would receive full credit for them. Previous offerings of the course were similar,
+except for the requirement to post a reply to another student's comment.
+This assignment format is a particularly good one for discussion systems such as WebAnn and EPost. To submit paper
+reviews using EPost, students posted a message containing both their summary and comments, and then replied to other
+students'   posts. With WebAnn,     students used the  "Add  Summary"      button for the   summary,    and  then  anchored  their
+comments and reactions throughout the paper by adding note annotations and at least one reply.
+The class met Mondays and Wednesdays for 80 minutes. Student reviews were due on Tuesday at noon, and responses
+were due before class on Wednesday. We planned to make the reviews and responses due before the Monday class, but the
+inability of some students to access WebAnn from home forced the later due dates. Six women and five men enrolled in the
+class. Four students were from Computer Science; the others were from the Information School, Psychology, and Medical
+Informatics. One student was an employee of the UW library system.
+The class alternated between using EPost and WebAnn in two-week blocks. During the 10 week quarter, students spent at
+least 4 weeks    using each system,    with an  extra week  on  EPost  at  the beginning   of the  quarter   and a final   week of
+presentations when there were no paper reviews. On WebAnn weeks all papers were available in html to enable online
+annotation.
+We    fixed basic  WebAnn   problems    and  released two new   versions   during the first two    weeks  of its use, focused   on
+improved    annotation  loading   and rendering speed.  For the final  two  weeks  of WebAnn       use, we   introduced  a version
+supporting direct editing of annotations (rather than having to manually delete and re-create a note to change it).
+
+Data Collection
+We    archived the  online discussion   forums  and surveyed   students each   week.  An   initial survey  collected  background
+information, and a final survey asked about their overall experience with in-class and online discussion. One author (not the
+instructor or TA) interviewed eight students at the end of the quarter.
+Proceedings of CSCL 2002                                                                                            page 429
+
+  Method    NumberofPapersNumberofMessagesMessagesPer PaperAverage MessagesPer Author PerPaperAverage Replies PerAuthor Per PaperAverage CharacterContribution Per AuthorPer Paper
+ EPost           13         299         23                2.23               1.15                     2485
+ WebAnn          12         470        39.2               4.71               1.58                     4401
+ Table 1: Student participation using EPost and WebAnn.
+
+RESULTS
+Online discussions easily exceeded the required participation level. WebAnn activity differed substantially from EPost
+discussion. One significant observation is that all students printed out and read paper versions of papers. This removes
+important potential advantages of WebAnn and affects its use and reception. Despite this, WebAnn was used more than
+EPost and the pattern of use provides guidance to the design and use of anchored annotation systems.
+
+More participation using WebAnn
+As we expected, the ability to anchor comments precisely led to more comments in WebAnn weeks, given that students
+would be likely to concatenate comments in EPost threads. Table 1 shows key per-author participation statistics using the
+systems. Using WebAnn, there was an average of 39 comments per paper, with EPost 23. Several students also remarked
+on the increase in survey responses. For example, "I made more comments with WebAnn. With EPost I was disinclined to
+make minor or very contextual points--the kind it is easy to do with WebAnn. I also think I wrote more replies in WebAnn
+because it was easy to do so (and easy to see the context)."
+Students also replied more when using WebAnn. With EPost, the average number of reply messages per author in each
+discussion board was 1.15 (most students made only the one required response per discussion forum). Using WebAnn,
+authors averaged 1.58 replies per paper. A paired-samples t-test showed the averages were significantly different with p <
+0.03. In fact, 8 out  of the 11  students made  more    replies using WebAnn  than  using   EPost. One     student averaged a
+remarkable 3.33 replies per paper using WebAnn, and only 1.5 with EPost.
+While we thought WebAnn annotations might be short, since students would not need to reconstruct the context for each
+comment, we were not sure how the total participation per student would vary since students would probably make more
+posts using WebAnn. We found that students wrote almost twice as much with WebAnn. Each student wrote an average of
+4,401 characters per paper using WebAnn, compared to 2,485 characters per paper using EPost. These are significantly
+different based on a paired t-test (p < 0.001). Although increased participation in discussion does not necessarily imply
+enhanced learning, grades in this class included participation and there were no exams, so increased participation was
+considered a positive outcome.
+
+General vs. Specific Discussion
+The two systems support very different types of discussions. EPost discussion boards are completely separated from the
+paper being discussed, while WebAnn discussions are anchored directly to specific parts of the paper. As we expected,
+these differences affected the type of online discussion that occurred in the two systems, and this was reflected in student
+survey responses. For instance, one student observed that with WebAnn it was "More difficult to make high level comments
+about [the] paper, [and] discussions usually focused on sentences or paragraphs ..." and another noted that with EPost
+"It's definitely harder to make pointed comments about these papers." In response to the final survey, one student said "I
+think the comments were at a higher level in the E-Post system and more general opinions were presented" and another
+said "...the comments were more specific and numerous [with WebAnn]. I think this is because I could transfer notes I'd
+made on paper and section of text I'd highlighted directly to the annotation software."
+Although the preference for more general or more specific discussions varied, many students observed that WebAnn led to
+more thoughtful, involved discussions. For instance, one student observed "More scattered, but more insightful comments
+in WebAnn," while another saw "More involved discussion--more back and forth," and a third said "I think the quality of
+annotations and online discussion [with WebAnn] was better than with E-Post."
+Proceedings of CSCL 2002                                                                                                           page 430
+
+Week                                  1          2         3          4             5        6         7          8          9
+System                              EPost      EPost     EPost      WebAnn   WebAnn        EPost     EPost   WebAnn       WebAnn
+1. Discussions in class werevaluable5 (11)     5 (11)    5 (11)     5 (10)     5 (10)      5 (10)    5 (11)      4 (9)      5 (6)
+2. Online Discussions outside ofclass were valuable4.5 (10)5 (11)4 (11)4 (10)  5 (9)       4 (11)    4 (11)      4 (10)    3 (5)+
+3. The review method
+[software] was beneficial to my      4 (9)     5 (11)    4 (11)     3 (10)     4 (9)       4 (11)    3 (11)      4 (10)    3 (5)+
+learning
+4. I prefer this reading reviewmethodN/A*      N/A*      N/A*        2 (8)     3 (8)       4 (11)    4 (11)      3 (10)     5 (6)
+
+Table 2: Median student ratings on a selection of questions from the weekly surveys. (1 is Strongly Disagree, 6 is Strongly
+Agree). Numbers of students who responded to a question are in (). N/A*: There was not yet a basis for comparison. +Only 4
+students participated in the online discussion this week, which may have impacted the ratings.
+
+Student Preferences
+Table 2 shows median student ratings on several key questions from the weekly survey. The ratings are on a 6 point Likert
+scale where 1 is "Strongly Disagree" and 6 is "Strongly Agree." Table 3 shows the median student ratings for key questions
+from the final survey, also on a 6 point scale where 1 is "Low" and 6 "High," except for question 6 where 1 is "Disagree"
+and 6 "Agree." Only the ratings for amount of time spent on software in Table 3 (concerning software trouble) were
+significantly different between the two systems based on paired sign test (p < 0.02).
+
+Value of Discussion
+In general, students gave high ratings to the value of discussions both in class and online throughout the course, and there is
+little quantitative distinction in the value of discussion supported by the two systems. In surveys and interviews students
+commented more specifically on the value of online discussion. Some examples: "[online discussion] made the discussion
+[in class] a lot    more  interesting,"    "since   they [online    comments]  are      written, they are   definitely  more   composed,"
+"[through online discussion I] got to know people's opinions, the people who aren't as vocal in class,...having the online
+discussion encouraged everyone to participate in-class as well," and "there were a couple of people who often dominated
+the class conversation, but they wouldn't dominate the online discussion because everyone got a change to talk."
+Finally, two interesting ratings from Table 2 are the 3's given to WebAnn in week 9 for questions 2 and 3. In this week,
+most students used their paper skips and only 4 students participated in the online discussion. This affected satisfaction with
+online discussion. One student commented: "It's really boring when no one says anything."
+
+System Preference
+Based on their subjective ratings, students preferred EPost slightly overall. However, with only 11 students the data are
+inconclusive, and individual student preferences varied. Table 2, question 4, illustrates that WebAnn preference ratings
+started low and rose over time. This may reflect the improved versions of WebAnn that were introduced. Table 3, question
+6 shows that on the final survey both EPost and WebAnn received the same median rating, despite having encountered
+more technical and access problems with the WebAnn software. However, comparing a particular student's ratings of the
+two systems, for example, if they rated EPost a 4 and WebAnn a 3, we obtain more information: 5 students preferred EPost,
+3 preferred WebAnn, and 3 had no preference. In this regard it is useful to keep in mind that by reading printed copies of
+papers, students lost the advantages of annotating and seeing comments of others as they first read a paper and were thus
+reacting primarily to the discussion features.
+    Comments on the final survey indicated that preferences for a particular method were based on a range of factors,
+    including access and perceived quality and granularity of the discussions. Favoring the EPost system, one student
+    said "I didn't have [a] preference. [The] only issue was that I could use EPost at home." Another expressed a
+
+                                                                           4. "My                5. "The amount of
+            1. "The quality      2. " My satisfaction  3. "The quality of  satisfaction with     time I spent on       6. "Overall I
+            of the online        with this method of   the in-class        the in-class          problems with the     prefer this
+  System    discussion was"      online discussion"    discussion was"     discussion"           software"*            method"
+  EPost             4                      5                    4                     4                  1                 4
+  WebAnn            4                      4                    5                     4                  4                 4
+
+  Table 3: Median student ratings on questions from the final survey. For the first 5 questions 1 is Low, 6 is High. For question
+  6, 1 is Disagree, 6 is Agree. *The only significant difference is for question 5.
+Proceedings of CSCL 2002                                                                                            page    431
+
+   "slight   preference for EPost   because  it   allowed for  more articulation   of complete   ideas/thoughts." A   third
+   observed that "It was easier to understand other student's opinions by reading all their comments in a single
+   message. Also, I think the comments were at a higher level in the EPost system and more general opinions were
+   presented."
+In favor of WebAnn, one student said "I prefer WebAnn (later versions) over EPost. I think the quality of annotations and
+online discussion was better than with EPost. WebAnn allowed us to comment on specific portions of text, which was
+nice..." and another observed that WebAnn was useful because students "can comment on particular parts of the paper
+easily..."
+
+ISSUES AND OPTIONS
+Based on the survey ratings and comments, most students felt that online discussion helped the live discussion start quickly
+and gave it focus. The online discussion space also provided an outlet for students who said less in class, and overall
+increased class participation. In addition to these successes, though, we learned a number of important lessons about
+incorporating online discussion into a class. We start by describing some of the major issues we encountered, then we
+discuss potential changes in technology and process that would help address them.
+Student and Instructor Workload: In general, incorporating online discussion into the class created more work for the
+students and instructor by requiring everyone to keep track and participate in the online discussion at some level.
+Although some students felt WebAnn led to more thoughtful online discussions, and clearly it resulted in more extensive
+online discussions, WebAnn required students to do more work to post their reviews. As noted above, although all papers
+for WebAnn discussion were made available in html format, all students printed them out to read. To enter WebAnn
+comments they had to go back and annotate the papers online. One student commented: "I found WebAnn much more time-
+consuming to use, perhaps because I prefer to read on paper, and then had to go back through to do the annotations."
+Should professors or teaching assistants participate online beyond reading or leave it as a space for students? We observed
+both, and each has advantages and disadvantages. In our study the instructor and TA generally participated very little (3
+posts in EPost, 5 in WebAnn) beyond reading all messages. This was less work for the instructors and allowed students to
+take the lead, but meant questions could go unanswered or issues left undeveloped. One guest lecturer in a WebAnn week
+addressed most questions and issues students raised online, an approach used successfully for design reviews of student
+assignments using CoWeb (Guzdial et. al, 2000). Students seemed to appreciate the responses. One advantage of having the
+instructor, the TA, or even an expert in the field respond to students is that it may encourage students to go back and read
+through the comments. On the other hand, students may avoid controversial points if an author or known expert will
+reading them. In this case, one student deleted or edited one or more comments when he realized the paper author (the guest
+lecturer) might read them.
+Online and in-class discussion: Before the study, we saw the online discussion as a complement to the in-class discussion,
+leading to a more engaging classroom discussion focused on issues raised online. Each week after student reviews and
+comments were due, the instructor and TA read all the comments and replies. The TA also created a list of interesting
+issues  and  comments    to  start in-class  discussion   if  necessary. Some     students  found   this helpful,   but others
+commented:"...[it  would]   be more  effective if there were  some  way  to better   integrate online discussion  with  in-class
+discussion," and "[class time] was redundant." Smoothly integrating the two was more challenging than we expected. In a
+sense, in-class and online discussion competed with one another.
+Integrating online and  in-class discussions   was complicated   by the  timing   of  the online discussion and   the  differing
+amounts of participation in the online discussion (both posting and reading comments). Because weekly reviews were due
+Tuesday and replies were due Wednesday just prior to class, the time for students to read through responses was limited, a
+problem exacerbated by the fact that some could access the system only from home or from work. If a reply was added
+shortly before class it was unlikely that many students would read it. This negatively impacted the in-class discussion. A
+student who made a long or complicated reply on-line might not want to repeat it in class, even when asked to by the
+professor. As a result, interesting replies were not always picked up in class.
+Differences in time commitments and interest levels led to varying student participation online, which could take a fair
+amount of time. Students who participated online often seemed uninterested in continuing that discussion for those who had
+not participated online. In one instance, following a spirited WebAnn discussion among six students, the professor tried to
+bring up the issue in class for further discussion. One student said there had already been a "pretty good discussion on [the]
+board." This comment, along with others like it, ended the classroom discussion on the topic. The students who had
+participated online saw no need to discuss the topic further.
+Global and specific comments: With WebAnn it was easy to make or understand focused comments but awkward to make
+general notes about large sections or even long paragraphs. Conversely, EPost required considerable context to comment on
+a particular point. Each tool readily supported one type of comment. The ideal tool would facilitate comments at multiple
+levels.
+Proceedings of CSCL 2002                                                                                           page  432
+
+Focus of Attention: Online discussion systems face a tradeoff between focusing attention on threaded comments or on the
+document being discussed. CoNote (Davis & Huttenlocher, 1995) places links to content in threaded discussions; CaMILE
+(Guzdial & Turns, 2000) places links to discussion in content. WebAnn splits the focus between comments and document.
+(With EPost, only comments are viewed.) In the interviews, some students noted this tradeoff and suggested that more
+space be devoted to comment threads. When reading the document and making comments the document might be the focus,
+but these students did most reading on paper. When reviewing others' comments and replying, the comments might better
+be the focus. In fact students could adjust the size of the frames in WebAnn, but did not discover this.
+Discussion overload: When examining student participation in the online discussion we found they contributed much more
+during the WebAnn weeks. While this suggests that anchored discussions in WebAnn encourage students to participate
+more, some students remarked that the number of comments and replies was overwhelming. Clearly, this could become an
+even larger problem with bigger classes. EPost discussions could also be problematic with large numbers of participants.
+This tradeoff between     encouraging  student participation    in online  discussions and  keeping      online discussions a
+"manageable size" has also been noted by Guzdial and Turns (2000).
+Convenient universal access: As other studies have found, convenient access is critically important (Hmelo et. al, 1997).
+We were initially concerned with making sure all students had some access to WebAnn, which runs only on Windows
+2000. However, it turned out that where students had access was also important. With EPost, 9 of the 11 students had
+access both at school and home. Using WebAnn, although all students had access either at home or school, only two
+students had access in both places. With access in only one location, students were limited in when and where they could
+do their reviews and participate in the online discussion.
+
+Improvements to WebAnn
+The subjective ratings and comments suggest the majority of students had a small preference for EPost, even though they
+contributed more using WebAnn. Factors including access, workload, software use, and different types of discussion seem
+to influence students. In this section we focus on technical improvements to WebAnn, or any other online discussion
+system, that might address issues raised by the field study.
+Access: Making access as universal as possible by supporting more operating systems and browsers would enable students
+to review the discussion   more  often from more   locations,    and might  improve    participation in  making   and reading
+comments. Adding an offline mode would also help students with slower internet connections.
+A more sophisticated solution might allow comments and replies to be sent through e-mail in addition to being added as
+web page annotations. When students did not have access to the annotation system, they would still receive annotations in
+e-mail. Replying to the e-mail would add their response to the online discussion. The MRAS video annotation system found
+this approach successful in a number of studies (Bargeron et al., 2001).
+Filtering and Notification: Several students suggested adding filtering that exists in EPost to WebAnn: author-based
+filtering and identifying notes and replies that are new. Mechanisms that assist in quickly finding replies to a person's
+comments and highlight potentially interesting discussions based on collaborative filtering, perhaps by allowing students to
+rate each others' posts, could further reduce discussion overhead and student workload, making it easier to keep up with the
+online discussion.
+Although EPost can notify students of the presence of new posts, only 3 students subscribed to this for one week of the
+study, suggesting a need for improvement. Notifications could summarize the comments made that day, rather than just
+alerting a student to the fact that comments were made. This could provide a sense of the ongoing discussion and encourage
+checking online for the full comments. Notification messages could include clickable links to take a student directly to the
+online discussion (Bargeron et al., 2001). Finally, an optional feature that notifies a note's author when someone replies
+could encourage more back and forth discussions.
+Advanced notifications features have the potential to allow students to follow the online discussion more easily. This could
+support easier integration of online and in-class discussions, reduce student and instructor workload, and help students deal
+more effectively with discussions containing a large number of comments.
+Supporting General Comments: Students wanted to add comments at many different levels, from general comments
+about an entire paper to specific comments on a particular issue. To better support online discussions, WebAnn needs a
+mechanism for easily commenting on larger document units, including paragraphs, sections, and the entire paper. Softening
+the display of anchors in the web page, perhaps with vertical lines in the margin instead of outlining the text, might make
+users more willing to overlap comments. More ambitiously, mechanisms for clearly supporting comments at every level of
+the document could be provided, perhaps through menu items that specify "comment on this document," "comment on this
+section," and so forth.
+Allocating Screen Space: As noted above, the interface should clearly indicate that the annotation and document frames
+can be resized to accommodate a focus on threaded comments or a focus on the content.
+Proceedings of CSCL 2002                                                                                            page  433
+
+Process Changes
+Along   with technological  improvements,    careful consideration of the process  of  use might   smooth   the  experience  of
+combining online and in-class discussions.
+More time for reviews: It would have benefited students to have all online discussion before the first class of the week,
+and to have the review and replies due earlier to provide more time before class discussion for reading and responding.
+Scheduling class meetings for the end of the week could also address weekend access issues.
+Summarize online discussion in-class: A short summary of the online discussion at the beginning of class might help cope
+with the different levels of on-line participation and frame an in-class discussion that builds on the online experience.
+Explicitly acknowledging students who took part in the online discussion could encourage other students to participate.
+Consider instructor role: The pros and cons of active instructor participation online were noted above. On the whole, if
+instructors join the discussion late, it can provide an incentive for students to contribute to and review discussions. If online
+participation were not required--and some students felt mandatory replying to others' comments was artificial--this might
+be essential to motivate discussion.
+Adjust the number of papers discussed online or in class: Using the online discussion for addressing fewer papers in
+more  depth  rather than for all the  papers would   reduce the amount    of work. Dividing  the   papers   into those that are
+discussed only on-line and those that are dealt with only in class would also reduce workload. Alternatively, classroom time
+could be focused more on other activities, such as demos and discussing student projects.
+Reduce the number of students participating at any one time: To combat discussion overload, reduce workload, and
+help integrate online and in-class discussion, the number of messages students produce or read could be reduced. Students
+could be asked to comment on fewer papers, or participation could be made optional for large classes. Alternatively,
+students could be divided up into discussion groups, and each discussion group could briefly summarize in class what was
+discussed online, greatly reducing the number of messages a student must read.
+Reduce assignments: Another approach for reducing student and instructor workload is to limit the number of assignments
+the students have, or to more dramatically reduce the time that is spent in-class. The broader issue is to consider what
+classes are best served by the technology. Possibly classes with less reading, (that students may be more likely to do online)
+would better exploit the value of anchored discussions. Or perhaps discussions could revolve around assignments and
+projects, which might have shorter blocks of text, as in Guzdial & Turns (2000).
+
+CONCLUSION
+Online anchored discussions hold great potential for extending in-class discussion beyond the classroom door. In our study,
+online discussions allowed the less vocal students to contribute equally and made in-class discussions more interesting, but
+integrating  the online and  in-class discussions was   challenging.  Rather  than serving  as   a starting point  for in-class
+discussions, the online discussions often competed with the classroom discussion. Students who participated frequently
+online seemed uninterested in addressing the same issues in-class with the rest of the students.
+Because students in this class uniformly printed and read assignments on paper, many potential advantages in annotating in
+context were lost. Nevertheless, WebAnn led to more discussion, while requiring the greater effort of a second pass to add
+comments. With improvements in technology and appropriate process modifications, anchored discussions are an exciting
+avenue for distributed education and a viable tool to supplement classroom instruction.
+
+ACKNOWLEDGMENTS
+We are very grateful to the students in the class for participating in the study. We thank the UW Cataylst group, in
+particular Mark Alway, for their assistance. We also thank Cathy Marshall and Gina Venolia.
+
+REFERENCES
+Abowd, G., Pimetel, M., Kerimbaev, B., Ishiguro, Y., and Guzdial, M. (1999) Anchoring Discussions in Lecture: An
+        Approach to Collaboratively Extending Classroom Digital Media. Proc. CSCL 1999.
+Bargeron, D., Gupta, A., Grudin, J., Sanocki, E., and Li, F., (2001). Asynchronous collaboration around multimedia and its
+        application to on-demand training. Proc. HICSS-34 Conference, CD-ROM.
+Brush, A., Bargeron, D., Gupta, A., and Cadiz, J., (2001). Robust Annotation Positioning in Digital Documents. Proc. CHI
+        2001, 285-292.
+Bullen, C.V.,  and  Bennett, J.L. (1991)  Groupware    in Practice: An  Interpretation  of Work    Experiences.   Reprinted  in
+        Baecker, R.M. (Ed.) (1993) Groupware and Computer-Supported Cooperative Work, Morgan Kaufmann, 69-84.
+Cadiz, J., Gupta, A., and Grudin, J., (2000) Using Web Annotations for Asynchronous Collaboration Around Documents.
+        Proc. CSCW 2000, 309-318.
+Proceedings of CSCL 2002                                                                                       page  434
+
+Collaboració, http://www.nada.kth.se/~henrry/Collaboracio.html
+CTGV (1993) Anchored Instruction and situated cognition revisited. Educational Technology, 33 (3) 52-70.
+Davis, J. and Huttenlocher, D. (1995) Shared Annotation for Cooperative Learning. Proc. CSCL 1995, 84-88.
+EPost, UW Catalyst Toolkit, http://catalyst.washington.edu/tools/
+Gay, G., Sturgill, A., Martin, W., and Huttenlocher, D. (1999) Document-centered Peer Collaborations: An Exploration of
+         the  Educational    Uses  of  Networked    Communication      Technologies.  Journal    of  Computer-Mediated
+         Communication, 4, 3, March 1999.
+Guzdial, M. (1997) Information Ecology of Collaborations in Educational Setting: Influence of Tool. Proc. CSCL 1997, 83-
+         90.
+Guzdial, M. Rick, J., and Kerimbaaev, B. (2000) Recognizing and Supporting Roles in CSCW. Proc. CSCW 2000, 261-
+         268.
+Guzdial, M.,  &  Turns,  J. (2000) Effective  discussion through  a computer-mediated  anchored   forum. Journal  of the
+         Learning Sciences, 9, 4, 437-470.
+http://guzdial.cc.gatech.edu/papers/aera97/mbl.htmlHmelo, C. E., Guzdial, M., and Turns, J. (1997) Computer-support for
+         collaborative learning: Learning  to make it work.  American   Educational  Research   Association 1997 Annual
+         Meeting, Chicago, Il. March 24-28. http://guzdial.cc.gatech.edu/papers/aera97/mbl.html
+Hewitt, J. and Teplovs, C. (1999) An Analysis of Growth Patterns in Computer Conferencing Threads. Proc. CSCL 1999,
+         232-240.
+Leland, M., Fish, R., and Kraut, R., (1988) Collaborative Document Production Using Quilt. Proc. CSCW 1988, 206-215.
+Neuwirth, C., Kaufer, D., Chandhok, R., and Morris, J., (1990) Issues in the Design of Computer Support for Co-authoring
+         and Commenting. Proc. CSCW 1990, 183-195.
+O'Neill D.K., Edelson, D.C., Gomez, L.M., and D'Amico, L. (1995) Learning to Weave Collaborative Hypermedia into
+         Classroom Practice. Proc. CSCL 1996, 255-258.
+Wan, D.,  and  Johnson,   P. (1994)  Computer   Supported  Collaborative Learning   Using CLARE:     The Approach    and
+         Experimental Findings. Proc. CSCW 1994, 187-198.
+

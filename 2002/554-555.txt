@@ -1,0 +1,103 @@
+Proceedings of CSCL 2002                                                                                       page 554
+
+ Text Forum Features for Small Group Discussions with
+                                Facet-Based Pedagogy
+Steven Tanimoto1, Adam Carlson1, Justin Husted2, Earl Hunt1,Josef Larsson1, David Madigan3,
+                                                     Jim Minstrell4
+              1University of Washington, 2Amazon.com, 3Rutgers University, 4Talaria Inc.
+            tanimoto@u.washington.edu, carlson@cs.washington.edu, elladan@eskimo.com,
+           ehunt@u.washington.edu, jlarsson@cs.washington.edu, madigan@stat.rutgers.edu,
+                                             jimminstrell@talariainc.com
+ABSTRACT
+We describe an approach to teaching that engages students in small-group discussions of conceptual material. Then we
+describe software that mediates the discussions with an online textual newsgroup-like system that has special features to
+support a pedagogical approach that deals explicitly with student preconceptions. Our system, called INFACT-FORUM, is
+part of a larger CSCL system called INFACT that supports student discussion, computer-assisted assessment, display of
+student progress data, and support for pedagogical intervention.
+
+Keywords
+facet, misconception, learning, collaborative, software, CSCL, assessment, text, conferencing, group discussion, mark-up,
+annotation, visibility, hide, concept, newsgroup, writing, pedagogy.
+
+INTRODUCTION
+In a recent report recommending methods for improving student learning (NRC 1999), recognizing student preconceptions
+and using them to engage the students is given a high priority. A particular methodology for discovering and working from
+students' preconceptions is sometimes called "facets" of understanding. A facet is a particular conception, often naïve or
+limited in its consideration of the relevant factors or phenomena, and it can be considered as an approximate understanding
+of some concept (Minstrell, 1992). The question arises as to how best to diagnose student facets. One method is to use a
+series of questions with    multiple-choice answers. The DIAGNOSER       project takes this approach (Hunt and Minstrell,
+1994). It has the advantage that questions can be designed to get directly at student facets within a relatively short time.
+Furthermore, the reliability of the diagnoses can be high. One drawback of the multiple-choice approach, however, is that
+some students do not like the traditional, test-like format. Furthermore, students are not involved in collaborative learning
+(see, e.g., Scardamalia and Bereiter, 1996) while they are responding to the questions. An alternative approach to eliciting
+and diagnosing facets involves the students in focused, small-group discussions, and uses their expressions in that context
+as the basis for diagnosis.
+
+THE INFACT TEACHING CYCLE
+In Figure 1 is shown a process diagram of the teaching cycle when using the INFACT approach. The first event in the cycle
+is the posting, by the instructor, of a challenge question for consideration by the students. Students are given approximately
+24 hours to make individual responses to the question. These responses are only visible to the instructor(s) and their authors
+until the "curtain" is raised to make them visible within their particular groups. Group discussion proceeds until day 5,
+when each group is required to post a consensus answer to the original challenge with either an agreed upon single answer
+or a synthesis of remaining differences. Diagnosis by the instructor(s) can begin as soon as individual posts are available,
+and continues until enough assessment data is available upon which to safely base interventions appropriate to each student.
+The diagnosis process itself may be interactive, if the teacher chooses, so that the teacher may request clarification from a
+student before entering a facet diagnosis in the database. The teacher may also wish to email each student as a method of
+acknowledgement of the student's efforts in the discussion. The email message itself could contain suggestions for the
+individual student. The next step in the general process is for the teacher to identify general trends in the groups or class as
+a whole by requesting visualizations of the facet assessment data just collected. These trends would typically suggest
+particular teaching interventions to an experienced instructor. The instructor then implements the interventions, which
+might consist of any of the following: joining in on group discussions and posting suggestions or leading questions;
+offering a link to some web-based resource; or making adjustments to the memberships of the groups.
+Proceedings of CSCL 2002                                                                                                       page 555
+
+        Teacher 's           Individual             Group               Teacher 's            V isual -              Interven-
+         challenge              posts             discussion               facet               ization                  tion
+         question                                                       diagnoses
+
+                                                  Question s            Student s'           C o rrectio n s
+                                                  to student s          response s               to
+                                                  via email                                  diagnose s
+
+         Figure 1.    The   IN FA CT    pedagogical   cycle.    The  period    of  the cycle is norm ally       1  week.
+
+If additional time   is available, there   could be  additional   subcycles    of  group discussion,    diagnosis,     and intervention.
+However, in practice, there is seldom time for much iteration on that level.
+The INFACT approach to assessment poses several challenges not faced by the multiple-choice questionnaire method of
+DIAGNOSER.        The first  of these  is the necessity   of   structuring the   small-group discussions        so that there  is a high
+probability that students will reveal their facets as they participate. The second of these is the challenge of making accurate
+diagnoses efficiently from the students' writing. This short paper is concerned primarily with the former and how the
+software itself can help structure the discussions.
+
+INFACT-FORUM
+In order to best support our teaching process, we decided to implement a custom textual conferencing facility. As a part of
+the INFACT suite of tools (Tanimoto et al, 2000), we call this INFACT-FORUM. Its features can be grouped as follows:
+(a) user account administration, (b) messaging, (c) visibility control, (d) support for annotation and assessment. Perhaps the
+most  unique  features   of  INFACT-FORUM        are  its controls,  available    to administrators,    for   the  visibility of  student
+messages. While it is common in text-conferencing systems to provide moderators with ways to delete or hide offensive or
+off-topic messages, INFACT-FORUM, as a system to support diagnosis of individual student preconceptions, allows an
+administrator to make student responses to the teacher's questions hidden from other students, either indefinitely or until a
+particular time. We refer to this feature as "the curtain," because unhiding a student's message is like raising the curtain on a
+stage to reveal something anticipated. The teacher raises the curtain to begin the group discussion phase of the cycle. For
+simply censoring, there is a facility for an administrator to hide a message from all users, without upsetting the thread
+structure in any way. Keeping the curtain lowered for the first phase of a discussion helps to keep each student's initial
+response to   the  challenge question   an individual response    rather   than  a response  informed        by peers.  This  provides a
+mechanism by which to engage every student in the discussion by forcing them to commit to an interpretation or possible
+solution before benefit of group ideas. The possibility of later raising the curtain permits all students to then share their
+personal views of the challenge without having to retype it or re-express it.
+
+ACKNOWLEDGMENTS
+Thanks to the National Science Foundation for partial support of this project under Grant CDA-9616532. Thanks also to
+other INFACT project contributors, including David Akers, Johann Ammerlahn, Nick Benson, Jeremy Baer, Jeff Phillips,
+Shirley Gaw, Jennifer Wright, Virginia Stimpson, and Andrew Schafner.
+
+REFERENCES
+For a more detailed description of INFACT-FORUM and more references, see the web-based version of this paper.
+Hunt, E., and Minstrell, J. (1994). A cognitive approach to the teaching of physics. In McGilly, K. (ed.), Classroom
+         Lessons. Cambridge, MA: MIT Press, pp.51-74.
+NRC (1999). How People Learn: Bridging Research and Practice. Nat. Res. Council. Wash., DC: Nat. Acad. Press.
+Scardamalia, M., and Bereiter, C. (1996). Computer support for knowledge-building communities. In T. Koschmann (ed.),
+         CSCL: Theory and practice of an emerging paradigm. Mahwah, NJ: Lawrence Erlbaum Associates.
+Tanimoto, S., Carlson, A., Hunt, E., Madigan, D., and Minstrell, J. (2000). Computer support for unobtrusive assessment of
+         conceptual knowledge as evidenced by newsgroup postings. ED-MEDIA 2000, Montreal.
+

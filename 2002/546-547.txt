@@ -1,0 +1,102 @@
+Proceedings of CSCL 2002                                                                                            page   546
+
+       Using Pedagogical Agents to Support Collaborative
+                                         Distance Learning
+        Patrícia Jaques*        Adja Andrade**             João Jung*           Rafael Bordini*      Rosa Vicari*
+                          * PPGC, ** PGIE ­ Federal Uiversity of Rio Grande do Sul
+                        {pjaques, jjung, bordini, rosa}@inf.ufrgs.br, adja@inf.pucrs.br
+ABSTRACT
+In this paper, we describe an animated pedagogical agent which assists the interaction among students in a virtual class
+within a collaborative communication tool, either on-line or not, motivating them, correcting wrong concepts and providing
+new knowledge. This guiding agent we call Collaboration Agent will consider not only cognitive capabilities of students,
+but also social and affective characteristics, which becomes a more qualitative mechanism for collaboration among students
+and learning.  The   considered agent is being   modelled     as part of    the multi-agent architecture    of the project "A
+Computational Model of Distance Learning Based on Socio-Cultural Pedagogical Approaches".
+
+Keywords
+Pedagogical Agents, Dialogue Analysis, Communication Tools
+
+INTRODUCTION
+To support the interaction among students, collaborative systems provide tools that facilitate online interaction, such as
+chat, bulletin board and discussion lists. These software are good mechanisms for conversation among students, but they do
+not provide any guidance or direction for the student during or after the dialogue sessions (Soller, 2001).
+The agent considered in this work, called Collaboration Agent, is being modelled as part of the multi-agent architecture of
+the project "A Computational Model of Distance Learning Based on Socio-Cultural Pedagogical Approaches" (Andrade et
+al., 2001).
+
+DESCRIPTION OF THE ENVIRONMENT
+The architecture  of the  system  consists of  four     types of artificial agents ­  Diagnostic  Agent,    Mediating  Agent,
+Collaboration Agent and Semiotic Agent ­ and human agents (students and tutors). Further details about the system can be
+found in (Andrade et al., 2001). The tutoring system may function as an individual tutor, where the Mediating Agent
+presents pedagogical contents to the student in accordance to his/her profile and cognitive style, or as a facilitating system
+of collaboration, where the Collaboration Agent monitor and mediate the interaction among the students with collaborative
+tools.
+In this article, we will focus on the system as a collaborative tool. In this case, the Collaboration Agent has an important
+role. Its function is to promote and to mediate the interaction between groups of students using collaborative tools (e.g.,
+chat, discussion list, and bulletin board). In that way, it supports the students during the interactions, stimulating them when
+they appear unmotivated, presenting new concepts and correcting wrong conceptions. In the next section, we describe the
+functionalities of the system as a collaborative tool.
+We can better understand the implementation of this environment through a scenario. Let us imagine a student, using
+his/her computer (at home or at work), connected to this system through the Internet. A Mediating Agent will be sent to the
+user's machine  and  it will monitor  his/her activities.  The   Diagnostic  Agent  will suggest to the  Mediating    Agent  a
+pedagogical tactic and the contents to be presented based on the inferences on the student model. The Mediating Agent will
+request the contents to the Semiotic Agent, which will show it to the student.
+When a Diagnostic Agent verify that there is a gap between a student's actual and potential learning, so that it is necessary
+the intervention of some facilitators (i.e., other more capable colleagues and/or tutors), it will make a request to the Social
+Agent. Then, the Social Agent creates a Collaboration Agent that will invite the students to participate on an interactive
+session through a collaborative tool. The Collaboration Agent will monitor the discussions among the students intervening,
+when necessary, as mentioned above. It will connect itself to the chosen collaborative tool, as if it were a normal user of the
+tool, which gives the Collaboration Agent greater realism.
+
+COLLABORATION AGENT IMPLEMENTATION
+Due to its social function ­ to communicate with students, to promote and monitor the interaction among students ­ it
+would be interesting for the Collaboration Agent to have an interface that would allow it to exploit students' social nature.
+In fact, one of our main concerns is to better exploit the social potential of the students to improve their learning, and
+studies demonstrate that people interacting with animated characters learn to interact with other humans (Huard, 1998).
+Proceedings of CSCL 2002                                                                                          page  547
+
+Therefore, we chose to represent it as an animated character who has a personality and which interacts with the student
+through messages in natural language.
+Thus, as in human social interactions, the Collaboration Agent must be able to and show and perceive emotional responses.
+Learning is a comprehensive process which does not simply consists of the transmission and learning of contents. A tutor
+(in this case, the Collaboration Agent) must promote the student's emotional and affective development, enhancing his/her
+self-confidence and a positive mood, ideal to learning. The way in which emotional disturbances affect mental life has been
+discussed in the literature (Goleman, 1995). He recalls the well-known idea that depressed, bad-humoured and anxious
+students find greater difficulty in learning.
+In order to interact with the student in an adequate way, the agent has to correctly interpret his/her emotions. Therefore, it is
+necessary for Collaboration Agent to have not only a student cognitive model, but also an affective one. We are going to
+use the student model proposed by (Bercht et al., 1999), which considers the affective states such as effort, self-confidence
+and independence.
+In collaborative learning, the group is an active entity; therefore, the system must contain information that refers to the
+group as a whole. This information generates a group model, which is built and maintained by the Collaboration Agent. The
+Collaboration Agent    can build the  group     model from the    individual student  models, which  are obtained  from  the
+interactions between the students and their Mediating Agents, and updated by the Diagnostic Agents. The group model can
+also be obtained from the observation of the group as a whole.
+Still, it is necessary to have in mind the responsibility about the use of affective agent architecture for interaction with the
+user, especially in the education. Often we observe that agents have attitudes that are not suitable to students' mood (e.g., if
+an agent gets sad when the student could not carry out an exercise). This kind of attitude may generate a disturbed reaction
+in the student, making him/her more anxious and less self-confident. It is necessary to identify which behaviours are
+appropriate to promote a mood in the student that provides better learning conditions.
+The Collaboration Agent will carry out the analysis of the student's dialogue based on statistical methods, such as pattern
+matching, message   categorisation and information     retrieval (Soller, 2001). The  messages will  be generated in natural
+language, using dialogue models and frames. We intend to base this analysis on the work in (Jaques & Oliveira, 1999)
+(Jaques et al., 2000).
+CONCLUSIONS AND FUTURE WORK
+This research is currently in the phase of implementation design and specification. The phase of study of the pedagogical
+architecture and computational modelling is concluded. This work is the result of a research project in the area of Artificial
+Intelligence applied to Education that intends to create a computational framework (in which the pedagogical agents are
+part of it) to support collaborative learning.
+REFERENCES
+Andrade, A. F.; Jaques, P. A.; Vicari, R. M.; Bordini, R.; Jung, J. (2001) A Computational Model of Distance Learning
+        Based on Vygotsky's Socio-Cultural Approach. Proceedings of the MABLE Workshop, AI-ED.
+Bercht, M.; Moissa, H.; Viccari, R.M. (1999) Identificação de fatores motivacionais e afetivos em um ambiente de ensino e
+        aprendizagem. Proceddings of SBIE'99 (Curitiba, November 23-25) (Poster).
+Goleman, D. (1995). Emotional Intelligence. Objetiva, 19995.
+Huard, R (1998). Character Mastery with the Improvisational Puppets Program. Technical Report (KSL-98-11) ­ Stanford
+        University.
+Jaques, P.; Andrade,   A.; Moraes, M.; Móra,      M. C (2000).   Uma  Arquitetura  de Agente  para a Análise Qualitativa da
+        Interação em Ambientes de Educação a Distância. Proceedings of SBIA (Maceió, November).
+Jaques, P.; Oliveira, F. M. (1999) Software Agents for Analysis of Collaboration in a Virtual Classroom. Proceedings of
+        AI-ED99 (Le mans).
+Soller, A. (2001) Supporting Social Interaction in an Intelligent Collaborative Learning System. IJAIE, 11.
+

@@ -1,0 +1,366 @@
+Proceedings of CSCL 2002                                                                                                page   687
+
+    C-VISions: Socialized Learning through Collaborative,
+                                Virtual, Interactive Simulations
+                                              Yam San Chee, Chit Meng Hooi
+                              School of Computing, National University of Singapore
+                                                  cheeys@comp.nus.edu.sg
+ABSTRACT
+Today's cheaper personal computers with improved computational power have made the technology of networked desktop
+virtual  reality environments    accessible   to typical end   users, including  students. This paper    describes  C­VISions,   a
+collaborative virtual environment developed to support interactive and collaborative learning using virtual simulations. The
+research effort is grounded on the principles of active, experiential learning and constructivist/social constructivist ideas,
+with their attendant commitment to group sense making, discourse-based learning, and community building processes. The
+paper also provides an overview of the system's design and implementation. Finally, we explain the current status of the
+research effort and articulate plans for future work.
+
+Keywords
+Networked    virtual environments,     desktop   virtual reality,  collaborative learning, interactive   simulations,  experiential
+learning, constructivism
+
+INTRODUCTION AND MOTIVATION
+Educators and educational technologists often harbor visions of how computing technology might be leveraged upon to
+powerfully   engage   student    learning. In  practice, these   visions are  usually  tempered     by constraints related  to  the
+computational    power of    the hardware     required and   the cost of technology.   Fortunately,  rapidly increasing  levels of
+hardware   performance    accompanied      by falling  costs has  meant  that students today  have   ready access  to  much  more
+powerful personal computers than in the recent past. This development provides an opportunity for educators to push the
+technology envelope in pursuit of their vision.
+One particular technology that is receiving greater attention in education is that of networked virtual environments (Singhal
+& Zyda, 1999). Such environments make prominent use of two system technologies: virtual reality and networking. While
+virtual reality (VR) technology has been available for many years, its application to the domain of education has been a
+specialist field  limited to researchers   with  the  resources  to develop   fully immersive VR    applications.  The rise of  the
+Internet, however, has given rise to a new genre of distributed environments for chatting and socialization that include a
+desktop VR component, allowing users to share a three-dimensional (3D) virtual space. In this space, users are represented
+as avatars. They can navigate within the 3D worlds and interact with other users as well as virtual objects in the worlds
+albeit in fairly limited ways. Some of the most well-known systems of this type include Active Worlds, blaxxun, and
+Community Place. Damer (1998) provides a comprehensive, albeit somewhat dated, review of such virtual environments.
+The goal of the C­VISions project is to harness networked desktop virtual reality technology to create a powerful and
+engaging collaborative environment for student learning. This technology was chosen because it is capable of supporting
+several important learning objectives. These objectives include experiential learning, simulation-based learning, inquiry-
+based learning, guided exploratory learning, collaborative learning, and socialized, community-based learning. The C­
+VISions    environment    seeks  to foster these  kinds  of  learning in the  domain   of science   education, including physics,
+chemistry, and biology. We have chosen to focus on the desktop variant of virtual reality because it is readily accessible
+today. At the same time, it avoids the potential difficulty of motion sickness induced by the fully immersive virtual reality
+variant.
+
+RESEARCH BACKGROUND
+As stated by Normand (1999), "the essence of collaborative virtual environments (CVEs) is the use of natural spatial
+metaphors, together with the integration of participants and data within the same and common spatial frame of reference"
+(p. 218). The most established, well-known, and successful research work involving VR for general education (as opposed
+to medical education) can be traced to the Human Interface Technology (HIT) Lab at the University of Washington, Seattle,
+and to   Project  ScienceSpace    at George    Mason   University.  Both  these  research  efforts, however,   are based on  fully
+immersive VR that makes use of head-mounted displays and data gloves. At both locations, the technology has been
+deployed mostly in a stand-alone, non-collaborative learning mode. A less well-known example of the use of educational
+VR is Virtual Explorer from the University of California, San Diego, where the researchers have created an immersive,
+highly interactive environment for learning human immunology (Dean et al., 2000).
+Proceedings of CSCL 2002                                                                                             page 688
+
+Findings from the HIT Lab suggest that students engaged in a virtual world learning environment found it fascinating and
+enjoyable. They were highly motivated to learn the concepts and skills necessary to design and model objects, with their
+associated behaviors, so that they could build their own virtual environments (Bricken & Byrne, 1993). A study by Winn et
+al (1999) also suggests that building a virtual environment improved low-ability students' understanding of the virtual
+environment content; however, it had no effect on high-ability students. Unlike the focus of allowing students to build their
+own virtual environments adopted at the HIT Lab, much of the effort at Project ScienceSpace focuses on using immersive
+VR to convey abstract scientific concepts and to aid complex conceptual learning (Salzman, Dede, Loftin, & Chen, 1999).
+ScienceSpace   represents a  systematic   program    of research  that   deals with   physics.  Three multisensory    learning
+environments have been created: NewtonWorld, dealing with Newton's laws and the laws of conservation, MaxwellWorld,
+dealing with electrostatics, and PaulingWorld, dealing with molecular representations and quantum-molecular bonding.
+These science learning environments are unique in that they were designed explicitly to allow students to "enter into" the
+world of the phenomenon being studied, namely, the conservation of momentum, electric fields and potentials, and ionic
+versus covalent bonding. In this regard, the researchers have employed the technology in a sophisticated manner to allow
+students to experience phenomena that cannot otherwise be experienced in the real world.
+Research that employs desktop VR for education and learning is more scattered and less established. One example is
+DEVRL,   Distributed   Extensible   Virtual  Reality Laboratory,  a  joint research   project between  Lancaster   University,
+Nottingham University, and University College London. The objective of this project, which has probably ended, was to
+build a shared virtual physics laboratory. This work is not well reported. In contrast, a better publicized related research
+effort that also involves the three mentioned British universities is the COVEN (COllaborative Virtual ENvironments)
+project (Frécon, Smith, Steed, Stenius, & Ståhl, 2001; Normand, 1999). Unlike DEVRL, however, the COVEN research
+effort has a technology focus and is not oriented to applications for learning. Like DEVRL, it makes use of the DIVE
+toolkit as its development base.
+Empirical evaluation of learning using desktop VR is still in its infancy. A weak example can be found in Mills & de
+Araújo (1999). In this example, the researchers sought to compare a desktop VR group and a non-VR group on the
+effectiveness of learning a management technique. They employed desktop VR in a stand-alone mode and hoped to exploit
+visualization capabilities afforded by the technology. Their study found no statistically significant difference between the
+two groups.  Viewed   critically, however,   the researchers made   poor use   of the technology, and  the study   was poorly
+conceived and operationalized. It should be evident, therefore, that the field of desktop VR in education and learning
+remains open and requires focused and systematic research.
+
+TECHNOLOGY ASPECTS
+When using desktop VR, the most prominent aspects of technology experienced are the 3D virtual world browser and the
+interaction style for interacting  with  the system.  While  3D   representation  techniques  and difficulties are fairly well
+understood from a computer science viewpoint, the design of an interaction style for 3D worlds still requires considerable
+research. In general, there are three types of interaction task that need to be supported: navigation, selection/manipulation,
+and system control (Bowman, Kruijff, LaViola, & Poupyrev, 2001). The design of an effective 3D interaction style will
+depend greatly on the domain in which the technology is applied and on the kinds of task that must be supported.
+The introduction of networking technology to desktop VR allows the virtual worlds to be shared. Many technical hurdles
+must be overcome to implement a networked virtual environment successfully. Achievement of this goal, however, creates
+an environment where users can experience a shared sense of space, a shared sense of presence, a shared sense of time, a
+way to communicate, and a way to share objects and experiences (Singhal & Zyda, 1999).
+There are other critical, but less apparent technology components at work in a networked virtual environment. A database is
+needed to support the persistence of object states in virtual worlds. Implementation of the technology also raises difficult
+issues relating to realtime, multi-user processing, the maintenance of world consistency across multiple client computers,
+the handling of concurrent events, and the design of a system architecture that will readily support scaling to a large number
+of concurrent users. In addition, the incorporation of audio communication and video streaming provide desirable, more
+advanced features that require implementation of realtime media streaming.
+
+PEDAGOGICAL BASIS
+The design of C­VISions is rooted firmly on active, experiential learning (see, for example, Dewey, 1916/1980) and
+constructivist/social constructivist principles (see, for example, Fosnot, 1996). Boethel and Dimock (1999) provide an
+excellent critical review of how technology can be used to support knowledge construction. According to Doolittle (1999),
+the basic epistemological tenets of constructivism are:
+·   Knowledge is not passively accumulated; rather it is the result of active cognizing by the individual.
+·   Cognition  is an  adaptive   process that functions to   make an individual's   behavior  more viable  given   a particular
+    environment.
+Proceedings of CSCL 2002                                                                                         page  689
+
+·   Cognition organizes and makes sense of one's experience; it is not a process to render an accurate representation of
+    reality.
+·   Knowing has roots in both biological/neurological construction and social, cultural, and language based interactions.
+In light of the above, the technology of VR is leveraged upon to instantiate active, experiential learning. We provide an
+environment where students can engage in focused science inquiry by running simulations, asking "what if?" questions,
+changing simulation parameters, and observing simulation outcomes. As Winn (1993) persuasively argues, immersive VR
+technology is especially empowering for learning because it supports a direct, first-person experience of learning. This
+argument holds true also for desktop VR environments despite a weakening of the multisensory dimension of experience.
+Shared experiences that revolve around shared objects in a virtual world (for example, a rolling billiard ball or a streamed
+video clip) create a natural and authentic context for a discourse-based learning community. The context motivates students
+to articulate their ideas and understandings to one another, thus fostering an environment for peer-assisted learning and
+reciprocal tutoring. In C­VISions, both text-based chat and audio-based chat are supported to support discourse-based
+learning.
+As researchers, we recognize the importance of helping students to make the transition from first-person, experiential
+learning to third-person, symbolic learning. To this end, C­VISions includes a set of collaboration tools comprising a
+shared electronic whiteboard and a shared mind-map editor. The shared whiteboard allows students to express and represent
+their ideas in symbolic as well as graphical terms. We also recognize the need to support abstraction and critical reflection.
+The shared mind-map editor serves this purpose. In addition, the C­VISions virtual world browser includes a visualization
+tool that allows students to call up graph plots of interesting phenomena on demand. Our intention and hope is that the
+supporting tool set will facilitate the needed transition from experience to mentation.
+The Experiential Learning Cycle proposed by Kolb (1984) summarizes what we hope to achieve fairly well (see Figure 1).
+Active experimentation yields concrete experience that provides the basis for reflective observation which eventually leads
+to abstract  conceptualization, and the cycle iterates. In the process, students'       understandings are transformed both
+extensionally and intensionally while comprehension is grounded in apprehension.
+
+                                      Figure 1. Kolb's Experiential Learning Cycle
+Other authors have also highlighted the special advantages that can accrue from using VR for learning. Foreman (1999)
+values the sophisticated programmability of simulated objects and the simultaneous telepresence and collaboration of geo-
+distributed learners. He draws attention to three important features. First, avatar worlds are suited to developing actionable
+knowledge as opposed to knowledge for knowledge's sake. Second, avatar environments are leveraged effectively when
+they support learner-centered team work. Third, avatar worlds endowed with diverse learning resources support a discovery
+approach to education. The learning resources may include audio and video on demand, archives of images and schematics,
+conventional texts, search tools, objects that can be manipulated and queried, and programmed bots. Bricken (1990) extols
+the use of the computer as a reality generator, allowing the user to become a participant in the computational space where
+students are involved in activities that require explanation and extrapolation. Constant virtual world feedback provides a
+Proceedings of CSCL 2002                                                                                            page    690
+
+continual validation of understanding in a very personalized form of learning. The technology is able to create a superset of
+reality and to allow students to learn through what-if scenarios. It provides a natural interface semantics, allowing students
+to act out their ideas rather than saying them. Students can also be empowered to participate in virtual world construction.
+
+THE C-VISIONS ENVIRONMENT
+In this section, we provide    a  description of the C­VISions   system  in its current  state of development.     We   use the
+description of one particular simulation world to highlight key features of the environment. We also explain the basic
+system design and implementation.
+
+System Description
+The C­VISions    learning   environment is modeled    as an interconnected  virtual   environment consisting    of four levels.
+Level 3 is designated the Social World (see Figure 2). The Social World is a general community location for users to
+mingle and chat. Users are placed in this world when they first log in to the system.
+
+                                              Figure 2. C­VISions Social World
+C­VISions focuses on supporting science learning. Level 1 of the environment, located below (virtual) ground level is the
+Chemistry World; level 2, ground level, is the Biology World. Level 4 houses the Physics World. At present, the chemistry
+and biology worlds are virtual worlds that contain no learning simulations. We have, however, developed three learning
+simulations in the Physics World. These are the Battleships World, the Vacuum Chamber, and the Billiard World. We
+chose to focus   initially on the domain of   physics because it is well known    that  students' understandings    of  physics
+phenomena   are   replete  with  misconceptions   derived from   real-world  experience   and  intuition  (see, for  example,
+McCloskey, 1983).
+The top-right corner of the virtual world browser shows two arrows pointing in opposite directions. These arrows are used
+to call up and to put away a separate display pane that contains information related to the world the user is currently in. This
+information is particularly useful for orienting students to the context and purpose of the learning simulation objects that
+they are interacting with. It also provides them with useful tips for interacting with the simulation and some science
+concepts for exploratory learning. Figure 3 illustrates the extended information pane of the Vacuum Chamber. The lips icon
+and the "T" (for Text) icon below the tool bar allow users to turn on/off system messages in (synthetic) voice mode and in
+text mode. Text mode messages are displayed in the horizontal strip to the immediate left of these icons.
+Proceedings of CSCL 2002                                                                                page 691
+
+                                        Figure 3. Vacuum Chamber information pane
+
+Example World: Billiard World
+The Billiard World is shown in Figure 4. It contains a billiard table with two balls and a cue stick for striking the balls. In
+the Billiard World simulation, students can learn about mass, velocity, acceleration, conservation of momentum, friction,
+and the coefficient of restitution.
+Navigation and change of viewpoint
+The four buttons in the middle section of the tool bar at the bottom of the virtual world browser denote Home, Navigate,
+Strafe, and Look respectively. The Home button allows users to reset the view to a default viewpoint. The Navigate button
+allows users to move forward and backward and to turn left and right. The Strafe button allows users to move left, right, up,
+and down in a vertical plane. The Look button allows users to change their viewpoint--left, right, up, and down. The
+interaction style we have defined for the use of these buttons is click-and-drag. Several alternative interaction styles are
+possible. We plan to investigate the alternatives systematically at a later date, to identify which style is easiest to learn and
+which style is most efficient to use. Together, these four buttons allow users to alter their viewpoint and to navigate within
+the virtual environment. Collision detection has been implemented. Users can deactivate this feature, if they wish, from the
+Edit menu. To teleport from one environment to another, users can either navigate to the lifts located in the central lift shaft
+that connects the four levels of the virtual environment, or they can teleport via the Navigate menu in the system's menu
+bar.
+Proceedings of CSCL 2002                                                                                         page  692
+
+                                        Figure 4. C­VISions Billiard World
+Object manipulation and interaction
+Objects that can be manipulated in the virtual world are known as "live" objects. To enter object manipulation mode, users
+select the Hand icon (the highlighted icon in Figure 4). As users move the mouse cursor over the virtual world browser in
+this mode, the cursor icon changes to something semantically meaningful when the cursor is positioned over a "live" object.
+We refer to these cursor icons as "hot" icons because they provide feedback to users that some action can be immediately
+executed on the object over which the cursor is positioned. In Figure 4, for example, the cursor icon showing the hand with
+the pointing finger indicates that the cue stick can be used to strike the billiard ball at which the cue stick has been aimed.
+The highlighted rear half of the cue stick serves as a reinforcement of feedback that the stick can be thrust forward to hit the
+billiard ball at which it is aimed. Certain interactions with objects are more difficult to design than others because they
+require a set of sequential, discreet steps. Using the cue stick to strike the billiard ball is such an example. Users must first
+select the cue stick to indicate that it is the object that they wish to interact with (initially). The cue stick must then be
+aimed at the billiard ball the user intends to strike so that a coupling between the cue stick and the target billiard ball can be
+established. Finally, (the system state shown in Figure 4), the user must select the rear end of the cue stick and thrust it
+forward to strike the target billiard ball. Research on the design of 3D user interaction styles in desktop virtual worlds is in
+its infancy as suggested by Bowman et al (2001). This is an avenue of research that we intend to pursue.
+Object inspection and editing
+C­VISions has been designed and implemented to allow users to inspect the properties of critical simulation objects in
+realtime and to modify the property values on the fly. This functionality      is activated by selecting the Inspect button,
+denoted by the magnifying glass icon. (This feature is not illustrated due to lack of space.) Selection of the Editor tab
+foregrounds the pane that allows editable values to be changed. This functionality allows users to modify the value(s) of
+critical object properties, re-run the simulation, and observe the changes.
+Event visualization
+C­VISions provides an event visualization function that allows students to replay the most recent simulation event and to
+view the plotting of graphs of that event in a synchronized fashion. This function is evoked by clicking on the Visualization
+button on the bottom right of the task bar. Figure 5 illustrates how the most recent event can be reenacted in the mini world
+browser on the left. As the billiard balls move as a result of one ball being initially struck by the cue stick, the graphs on the
+right hand side unfold. The figure shows a plot of distance traversed relative to time. Other graphs showing plots of
+horizontal and vertical speed and acceleration can be selected from the pull-down menu shown. The design intention is to
+Proceedings of CSCL 2002                                                                                            page 693
+
+allow students to inter-relate and make sense of the different graph plots. It creates the context for inquiry and discourse-
+based learning about the phenomena of mass, velocity, acceleration, friction, and the conservation of momentum and helps
+to reify these abstract concepts. The provision of     this tool is consistent with Bowman  et al's (1999)     advocacy of an
+"information-rich" virtual environment.
+
+                                        Figure 5. Event visualization in C­VISions
+Realtime video streaming
+C­VISions allows students to share video resources with other students located in the same virtual world. To do so,
+students simply drag the movie file from the computer desktop onto a virtual screen in the virtual world. The video is then
+streamed to all computers and played concurrently in the browser of all students in the same world. This functionality
+allows video material to be used as a shared referent for sense making dialog. Of course, it can also be used for the purpose
+of entertainment in the Social World. Figure 6 illustrates the operation of realtime video streaming. Control buttons on the
+posts of the virtual screen allow the initiator of the streamed video to terminate and to replay the video.
+Communication
+C­VISions supports student-to-student communication via text chat as well as audio chat. These functions are activated by
+the two buttons on the extreme left of the tool bar (see Figure 6). As suggested by Riva (1999), virtual reality is not only an
+environment for first-person experience, it is also a communication environment. The communication tools provided here
+are vital for discourse-based collaborative learning.
+Collaboration tools
+Finally, C­VISions also incorporates collaboration tools to support higher level representation and organization of ideas.
+This function is activated by the third button, from the left, in the tool bar. The collaboration tools provided are a shared
+electronic whiteboard and a shared mind map editor.
+Proceedings of CSCL 2002                                                                                     page 694
+
+                                    Figure 6. Realtime video streaming in C­VISions
+
+System Design and Implementation
+C­VISions  has been designed     from the outset to be a generic,    object oriented software framework--the VISions©
+framework--that can be customized to different applications of the same genre. For example, it can be used to create
+military simulations or e-commerce applications. C­VISions is implemented entirely in Java and Java3D. Its design is
+based on the Model­View­Controller (MVC) architecture derived from the Smalltalk programming language. The Model
+component implements the virtual world, virtual objects, and the underlying laws that govern the behavior of the virtual
+objects. The View component implements the virtual world browser. It listens for events and renders them in the 3D
+browser. It also implements collision detection. The Controller component implements support for actions taken by the user
+in the virtual world browser.
+The network component of C­VISions propagates virtual world events from every user to all other users in the same virtual
+world. There are two types of events. Semantic events are handled by TCIP/IP. User location change events are handled by
+UDP. To support object persistence, the state of all objects in the virtual world is constantly recorded onto a database.
+Conflict resolution for concurrent events has also been implemented.
+The system-level flow of control and event propagation is depicted in Figure 7. When users interact with objects, the virtual
+world is informed of property changes made to the object. The virtual world updates the associated view and propagates
+these events to other client computers via the network to achieve synchronization of world state on all clients. Every event
+is tagged with the time of occurrence so that the order of events can be preserved and kept consistent across all clients at all
+times.
+The virtual world (Model) on every client computer propagates events encapsulating changes to virtual objects. Upon
+receiving such events, the virtual objects update themselves and route the event to event listeners. The virtual browser
+(View) then interprets the events received from the virtual world and renders the updated geometric representations of all
+affected virtual objects. A more detailed explanation can be found in Chee and Khoo (2000).
+Proceedings of CSCL 2002                                                                                           page 695
+
+                                  Figure 7. Schematic of control flow in C­VISions
+
+CURRENT STATUS AND FUTURE WORK
+The C­VISions system has been in development for close to two years. This time frame gives a sense of the design and
+development effort involved. A beta Version 4 of the system was released in late June 2001, and a full release Version 1
+was launched on 31 August 2001. The C­VISions client can be freely downloaded via the Internet. As the system was built
+to be accessible via the Internet and to be used by schoolchildren, both from home as well as from school, we have had to
+address many practical networking issues (eg. bandwidth and fast vs. slow connections, firewall and security restrictions).
+As it is not possible to instantiate the heterogenous Internet environment within a University network for testing purposes,
+we have been forced, of necessity, to rely upon incremental, public releases to test our system, and this is what we have
+done.
+C­VISions needs several improvements. For example, the audio chat system needs to be enhanced to be on par with the
+text chat system in supporting virtual world localization; it is currently a global audio chat system. Our collaboration tools
+also need to be improved to better support participant co-awareness in coordinated learning activities. Active work is in
+progress on both these fronts. We also plan to support avatar animation and gestures in the near term.
+For the future, we  plan to continue populating  the virtual environment with     more simulation      worlds. Upon  system
+deployment, we plan to commence empirical research of how students learn with our system and to begin exploring
+relationships between the design of the system with the types of concepts or skills to be learned and with individual learner
+characteristics. On the user interface front, we plan to study desktop 3D user interaction styles. We also hope to create a
+modified version of the system that supports immersive VR. On the technology front, there are many challenging issues
+still to be tackled. Chief among these are the issues of scalability, distributed interaction support, failure management, and
+high-level semantic modeling for application of the system core to other domains. At the broader social and human-
+computer interaction level, we also wish to research issues related to the genesis and maintenance of virtual communities
+and to temporal and spatial dimensions of operating in 3D virtual environments.
+
+CONCLUSION
+In this paper, we have set out our research work and vision for collaborative, simulation-based learning in desktop VR
+environments. Our focus on the desktop variant of VR has the benefit of making the technology widely accessible. From
+the perspective  of pedagogy,  our   efforts are rooted  firmly  in active,     experiential learning    and   the ideas  of
+constructivism/social constructivism. We have explained the potential power of VR-based learning, especially in respect of
+shifting the learner's experience of education from a third person, disembodied perspective of knowledge to a first person,
+embodied perspective, using the technology to reify concepts to be learned, and providing the technology scaffolding to
+Proceedings of CSCL 2002                                                                                         page  696
+
+help students transition from the experiential base of learning to the more symbolic, abstract, and reflective modes of the
+learned mind. In the process, we also hope to facilitate the development of communication, collaboration, and coordination
+skills in a socialized environment and to foster the building of learning communities.
+
+ACKNOWLEDGMENTS
+The contribution of the following students to the project is gratefully acknowledged: Yong Bing Khoo and Siew Mun Ng.
+The project is supported by a National University of Singapore research grant, R­252­000­033­112.
+
+REFERENCES
+Boethel, M., & Dimock, K. V. (1999). Constructing Knowledge with Technology: A Review of the Literature. Austin, TX:
+        Southwest Educational Development Laboratory. (http://www.sedl.org/pubs/tec27/)
+Bowman, D. A., Hodges, L. F., Allison, D., & Wineman, J. (1999). The educational value of an information-rich virtual
+        environment. Presence: Teleoperators and Virtual Environments, 8(3), 317­331.
+Bowman,   D. A., Kruijff, E., LaViola, J. L. J., & Poupyrev,   I. (2001). An   introduction   to 3-D  user interface design.
+        Presence: Teleoperators and Virtual Environments, 10(1), 96­108.
+Bricken, M., & Byrne, C. M. (1993). Summer Students in Virtual Reality: A Pilot Study on Educational Applications of
+        Virtual Reality Technology. In A. Wexelblat (Ed.), Virtual Reality: Applications and Explorations (pp. 199­217).
+        NY: Academic Press.
+Bricken, W. (1990). Learning in Virtual Reality. (http://www.hitl.washington.edu/publications/m-90-5/)
+Chee, Y. S., & Khoo, Y. B. (2000). Designing extensible simulation-oriented collaborative learning virtual environments.
+        In Proceedings of ICCE 2000, pp. 222­230, Taipei, Taiwan.
+Damer, B. (1998). Avatars! Exploring and Building Virtual Worlds on the Internet. Berkeley, CA: Peachpit Press.
+Dean, K. L., Asay-Davis, X. S., Finn, E. M., Friesner, J. A., Imai, Y., Naylor, B. J., Wustner, S. R., Fisher, S. S., & Wilson,
+        K. R. (2000). Virtual Explorer: Interactive virtual environment for education. Presence: Teleoperators and Virtual
+        Environments, 9(6), 505­523.
+Dewey, J. (1916/1980). Democracy and Education. Carbondale: Southern Illinois University Press.
+Doolittle, P. E. (1999). Constructivism and Online Education. (http://www.tandl.vt.edu/doolittle/tohe/tohe2.html/)
+Foreman, J. (1999). Avatar Pedagogy. (http://horizon.unc.edu/TS/vu/1999-11.asp/)
+Fosnot, C. T. (Ed.). (1996). Constructivism: Theory, Perspectives, and Practice. NY: Teachers College Press.
+Frécon, E., Smith, G., Steed,  A., Stenius, M.,  & Ståhl, O.  (2001). An  overview     of the COVEN    platform. Presence:
+        Teleoperators and Virtual Environments, 10(1), 109­127.
+Kolb, D. A. (1984). Experiential Learning: Experience as the Source of Learning and Development. Englewood Cliffs, NJ:
+        Prentice-Hall.
+McCloskey, M. (1983). Intuitive physics. Scientific American, 248(4), 114­122.
+Mills, S., & de Araújo, M. M. T. (1999). Learning through virtual reality: a preliminary investigation. Interacting with
+        Computers, 11, 453­462.
+Normand, V. (1999). The COVEN project: Exploring applicative, technical, and usage dimensions of collaborative virtual
+        environments. Presence: Teleoperators and Virtual Environments, 8(2), 218­236.
+Riva, G. (1999). Virtual reality as a communication tool: A sociocognitive analysis. Presence: Teleoperators and Virtual
+        Environments, 8(4), 462­468.
+Salzman, M. C., Dede, C., Loftin, R. B., & Chen, J. (1999). A model for understanding how virtual reality aids complex
+        conceptual learning. Presence: Teleoperators and Virtual Environments, 8(3), 293­316.
+Singhal, S., & Zyda, M. (1999). Networked Virtual Environments: Design and Implementation. NY: ACM Press.
+Winn,    W.     (1993).    A    Conceptual       Basis    for   Educational     Applications       of   Virtual      Reality.
+        (http://www.hitl.washington.edu/publications/r-93-9/)
+Winn, W., Hoffman, H., Hollander, A., Osberg, K., Rose, H., & Char, P. (1999). Student-built virtual environments.
+        Presence: Teleoperators and Virtual Environments, 8(3), 283­292.
+

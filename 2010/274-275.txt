@@ -1,0 +1,107 @@
+                                               ICLS 2010  ·  Volume 2
+
+Multi-Touch Tabletop Computing for Early Childhood Mathematics:
+                   3D Interaction with Tangible User Interfaces
+                               XXX, XXX, XXX, XXX, XXX, XXX, XX XXX
+                                         XXX, XXX, XXX@XX.XXX
+
+       Abstract: Research is motivated by advances in early childhood mathematics, the design of
+       virtual manipulatives, and the development of multi-touch, tabletop computing combined with
+       tangible user interfaces. Requirements include: 1) horizontal tabletop design affords physical
+       support   for  material  objects, keeping same     interaction  structure  as  users  move  between
+       physical, virtual, and tangible interactions; 2) tabletop configurations have shown to facilitate
+       greater collaborative activity where students interact with artifacts on surface simultaneously.
+
+Issues Addressed
+Multi-touch user   interfaces are a growing   area of     interest, particularly in  the field of education.   Direct
+interaction with virtual manipulatives has significant potential for the process of learning (Iishi, 2008; Stanton,
+et al., 2001). We are developing a multi-touch tabletop system targeted at teaching mathematical and geometric
+concepts to young students. Most research in multi-touch user interfaces is focused on user interactions in two
+dimensions. Our    system is  fundamentally different  in   that we   employ side-mounted      cameras to track user
+interaction, thus enabling the perception of depth from participants' hands to the tabletop's surface. We consider
+the implications and potential of interaction in three dimensions.
+
+Potential Significance
+Our system is distinguished by its ability to observe user interactions in all three dimensions. By employing
+side-mounted cameras instead of a single bottom-mounted camera or sensor technology, the system is able to
+observe the distance from the user's hand to the tabletop's surface, thus enabling depth perception (see Figure 1).
+
+                      Figure 1: Perceiving depth from the user's hand to the table's surface.
+       Interaction in all three dimensions has significant potential for the process of learning. We hypothesize
+that a three-dimensional model more closely resembles the "real world" model that children naturally develop to
+interpret their physical surroundings than a traditional, two-dimensional user interface. This model has the
+potential to more effectively develop spatial cognition and geometric concepts by utilizing all three dimensions
+of interaction. Depth perception enables hand gestures that can provide an immersive, interactive computing
+environment. Imagine pinching and lifting a virtual block over another or flipping tangram pieces with the flip
+of a wrist. Three-dimensional gestures can also be integrated with traditional, two-dimensional user interfaces;
+consider pinching and lifting a virtual document and flinging it off screen to throw it away. One could also
+zoom into or   out of a document    by moving  the hand     into  or out from    the screen. The  potential of depth
+perception in developing immersive, three-dimensional applications is limited only by software. Consider that a
+tangram application can support three-dimensional interaction by allowing pieces to be flipped by flipping the
+wrist rather than clicking a counter-intuitive, two-dimensional button that represents a three-dimensional action.
+Imagine a drawing application that enables students to draw "off the canvas," or a block stacking application
+that explores stacking virtual blocks in three-dimensional space with a two-dimensional representation mirrored
+on the screen.
+
+Technical Solution Based on Tangible User Interactions
+The horizontal touch surface is a 30" liquid crystal display covered with a sheet of glass for a smooth, protective
+surface. Two side-cameras are mounted at adjacent corners of the surface and point toward one central point on
+the display. Video streams from the cameras are processed on a Mac desktop system. Since no specialized
+hardware is used, the cost of the system is relatively low compared to projector-based multi-touch tables such as
+the Microsoft Surface or SMART Technologies SMART Table.
+
+                                                   274  ·  © ISLS
+                                                ICLS 2010  ·  Volume 2
+
+                         Figure 2: General apparatus and perspective of system.
+       Given that no specialized hardware is used, the system is mostly software-oriented. Prior to interacting
+with the system, the software first goes through a learning phase to compose a library of recognized shapes.
+These shapes are based on physical pieces that are placed on the touch surface. After the learning phase, the user
+may either interact with the physical pieces or directly manipulate virtual representations of the pieces. To track
+user interactions, the two video streams are combined to form one coherent, three-dimensional model of the
+touch plane. The system employs edge detection algorithms to track user fingertips and resolve occlusion when
+only a portion of a piece is visible.
+
+Preliminary Findings, Conclusions, Implications
+One of the greatest technical challenges      of using     side-mounted  cameras  to perceive depth is occlusion
+resolution. Occlusion occurs when a user's hand obstructs a camera's line of sight to a piece. The system must
+continue to observe the piece's translation and rotation when only a fraction of the piece is visible. Occlusion is
+resolved by mapping visible points of interest (e.g. corners and edges) to its corresponding library entry. Once
+this entry is identified, the blocked portion of the shape may be extrapolated. As a result, only a fraction of the
+shape must be visible to accurately observe the movement of the entire piece.
+       In addition to the benefits of depth perception, this approach inherits the benefits of traditional multi-
+touch systems. Research suggests that direct interaction with physical or virtual manipulatives more effectively
+develops geometric concepts than traditional, two-dimensional, graphical user interfaces (Clements, Sarama &
+DiBiase, 2003). Multi-touch surfaces are also shown to keep children's' attention longer and horizontal surfaces
+increase the creative process more so than vertical surfaces (Moulin, Lenne, Abel & Gidel, 2009). Virtualizing
+user interactions enables the system to monitor the collaborative process in real-time. This can potentially be
+used to streamline the analysis of user interactions and provide feedback to participants in real-time (Noss &
+Hoyles, 2006). This feedback has been shown to influence the participation of users; those that dominate the
+collaborative process tend to decrease their contributions, while those that have participated less increase their
+contributions (Bachour, Kaplan & Dillenbourg, 2009). Unlike with physical manipulatives, user interactions
+with virtual manipulatives may be moderated to influence the collaborative process. For example, child A may
+control only red pieces while child B may control only blue pieces. Moderating control over the collaborative
+process has also been shown to increase collaboration (Stanton et al., 2001).
+
+References
+Clements, D.H., Sarama, J., & DiBiase, A-M. (2003). Engaging Young Children in Mathematics: Standards for
+       Early Childhood Mathematics Education. Mahwah, NJ: Lawrence Erlbaum.
+Iishi, H. (2008). The tangible user interface and its evolution. Communications of the ACM, 51(6), 32-36.
+Noss, R., & Hoyles, C. (2006). Exploring mathematics through construction and collaboration. In K. Sawyer
+       (ed.). The Cambridge   Handbook       of  the Learning   Sciences,  (pp. 389-405). New  Your: Cambridge
+       University Press.
+Stanton, D., Bayon, V., Neale H., Ghali A., Benford, S., Cobb, S., et al. (2001). Classroom collaboration in the
+       design of tangible interfaces for storytelling. Proceedings from SIGCHI conference: Human factors in
+       computing systems. Seattle, Washington: ACM.
+Bachour, K., Kaplan, F., & Dillenbourg, P. (2009). An Interactive Table for Supporting Participation Balance
+       in  Face-to-Face    Collaboration.        Retrieved    from     http://ses.telecom-paristech.fr/baker/bachour-
+       dillenbourg.pdf
+Moulin, C., Lenne, D., Abel, M., & Gidel, T. (2009, December). Interactive Table for Collaborative Project
+       Training. Workshop presented at the second event of 2009 Alpine Rendez-Vous held by STELLAR,
+       Garmisch-Partenkirchen, Germany.
+
+Acknowledgments
+We will acknowledge funding source & additional team members should proposal be accepted.
+
+                                                    275  ·  © ISLS
+

@@ -1,0 +1,127 @@
+                                                 ICLS 2010   ·  Volume 2
+
+      Designing for an Informal Learning Environment: Towards a
+Participatory Simulation Design Process for Public Policy Planning
+                     Chandan Dasgupta1, Leilah Lyons1,2, Moira Zellner3,4, Andrew Greenlee3
+              Learning Sciences1, Comp. Sci.2, Urban Plan. & Policy3, Inst. for Env. Sci. & Policy4
+              University of Illinois at Chicago, 1007 W. Harrison St.(MC 057), Chicago, IL 60607
+                     cdasgu2@uic.edu, llyons@uic.edu, mzellner@uic.edu, agreen4@uic.edu
+
+          Abstract: Modern planning practices recruit stakeholders to add specialized expertise to the
+          planning   process, but   this expertise often  remains  inert, leading   to superficial and  circular
+          discussions. By encouraging stakeholders co-construct an external shared representation, more
+          nuanced debates could emerge. This work reports on formative interviews that will inform the
+          design of software that will allow stakeholders to articulate and share their knowledge, and to
+          inspect the underlying assumptions of others and the outcomes of the system.
+
+Introduction
+Watershed   planning   brings    together  diverse  representatives   (e.g. local govts., advocacy     groups,   business,
+industry, and  academia)      to contribute  specialized   knowledge   to   water   use policy,   but  devising  effective
+recommendations      requires a  comprehensive     understanding   of outcomes    emerging    from  interactions between
+natural processes and human actions (Zellner, 2008). This work's ultimate aim is to design a computer-based
+tool to encourage stakeholders to share knowledge, learn from one another, and develop a systemic perspective.
+
+Study & Findings
+We observed one public session to understand meeting dynamics, and conducted telephone interviews with four
+stakeholders  representing    business,  municipality,  county  government,   and    academia/public   interest  to assess
+their perceptions regarding modeling tools. Our preliminary findings focus on the means, content, and context of
+presenting models to stakeholders.
+
+Means ­ Tools & processes to support stakeholder participation
+Unlike Decision Support Systems (DSS) which are designed for a specific case and thus have limited reusability
+and require extensive data and resources to build (Densham, 1991), we are interested in repurposable software
+that can leverage the knowledge of attending stakeholders. Existing attempts at creating stakeholder-accessible
+models (e.g., MetroQuest, http://www.metroquest.com) tend to mask the system complexity by only eliciting
+pre-defined   inputs and presenting   pre-defined   outputs.   Our interviews  found    that this restriction on decision
+makers' ability to modify the model caused some of the stakeholders to view them as an unreliable "black box"
+as evidenced by this remark: "I feel it [software] was biased... I looked at the results and said it's not worth
+something to look at. This was a conclusion that somebody had and they wrote a survey and study to come to
+that conclusion."   Another   stakeholder,  whose   ideology   was  more    aligned with  the outcome   of the  software,
+indicated complete confidence in the outcome. Both respondents seemed to be suffering from a confirmation
+bias (Lord, Ross, & Lepper, 1979). These black-box models thus do not allow for the skeptics to explore how
+the outcomes emerge and do not encourage the believers to question their assumptions.
+          One strategy to address the black box problem is to migrate to more transparent Agent Based Models
+(ABMs),   which   allow  stakeholders    to inspect   the system's rules  and potentially    even  use their  expertise to
+modify or create rules for agents. Our goal is to maximize participation so that every stakeholder's ideas and
+viewpoints get reflected. We found that stakeholders are more likely to bring mobile devices than laptops, which
+suggests an "audience response system"-style form factor, seen in participatory simulations augmented with a
+shared display (Wilensky & Stroup, 2000). This has the added benefit of grounding the conversation in a shared
+artifact, allowing the stakeholders to learn from their peers and to build a more nuanced mental model of the
+policies  and their  effects. Some   findings  (e.g., Brignull  &  Rogers,   2003)   suggest  that anonymity    improves
+participation in such contexts but we found that stakeholders strongly felt that ideas and actions needed to be
+attributed to the creators. Thus a mechanism is needed for clearly identifying the originator of any changes to
+model settings, as evidenced by this quote: "No I don't think [anonymous contributions are] a good idea. There
+are  many  groups    represented  by  the  planning   group  members   and they   bring  up   many  viewpoints   and  it's
+important that those viewpoints be acknowledged as belonging to that particular group."
+
+Content ­ What is to be simulated?
+Some classroom-based implementations of ABMs required students to build entire systems so that they have an
+understanding of all the agents in the system (Wilensky & Reisman, 2006). However, it is impractical at best to
+ask  each of  the more   than    35 stakeholders   to build  a model  of  an  entire   system when    they often lack   an
+
+                                                      348  ·  © ISLS
+                                                    ICLS 2010  ·  Volume 2
+
+understanding   of  or  an   interest in   issues outside   of those which   affect   them  directly, as  indicated   by the
+following quote: "I never speak up during the meeting... [the local government] viewpoint is well represented
+and I don't think there are major issues for us as there are for the environment and business." The interviewee
+seems to believe that policies that concern business and environmental interest groups will not impact the local
+government. There is obviously a need for the gestalt understanding that one could get by virtue of building
+everything,   but  an  alternate  strategy   may    be  to present   the model  content  so  as   to emphasize    the  inter-
+connectedness between model elements, so that even when stakeholders do not fully understand the position of
+another interest group, they are at least aware of how their interests intersect.
+          Sometimes, though, disconnects result from the difficulty in understanding how actions compound over
+time: "[We] have maintained wetlands, even created wetlands [and] open space, have ... water facilities that
+meet   &   exceed   the     EPA   standards...    [The  cities   don't]  and  yet  we   keep   hearing    [from   them   and
+environmentalists]     that [we]  need    to have   growth  control, slow down     or  stop to avoid  urban   sprawl."   The
+interviewee is justly upset over a perceived "do as I say, not as I do" argument originating from city officials,
+but neglects   that over    time, their community      may  begin   to resemble  the  city. Making    the trajectory  of the
+decision   path evident  (i.e.  when    a  decision was    formalized,   identifying  what model   elements   informed   the
+decision,  identifying  what    elements     are  affected  by that  decision, and    characterizing  the  effect  on  those
+dependent elements, etc.) might help in identifying andplanning for "unintended" consequences of decisions.
+
+Context ­ Where, how long, and how often.
+Interviews revealed the stakeholders were willing to use a computer-based tool for the entire duration of the
+meeting if it did not distract them from interacting. For example: "If the software is a facilitation tool, it can be
+used  to run   the  meeting,"   or,  "[It]   should not distract  from   meeting   ­  interaction should   be  live and  not
+dependent on software." However, most existing classroom-based ABM projects require extended interaction
+with the model over several weeks (e.g., Klopfer, Yoon, & Um, 2005). This kind of interaction is not feasible in
+our  context,  where   stakeholders     meet  once   every  month    for  3 hours. Consequently,     we   have  to  consider
+facilitating participation and interactions between the stakeholders outside the meeting space. We found that
+the stakeholders had internet access at home and were willing to use the model outside the meeting setting for
+about 10-20 hours every month. In order to support extended interaction, the ABM tool should provide multiple
+access points for the stakeholders so that they can access the model from any location. Also, while allowing
+multiple accesses, we have to ensure that all the content generated for the model is credited to their creators.
+
+Conclusion
+The design guidelines that emerged from these preliminary findings were italicized above, and are summarized
+here. With relation to the means of presenting models, we found that model-based tools for diverse adult users
+in an  informal   learning   environment     should  allow  for  inspection  (and  alteration/creation)  of the underlying
+model rules, suggesting the use of ABMs. With respect to the content of the models, we found that contributions
+to the models     must  be   clearly  credited,   and  the  model   should emphasize    element   interconnectedness     and
+decision trajectories to help stakeholders adopt a more comprehensive perspective. With respect to the context
+of use, we found that stakeholders will need multiple points of access, even outside meetings. Future work will
+be focused on implementing and refining these recommendations.
+
+References
+Brignull, H., & Rogers, Y. (2003). Enticing people to interact with large public displays in public spaces. In
+          Proceedings of, (p. 17). Ios Pr Inc.
+Densham,    P.  (1991).  Spatial    decision  support   systems.  Geographical     information    systems:  Principles   and
+          applications, 1, 403-412.
+Klopfer, E., Yoon, S., & Um, T. (2005). Young Adventurers- Modeling of Complex Dynamic Systems with
+          Elementary & Middle School Students. Journal of Computers in Math and Science Teaching, 24(2),
+          157-178.
+Lord,  C., Ross,   L., &    Lepper, M.    (1979). Biased   assimilation  and  attitude polarization:  The   effects of prior
+          theories on subsequently considered evidence. Journal of Personality and Social Psychology, 37(11),
+          2098-2109.
+Wilensky, U., & Reisman, K. (2006). Thinking Like a Wolf, a Sheep, or a Firefly: Learning Biology Through
+          Constructing   and   Testing    Computational    Theoriesâ"An      Embodied    Modeling    Approach.    Cognition
+          and Instruction, 24(2), 171 - 209.
+Wilensky, U., & Stroup, W. M. (2000). Networked Gridlock: Students Enacting Complex Dynamic Phenomena
+          with  the HubNet     Architecture.   In   Proceedings  of  Fourth  International   Conference    of the  Learning
+          Sciences, Ann Arbor, MI, USA, (pp. 282-289). Mahwah, NJ: Erlbaum.
+Zellner,  M.  (2008).   Embracing     Complexity      and  Uncertainty:   The  Potential of  Agent-Based      Modeling   for
+          Environmental Planning and Policy. Planning Theory and Practice, 9(4), 437-457.
+
+                                                        349  ·  © ISLS
+
