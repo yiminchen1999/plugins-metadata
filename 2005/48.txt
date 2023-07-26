@@ -1,0 +1,244 @@
+ MatrixDesks: Interactive Computing Desks toward
+One-on-Two Educational Computing Environments
+            Hercy N.H. Cheng                                            Ben Chang
+ Department of Computer Science and                       Research Center for Science and
+          Information Engineering                              Technology of Learning
+  National Central University, Taiwan                   National Central University, Taiwan
+           hercy@cl.ncu.edu.tw                                     ben@cl.ncu.edu.tw
+
+                Yi-Chan Deng                                          Tak-Wai Chan
+ Department of Computer Science and                   Graduate Institute of Network Learning
+          Information Engineering                                       Technology
+  National Central University, Taiwan                   National Central University, Taiwan
+           ycdeng@cl.ncu.edu.tw                                    chan@cl.ncu.edu.tw
+
+     Abstract. The era of 1:1 educational computing environment where each student has one mobile
+     computing device is not far away. When such technology designed for individuals is applied to
+     group learning, several student grouping problems could be encountered. In this paper, three issues
+     are identified to illustrate the vision of the 1:2 educational computing environments. In a 1:2
+     classroom,    besides   the mobile   devices, students   also have   their own  computing    desks, i.e.
+     MatrixDesks, to solve the potential student grouping problems. By putting MatrixDesks together, a
+     small group can form a shared working space with the combined desktops immediately and they
+     can use their own digital pens as the input devices to work on and talk over it. Meanwhile, the
+     students   use  their   mobile devices  to  handle the   related individual  tasks.  MatrixDesks    is a
+     coordination of applying the mobile computing and invisible computing to collaborative learning,
+     which will lead to the accomplishment of 1:2 educational computing environments.
+
+     Keywords:       student  grouping, interactive  computing     desks, ubiquitous  computing,    invisible
+     computing, 1:1 educational computing, 1:2 educational computing
+
+BACKGROUND
+Computing Desks
+A classroom desk provides a working space for learning in the classroom. Students are used to have their own
+desks in class, and they are familiar with the interaction on the desk, such as reading, writing, painting, talking
+over the desk, sharing objects on the desk, etc. In the field of human interface interactions, there are several
+systems using the metaphor of desks, such as DigitalDesk (Wellner, 1993), meatDESK (Ishii & Ullmer, 1997;
+Ullmer & Ishii, 1997), Sensetable (Patten et al., 2001), InteracTable (Streitz et al., 1999), ConnecTable (Tandler
+et al, 2001) etc. Ishii and Ullmer (1997) also argue that the graphical user interface (GUI) approach falls short in
+embracing  the  rich interface   modalities between   people  and   the physical  environments,    and the  desktop
+metaphor should be pushed back into the real world.
+
+One-on-Two educational Computing
+Many researchers have envisioned in a future not too far, a personal computing device for every student in a
+classroom  will be   as indispensable  as a  pencil. These    devices could be   products evolved   from    what we
+commonly   see  today   like notebook,  tablet PC,   personal digital assistant  (PDA),  cellular phone, electronic
+dictionary, visual graphical calculator, gameboy, and so forth. This vision of 1 student 1 computing device
+classroom is termed as one-on-one (1:1) educational computing environment (www.G1On1.org).
+    Now, assuming 1:1 educational computing is already practicing in significant percentages of classrooms in
+the world, and given that the prices of large panel displays are dropping rapidly, 1:2 educational computing, that
+is, 1 student 2 computing devices, will bound to happen. We envision one possible 1:2 classroom scenario is that
+every student will have a personal handy and light device that the student brings along with her everywhere, and
+in the classroom, her own desk is also a computer, that is, the desktop of her desk is a large computer screen.
+Such computer desks, which we call MatrixDesks, can facilitate nicely many small group learning activities in a
+classroom.
+
+                                                         
+THREE STUDENT GROUPING PROBLEMS
+Scott et al. (2003) found that sharing a physical display positively influenced the students' collaboration, rather
+than separate displays (whether in the same room or not). In the shared workspace, it is easy for students to reach
+a mutual understanding and to collaborate with each other. However, in a 1:1 classroom, it is not easy to
+construct shared workspaces, because students may bring their personal computing devices which could be
+different sizes or types. As one may imagine, in a classroom equipped with several computing desks, small
+groups of students will stand or sit around the desk with their eyes looking at their desks while talking with their
+neighboring students. Since one student will have her own computing desk in the classroom, the best way is that
+all students will put their own desks together to form a large desk so that they can sit around the large desk
+focusing their attention on the desktop, that is to say, the large computer screen composed of individual desktop
+screen of a computing desk. This student grouping problem we termed as sharing screen problem.
+     Since   there could  be plenty different small group   activities with  various  ways   of grouping  students,
+combining desks to construct larger working spaces is a natural and reasonable thought for a small group of
+students. Now, their desks, suppose they can be moved easily around in the classroom, are arranged in different
+configuration for supporting these activities. For example, in Jigsaw collaboration, at first students split into
+several focus groups, which focus on different aspects of a common topic, and then they return to their home
+group to share their "expertise" learned from focus groups to produce a presentation about the topic. When
+students come back to their home group, their desks should change the grouping automatically. And when a
+teacher wants to conduct a group learning activity, he has to consider not only how to group the students but also
+how to make their desks understand the grouping configurations. There are several ways of grouping students
+with their devices. Typically, teachers have to make a list manually to tell the desks which ones are grouped
+together. However, this is a time consuming work for teachers, especially when some learning activities need to
+group students again. To solve this problem, a computing desk should be "aware" which desk is belonged to
+whom and which desk is currently attached to it and on which side. This is another student grouping problem
+and we term it is the desk configuration problem.
+     On the other hand, pen-based interfaces are one of the natural input devices for students on the computing
+desks. Generally speaking, such input devices are designed for a single user and dedicated to one computing
+desk only. When several computing desks are grouped, the students likely use their digital pens not only on their
+own  desks  but also on  the entire shared workspace.    In other words,  the computing      desks should have the
+capability to distinguish the group members' pens without ambiguity. In educational applications, it is crucial to
+track each student's actions. Such problem is termed as input identification problem.
+     This paper focuses on these three student grouping problems in 1:2 classrooms and intends to discuss
+possible solution for them. Actually, student grouping is a fundamental issue of collaborative learning, not only
+for 1:2 classrooms, but for 1:1 classrooms too. In the following sections, after discussion of related works, we
+present the design of MatrixDesks to support student grouping with tablet PCs or notebooks.
+
+RELATED WORKS
+Our original project of using tablet PCs in the classroom is called Digital
+Classroom Environment (DCE). Under the environment, there are several
+wireless access points put at different place in the classroom, and also a
+common display for projecting the screen of the teacher's tablet PC or
+notebook. Each student has a wireless-enabled tablet PC on which the
+student can make annotations on their content. DCE also provides both
+teachers  and students  to manage   devices   including  broadcasting  the
+materials, sharing annotations, etc. The Puzzle View (Deng et al., 2004)
+is a prototype  that constructs a   group display by combining     several            Figure 1: Puzzle View
+screens  of tablet PCs  (Figure 1).  It provides  shared working   spaces
+among several computing devices and was designed for enhancing group interaction experience. However, it is
+noticed that Puzzle View is not facile for teachers or students to change grouping immediately. Furthermore,
+students also have to figure out the proper order of screens when they are grouped. The Puzzle View provides
+not only a solution to the sharing screen problem but a foothold to explore the other problems.
+      For the purpose  of  building a meeting  room, several  roomware®     (Streitz et al., 2001) components  are
+developed in the first generation of i-LAND project, such as DynaWall, InteracTable (Streitz et al., 1999). The
+InteracTable allows a single user at a time using the pens or his finger for gesture-based interaction with virtual
+objects, while the DynaWall integrates tightly three interactive touch screens into a wall for a larger presentation
+area or parallel presentation areas. To enhance the fluidity of the interaction, ConnecTables (Tandler et al., 2001)
+
+                                                        
+are designed to dynamically form a homogenous display area. When two ConnecTables are moved close to each
+other, the workspaces  are  connected  so that  their users  can   work  individually in parallel and exchange
+information. ConnecTable    solves the sharing screen  problem     and, to some extent,  the desk  configuration
+problem.
+
+SOLUTIONS OF THE STUDENT GROUPING PROBLEMS BY MATRIXDESKS
+The design   of MatrixDesks is to  solve the sharing  screen problem,    desk configuration  problem, and input
+identification problem so that students' experience can be improved in group learning activities. MatrixDesks
+have wheels to assist students to move their desks easily. Each MatrixDesk is designed for one student with the
+desktop being a sensing display, which is a large screen of an embedded computer (Figure 2). For writing and
+painting on the sensing display, every student has a digital pen with its unique electromagnetic identification
+which can be sensed by the sensing display. Such technique is used to solve the input identification problem.
+       Let us assume a MatrixDesk is a square desk. The desk configuration problem can be simplified by calling
+a function of MatrixDesk for detecting the neighboring desks automatically. This detecting function take the
+value of an electronic identification (such as RFID, Radio Frequency Identification) labeled on each side of the
+desk as an input and activate a sensor when the two desks are attached (Figure 3). Similarly, when another
+MatrixDesk is put together, they can detect each other and tell the computers with whom they are put together
+and in what shape, such as rectangle, square, or other irregular shapes such as L, T, or U shape. Figure 5 shows
+an example of the desk configuration if the desktop is a square.
+
+           Figure 2: The sketch of a MatrixDesk             Figure 3: The neighbors detecting function
+
+       Figure 4 shows the system architecture of MatrixDesks, which are client/server architecture. MatrixDesks
+are equipped with wireless communication capabilities so that these desks can transmit data through wireless
+networks to the server which is either a centralized class server or one of the desks. Neighbors detecting
+module receives the signals of the four desk identification sensors. After detecting the neighboring desks, the
+module sends the data of the identifications and orientations of neighbor desks to the server. According to the
+data, shared workspace analyzer of the server groups the corresponding desk identifications, and analyzes the
+layout of shared workspace for the best viewing experience. Then display generator dispatches the workspaces
+to the respective desks, which are to present the workspaces on their screens. The whole process is used to solve
+the sharing screen problem.
+
+                                           Figure 4: system architecture
+
+                                                        
+     Input detecting module receives the identification and position of the digital pen, and then these data are
+transferred to input tracking module which can identify and track which pen is sensed on the desktop. In this
+version, MatrixDesks are simply designed to allow students writing, drawing, painting and making annotations,
+so the students' handwriting can be output directly without being processed through the server. In other cases,
+such as exchanging or connecting virtual objects, the module needs to send the data to the server, so that the
+actions can be performed correctly. Finally, display module presents the adequate workspace as the background
+and the handwriting as the foreground on the screen. At the same time, both data are logged in databases for
+future analysis.
+     To  construct  a shared  workspace,   the server allocates  a working   space  and,  according to the desk
+configuration, maintains the relations between desks. When students change the configuration, computers only
+need  to change    these relations rather than  to create a new    shared display  again. After putting  several
+MatrixDesks together, students can sit or stand around the desks to share the workspaces with their digital pens.
+Figure 6 shows several possible ways to use MatrixDesks when two desks are attached, including facing each
+other or side by side, which depend on the learning activities and materials. For example, if the students try to
+compare two diagrams shown on MatrixDesks separately, they can share the workspace side by side.
+
+   Figure 5: Possible combinations of MatrixDesks           Figure 6: Possible ways of sharing working spaces
+
+     When comparing to students using the screens of MatrixDesks for individual works, how frequent a small
+group of students would need such a large shared screen in a class is not known. Therefore, it is important to be
+able to  switch    between  individual work  spaces  and  shared   work space. Note  that  when  students  work
+individually, they can still exchange data or communicate through verbal or online chatting. Also, we do not plan
+to ask computer manufacturers to produce machines with screens as complete desktops. Instead, we embed tablet
+computers with their screens large enough into usual desktops. RFID is used to attach to the desks to identify the
+mutual locations and orientations of the sides of the simulated MatrixDesks.
+     Another design challenge is how to support learning activities with the mobile devices and the computing
+desks in 1:2 classroom scenarios. Remember that 1:2 classroom is an enrichment of 1:1 classroom where every
+student has already had her own device of which we anticipate that its size will be about that of a handheld or an
+electronic English dictionary. In 1:2 classroom scenarios, a learning activity ought to be divided into two parts,
+the individual tasks and group tasks. The individual tasks are performed on the mobile devices, while the group
+tasks are supposed to be done on the computing desks. For example, when students work as groups with the
+shared workspace, their individually owned devices may serve as interactive books for reading and taking notes
+which can be transferred to the shared workspace if needed. When students work individually, these mobile
+devices will become communication tools with their desks.
+
+SUMMARY AND FUTURE WORKS
+In a classroom of future, besides having a personally owned portable small-size screen handheld, every student is
+provided  with   a personal computing   desk.  Furthermore, while  researchers talk about  wireless  and mobile
+technologies in CSCL today, the genuine mobile learning is merely about the use of the portable computing
+device that the student brings along with her all the time, at home, at school, as well as outside classroom. But at
+home and in classroom, she may largely works on a computing desk, one at home and one in every classroom
+she goes in, complemented with her portable computing device. This is the most feasible and practical scenario
+we envision in the era of ubiquitous computing (Weiser, 1998), that is, seamless computing, or simply everyday
+life computing. In a word, the 1:2 educational computing links the research areas of mobile computing (Gay et
+al., 2001) and invisible computing (Norman, 1998) applied to teaching and learning.
+
+                                                         
+    If desks are regarded as bridges between individual and group learning in classrooms, then MatrixDesks
+provide personal computing working spaces as well as a cooperative working space for a small group and are
+able to switch from individual to group environments and vice versa at ease. This project is currently a work in
+progress and  our next   step of MatrixDesks  is to finish   the implementation of  our prototype. At  present,
+MatrixDesks is only a frame in which learning activities and materials should and will be placed. Hence, there
+will be further experiments and investigations that can support the improvements of our design. For example, we
+would like to know how the students interact with the desks, including the positions of students, the handwriting
+they make, the ways to share the displays, to talk over the desks, to walk around the desks, and to move the
+desks, and so forth. Furthermore, this paper also raises a few design issues, in particular, three student grouping
+problems, of such a future 1:2 classroom to initiate the exploration of the related issues. The researches of
+collaborative learning with mobile devices and with invisible computers are somehow divergent and need to be
+accommodated. If we continue studying the 1:2 educational computing environments, more CSCL issues hidden
+between the two researches will be discovered in the future.
+
+REFERENCES
+Deng, Y. C., Do, M. Z., Chang, L. J., and Chan T. W. (2004) PuzzleView: Enhanced Workspace Displaying for
+     Group Interaction with Tablet PCs. Proceedings of the 2nd IEEE International Workshop on Wireless and
+     Mobile Technologies in Education WMTE'04 (Jhong-li, Taiwan, 2004), IEEE Computer Society Press,
+     205-206.
+Gay, G., Stefanone, M., Grace-Martin, M., and Hembrook, H. (2001) The Effects of Wireless Computing in
+     Collaborative   Learning   Environments. International   Journal of Human-Computer     Interaction, 13, 2,
+     257-276.
+Ishii, H., and Ullmer, B. (1997) Tangible Bits: Towards Seamless Interfaces between People, Bits and Atoms.
+     Proceedings of Conference on Human Factors in Computing systems CHI '97 (Atlanta, Georgia, USA,
+     March 1997), ACM Press, 234-241.
+Norman, D. (1998) The Invisible Computers. Cambridge, MA: MIT Press.
+Patten, J., Ishii, H., Hines, J., and Pangaro, G. (2001) Sensetable: A Wireless Object Tracking Platform for
+     Tangible User Interfaces. Proceedings of Conference on Human Factors in Computing Systems CHI '01
+     (Seattle, Washington, USA, March 31 - April 5, 2001), ACM Press, 253-260
+Scott, S.D., Mandryk, R. L., and Inkpen, K. M. (2003) Understanding Children's Collaborative Interactions in
+     Shared Environments. Journal of Computer Assisted Learning, 19, 2, 220-228.
+Streitz, N.A., Geißler, J., Holmer, T., Konomi, S., Müller-Tomfelde, C., Reischl, W., Rexroth, P., Seitz, P., and
+     Steinmetz,   R. (1999)    i-LAND:    An  Interactive  Landscape   for Creativitiy  and Innovation.  ACM
+     Conference on Human Factors in Computing Systems CHI '99 (Pittsburgh, Pennsylvania, U.S.A., May
+     15-20, 1999), ACM Press, 120-127.
+Streitz, N.A., Tandler, P., Müller-Tomfelde, C., and Konomi, S. (2001) Roomware: Toward the Next Generation
+     of Human-Computer Interaction Based on an Integrated Design of Real and Virtual Worlds. In Carnoll,
+     J.M. (Ed.), Human Computer Interaction in the New Millennium, Addison-Wesley, US, 553-578.
+Tandler, P., Prante, Th., Müller-Tomfelde, C., Streitz, N.A., and Steinmetz, R. (2001) ConnecTables: Dynamic
+     Coupling of Displays for the Flexible Creation of Shared Workspaces. Proceedings of the 14. Annual
+     ACM Symposium on User Interface Software and Technology UIST'01, ACM Press, 11-20.
+Ullmer,  B., and  Ishii, H.   (1997) The metaDESK:    Models     and Prototypes for Tangible  User  Interfaces.
+     Proceedings of Symposium on User Interface Software and Technology UIST'97 (Banff, Alberta, Canada,
+     October 1997), ACM Press, 223-232.
+Weiser, M. (1998) The future of ubiquitous computing on campus. Communications of the ACM, 41, 1, 42-43.
+Wellner, P. (1993) Interacting with Paper on the DigitalDesk. Communications of the ACM, 36, 7, 87-96.
+
+                                                        
+

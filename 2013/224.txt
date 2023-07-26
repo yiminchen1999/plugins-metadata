@@ -1,0 +1,374 @@
+CSCL 2013 Proceedings                                                          Volume 1: Full Papers & Symposia
+
+Inter-Personal Browsing: Supporting cooperative web searching by
+                         face-to-face sharing of browser pages
+
+  Tomoko Hashida, The Univ. of Tokyo, 7-3-1, Bunkyo-ku, Hongo, Tokyo, 113-0033, hashida@nae-lab.org
+          Koki Nomura, Domus Academy, Via Mario Pichi, 18, 20143 Milano, nomura@nae-lab.org
+       Makoto Iida, The Univ. of Tokyo, 7-3-1, Bunkyo-ku, Hongo, Tokyo, 113-0033, iida@nae-lab.org
+ Takeshi Naemura, The Univ. of Tokyo, 7-3-1, Bunkyo-ku, Hongo, Tokyo, 113-0033, naemura@nae-lab.org
+
+        Abstract:  We    are  studying   a framework    that  facilitates the  gathering   and  sharing  of
+        information   in group  work   situations where  several  people   are  working    on  multifaceted
+        problem-solving or emergent tasks by cooperating and sharing the workload. In particular, we
+        are developing a framework for the smooth sharing of public information to stimulate debate
+        while maintaining the focus of the group's web searching activities and confining private
+        information   on  the  PC screens     of  individual users.  In   this paper,   we report   on  the
+        implementation of Inter-Personal Browsing - a framework where each user has a small shared
+        display in addition to the PC display, and can use this to share web browser screens with other
+        users. Having introduced this system into a mechanism for practical learning of group work
+        methodology, we introduce the results of studying its effectiveness from the viewpoint of
+        information sharing and communication.
+
+(a) A user's iPad automatically displays the window      (b) A user can receive pages by touching other's iPad.
+   of the web browser running on the user's own PC.      
+                                 Figure 1 Concept of Inter-Personal Browsing
+
+Introduction
+In the fields of education and business, there has been renewed recognition of the importance of group work,
+where several people work on multifaceted problem-solving or emergent tasks by cooperating and sharing the
+workload. Recently, there have also been greater opportunities for people to bring laptops or PCs into group
+work situations, but in this case the attention of users is drawn towards their individual computer screens, thus
+depriving them of the communication opportunities that group work is supposed to provide. One possible reason
+for this is that the screens of other people's laptops and PCs are highly likely to show private information, which
+can make people feel apprehensive about perusing someone else's screen. However, having people direct their
+attention entirely toward their own computer screens is undesirable with regard to facilitating the exchange of
+information in group work situations. We have therefore been looking into ways of addressing this situation by
+using  such means  as projector displays   to produce   large-screen public    displays that  are shared by  all the
+members of a group, or by using terminal displays whose orientation can be changed, such as iPads. However,
+this sort of approach can lead to problems such as private information being displayed on a large screen, or
+information only being publicized to a subset of the group members, or to users having to go to the trouble of
+changing the orientation of their terminal screens.
+        Against this background, we considered that a new framework is needed to facilitate the sharing of
+public information that  can   stimulate debate   in group   work situations   while  keeping  private  information
+confined to the computer screens of individual users, without the need for intentional operations to be performed
+by the users. In particular, we focused on web browser windows as a source of information to be made public in
+group  work  performed   using PCs.  Recently,   web   searches have  been     often used  in group  work   on PCs,
+especially at the investigatory stages. According to Morris (2008), 97.1% of people have taken part in joint web
+
+© ISLS                                                                                                           224
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+searches, but over 80% of them used inefficient methods for sharing their search results, such as looking at the
+screen over the other person's shoulder, sending search results by email, or sharing the screen display by turning
+it towards the other person. We therefore used iPads and browser extensions to implement a mechanism that
+satisfies three conditions: (i) only the browser window is made public as shown in Figure 1(a), (ii) it is easy for
+users to access the search results of other users in their own PC as shown in Figure 1(b), and (iii) this framework
+can  be set up  instantly without   having to introduce any    special equipment. Since   this framework    supports
+website browsing between multiple individuals, we called the proposed system Inter-Personal Browsing.
+         In this paper, we first present a detailed introduction to the Inter-Personal Browsing system that we
+implemented   from   this viewpoint. Then,  by   using this system   in a  group  work    situation, we   compare  its
+performance with group work performed using existing information sharing tools such as notes written on paper
+and Google Documents shared via PCs, and we study how this system changes the nature of the group work,
+such as the ease with which information can be shared, and the degree to which it stimulates communication.
+We conducted verification trials to test these effects in a practical work group lecture.
+
+Related Works
+Systems that support joint web searching have mainly used either a shared display such as a computer screen, or
+a tabletop device.
+         Systems implemented using a shared display include SearchTogether (Morris & Horvitz, 2007) and
+CoSearch (Amershi & Morris, 2008). SearchTogether is software that allows multiple users in remote locations
+to use a single shared display to perform searches, and includes features such as a text chat function, individual
+user search  history  displays,  and a  search results  display window.    CoSearch   is  an   enhanced   version  of
+SearchTogether, but unlike SearchTogether it assumes that the users are all situated around a single computer.
+Although shared display systems make it easy to share information and provide information with better clarity,
+they have drawbacks such as being unable to secure adequate workspace for each user, resulting in poorer
+individual work efficiency.
+         Tabletop systems include WeSearch (Morris et al., 2010) and WebSurface (Tuddenham et al., 2009).
+These   systems exploit   the space and interactivity  offered by  a tabletop workspace.    An  experimental    study
+comparing the execution of collaborative tasks on personal devices and on a tabletop device (Heilig et al., 2011)
+has also confirmed that people are more likely to interrupt and engage in the actions of other users' actions
+when using a tabletop device. Tabletop systems eliminate the drawbacks of shared displays, but their high cost
+and lack of portability have impeded the introduction of these systems.
+         New trends have also emerged recently. These include frameworks that facilitate the integrated use of
+heterogeneous devices, and PCs equipped with double-sided displays. The former approach makes it easier for
+individuals to obtain the information they need in a system where it is possible to use tabletop displays and
+mobile displays in combination with each other (Doring et al., 2010; Seifert et al., 2012). However, it fails to
+address issues such as the drawbacks and high cost of tabletop displays. On the other hand, the Asus Taichi (a
+laptop PC that went on sale recently) is equipped with a double-sided full HD IPS display. This offers an
+inexpensive way of displaying information on the front (facing the user) and back surfaces of a display, but does
+not allow the user to select specific information on the screen and have just this information displayed on the
+back surface. This makes it difficult to share information safely.
+         The  Inter-Personal   Browsing  system  proposed   in  this paper  tackles these  issues    from a different
+viewpoint by employing a simple configuration whereby users install a browser extension on the PCs they use
+every day, and they each have their own iPad for use as a public display.
+
+Inter-Personal Browsing
+This paper summarizes the Inter-Personal Browsing framework, where private information is kept on the user's
+individual PC, while public information that can stimulate discussions in the group work is displayed on a
+separate web browser screen. First, after describing the concept of an individualized public display, we present a
+detailed discussion of Inter-Personal Browsing.
+
+Individualized public display
+When a projector or the like is connected to a PC's external display terminals, it is generally operated either in a
+"mirror" mode where the PC's screen (main display) and the shared screen (external sub display) display the
+same  content,  of an  "extension"  mode   where they  each  provide   separate displays.  For  example,    if private
+information is shown in a mail application and public information is shown in a browser application, then the
+content of the mail application would be displayed to others on the shared screen in the mirror mode. Also, in
+the extension mode, when a browser is displayed on the shared screen, the user is forced to constantly work
+while looking   at the  shared  screen. Instead, this  paper   proposes  a method   where   the mail    and    browser
+applications continue to be displayed on the PC screen in the normal way, while a mirror of just the browser
+window is displayed on the shared screen. These relationships are summarized in Table 1.
+
+© ISLS                                                                                                           225
+CSCL 2013 Proceedings                                                      Volume 1: Full Papers & Symposia
+
+                     Table 1 Information presentation concepts in the proposed method
+
+                                         PC screen                                   Shared screen
+                                       (Main display)                           (External sub Display)
+  Mirror                               Mail, Browser                                 Mail, Browser
+  Extension                                Mail                                        Browser
+  Proposed method                      Mail, Browser                                   Browser
+
+        In this paper, a shared screen is owned by each individual user. This is called an individualized public
+display. By using the individualized public display to show only a mirror of the browser window, users can
+check each others work status without having to exercise    restraint, resulting  in group work with   smoother
+communication.
+
+System overview
+In this paper, we used iPads to implement the individualized public displays discussed above. Figure 2 shows
+the configuration of the Inter-Personal Browsing system.
+        A user's iPad automatically displays the window of the web browser running on the user's own PC,
+and is automatically made available for sharing at the location of the group work. However, as shown in Figure
+2(a), this is not implemented as a simple screen copy, but by running a separate browser in the iPad to show the
+content of the same URL. Next, as shown in Figure 2(b), an iPad is placed beside each user in addition to the
+user's own individual PC so that it can be seen by other users. After making it possible for users to keep track of
+each other in this way, the next important requirement is to make it possible for users to interact with the system
+in order to transfer information from another user's public display to their own PCs. To allow group work to
+proceed smoothly while sharing information, it is important to make it easy for users to transfer pages to their
+own PCs where they can view them in more detail without interrupting the work of other users. For this purpose,
+we implemented a mechanism whereby a user can use the iPad's touch input functions to receive pages without
+anyone else's involvement. Specifically, as shown in Figure 2(c), this is done by touching the other user's
+public screen (iPad) while holding down a control key. To implement this function, we require a framework for
+specifying the PC of a specific user out of multiple other users. It is also essential that it is implemented in a
+way that does not require users to use a specific platform or operating system.
+
+(a) Sharing a URL on an individualized public display           (b) System arrangement
+
+                                      (c)Turning pages by touch input
+                        Figure 2 System Configuration of Inter-Personal Browsing
+
+© ISLS                                                                                                     226
+CSCL 2013 Proceedings                                                           Volume 1: Full Papers & Symposia
+
+System implementation
+In this system, mirror displays on iPads and the transfer of information to other users is achieved by transmitting
+URLs between the iPads and web browsers. We used browser extensions to allow the system to be used in a
+wide range of PCs and operating systems, and we also implemented an iPad application to work with these
+extensions. We set up a server to centrally manage the flow of information between PCs and iPads to facilitate
+many-to-many communication, and the communication was all routed via this server. The display of web pages
+on the iPads was implemented by transmitting a URL to the iPad every time the browser loads a new page. With
+a browser extension API, we capture an event whenever a new page is loaded in the browser, whereupon the
+URL of the new page is transferred to the iPad. Communication is implemented by HTTP between the browser
+and server, and by socket communication (TCP) between the server and iPad. The procedure is as follows.
+  (1) Fetch the URL of the web page displayed by the browser.
+  (2) This URL is sent to the server, and is transferred from the server to the iPad.
+  (3) The same page is then displayed on the iPad.
+          The web page transfer function is implemented so that when the receiving user touches the iPad, the
+URL displayed by the iPad is transferred to the user's PC. For this to happen, it is necessary to identify which
+user touched the iPad. In this paper, as an interaction method for implementing this, we provided a framework
+whereby the user holds down the Ctrl key while touching the iPad in order to designate himself or herself as the
+receiving party. In this way, it is possible for multiple users to receive information simultaneously with a single
+touch operation. The processing procedure is as follows.
+  (1) The browser extension is used to report to the server when a Ctrl key is pressed.
+  (2) When an iPad is touched, its URL is transmitted to the server.
+  (3) The server identifies the users that are pressing their Ctrl keys.
+  (4) The URL information is sent from the server to the browsers running on the individual PCs of these users.
+  (5) On receiving this URL information, the browsers open the URL in a new tab.
+          The browser keypress events are implemented using the browser extension API, and the iPad touch
+events are implemented using the iOS API. For the communication of URLs, it is necessary for them to be
+transmitted from the server to the clients. In the communication systems currently available in web browsers,
+support for server-to-client communication is provided by Comet and WebSocket web technologies. Comet uses
+HTTP   communication    to  achieve artificial bidirectional  communication.    Although   WebSocket    is faster and
+generates lower server loads, it is still relatively new and its specifications are not yet fixed. We therefore
+decided to use Comet in this system.
+
+Verification of concept
+To examine    how   the quality of  group   work  is changed   by     using Inter-Personal Browsing    proposed   and
+implemented in the above way, we performed group work tests using Inter-Personal Browsing in a lecture
+course that we are currently teaching. This lecture course is called "Groupwork of the future - future classroom
+technology", and is being taught as part of the 2012­3 masters course at Tokyo University. Its aim is to provide
+practical education  in the use of  digital tools and group    work   methodologies,   and  it comprises   13 lessons
+targeting 9 undergraduate students.
+          The specific  aim of  practical research through    this course   is to use Inter-Personal  Browsing    in a
+comparative study to see if it changes the quality of group work with regard to communication and the sharing
+of information. For comparison, we also provided group work based on notes written on paper (paper-based
+group  work)   and  group   work   using  existing   digital information-sharing    tools  like Google     Documents
+(https://www.google.com/intl/en/drive/start/index.html) and Dropbox (https://www.dropbox.com/home) running
+on PCs (PC-based group work). The PC-based group work differed from paper-based group work in that it was
+able to handle larger quantities of information and made it easier to share resources such as the results of the
+group work. However, it also resulted in less communication because the users' attention was directed toward
+their computer screens, and it was difficult for them to share work processes. Our study focused mainly on the
+issue of whether the introduction of Inter-Personal Browsing, where information can be shared easily with the
+browser   window,   causes  any  changes    in  communication      or information   sharing (especially    during the
+investigation process). The details of these discussions and our findings are summarized below.
+
+Overview of the proof-of-concept experiment
+In this experiment, group work was performed using three different tools, and a combination of behavioral
+observation and questionnaires was used to clarify the level of communication activity and the ease with which
+information   could be  shared  during the  examination  phase     of the   group work. Since   this experiment   was
+performed in tandem with lectures, it was difficult to maintain absolute control over the tasks, and the tasks
+performed using each tool were also different. This approach was adopted because our purpose here is to clarify
+
+© ISLS                                                                                                            227
+CSCL 2013 Proceedings                                                     Volume 1: Full Papers & Symposia
+
+the general feasibility of Inter-Personal Browsing (IPB) through practical experience. The first tool was paper,
+and users were given the task of creating a billboard for the Nikkei newspaper. In this task, the users had to
+decide which articles were worthy of inclusion, summarize these articles, and create the final layout. This is
+called method 1. The second tool was a combination of paper and PCs, and users were given the task of creating
+a time-line of a celebrity's career. In this task, it was necessary to determine which aspects of the celebrity's
+career should be included in the time-line (e.g., awards won by the celebrity), gather data on the celebrity's
+name and active time period, and then assemble this information in a time-line where it can be easily understood.
+Here, the PCs were used to access Google Documents as an online document creation tool and Dropbox as an
+online storage tool. This is called method 2. The third tool was a combination of paper, PCs and IPB, and users
+were given the task of designing the interior of a shared house for female college students. In this task, the users
+had to clarify their target residents (which area they live in, what their interests are, etc.), put forward concepts
+that these residents might like, create a collection of interior furnishings needed to realize these concepts, and
+produce summaries of these concepts together with costs and images. This is called method 3. In each system,
+the group work was performed over three sessions of approximately 90 minutes, including time for practice,
+presentation, review and so on. The nine students were split into two groups, and the members of these groups
+were replaced for each method.
+        To  perform   a comparative study  of  the quality of group work  in each of these  methods, we   first
+observed  the state of  communication  in each  group  by  having on average  about two  observers  constantly
+watching each group. The observers concentrated on group characteristics such as the amount of conversation,
+lines of sight and seating arrangements (the students were instructed to arrange the desks and chairs and move
+around as much as they wanted in order to facilitate communication). The last ten minutes of the lecture was
+designated as a review period in which the students were asked to complete questionnaires. As shown in Table 2,
+the questionnaire included two questions where students were asked to reflect on the level of activity in the
+discussions. Next, in methods 2 and 3, we used the separate questionnaire shown in Table 3 to compare the ease
+of sharing information during the examination phase with and without Inter-Personal Browsing.
+
+Results and discussion
+
+Communication
+To examine the effectiveness of communication in the group work, the students in methods 1, 2 and 3 were
+asked to complete the two questions shown in Table 2.
+        First, with regard to the all questionnaire of Table 2, in methods 1 and 3 the students responded that
+they had all actively participated in the group work and that the group itself facilitated active discussions,
+suggesting that active communication had taken place. On the other hand, in method 2 where group work was
+performed using PCs, some students responded that they had been unable to participate actively in the group
+work or play an active role in discussions (38% answered "No" to Q1-1 "Did you actively participate in the
+group work?" and 63% answered "No" to Q1-2 "Were there active discussions in your group?"). There were
+students who gave this response in each group.
+        From photographs of the discussions, we can see that in method 1 (Figure 3(a)), the students took steps
+such as moving the desks around so they could speak more easily with the other students, and in method 3:IPB
+(Figure 3(c)) they were also seen to lean across the desk while in conversation. The amount of conversation
+itself was found to be large. However, in method 2 (Figure 3(b)), the students continued to direct their gaze at
+their computer screens even when carrying out the actual work itself, and there was less conversation than in
+methods 1 and 3.
+          These findings suggest that the use of Inter-Personal Browsing allows for more communication than
+existing PC-based group work, and a high level of activity close to that of traditional paper-based group work.
+
+Sharing of information
+For a more detailed consideration of the sharing of information in the examination phase of the group work, the
+students in methods 2 and 3 were asked to complete the three questions shown in Table 3.
+        First, in method 2, most of the students were concerned about what the other students were examining
+during the task  (88%   answered "yes" to  Q2-1    "Were  you concerned  about what  the  other students were
+examining?"). On the other hand, in the question relating to how students ascertained what the other students
+were doing (Q2-2), we received a number of similar responses such as "I just looked at the comments on shared
+sheets in Google    Document". Moreover,   in  the question about issues experienced when   sharing  what the
+students had examined (Q2-3), we received responses such as: "It was difficult to find out what the other
+members were studying, or how much, so I didn't know how far I should go with my own study", "We were all
+working at the same time, and ended up studying the same things", "It took longer than I expected to share
+things, and it was hard to ascertain straight away what the others were doing". That is, in group work conducted
+as in method 2 where information is shared via services such as Google Documents and Dropbox, it is difficult
+
+© ISLS                                                                                                    228
+CSCL 2013 Proceedings                                                  Volume 1: Full Papers & Symposia
+
+for people to share what they are studying in real time, so people do not know how much progress the others are
+making, it is difficult to split tasks up because people are unaware of how much progress the others are making,
+and a number of the students felt that the task took longer than it should have. A possible explanation of how
+this situation arose is that when people used Google Documents, they were focused on the screen so much that
+they did not notice what the others were doing. This would have made it harder to know who had provided each
+bit of information, thereby depriving the users of opportunities to talk to each other.
+         In method 3, as in method 2, most of the students were concerned about what was being studied by the
+other students during the task (88% answered "yes" to Q2-1"Were you concerned about what the other students
+were examining?"). In the question relating to how students ascertained what the other students were doing (Q2-
+2), we received a number of similar responses, including "When someone found an interesting site, they said so,
+and the other members used their iPads to display and assess this site on their own computer screens". Moreover,
+in the question about issues experienced when sharing what the students had examined (Q2-3), we received
+many responses such as "No, nothing in particular", but there was also a response that pointed out a problem
+with the system: "The page sharing sometimes didn't work properly". Consequently, in group work using Inter-
+Personal Browsing as    in  method  3, users can share information indirectly  with         one another, and can
+communicate verbally if there is something they want to convey to the others or something important they need
+to know. It is thus inferred that the students themselves were able to figure out a way of actively participating in
+the group work while switching between different channels of communication.
+
+              (a) Method 1: paper                             (b) Method 2: paper & pc           
+
+                                             cMethod 3: IPB
+                            Figure 3 The appearance of group work in each method
+
+Table 2 Results from questionnaire 1 (average ratio of participating students who answered affirmatively)
+                                        Method 1               Method 2                          Method 3
+ Q1-1 Did you activelyparticipate in the group work?100%           63%                            100%
+ Q1-2 Were there activediscussions in your group?100%              44%                            100%
+
+© ISLS                                                                                                       229
+CSCL 2013 Proceedings                                                          Volume 1: Full Papers & Symposia
+
+Table 3 Results from questionnaire 2
+                                         Method 1                  Method 2                      Method 3
+ Q2-1    Were    you   concerned
+ about what the other studentswere examining? --          88% answered "yes".            88% answered "yes".
+
+ Q2-2    How   did you   ascertain                        75%    just  looked   at  the  88%   used   Inter-Personal
+ what    the other students were              --          comments on shared sheets      Browsing and taught each
+ examining?                                               in Google Documents            other orally.
+ Q2-3    Did    you   have    anydifficultysharingwhatyouhad examined?--50% had difficulty findingoutwhattheothermembers were studying.63%didnothavenodifficulty in particular.
+
+Conclusion
+We have proposed a framework called Inter-Personal Browsing that facilitates the sharing of information by
+displaying a web browser window on an individualized public display, and we have performed a proof-of-
+concept test as part of a practical lecture course in group work, in which we performed a comparative study of
+group work using this framework and other tools. Our results suggest that the proposed Inter-Personal Browsing
+facilitates more active communication than group work using ordinary PCs alone, and allows task processes to
+be mutually shared more smoothly. However, the proposed Inter-Personal Browsing still has several issues. For
+example, its framework currently only allows web pages to be shown to other users. On the other hand, when
+diverse tasks are performed by a group, there may be many other different combinations of applications that
+users want to keep private and applications that users would want to show to other people. In the future, we
+intend to provide greater freedom in the choice of applications and introduce a framework where users can take
+part in group work while diversely switching between information they want to show (public information) and
+information they want to keep to themselves (private information).
+
+References
+Morris, M. R. (2008). A survey of collaborative web search practices, In Proceeding of the twenty-sixth annual
+         CHI conference on Human factors in computing sys- CHI '08, pp1657-1660, Italy
+Morris,  M.R.   and   Horvitz, E.   (2007). SearchTogether:    An  Interface   for Collaborative    Web   Search,  In
+         Proceedings   of  the 20th    annual ACM     symposium   on   User  interface  software and   technology   -
+         UIST '07, pp.3-12, USA
+Amershi,   S.  and Morris,  M.R.   (2008).  CoSearch:   A System   for Co-located   Collaborative   Web   Search,  In
+         Proceeding   of the  twenty-sixth  annual  CHI   conference  on   Human   factors in  computing  systems   -
+         CHI '08, New York, pp.1647-1656, Italy
+Morris,   M.R.,  Lombardo,     J.  and  Wigdor,   D.   (2010). WeSearch:     supporting  collaborative   search    and
+         sensemaking    on  a  tabletop display,   In Proceedings  of  the  2010   ACM   conference    on Computer
+         supported cooperative work - CSCW '10, pp.401-410, USA
+Tuddenham, P., Davies, I. and Robinson, P. (2009). WebSurface: An interface for co-located collaborative
+         information gathering, Proceedings of the ACM International Conference on Interactive Tabletops and
+         Surfaces - ITS '09, pp. 181-188, Canada
+Heilig, M., Huber, S., Gerken, J., Demarmels, M., Allmendinger, K., and Reiterer, H. (2011). Hidden details of
+         negotiation: the mechanics of reality-based collaboration in information seeking. In INTERACT'11,
+         Springer-Verlag, pp.622­639, Berlin
+Doring, T., Shirazi, A. S., and Schmidt, A. (2010). Exploring gesture-based interaction techniques in multi-
+         display environments with mobile phones and a multi-touch table. In AVI '10, ACM, pp.419­419,
+         New York
+Seifert, J., Simeone,  A.L.,  Schmidt,  D.,   Reinartz, C., Holleis,  P., Wagner,  M.,   Gellersen, H. and  Rukzio,
+         E.MobiSurf    (2012).    Mobi-surf:Improving    Co-located   Collaboration    through Integrating  Mobile
+         Devices   and Interactive  Surfaces, In  Proceedings  of  ACM     International Conference   on  Interactive
+         Tabletops and Surfaces, pp.51-60, Boston
+ASUS  TAICHITM      http://taichi.asus.com/jp/#TEXTURE
+
+© ISLS                                                                                                          230
+CSCL 2013 Proceedings                                                  Volume 1: Full Papers & Symposia
+
+Acknowledgments
+This project is supported by JST  (Japan     Science  and Technology Agency)-CREST      (Core Research   for
+Evolutionary Science and  Technology)     project "Harmonized Inter-Personal Display Based on  Position and
+Direction Control". We would like to thank Shohei Takei, Tomoko Ohtani, Motohide Hatanak and Yasuaki
+Kakehi for helping out with the lectures.
+
+© ISLS                                                                                                  231
+

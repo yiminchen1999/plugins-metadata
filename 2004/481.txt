@@ -1,0 +1,407 @@
+                   GoGo Board: Augmenting Programmable Bricks for
+                           Economically Challenged Audiences
+                              Arnan Sipitakiat1, Paulo Blikstein2 & David P. Cavallo1
+                 1 Media Laboratory, Massachusetts Institute of Technology, Cambridge, MA 02139
+                                       Tel: (617) 253-2041, Fax: (617) 258-6264
+              2 School of Education and Social Policy, Northwestern University, Evanston, IL, 60208
+                                       Tel: (847) 467-6752, Fax: (847) 491-8999
+                         Email: {arnans, cavallo}@media.mit.edu; paulo@northwestern.edu
+
+        Abstract: The Programmable Brick, a small autonomous computer with sensing and control
+        abilities, has been a topic of educational research for almost two decades. The use of this tool has
+        now reached beyond research projects through its commercial availability. However, high cost has
+        strictly limited its audience to only well-funded schools and institutions. Can learning activities
+        involving Programmable Bricks take place in an economically challenged context? In this paper,
+        we present an attempt to challenge this question by presenting a new framework that turns the
+        acquisition  process of Programmable     Bricks   and  its necessary  materials into  a rich learning
+        process. We present the GoGo Board, a low-cost Programmable Brick that allows the user to
+        actively participate in its production process. We discuss the use of found and broken materials as
+        sources of construction supplies. We analyze two case studies from projects developed in Brazil
+        from 2002 to 2003. Specifically, we discuss the design aspect of the GoGo board framework that
+        allowed for diverse and socially relevant learning projects to take place.
+
+Introduction
+        Previous research, primarily inspired by the intellectual tradition of constructionist learning (Papert, 1991),
+has been done demonstrating how Programmable Bricks, a small general-purpose computer with sensing and control
+capabilities (Martin, 1988; Sargent, et al. 1995), can be used to enrich learning activities (See Martin & Resnick,
+1993; Granott, 1993, Resnick, et al. 1996; Sipitakiat, 2001; Blikstein, 2002). The activities are typically project-
+based  and involve   the construction  of concrete  physical  objects motivated    by the learner's  personal interest.
+Common   projects  include   robot  prototypes, vehicles, interactive installations,  environmental    monitoring, and
+human-computer interfaces (See Martin, 1994; Sargent, 1995; Resnick, et al. 2000). While constructing projects,
+learners get in touch with ideas from various knowledge domains, such as Mathematics, Physics, Chemistry and
+Engineering.  We  share  the belief  that the constructionist  approach   can promote   rich  learning and deepen  the
+learner's understanding of concepts that he or she comes across while pursuing their project.
+
+        This work draws from this existing research but focuses on the dissemination of the learning activities to
+broader communities,     especially in low-income   settings. This  requires  both  improving   access to the learning
+materials and the development of learning activities compatible with those settings. Access to Programmable Bricks
+has often been limited due to their restricted availability and prohibitive cost. This work presents the GoGo Board, a
+low-cost Programmable Brick that can be locally constructed. We show how access was improved in our case study
+of schools in Brazil. However,      technology  availability alone does not   entail better education  (Papert, 1987).
+Advances in learning tend to happen more felicitously when innovation takes place not only in the materials but also
+in the sociology and the organization of the learning environment (Papert, 1980; Cavallo, 2000; Sipitakiat, 2001;
+Blikstein, 2002). This work does not present the GoGo board just for the sake of technology dissemination but as a
+means to better study how high density of digital technology can create new pathways for learning, particularly in
+communities with scarce resources.
+
+        We begin by briefly introducing the Programmable Bricks. We then present the GoGo Board and the
+design  choices that have  been made    during  its development.    Next, we  introduce   a  framework  that  has  been
+developed for the use of GoGo boards with locally available materials including found and broken materials.
+Subsequently, we present an ethnographical account of how they were used in workshops conducted in Brazil during
+2002 and 2003. We conclude by discussing the observed two main impacts of the GoGo board framework. First, it
+
+                                                        481
+allowed new, diverse audiences, especially in low-income settings, to            have contact with technologically rich
+learning environments. Secondly, it provided a new level of abstraction (building boards, using locally available
+materials, and repurposing materials) that resonated with ways of thinking that pre-exists in the culture.
+
+Programmable Bricks
+        The idea of using robotics and sensors in learning activities maps back to the early 1970s, when Seymour
+Papert, then at the MIT Artificial Lab, built a programmable turtle with a reflective light sensor (Papert, 1971). This
+idea eventually evolved into the Programmable Brick concept and was first developed at the MIT Media Laboratory
+in 1987. Since then, many variations of the concept have been implemented (see Figure 1) with different design
+goals (Mikhak, et al. 2000). The LEGO Mindstorms Kit (also known as the RCX Brick) has been commercially
+available since 1998. The Cricket (Martin, et al. 2000) is one of the most widely used platforms by researchers who
+focus on extending the use of the Programmable Brick into new learning domains. Most recently, the MIT Tower
+(Lyon, 2003), a new rapid prototyping system which can also function as a Programmable Brick, has incorporated
+new cutting-edge technologies (such as TCP/IP networking, wireless communication, and signal processing) into a
+highly modular design. A myriad of other, smaller scale commercial formulations also exist, despite not being
+directly connected to this tradition, both in the field of robotics and sensing.
+
+GoGo Board
+        The GoGo board is a variation of the Programmable Brick. It has two modes of operation: autonomous and
+tethered. In the first mode, the board is programmed using the Cricket Logo language, and procedures are stored and
+executed from the onboard memory. In the second mode, the GoGo board remains connected to a computer via a
+serial cable, and provides sensing and actuation capabilities for any programming language that supports serial
+communication. We have developed several libraries for the board, allowing it to work with different environments,
+such as Microworlds Logo, Imagine Logo, Squeak, Microsoft Visual Studio, MS-Office, and Macromedia Director.
+
+Design Goals
+        Our core idea with the GoGo board was to borrow some of the fundamental features of the Programmable
+Brick but to implement and use it in ways that can expand the learning experience to a broader population. The
+following items are characteristics of the GoGo board designed to support our goal.
+
+   Figure 1. Variations of the Programmable Brick: The GoGo Board (left), the LEGO RCX Brick (top right), the
+                             Cricket (middle right), and the Tower (lower right)
+
+                                                   482
+Low-cost
+         Prices of commercial Programmable Bricks are high. For example, the LEGO Mindstorms kit, which
+includes some construction materials, costs US$ 200 in the United States. That price reaches US$ 400 in Brazil, due
+to import taxes and fees. Cheaper alternatives such as the Handy Cricket are available, but they still cost at least US$
+100 in the United States, without construction materials. The high cost usually condemns those tools to very limited
+uses in school settings. In many communities (not exclusively in low-income settings), the high cost of commercial
+Programmable Bricks both limits how widely they can be made available and restrains ways in which people use
+them. For example, Sipitakiat el al. (2002) show that some promising project ideas are discarded even when the
+materials are available, due to the fear of breaking or losing the tool.
+
+         The prices of LEGO and other commercial Programmable Bricks are usually high not necessarily because
+of their intrinsic functionality, but due  to the  need for technical      support, product  warranty, cascading taxes,
+marketing and profit margin. This is a typical situation in a producer-consumer business model. Conversely, the
+GoGo board allows for a rather different model, blurring the boundaries between producers and customers by
+creating a possibility for consumers (at least some of them) to also play the role of producers. For example, the
+GoGo boards that were used in our case study in Brazil were produced locally by a private company hired by the
+schools. Thus, they  were   paying   only for the components     and     labor while getting a product  with equivalent
+functionality of the LEGO RCX Brick. The cost of each board was dramatically lower: approximately US$ 30 (1).
+
+Possibility for Local Construction of GoGo Boards
+         The GoGo board has been designed to make the board construction process as simple as possible. The goal
+is to allow boards   to be  produced  locally by  schools  or motivated      individuals. There  are three main  design
+differences between the GoGo board and other mainstream electronics devices. First, we do not aim to make the
+GoGo board to be the most "cutting-edge" or "feature-packed." The most advanced and most capable is not
+necessarily the best for schools. We choose the "less but more humanly understandable" path rather than the
+"sophisticated but  less penetrable"   one. For   example,  the  GoGo      board  uses a  simple   but widely available
+microcontroller rather than more powerful ones, which are arduous to find in other countries, even being closely
+priced.
+
+         The second   difference  is the  focus on   human-size  components.      The  current design  trend of modern
+electronics is miniaturization. As a result, the assembly process becomes increasingly dependent on specialized
+equipment and sophisticated production processes. The assembly cost increases and can only be justified when the
+device is mass-produced. The GoGo board, on the other hand, facilitates on-demand construction by providing a
+much simpler assembly process. It uses larger packaging versions of the electronic components. No surface-mount
+components are used, for example. The traces and pads on the printed circuit board are also designed to be large,
+which allows board assembly using only basic soldering equipment. This simplicity allows boards to be produced as
+needed and possibly by anybody with minimal soldering skills.
+
+         The final difference is the use of locally available components. This is fundamental when using the GoGo
+board in developing countries. The choices made for components on the current version of the GoGo board (such as
+the microcontroller, connectors, LEDs, and the clock) were based on our extensive research of their local availability
+in Brazil. We found out that the needed parts not only exist, but cost less than in the United States. Components for a
+GoGo board in Brazil costs approximately US$ 18 compared to US$ 25 in the United States.
+
+Use of Found Materials
+         When using the GoGo board in a project, it is necessary to have access to sensors, actuators, and other
+construction material (i.e. wood, Styrofoam, paper, gears). In addition to purchasing some of these materials, we
+have been working with found and scrap materials. The aim is not only to lower the cost but also to broaden the
+possibilities of construction materials. Broken electronics and electrical appliances are rich sources for sensors,
+motors,  mechanical  parts, and   casing  structures (Blikstein, 2002,     2003). Many    of these materials can be re-
+appropriated. For example, broken a CD-ROM drive tray can be used as a push and pull mechanism; the optic
+sensor in a broken mouse can be re-purposed for use as a presence sensor; the motor and gearing of a broken tape
+player can be used as a high torque mechanism; a radio dial can be turned into a circular-to-linear movement
+converter.
+
+                                                         483
+Data Collection and Analysis
+       The analysis presented in this research is based on our ethnographic study of two projects using the GoGo
+board in Brazil from August 2002 through November 2003. The case studies presented here are selected from
+approximately thirty projects done by students and teachers during our field-work experience. We chose to portray
+only a few projects but in substantial detail in order to maintain the learning context that our material innovation
+builds upon. This approach allows us to thicken our discussion (Ryle, 1971; Geertz 1973; Falbel, 1989) by keeping
+intact the social context of the situation from which the discussion arose.
+
+Bradesco Foundation Schools
+       Since April 2002 we have been working closely with a network of schools run by the Bradesco Foundation,
+a non-profit organization in Brazil. The Foundation manages 39 schools across the country, all provide free tuition
+mainly for low-income families. In the past 14 months, our research group has done projects at seven of these
+schools, with teachers from the entire network. Fourteen weeklong introductory and follow-up workshops were
+conducted (25 to 40 hours each). In each of them, a group of approximately 25 people (70% students and 30%
+teachers, on average), divided in four to six groups, and pursued various projects around "The City That We Want"
+theme. They constructed computational models, robotics prototypes and video/photo documentaries of how they
+wanted to improve their city or community. Different kinds of materials were used, including pre-existing LEGO,
+crafts materials, Logo programming environments, and digital cameras. The GoGo board was introduced starting in
+October 2002. The Bradesco Foundation has since produced two hundred GoGo boards for immediate use in its
+schools, all made in Brazil and with locally-obtained parts. The projects were facilitated by MIT graduate students.
+
+Schools in the City of São Paulo
+       In 2001 our research group began collaboration with the Municipal Secretariat of Education of São Paulo,
+Brazil. Approximately 30 schools in the city have since participated in the project. The work in São Paulo that is
+addressed in this work occurred between August and December 2002. The activities were similar to those in the
+Bradesco Schools and were also based on projects around the "City That We Want" theme. In each school, leading
+teachers decided how to organize the activities in terms of number of children, hours and overall infrastructure. On
+average, projects took a total of 30 to 40 hours and involved approximately 20-30 children and 1-6 teachers. A team
+of six graduate students from MIT and the University of São Paulo facilitated the projects on a rotating basis
+(participating in 50% of the total hours, on average). Two hundred boards were produced locally for the schools.
+
+Case Studies
+       We begin by showing concrete case studies of how projects typically take place and how they can lead to
+our subjects of interest. Then, we zoom out to show evidence of the need and pertinence of such devices in relatively
+large school systems in Brazil, which we believe represent common issues of many other developing countries.
+
+Coqueiros Investigation: An Example of Project Development and Evolution
+       This example was drawn from our work with the Bradesco Foundation. It took place in a boarding school
+in Bodoquena, a remote city of eastern Brazil, three hours away from the state's capital. Because of its isolation, the
+school produces most of its food locally with the assistance of students. While we were considering project ideas, a
+group of five students and two teachers reported to us that they noticed that their coconut trees ("coqueiros" in
+Portuguese) were not yielding as many coconuts as before. They wanted to address this problem.
+
+       Their first explanation indicated a very straightforward reasoning: provide the coconut trees with more
+water and they will bear more coconuts. We pushed their idea further by asking them how they could know for sure
+whether the problem was lack of water. We agreed that one good direction was to conduct a soil humidity test,
+which was a good application for the GoGo board. It could be programmed to periodically sample and store sensor
+data. The benefit of this method was that data could be collected over a large time period (many hours or days).
+Then students could upload the data to a computer to visualize and interpret it. Humidity readings could be collected
+together with other environmental factors such as sunlight and temperature.
+
+       After a few days of work, the focus of the project was shifted from the coconut trees to soil humidity
+sensing, which was a challenging problem in itself. It was one occasion where students decided to go deep into one
+fundamental aspect of a larger problem. This was a glimpse of the project's long-term potential. It is worth noting
+that this project is still continuing (as of November 2003), since commencing in October 2002.
+
+                                               484
+       We did not have a humidity sensor at hand, but with some on-line and empirical research we learned that
+soil resistance is inversely proportional to the soil humidity. Since resistance is what determines the sensor value
+measured by the GoGo board, we could create a soil humidity sensor using two simple electrodes (in this case wires
+soldered to paper clips). There were obvious trade-offs between simplicity, accuracy, and consistency. Even though
+just plugging two wires into the soil worked, the readings were inconsistent from one experiment to another. We
+later learned about porous blocks, which are used in commercial sensors to reduce the sensor's inconsistency caused
+by the variance of soil properties (such as salinity) and the spacing of the electrodes. Porous blocks are made of
+materials such as gypsum, ceramic, nylon and fiberglass. We searched for these materials from objects that existed
+in the school. After some testing we settled with casting plaster scavenged from the school's healthcare center
+(Figure 2). The performance of this new sensor was satisfactory to the team. Purchasing a similar sensor from a
+commercial vendor would not only be extremely expensive but unfeasible for this rural school.
+
+Matching the Right Tool with the Right Job
+       The construction of the humidity sensor spun off a new project when a few students and teachers wanted to
+construct a system that would automatically water a garden when the soil gets dry. Six months later (April 2003)
+when we re-visited this school, the teachers and students had constructed the system using a solenoid switch to
+control the water. The system was powered by a solar panel connected to a car battery (the solenoid switch and the
+solar panel were repurposed from other unused devices).
+
+       The construction of the irrigation project required autonomous sensing and control. At the time, the GoGo
+board did not support output controls. Thus, the teachers and the students were trying to use the LEGO RCX brick
+instead. The RCX worked well but had one unfortunate glitch: it powers itself off after a short time period, which
+cannot be deactivated by the user. More important than this technical catch is the concern about the suitability of
+using the RCX for this application. The school wanted to use this project as a model to inspire more students to
+become involved. For example, they have recently started a fish farm project and engaged students in learning issues
+around water quality management. This could involve sensing and control in ways similar to the soil humidity and
+irrigation example. In spite of this potential, the idea of using the RCX in the field was perceived with concern. The
+sense of these projects becoming reality grew much higher when they realized that the new version of the GoGo
+board supports output controls and could thus be used in place of the RCX. A straightforward reason for this is the
+much lower cost of the board. The teachers also felt more comfortable leaving a GoGo board in the field than the
+RCX brick. To them, the RCX brick was a fancy and expensive device that seemed out of place in the fields.
+
+  Figures 2 and 3 (left to right): Locally-Made Soil Humidity Sensor and a Teacher Adding a Memory Chip to the
+                                            GoGo Board
+
+                                                        485
+Becoming More Involved
+        The GoGo boards that were originally made available to the school did not contain the memory chip and
+some other components. This was done to further reduce cost and was decided by the managers of the Bradesco
+Foundation. Two teachers from the school who participated in a follow-up workshop in early November 2003
+learned that their projects needed the memory feature. They learned how to solder the memory chip to the board
+(Figure 3) and were excited to see that the upgrade worked. This was the kind of situation when the benefits of the
+GoGo board design could be clearly seen. The use of human-size components and the large soldering pads on the
+board allowed teachers with no soldering skills to solder the memory chip. Furthermore, because the memory chip
+can be acquired in Brazil, it is possible for the teachers to upgrade the rest of the boards whenever needed.
+
+A Low-cost Alternative for Large-Scale Deployment of Programmable Bricks
+        During the introductory workshops of the São Paulo project in 2001, we learned that the public schools had
+an extremely limited budget. For the first five pilot workshops, we had to bring our own LEGO Mindstorms kits (the
+GoGo  board was still under development),       to demonstrate the possibilities of using robotics         and ubiquitous
+computing in the school. The first reaction of teachers and students was to ask about the price of the LEGO kits,
+since the LEGO toys were renowned for their high cost. Learning that each Brick was worth more than a teacher's
+monthly salary made many of them skeptical. Comments like "our school can't afford these materials" started to
+spread among the teachers. Indeed, despite the many trials from commercial vendors, the school system could not
+afford LEGO Mindstorms, and a city-wide purchase (which typically takes 15 months) became highly unlikely.
+
+        The situation changed in July 2002, when we introduced the GoGo board to the Secretariat of Education.
+Because of the board's much lower price range, they decided to use it in the project. Two-hundred boards were
+produced by a private company and donated to schools, as a pilot experience. We were able to extend the activities
+to thirty schools simultaneously. The total investment on the boards and low-cost sensors kits was US$ 6,500: an
+amount which would have been barely enough for 20 commercial LEGO Mindstorms kits ­ an order of magnitude
+of difference. The cost issue turned a previously prohibitively expensive project into a feasible reality.
+
+Increasing the Diversity and Density of Learning Activities
+        After five months of work in the Sao Paulo schools, the Secretariat of Education organized an exhibition
+for students to display their work. Hundreds of students and more than fifty selected projects from all regions of the
+city were present at the event ­ most of which involved the GoGo board. One of the projects was a model of an
+intelligent bus that signals waiting passengers when no more seats are available. The bus was made from a broken
+keyboard, which the keys served as sensors for the seats. Another project was a model of energy-saving street lights,
+which would only light up when a car was present. The model was made of cardboard, flashlight bulbs, ice-cream
+sticks, a light sensor and a touch sensor (the sensors were inexpensive and bought at a radio repair shop). One of the
+most notable projects was a computer-controlled automatic water recycling system, which took the students three
+months of research and development. The structure was built with plastic bottles, plywood, and household pipes.
+The moving parts were adapted from two broken CD-ROM drives and a tape recorder, and water valves were made
+using spheres from broken computer mice. This project won one of the main prizes at the Brazilian Science Fair in
+2003.
+
+Reflections
+        The case studies reveal several dimensions of the GoGo board framework. We focus our discussion on two
+levels: first, the benefits gained from the unique characteristics of the materials used. Second, we discuss how the
+increased diversity of the materials allowed an approach towards construction and learning that connects to pre-
+existing traditions in the culture.
+
+Board Design
+        Although we made the design of the GoGo board available and we invited learners to become involved in
+the underlying design, we do not expect every learner to become engaged. Many people would prefer to be only a
+user of the board. Thus, we always made sure there were pre-constructed boards ready for use. One the other hand,
+The GoGo board design allowed motivated learners to become involved at a level that was not possible before with
+other Programmable Bricks. This new level of abstraction not only opened up new learning opportunities in digital
+electronics but was also attractive and rewarding to many learners. This became evident when both students and
+
+                                                        486
+teachers added components to upgrade the board and when they tried to assemble the entire board, even without
+prior knowledge in electronics.
+
+       In terms of increasing the availability of boards, they can be partially assembled just enough to fulfill a
+particular task, thus further saving both time and cost. Schools can obtain boards by partnering with technical
+experts to assist with their construction. For example, a group of schools can subcontract a company, a technical
+institute, a TV repair shop or a group of electronics enthusiasts to assemble boards to supply their immediate need.
+Being copyright-free, the design of the board can also be customized for specific purposes
+
+Use of Found and Broken Materials
+       The impact of using found materials and broken electronics goes beyond the mere increase of materials or
+the low-cost aspect. Teachers and students who disassembled broken devices (VCRs, radio-clocks, hard drives, tape
+recorders, radios, TVs) often discover how the underlying mechanisms worked. That led to rich discussions about
+objects of everyday life and their mechanical principles, and a feedback between the thinking about their own
+projects' construction and the mechanisms already present in the devices. As noted by Blikstein (2002), rather than
+starting from scratch, they had a rich set of exemplars from familiar objects.
+
+       Moreover, the idea of disassembling and re-purposing materials was very present in the culture of the
+lowest income areas of São Paulo. Our ethnographic research showed that, before buying a replacement, the
+population would try every possible alternative to fix or repurpose the broken device. By building on a strategy that
+was already present within the culture, we were able to introduce technology, with was extraneous and unfamiliar,
+through a recognizable and familiar way.
+
+Future Directions
+       The GoGo board research is ongoing and has long-term potentials. The idea about programmable bricks in
+Brazil is still in its early stages. The schools are just beginning to grasp the learning possibilities. Boards were made
+available for immediate use to support this initial process. We hope to advance the projects by providing means for
+consultancy and    communication   among   the schools   in their network      and with other domain   experts. Some
+communication has already begun through on-line services such as mailing lists and video/audio conferences.
+
+       To move the idea of the GoGo board forward, we hope to sustain the availability of boards and the
+materials. An important step towards this goal is to establish a group of developers (possibly in Brazil). There are a
+couple of roles for this group. One is to keep up with changes in technology. Components become obsolete and new
+ones replace them. The design of the GoGo board must be modified to reflect this change. Another role for this
+group is to invent, adapt or extend the design to fit particular needs. The features on the GoGo board are finite and
+demands for new functionalities will eventually arise.
+
+Conclusion
+       We started this article describing the Programmable Brick and the challenges for its implementation in low-
+income settings. We then introduced the GoGo board as a low-cost, open-source implementation of a Programmable
+Brick. We showed the design choices that allowed it to be more affordable and transparent to users. Next, we
+discussed case studies that revealed how the GoGo board and the use of found materials made the implementation of
+learning activities involving Programmable Bricks richer and more feasible in the settings considered.
+
+       We argue that the GoGo board framework serves well as a means to support rich and socially relevant
+learning in communities where resources are scarce. We have shown how the board has been designed to allow
+motivated users to become involved in its construction process. This led interested users to explore and become
+familiar with the underlying electronics concepts. Similar explorations of "how things work" were evident in the use
+of found and broken materials. This mode of thought resonated with the local culture in Brazil, where tinkering with
+objects to find solutions for everyday problems is a common cultural practice. This approach towards the learning
+tools was key to create the critical capacity (Resnick, 2000) that made the GoGo board framework practical and
+socially accepted.
+
+       We conclude by emphasizing that any attempt to improve access to educational materials would create a
+deeper impact, and allow for a more diverse audience, if the materials are seen as both process and product. Making
+
+                                                         487
+Programmable Bricks affordable to schools, while proved important, does not ensure that good learning would
+follow. In this work, our endeavor was to discuss both the learning environment and the learning opportunities that
+arose from the multiple levels of involvement with the tool: from its application to its construction.
+
+Endnotes
+(1) Please visit the GoGo board website (http://www.gogoboard.org/new/gogo22/) for more information regarding
+    the components and their prices.
+
+References
+Blikstein, P., & Cavallo, D. (2003). God hides in the details: design and implementation of technology-enabled
+         learning environments in public education. Proceedings of Eurologo 2003 Conference. Porto, Portugal.
+Blikstein, P. (2002). The Trojan Horse as a Trojan Horse: impacting the ecology of the Learning Atmosphere.
+         Cambridge, MA: Media Laboratory Master's Thesis, Massachusetts Institute of Technology.
+Cavallo, D.  (2000).  Emergent     Design and Learning   Environments:  Building   on   Indigenous     Knowledge.   IBM
+         Systems Journal, vol. 39, nos. 3 & 4, pp. 768-781.
+Falbel, A.   (1989). Friskolen   70: an   ethnographically  informed  inquiry into  the  social     context of  learning.
+         Cambridge, MA: Media Laboratory Doctorial Thesis, Massachusetts Institute of Technology.
+Geertz, C. (1973). The Interpretation of Cultures. New York: Basic Books.
+Granott, N. (1993). Microdevelopment of Co-Construction of Knowledge During Problem Solving: Puzzled Minds,
+         Weird   Creatures, and    Wuggles. Cambridge,   MA:    Media Laboratory   Doctorial      Thesis, Massachusetts
+         Institute of Technology.
+Lyon, C. (2003). Encouraging Innovation by Engineering the Learning Curve. Cambridge, MA: Department of
+         Electrical Engineering and Computer Science Master's Thesis, Massachusetts Institute of Technology.
+Martin, F. (1988). Children, Cybernetics and Programmable Turtles. Cambridge, MA: Department of Mechanical
+         Engineering Master's Thesis, Massachusetts Institute of Technology.
+Martin,  F., &   Resnick, M.    (1993). LEGO/Logo    and Electronic  Bricks:  Creating  a Scienceland       for Children.
+         Advanced Educational Technologies for Mathematics and Science. Springer-Verlag Berlin and Heidelberg
+         GmbH & Co.
+Martin, F., Mikhak, B., & Silverman, B. (2000). MetaCricket: A designer's kit for making computational devices.
+         IBM Systems Journal, vol. 39, nos. 3 & 4, pp. 795-815.
+Mikhak, B., Berg, R., Martin, F., Resnick, M., & Silverman, B. (2000). To Mindstorms and Beyond: Evolution of a
+         Construction  Kit  for  Magical  Machines.  Robots  for Kids: Exploring   New    Technologies      for Learning
+         Experiences. Morgan Kaufman / Academic Press, San Francisco, CA.
+Papert, S.  (1971).  Teaching   children  thinking. Cambridge,   MA:  MIT    Artificial Laboratory      Memo    no. 247,
+         Massachusetts Institute of Technology.
+Papert, S. (1980). Mindstorms: Children, Computers, and Powerful Ideas. New York: Basic Books.
+Papert, S. (1987). Information technology and education: Computer criticism vs technocentric thinking. Educational
+         Researcher, 16(1), pp. 22-30.
+Papert, S. (1991). Situating Constructionism. In I. Harel & S. Papert (Eds.), Constructionism (pp. 518). Norwood,
+         NJ: Ablex Publishing.
+Resnick, M., Martin, F., Sargent, R., & Silverman, B. (1996). Programmable Bricks: Toys to Think With. IBM
+         Systems Journal, vol. 35, nos. 3 & 4, pp. 443-452.
+Resnick, M., Berg, R., & Eisenberg, M. (2000). Beyond Black Boxes: Bringing Transparency and Aesthetics Back
+         to Scientific Investigation. Journal of the Learning Sciences, vol. 9, no. 1, pp. 7-30.
+Ryle, G. (1971). Thinking and Reflecting. Collected Papers, Vol. 2, pp. 465-496. New York: Barnes & Nobel, Inc.
+Sargent, R. (1995). The Programmable LEGO Brick: Ubiquitous Computing for Kids. Cambridge, MA: Media
+         Laboratory Master's Thesis, Massachusetts Institute of Technology.
+Sargent, R., Resnick, M., Martin, F., & Silverman, B. (1996). Building and Learning with Programmable Bricks.
+         Constructionism in Practice. Lawrence Erlbaum, Mahwah, NJ.
+Sipitakiat, A. (2001). Digital Technology for Conviviality: Making the Most of Students' Energy and Imagination in
+         Learning Environments. Cambridge, MA: Media Laboratory Master's Thesis, Massachusetts Institute of
+         Technology.
+Sipitakiat,  A., Blikstein, P.,  &   Cavallo, D. (2002).    The  GoGo  Board:  Moving     towards       highly  available
+         computational    tools in learning environments.   Proceedings of   Interactive  Computer      Aided   Learning
+         International Workshop. Carinthia Technology Institute, Villach, Austria.
+
+                                                         488
+

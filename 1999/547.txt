@@ -1,0 +1,412 @@
+Enriching Learning Contexts to Support Communities
+of Practice
+Yongwu Miao, Jutta Maria Fleschutz, Peter Zentel
+
+GMD - German National Research Center for Information Technology, Integrated
+Publication and Information Systems Institute (IPSI)
+
+      Abstract: The theory of situated learning emphasizes the importance of
+      authentic learning contexts and the central role of social interaction. In the
+      light of this theory and based on our previous experience, we propose an
+      approach for the development of context-based virtual learning
+      environments. These are virtual worlds, which the learners themselves
+      can create and modify. They therefore provide a customized learning
+      context in which all learning processes and communications between
+      learners can be situated. The characteristics of our approach are: the use of
+      perceptual metaphors, the flexible combination of these metaphors within
+      the learning environment, and the support for awareness of the context and
+      the social interaction within it. Collaborative hypermedia technology is
+      used to construct and to represent places and information in the
+      environment and then to navigate within it. The prototype system provides
+      rich and flexible learning contexts and supports various forms of social
+      interaction for communities of practice.
+
+      Keywords: multi-user virtual environment, situated learning, groupware,
+      communities of practice
+
+Introduction
+
+According to Lave and Wenger [Lave91], learning is "a function of activity, context and
+culture in which it occurs". Learning is difficult or even impossible in an anonymous,
+abstract situation. Therefore, an environment is needed which is as authentic as possible.
+It should provide authentic learning material that deals with real-life problems, and it
+should support both collaboration and lively interaction with people as well as objects in
+the environment. In this paper, we describe how to realize this approach in a collaborative
+virtual learning environment.
+
+Designing a collaborative virtual learning environment is usually a process of abstraction,
+which models only the essential elements of conventional learning. Details in the context
+of collaborative learning are either ignored intentionally or because of the limitations of
+technology. The problem is that situated learning is difficult to implement in those virtual
+learning environments, which do not provide a flexible variety of contexts and which do
+not support very many forms of social interaction. For example, document-based systems
+primarily serve as a repository for documents and control the access to documents.
+People are not explicitly modeled in such systems, and social interaction can only be
+performed indirectly by manipulating documents. In most room-based learning systems,
+relationships between people, rooms, tools, and documents are modeled rigidly, and
+social interaction is usually bound to rooms. To go beyond these restrictions, we argue
+that it is important to enable end-users to model and customize their learning
+environment. Furthermore, they should be able to consult an expert, currently staying in
+the same room or in another room, and to form and develop communities of practice
+(CoP) as described in [Wenger98]. With our design approach towards a context-based
+learning environment, we aim to provide rich and flexible learning contexts and thus to
+support various forms of social interaction for CoPs.
+
+This paper is organized as follows: The first section describes the motivation for this
+research. The second and main part of this paper gives a description of our approach,
+defining the basic concepts of our context-based virtual learning environment, describing
+awareness aspects and how we propose to support social interaction. Finally, we compare
+our approach to related work and present our conclusions and future work.
+
+Motivation
+
+The motivation for this research comes from our considerations of pedagogical theories
+and our previous experience in developing and using a collaborative virtual learning
+environment (VITAL).
+
+Theoretical Background
+
+In the constructivism approach [Jonassen93] learners are active constructors of
+knowledge. In other words no strict curriculum guides students through the learning
+issues, rather the environment as a whole stimulates them to construct knowledge for
+themselves. Constructivism emphasizes the importance of the context in which students
+work and the importance of collaborative learning.
+
+The theory of situated learning formulated by Lave and Wenger [Lave91] considers
+social interaction to be central for learning. Collaboration can lead to an elaboration of
+strategies that can afterwards be discussed, which, in turn, can enhance generalizing facts
+as knowledge, grounded in students' situated understanding. Wenger uses Communities
+of Practice (CoP) to describe the impact of social learning [Wenger98]. Members of a
+CoP are bound by shared practice, which means that they are engaged in a collective
+process of learning. They are fundamentally self-organized, even when external
+constraints influence the group. A CoP is determined by the value it provides to its
+members, not by a given schedule. It spans dynamic structures and hierarchies. A CoP is
+a dynamic group, which can be within an organization, across division units within an
+organization, or across organizations. People can simultaneously belong to different CoPs
+in the same way as they belong to other types of groups.
+
+Experience with VITAL
+
+A room-based system called VITAL [Pfister98a] has been developed and tested in our
+group for two years. VITAL is a virtual learning environment which supports co-located
+and distributed collaborative learning of small groups. In VITAL, a virtual room consists
+of a shared hypermedia whiteboard, a library, and communication tools such as audio
+tool and group chat tool. The room metaphor is used to organize collaboration, to
+structure information, to represent group structure and inter-group relationships, to
+control access to information objects in a room, and to provide awareness about the
+presence of people in a room.
+
+The room metaphor, as applied in VITAL, gives a relatively fixed predefined context for
+the learners to work in. Our experience with VITAL showed that the use of the room
+metaphor as described above is not flexible enough to support situated learning. The
+simple and rigid room structure and the internal structure of rooms limit the forms of
+social interaction which are possible. We recommend that in order to support situated
+learning settings, information structure and room structure should not be so tightly
+coupled. Unlike in VITAL, group structure should not exactly map to the room structure,
+and the structure of the group should be able to change dynamically.
+
+Approach
+
+In order to support CoPs and to overcome the limitations of VITAL, we have decided to
+de-couple the fixed relationships between room metaphor and other metaphors in VITAL.
+Our new approach treats the entity classes place, people, document, and tool equally.
+These elements can then be flexibly combined to form different contexts to support
+various types of collaborative learning activity. Collaborative hypermedia technology is
+used to represent and construct the learning context and to navigate in the learning
+environment. The use of collaborative hypermedia technology has two aspects. Firstly in
+terms of navigational pathways between places and secondly in terms of the navigation of
+information.
+
+Basic Concepts of the Context-Based Virtual Learning Environment
+
+The basic concepts of the proposed context-based virtual learning environment are:
+
+People
+
+People denote an actor or a group of actors. An actor has attributes (such as name,
+picture, expertise, learning interests, etc.) which identify and characterize the user of the
+system. A group is a set of entities, which may be actors or other groups (i.e. sub-
+groups). The structure of a group is represented as a directed acyclic graph (DAG).
+Examples of such groups might be the members of a division of an organization, or
+people working on a project, which could well cross real-world organizational boundaries
+or groups.
+
+Place
+
+A place is a computational space in which objects can exist and move. We distinguish
+three kinds of relationships between places: structural, proximate, and connected
+relationships. Structural relationship means that a place is a component of another place.
+Proximate relationship means that two or more places have the same parent in the
+hierarchical structure and are connected by a publicly accessible place (e.g., a corridor).
+Connected relationship means that people can navigate directly from one place to
+another; this could be either to an immediately neighboring location or a shortcut to a
+more distant location.
+
+Document
+
+A document is a logical unit of information that will be handled (e.g., stored, moved, or
+destroyed) as a whole (e.g., a book, or a position paper). It has attributes such as title,
+keywords, type, owner, creation time, current users, and current place. A document
+consists of a set of pages connected by links. Each page contains a collection of
+information items. An information item can be described using different media such as
+text, image, graphics, tables, etc. There are three different kinds of links: structural links,
+internal reference links, and external reference links. Structural links traverse the
+branching structure of the document. Internal reference links are used as shortcuts to
+navigate within one document without having to follow the structure of the document.
+External reference links are used to navigate to other documents.
+
+Tool
+
+A tool helps the end-user to deal with documents, to interact with other people, to
+navigate from one place to another, etc. General-purpose tools are: whiteboard,
+bookshelf, computer, message box, telephone, calendar, bell, desk, suitcase, garbage can,
+hypermedia document editor, door, etc. Some tools, such as course registration tool,
+document search engine, learning net editor, experimental instruments, are domain-
+specific tools.
+
+Relationship
+
+Various relationships exist among entity classes, e.g.,
+
+     ·   people, documents, and tools are related to places,
+     ·   documents are attached to tools,
+     ·   people use tools to interact with other people, to manipulate documents, to
+         navigate, and to search resources.
+
+A context is defined as a set of places, actors, documents, tools, and their
+relationships. A context specifies an environment where necessary resources are
+provided and maintained for performing certain kinds of activities. The nature of the
+context is dynamic and evolves over time. To support CoPs, our virtual learning
+environment enables end-users to define elements (e.g., people, places, and documents)
+and their structures and to combine the elements in a flexible way by using collaborative
+hypermedia tools. The virtual learning environment supports numerous possibilities to
+create new constellations, to span new structures and hierarchies within and between
+contexts on demand. Special areas of the environment, which contain domain-specific
+tools and corresponding learning materials, can be configured to support specific situated
+contexts (e.g., project-based learning, language learning). For example, a room (the most
+simple place, which can exist in the environment) can be created for a certain purpose; in
+the room necessary tools and relevant documents are arranged, and the room is assigned
+to people. End-users can group multiple rooms together as a building for a specific
+purpose. Thus, the proximity of locations increases the probabilities of co-presence of
+people, who are interested in similar topics, who have a common learning goal, who
+work on similar projects, or who are experts of special related topics, etc. Increasing
+probabilities of co-presence of people in the same place at the same time in turn also
+increases the likelihood of social interaction.
+
+Awareness of Context
+
+To enable people to interact with their learning environment, people must be aware of the
+context and its current internal structure.
+
+       Figure 1: Example learning environment from an actorís point of view
+Our environment enables people to be aware of
+
+   ·  co-actors (position, movements, expertise, etc.),
+   ·  the place (current activities, historical information, scheduled events, etc.),
+   ·  documents (title, author/s, user/s, etc.),
+   ·  tools (availability, state (in use or not), users, etc.)
+
+by observing the window or by clicking corresponding icons.
+
+An example for this awareness of context is given in the upper window of figure 1: Six
+people are working in the room "car driving". They can all observe who is working in
+which sub-group (indicated by small pictures on the whiteboards), who is reading which
+document (see the tabs in the bottom left-hand corner of the upper window), and that a
+document has been taken from the bookshelf which is not in use at the moment. Some
+tools are in use (e.g., the bookshelf and two whiteboards), others are available, but not in
+use (e.g., computer and phone). By clicking on the icon of a co-actor or a document, the
+user obtains more detailed information in a pop-up window.
+
+Flexible searching for suitable resources is enabled by a combination of various
+navigation steps through document and place structure. For instance, our example user
+reads the hypermedia document "Car Driving in the USA" (see figure 1, lower right
+window). He then wants to get more detailed information on the topic, and so he looks
+for the author of the document and finds out that the author is currently staying in the
+exercise room. He can then click on the corresponding door icon to move to that room in
+order to enhance his knowledge, using the additional resources provided there.
+
+Social Interaction
+
+As Wenger [Wenger98] points out, members of a community are informally bound by
+what they do together and what they learned through their mutual engagement in these
+activities. Social interaction occurs in all stages of development of CoPs. We focus on the
+provision of an integrated support for communication, collaboration, and coordination.
+
+Communication
+
+Using an audio tool and a group chat tool installed in each place, an actor can hear other
+people who are in the same place and talk to them. There are a number of ways to initiate
+a private conversation with somebody in the same place; for example an actor simply has
+to draw an arrow from his or her picture to the picture of the chosen conversation partner.
+A communication connection for both is then established, and a link labeled "talk"
+connects the two pictures. Unlike strictly room-based systems, our learning environment
+supports communication between people who are located in different virtual places. By
+using a telephone metaphor, the system can help to establish conversation channels
+between partners in different rooms directly. Asynchronous communication in the same
+place is supported by the use of a bulletin board metaphor. Asynchronous communication
+between different virtual places is supported by the use of a message box metaphor.
+Collaboration
+
+The collaborative construction of knowledge can be realized asynchronously or
+synchronously. For supporting synchronous collaboration, we use a whiteboard metaphor
+to establish a synchronous session for all users in the same room. Documents dragged
+onto the whiteboard can be edited collaboratively by using a hypermedia document
+editor. Any change to the hypermedia document will be propagated to other usersí
+windows, and all users move through the hypermedia document together. As they do this,
+they share the same view of the document; specifically, all users share one scrollbar and
+change pages simultaneously. This is a pure WYSIWIS (What You See Is What I See)
+collaboration mode [Stefik86]. Furthermore, if people in the same place want to split into
+two or more sub-groups such that each sub-group works on different documents in a pure
+WYSIWIS collaboration mode, then they can simply create a whiteboard for each sub-
+group and drag the corresponding documents onto the whiteboard. If all sub-groups want
+to work on the same document, but on different positions of the document, they can
+create a whiteboard for each sub-group and drag a reference copy of the document onto
+their whiteboards. In this case, people in the same sub-group work in a pure WYSIWIS
+collaboration mode and people in different sub-groups work in a relaxed WYSIWIS
+collaboration mode [Stefik86], but they all work on the same document. For example in
+figure 1, two sub-groups work on the same document, "Traffic Rules", on different
+whiteboards (i.e. as a whole they work in relaxed WYSIWIS collaboration mode), but
+each sub-group works in strict WYSIWIS collaboration mode (as shown for sub-group 1
+in the lower left window of figure 1).
+
+Our environment also supports collaboration among people who are located in different
+virtual places. Computers and network are used as perceptual metaphors to establish a
+session for people in different places [Miao99]. Users working in different virtual rooms
+can share the same information without leaving their current virtual rooms by connecting
+their virtual computers and dragging documents onto the computer icon. A participant
+can leave the session by closing the shared window. Even when all participants have left,
+the session is still active. When someone joins the session later, s/he finds the working
+context unchanged and can work continually. Thus, asynchronous collaboration is
+supported as well.
+
+Coordination
+
+When social interaction takes place in the real world, people normally use social
+protocols to coordinate their actions. In a virtual collaborative learning environment,
+weak communication channels complicate the coordination of using social protocols. Our
+context-based virtual learning environment supports coordination of group interaction in
+two aspects: Firstly, we enable people to use social protocols intuitively by using
+metaphors of entities existing in a real-world learning environment. As a consequence,
+users of the system can intuitively use their experience and skills of coordination.
+Secondly, learning protocols are used to control and guide social interaction and the
+social construction of shared knowledge. To perform group activity effectively, a group
+can use predefined protocols to control and guide its interaction. Example learning
+protocols are described in [Pfister98b, Wessner99].
+Related Work
+
+Currently, there are three categories of virtual learning environments: document-based,
+conferencing-based, and room-based systems. In the following, we look briefly at each of
+these systems and compare them to our approach of a context-based virtual learning
+environment.
+
+Document-based learning systems primarily serve as a repository for documents and
+control the access to documents. The users of this kind of systems can interact only
+indirectly with each other by navigating through the information space, and by viewing
+and manipulating information items in the shared database (e.g., CSILE
+[Scardamalia94]). Unlike context-based systems, these systems do not attempt to provide
+a very sophisticated context, but one which is based mainly on a document structure and
+supports limited social interaction.
+
+Conferencing-based systems support real-time learning activities. They support typical
+class and seminar style activities such as discussion and lecture. For example, the
+learning systems based on Microsoft NetMeeting [Summers99] are developed by
+adopting this approach. Unlike context-based systems, these systems provide limited
+persistence of documents and do not support asynchronous activities.
+
+Room-based systems are often based on a number of virtual rooms, which often include
+a fixed set of embedded tools such as whiteboard and audio/video tools. Users in the
+same room can view and edit information items in a shared workspace simultaneously,
+and they can talk to others and see others in the same room (e.g., VITAL [Pfister98a]).
+Context-based systems derived from our former experience with room-based systems, but
+both types of systems differ in several aspects: Firstly, in room-based systems, the
+organization of people, and the structure of documents (if any) rely upon the structure of
+rooms, and tools belong to certain rooms. In context-based systems, the organization of
+people and documents is dynamic and flexible, rather than being fixed in a particular
+place, some tools can belong to actors and be carried around. Secondly, in room-based
+systems, the room structure and the internal structure of a room are rigid. In context-
+based systems, the place structure and the internal structure of a place can be reorganized
+and customized to establish a set of rich, dynamic, purpose-specific environments for
+situated learning. Thirdly, in room-based systems, social interaction is limited within the
+scope of certain rooms. In context-based systems, a context may be formed beyond the
+boundaries of certain places. Thus, social interaction can be carried out across places.
+
+Conclusion and Future Work
+
+Based on the theory of situated learning and our practical experience, we developed an
+approach to build context-based learning environments. To support the formation and
+development of CoPs in a virtual learning environment, the designers have to respect
+several criteria which we described in this paper: Firstly, the flexible combination of
+people, places, tools, and documents supports rich contexts for situated learning.
+Secondly, a virtual learning environment must provide integrated support for
+communication, collaboration, and coordination in order to nurture CoPs. In addition,
+collaborative hypermedia technology is used to construct places and information in the
+environment and then to navigate within it.
+
+The first version of the prototype has been developed and tested in our group. In the near
+future, our efforts will focus on completing the implementation of all features and on
+evaluating the usability of the system. The evaluation will focus on the target group of
+adult learners. First evaluations will be made with students, and later on we plan to use
+the system to support adults engaged in continuous learning programs. In addition, tools
+for acquiring and applying domain-specific knowledge (such as experimental instruments
+for science learning) are very important for supporting the idea of a context-based
+learning environment. Another example would be a learning environment which supports
+language learning and needs the implementation of tools like a cooperative vocabulary
+trainer or a dictionary.
+
+Bibliography
+
+[Summers99] Summers, Bob, Official Microsoft® NetMeetingTMBook,
+http://mspress.microsoft.com/prod/books/1546.htm
+
+[Jonassen93] Jonassen, D.H., Beissner, K., and Yacci, M. (1993). Structural knowledge:
+Techniques for representing, conveying, and acquiring structural knowledge. Mahwah:
+Erlbaum.
+
+[Lave91] Lave, J., and Wenger, E. (1991). Situated Learning: Legitimate Peripheral
+Participation. Cambridge, UK: Cambridge University Press.
+
+[Miao99] Miao, Y., Pfister, H. R., and Wessner, M. Combining the Metaphors of an
+Institute and of Networked Computers for Building Collaborative Learning
+Environments. Poster published in Proceedings of the 4th Annual ACM SIGCSE/SIGCUE
+ITiCSE 99, pp. 188, Cracow, Poland, June 27- July 1, 1999.
+
+[Pfister98a] Pfister, H. R., Schuckmann, C., Beck-Wilson, J., and Wessner, M. (1998).
+The metaphor of virtual rooms in the cooperative learning environment CLear. Streitz,
+N., Konomi, S., and Burkhardt, H.J. (Eds.), Cooperative Buildings. Integrating
+Information, Organization and Architecture. pp. 107-113. Berlin: Springer.
+
+[Pfister98b] Pfister, H. R., Wessner, M., Beck-Wilson, J., Miao, Y., and Steinmetz, R.
+(1998). Rooms, protocols, and nets: metaphors for computer-supported cooperative
+learning of distributed groups. Proceedings of the Third International Conference on the
+Learning Sciences (ICLS-98), pp. 242-248, Dec. 16-19, 1998. Georgia Tech, Atlanta.
+
+[Scardamalia94] Scardamalia, et al. (1994). The CSILE project: Trying to bring the
+classroom into World 3. Mcgilly, K. (Ed.). Classroom Lessons: Integrating Cognitive
+Theory and Classroom Practice. Cambridge: MIT Press.
+[Stefik86] Stefik, M., et al. (1986). WYSIWIS Revised: Early Experiences with
+Multiuser Interfaces. Proceedings of the Conference on Computer-supported Cooperative
+Work (CSCWí86), pp. 276-290, Dec. 3-5, 1986.
+
+[Wenger98] Wenger, E. (1998). Communities of Practice: Learning as a Social System,
+The Systems Thinker, Vol. 9, No. 5, June/July 1998. Pegasus Communications Inc.,
+Waltham, MA, USA.
+
+[Wessner99] Wessner, M., Pfister, H. R., and Miao, Y., (1999) Using Learning Protocols
+to Structure Computer-Supported Cooperative Learning. Proceedings of the ED-
+MEDIA'99, pp. 471-476, Seattle, Washington, June 19-24, 1999.
+
+Acknowledgements
+
+We want to thank all our colleagues at the CONCERT department at GMD-IPSI for their
+help in developing the concept and implementing the system. Special thanks go to our
+colleague Shirley Holst for the great job sheís done revising the paper.
+
+Authors' addresses
+
+Yongwu Miao (miao@darmstadt.gmd.de)
+Jutta Maria Fleschutz (fleschutz@darmstadt.gmd.de)
+Peter Zentel (zentel@darmstadt.gmd.de)
+GMD - German National Research Center for Information Technology, Integrated
+Publication and Information Systems Institute (IPSI); Dolivostr. 15; D-64293 Darmstadt;
+Germany. Tel. +49 (0)6151 869 868. Fax +49 (0)6151 869 963.
+

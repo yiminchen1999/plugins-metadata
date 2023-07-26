@@ -1,0 +1,373 @@
+              Does an Interface with Less Assistance Provoke More
+                                          Thoughtful Behavior?
+
+            Christof van Nimwegen, Herre van Oostendorp, Utrecht University, Padualaan 14, 3584CH
+                                                 Utrecht, The Netherlands
+                                            christof@cs.uu.nl, herre@cs.uu.nl
+          Daniel Burgos, Rob Koper, Open University of the Netherlands, Valkenburgerweg 177, 6401DL,
+                                                 Heerlen, The Netherlands
+                                         daniel.burgos@ou.nl, rob.koper@ou.nl
+
+        Abstract: This paper investigates effects of interface style and cognitive style on problem solving
+        performance. It is often assumed that performance improves when information is externalized onto
+        the interface. Although relieving working memory this may discourage planning, understanding
+        and knowledge acquisition. When information is not externalized, it must be internalized, stored
+        in  the   user's   memory,    requiring    more  planning  and   thinking,     perhaps  leading    to better
+        performance and knowledge. Another variable influencing behavior is the cognitive style of users.
+        We     included  "Need   for  Cognition"   (NFC),    the  tendency   to  engage   in  cognitive  tasks.  We
+        investigated    the effects  of  interface style and  NFC     using planning   tasks.  The   internalization
+        interface   led  to  more    planful  behavior    and  smarter   solutions,    but  NFC    had  no    effect.
+        Understanding      reactions  to interface  information    is crucial   in  designing  software    aimed   at
+        education and learning. To facilitate active learning and provoke better performance, designers
+        should take care in giving users (too) much assistance.
+
+Introduction
+        Computers are indispensable in many working environments and multimedia are nowadays omnipresent in
+education, training and cultural institutions such as museums or science parks. A recurring issue in software design
+guidelines to  assure   some degree   of usability  is minimizing     "user memory     load", referred  to as   computational
+offloading  (Scaife &   Rogers,  1996).  The  working    memory    of a  user  has  to be  relieved  so that  a maximum     of
+cognitive  resources  can   be devoted   to  the task.   Externalization of   information,   providing  information    on   the
+interface to structure and guide problem-solving, often is thought to be a means by which user memory load can be
+minimized.  The  need   to  plan is  reduced and   externalization can   limit  the possibilities in a  given   situation, thus
+reducing the problem space (Zhang & Norman, 1994). A way to implement some degree of externalization is to
+make parts of the interface context-sensitive, e.g. by hiding or disabling inapplicable functions. The user is "taken by
+the  hand"  by limiting   choices    and providing  feedback     (Van  Oostendorp    &   de   Mul,  1999;  De   Mul   &    Van
+Oostendorp, 1996). This is related (but not equivalent) to the concept of scaffolding (Soloway, Guzdial & Hay,
+1994), adopted in research on technological supports for learning. It refers to interface support to assist learners in
+mindfully participating in work that would otherwise be too complex. The difference is that scaffolding is meant to
+provide structure and guidance during learning a new task that a user cannot do alone. However, externalization as
+we use it here (and others), is not meant to specifically motivate mindful participation, but is rather supposed to free
+up cognitive resources to eventually smoothen task execution. Examples where externalization of information is
+applied are software    installation wizards or  grayed-out  menu-items     that don't  permit using    them  thus offering  a
+context-sensitive interface with only "possible" actions. For example, in Word you cannot select "paste" from the
+menu when nothing is copied first. "Paste" shown in gray color indicates its presence and its (temporary, situation
+dependent)  unavailability.  It  informs  users    about the  applicability  of  operators   and  makes    remembering     this
+unnecessary. Zhang and Norman (1994) found that relieving working memory by externalizing information could be
+useful for cognitive tasks: the more is externalized, the easier it is to solve the problem. But one could also argue
+that externalization  may   have negative   consequences   for   task performance    and   knowledge    acquisition.  There  is
+research in the context of externalization and feedback depicting current states of objects and changes of objects. For
+a discussion in the light of cognitive load theory (CLT) (Sweller, 1994) concerning the effects of different external
+visualizations on   the acquisition  of  problem   solving skill, see  Scheiter,   Gerjets and    Catrambone    (2006).    They
+showed that use of certain animations (meant to explain) led to a substantial increase in learning time and a decrease
+in performance. The animations used to visualize solution procedures were more harmful than helpful for conveying
+problem-solving skills. They state that these visualizations may reduce learner activity and induce a passive style of
+processing. This could prevent learners from performing effortful cognitive processes required for understanding.
+
+                                                             785                                                     ICLS 2006
+          There is   a general    notion  that learning  is more    effective  when   people   experiment  and   discover    for
+themselves and exploratory learning as a whole has been a subject of research in many domains. Carroll (1990) for
+example, already more than a decade ago propagated minimalism in design and instructions. When the design of a
+system is "incomplete" on purpose, users must explore the system actively, make guesses and learn from mistakes.
+Kerr and Payne (1994) pondered why active learning with the target system would be more effective than with
+reading instructions. Is it because the user is free to set his own goals, or to use their own words, "is it that the
+learner has  to attempt    to  solve problems   himself, actively   choosing  or inferring   the next  command,    rather than
+merely reading and applying potted solutions?". In their experiment different types of training for MS Excel were
+compared, using active (problem-solving) and passive (tutorial-like, prompted interaction) learning contexts. They
+found that in training versions where users had to actively perform problem-solving, already during training users
+had a clear learning advantage. One can imagine situations in which performing skills in the long term is more
+important than performing well immediately after training. Charney and Reder (1986) found that a condition that
+provided added difficulty for learners (problem-solving) resulted in poorer initial performance than other conditions
+(e.g. "guided practice"), but to better delayed performance. An explanation could be that the more difficult condition
+perhaps instigates a deeper level of cognitive processing which eventually results in more effective learning.
+
+          What  will   be   the   influence  of  externalization    on  learning?   Perhaps   knowledge    gained    using   an
+externalization-based interface is more volatile and difficult to transfer to other situations. This is undesirable when
+learning or gaining insight itself is the aim or when making errors is costly. Payne, Howes and Reader (2001) state
+that when information is externalized on the screen, users are reluctant to store relevant information in memory and
+are more inclined to use the external representation. O'Hara and Payne (1998, 1999) showed that dependence on
+exploration-support may indeed have a negative effect. Having to internalize information on the other hand may lead
+to more planning, better task performance and more knowledge acquisition. They distinguished between plan-based
+and display-based problem solving. In plan-based problem solving one uses detailed problem strategies from long-
+term memory.    Display-based      problem   solving   makes   little use of  acquired   knowledge    but relies  on  interface
+information. Plan-based activity leads to shorter solution routes, because steps are planned, and no unnecessary steps
+are taken, while a display-based strategy involves more steps because of more searching. Plan-based behavior was
+provoked by varying the operator cost in the interface of a puzzle, which existed in a low-cost interface and a high-
+cost interface. The    latter imposed   a  longer  lockout  time  (system    response time)   on subjects  than  the  low-cost
+interface after an   action,   which   made  the  system  harder   to  use.  The high-cost   interface induced   a  plan-based
+approach which led to better performance, and the task knowledge acquired was more easily transferred to problems
+within the same domain. From a CLT point of view (Sweller, 1994), provoking plan based behavior is comparable
+with increasing "germane load". It refers to the degree of effort involved in processing and construction schemas,
+and is associated with motivation and interest. In CLT, extraneous load should be minimized. Extraneous load takes
+up valuable working memory resources away from the task and could be compared with effects of "externalization".
+
+          The design of problem-solving environments should not discourage planning. Strong reliance on the visual
+display may result in less transfer of skills and less planning. Externalizing information may not be beneficial when
+the goal is to achieve better, transferable task performance and knowledge. Besides better transfer to other situations,
+one could imagine that possessing better internal knowledge-elements, leads to better performance when one has
+worked with the application some longer time ago. Van Nimwegen, van Oostendorp and Tabachneck-Schijf (2004)
+studied this  using  an   abstract version  of the    "Missionaries   and Cannibals"  puzzle.    They  investigated  effects of
+internalization vs. externalization on task performance, knowledge, and transfer to a different problem in the same
+domain.   The  puzzle,    called Balls  &  Boxes   existed  in two    interface  styles: externalization  and  internalization.
+Externalization  was   realized   by   graying out inapplicable   (momentarily    unavailable)   buttons  needed   to perform
+certain operations. In the internalization condition this support was absent. To their surprise, not ever and not on any
+measure   did externalization     subjects  perform   better. Moreover,      internalization subjects  had better   knowledge
+afterwards,  and   8   months    later the internalization  subjects   still had  better  knowledge    and    now  also better
+performance. In addition these subjects performed better at transferring acquired rule-knowledge to a different but
+similar task. In a follow up study Van Nimwegen et al. (2005) investigated whether possible differences in attitude
+to problem solving were of influence. Besides interface style it was tried to influence task conception or attitude by
+giving instructions encouraging plan-based behavior in one group and encouraging display-based behavior in the
+other group. They used specific instructions to change the affective state of a user. It could be either a low-planning
+instruction ("solve    as fast as  possible, mistakes   are   not a   problem")  or a high-planning    instruction  ("solve  as
+economically    as  possible,  it  will  pay   off"). Again   internalization   subjects  performed    better and   had better
+
+                                                              786                                                    ICLS 2006
+knowledge. The instructions had no effect on externalization subjects: there was no difference in behavior between
+subjects that received high-planning vs. low-planning instructions. Upon being confronted with the externalization
+interface, subjects ignored or even forgot the planning instruction altogether. However, instructions did have effect
+on internalization  subjects. With  a  low-planning    instruction, they made  twice  as many   illegal moves    and more
+unnecessary moves, as compared to those with high-planning instruction.
+
+The Current Research Problem
+         A drawback from the tasks used in the experiments above is that findings may not be relevant in realistic
+tasks. We argue that in problem-solving situations where people need to learn the underlying rules of a system, or
+make as little mistakes as possible, the use of a plan-based approach is preferred. If a using plan-based approach is
+preferred, as can be the case in learning situations, we should find out how people can be persuaded into using that
+approach. We will again investigate our assumptions, but now with a more realistic, more life-like task.
+
+Interface Style
+         We will investigate the influence of interface style on performance on a problem-solving task. We define
+the externalization of the underlying rules as visualizing the result of applying a set of constraints onto the interface.
+Externalization shows which actions are allowed, comparable to grayed out menu items in for example Word, where
+it is shown that the current situation does not permit a function to be used because the constraints are not met.
+
+Cognitive Style
+         We included subjects' differences in attitude to problem solving, because it could have an influence on
+behavior and  performance.    We   used   "need   for cognition" (NFC),   a psychological  construct    that measures   the
+tendency of  individuals to   engage   in and enjoy   effortful cognitive tasks (Cacioppo,  Petty   &   Kao,  1984). Both
+persons high and low on NFC need to make sense of their world, but tend to do this in different ways. A person with
+a high NFC    loves to seek,  reflect  on and reason    about  information, whereas   someone   on  the other  end   of the
+continuum only thinks as hard as (s)he has to and is inclined to rely on others. Crystal and Kalyanaraman (2005)
+demonstrated that NFC can influence perceived system usability and responses, or as they put it: "If, in a particular
+HCI context, individuals high in NFC exhibit significantly different behavior than individuals low in NFC, usability
+could likely be improved by providing interfaces optimized for each group." Also other literature on adaptation and
+learning systems emphasizes the importance of adapting the external representation to the emotional state of learners
+(Kort, Reilly and   Picard,   2001),   or proposes    adapting  to  various constant  and  volatile  user    characteristics
+(Brusilovsky, 2001). In this context, this could perhaps mean that a person with a high NFC in the externalization
+condition might still exercise a high amount of planning, as opposed to a low NFC subject, who is reluctant to plan.
+
+Hypotheses
+         H1: Internalization leads to a more plan-based strategy and better performance than externalization.
+Externalization, providing assistance, tempts users not to form plans, but to rely on the interface. The internalized
+condition lacks this guidance and encourages planning. This planning involves spending effort on activities such as
+studying relevant   elements  of   the situation, and  construction  and  application of  strategies  based   on elements
+retrieved from memory. We expect that requiring internalization will lead to better task performance and knowledge.
+         H2: High NFC leads to a more plan-based strategy than low NFC. People with high NFC have high
+intrinsic motivation to think and engage in cognitive tasks, will show more plan-based behavior. Consequently, we
+expect the subjects with a high NFC to have better task performance and knowledge.
+
+Method
+DESIGN AND SUBJECTS
+         The  experiment  had    a 2X2    design  with  two independent   variables:  interface style (internalization   or
+externalization) and cognitive style (low or high NFC, based on median). 43 university students (aged 19 to 32
+years) participated, and received a five  reward. The experiment took an hour at most.
+
+                                                            787                                                  ICLS 2006
+Material
+
+NFC questionnaire
+We used a Dutch translation of the 18-item NFC scale (Cacioppo, Petty & Kao, 1984). Subjects rated each statement
+(e.g. "Learning new ways to think doesn't excite me very much") on a Likert-scale ranging from one to seven. A
+score of one meant `strongly disagree' and a score of seven meant `strongly agree'. We averaged the scores on the
+18 items, and split the groups on the basis of the median in "low-NFC" and "high-NFC" groups.
+The Conference Planner Application
+       A  software application called  "Conference   Planner"    was developed  by    The Open   University  of     The
+Netherlands and funded by the European UNFOLD Project. It simulated the planning of speakers for a conference,
+and consists of different components. The first one is the dynamic interface that shows every set of demands for a
+conference and allows the user to solve the problem based on drag & drop movements. The second one is the core of
+the application, the set of rules and related algorithms. Here the permitted actions and subsequent consequences are
+defined. The third one is the set of tasks with all the scenarios (there were 5 different scheduling situations). The
+conference speakers (each with different demands) had to be scheduled in one of three rooms (each with its own
+facilities and availability). The tasks are not difficult, but a certain approach is necessary to solve the situation in an
+economic manner.  Without   planning, the scheduling    will  not be optimal  and   extra (superfluous) moves       are
+necessary. An adequate strategy is to look for speakers with many constraints and schedule them first. It can also be
+effective to first identify slots that are hard to fill and then assign speakers to those. Less smart would be to start
+from the top and work your way down, because at some point remaining speakers cannot be placed anymore and
+speakers have to be moved around. The latter strategy and also approaches such as "trial and error" do not involve
+much planning. The list of speakers with  their constraints  was  shown on  the left. The task  was to place all    the
+speakers on the timetable. The difference between externalization and internalization was implemented by showing,
+in the externalization condition where speakers can be placed (see Figure 1). When clicking on a speaker, the "legal"
+time slots (satisfying the constraints and being available) turned green. It however does not show the best slot, only
+legal ones. To move a speaker from left to right an icon in front of the speaker's name had to be "picked up" and
+"dragged" to its destination with the mouse. Some timeslots where always unavailable, indicated with light-gray.
+Empty available timeslots were white, and those occupied by a speaker would display the name of a speaker in it.
+
+      Figure 1. The externalization condition                      Figure 2. The internalization condition
+
+       In the internalization condition this feedback was absent (see Figure 2) and the legality of moves had to be
+inferred. A solution where each speaker was scheduled always existed. There were 5 tasks, with varying constraints:
+·  Amount of hours they will speak (1 or 2, in Dutch: uren)
+·  Whether a beamer* is needed (yes/no, in Dutch: ja/nee) (*Dutch/German pseudo-anglicism meaning "projector")
+·  Number of expected listeners (in Dutch: toehoorders)
+Our quantitative measures can be divided in time-based measures (durations of actions) and move-based measures
+(solution paths). All the sessions were captured, and for each of the 5 tasks we analyzed whether or not subjects
+started solving the problem with the best strategy (first moving the speakers with the most stringent constraints).
+Post-experimental questionnaire
+       After the 5 tasks subjects completed a   questionnaire   assessing knowledge   of  the problem. We   assessed
+declarative knowledge and procedural knowledge. Mostly the questions explicitly asked for explanations ("why?"),
+besides "yes" or "no". A picture of a situation accompanied most of the questions.
+
+                                                         788                                               ICLS 2006
+·   Declarative knowledge: Essay questions about situations that were either legal or illegal given the constraints. It
+    had to be decided whether or not situations could occur, and why (or why not).
+·   Procedural knowledge: Essay questions concerning solution procedures. Parts of situations were given and the
+    questions were formulated as "how would you do this?" and "is this a smart move?"
+
+Procedure
+        The experiment was conducted in the Usability Lab of the Center for Content and Knowledge Engineering,
+Utrecht University. It started with the NFC questionnaire, followed by a textual introduction and a small video-clip
+showing how the application and its controls worked. After this, subjects started to work on the 5 problem solving
+tasks. Finally the electronic post-experimental questionnaire had to be completed.
+
+Results
+        We analyzed the results using ANOVA (p < 0.05). All subjects eventually solved the 5 tasks correctly (see
+Table 1). The minimum and maximum average score on the NFC-scale were 2.39 and 6.50. The mean score was
+4.89 (SD 0.83), with the median at 5.06. There were no interaction effects.
+
+Time and moves
+Table 1: Time (sec) and moves for each condition
+
+                                               Internalization                   Externalization
+            Average for the 5 tasks      Low NFC            High NFC        Low NFC        High NFC
+                                        Mean       SD     Mean     SD      Mean    SD      Mean   SD
+            Total time needed           155.2     33.4    124.3   28.7     136.2   33.9    129.5  34.4
+            Time before first move       21.6      2.1     16.0    2.1      14.3   2.2     14.5    2.1
+            Time between moves           5.3       1.7      4.3    1.0      4.2    1.4      3.7   1.1
+            Superfluous moves            2.9       2.8      2.1    2.3      4.1    2.1      4.4   3.9
+            Correction moves             1.1       0.3      1.0    0.3      1.8    0.4      1.6    0.3
+            Reconsidered moves           0.5       0.5      0.4    0.5      1.7    0.5      2.4    0.5
+
+Total time: time needed to complete a task
+        There were no significant main effects of interaction style or cognitive style on the average total time for
+the tasks. However,  we  did find  the  tendency  that  low-NFC   subjects tended  to need more  time,  F(1,39)=3.58,
+p=0.07, (M=146, SD=34 vs. M=127, SD=31). There was no effect of cognitive style.
+Time before first move: time between facing/studying the problem and placing the first speaker
+        There was a significant main effect of interface style on the time before the first move in each of the 5
+tasks, F(1,39)=4.34, p<0.05. Internalization subjects took more time than externalization subjects, M=18.9, SD=1.5
+vs. M=14.4, SD=1.6. There was no significant effect of cognitive style.
+Time between moves: time between placing one speaker and starting to place the next
+         There was   a  main effect of  interface style on  the average time between   moves, F(1,39)=4.82,  p<0.05.
+Internalization subjects took more time between moves than externalization subjects, M=4.8, SD=1.4 vs. M=3.9,
+SD=1.3. There was no significant effect of cognitive style.
+Superfluous moves: all unnecessary moves (attempted, actually done, reconsidered etc.)
+         There was a significant main effect of interface style on the amount of superfluous moves, F(1,39)=4.17,
+p<0.05. Internalization subjects made fewer superfluous moves than externalization subjects, M= 2.46, SD=0.61 vs.
+M=4.27, SD=0.63. For cognitive style, there was no significant effect.
+Correction moves: all legal moves that were actually done, minus the ideal amount of moves
+         The  effect of interface style on the number    of correction  moves was  nearly  significant, F(1,39)=3.80,
+p=0.06. Externalization subjects made more correction moves than internalization subjects, M=1.70, SD 0.25 vs.
+M=1.1, SD=0.24. There was no significant effect of cognitive style.
+
+                                                          789                                                ICLS 2006
+Reconsidered moves: moves that were started, but reconsidered and put back during dragging
+          The  effect of interface   style on the   number  of reconsidered    moves   was significant too,  F(1,39)=9.59,
+p<0.01. Internalization subjects reconsidered their moves less often than externalization subjects, M=0.46, SD=0.36
+vs. M=2.05, SD=0.37. There was no significant effect of cognitive style.
+Strategy analysis
+         Subjects who were required to internalize showed a tendency to use the `most constraints first' strategy
+more  often  than subjects   in  the externalization  condition,  but  it was   just a tendency  (F(1,39)=3.21,    p=0.08).
+Internalization subjects used that strategy 2.4 times (SD=1.76) out of 5 (tasks) whereas externalization used it 1.5
+times out of 5 (SD=1.5). There were no effects of cognitive style.
+
+Knowledge
+          The effect of interface style on answers to declarative knowledge questions, was practically significant at
+F(1,38)=3.73,  p=0.06.   Internalization   subjects answered   more   of  those questions  correctly  than  externalization
+subjects (M=8.0,  SD=0.2     vs. M=7.7,    SD=0.7).  The scores  on procedural     knowledge   showed  no  differences  for
+interface style. No effects of cognitive style were found.
+
+Conclusion and Discussion
+         Our first hypothesis stating that internalization leads to more planning and better performance is supported.
+Internalization resulted in longer thinking times before starting to work on the problem and to more time between
+moves. It indicates that when information has to be internalized, more contemplation is provoked and users ponder
+longer before acting. With the move-based measures the issue was not so much "can they solve it?" but "how smart
+or economical do they solve it?". Internalization subjects solved the problems with fewer superfluous moves, thus
+with greater   economy.   These    moves    included   self-correcting   moves  after  being   stuck,  illegal moves    and
+reconsidered moves (changing your mind while making the move). We infer that this stems from better planning,
+confirming O'Hara and Payne (1998) who found that a plan-based approach resulted in fewer moves than a display-
+based approach, and that "backtracking" (undo a move and return to the previous situation) occurs more during
+display-based  behavior.  Our    results suggest  that  internalization   provokes   more  "thinking  before   acting" than
+externalization. Regarding the strategy that subjects chose to use, a qualitative analysis of the results also indicated a
+more plan-based approach by internalization subjects. They filled the timetable by first scheduling speakers with the
+most constraints more often. This strategy suggests planning, because people think about whom they are going to
+schedule before starting with the task. It will be interesting to examine strategy choice more deeply in the future.
+Declarative knowledge was tested afterwards by giving subjects questions in which they had to judge situations
+where rules   (sometimes)    were  violated.  The   effect  of interface  style on   declarative knowledge     was  almost
+significant; internalization subjects  gave   more  correct answers.   Perhaps  the  fact that they  planned   more  in the
+previous tasks caused a training effect that made them more accurate. The procedural knowledge questions focused
+on insight on solving the problem. Here, interface style had no influence, perhaps not surprising, since the problems
+were not so difficult and all subjects solved them eventually. This confirms earlier findings of Van Nimwegen et al.
+(2004, 2005): a positive effect of internalization on declarative knowledge, and not on procedural knowledge. The
+second hypothesis was rejected. Pre-existing attitudes towards problem solving along the dimensions of NFC had no
+effect on performance or knowledge. Only interface style predicted problem solving behavior.
+
+         To sum up conclusions, not at any measure, externalization resulted in better performance. Once more we
+found positive effects of internalization on problem-solving behavior: it led to more plan-based behavior, smarter
+solution paths and better declarative knowledge. Externalization led to a more display-based approach resulting in
+less economic solutions and shallower thinking. It is worthwhile to reflect on what was externalized and visualized.
+The interface showed legal actions, the outcome of the application of the rules, a common feature in a broad range
+of software applications. We showed that this had undesirable effects. One has to be careful with providing interface
+cues that give away   too much    and  must   design in such   a manner   that the   way users think  and act  is optimally
+supported. Designers could consider making interactions "less assisted" to persuade users into specific behavior.
+This issue is beyond plain usability issues and focuses on more meta cognitive aspects of interface-induced behavior
+such as planfulness and user engagement. Also Guttormsen Schar, Schluep, Schierz and Krueger (2000) recognize
+the importance of other interface design standards than only those suggested by common usability guidelines. They
+stated that "the user-interface can play a major role in the success of learning by supporting or inhibiting certain
+strategies". They do not recommend less user-friendly interaction design, but propose to extend usability guidelines
+
+                                                            790                                                   ICLS 2006
+with extra cognitive factors, because usability (including user satisfaction) should not be optimized at the cost of
+learning performance. It is a challenge to understand how people react to interface information (based on cognitive
+findings). Our work    contributes to  building bridges  between cognitive   science,   human   computer  interaction and
+educational practices and can be valuable in the development of applications in the realms of education, multimedia
+learning or game based learning. Tweaking a small part of the interface had impact on behavior, but externalization
+and internalization were not extremes on a continuum. It refers to the amount of externalization. In the future it will
+be interesting to adaptively varying the level of externalization, depending on performance (Brusilovsky, 2001).
+
+References
+Brusilovsky, P. (2001). Adaptive hypermedia. User Modeling and User-Adapted Interaction, 11, 87-110.
+Cacioppo,  J.T.,  Petty, R.E. &    Kao, C.E.   (1984),  The   efficient assessment   of  need  for   cognition. Journal  of
+         Personality Assessment, 48, 306-307.
+Carroll, J.M.  (1990).   The  Nurnberg   Funnel:  Designing    Minimalist    Instruction  for Practical  Computer    Skill.
+         Cambridge, MA: MIT Press.
+Charney,   D.H.,   & Reder,  L.M.   (1986). Designing    interactive tutorials for   computer   users.  Human-Computer
+         Interaction, 2, 297-317.
+Crystal,  A.  &    Kalyanaraman,    S.  (2005),  Personality   variables  and  information     processing  on    the web:
+         Methodological    issues  and  empirical   evidence.  Paper    presented at  the  International  Communication
+         Association Annual Meeting, New York, NY.
+De Mul, S. & Van Oostendorp, H. (1996). Learning user interfaces by exploration. Acta Psychologica, 91, 325-344.
+European UNFOLD Project: http://www.unfold-project.net
+Guttormsen   Schär,  S., Schluep,  S., Schierz,  C. &  Krueger,  H.  (2000).   Interaction for  computer-aided    learning.
+         Interactive Multimedia Electronic Journal of Computer-Enhanced Learning, 2(1).
+Kerr, M.P. & Payne, S.J. (1994). Learning to use a spreadsheet by doing and watching. Interacting with Computers,
+         6, 3­22.
+Kort, B.,  Reilly, R.  &  Picard,  R.  (2001).  External representation   of learning   process and   domain    knowledge:
+         Affective state as a determinate of its structure and function. Paper presented at the 10th International
+         Conference on Artificial Intelligence in Education. San Antonio, TX.
+O'Hara, K.P. & Payne, S.J. (1998). The effects of operator implementation cost on planfulness of problem solving
+         and learning. Cognitive Psychology, 35(1), 34-70.
+O'Hara, K.P. & Payne, S.J. (1999). Planning and the user interface: The effects of lockout time and error recovery
+         cost. International Journal of Human-Computer Studies, 50(1), 41-59.
+Payne S.J., Howes, A. & Reader, W.R. (2001). Adaptively distributing cognition: A decision-making perspective on
+         human-computer interaction. Behaviour & Information Technology, 20(5), 339-346.
+Scaife, M. & Rogers, Y. (1996). External cognition: How do graphical representations work? International Journal
+         of Human-Computer Studies, 45(2), 185-213.
+Scheiter, K., Gerjets, P. & Catrambone, R. (2006). Making the abstract concrete: Visualizing mathematical solution
+         procedures. Computers in Human Behavior, 22 (1), 9-25.
+Soloway, E., Guzdial, M., & Hay, K. E. (1994). Learner-centered design: the challenge for HCI in the 21st century.
+         Interactions, 1(2), 36-48.
+Sweller, J. (1994). Cognitive load theory, learning difficulty and instructional design. Learning and Instruction, 4,
+         295­312.
+Van Nimwegen, C., Van Oostendorp, H. & Tabachneck-Schijf, H.J.M. (2004). The over-assisting interface: The role
+         of support in knowledge acquisition. In Proceedings of HCI2004: Design for Life (pp. 133-136). Bristol,
+         UK: Research Press International.
+Van   Nimwegen,    C., Van   Oostendorp,  H.   &  Tabachneck-Schijf,    H.J.M.  (2005).   The   role of interface  style in
+         planning during problem solving. In Proceedings of The 27th Annual Cognitive Science Conference (pp.
+         2771-2776). Mahwah, NJ: Lawrence Erlbaum.
+Van Oostendorp, H. & De Mul, S. (1999). Learning by exploration: Thinking aloud while exploring an information
+         system. Instructional Science, 27, 269-284.
+Zhang, J., & Norman, D. A. (1994). Representations in distributed cognitive tasks. Cognitive Science, 18, 87-122.
+
+Acknowledgments
+We thank Hermina Schijf (Utrecht University) for her involvement and assistance during this research project.
+
+                                                           791                                                    ICLS 2006
+

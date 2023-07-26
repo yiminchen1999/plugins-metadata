@@ -1,0 +1,457 @@
+CSCL 2011 Proceedings                                                                                          Volume I: Long Papers
+
+  Assessing the Use of a Trace-Based Synchronous Tool for Distant
+                                              Language Tutoring
+    Mireille Bétrancourt, FPSE, University of Geneva, CH-1211 Geneva 4, Mireille.Betrancourt@unige.ch
+Nicolas Guichon, Université de Lyon 2, Laboratoire ICAR, Université Lyon 2,5, Parvis Descartes, 69342 Lyon
+                                 cedex 07 FRANCE, Nicolas.guichon@univ-lyon2.fr
+        Yannick Prié, Université de Lyon, CNRS Université Lyon 1, LIRIS, UMR5205, F-69622, France,
+                                                   yannick.prie@liris.cnrs.fr
+
+          Abstract:   This  article presents       a pilot  study   carried   out to   investigate  the  potential  of a
+          functionality  marker   setting,    included      in  a  synchronous     collaborative    videoconferencing
+          platform (VISU). Markers, supported by a trace-based system, are designed to facilitate tutors'
+          activity. They   provide     tutors with    (1)   the possibility    of annotating    their distant  learners'
+          learning  activity, and (2)   information        pertaining to  their   own   behavior   during  pedagogical
+          interaction, which can potentially enhance their professional performance as online language
+          tutors. This study concentrates on the marker-based traces of eight language tutors collected in
+          the  course  of  pedagogical     interactions       with  their distant    learners   during  a  seven-week
+          transnational collaborative project. It presents both quantitative and qualitative analyses
+          of the use of markers during synchronous language teaching sessions and assesses the utility
+          and usability of such a functionality for language tutoring in order to inform future design and
+          training.
+
+Introduction
+While   asynchronous     collaborative   distant     learning   is  now   relatively   well   researched,  synchronous    distant
+learning is less well documented although it is gaining more and more attention thanks to the availability of
+efficient technologies for synchronous communication (videoconferencing, chat, whiteboards, screen sharing,
+etc.). This research   was    conducted  in   the    context    of  the  ITHACA1      project,  an  interdisciplinary  (language
+education,  computer    science,  cognitive    science)     project  whose     aim  is to study   how   traces can  be   used for
+providing such synchronous collaborative systems with reflective features so as to enhance their functionalities
+in the context of activities involving tutoring at a distance. We define traces as features of the system that offer
+the means to provide instant or delayed feedback regarding the unfolding of the pedagogical interaction, and
+thus allow both learners and tutors to reflect on the experience.
+          This paper    is organized    in    two    parts. First,  we    will present    the  rationale  and  the  design  of a
+synchronous trace-based prototype tool called VISU2 featuring means to share and interact with three types of
+traces: automatically recorded interaction traces; marker-based traces composed of ad hoc annotations added by
+the user in the course of the activity; comment-based traces composed of post hoc annotations added by the user
+in order to comment upon his/her past activity. In the second section of the paper, we will focus on the use of
+one type of trace - marker-based traces ­ as used during a real 7-week long real distant pedagogical interaction
+between language tutors in France and distant learners from a North-American university. Our results, which are
+mostly qualitative, tend to support the potential of such traces for online language teaching as well as language
+teachers' professional   development.    The       article is organized   as   follows: We    begin   with a  brief overview   of
+distant tutoring and   trace-based  reflexivity,     before    examining    the   VISU  tool  in  section  3, the  experiment  in
+section 4 and the results in section 5.
+
+Theoretical Rationale
+
+Tutoring in Synchronous Distant Learning
+Synchronous collaborative learning systems support more or less predefined collaborative activities (Lonchamp,
+2006), with various roles for the users and various tasks to be carried out. When synchronous online tutoring is
+involved,   teachers  are  often  faced    with      an ill-defined     pedagogical     situation  and   have  to  develop  new
+competencies and attitudes that are necessary for effective interactions with distant learners in addition to more
+traditional pedagogical skills (see Guichon, 2009). Besides, conducting a synchronous online interaction induces
+a high  cognitive   cost because    it involves      carrying   out several   tasks  at the   same  time   as well  as managing
+interrupted   connections  and  various    distractions     (Oviatt   et al.,  2004).  Social   and Cognitive   Awareness     and
+Navigation    (SCAN)    tools (Buder    et    al., 2009)    can   provide   feedback    and   a sense   of group   awareness   to
+participants of the interaction. The rationale that underpins this research is that teaching (and teacher training)
+can be facilitated with trace-based SCAN systems that foster teachers' reflexivity. Such systems help augment
+their awareness by providing them with traces that are pertinent for their activity, all the more so when these
+traces are generated by the users themselves.
+
+© ISLS                                                                                                                        478
+CSCL 2011 Proceedings                                                                                      Volume I: Long Papers
+
+Systems Which Foster Reflexivity
+Reflexivity, defined as the capacity to reflect upon one's activity, is deemed crucial in learning processes, be it
+for simple adjustments of one's actions or attitude in the course of one's activity (self-awareness) or for meta-
+cognitive   regulation   tasks    that  involve   assessment   or  extension    of  one's    knowledge,      individually and
+collectively (Yukawa,     2006).   Reflexivity    can be  fostered   by  systems   that provide    users  with  two kinds   of
+elements   upon  which    to   build  a reflective  activity. The  first level is  related to instantaneous     reflection: it
+provides feedback on the activity such as clues about the effectiveness of one's actions such as mirroring of the
+activity  (Jermann    et  al., 2005),    real time    collaboration   indicators  (Nova    et al.,  2006),    temporal/social
+representations of current group activity (Farooq et al., 2007) or peer feedback (Phielix et al., 2009). The second
+level of reflexivity involves delayed reflection: it provides representations of the interaction beyond its scope
+such   as histories or Edit    or Read   ware  (Hill  et al., 1992),  "reflective  follow-up"  representing    one's  way   of
+solving a problem (Katz et al., 1992), indicators summarizing the interaction within a group (Bratitsis et al.,
+2006), or activity summaries (Laffey et al., 2009).
+
+Trace-based Systems
+The present research project focuses on traces of interactions between users and systems. Those that should not
+be confused with traces generally defined as what remains of an activity, including documents produced by
+participants. Logs are obviously traces for engineers who need to understand the functioning of the systems they
+build. While some approaches have tried to design log-mining techniques in order to obtain higher-level user
+activity-related traces (see Romero & Ventura, 2007 for a survey of the educational use of traces), our own
+approach pertains to research dealing with explicitly designed rich histories of interaction. Such traces can be
+used either by professional analysts to understand the activity that has taken place (Avouris et al., 2007) or by
+users willing to make sense of their own activity by consulting Web navigation histories (Weinreich et al., 2006)
+or even by replaying online interactions in which they took part (Plaisant et al., 1999).
+          Because   most  such    tracing systems    are designed   in  an ad  hoc  way   to  test particular  research   ideas
+related to dedicated activities, it is rarely possible to reuse these tools in subsequent projects. To go beyond such
+punctual   approaches,   we    have   proposed   a  model-based    approach    to traces,  formally   defining  Trace-Based
+Systems (Settouti et al., 2009a) as systems built upon "modeled traces" organized in trace bases. A trace model
+is an ontology of the obsels (observed elements) that can be collected in one trace. Trace transformations in
+trace bases allow simplifying, merging or rewriting traces so as to obtain higher-level traces that present users
+with adequate representations of their activity. A formalization of our proposal can be found in (Settouti et al.,
+2009b).
+
+The VISU Tool
+VISU is a trace-based tool that features a number of different modeled traces for instantaneous and delayed
+reflection in the context of synchronous tutoring interaction.
+
+Three Levels of Traces in VISU
+Our videoconference tool provides three types of trace. Each corresponds to a distinct obsel type:
+   -      Interaction  traces     are  histories of  users'   actions automatically   collected    in   real time from    their
+          interactions with the software. Events such as "launch video", "open image" or "begin a new activity"
+          are considered. In Figure 1, the raw interaction trace of user1 has been filtered (transformation 1), and
+          the resulting trace is shared. In Figure 2, the vertical timeline features (a) and (b) that correspond to
+          representations of obsels that have been shared by learners with their tutor while (c) is a representation
+          of the "beginning of a new activity".
+   -      Marker-based traces refer to text annotations that are written during the activity describing events such
+          as "vocabulary" or "problem with microphone". Such annotations are similar to notes that are usually
+          jotted down by a teacher during a learner's oral presentation so as to provide her with feedback. These
+          traces can refer to the tutor's activity, the learner's or their joint activity. In figure 1, the marker-based
+          trace has   been   built (transformation    2)    from  the  marking    trace (which     describes  the activity  of
+          creating, deleting,   modifying     markers).  On   the vertical timeline   shown   in   Figure 2,  (d) and (e)  are
+          markers that have been set by the tutor.
+   -      Comment-based traces correspond to text annotations that are added after the activity with obsels such
+          as "effective dialogue between learners" or "nice piece of dialogue". A comment-based trace can be
+          considered   as a  post-hoc    manual   transformation   /  rewriting   (3) of  traces   that have  been  collected
+          during the activity. On the vertical timeline shown in Figure 2, (g) is a comment-based trace.
+
+© ISLS                                                                                                                     479
+CSCL 2011 Proceedings                                                                                                                                            Volume I: Long Papers
+
+                                                                                                                                                                  Sharing user 2
+                                                                                                                                                                 traces with user 1
+                                                                     Collecting
+                                                                 user 1 traces
+
+                                                                                           Mint    my InteractionTraceMmarking  my Markingtrace   Mmarker    u2 Marker-based trace
+                                                                                                       1                           2
+                                                            Visu         user 1            Mint     my Sharedinteraction traceMmarkermy Marker-based trace  Mint       u2 Sharedinteraction trace
+                                                         application     (tutor)
+                                                                                                                                          3 (manual)
+ Visu Server                                                                                                Mcomment    my Comment-based Trace         User1 Trace Base
+                     Session / user
+    Visu Core          Database
+    Video Base        Trace Bases                                    Collecting                                                                               Sharing user 1 tracewith user 2
+                                                                 user 2 traces
+       User1           User1 TB
+       User2           User2 TB                                                            Mint    my InteractionTraceMmarking  my Markingtrace
+                                                                                                       1                           2
+                                                            Visu         user 2            Mint     my Sharedinteraction traceMmarkermy Marker-based trace  Mint       u1 Sharedinteraction trace
+                                                         application    (student)
+                                                                                                                                          3 (manual)
+                                                                                                            Mcomment    my Comment-based Trace         User2 Trace Base
+
+ Figure 1. A tutor (user1) is interacting with a learner (user2). A video base stores the video streams that have
+been recorded during the interaction. Each user has her own trace base. User1's trace base contains 7 traces, 5 of
+ which   have been collected from her activity, while 2 have been shared by user2 from her trace base. User2's
+Trace Base contains 6 traces, 5 of which have been collected from her activity, and 1 has been shared by user1
+ from her Trace Base. As a tutor, user1 does not share her marker-based trace while, as a learner, user2 does.
+
+Instant      Reflection             in the   Interaction                          Room:          A  Synchronous                             Timeline              for     Activity
+Awareness and Activity Annotation
+The interaction room (Figure 2 - left) is a classical videoconference room with a text chat. Tutors have access
+(on the left of the screen) to their "session manager", which gathers planned session activities, instructions and
+keywords.      The main         feature  which   distinguishes                      VISU         from       other      videoconference                    tools    is   the      vertical
+"synchronous     timeline".         This timeline                presents         users  with      selected          elements            from        interaction        traces        (here
+"Image received" obsels represented as thumbnails) as well as marker-based traces.
+         VISU's     synchronous          timeline                is  designed       to   foster     instant          reflection             by augmenting               synchronous
+interaction with elements of other participants' activity (e.g. indicating when a document is accessed) and it
+allows participants to take notes on the activity with markers. Instant sharing of interaction traces is a means of
+extending collective awareness amongst participants. Using markers allows tutors to select critical events in the
+course of the activity in order to come back to them m in order (1) to provide learners with feedback at the end
+of the session and (2) to reflect on one's own activity in the retrospection room.
+
+Delayed Reflection in the Retrospection Room: Obsels and Comments for Experience
+Reconstitution
+The retrospection     room          (Figure 2  - right)               basically        functions            as     a video       player        allowing          users    to     review
+previously recorded sessions (video and audio). The playback feature is supplemented by a horizontal timeline
+displaying the collected obsels (interaction + marker-based traces) organized either by obsel types or by users.
+The annotating     tool ("Mes commentaires"                          [my comments])               allows           the user      to      annotate         events        that occurred
+during the session. Such comment-based traces will serve as a basis for teacher development and be used for
+example in weekly trainee teacher debriefing sessions in which pedagogical interactions are analyzed.
+         The retrospection room in VISU is designed to foster delayed reflection. The delayed retrospection
+made   possible    in the       retrospection    room                allows        for  teacher     development                  in      the   following          way.       To       learn
+professional    competencies           such as monitoring                        distant learner            interactions         effectively,             providing          clear     and
+concise instructions, giving useful and timely feedback, trainees are confronted with traces of their own situated
+activity of a past online teaching session and are asked to select samples of this activity, analyze them and
+comment upon them during a collective debriefing session (Guichon, 2009). Several operations are required:
+noticing critical events that are worth commenting upon, categorizing them (what is the purpose of a specific
+sequence of actions?) and assessing their efficiency or lack thereof (was it adequate, timely, etc.?) against a
+
+© ISLS                                                                                                                                                                                   480
+CSCL 2011 Proceedings                                                                                         Volume I: Long Papers
+
+professional repertoire (see for instance Hampel & Stickler, 2005). The aim is thus to help trainees to explore
+and reflect on a still ill-defined professional situation and retrospectively make sense of problematic events that
+occurred   in  the course   of the activity.   We   contend    that  getting apprentices     to  analyze their  own   context-
+embedded    practice   is a necessary condition    to make     them    aware of their     behavior in context   and  a way  to
+provide them with some kind of "annotated template[s] for future praxis in similar situations" (Olson, 1995:
+121).
+
+     c                                       1
+         d                                                        3
+                                                        2
+
+         a                                                                                                  4
+
+         b
+
+                                                                                     g
+         e
+
+                                                                                        f
+
+ Figure 2. Interaction room (left) and retrospection room (right) in VISU1. The interaction room is used during
+ the synchronous interaction: it provides (1) a session manager, (2) a chat window and (3) a vertical timeline,
+which features several presentations of obsels from both the interaction trace (a, b, c) and the marker trace (d, e).
+The retrospection room is used asynchronously after the interaction. It has a horizontal timeline (4) that presents
+ markers and interaction obsels (f). It also allows the user to add comment obsels. (g) Unlike interaction trace
+                   and marker-based trace obsels, comment-based trace obsels can have a duration.
+
+A Pilot Study of Marker-Based Traces
+An exploratory study was conducted in real teaching context in order to (1) investigate the quantitative and
+qualitative use of markers during synchronous language teaching sessions and (2) assess the utility and usability
+of such a functionality for language tutoring. The ultimate aim was to further investigate design and training
+issues. Although    the   markers were also    used in    the delayed   retrospective     phase, only what    happened  in  the
+interaction room was analysed. We focus here on the interaction trace, which appears on the timeline in real
+time and is also recorded in the chat history that remains available throughout the session.
+
+Method ­ Experimental Data
+The study was part of a telecollaborative project between the university of Berkeley and the University of Lyon
+2. The VISU tool was used to support distant synchronous French lessons given by trainee French teachers in
+Lyon to language learners in Berkeley. Each session was organized in three phases:
+   -       Each week, teacher trainees in Lyon (now referred to as tutors) had to prepare a lesson that aimed at
+           fostering oral communication and to conduct it with one or two learners in VISU's interaction room. At
+           the end  of  the session, tutors    were instructed      to conduct  a rapid    debriefing  with    the learners on
+           linguistic issues with the help of the markers they had set during the interaction.
+   -       After the interaction, the tutors had to analyze the learning session on the basis of the traces recorded in
+           VISU's retrospection room.
+   -       The following week, teaching interactions were then displayed and discussed in a plenary session with
+           all the tutors and trainers in order to raise language teaching and tutoring issues (see Guichon, 2009 for
+           the detail of the training program).
+
+© ISLS                                                                                                                      481
+CSCL 2011 Proceedings                                                                            Volume I: Long Papers
+
+Tutors were given an introductory training session on the VISU platform, but the use of markers was not a
+focus.  Thus we have the opportunity to study the tutors' intuitive use of these markers as they learned to use the
+technology to teach their distance language sessions.
+
+Data Collection and Analysis
+The data regarding marker setting and chat messaging were collected from 8 tutors over 7 tutoring sessions. At
+the end of the third session, each tutor was interviewed in order to comment on the markers he/she created
+during the session. They were also asked about their global perception of VISU. A quantitative analysis was
+conducted on the number of markers and text chat messages over time and across the sample of the 8 tutors. In
+addition, qualitative analyses were conducted on the type of markers produced by 2 specific tutors, selected
+before the first session on the basis of their prior experience: These two tutors had similar one-year experience
+in face-to-face language teaching but none in online tutoring. Interviews data were used to complement the
+quantitative analysis of markers.
+
+Results
+Given that the tutors were not familiar with the tool and rather new to online tutoring, it was expected that they
+would   find  the early sessions  cognitively challenging. We   predicted  that markers  set  by the  tutors   would
+improve  over  time,   both qualitatively and  quantitatively, for two non    exclusive  reasons: first, the   tutors
+gradually develop competence with the tool and the task so that cognitive resources would be sufficient for
+carrying out this dual task; second, their perception of the utility of setting markers to prepare for the debriefing
+and the next tutoring session would rapidly increase once the markers had been used for language teaching and
+reflexive analysis.
+         We present quantitative analyses of the number of markers and chat edited by all tutors (Figure 3),
+followed by a qualitative analysis of the type of markers set by two tutors.
+
+       Figure 3. Mean Number of Markers and Chat Messages Averaged across Tutors over the 7 Sessions.
+
+Number of Markers Edited over the 7 Sessions
+As shown in Figure 3, the number of markers increased from the first to the second session and remained stable
+across the next sessions, except for a drop in the last session. Overall, the mean number of markers did not differ
+significantly across   sessions (F (6,42) = 1.624, NS). However,   a large   variation across tutors was  observed
+(min = 0.29 and max =12.7 mean number of markers per session) and the difference was statistically significant
+(F (1,7) = 10.47, p < .05). Moreover, there were significant correlations between the number of markers set by
+each tutor for session 2 to 6 (all r > .80, p < .01), but not between session 1 nor 7 and the others, meaning that in
+sessions 1 and 7 the tutors behaved differently than in other sessions. These results suggest that participants
+quickly became acquainted with the system and the task since they were able to set markers in a stable way as
+early as the second session. The drop in the number of markers set in the 7th session is probably related to the
+fact that it was the last session. If the markers were used not only to keep track of linguistic issues during the
+session but also to prepare for the next session, there would be less need to set markers in the last session.
+
+© ISLS                                                                                                            482
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+Number of Chat Messages over Time
+The tutors wrote a large number of messages in the chat (M = 15.94, SD = 12.56, see Figure 3). The mean
+number of messages seemed to vary over time but the difference did not reach statistical significance (F (6,24) =
+.343, NS). As for markers, the variation across tutors was large (min = 8 and max = 34.28 mean number of chat
+messages   per  session) and  was    statistically significant (F (1,7) = 28.73, p < .001).  There  was  no   correlation
+between the number of markers and the number of chat messages (r = .63, NS), suggesting that the variability
+across tutors was not linked to a general writing behavior but rather to a differentiated use of the marker and
+chat functionalities.
+
+Qualitative Analysis of Markers
+As mentioned in the methodology, the markers set by two tutors during their interaction with the distant learners
+across the 7 sessions were further analyzed in order to better evaluate the type and function of markers in this
+situation. We   used   Daele &   Docq's  (2002)     typology,  based  on  previous  work   on face-to-face  and  distant
+tutoring, which classifies tutor's interventions according to different purposes. It has to be noted that Daele &
+Docq's classification was elaborated to analyze tutor interactions with the learners while here the markers were
+also  intended  to  regulate the tutors' own  activity   and   were   not displayed   to learners. The   four categories
+proposed by Daele & Docq (2002) were thus adapted as followed:
+     -    Social function: pertaining to the quality of the communication and its social quality (e.g. "learner 1 is
+          pleased")
+     -    Organizational function: dealing with the organization of the session (e.g. "learner 3 arrives", "use of
+          keywords")
+     -    Pedagogical function: providing indications on learners' linguistic skills and their recurrent mistakes
+          (e.g. "pronunciation of fromage")
+     -    Technical function: corresponding to comments on the system (e.g. "learner 3 does not see the image")
+     -    A fifth category (other) was created for markers that did not fit any of the above categories.
+
+          The classification (displayed in Table 1) was made thanks to the analysis of the content of the markers
+and the context in which they occur. In addition, the interviews with these two particular tutors were taken into
+account so as to better comprehend how they used the markers.
+
+Table 1: Number of markers in each category for the two tutors (names have been changed).
+
+               Category                                  Cindy                                     Nelly
+                         Social                           13                                        0
+                Organizational                            22                                        0
+                    Pedagogical                           37                                        48
+                      Technical                            8                                        0
+                           Other                           5                                        3
+                           Total                          85                                        51
+
+          As shown in Table 1, though pedagogical markers were the most frequent for both tutors, other specific
+uses of the markers can be observed. Nelly used them exclusively to take notes about pedagogical events that
+she could use for the wrap-up at the end of the session, or to prepare the next session. Cindy used the whole
+range of categories. Further examination showed that many of the markers created by Cindy were used to keep
+track  of  her evaluation  of  learner's behaviors,     personality  and  skills ("S  is not  talkative" "they  use the
+vocabulary from last session, good") and reflections on her own tutor practice ("+ good idea for the dialogue",
+"- I interrupted her").
+          An   interesting phenomenon     is the     emergence   of   operative  language   over   time. For   example,
+"pronunciation" is shortened into "pron" by Nelly from session 3 on. Personal cues were sometimes used by
+Cindy, like + or ­, to indicate when she evaluated the event as positive or negative, or capitals for emphasis
+("SHE TALKS A LOT"). Interviews with the two tutors indicated the development of instrumentation over
+time. For example, Nelly first noted only "pronunciation" or the correct sentence without indicating where the
+mistake was. Then she found ways to keep track of what was said by the learner, for example by using capitals
+to indicate the place where the mistake was (e.g. "tellemenT"), or by noting a phonetic approximation of the
+learner's contribution rather than the correct sentence.
+
+Usability and Subjective Utility
+All the tutors were interviewed after session 3 about their perception of the tool and particularly their use of the
+markers. As expected, tutors appreciated the fact that they could set markers about learner's mistakes without
+interrupting   the oral interaction. Moreover,     they kept   track of events   they could  use during  the  debriefing
+
+© ISLS                                                                                                               483
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+sessions with the other tutors and the teacher trainers. However, they found that the interaction was disturbed
+when they were in the process of setting markers because, thanks to the webcam, learners could see that the
+tutor was typing something that they could not see and was thus not looking at them at that precise moment. For
+these reasons, they reported using the markers for important events only and tried to find suitable moments (e.g.,
+when the learner was looking at a video) to set markers. Regarding usability, they reported that setting a marker
+required more effort than writing in the text chat, particularly because the marker zone was very small. Finally
+they underscored that writing on the vertical timeline was not natural at all.
+
+Discussion and Future Work
+This study aimed at evaluating how novice language tutors used the functionality of setting markers during the
+synchronous     session. Regarding    marker     setting, although markers   were    used  overall as  early as   the second
+session, considerable differences in behaviour were observed across tutors, both qualitatively and quantitatively.
+Some tutors appreciated to keep track of learners' mistakes without interrupting the oral interaction. But some
+considered that the time taken and the attention required to set the marker caused a major disturbance in the
+flow   of  the  activity and    therefore they   seldom   used   this functionality. Moreover,     the qualitative   in-depth
+analysis of two tutors' behaviors and perceptions revealed that the use of markers is not self-evident, one of the
+tutors exploiting all the possible functions of the marker while the other concentrated only on its corrective
+function. In addition, the tutors complained that the marker functionality was not easy to use. Therefore, design
+issues had to be examined since they dramatically affected the actual utility of the marker functionality, both as
+an external memory of the activity and support for practice. In this exploratory study, tutors have been explained
+how the marker functionality worked, but not how they could use it to improve the tutoring situation since no
+similar situation has been studied before. The present results suggest that tutors have also to be trained to make
+an optimal pedagogical use of markers, prompting tutors to use markers not only for keeping track of learners'
+mistakes, but also for fueling their reflection on their own practice and on the learning situation.
+           A second version of the application, VISU2, has been designed on the basis of the results obtained
+through this study. In order to avoid the split-attention effect and lessen the disruptive effect of setting markers,
+the marker text field has been enlarged and now appears next to the chat window and just below the webcam
+images.   After  being   edited,   markers   are automatically   moved   to the  right of  the timeline.    In addition,  the
+timeline has been set horizontally to align it with the regular representation of time and ensure consistency with
+time representation in the retrospection room. Preliminary observations with the new version of VISU suggest
+that different tutors now set more markers than with the previous version of the tool. If confirmed, this result
+will reinforce the hypothesis that metacognitive or awareness tools need to be integrated into the workspace in
+order to be attended to without too much extraneous cognitive load (Buder, in press).
+           Future studies will focus on (1) evaluating how tutors make use of the markers in the retrospection
+room   to  analyze    their tutoring  activity   retrospectively   and  (2) whether    markers  modify    distant    learners'
+behaviors and contribute to enhance their language competence.
+
+Endnotes
+(1)  ITHACA (Interactive Traces for Human Awareness and Collaborative Annotation) is a project funded by the French
+     Research Agency (ANR), see http://liris.cnrs.fr/ithaca
+(2)  VISU V1 adopts the architecture for trace-based synchronous collaborative systems defined in Clauzel et. al (2010). It
+     is open source software (LGPL) based on Adobe® Flash/Flex and Red5 server. Olivier Aubert, Lionel Breduillieard
+     and Serguei Sayfulin are the main developers.
+
+References
+Avouris,   N.  Fiotakis,  G. Kahrimanis,     G.  Margaritis,  M.,  &   Komis,  V.  (2007).   Beyond    logging    of fingertip
+           actions: analysis    of collaborative   learning  using    multiple sources    of data. Journal     of Interactive
+           Learning Research, 18(2), pp. 231-250.
+Bratitsis, T.,  &   Dimitracopoulou,    A.   (2006). Monitoring    and   analyzing   group   interactions in   asynchronous
+           discussions with the DIAS system. In CRIWG 2006, Lecture Notes in Computer Science 4154. 54-61.
+Buder,    J., Bodemer,   D.,    Dehler, J.,  &   Engelmann,   T.  (2009).   SCAN     tools for collaborative    learning. In
+           International  Conference      of Computer     Supported   Collaborative   Learning  (pp.   606­615),     Rhodes,
+           Greece.
+Buder, J. (in press). Group awareness tools for learning : Current and future directions. Computers in Human
+           Behavior, 10-13.
+Clauzel,   D.,  Sehaba,     K., &   Prié, Y.   (2010).    Enhancing   synchronous    collaboration  by    using   interactive
+           visualisation of modelled traces. Simulation Modelling Practice and Theory, In Press, Corrected Proof.
+Daele,    A.,  &  Docq,   F.    (2002). Le   tuteur  en   ligne, quelles  conditions   d'efficacité    dans  un   dispositive
+           d'apprentissage collaboratif à distance ? in Proceedings of the AIPU Conference, Louvain-la-Neuve.
+
+© ISLS                                                                                                                     484
+CSCL 2011 Proceedings                                                                               Volume I: Long Papers
+
+Farooq,   U., Carroll    J.-M., &  Ganoe,    C.-H. (2007).  Supporting    creativity with   awareness   in distributed
+          collaboration, in   International Conference on Supporting Group Work (pp 31-40).
+Guichon, N. (2009). Training future language teachers to develop online tutors' competence through reflective
+          analysis. ReCALL, 21(2), 166-185.
+Hampel, R., & Stickler, U. (2005). New skills for new classrooms: training tutors to teach languages online.
+          Computer Assisted Language Learning, 18(4), 311­326.
+Hill, W. Hollan, J. Wroblewski, D., & McCandless. T. (1992). Edit wear and read. In Conference on Human
+          Factors in Computing Systems (CHI'92) (pp 3­9).
+Jermann, P., Soller, A., & Muehlenbrock, M. (2005). From mirroring to guiding: a review of the state of the art
+          technology     for supporting collaborative  learning. International   Journal of Artificial Intelligence in
+          Education, 15, 261­290.
+Laffey, J., Amelung,     C.,  & Goggins,  S. (2009).   A Context  Awareness    System   for Online  Learning:  Design
+          Based Research. International Journal on E-Learning, 8(3), 313-330.
+Lonchamp,     J. (2006).  Supporting    synchronous   collaborative learning:  a generic,   multi-dimensional  model,
+          International Journal of Computer Supported Collaborative Learning, 1, 247­276.
+Nova, N. Wehrle, T. ,Goslin, J., Bourquin, Y., & Dillenbourg, P. (2006). Collaboration in a multi-usergame:
+          impacts of an awareness tool on mutual modeling. Multimedia Tools and Applications, 32(2),161­183,
+          2006.
+Oviatt, S., Coulston,    R.,  &  Lunsford,  R.  (2004).  When    do we interact  multimodally?   Cognitive  load  and
+          multimodal     communication   patterns.  In  Proceedings   of  the  6th Int.  Conference    on  Multimodal
+          interfaces (pp 129­136), Penn. State College.
+Olson,  M.  R.   (1995).  Conceptualizing   narrative authority: Implications  for teacher  education.  Teaching and
+          Teacher Education, 11, 119­135.
+Phielix C., Prins F.-J., & Kirschner P.-A. (2009). The design of peer feedback and reflection tools in a {CSCL}
+          environment, in International Conference CSCL (pp.626-635).
+Plaisant, C., Rose, A., Rubloff, G., Salter, R. & Shneiderman, B. (1999). The design of history mechanisms and
+          their use in collaborative educational simulations, in Proceedings of the International Conference on
+          Computer Supported Collaborative Learning (pp. 348­359).
+Romero, C. & Ventura, S. (2007). Educational data mining: A survey from 1995 to 2005. Expert Systems with
+          Applications, 33(1), 135-146.
+Settouti, L.-S.,   Prié, Y.,  Marty, J.-C.,  &  Mille,  A. (2009a).  Trace-based   system   for technology-enhanced
+          learning  systems    personalization, In  9th  IEEE    International Conference    on  Advanced   Learning
+          Technologies, Riga, Latvia.
+Settouti, L.-S., Prié, Y., Champin, P.-A. Marty, J.-C., & Mille, A. (2009b). A Trace-Based Systems Framework:
+          Models, Languages and Semantics, LIRIS Research Report, inria-00363260, 40 pp.
+Weinreich, H., Obendorf, H., Herder, E. & Mayer, M., (2006). Off the beaten tracks: Exploring three aspects of
+          web navigation. In: World Wide Web Conference (pp. 133­142).
+Yukawa, J. (2006). Co-reflection in online learning: Collaborative critical thinking as narrative. International
+          Journal of Computer-Supported Collaborative Learning, 1(2), 203­228.
+
+Acknowledgments
+We are    grateful to J. Lüthi  who  carried out the  data collection for this study  and   D. Pries, R.  Kern and  D.
+Malinowski    from    UC  Berkeley   who   made  this  experiment   possible  in Berkeley   and  N.   Guichon  and  C.
+Develotte at the University of Lyon 2. We also wish to acknowledge Shona Whyte's insightful remarks on a
+previous version of this paper.
+
+© ISLS                                                                                                              485
+

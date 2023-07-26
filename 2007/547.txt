@@ -1,0 +1,130 @@
+   The Fourth Man ­ Supporting Self-Organizing Group Formation in
+                                          Learning Communities
+                      Nils Malzahn, Andreas Harrer, Sam Zeini, University of Duisburg-Essen
+                                          {malzahn;harrer;zeini}@collide.info
+
+         Abstract: In this paper we propose an approach based on social network analysis facilitated by
+         ontologies for the support of learning group formation in computer supported collaborative and
+         blended learning scenarios. This approach allows us to generate new ties between learners who are
+         interested in similar topics. The identification of similar topics is elaborated dynamically by using
+         a shared workspace environment which supports visual editing and modeling of topic relationships.
+
+Introduction
+         In recent years  blended   learning is   getting more  and  more   important    in the day-by-day   teaching  and
+learning at Universities, in further education and even at schools. Course materials are available online as well as the
+exercises, and the students are expected to work on the particular topic in a self-responsible manner. Many learning
+scenarios and courses try to combine collaborative and blended learning (e.g. Harrer et al. 2005) ­ especially in the
+online phase of the blended learning setting. While even for strict presence learning scenarios the choice of the most
+adequate group formation mechanism to achieve the learning goal at hand may be a problem, although learners and
+teachers know each other, e.g. in classroom scenarios, the online phase often adds the problem of not being aware of
+each other. In a classroom it is obvious if a student has not found a group to work with, because he or she will not be
+sitting at a group desk. In an online scenario the natural overview on the group formation is reduced and at most
+visible to the teacher, since persons not assigned to a group should not be exposed to the whole learning community.
+Although the teacher may be able to intervene in such a group formation situation, we think it would be better to
+help the students themselves to solve the group formation problem since the self-organization of the students is often
+a sub goal of the collaborative task.
+
+         Systems   that explicitly target group   formation  (Ikeda et al., 1997; Mühlenbrock,       2005)  usually require
+information about user profiles. These are usually domain specific and not easily transferable. On the other hand
+software products  or   web-based   education  installations usually   provide  one   or more   communication    channels
+enabling the students to discuss with each other. One of the analysis approaches for such communication is Social
+Network Analysis (SNA; Wasserman & Faust 1994). It has pointed out the impact of group structure for the learning
+processes and outcomes (Reffay & Chanier, 2003; Harrer et al. 2005; Martínez et al. 2006). This kind of awareness
+about group structure is the first step to recommendations addressing group formations. Currently known approaches
+usually do not support the explicit recommendation of learning partners while protecting the privacy of the students
+to avoid open social conflicts at the same time. In this paper we propose an approach (Malzahn et al., 2005) based
+on SNA   and  facilitated by ontologies   (Gruber, 1992)    for the support  of learning    group formation   in computer
+supported collaborative (distance) learning scenarios. In the next sections we will sketch the approach and provide
+an example for the formation of such a group in a University course with more than 100 students which had to form
+groups for a software project. The paper closes with a conclusion based on the experiences made so far and the
+description of further scenarios.
+
+The Approach
+         Web  portals   and discussion    forums  are currently  a  main source   for communication     and  exchange   of
+expertise both in academia and communities of practice. Popular forums like phpBB2 or FLE3 can be divided into
+categories to structure these threads. These categories are built of more or less broad topics. If the forum is large, i.e.
+concerning the amount of writers and categories, most persons know only a subgroup of persons directly involved in
+topics where they write themselves. Other persons might be interesting to get to know because they share similar
+interests or they are known as experts in other parts of the forum. In the case that a forum consists of subgroups
+which do not know or do not communicate with each other except through a small number of persons belonging to
+both groups, traditional social network analysis will fail to identify the important persons to get to know. Thus
+persons behind these cut points (Wasserman & Faust, 1994) will be invisible to the investigating person. This is
+even more emphasized when there are no boundary spanners, i.e. if the communities have no overlapping members.
+It is easily conceivable that persons who have similar interests participate in different parts of a large forum without
+having any  direct or   indirect connection in  a communication-network.     To  be   able  to  find a link between  those
+
+                                                            547                                                  CSCL 2007
+persons an additional network-structure must be used. We propose that ontologies should be used to add missing
+links between persons who   should      be  aware of  each other. How  this combination    of a social network and an
+ontology is done can be found in Malzahn et al., 2005.
+
+Example: Searching for ,,The Fourth Man"
+        Our approach was tested for validity in the context of a university course about ,,Software Engineering" for
+undergraduate students of computer science. The course was organized as a blended learning scenario with presence
+lectures and exercises and extensive online materials manifested in a web portal with discussion forums, wiki etc.
+Carrying out a software project in groups of 3-5 students was required to pass the course (Harrer et al., 2005). The
+group formation was handed to the students themselves so that they had to self-organize the composition of the team.
+Some of the users used the discussion forum to find partners for completing their team. Interestingly this resulted in
+3 fragmented threads (s. fig. 2 left) that were all about the search for ,,The Fourth Man" of the team, but that were
+not connected with each other directly by joint discussants. They were not even organized in the same forum area.
+Our approach enables the user to connect the three threads related to students seeking project partners conceptually
+by creating an ontological relation. This can either be done by e.g. a teacher looking at the threads' topics or by an
+intelligent agent applying machine learning techniques such as text clustering. The algorithm combining the social
+network and the ontology produces a network where the students interested in the same topic are visible to each
+other across the thread's boundaries.
+
+                Figure 1. Original Network ­ Groups searching for the fourth man are highlighted
+
+        The original network      (cf. fig. 1.) shows 3 groups,   searching for additional members.    For example the
+student using the nickname Malibu (fig. 1, lower right) posted once, asking for a fourth person to join his group but
+received no answer. So he was displayed as an isolated node in the original network. After linking the related topics
+he is now included in a bigger network. The network on the right of figure 2 shows only the differences between the
+original network and the resulting one focusing those students with a similar problem as Malibu. In previous courses
+we had to support this matchmaking manually, while the proposed mechanism makes it possible to support self-
+organization of the students and contribute to their own responsible acting. The smaller network on the left of figure
+2 shows the "ontology" used to establish the relations between Malibu and the other students. The design of this
+network is an important step to the success of the proposed approach. As stated above the relations can be either set
+by a software agent relieving the teacher from this work especially in lectures with a high number of students or they
+can be facilitated by the teachers. This allows them to influence the group formation process as needed to reach
+the particular learning targets.
+
+                                                            548                                                CSCL 2007
+                                         Figure 2. Emerging Relationships
+
+Perspective and Conclusions
+         In this paper we showed how a collaborative blended learning scenario can be supported by the means of
+ontology  facilitated social network analysis.  We    discussed  how  the teacher can create the relations between the
+forum topics to stimulate the group formation process. Another promising option might be to enable the students
+themselves in certain   scenarios to relate the topics    to each  other to get a recommendation   for partners in the
+collaborative scenario. This may have two effects: the students have to structure the domain of the task at hand,
+which might be a learning target in itself, and the students get a feedback of their own position in the group without
+touching the privacy of the others, because they will only get the information of their personal network. Looking
+onto the promising results with forums we expect that the concept of integration of ontologies into social networks
+can be extended to shared information spaces on a general level. This can be done by generalizing the concept of
+forum topics to learning process artifacts. Artifacts are used in different domains like learning environments (as
+Learning Object). Thus the same algorithm enables users of complex learning environments to
+reflect their position within the particular network.
+
+References
+Gruber, T. (1992). Ontolingua: A mechanism to support portable ontologies. Technical report, Technical Report
+         KSL91-66, Stanford University, Knowledge Systems Laboratory.
+Harrer, A., Zeini, S., Pinkwart N. (2005). The effects of electronic communication support on presence learning
+         scenarios. In Proc. of the CSCL'05, Taiwan.
+Martínez, A., Dimitriadis,   Y.,  Gómez-Sánchez,      E., Rubia-Avi,  B., Jorrín-Abellán, I. &  Marcos, J.  A.  (2006).
+         Studying participation networks in collaboration using mixed methods in three case studies. International
+         Journal of Computer-Supported Collaborative Learning, 1(3). 383-408.
+Ikeda, M., Go, S., Mizoguchi, R. (1997). Opportunistic group formation. In Proc. of AIED 97, pages 167-174.
+Malzahn, N., Zeini, S., Harrer A. (2005). Ontology facilitated community navigation -- who is interesting for what I
+         am interested in?. In Modeling and Using Context, pages 292­303, CONTEXT 2005, Springer.
+Mühlenbrock, M. (2005). Formation of learning groups by using learner profiles and context information, Proc. of
+         AIED 2005 pages pp. 507-514, IOS Press.
+
+                                                             549                                               CSCL 2007
+Reffay, C. & Chanier, T.  (2003): How  Social Network Analysis     can hep to measure cohesion  in Collaborative
+        Distance Learning. In Wasson, B., Ludvigsen, S., Hoppe, U. (eds.): Proceedings of Computer Support for
+        Collaborative Learning. Kluwer, Academic Publishers, Dordrecht.
+Wassermann,  F. & Faust  K. (1994). Social Network Analysis:     Methods and  Application. Cambridge University
+        Press, Cambridge.
+
+                                                         550                                               CSCL 2007
+

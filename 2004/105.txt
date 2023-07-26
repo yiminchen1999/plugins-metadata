@@ -1,0 +1,391 @@
+   RoBallet: Exploring Learning through Expression in the Arts
+through Constructing in a Technologically Immersive Environment
+
+  David Cavallo, Arnan Sipitakiat, Anindita Basu, Shaundra Bryant, Larissa Welti-Santos, John Maloney, Siyu
+                        Chen, Erik Asmussen, Cynthia Solomon & Edith Ackermann
+                        MIT Media Lab, 20 Ames St. E15-446 Cambridge, MA 02139
+                                          Tel: 617.253.8897, Fax: 617.253.
+        Email: [cavallo, arnans, anindita, bryant, lwelti, sychen, easmussen, cynthia, edith]@media.mit.edu
+
+        Abstract: We present the RoBallet environment as an interesting area for learning in a variety
+        of domains through augmenting performing arts with technology. In the RoBallet environment
+        children choreograph dance movements while wearing sensors and wireless microcontroller
+        boards as well as having more sensors and devices in the environment. The children build
+        robots, and program them, animations, light, and music they compose to respond to their
+        movements. We have a few primary goals in this endeavor; to open new areas for exploration,
+        to use technology  to augment       expression, and to open  creative    and expressive  uses  of
+        technology, mathematics and science to children who may otherwise have no interest. We
+        describe a workshop we ran in conjunction with the National Dance Institute, discuss what we
+        learned, and present our ideas for future development.
+
+Introduction
+        The Epistemology and Learning Group at the MIT Media Lab pioneered development and application
+of robotic and programming environments for learning [Papert, 1980, Resnick et. al., 1996]. In recent years some
+of us have focused on integrated approaches to change in the learning environment for children in both formal
+and non-formal settings. When we presented opportunities for children to choose their own projects using
+robotics, children created many wonderful projects of robots and devices along rather familiar lines. These
+include a wide variety of vehicles, many     optimized  for speed, devices     optimized for strength along  some
+dimension, others for control, and so on.
+
+        However, recently we observed what we found to be an extremely interesting phenomenon that we
+chose to explore and support at a much more focused level. A growing number of children, girls in particular,
+were building highly interactive projects, for example robots with which they could dance, or pets with whom
+they could play. Without demeaning the design and construction of fast vehicles or strong devices, we found the
+highly interactive dancers and pets to be extremely sophisticated and demanding endeavors. It is not trivial to
+sense movement so that another object can interact in real-time. Nor is it trivial to construct a robot to move in a
+delicate and responsive enough manner that one could consider its movements "dance" and to dance interactively
+with a person. Moreover, the sophistication of the programming required to control and interact in a variety of
+ways is non-trivial as well. One can begin projects building dancers and companions in a rather straightforward
+manner, but we observed that children would continue to develop, refine, and enhance these projects over quite
+an extended period of time, truly enriching the experience. These projects had more "staying power" than the
+typical vehicle. This provides an excellent example of Papert's design goal of "low threshold, high ceiling"
+[Papert, 1980]. It also illustrates how technology and the "hard" sciences are not exclusive to any particular
+gender or learning style, but can be open to a wider variety of people. It also illustrates how we, through our
+choice of projects and our own tastes and previous experiences, can bias who is attracted and what counts as
+meaningful projects and, often unwittingly, can drive others not like us away.
+
+        RoBallet is an explicit attempt to access some of the ideas raised by these interactive, expressive
+projects. We developed RoBallet as a new set of tools to open up new content areas for students to think about
+both artistic expression and engineering. Another goal was to introduce new ways of thinking about art and
+engineering to a wide range of people, who may be interested in particular aspects of the project, and who by
+virtue of their participation in the environment, may create connections to other areas not previously considered.
+
+                                                   105
+        An important element of our design process was to create an environment that fostered intellectual
+diversity by creating a space in which art and science share equal footing in the creation of a final product. This
+is to be contrasted with the common approach of creating an environment where one provides a vehicle for the
+other, an approach that ultimately trivializes both domains. One becomes subservient to the other, or becomes a
+method of "tricking" students into enjoying the other.
+
+        RoBallet  provides     a  place  for dancers   to incorporate  technology   to  enhance   their art. Similarly,
+technology may   be used    to  full effect  without   being   "softened" by  the introduction  of performance.   This
+combination serves to open up both the arts and technology to a wider range of students without trivializing
+either domain. Instead, experience in one area can provide new insight into the other.
+
+        Our goal was not necessarily for the children to become better dancers, choreographers, composers, or
+performance artists. This is not our area of expertise. Rather, we focused on how this environment could
+potentially be a rich learning environment for exploration of a wide variety of areas, not just the arts, but also
+math, physics, programming. Our goal was also not to learn in a more connected way only the disciplines in and
+of themselves, but also how their interconnections enrich each other. We wanted children to experience how
+through technology we can extend artistic expressions that otherwise is difficult or even impossible; how more
+people can make   these expressions      without   having   to follow the  traditional paths of mastering    a musical
+instrument before composing. We also wanted children to experience how math, programming, and physics can
+be expressive and have aesthetics, and are not dry, lifeless, or merely instrumental.
+
+        We  drew  from      other sources    of inspiration  besides  our empirical  observations  of   children doing
+robotics. Our colleague Tod Machover not only has a long history of innovative development of technologically-
+augmented musical instruments (hyperinstruments), but also recently has developed tools such as Hyperscore for
+his Toy  Symphony    project      [Farbood,     2001]. Our   colleague    Joe Paradiso  has   not  only  created  new
+microcontrollers and sensing devices, but has worked in innovative ways with dancers on using dance to drive
+musical expression [Paradiso, 2002]. One of the authors, Anindita Basu, developed the Full-Contact Poetry
+environment as a means of extending multimedia creative expression for children [Basu, 2002]. MIT Media Lab
+doctoral student Marc Downie along with Professor Bruce Blumberg in the Synthetic Characters group has
+created tools and pieces in collaboration with Paul Kaiser, Bill T. Jones, and Merce Cunningham, developing
+ideas in motor system representations and behavior-based music [Downie, 2002]. We find that many others are
+incorporating similar technologies to create new forms of artistic expression in music and dance. Our focus
+remains not only on how this is an especially rich domain for children to express themselves using technology,
+thereby attracting more children who may not be so inclined, but also on how such technologically-augmented
+expression creates new opportunities for learning.
+
+RoBallet
+        We designed our RoBallet environment so that children could choreograph dances, use and or build
+sensors to place on their bodies and in the environments to control music they compose, robots they build,
+animation they program, lights they control via programming, and other devices they can choose to place in the
+environment. We do not expect them to learn by things happening and being presented to them in an immersive
+space. The space should not control the children. The children should control the space. They design and decide
+what should happen. We did not want to present the elements we used (i.e. music, robotics, programming) as
+fixed and determined. We wanted them to explore movement through space in time, what sounds pleasant and
+what not and which musical elements combine to create which types of feelings, how these could be different;
+how lighting can be mixed, can be expressive, can combine with the other elements, and so on. We wanted the
+children to have fine-grained design control over these elements so that they could explore the concepts in a non-
+trivial, personally meaningful ways. The immersive environment serves to create a rich experiential space for
+this exploration. We also chose to design our tools not just for direct manipulation, but in an environment for
+expression that can later    be   built piece   by piece, taken  apart,   modified, reflected  upon,  modulated,   and
+experimented with. However, with such ambitious design goals and not a lot of experience and domain expertise,
+we chose to run a workshop and use that as an "object to think with," to help us to see the possibilities and
+limitations [Papert, 1980].
+
+                                                        106
+        Thus, for our initial foray into this space, we decided to build some prototype tools and use some
+existing software to experiment concretely early in the design process, knowing that we would in all likelihood
+not use those specific tools. We used both Stack boards from Paradiso's group and GoGo boards designed by
+Sipitakiat [Benabast et.al., 2003, Sipitakiat et.al., 2002]. The Stacks are more sophisticated and advanced, with
+not just wireless communication but also accelerometers and gyroscopes on board. The GoGo board is simpler,
+designed to be accessible by being low-cost,  using easily available components, and possible to assemble by
+hand. We have used different versions of the GoGo board in a variety of learning projects to integrate robotic
+control into other projects for learning. In this sense simpler and accessible       have some  advantages over
+sophisticated and advanced even if giving something up in terms of power, speed and capability.
+
+        We converted a traditional stage setting into a responsive environment that could dynamically interact
+with lighting and music systems, and added an animation system that could be projected into the dance space
+(Figure 1).  After beginning their choreography,   the group embedded        sensors in the stage floor and the
+environment, allowing the students to program triggers for certain events. In addition, we provided a set of
+sensors that students could wear on their bodies. The body sensors plugged into small wireless wearable devices,
+both the Stacks (Figure 2), which students attached to belts and wore around their waists, and the GoGo boards.
+The Stacks transmit data from the body sensors to a server that we programmed, which in turn sends the sensor
+information to the computers that operated the lights, music and animation.
+
+                                    Figure 1. The RoBallet environment.
+
+        For music and animation we decided to use what would be closest to what we would want, but easy to
+assemble rapidly for the workshop. We knew that for music nothing yet existed that would suit all of our design
+goals. However, to build what we desired would take too long and would delay our initial workshop. So, for
+music we programmed an environment in MaxMSP to enable the students to lay out what they wanted along
+various dimensions such as melody, rhythm, pitch, etc., and then program what effect change in sensor values
+
+                                                   107
+should create. For animation we used both Microworlds Logo and an environment we built in Squeak. The
+environments would respond to sensor data and change the animation as programmed. We also built an interface
+in Squeak so that the lights could be programmed to respond to the sensor data as well.
+Workshop
+         Another reason to do a workshop with children early in the process was that we had the opportunity to
+work with Jacques d'Amboise. d'Amboise is the former principal dancer of the New York City Ballet, and the
+founder of the National Dance Institute (NDI). d'Amboise was accompanied by Dufftin Garcia, who runs the
+NDI center in Trenton, New Jersey. Garcia is also a former student of d'Amboise's from the NDI work in New
+York City, and is currently studying computer science. The two agreed to work with us in a workshop with
+children in July, 2003 at MIT. We agreed that for the purposes of this workshop, we did not want children with
+lots of experience in either dance or programming. We wanted to see what "average" children would make of our
+space.
+
+         During our design of RoBallet, we had an initial generative theme in mind: for students to create dance
+pieces that expressed a particular emotion. We wanted children to think about how to express an emotion using
+all of the various elements available to     them, from choreographing        movements, to   composing music, to
+designing lights and creating animations, and also to consider how these different media best augment each
+other.
+
+         While the girls who were making robots to dance with inspired RoBallet, our first instantiation of the
+project did not feature robots, as there were many other elements that we wanted to work with. Since we had an
+extremely limited amount of time (8 days), and so many ambitions, we felt that if the children were to build
+robots and program them that would use up a significant portion of the time. Because we have had many years of
+experience working with children doing robotics, and wanted to maximize the talents of d'Amboise and Garcia
+as well as test out the other elements of the environment that were new, we decided to omit the robotics for the
+first workshop (an ironic decision given the name of the project). We began with a desire to provide students
+with multiple expressive tools that related to dance, so we first examined various elements of a traditional dance
+performance.
+
+         Once the environment was constructed, we held a workshop with a group of nine 9-12 year old children.
+The workshop was supposed to be a one-week event in which we could test the environment and have some
+preliminary feedback on the ideas, but at the request of the children, we extended the workshop for another
+week, and allowed them to invite friends to participate. During the first, "official" workshop, the NDI facilitators
+helped the children learn to choreograph, to think about what steps can be appealing, to express themselves
+through  movement,  to understand how    to   control movement        through space in  time, to match  music and
+movement, and to keep in mind how a performance appears to an audience. Exposure to such expertise and
+experience was critical to us all to bring an understanding of dance.
+
+         Since the first workshop included professional dancers as part of the facilitating group, the students
+were introduced to the methods used by dancers to develop steps and combinations. This exposed an interesting
+similarity between dance and programming. d'Amboise taught by breaking dance steps into counts of eight and
+naming the steps with something the children could understand. For example, running in a circle to the left with
+knees high in the air was called the "pear." Running in the opposite direction was called "apple." Then he called
+out the names of steps in sequences to create combinations, which were then given names such as "fruit salad."
+This mapped directly to how the children were creating programs to run their music, lighting and animation.
+They mapped environmental events either to particular dance events or to particular dancers and named events
+accordingly. The programs were named like the step combinations, as a superset of the individual events. There
+was even an overlap between trying out steps one at a time in various combinations, and once one is satisfied, to
+name them and bundle them to be used in different combinations and variations. We were amazed by the
+similarities between how Jacques introduced choreographing dance and how we introduce programming.
+
+         In the second week, we encouraged the children to explore choreography on their own, to both invent
+and name steps and to take a step combination and perform it with different intentions, such as happiness, anger
+or frustration. We opened the workshop every day with a set of physical warm-ups and improvisation exercises
+to encourage children to both experiment with how to express emotions and formalize what they were doing.
+
+                                                    108
+       The workshop in week two was completely open, so children chose their groups, emotions and how
+they wanted to approach their projects. In some groups, children wanted to work on different elements in
+parallel, so one would compose music for the emotion, while another worked on lights. In other groups, the
+students wanted to execute every part together. All of the groups had to revise and debug their programs however
+they approached them, however, since when they saw all of the elements combined, some aspects inevitably
+clashed or were not coordinated. This led to many different discussions, from which sensors to use and how to
+create effects most naturally to trying to more effectively convey an emotion through the combination of media.
+
+       Glorianna Davenport, head of the Media Lab's Interactive Cinema group, and her students videotaped
+the entire proceedings and ran a video weblog of the event. We kept it private to protect the security of the
+children involved. Still, this provided a rich source of material for analyzing and debugging not only our
+environment, but also how to run such workshops. The constant video presence also inspired us to see how it
+could be used within the RoBallet environment itself, by videotaping and displaying images that also can be
+interactive and computational.
+
+Interaction
+       Since the environment has so many parts, the easiest way to explain how it was used is to trace through
+a project that a nine-year old participant, "Toby," created. While the example is fairly straightforward, there are
+many other possibilities within the environment that will be explored further.
+
+       The emotion that Toby decided to portray was anger. Instead of mapping out every aspect of the piece
+before beginning, he decided to implement one part at a time before trying to merge all of the components. He
+had a few ideas for steps that he might use, but did not begin with choreography. First, Toby composed creepy
+sounding music in a minor key. As he worked on the music, he commented on particular steps he might perform
+at various points in his composition. He then moved to the lighting computer to experiment with "angry" lights.
+He chose a combination of red and white lights that would sometimes strobe. Then he created an animation of
+dark red objects that would fly through a dark blue space "biting" other objects. He finished by trying to put all
+of the pieces together with his movements.
+
+       As he tried to pull the components together, he modified each part. He needed a way to trigger events
+and experimented with floor sensors and body sensors and tried to figure out which would blend into his
+choreography the best. Toby finally decided on two body sensors and placed them on his palms, so that he could
+press them easily no matter how he was moving. As he began to put the pieces together, he went back to revise
+the pieces he had already created so that they would mix together more effectively. Toby changed his lighting
+sequence, for example, so that it would match the timing of the music and his movements. He also tested various
+sensors and tried to see which would work best. When Toby began working on his project, one of his ideas was
+that he wanted to use a bend sensor, which he would place on the inside of his elbow to control the lights. During
+his implementation, however, he realized that a touch sensor would work better than a bend sensor for his piece.
+
+       When the children worked on pieces individually or in groups, they had to negotiate between various
+media and technologies to create these interactive pieces. While the example that we described is simple, the
+environment was also used in more complicated ways, with children interacting with animations that they
+programmed, or using a body sensor to dynamically control some aspect of the environment. A good example of
+the latter is a project in which the students used a bend sensor to control an animated curtain, which lowered
+itself when the dancers bent their elbows and raised itself as their arms straightened.
+
+Discussion
+       The RoBallet environment is new and we have held only the described two-week long preliminary
+workshop.     Nevertheless, we  have  found   encouraging  evidence   that     Roballet   is a  compelling learning
+environment. The first important aspect is that the environment was engaging to all of the children who worked
+with us, in both workshop groups, despite their diverse backgrounds and interests. None of the children had
+danced before, and most had limited programming experience. But during the workshop, all of the children both
+danced and    programmed;    stepping out  of familiar territory to experiment     with    all of the environment's
+capabilities.
+
+                                                   109
+          In this space, students must be truly interdisciplinary. They looked at the idea of emotion through many
+lenses, from the many types of media they use to their own bodies. How do angry lights differ from angry
+sounds? How do movements complement or detract from the mood one has created in the environment? How
+does it feel to move angrily as opposed to joyously?
+
+          While the stage is a responsive environment with sensors embedded in the floor, it is also a dynamic
+exploration space for children. The children use components of the space as tools to create their interactive
+expressions instead of choreographing their movements to fit predefined functions. This is important as it allows
+children to engage with many levels of creation and to truly experiment with expression and programming.
+
+          Since children were using sensors on their bodies and in the environment to drive the rest of the stage
+setting, they needed to map sensor values to mood. How does amplitude relate to intensity? If an arm is bent in
+an angry piece, should the pitch increase in the music, or the volume? Maybe the speed should change? Does it
+have to change at all, or should that sensor control the strobe rate or color of the lights instead? Where should the
+sensor be placed on the body and what should be sensed? Is it a simple trigger, or a continuous control? If it's a
+trigger, should a floor sensor  be used,  or should    the dancer wear  the sensor?  How  does  that affect the
+choreography of the piece?
+
+          It is precisely because there are no "right" answers to such questions is why we find this area so
+interesting. Students are free to express what they    think. In order to express, they explore thinking  about
+elements of sound, light, and movement. In order to express what they want, they meet interesting mathematics,
+physics, engineering, electronics. This creates a virtuous circle where they learn to think in these areas in order to
+express what they want. As they incorporate this thinking, they are able to express more, which leads to deeper
+thinking.
+
+                           Figure 2. A wearable Stack computer modeled by a student.
+
+          One interesting aspect was that there seemed to be a common language for expression by movement.
+Acute angles expressed more conflict. Rounder forms were calmer. Sharp movements were more to express
+
+                                                     110
+anger. Slower movements were kinder. Expressing emotion through dance, music and light enabled eloquence in
+a different way than words.
+
+        The environment also returned to ideas raised by Seymour Papert in his early work with Logo. In this
+work, Papert described why the turtle was a compelling character: Children could anthropomorphize it and
+mentally map their bodies to the behaviors of the turtle. In the case of RoBallet, the students' bodies actually
+drove the environment. If they changed their choreography, the environment would also change dynamically
+instead of always performing the same canned set of actions. The children were breaking down and formalizing
+their movements in order to describe and coordinate the other events in the environment.
+
+        Using the body also gives a way of thinking of issues in physics and mathematics very concretely.
+Dancers experience matters of force and tension through their movements and can associate these ideas with
+intention in movement. They can clearly feel the difference between lifting their legs to a 45-degree angle versus
+a 90-degree angle. While the connection between these feelings and concepts in physics do not arise simply from
+movement    through space,     explicit connections can   be  made   in context by a facilitator as was described
+previously in the connections made between choreography and programming. These connections serve the same
+purpose as in any method of interdisciplinary study, that is, to provide the ability to examine something from
+multiple perspectives simultaneously, allowing the knowledge from each domain to strengthen understanding of
+a concept.
+
+        The students spent a great deal of time "debugging" and "revising" their dance pieces. This formed
+another concrete relationship between the performing arts and engineering and helped students understand each
+concept more deeply. They had to debug their programs when using one sensor caused an unexpected result. The
+child expected the  sensor     to trigger a change  in lighting, but instead, the music  grew louder.  Oftentimes
+children's animations did not work the way they planned, either, because of an error in their code. But beyond
+making a piece functional, working as planned, they revised their dances to make them either more cohesive or
+more effective emotionally. Their dances had meaning and an intended effect, for the audience to understand and
+feel the emotion they were trying to portray. Their projects went more deeply than simple functionality or simple
+effect, but searched for an intersection between the two.
+
+        We were struck by the potency of examples. The strength of Jacques's character and the beauty of his
+choreography stuck with the children. In the second week of the workshop when they were free to do as each one
+pleased, they used, modified and built upon his steps. However, they also utilized his means of using the sensors.
+We expected the children would be more adventurous in their use of the technology. However, they stuck pretty
+much with what Jacques did. One aspect of this was using familiar things when experimenting in unchartered
+domains. Another aspect is that we had limited time and a multitude of tools. We eagerly look forward to
+working with children in the next version of the RoBallet environment over longer periods of time.
+
+        Finally, we noticed a certain "performance" bias. There was a much greater concern about how the
+performance would appear to the audience than we are accustomed to. We usually work with children on projects
+just for the sake of learning and doing, not for the sake of a performance. Although we appreciate the value of
+public performance and certainly of final artifacts, this bias drove much of the workshop and diminished
+possibilities for exploration.
+
+Future Work
+        As mentioned above, the workshop was the first feedback step in the process of designing RoBallet.
+There  are three categories    for  future  development;  the development    environment, the    hardware, and the
+connections to learning. Obviously, we would like to include robot building in the project, since that served as
+the inspiration for RoBallet. However, we want to improve upon the materials used so that we have stepper
+motors, a wider variety of mechanisms for movement, and the ability to mount artifacts on a scale large enough
+for performances. We do not want to restrict ourselves only to performance spaces and scales. We still maintain
+that a child making one robot with which to dance is incredibly compelling. We also will use new generation of
+wireless chips that provide both greater capability and lower costs.
+
+                                                       111
+         We   plan  on modifying   the programming        environment   that the students used    in the preliminary
+workshop by changing the interface and some of the interaction. We need to adapt Logo to be more open to
+adding other objects to it as well as to improve its response time. We are still determining whether to base
+everything in Squeak and Smalltalk, making a new interface specific to RoBallet. This has obvious advantages of
+bringing in objects, running native and therefore fast, being open source, and having a community of developers
+assisting us. We will develop an interface for handheld devices so that the child is not required to perform in one
+space, then run off-stage to re-program, then run back on to test, and so on. We felt that this running back and
+forth interrupts the beauty of using the body as the system's control.
+
+         We need to determine what software we will use for music composition, or to write an application if we
+find none suitable for our needs. The more seamless the programming of the animation, robotics, lights, music,
+and video is, the more satisfied we would be.
+
+         Perhaps most important from the standpoint of our potential contribution is the connections to powerful
+ideas in mathematics. We believe that utilizing our sense of our body's movement in space as a means of
+understanding the mathematics of movement in three dimensions, of coordination, of dynamics is an area rich in
+possibilities. By sensing the movement and using it as parameters for functions mapped across a variety of
+domains also can provide a concrete basis for other rich areas. We are currently examining what mathematical
+content is applicable, and are using the ideas to inform our software language and environment design.
+
+         Our first experiments with RoBallet were exciting, fun and interesting for the facilitators and the
+participants alike. Although    we know   we   have   just  begun, we   are  convinced that  this is  a rich area for
+exploration. The   workshop   experience  reveals     great potential  and, with these additions  in  place, we   feel
+confident that our environment will become a rich environment suitable for deeply exploring a space where the
+arts and engineering meet.
+
+References
+Basu, A., (2003). Full-Contact Poetry: Creating Space for Expression, In Proceeding from Eurologo 2003, Porto,
+         Portugal.
+Benbasat,   A.Y., Morris,  S.J, and Paradiso,     J.A  (2003).   A Wireless  Modular   Sensor  Architecture   and its
+         Application in On-Shoe Gait Analysis. Proceedings of the 2003 IEEE International Conference on
+         Sensors, October 21-24.
+Downie, M, (2002). Loops: Sketches and applications, Proceedings of the 29th annual conference of Computer
+         graphics and interactive techniques, SIGGRAPH.
+Farbood, M. (2001). Hyperscore: A New Approach to Interactive Computer-Generated Music. M.S. Thesis.
+         Cambridge, Ma.: MIT Media Laboratory.
+Papert, S. (1980). Mindstorms: Children, Computers and Powerful Ideas. New York: Basic Books.
+Paradiso, J. (2002). FootNotes: Personal Reflections on the Development of Instrumented Dance Shoes and their
+         Musical Applications., in Quinz, E., ed., Digital Performance, Anomalie, digital_arts Vol. 2, Anomos,
+         Paris, pp. 34-49.
+Resnick,  M., Berg,  R.,   Eisenberg, M., Turkle,     S., and  Martin,  F.  (1996). Beyond   Black   Boxes:  Bringing
+         Transparency    and  Aesthetics  Back    to  Scientific Instruments.   Proposal  to the  National   Science
+         Foundation.
+Sipitakiat, A., Blikstein,  P., &  Cavallo,    D. (2002).   The  GoGo    Board:  Moving   towards    highly  available
+         computational tools in learning environments. Proceedings of Interactive Computer Aided Learning
+         International Workshop. Carinthia Technology Institute, Villach, Austria.
+
+Acknowledgments
+In particular we would like to thank Jacques d'Amboise and Dufftin Garcia from the National Dance Institute
+without whose contributions we would have floundered. Their expertise, openness and enthusiasm brought a
+level of accomplishment     we  could  never   have   attained   without them.   We  also wish    to thank  the Lego
+Corporation for its generous support, as well as support from the Media Lab research consortia Things That
+Think, Digital Life, I:O, and Digital Nations.
+
+                                                       112
+

@@ -1,0 +1,169 @@
+The Student Becomes the Master: Integrating Peer Tutoring with
+                                      Cognitive Tutoring
+
+               Erin Walker1, Nikol Rummel2, Bruce M. McLaren1, Kenneth R. Koedinger1
+         1Human Computer Interaction Institute, Carnegie Mellon University, Pittsburgh, PA, USA
+                    2Institute of Psychology, University of Freiburg, Freiburg, Germany
+           {erinwalk, koedinger, bmclaren}@cs.cmu.edu; rummel@psychologie.uni-freiburg.de
+
+         Abstract: Combining peer tutoring with an intelligent tutoring system (ITS) holds the
+         promise of augmenting the current benefits of the ITS. We designed and implemented a
+         peer tutoring approach as an addition to the Cognitive Tutor Algebra (CTA), an ITS for
+         high school  algebra.  We  then  used 30  students  to  evaluate   the potential  of the peer
+         tutoring  addition  to increase   learning. Although    students   learned   and    interacted
+         positively, peer tutors lacked the necessary expertise to adequately help their tutees.
+
+Introduction
+         Combining   collaborative  activities with  intelligent   tutoring might   be    an  effective way        of
+increasing student  knowledge.  The   guided problem-solving    provided    by  an ITS  is effective   but limits
+student construction of knowledge, while collaborative activities increase the potential for the acquisition
+of deep  knowledge   but  do not   always  provide  sufficient guidance   for   students. Our    work  integrates
+collaborative learning with an ITS using a peer tutoring framework, with the goal of allowing students to
+tutor each other through the interface of an ITS, supported by both cognitive and collaborative tutoring.
+However, implementing a peer tutoring script within the context of an existing ITS may not require much
+computer tutoring to be effective, for two reasons: Students who have used the ITS already have a mental
+model for how the cognitive tutoring works in the ITS, making it easier for them to assume the tutoring
+role, and as the student interaction is structured through the interface of the ITS, it might be easier to
+implement   script elements  than  if students  were   interacting  face-to-face.   Additional    cognitive  and
+collaborative tutoring would only be necessary if students do not comply with the script. Therefore, our
+first step is to implement a baseline peer tutoring condition within the context of an existing ITS: the
+Cognitive Tutor Algebra. We use the interface of the ITS to structure the interaction between the students,
+but we do not provide hints and feedback to the students as they collaborate. The effectiveness of this
+condition at increasing learning will indicate whether and how to provide adaptive support.
+
+Script Design and Implementation
+         We incorporated elements of previous successful peer tutoring scripts into our intervention. Peer
+tutoring has been shown to be effective when students exhibit certain behaviors. Asking specific questions,
+receiving elaborated explanations, and using those explanations constructively have been correlated with tutee
+learning (Webb,   Troper, &  Fall, 1995).  Students  learn from  being tutors   if they prepare   ahead  of  time
+(Fantuzzo, Riggio,  Connelly,   &  Dimeff, 1992),  monitor  skills being  acquired  (Fuchs    et al., 2003), and
+provide their partners with elaborated explanations (King, Staffieri, & Adelgais, 1998). Biswas, Schwartz,
+Leelawong, Vye, and the TAG-V (2005) identified three aspects of learning interactions that seem to explain
+the benefits of learning by teaching: students take responsibility for, reflect on, and structure their knowledge.
+
+         In our peer tutoring script, students are given a task like "Solve for x," for an equation like "ax +
+by = c." Students go through two phases: a preparation phase and a collaboration phase. In the preparation
+phase, peer tutors are given a chance to practice with the material ahead of time by solving problems using
+the CTA. They use an equation solver tool to manipulate the equation, and are given immediate feedback
+from the cognitive tutoring component of the CTA when they make a mistake. They can also ask for a hint
+from the CTA at any time. As they solve the problem, they are given feedback on their progress through a
+skillometer, which contains bars that represent their skills and change in value with correct and incorrect
+student actions. During the collaboration phase, students are grouped into same-gender pairs of similar
+abilities and collaborate at different computers, taking turns being peer tutors and peer tutees. Peer tutees
+solve the same problems as their tutor solved in the preparation phase, using the same interface. Peer tutors
+
+                                                     750                                                    CSCL 2007
+can see  their   peer tutee's actions, but cannot   solve the    problem    themselves.   Instead,  they    are given  a
+printout of their own answers to that particular problem, and take the role of the cognitive tutor. They can
+mark the peer tutee's actions right or wrong, and adjust the values of the tutee's skill bars. There is also a
+chat tool, where tutees can ask questions and tutors can give explanations.
+
+         We added two additional activities to extend the script and guide students in their interaction.
+First, during   the preparation   phase, we  gave   students    questions   to prepare  them    for the  collaborative
+challenges   of  tutoring as  well as  the cognitive  ones      (e.g., "A good  question    is specific. It  asks  why
+something is done, or what would happen if the problem was solved a certain way. What is a good question
+to ask about the step you chose in Question 2?"). Second, we gave students three additional reflection
+questions after they had just finished tutoring a problem (e.g., "What was the best question asked by the
+tutee? If the tutee didn't ask any questions, what was a good question he/she could have asked?"). We
+implemented the peer tutoring within the context of a more general collaborative framework added to the
+Cognitive Tutor Algebra (CTA).
+
+Script Evaluation
+         We compared two conditions, one in which students tutored each other using the CTA interface
+by following the preparation and collaboration phases (the tutoring condition), and one in which students
+tutored  each   other  using  the  CTA    interface and were        given the  additional   collaborative   instruction
+described in the previous paragraph (the tutoring+reflection condition). We hypothesized that peer tutoring
+would   increase  student  learning   in both   conditions,     but giving  students additional     instruction  would
+enhance the effects of the peer tutoring. See Table 1 for a description of the experimental procedure. To
+assess student learning we used a counterbalanced pretest and posttest, each containing 8 questions drawn
+from the same unit as the treatment questions.
+
+         Participants were 30 high-school students from two first-year algebra classes at a vocational high
+school. Both classes were taught by the same teacher. Due to the disruptiveness of students in the same
+class  using  different   interventions, we  used   a between-class       manipulation.   The   class with   the  most
+participants  was   assigned  to  the tutoring+reflection   condition.    Only  14  participants  participated    in all
+phases of the study (pretest, preparation for tutoring, peer tutoring, and posttest): seven in the tutoring
+condition, and seven in the tutoring+reflection condition. Unfortunately, there were significant between-
+class differences: students in the tutoring+reflection condition were working on a significantly lower unit in
+the Cognitive Tutor Algebra prior to the study (Ms = Unit 8.3 and Unit 11.6, SDs = 1.25 and 2.76, F(1,12)
+= 8.22, p = .01).
+
+Table 1. Experimental procedure. Differences between conditions are highlighted by italics.
+
+Day        Activity       Time             Tutoring Condition                   Tutoring + Reflection Condition
+1       Pretest           10 min.   - pretest on domain knowledge               - pretest on domain knowledge
+2       Overview          15 min.   - overview of tutoring interface            - overview of tutoring interface
+2       Preparation       40 min.   - students solve the problems they will     - students solve the problems they will
+        Phase                       be tutoring                                 be tutoring
+                                                                                - students answer reflection questions
+3       Collaboration     50 min.   - students tutor each other                 - students tutor each other
+        Phase                                                                   - students answer reflection questions
+3       Posttest          10 min.   - posttest on domain knowledge              - posttest on domain knowledge
+
+Results
+         We scored the pretests and posttests on a 5 point scale. We then conducted a two-way (condition x
+test-time) repeated-measure       ANOVA,    with  test-time     as  the   repeated measure.    Posttest  scores   were
+significantly higher than pretest scores in both the tutoring and the tutoring+reflection condition (F (1,12) =
+15.25, p < .002, ² = 0.56), but there were no significant differences between conditions, and no interaction
+(see Table 2). To further examine what occurred during the collaboration phase we turned to log data and
+notes from classroom observation. During peer tutoring, students appeared engaged, and did exhibit many
+of the positive collaborative behaviors that we were attempting to encourage with our script and that have
+been shown to correlate with knowledge construction and self-reflection. However, we observed that peer
+
+                                                         751                                                       CSCL 2007
+tutors struggled to provide tutees with answers, and did not connect the preparation that they had done with
+the collaboration phase. For instance, they often did not consult their answer printouts when they did not
+know the next problem step and thus had to rely on teacher assistance to solve a problem. As a result, tutees
+skipped problems without completing them correctly. This undesirable behavior differed between the two
+conditions (see Table 2). Students in the tutoring condition attempted more problems than students in the
+tutoring+reflection condition, and appeared to complete more problems as well. The average number of
+problems completed by dyads in the tutoring+reflection condition was low; students in this group took an
+average of 11 minutes to complete a single problem, compared to a 6 minute average in the tutoring
+condition. Students in the tutoring condition tended to skip problems they could not solve, completing less
+than  60% of the problems   they  attempted. Immediately    before skipping      a problem,    students would
+generally state their inability to solve it, "I don't know how to do this one," or their lack of motivation,
+"Just do something and I'll agree or something." If students skip problems, they may not learn how to solve
+difficult problems. However, if they do not complete many problems, they may not be sufficiently exposed
+to all the skills involved in the unit, and will be given fewer opportunities to master them.
+
+Table 2. Attempted problems and interaction data for the two conditions
+
+                         Pretest Score       Posttest Score      Problems                Problems
+                                                                 Attempted               Completed
+Condition                Mean      SD        Mean       SD       Mean      SD            Mean        SD
+             Tutoring       31.1      25.4      45.8       31.8     14.2           8.47         8.4      5.13
+ Tutoring + Reflection      22.9      15.3      42.8       22.0      5.8           3.11         4.4      0.89
+
+Conclusion
+        Although students learned as a result of the peer tutoring, we did not find that the condition with
+additional tutoring instruction learned more than the condition without additional instruction. Instead, many
+students had difficulty following the peer tutoring script effectively. Students in the tutoring group tended
+to skip past problems they could not solve, while students in the tutoring+reflection condition completed
+fewer problems than students in the tutoring group. Increasing the number of problems that students are
+able to correctly complete while collaborating should improve student learning, because students will be
+given more of an opportunity to master the skills required by different problems. Adding adaptive feedback
+should allow peer tutors to more effectively and accurately help their partners.
+
+References
+Biswas, G., Schwartz, D. L., Leelawong, K., Vye, N., & TAG-V. (2005). Learning by teaching: A new
+        agent paradigm for educational software. Applied Artificial Intelligence, 19, 363­392.
+Fantuzzo, J. W., Riggio, R. E., Connelly, S., & Dimeff, L. A. (1992). Effects of reciprocal peer tutoring on
+        mathematics    and  school  adjustment:    A  componential  analysis.      Journal     of  Educational
+        Psychology, 84(3), 331-339.
+Fuchs, L.S., Fuchs, D., Prentice, K., Burch, M., Hamlett, C.L., Owen, R., & Schroeter, K. (2003).
+        Enhancing third-grade students' mathematical problem solving with self-regulated learning
+        strategies. Journal of Educational Psychology, 95(2), 306-315.
+King, A., Staffieri, A., &  Adelgais,  A.  (1998). Mutual   peer tutoring: Effects    of  structuring   tutorial
+        interaction to scaffold peer learning. Journal of Educational Psychology, 90, 134-152.
+Walker, E., Koedinger, K. R., McLaren, B. M. and Rummel, N. Cognitive Tutors as Research Platforms:
+        Extending an Established Tutoring System for Collaborative and Metacognitive Experimentation.
+        In the Proceedings of the 8th International Conference on Intelligent Tutoring Systems, Jhongli,
+        Taiwan, June 26-30, 2006.
+Webb, N.M., Troper, J.D., & Fall, R. (1995). Constructive activity and learning in collaborative small
+        groups. Journal of Educational Psychology, 87, 406-423.
+
+Acknowledgement
+This research is supported by the Pittsburgh Science of Learning Center, NSF Grant # 0354420.
+
+                                                    752                                                   CSCL 2007
+

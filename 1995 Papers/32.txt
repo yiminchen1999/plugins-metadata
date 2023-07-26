@@ -1,0 +1,421 @@
+                            Multiplayer Activities that
+                  Develop Mathematical Coordination
+                       Lauren J. Bricker, Steven L. Tanimoto, Alex I. Rothenberg,
+                                 Danny C. Hutama, and Tina H. Wong
+
+                    Department of Computer Science and Engineering, University of Washington
+
+                       Abstract                                  For large co-present groups (e.g., a classroom full
+Four computer applications are presented that encour          of students), collaborative applications may run on a
+age students to develop "mathematical coordination"           set of computers interconnected in a local area net
+- the ability to manipulate numerical variables in co         work.  Alternatively, one or more computers may sup
+operation with other students so as to achieve a definite     port the users in a "meeting room" configuration. Oc
+goal. The programs enable a form of computer-sup              casionally one computer is used by a small group of
+ported cooperative learning (CSCL).   In this paper we        students sharing it simultaneously. While sharing of a
+describe the rationale and design of the programs, the        single computer may present some logistical problems
+results of an informal evaluation, and possible future        to the students, the necessity of sharing can promote
+work.  The games were developed using a special               communication amongst the students. Physically sepa
+software and hardware environment that facilitates the        rating  students to work individually  on computers
+rapid prototyping of computer-based cooperative-learn         tends to discourage communication.
+ing materials. This research is part of an ongoing pro           The programs presented in this paper were specifi
+ject entitled "Mathematics Experiences Through Image          cally designed to be used in this last situation, that is,
+Processing" whose objective is to develop and test ed         by groups of 2-4 students sitting at one machine. The
+ucational materials that introduce K-12 students to           software and hardware allow all the students in the
+mathematical ideas within the context of digital image        group to interact with the computer simultaneously, via
+processing activities.                                        multiple mice and a shared screen.  Simultaneous input
+                                                              tends to reduce the conflict over access to the com
+Keywords - Co-present CSCW, computer supported                puter, and it may increase the average rate of learning
+collaborative learning, mathematics education, mathe          for the students in the group.
+matical coordination, multiple mice, color matching,             The reasons to support cooperative learning has
+curve fitting, chord matching, cooperative learning.          been well stated by Davidson [4] in relation to mathe
+                                                              matics. Group learning addresses some of the prob
+                                                              lems associated with the isolative nature of typical
+1. Introduction                                               mathematics curricula. As a whole, students working
+This paper presents four activities that enable co-pre        in a group become less discouraged and frustrated than
+sent or face-to-face collaborative learning. Computer         students working alone. The group not only is a source
+Supported Collaborative Learning (CSCL) as a whole            for additional help, but it becomes a support network
+is designed to encourage cooperation, discussion of           for members. Combining computers with group learn
+ideas, resolution of cognitive conflicts, and promote         ing is an attractive possibility for mathematics educa
+problem   solving   and  higher-order thinking  skills.       tion, because computers can empower students to con
+CSCL programs can be divided into two types: those            struct and explore mathematical objects and worlds.
+supporting cooperation at a distance and those support            The programs we present are intended to support
+ing cooperation in a co-present setting. As video tele        mathematics teaching with the 1989 standards by the
+conferencing technology improves and gets cheaper,            National Council of Teachers of Mathematics.      Nu
+this dichotomy will become less clear.   For now, how         merous reports have documented the difficulties that
+ever, cooperation at a distance is hampered by the low        K-12 students in the United States have with mathe
+degree of apparent presence available and the lack of         matics (e.g., see [14]). When pressed for a reason, stu
+actual contact with other students. Co-present collabo        dents often complain that mathematics is "difficult"
+ration, on the other hand, allows students to interact        and that they don't see much use for it beyond simple
+directly, see  each other's expressions  and  gestures,       arithmetic. In response to these concerns, the NCTM
+therefore communicate more effectively.                       developed Curriculum and Evaluation Standards for
+                                                              School Mathematics; this document specifies not only
+
+CSCL '95 Proceedings                                       32                                              October 1995
+the content to be covered but the many ways in which          communication is designed to make the communica
+this knowledge should be brought to life and connected        tion between users more productive.
+to other subjects. These ways include communication               This type of interaction has been seen in many
+about mathematics, problem solving and posing, and            other distributed CSCL applications [2,11,15,16,17].
+integrating the teaching of mathematics with other            Synchronous networked collaboration can be enhanced
+subjects.                                                     by adding real time video conferencing, similar to co
+     The goal of the Mathematics Experiences Through          operative work systems such as EuroParc's RAVE [8],
+Image Processing (METIP) project is to use digital im         or Clearboard [9]. Still, because the hardware inhibits
+age  processing  and   collaboration to help meet  the        direct visual access to partners, these systems do not
+NC1M objectives. METIP software and activities al             foster the same level of communication as one finds in
+low students to manipulate and view digitized images          face-to-face situations.
+as objects which are simultaneously visual and mathe              Meeting room systems [6, 17, 18, 19] are specifi
+matical.  Students may work assigned problems or ex-          cally designed to allow multiple users, each on their
+plore and make their own discoveries.    Teachers may         own machines, to work collaboratively and still main
+lead discussions about ideas such as image transforma         tain direct face-to-face communication. Some of these
+tions, invertibility of functions, and effects of arith       systems include special table top monitors that do not
+metic operations on images that crop up during the            obstruct views and/or one large main monitor which is
+computer-based activities.                                    shared by all and serves as a mechanism to synchronize
+     We have created an environment that facilitates          views.
+the  rapid development    of  METIP    programs.  The             While these systems do encourage communication
+METIP environment system software is designed in              more than their distributed counterparts do, they do not
+two parts, one which includes image processing primi          evoke the excitement and degree of interaction shown
+tives and  the other,  known    as the Multiln module,        by users of co-present video games.   Of course, such
+which supports either single-user or co-present CSCL          games are designed to maximize the players excite
+graphical user interfaces. In particular, Multiln is de       ment and suspense.   However it may also be due, to
+signed to support a multiplicity of input pointing de         some extent, to limitations of the underlying hardware,
+vices with their tracking cursors all displayed on a          such as delays due to network bandwidth, or perhaps it
+single screen. With this system, small groups of stu          is because the users of such systems are not focusing
+dents are able to sit at one computer and discuss activi      on exactly the same view of the given problem.    Even
+ties as they are engaged in them.                             in systems with a large shared view screen must con
+     The next section will discuss the previous work          stantly their attention from their own monitor to the
+which lead to the decision to support co-present CSCL.        front of the room to gain context.
+In Section 3, we describe four co-present collaborative           MMM [1] is a multi-user system in which each
+applications followed by the implementation consid            person has control of his or her own mouse, but all are
+erations in Section 5. Section 4 details the preliminary      working on one screen.      This is the same situation
+results of our user testing.  Finally, Section 6 will in      found in most interactive home video games developed
+clude some directions for future work.                        by Nintendo, Sega and Atari.    Ultimately, we would
+                                                              like to channel the excitement and interaction found in
+                                                              video games into an educational context while chang
+2.   Previous Work                                            ing the   competition inherent in most games into col
+A number of educational researchers have sought to            laboration.
+exploit computer technology in promoting learning
+through collaboration. For example, Clements used theLogoprogramming environment in a collaborative set3.Applications
+ting (i.e. multiple users on a single input machine) to
+study student learning through cognitive conflict and         3.1. Design Goals
+subsequent resolution [3]. The results of their study         We have currently developed four co-present CSCL
+suggests that the collaborative use of Logo encourages        applications designed to promote strong cooperation
+interaction, discussions, coordination of different ideas     between users on a specific activity.   Therefore each
+and higher order thinking [12]. Unfortunately, the use        activity has one definite, predefined goal, and each
+of the computer in this way also promoted social con          user must contribute equally towards reaching that
+flict over the input devices.                                 goal.  In order to successfully complete the task, the
+     TurtleGraph [10] is a similar problem solving en         users must be able to communicate about the opera
+vironment in which Lisp is used to command the cur            tions on the screen as well as the goal itself. In many
+sor.  Additionally the environment has the capability to      cases the users develop their own "language" about the
+allow communication between students.      The system         activity.
+regulates the communication through button presses
+and an area for conversational dialog.   The restricted
+
+CSCL '95 Proceedings                                       33                                             October 1995
+3.2. The Color Matcher
+The Color Matcher is the CSCL application that we
+developed first.  This activity was designed to promote
+learning and discussion about the RGB additive system
+used by most monitors for displaying color [7]. It won
+an industry award for its creative use of the Access.Bus
+multiple input technology.
+    The Color Matcher activity gives each of three
+players access to his or her own mouse which corre
+sponds to a red, green or blue colored cursor on the
+screen.  The goal is for the players to match a target
+color generated by the computer.
+    Figure 1 shows the Color Matcher user interface.
+The interface contains two color frames, the left is the
+target color and the one on the right is the users' color
+frame.  The users' color is determined by combining
+the RGB values controlled by three horizontal scroll
+bars.  The color values, which range from 0-255 de
+pending on the position of the slider, are shown above
+the scroll bars.  A scroll bar can be modified only by
+the cursor of the same color.
+    Although each user is only in control of his or her
+own color, the users are collaborating to reach the sin
+gle goal of matching one color.   In order to succeed at
+this activity, users must, at a minimum, communicate
+about the relative amounts of color needed.   Users also     rectly  match  the chord, although  they may   check
+need to communicate when they think they are close           sooner.  The team's score is calculated as Ltoo - 0.5 *
+enough to check their answer.                                (dist_] + dist_2 + dist_3)J where dist_i is the distance
+    Each color matching activity is timed to keep the        each users note was from the target note, measured in
+students on task. Users are allowed at most 60 seconds       half steps.
+to adjust   the RGB    values for each  given color, al          The user interface for the Chord Matcher is shown
+though they may check sooner by clicking a button.           in Figure 2. As with the Color Matcher, effective play
+Each response is given a score between 0 and 1000,           requires that students talk about  the pitches in the
+where better scores are indicated by higher values.          chord and when to check their answer.    Additionally
+Scores  are  determined     by  the  formula  score   =      users may negotiate over the use of shared resources,
+max_distance- dist I max_distance * 1000 where dist is       such the use of hints, and when the notes, team and
+the distance between the target and users' RGB values,       target chords should be played.
+as determined by the position of the scroll bar, and
+max_distance is the maximum distance possible in the
+color space.    The entire activity consists of matching
+ten colors. All scores are recorded in a ASCII log file.
+
+3.3. The Chord Matcher
+The Chord Matcher application is very similar to the
+Color Matcher, except that the users are charged with
+matching musical chords rather than RGB colors.      The
+chords  vary    from a relatively easy major  chord,  to
+more difficult selections of three random notes of a 5-
+octave chromatic scale.   Each user selects his or her
+note from the five octave range using a color coded
+scroll bar.  As with the Color Matcher, users can only
+operate scroll bars of the same color as their mouse
+cursor.
+    Each user may hear his or her own note at will by
+clicking on a button.  Similarly any user may audition
+the current team chord, or the target chord.  Any user
+may also request a hint, up to a maximum of ten hints
+per session. The users  are   given 120 seconds to cor-
+
+CSCL '95 Proceedings                                      34                                            October 1995
+3.4. The Curve Fitter
+The Curve Fitter activity is designed to allow students
+to explore how changing the location of control points
+modifies the shape of a polynomial curve.       The user
+interface for the Curve Fitter is shown in Figure 3.
+This activity is designed for two to four users.
+     As  with    the   Color  Matcher    and  the Chord
+Matcher, each player controls a mouse which corre
+sponds to a colored cursor on the screen.     Each cursor
+can move a correspondingly colored control point on
+an image to modify the shape of the curve.      The goal
+of the  activity is  to   match  a degree  1 to degree 5
+polynomial  with     a  curve  in  the image   under  120
+seconds.    The   users      choose  the  degree  of  the
+polynomial before starting the activity.      The scores
+range  from O to  100     and is based  on how  close the
+curve is to the shape of the image.      A high score is
+given for a close fit to the curve, thus a score of 100
+represents the best fit of the curve.
+     Again the users need to communicate about the
+task they are performing.     They typically discuss the
+shape of curve in relation to the locations of each of
+the control points.    The only shared resource in this
+game is the button to check their answer.
+
+                                                                on the screen.   When there are three users engaged in
+                                                                this activity, they must match the centroid of the trian
+                                                                gle defined by their points with the specified point.
+                                                                But there's a catch - the movement of each of the
+                                                                users' points is limited to areas on the screen defined
+                                                                by bitmapped images.
+                                                                    The users of the Midpoint Activity are given two
+                                                                minutes to complete    their  task. Since  they  can only
+                                                                move their own points, they must work together to
+                                                                match the target point.  Again, the only shared screen
+                                                                resource is the button where the users can check their
+                                                                answer. The number of users and bitmapped images
+                                                                may be selected before each session.
+                                                                    Scores for the midpoint activity are determined
+                                                                by 100  - ( dist * factor)   where   dist is the distance
+                                                                between   the  users' point   and the target  point, and
+                                                                factor is a predefined value. Figure 4 shows the user
+                                                                interface for this activity.
+
+                                                               4.  Preliminary User Feedback
+3.5. The Midpoint Activity
+The Midpoint Activity is designed to encourage com             4.1. Testing in 8th grade classes
+munication about certain geometrical concepts.        The      We tested the Color Matcher in two 8th grade mathe
+activity may be played in a two-person or three-person         matics classes in a Seattle middle school.        Our goal
+mode.   Each  user     is in  charge of  the colored point     was not to conduct a scientific experiment, but rather
+matching his or her mouse cursor.      If two users are ac     to collect anecdotal evidence to support the use of the
+tive, they are charged with matching the midpoint of           cooperative facilities provided by the Multiln module.
+the line defined by their points with a predefined point
+
+CSCL '95 Proceedings                                        35                                                October 1995
+    The   students  were   given a lecture  of about 15       Table  1. Average    scores  on  the  pre- and post-test.
+minutes about the RGB additive color system. The lec           Numbers in parentheses indicate sample size and s is
+ture was followed by a short pretest and questionnaire.       the standard deviation.
+The pretest was to assess their understanding of the
+concepts presented in the lecture and to access how                                  Single (7)       Multiple (15)
+much they might want to pursue further investigationsof color.      Pretest         2.33 s=l.66         4.13 s=2.80
+    We    divided  the classes  into groups  of six and             Post-test       3.00 s=2.00         5.33 s=3.64
+brought each group to the PC lab.    Three of each group            Change            28.76%              29.06%
+used the Multiple input device (MID) Color Matcher
+described in Section 3.2.   The other students used a
+Single Input Device (SID) version of the same soft
+ware.  The students were shown how to use the soft
+ware, then left to do the activity by themselves.   Stu       4.2. Testing with college and graduate students
+dent interactions were videotaped for later study.   Fi       All of the collaborative applications were tested at the
+nally the students completed a post-test to determine if      University of Washington.    The volunteer testers, both
+their knowledge    of  the RGB   color  system  had  in       graduate and undergraduate students most of whom
+creased.   Students were also had the opportunity to          had never seen this type of interface before, were se
+give their impressions of the program in the follow up        lected in groups of three.   Each group used each of the
+questionnaire and on videotape.                               four applications, then answered a questionnaire in
+    The majority of the students responded that they          which they were asked to write down their impressions
+had seen color mixing before, though it is uncertain if       of the software and the interfaces. Additionally the
+· they meant the RGB (additive) or CMYK (subtractive)         group interactions were noted by three observers dur
+system typically taught in grade schools.   However, as       ing the testing. No pre and post testing of knowledge
+a whole they had not     previously used a computer to        was done.
+experiment with these concepts.    The SID users were             In general, the users thought the interfaces were
+quiet, except to ask questions on how to operate the          interesting and easy to use. Although all of the users
+software.   In contrast,   the students using  the MID        gave some suggestions for improvement, none of the
+software communicated a great deal, commanding each           suggestions radically modified the underlying design
+other to add "more green" or "less blue." Unlike the          for collaboration.
+cooperative Logo studies done by Clements [3], there              The students liked using the activities with part
+was very little conflict between these users as there         ners, although they admitted they would rather use
+was no contention for the input resources although            them by alone. (Perhaps this is due to the fact that they
+some students did get slightly frustrated in discovering      have all been taught to work and learn independently.)
+that they could not manipulate another player's color.        They did feel that the user interface made them com
+    Overall the students enjoyed playing with both            municate.     One person noted, "[the interface] forced
+versions  of   the software.     Some   of the  students      me to give or receive instructions."       In fact, there
+restarted the activity after they had completed the test.     seemed to be one person for each application who took
+One even used it to help answer the questionnaire.            the leading role in both explaining the underlying con
+Another commented: "Having a computer at home you             cepts of the activity and directing others.  This type of
+get used to working by yourself. But working together         tutor-learner relationship occurred most often during
+was more   fun."   Though another did say:  "One player       the   testing of the  Color   Matcher   and   the  Chord
+is better because its easier to get the right answer. You     Matcher.  In the case of the Color Matcher, there were
+don't have to worry    about what the other people are        a few people who didn't understand the RGB mixing
+doing."                                                       scheme.   This was even more evident in the Chord
+    There was one group in particular that was very           Matcher testing.   In each group there was at least one
+quiet and quite obviously did not get along very well.        person who was more versed in music theory than the
+Their comments were mostly negative, though appar             rest. Between    the  tutors and  the  help screens,  the
+ently aimed primarily at the teacher and at mathematics       groups decided that the best way to solve the easy
+in general rather than the color matcher.                     (major) chord was to match the low note, then deter
+    Scores on the test portion of the data are shown in       mine the middle and high notes by simply adding the
+Table 1.  The students showed an increase in scores af        proper amount of half-note steps. One person, who had
+ter using  the color   matcher,  and there was  slightly      perfect pitch and was able to match notes almost in
+more of an increase among students that used the MID          stantaneously,   said "it's  not fair for  me  to do  this
+version of the software.                                      [activity]."
+
+ CSCL '95 Proceedings                                      36                                               October 1995
+     Unfortunately the users also pointed out that the         classroom.   The METIP/Multiln environment has been
+Chord Matcher is inherently less collaborative than the        developed on a 386/486/Pentium based PC platform
+others. One person's strategy was to "work on my own           running under Microsoft Windows because these sys
+note individually, [then] offer suggestions to others af       tems are fairly prevalent in school systems. However,
+ter I'm done."  The Color Matcher had the same prob            these stock  machines    only support standard   single
+lem, although the goal for the group is more tightly           mouse/single keyboard hardware and operating sys
+coupled than the Chord Matcher.       In the former, the       tems. Therefore, we had to build support for simulta
+color homogeneously     mix to form one, while in the          neous input from multiple students.
+latter the three notes are distinguishable by some peo              Video game joysticks are the most commonly used
+ple. Ultimately the team goal in the Color Matcher is          multiple user input devices.  They have the advantage
+the final color, whereas the goal for the Chord Matcher        that they have wide support and can be plugged into a
+is to match the individual notes. In both of these appli       PC's standard game port. Unfortunately, joysticks are
+cations, however, most users did not change their scroll       generally limited to two per machine and are difficult
+bars while others were moving, presumably to see the           to use to control precise movement on screen.    Using
+effects of each scroll bar individually.   One user com        the keyboard to control cursor input has similar prob
+mented they "picked something and let everyone else            lems. While the keyboard is not expressly limited to
+fight for a while, then made corrections."                     one or even two users, it would be difficult to reason
+     The shared controls forced the users to communi           ably fit more than two people on any one keyboard at a
+cate in a slightly different way. Typically a user asked       time. The sole support of either of these types of con
+the others in a group if he/she should or could use a          trols would severely limit the range of activities Mul
+shared control.  In two distinct cases, users pressed a        tiln could support.
+button without first asking for a consensus from the                With the ability for relatively fine control of cursor
+group, but did so only once.  They realized afterwards         movement,    mice   have been  the  standard graphical
+that it was a   shared resource   and   therefore its use      controllers for Windows based applications.   Until re
+should be based on a shared decision.                          cently there was no support for this type of multiple
+     Finally, the users indicated that they did not feel       mouse   interaction  on  one  PC   system.   The   AC
+hindered by the fact that they could only manipulate           CESS.bus "locator" communication protocol is de
+their own controls.    In fact in the Curve Fitter and         signed to allow multiple input devices to operate on a
+Midpoint activities, they felt that this forced them to        single machine.  However, the ACCESS.bus protocol
+communicate more.      As one so aptly put it "You are         requires a special board and therefore our activities
+forced to talk if you want to 'win' the game since you         cannot be used on a "vanilla" machine.
+only control one piece of the puzzle."                              These types of devices are only a small subset of
+                                                               what is available. Given the plethora of multiple input
+                                                               solutions, we chose to design the Multiln system to al
+5.   Implementation Considerations                             low applications to treat all of these devices identically.
+The  four applications  discussed   in   Section  3   were     Additionally, this design does not force the application
+specifically designed as co-present CSCL activities for        developer commit to one particular type of hardware
+groups of 2-4 students sitting at one machine.        The      device.
+small group size was not only chosen to facilitate easy              Our technique for interacting with any input de
+access to the machine, but also because groups of this         vices consists primarily of mapping specific device
+size seem to work best for collaborative learning [5].         messages into our own standard format      to eliminate
+Furthermore, working in small collaborative groups             variability. All that is required to integrate a device
+teaches students skills needed in later life to interact       into the Multiln system is a new module which speci
+with their peers in college or on the job.                     fies the translations from the device's messages into
+     The goals of these activities, as directed by the         our own messages.
+NCTM standards, are to favor conceptual learning over
+rote operations, emphasize practical uses of mathemat
+ics, encourage  group   discussions,    and  promote   ex      6. Conclusions and Future Work
+ploratory, open-ended discovery [13).       In particular,     To explore the potential for co-presence (not distance
+the programs described have relatively few shared              or teleconferencing-oriented) collaborative learning
+screen objects (such as the check button).   This forces       with computers, we have focused on activities in which
+the students to communicate with each other about              several students simultaneously interact on a single
+manipulating the individual objects, rather than moving        screen. We have presented four co-present collabora
+them themselves.  In this way they are encouraged to           tive  applications,  the Color  Matcher,     the Chord
+share responsibility for the results of the activity. The      Matcher, the Curve Fitter, and the Midpoint program.
+use of multiple input devices for these activities not         Each of these activities is designed to encourage explo
+only avoids conflicts over hardware, but also has the          ration and discussion about the activity through inter
+added   benefit that fewer   machines    are needed   per      action with the computer, as well as interaction with
+
+CSCL '95 Proceedings                                        37                                              October 1995
+other students through verbal communication, gestures               thinking in Logo environments. In E. de Court,
+and body language.   Through such natural, non-com                  M. C. Linn, H. Mandl, and L. Verschaffel, edi
+puter-mediated communication, students can utilize the              tors,  Computer-Based Learning Environments
+language as well as the concepts of mathematics.                    and Problem Solving, pages 229-247.     Springer
+      While not complete, the preliminary testing pro               Verlag, 1992.
+vides anecdotal evidence the hypothesis that students
+do tend to communicate effectively about the problem           4.   N. Davidson.   Introduction and overview.  In N.
+when   using  co-present multiple  input applications.              Davidson,    editor, Cooperative    Learning  in
+There was also, as anticipated, no contention for input             Mathematics,   pages  1-20.   Addison-Wesley,
+resources. Further testing needs to be done to deter                1990.
+mine the effects of changing or restricting the owner
+ship of objects on contention for resources, conflicts         5.   D. Dockterman. Cooperative learning and com
+among users, communication and learning.                            puters. SIGQUE Outlook, 21(2):39-43, 1991.
+      These activities have been built on a framework
+designed to allow the rapid development of input-de            6.   M. Elart-Keys, D. Halonen, M. Horton, R. Kass,
+vice independent CSCL activities.     This framework                and P. Scott.   User interface requirements for
+helps to hide one of the major stumbling blocks to the              face to face groupware.  in CH/'90 Proceedings,
+development of co-presence collaborative applications:              pages 295-301, 1990.
+the lack of standardization of multi-user input hard
+ware.                                                          7.   J. D. Foley, A. van Dam, S. K. Fiener, and J. F.
+      The design of our multiple-user multiple-input in             Hughes.      Computer Graphics: Principles and
+terface is as yet incomplete. We are currently consid               Practice,    Addison-Wesley     Publishing Co.,
+ering what types of user features are require to support            Menlo Park, second edition, 1990.
+collaborative learning interface applications and activi
+ties. With this knowledge we will extend Multiin to            8.   W. W. Gaver, T. Moran, A. MacLean, L. Lovs
+include high level primitives for collaboratively ma                trand, P. Dourish,   K. Carter, and W.  Buxton.
+nipulating objects.  The primitives in this new system              Realizing a video environment: EuroPARC's
+will support both co-present and distance cooperation.              RAVE system.     In CH/'92  Conference Proceed
+Thus this system will allow us to test the differences              ings, pages 27-35, 1992.
+between these two forms collaboration.
+                                                               9.   H. Ishii, M. Kobayashi, and J. Grondin. Integra
+                                                                    tion   of inter-personal    space   and   shared
+               Acknowledgments                                      workspace: ClearBoard design and experiments.
+We would like to thank Steve Fain and his students at               In Proceedings of the CSCW, pages 33-42, 1992.
+the Meany Middle School for their cooperation in
+testing the multi-user and single-user color matching          10.  J. J. Jehng,  Y. Shih,  S.  Liang and  T.  Chan.
+activities. We would also like to thank Leo Salemann                TurtleGraph: A Computer Supported Coopera
+for contributions to the design and implementation of               tive Learning Environment.    In Proceedings of
+the color matching program. Finally, we gratefully ac               ED-MEDIA '94, pages 293-298, 1994.
+knowledge the partial support of the National Science
+Foundation under grant MDR-9155709, the Boeing                 11.  M. Muhlhauser and T. Rudenbusch.        Coopera
+Company, and the Washington Technology Center.                      tion support in computer-aided authoring and
+                                                                    learning.    In Proceedings of ED-MEDIA     '94,
+                                                                    pages 397-402, 1994.
+                     References
+1.    E. Bier and S. Freeman. MMM: A user interface            12.  B. K. Nastasi and D. H. Clements.   Motivational
+       architecture for shared editors on a single screen.          and   social outcomes   of cooperative computer
+       In UIST'91, pages 79-86, 1991.                               education environments. Journal of Computing
+                                                                    in Childhood Education, 4(1):15-43, 1993.
+2.     J. Campione, A. Brown, and M. Jay.  Computers
+       in a community of learners. In E. de Corte, M.          13.  National Council of Teachers of Mathematics.
+       C. Linn, H. Mandl, and L. Verschaffel, editors,               Curriculum and Evaluation Standardsfor School
+       Computer-Based    Learning  Environments   and               Mathematics. National Council of Teachers of
+       Problem Solving, pages 163-188.   Springer-Ver               Mathematics., Reston, Virginia, 1989.
+       lag, 1992.
+                                                               14.  National Research Council Board on Mathemati
+3.     D. Clements and B. Nastasi.  The role of social              cal Sciences and Mathematical Sciences Educa
+       interaction in the development of higher-order               tion Board.   Education Counts: A Report to the
+
+CSCL '95 Proceedings                                        38                                            October 1995
+     Nation on the Future of Mathematics Education.        18.   M. Stefik, G. Foster, D. G. Bobrow, K. Kahn, S.
+     National Academy    Press,  Washington.,    D.C.,           Lanning, and L. Suchman.     Beyond the chalk
+     1989.                                                       board: Computer support for collaboration and
+                                                                 problem solving in meetings.   Communications
+15.  D. K. O'Neill and L. M. Gomez. The collabora                of the ACM, 30(1):32-47, 1987.
+     tory notebook: a networked knowledge-building
+     environment for project learning.     In Proceed      18.   C. G. Wolf and J. R. Rhune.    Communication
+     ings ofED-MEDIA '94, pages 416-423, 1994.                   and information retrieval with a pen-based meet
+                                                                 ing support tool. In Proceedings of the CSCW,
+16.  M. Scardamalia and C. Bereiter. An architecture             pages 322-328, 1992.
+     for collaborative knowledge building. In E. de
+     Corte, M. C. Linn, H. Mandi, and L. Verschaffel,
+     editors, Computer-Based Leaming Environments                      Authors' Addresses
+     and Problem Solving, pages 41-66.      SpringerVerlag, 1992.Lauren J. Bricker, Steven L. Tanimoto, Alex I. Rothenberg,DannyC.Hutama,andTinaH.Wong:Depart
+17.  R. B. Smith.    What you see is what I think yousee.SIGCUEOutlook,3(21):18-23,1992.ment of Computer Science and Engineering, Universityof Washington, Box 352350, Seattle, WA 98195-2350.{bricker, tanimoto} @cs.washington.edu.
+
+CSCL '95 Proceedings                                    39                                            October 1995
+

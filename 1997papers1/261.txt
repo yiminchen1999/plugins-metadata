@@ -1,0 +1,471 @@
+ Supporting Collaborative Project-Based Learning on
+                                          the WWW
+
+                                          Douglas R. Ward
+                                          Esther L. Tiessen
+                                        MC 2 Learning Systems Inc.
+                                          Simon Fraser University
+
+             Abstract                                      which make it easily possible to turn the WWW
+Zebu is an educational groupware technology                into a constructive medium which can be used by
+which facilitates the use of standard WWW                  teachers and students to engage in collaborative
+software to support collaborative project-based            project-based learning activities (Tiessen, 1996;
+learning. This paper discusses the promise of              Ward, 1996; Ward & Tiessen, 1997) .
+Zebu in helping teachers and students overcome                 Collaborative project-based learning is an
+some technical and practical, educational                  instructional approach that attempts to engage
+problems inherent in WWW-based technologies,               students in the intentional pursuit of their own
+allowing them to more fully realise the                    learning goals and in social interactions aimed
+potentials of the WWW as a technology for                  toward the development of understanding. This
+collaboration in education. Illustrations of the           approach draws from a variety of educational
+software are included to provide further detail of         theories and instructional practices including
+how the software addresses these problems.                 collaborative learning (Brown, 1990; Kaye,
+                                                           1992), active learning (Bork, 1992; Rakes,
+                                                           1996), intentional learning (Scardamalia &
+Keywords--educational groupware,                           Bereiter, 1985; Scardamalia & Bereiter, 1993;
+collaborative learning strategies, design and              Scardamalia, Bereiter, McLean, Swallow &
+interface issues, tools to support teaching in             Woodruff, 1989), distributed expertise (Brown,
+collaborative settings, WWW                                1994; Brown et al., 1993), resource-based
+                                                           learning (Brown & Smith, 1996; Lisewski &
+Introduction                                               Settle, 1996; Race, 1996; Rakes, 1996; Taylor
+The WWW (World-Wide Web) has an enormous,                  & Laurillard, 1995, and project-based instruction
+yet largely untapped potential for supporting              (Honebein, Duffy & Fishman, 1993) . In this
+collaborative learning within and between                  approach, student research is a primary activity,
+schools. The original intent of the WWW was to             and considerable effort is directed toward finding,
+support the constructive, collaborative work of            collecting, and organizing information from
+academics and other knowledge workers (Berners-            various sources (Taylor & Laurillard, 1995).
+Lee, Cailliau, Luotonen, Nielsen & Secret,                 Students add intellectual value to existing
+1994) , yet in typical use, the WWW is found to            information as they construct and manipulate
+be a rather passive communication medium. This             representations of their own knowledge in pursuit
+orientation is unfortunate because it limits the           of their learning goals. Teachers provide
+everyday usefulness of the WWW for supporting              scaffolding to support and constrain students
+collaborative educational activities. The bias             activities to those which are likely to be
+toward non-constructive activities with WWW                educationally profitable. Students share
+technologies can be explained in part by the               information, and communicate to coordinate
+nature of the tools which are commonly available           activities and to collaborate in building
+for working with the WWW as a medium of                    communal knowledge products, as they take
+communication--browsers are more common and                individual and group responsibilities in their
+simpler to use than editors. It has been a major           projects. For the WWW to be a medium which
+goal of the ALiVE! Project (Active Learning in             directly supports these educationally desirable
+Virtual Environments) to design and build tools            characteristics, new software tools are needed.
+This paper briefly discusses some educational
+potentials of the WWW, problems with current             Problems in Realising the
+WWW-based technologies, and promising                    Potentials
+solutions in the design of a new educational              These potentials are not easy to realise in
+groupware environment called "Zebu."                      implementing a collaborative project-based
+                                                          learning approach. This section discusses the
+Educational Potentials of the                             technical problems in using the WWW, as well
+WWW                                                       as the educational problems in supporting the
+Vast multimedia information resources are                 instructional approach. These "problems" are
+available to teachers and students via the WWW.           viewed as challenges for the design of better
+Despite the common difficulties in finding                technologies, not as insurmountable obstacles to
+useful, appropriate information, the WWW is a             achieving the educational potentials.
+rich information environment for teachers' and
+students' research activities (Rakes, 1996) . Due         Technical Challenges
+to this richness, there is considerable enthusiasm
+for bringing the WWW into classrooms by                   Managing information resources
+providing Internet connections so students can            The management of WWW-based information
+search and download information in their research         resources presents difficulties for most WWW
+activities. The WWW is seen as a valuable                 users, particularly in research activities (Rakes,
+resource for locating up-to-date, authentic,              1996) . Search engines are improving, but
+primary information, whose potential for                  finding useful information can often be difficult
+supporting student research extends far beyond            (Linn, 1996; Starr & Milheim, 1996), even
+the capabilities of the typical school library            when one knows exactly what to look for.
+(Rakes, 1996; Trentin, 1996) .                            Organizing and keeping track of found
+   In support of constructivist approaches,               information is aided by a variety of "bookmark"
+students can derive considerable value from the           manager programs, but these programs tend to be
+creation and sharing of representations of their          oriented toward an individual rather than a shared
+own knowledge (Bellamy, 1996; Duin &                      environment.
+Hansen, 1994; Trentin, 1996) , and the WWW
+provides a medium for students to publish and             Production tools
+share documents with their peers. As students             Considerable technical overhead is involved in
+become authors, not mere surfers, the WWW can             the production and publication of WWW
+become a medium in which collaborative projects           documents. Since the introduction of WYSIWYG
+can be constructed and shared within or between           page editors, knowledge of HTML per se is no
+groups of students who share the same learning            longer required, but such editors are not trivial to
+goals, regardless of their physical locations.            learn, particularly if any advanced multimedia or
+   Bringing the classroom into the WWW is as              interactivity is to be included. As well, FTP or
+important as bringing the WWW into the                    some other file transfer mechanism is also
+classroom. As students become publishers, their           typically required to move documents from the
+own contributions to the WWW can become                   user's computer to a WWW site for publication.
+useful resources for the constructive work of             The technologies for constructing documents tend
+themselves and others. In this way, students can          not to be tightly integrated with those for
+begin to engage in the progressive processes of           communication, thus collaboration is difficult.
+knowledge building (Bellamy, 1996; Duin &
+Hansen, 1994) . As well as engaging students in           Site management
+authentic constructive activities, this has the           The organization and management of WWW sites
+potential to transform students' conceptions of           also imposes considerable technical overhead. A
+the nature and value of knowledge and                     large collection of categorized "pages" can be a
+information itself. As students contribute to the         formidable thing to manage for an experienced
+world's information resources, it becomes                 adult, let alone a young child. This problem is
+difficult to maintain views of published                  further amplified by a requirement to have groups
+information as authoritative and necessarily true,        of students work together, or perhaps have an
+so students can come to be more critical (Rakes,          entire school sharing a single WWW site. As
+1996) , and view knowledge construction as a              well, there are trade-offs between security and
+social process.                                           publication of students' work both within sites
+                                                          and in the open WWW. It is possible to provide
+                                                          safe, private spaces for students to work on their
+                                                          ideas individually or in groups, but it is also
+necessary to balance this with the need to share            flexibility of such structural support, but the
+and publish their ideas at some point.                      supports would likely be most effective if
+   In general, although software for all aspects            embedded within the medium of students'
+of WWW publication is becoming simpler and                  knowledge work.
+more powerful, most existing software requires
+the investment of significant cognitive overhead            Supporting collaboration
+in focusing on the WWW technologies rather                  Collaboration requires a shared workspace where
+than the educational work of knowledge                      participants have equal access to building and
+production.                                                 manipulating shared representations (Schrage,
+                                                            1990) . Communication environments, where
+Educational Challenges                                      students can exchange information about what
+                                                            they know, are becoming more common, but it
+Adding intellectual value to                                is a significant challenge to support educational
+information                                                 collaboration by providing a software
+Whereas many educators agree that students must             environment for the WWW that serves as a fluid
+engage in personally meaningful activities which            medium for the group construction of knowledge.
+help them construct their own knowledge, much
+of schooling continues to have students focus on           Solutions in a New Medium
+getting correct information from authoritative              The problems described in the previous section
+sources. To have students focus on adding                   serve as challenges for the design of new
+intellectual value to existing information requires         collaborative technologies for education in
+a substantial and often difficult reorientation of          general. These challenges have guided the design
+students' ideas about learning and the process of           of a WWW-based educational groupware
+education. Conceptions of the WWW as a place                environment (Zebu) in the ALiVE! Project for
+to get information must be complemented with                the last two years. This section describes aspects
+conceptions of it as a place to create and share            of Zebu that address these design challenges, and
+new ideas for it to be a collaborative educational          aspects where further improvements are needed.
+environment.                                                    Zebu is a web-based groupware system
+                                                            designed specifically for education. Technically,
+Scaffolding student work                                    the software is a set of CGI enhancements to a
+Even students with explicit learning goals can              standard HTTP server, which allows users to
+waste considerable time and effort in not                   construct and edit pages and other objects within
+knowing what to do or how to proceed with                   a secure WWW site. Since the software is server-
+aspects of their knowledge work. Providing some             based, users only need a standard browser to view
+degree of scaffolding is a necessary part of a              and edit site contents. More recent versions
+teacher's role in supporting and constraining               include simple Java interfaces for editing page
+students' efforts so that they can more easily              contents. The site is organized into Projects and
+focus on educationally profitable activities. In            Project Collections which can be created
+practice there is a difficult balance between               dynamically by site administrators (typically
+providing sufficient support and maintaining the            teachers). Projects are collections of Pages,
+option for students to take charge of their own             Templates, and Reference Collections. Pages are
+knowledge work. It is part of the art of teaching           collections of Objects which may have one of
+to determine how much and what form of                      eight different media types (text, graphic, video,
+scaffolding to provide, but it is clear that teachers       sound, HTML, link, reference link, or
+need to be able to participate by providing                 discussion), and can have editable content and
+supports within the medium in which students                formatting. Templates can be cloned to create
+are doing their work.                                       new pages with initial content and structure.
+                                                            Reference Collections function like bookmark
+Coordinating student work                                   files, and can be embedded into pages and
+For groups of students to effectively work                  templates. There are also Galleries for storing and
+together on different but related parts of a project,       organizing multimedia components. These
+a great deal of coordination can be required.               components may be used directly in pages or
+Teachers need to have simple ways to create                 templates, and users may upload new items into
+supports for particular participant structures for          galleries directly from their local disks. There are
+student activities, so as to reduce the                     also simple administrative tools for creating User
+organizational overhead of coordinating group               accounts, Groups of users, Projects (and
+activities. As with other forms of scaffolding, a           assigning Users and Groups to Projects), Project
+trade-off exists between the sufficiency and                Collections, and Galleries. The interfaces for
+working within a Zebu site are intended to be
+simple, and provide a conceptual model that
+corresponds to what teachers and students need to                                                 1
+think about in order to engage in collaborative
+project-based learning, rather than focusing on
+the WWW technologies that are enabling their
+work.
+   The sections below describe in further detail
+the ways in which these aspects of the interface
+address the technical and educational challenges                                                  2
+discussed above. As well, the figures show screen
+shots of various features of Zebu. The screen                                                3
+shots are taken from a project being worked on
+by a Grade 12 Geography class in Port Moody,
+BC. The project was centred around ecological                                   4                               5
+crises. In this initial phase of the project, pairs of
+students chose an ecological crisis to research and          Figure 1. Gallery for "Ecological Crises"
+share with the rest of the class.                            Project. Note the following: 1. Users can choose
+                                                             to access any of the Galleries from the pop-up
+Solutions to Technical Problems                              menu. 2. Galleries contain graphics, sound, or
+                                                             video files. 3. The contents of Galleries can be
+Managing information resources                               easily viewed and managed. 4. Items can be added
+Zebu offers two main facilities for organizing and           from another Gallery or from the local computer.
+storing information resources. Galleries are used            5. Users can select an item to include in their
+to store multimedia files (graphics, video,                  page.
+sound). They are accessible from anywhere in the
+site for uploading and organizing files, and they
+are integrated with the editing tools such that it                                       1
+is easy to place a gallery item directly into an
+object in a page. This makes it simple for users
+to build and share collections of content resources
+for their collaborative work (see Figure 1).
+Whereas Galleries store the actual items,
+Reference Collections store References to
+resources found elsewhere. References can include                                                    2
+items on the WWW (accessible by clicking to
+follow the URLs), or more traditional items such
+as books, articles, videos, etc. References can be
+named and annotated, and organized into
+hierarchical categories within collections.
+Reference Collections can be linked to within
+pages or templates that teachers give to students,                                       3
+or compiled by one or more students and included
+in their own pages. Although Reference
+Collections contain no more than standard
+bookmark files, their benefits are derived from
+their tight object-oriented integration into the             Figure 2. Reference Collection in "Ecological
+collaborative environment (see Figure 2).                    Crises" Project. Note the following: 1. Users can
+                                                             choose to access any of the Reference Collections
+                                                             from the pop-up menu. 2. References can be
+                                                             annotated and organized into hierarchies.
+                                                             Bookmark files can be imported as a Reference
+                                                             Collection. 3. The contents of Reference
+                                                             Collections can be easily managed. Web
+                                                             references can be opened in a new window.
+Production tools                                                                                 1
+The primary simplicity of Zebu is derived from
+the non-moded integration of tools for
+constructing and sharing representations with                                2                                     3
+existing tools for browsing. The browser
+becomes a window into a manipulable
+environment, with point-and-click remaining as
+                                                                                                  4
+the primary mode of interaction. For example to
+open a project or a page, the user simply clicks
+on an icon. To edit an object within a page, the
+user clicks the object's "edit" button (see Figure
+3), and is then presented with a window with
+media type-specific options for altering content                Figure 4. Dialogue for editing contents of
+and formatting (see Figure 4). Changes to pages,                object. Note the following: 1. Users can change
+projects, etc., are made directly to the server, so             the media type of the object by selecting another
+there is no need to transfer files to the correct               type from the pop-up menu. 2. Attributes of
+directories, etc., and the ability to share pages and           objects can be locked to prevent further editing.
+projects within work groups is automatic. The                   3. Users can edit the media type-specific
+technical convergence of the tools for the                      attributes of the object.
+production of representations and for
+communicating and sharing those representations
+makes Zebu a truly collaborative medium. Direct                 4. Users can edit the content of the
+manipulation of objects and contents will be an                 object.Site Management
+important usability improvement for future                      To the extent that site management is required, it
+versions, but it is already evident that the tools              is achieved through simple interfaces in the
+allow students to focus more directly on their                  browser window. Site administrators can create
+knowledge work as opposed to focusing on the                    user accounts, groups of users, projects, project
+tools of standard WWW publishing.                               collections, and galleries, and assign privileges to
+                                                                users or groups for working together on projects
+                                                                (see Figure 5). Users are required to log in to the
+                                                                site with their name and password, and the
+                                                                system provides them access only to the projects
+                                                                for which they have been given read or write
+                                         1                      privileges. Once users "enter" a project, the work
+                                                                that they do there--creating new pages,
+                           2                                    templates, or reference collections, or editing
+                                                                pages--is automatically stored within the
+                                                                project, and available to all other participants in
+                                                                the project (see Figure 6). Users need only
+                                                                consider to which projects their pages belong, or
+                                                                in which gallery an item might be stored, rather
+                                                                than negotiating the complex directory structures
+                                                                of the WWW site. Although site and project
+                                                                contents are protected by password access, it is
+Figure 3. Part of student page in "Ecological                   simple to set the access privilege for a project to
+Crises" Project. Note the following: 1. Users can               publish it with read-only access on the open
+click the Edit button to edit the contents and                  WWW.
+attributes of multimedia objects. A dialogue box
+will open for editing the object (see Figure 4). 2.
+Pages are collections of multimedia objects.
+These objects can be of different media types
+(text, graphic, video, sound, link, discussion,
+HTML, reference link). Each object is outlined
+by a box.
+                                                                    multimedia items from galleries (or elsewhere on
+                                                                    the WWW) within pages, and to collect and
+                                                                    annotate references to interesting information
+                                                                    resources, thereby engaging in sense-making and
+                                                                    knowledge-building activities based on existing
+                                                                    information (see Figure 7). Since their own
+               Anderson,   TonyFinley,Alex                          representations exist within the same
+               Girard,  Jean
+               Hayes,  DanaJones,Chris                              environment as the provided or found information
+               Lee,  Kim
+               McDonald,   KellySharp,Pat                           which forms the basis of their inquiries, simple
+               Smith,  TerryWong,Jamie                              re-presentation of content is obviously of little
+                                                                    value, and it is easier for teachers to bias students
+                                                                    toward deeper levels of processing.
+
+Figure 5. Interface for creating new user
+accounts in Zebu.
+                                                                                                                        1
+
+                                                                                                                                                 2
+
+                                                                    Figure 7. Part of student page in "Ecological
+                                                                    Crises" Project. Note the following: 1. Links to
+                                                                    Reference Collections can be embedded in Pages
+                                                                    and Templates. (An example of a Reference
+                                                                    Collection can be seen in Figure 2). Reference
+                                                                    Collections are also automatically accessible
+Figure 6. Table of contents for "EcologicalCrises" project. The table of contents includes allTemplates, Pages, and Reference Collections inthe project. Project contents are automaticallyfrom the project table of contents, and, hence,shared by all project participants. 2. Thesecollections may be created and edited by studentsor teachers.
+shared amongst all participants of the project.
+Pages, Templates, and Reference Collections can                     Scaffolding student work
+be created, renamed, and deleted from the table of                  Rather than giving students an empty project or
+contents.                                                           blank page in which to do their constructive
+                                                                    work, teachers can provide students with rich
+Solutions to Educational Problems                                   starting points for fruitful research and sense-making activity. Facilities for providing access
+Adding intellectual value toinformationThe availability of constructive, collaborativetools within the familiar WWW browserenvironment facilitates the shift in educationalactivities from simply retrieving and compilinginformation to adding some value to the retrievedinformation in the WWW. Students using Zebuare expected to create their own expressions oftheir own knowledge, by adding intellectual valueto the resources that may be provided to them fortheir project work. It is possible to embedto initial collections of information resources(Galleries and Reference Collections) aredescribed above (see Figures 1 and 2). The mostdirect facility for scaffolding is the ability tocreate templates for page creation. Zebutemplates are pages which automatically clonethemselves, so that students can start with a pagewhich already contains some content, as well assome structure (see Figure 8). For example, for astudent to learn about a particular process, ateacher might provide a page with a graphic orvideo "placeholder" object for a student to replacewith a graphic or video depicting the process, and
+a text object with instructions to write a                                 specific projects, such that they can only see or
+paragraph explaining how the process works.                                edit content within certain projects (see Figure
+Within the same template, the teacher could                                9). Within the projects, templates can be
+provide a link to a collection of references to                            established for use by each participant, or pages
+WWW resources which the student could use a                                can be created with resources, instructions, and
+starting points for researching the process to be                          hints on how to make progress. As well,
+explained (see Figure 7). Teachers can also lock                           Discussion objects (like small computer
+objects (or certain attributes of objects) within                          conferences) can be embedded within pages for
+templates to restrict the sorts of participation that                      students to discuss project coordination issues
+students can engage in (see Figure 4). Different                           (see Figure 10). Further planned developments
+templates can be designed by teachers to provide                           include associating user privileges with pages and
+different amounts and kinds of support to                                  objects for finer-grained coordination support,
+individuals and groups of students who are                                 tools for creating additional internal structure
+expected to work in particular ways in their                               within projects, and teacher planning tools for
+project work. Of course, such scaffolding can fade                         visually creating participant and activity
+as students become more competent on their                                 structures for supporting complex or lengthy
+own, and students can also use the facility to                             projects.
+shape their own activities and interactions with
+each other.
+
+                                                   1
+
+                                                                                                                                                           Anderson,  Tony                                               Girard,  Jean
+                                                                                                                                                           Finley,  Alex                                                 Jones,  Chris
+                                                                                                                                                           Girard,  Jean                                                 Lee, Kim
+                                                                                                                                                           Hayes,  Dana
+                                                                                                                                                           Jones,  Chris
+                                          2                                                                                                                Lee, Kim
+                                                                                                                                                           McDonald,  Kelly
+                                                                                                                                                           Sharp,  Pat
+                                                                                                                                                           Smith,  Terry
+                                                                                                                                                           Wong,  Jamie
+
+                                                                 3
+
+                                                                           Figure 9. Interface for adding users to group.
+Figure 8. Teacher-created template for working
+on understanding of ecological crisis. This
+template was used to create the page shown in
+Figure 3. Note the following: 1. Whereas
+changes to Pages are automatically saved on the
+Zebu server, Templates create new Pages for
+students which they need to save. 2. Using
+templates, teachers are able to provide students
+with a predefined structure that students can use
+to enter and edit their own content. 3. Templates
+can provide both text and multimedia structure
+for students.
+
+Coordinating student work
+In working together on a project, a lot of effort
+might be spent by participants in coordination
+issues like where documents should be stored,
+who should work on which pieces, how to ensure
+consistency between contributions, etc. Zebu
+provides some simple facilities for the
+coordination of student project activities.
+Through the site administration tools, teachers
+can create groups of students, and assign them to
+                                                                                                                                 with the prototype included "BookTalk," a
+                                                                                                                                 project for students to share and discuss reviews
+                                                                                 1
+           [1] What efeect does acid rain have on the ozone layer, if any?                                                       of books they had read, a creative writing
+                                                                                   ­ Paul ­2                                     project--"Monstres"--carried out by grade 1/2
+           [2] Where did the rest of the information in this study go
+                                                                                  ­ Mary ­                                       French immersion students, and a joint project
+           [3] I only included the information that I had which I thought was pertinent to
+           this subject                                                           ­ Paul ­                                       between a grade 3/4 and a grade 5/6 class to study
+           [4] Acid rain is harmful ecologically in many respects. It is killing lakes, trees,plant life, and can weaken forests to a state that is vulnerable to disease infestationtree species and habitats in British Columbia.
+                                                                                  ­ Paul ­
+           [5] I read about evidence that acid rain is destroying the creation of rich soils, like                               Currently Zebu is being used at a variety of sites
+           an overdose of chemical fertilizer. Does anyone know more about these findings?
+                                                                                  ­ Mary ­                                       ranging from grade 1 to 12. Use of the Zebu
+                                                                                                                                 software at these sites is being investigated in
+                                                                                                                       3
+                                                                                                                                 terms of the technical and educational challenges
+                               3                                                                                                 discussed above.
+                                                                                     4
+                                                                                                        5
+
+                                                                                                                                          Acknowledgements
+                                                                                                                                 We would like to thank the teachers and students
+Figure 10. Discussion embedded within                                                                                            at Port Moody Secondary School in Port Moody,
+student page. Note the following: 1. The                                                                                         BC for their participation in this research. As
+discussion has a problem or issue associated with                                                                                well, we thank the members of the Development
+it. If the discussion is not locked, the problem                                                                                 and Educational Support teams at MC2 Learning
+can be edited. 2. Each contribution to the                                                                                       Systems for their support of this work. Parts of
+discussion is automatically numbered and                                                                                         this research were supported by the Science
+appended to the end of the discussion. The author                                                                                Council of British Columbia.
+of each contribution is automatically identified.
+3. New entries are entered into the text field and                                                                                                References
+appended when the Update Discussion button is                                                                                    Bellamy, R. K. R. (1996). Designing educational
+pressed.                                                                                                                             technology: Computer-mediated change. In
+                                                                                                                                     B. A. Nardi (Ed.), Context and
+Supporting collaborationCollaboration is supported in Zebu throughshared creation and editing of pages and projects.Students with privileges to participate together ina project can create pages and edit any of thepages within the project, or any of the objectswithin the pages, thus a project is a shared spacefor the creation of representations.Communication between students is possiblewithin Discussion objects that can be included inany page (see Figure 10). The discussions can bevaluable for supporting discourse betweenstudents about the topics they are studying. InZebu, the environment for constructive discourseis tightly integrated with the tools for resource-based activities.consciousness: Activity theory and human-computer interactions, (pp. 123-146).Cambridge, MA: MIT Press.Berners-Lee, T., Cailliau, R., Luotonen, A.,Nielsen, H. F., & Secret, A. (1994). TheWorld-Wide Web. Communications of theACM, 37(8), 76-82.Bork, A. (1992). Learning in the twenty-firstcentury interactive multimedia technology.In M. Giardian (Ed.), Interactive multimedialearning environments: Human factors andtechnical considerations on design issues,(pp. 2-18). Berlin: Springer-Verlag.Brown, A. L. (1994). The advancement oflearning. Educational Researcher, 23(8), 4-12.Brown, A. L., Ash, D., Rutherford, M.,
+Conclusions                                                                                                                          Nakagawa, K., Gordon, A., & Campione, J.(1993). Distributed expertise in the
+Zebu is an educational groupware technology                                                                                          classroom. In G. Salomon (Ed.), Distributed
+which facilitates the use of standard WWW                                                                                            cognitions: Psychological and educational
+software for collaborative project-based learning.                                                                                   considerations, (pp. 88-110). Cambridge,
+It shows promise in helping teachers and students                                                                                    UK: Cambridge University Press.
+overcome some technical and practical,                                                                                           Brown, J. S. (1990). Toward a new epistemology
+educational problems inherent in WWW-based                                                                                           for learning. In C. Frasson & G. Gauthier
+technologies, allowing them to more fully realise                                                                                    (Eds.), Intelligent tutoring systems: At the
+the potentials of the WWW as a technology for                                                                                        crossroad of artificial intelligence and
+collaboration in education.                                                                                                          education, (pp. 266-282). Norwood, NJ:
+   Initial testing of a prototype of the Zebu                                                                                        Ablex Publishing.
+system was carried out during the previous
+school year. Other projects which were conducted
+Brown, S., & Smith, B. (1996). Introducing                  Computer-supported intentional learning
+   resources for learning. In S. Brown & B.                 environments. Journal of Educational
+   Smith (Eds.), Resource-based learning, (pp.              Computing Research, 5(1), 51-68.
+   1-9). London, UK: Kogan Page.                        Schrage, M. (1990). Shared minds: The new
+Duin, A. H., & Hansen, C. (1994). Reading and               technologies of collaboration. New York,
+   writing on computer networks as social                   NY: Random House.
+   construction and social interaction. In C. L.        Starr, R. M., & Milheim, W. D. (1996).
+   Selfe & S. Hilligoss (Eds.), Literacy and                Educational uses of the Internet: An
+   computers: The complications of teaching                 exploratory survey. Educational Technology,
+   and learning with technology, (pp. 89-112).              36(5), 19-28.
+   New York, NY: The Modern Language                    Taylor, J., & Laurillard, D. (1995). Supporting
+   Association of America.                                  resource based learning. In N. Heap, R.
+Honebein, P. C., Duffy, T. M., & Fishman, B.                Thomas, G. Einon, R. Mason, & H.
+   J. (1993). Constructivism and the design of              Mackay (Eds.), Information technology and
+   learning environments: Context and                       society: A reader, (pp. 237-248). London,
+   authentic activities for learning. In T. M.              UK: Sage Publications.
+   Duffy, J. Lowyck, & D. H. Jonassen (Eds.),           Tiessen, E. L. (1996). Active learning in virtual
+   Designing environments for constructive                  environments: Educational designs. Paper
+   learning, (Vol. 105, pp. 87-108). Berlin:                presented at the World Conference on
+   Springer-Verlag.                                         Educational Multimedia and Hypermedia
+Kaye, A. (1992). Learning together apart. In A.             (ED-MEDIA'96), Boston, MA.
+   Kaye (Ed.), Collaborative learning through           Trentin, G. (1996). Internet: Does it really bring
+   computer conferencing, (pp. 1-24). Berlin:               added value to education? International
+   Springer-Verlag.                                         Journal of Educational Telecommunications,
+Linn, M. C. (1996). Key to the information                  2(2/3), 97-106.
+   highway. Communications of the ACM,                  Ward, D. R. (1996). Active learning in virtual
+   39(4), 34-35.                                            environments: Innovative technologies.
+Lisewski, B., & Settle, C. (1996). Integrating              Paper presented at the World Conference on
+   multimedia resource-based learning into the              Educational Multimedia and Hypermedia
+   curriculum. In S. Brown & B. Smith (Eds.),               (ED-MEDIA'96), Boston, MA.
+   Resource-based learning, (pp. 109-119).              Ward, D. R., & Tiessen, E. L. (1997). Adding
+   London, UK: Kogan Page.                                  educational value to the Web: Active
+Race, P. (1996). Helping students to learn from             learning with AlivePages. Educational
+   resources. In S. Brown & B. Smith (Eds.),                Technology, 37(5), 22-31.
+   Resource-based learning, (pp. 22-37).
+   London, UK: Kogan Page.                                    Author's Addresses
+Rakes, G. C. (1996). Using the Internet as a tool       Douglas R. Ward & Esther L. Tiessen
+   in a resource-based learning environment.            MC2 Learning Systems Inc.
+   Educational Technology, 36(5), 52-56.                8900 Nelson Way, Suite 265
+Scardamalia, M., & Bereiter, C. (1985).                 Burnaby BC   V5A 4W9
+   Fostering the development of self-regulation
+   in children's knowledge processing. In S. F.         School of Communication
+   Chipman, J. W. Segal, & R. Glaser (Eds.),            Simon Fraser University
+   Thinking and learning skills: Vol. 2.                Burnaby BC   V5A 1S6
+   Research and open questions, (pp. 563-77).
+   Hillsdale, NJ: Lawrence Erlbaum Associates.          dward@sfu.ca
+Scardamalia, M., & Bereiter, C. (1993).                 etiessen@sfu.ca
+   Technologies for knowledge-building
+   discourse. Communications of the ACM,
+   36(5), 37-41.
+Scardamalia, M., Bereiter, C., McLean, R. S.,
+   Swallow, J., & Woodruff, E. (1989).
+

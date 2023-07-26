@@ -1,0 +1,428 @@
+                                        Doing Their Own Math:
+  Computer Support of Discursive Approaches to "Real" Math Problems
+
+                                                Sylvia Weber-Russell
+                                         Department of Computer Science
+                                                   Kingsbury Hall
+                                           University of New Hampshire
+                                                Durham, NH 03824
+                                                     U.S.A.
+                                                 swr@cs.unh.edu
+
+                                                 Mark D. LeBlanc
+                              Department of Mathematics and Computer Science
+                                                 Wheaton College
+                                                Norton, MA 02766
+                                                     U.S.A.
+                                            mleblanc@wheatonma.edu
+
+              Abstract: Traditionally, there has been no obvious role for the computer in an elementary
+              level classroom oriented toward "talking about math" as a way of deepening children's under
+              standing of mathematical problem situations. We suggest that an appropriate computer learn
+              ing environment can serve as a useful tool to both complement and be enhanced by discursive
+              approaches to mathematics.  In this paper we describe software, some of which is currently
+              being tested in classrooms, which allows students to create and share word problems moti
+              vated by classroom discussion  of an arithmetically relevant situation, and to dynamically
+              explore links between linguistic and other symbolic representations of their problems and
+              those of other children. In conjunction with the discursive approach, these facilities support
+              pedagogical methods such as the integration of writing, science and mathematics; roles for stu
+              dents as knowledge contributors rather than as passive recipients; and a motivated use of the
+              computer for understanding mathematical problem relationships.
+
+1. Introduction
+
+      "Sorry, the kids can't talk now--they're  doing their math."  But is   it their math?  Traditionally,   young stu
+ dents have "done their math problems" by reading arithmetic word problems constructed by educators and try
+ing, usually in isolation, to come up with an answer, often by guesswork manipulation of the numbers given and
+ with little attention to common sense or to the meaning constructed by the sentences of the problem [Verschaffel
+ & DeCorte 1996].
+      Some approaches in elementary mathematics education, however, have increasingly recognized the medi
+ating role of natural language in expressing everyday problem situations as a potential focus for both research
+on children's mathematical problem solving and new classroom approaches to teaching "mathematical think
+ing." The NCTM Curriculum Standards [NCTM 1989] emphasize the pedagogical importance of representing
+and reading mathematics; both the Curriculum Standards and the Professional Standards [NCTM 1991] focus
+on encouraging children to write mathematics and particularly to talk about mathematical aspects of situations.
+      Consistent with this research, a growing number of classrooms are engaging in group discussion of math
+ematical problems. Informal group discourse about mathematics is an important step in increasing children's
+
+324
+conceptual understanding.     Yet in certain respects this approach is incomplete with respect to the above  goals.
+By itselfgroup discussion may not help those who do not actively participate and who do not feel that they have
+a role in solving the problem; it does not relate natural language to other modalities, symbolic systems or repre
+sentations [see Janvier 1987) which might play a particular role in some children's understanding; it does not
+allow most children in any given discussion to individually initiate problem conceptualizations; a child's partic
+ular level or difficulty may not be addressed by the discussion.
+        A more individual-oriented approach has been offered commercially through software which has enter
+taining situation pictures and includes quantitative mappings, but does not relate to any difficulties which might
+be particular to an individual child at a certain stage, does not actively involve the child in his own learning,
+does not relate to a situation in which the child is currently involved, and is not social in nature. An exception
+to some of these criteria is provided by the Word Problem Processors (WPP) software [Pogrow 1994], which
+enables children of fourth-grade level and above to become actively involved by writing their own word prob
+lems with feedback from the WPP,      presented as a "space creature."   Like other software, however,  it does  not
+focus at all on the role of significant types of linguistic constructs, and is more oriented toward game-playing
+and competition than real-world problems.
+        Is either the discursive or the typical software approach sufficient to help the student conceptualize the
+problem in natural, mathematical or other symbolic language, thereby promoting precise reasoning and perhaps
+communication skills? We would claim that while discourse about mathematical situations is an excellent par
+tial approach, a different and expanded role for learning software would do much to enhance and complement
+the discourse approach, while providing a means of relating situations, quantitative concepts and language.
+        To start determining what such a computer learning environment should do, we pose the question, why is
+it that children can understand  e.g. 'a piece  of pie,' and even  '3 pieces  of  pie with ice cream   on  top,' but
+can't/won't relate these to other pieces of pie mentioned in the problem, even though they know [Cummins
+1991] part-part-whole relationships? With the original linguistic statement of an arithmetic problem situation as
+the focus of our attention, we will suggest that several key competences underlie the desired understanding and
+that these might be strengthened by a computer learning environment interacting with the context of a natural
+classroom situation.   In the following discussion,   a sketch of how such a software design would fit into this
+approach is preceded by a general and then a more specific consideration of aspects of language about mathe
+matics that require extension of children's thinking.
+
+2. Difficulties in Language Processing
+
+      Research in cognitive science and mathematics education has emphasized that understanding arithmetic
+word    problems involves   a complex  interaction  of text  comprehension    and mathematical    processes.  This
+research includes   results on semantic  types  of  problems and   children's logico-mathematical     competencies
+[Riley & Greeno 1988], the locus of low-achieving students' eye-fixations [Hegarty, Mayer & Green 1992] and
+the developmental sequence of central numerical structures [Okamoto 1992).       Lacking in the above work, how
+ever, is an account of how the student's ability to arrive at mathematical connections might depend on identifi
+able ways in which natural language expresses or facilitates such connections.    Results concerning the effects of
+small changes in problem wording [Cummins 1991, Davis-Dorsey, Ross & Morrison 1991, Staub & Reusser
+1995, DeCorte, Verschaffel & DeWin 1985 and others] and the role of integrated propositions in memory [Tra
+basso & Sperry 1985] provide evidence that problem difficulty is determined by text comprehension factors as
+well as by semantic structure and the development of central numerical structures.     The information processing
+and learning assumptions in this research reflect the idea that different kinds of natural language used to convey
+a problem situation have different effects on the ability to conceptualize the problem in terms of correct mathe
+matical relationships.
+     Most of these researchers, however, stop short of defining how natural language is somehow "translated"
+into correct mathematical relationships or into a solution, choosing instead to start their studies with proposi
+tional or idealized models of the problem.   Addressing this gap has been a research goal of LeBlanc's cognitive
+process  model   of arithmetic  word  problem   solution  (LeBlanc  &    Weber-Russell,  in press),   which  parses
+(EDUCE) and performs text integration (SELAH) on such problems.             (EDUCE     [Burns  1993)   is based  on
+
+                                                                                                                 325
+ conceptual analysis of natural language [Schank & Riesbeck 1981), extended for mathematically relevant lan
+ guage.) These   processes   have been monitored    through  predictor variables  including   MEMORY       (the average
+ number of "conceptual units" in     memory at the end of each sentence) and INFERENCES (the average number
+ of times per sentence that i) significant relationships facilitating text integration or ii) arithmetic actions are
+ implied rather than made explicit in the text).   Regression  analyses show the MEMORY + INFERENCES                vari
+ ables together (i.e., holding conceptual units in working memory while making inferences) as accounting for
+ approximately 60% of the variance when correlated with empirical evidence of solution difficulty (grades K-3)
+ for 18 benchmark problems.
+       The results suggest that while young students are able to handle the memory load of sentence comprehen
+ sion and are capable of making inferences if the memory load is not high (neither of these variables proving to
+ be significant by themselves), the task of making such inferences while retaining conceptual input presents a
+ particular difficulty for some students. The   implication of taking observations about language to this       level of
+ detail is not just that students fail to make conceptual connections leading to a correct problem structure, but
+ that the focusing power needed to retain previous information while attempting such connections, for one reason
+ or another, does not appear to be there.  We suggest that an approach to strengthening students'       focusing abili
+ ties and thus making them more active learners should offer reinforcement of interrepresentational mapping,
+ encourage precise conceptualization of the problem, and be something in which students would be motivated to
+ participate.
+
+ 3. Language-related Dimensions of Word Problem Understanding
+
+       Software which reinforces conceptual mappings should be based on a theory of what transitions the stu
+ dent needs to accomplish. The above research on arithmetic word problem solution has usefully considered lin
+ guistic aspects of such problems in terms of their "semantic structure" (Change, Combine, C ompare, Equalize).
+ However, this somewhat general characterization does not tell us what concepts, analyses, or types of wordings
+ make such problems difficult   or easy.  It is therefore not evident how learning environment components could
+ address observed difficulties in a specifically targeted way. In an effort to come closer to the "elementary com
+ petences" involved    in word problem   understanding, we    propose  taking    the semantic   structures apart, giving
+ dimensions in terms of the following task components:
+  (1)    An entire problem structure,  not just a simple assertion, must be understood as presented.       A complica
+         tion is an "unknown" referent which cannot be processed immediately, but must be retained while the
+         rest  of the problem is read or processed.  In nonquantitative    domains,   this task may be relatively   easy
+         for most young    students. However,   in combination  with  (2), i.e., for quantitative problems,  a  perhaps
+         unfamiliar mode of reading is required.
+  (2)    Words and phrases must be understood in their quantitative rather than in their ordinary linguistic sense.
+         Mathematically relevant language is embedded in the natural language, and must be abstracted from the
+         linguistic statements into (ultimately) a numeric domain.    Young children may have difficulty recogniz
+         ing certain phrases as "mathematically significant"; they may recognize that a quantity is involved in
+         any individual assertion in the problem, but not focus on it as if it "made a difference" (pun intended).
+
+         As in (1), in isolation this task seems doable by most young students; they understand 'three pieces of
+         pie.' In combination with (1), however, i.e., in the context of a word problem, extra effort is required.
+         For the "expert" solver, 'three' triggers the quantitative "mode." This mode extends 'three pieces of pie'
+         to a quantity (3) which will relate to other quantities in the problem.      (See also [Nesher 1982] on the
+         understanding    of number-words   vs.    numbers.)   The mathematical      mode   of  reading    requires both
+         abstraction and active focusing.  Focusing is even more difficult in the case of an unknown quantity,
+         such as in 'some pieces of pie,' since children, using linguistic senses familiar to them, may understand
+        the meaning of 'some' simply as an adjective [Cummins, Kintsch, Reusser & Weimer 1988], rather than
+        retain it in memory as an unspecified quantity.     Similarly, we would point out that the relational word
+         'of' can be understood conventionally ('a piece of pie') or quantitatively as "subtracted from," that is, as
+
+326
+        '1 of? pieces,' requiring an extension to the numeric domain.[l ]
+
+        As an example of the difficulty presented by the concurrence of problem processing and quantitative
+        abstraction, consider:
+
+         John has 3 million dollars.
+         Ifsomeone has millions ofdollars, he is rich.
+         Is John rich?
+
+        Ifthis problem had proceeded quantitatively after the first statement, e.g., 'He lost 2 million dollars in
+        the stock market,' a child who did not carry through quantitative expectations while processing the prob
+        lem structure might be focused on nonmathematical (irrelevant) aspects ofthe problem, with possible
+        implications for ease ofproblem solution.    This potential difference in the mode ofreading a problem
+        points out the importance ofa motivating purpose for creating the problem.
+ (3)    Higher-order thinking is required for e.g. Compare problems, which involve relations between entities
+        as opposed to entities themselves. This ability requires a problem solver at the least to retain more than
+        one entity in memory at a time, with roles assigned to those entities.                        A particular difficulty is intro
+        duced by quantification ofrelations. While many children can understand the ordinary sense of'greater
+        than' or 'less than,' they may not understand 'How many more...'                          The identification ofthis dimension
+        helps to account for the relative ease ofsolution ofKintsch's (nonrelational) situation models [Kintsch
+        1989] as opposed to relationally worded problems.
+      A possible generalization across these three dimensions is that the quantification and retention ofnoncon
+crete concepts (unknowns and relations) present a particular difficulty, since, as in LeBlanc's results above, it
+involves concurrent processes--a task we believe can be addressed by a learning context which encourages
+active focusing.
+
+4. Word Problem Learning Environments as a Classroom Tool
+
+      We propose an integrated pedagogical approach which a) balances exploration and initiative on one hand
+and guidance and reinforcement ofconceptually relevant mappings on the other; and b) is motivated by class
+room discourse about and experience with "naturally" arising situations.                          Consistent with the previous section
+[Language-Related Dimensions ofWord Problem Understanding], the guidance component should aim to:
+ (1)    help _young students to conceptualize problem structures including unknown quantities;
+ (2)    extend students' existing knowledge to analogous situations and numeric representations;
+ (3)    foster the understanding and conceptualization ofrelational language.
+      Our  own    interactive  pilot implementations  [LeBlanc           1992]  have                started by using the output of
+EDUCE/SELAH to dynamically link (in the sense advocated in [Kaput 1992]) natural-language assertions to
+progressively more abstract representations (icons,   dots,          numbers). For example, our "Language                Link" tool
+allows students to see immediately how language (e.g., 'have more than' ) is changed when they alter certain
+iconic representations. Planned versions include the converse ofthis process,                       additional symbolic modes (such
+as number lines) and a dynamic linkage between mathematically significant prepositions and corresponding
+actions on icons. These features should make conceptual components ofthe problem solving process explicit
+and should extend students' awareness ofthe power ofmathematics to account for many analogous situations
+[see Thompson 1989]. However, as emphasized above, there must be an active focus on these conceptual steps
+and  patterns if students  are  to   effectively "construct"          [Cobb 1994]                 mathematical meaning  from these
+
+     [l]That children may be ready to make such extensions (see [Vosniadou 1995] for emphasis on the developmental role of analogical
+reasoning) is suggested by the many extensions (though unconscious) they have previously learned through the assimilation of language
+which is actually metaphoric [Brugman & Lakoff 1988, Russell 1986]. For example, from the presumably literal 'piece ofpie,' a (nonquan
+titative) extension of the sense of 'of' can be made to expressions such as 'color of the ball.'
+
+                                                                                                                                327
+ associations. By itself, this approach may still not motivate children (especially those jaded by years of passive
+ learning and entertainment).   While students can express a preference of learning style through choice of con
+ ceptual modes (numeric, iconic, spatial, linguistic) offered by such a learning environment, this approach does
+ not really address the "initiative" requirement stated above.   The following scenario,  in the spirit of "anchored
+ instruction" ·[Barron & Kantor 1993], reflects a far more motivating environment where the learning is self
+ directed, goal-oriented and situated.
+        The class, with the teacher, looks at a real-world problem (e.g., weights of different types of whales) and
+ talks about it until some degree of understanding is involved, specifically the inherent relationships that exist in
+ the situation (e.g., differences between male and female weights).   Then students are encouraged to get the com
+ puter to help them finish solving the problem (or a variation of the problem), and to see what the computer does
+ with the problem as created by the students in their own words.     This step will in most cases be preceded  by a
+ phase where students write about the situation, the relationships of interest and possibly an open question.  This
+ includes conferral with the teacher or possibly with other students.    Writing is thereby used to facilitate "owner
+ ship" of mathematical    language. A necessary  side effect of this write-rewrite cycle is to present the computer
+ with something intelligible and spelled correctly.  This "linguistic conceptualization," especially the expression
+ of problem relationships, is consistent with the "mathematical writing" approach advocated by [Winograd &
+ Higgins 1995] and represents a "role reversal" with respect to the traditional situation in which the student is
+ given a word problem to solve.  In submitting the problem to a computer supplied with the type of software out
+ lined above, students would see the abstractions the computer goes through, providing a link between the expe
+ rienced situation and the quantitative characterization.   Students could share their problems with other students,
+ who would also   have the option of exploring the problem interactively.      Comparing similarities or differences
+ between their problems should also further their sense of how problem parts relate to the whole picture.
+        Analogous situations/problems could then be brought in.    Either the teacher introduces another real-world
+ problem which the students "discover" can be stated in similar terms (or dissimilar terms, giving another way to
+ solve the problem), or the teacher asks for different themes using the same structure, or the student chooses a
+ topic. In whatever case, a desirable effect is that students, having once followed dynamically displayed concep
+ tual steps for their own problems, as described above, may be motivated to engage in a similar process for these
+ other problems.
+        Up until recently, a bottleneck in this kind of approach has been a lack of software which processes arith
+ metic  word problems from their original statements.  The Word Problem Processors of       [Pogrow 1994] "under
+ stand" students' word problems sufficiently to allow, for example, feedback by the computer as to comprehensi
+ bility of the problem. However, writing creativity is constrained by prompting for expected sentence parts.   The
+ reading/solution capabilities of EDUCE/SELAH, on the other hand, parse natural language statements without
+ such constraints, and are able to handle syntactic and semantic variations which influence problem difficulty.
+ The   (planned) integration of EDUCE/SELAH       with    a recently created   program, eXpress Math  [LeBlanc   &
+ Natola 1995], which supports students in writing their own word problems, will allow a reasonable freedom of
+ style in writing about problems which can then be translated to various conceptual depictions.        The use of
+ eXpress Math allows the teacher to: integrate writing, science and mathematics; facilitate ownership of mathe
+ matical language by encouraging students to highlight quantitative relationships in situations independent of
+ arithmetic; view students as knowledge-contributors rather than passive recipients; and encourage the construc
+ tion of problems at unexpected levels of difficulty [see Fuson  1994].   eXpress Math (beta version) has been dis
+ tributed to over 50 requesting sites and is currently operational as a pilot project in a number of classrooms
+ nationwide. The integration of eXpress Math into the proposed classroom scenario can be described as follows:
+  ( 1)   Classroom discussion of problem situation
+  (2)    Linguistic conceptualization of problem with support of eXpress Math:
+
+         The teacher decides how to constrain the problem, e.g., chooses 2 or 3 relational words (from a long list)
+         that inust be included, for example: 'more than' and 'altogether.'    Different combinations of words will
+         make problems vary widely in level of difficulty, where the intent is to (a) force students to really under
+         stand the language and (b) encourage them to write (at least) two-step problems, perhaps even problems
+         for grades above their own. The teacher can also constrain the topic, chosen from a long list (e.g., ento
+         mology,  oceanography).    The student writes the problem,  clue,  and solution "by hand," reviews it with
+         the teacher (rewrite cycle),  selects constraining  words   (if any), and enters the problem into eXpress
+
+328
+       Math [see Fig.I].
+ (3)   Exploration   and manipulation             of  problem   solution        processes               in alternative          symbolic     modes through
+       EDUCE/SELAH and interactive graphics tools.
+ (4)   Sharing of both printed and dynamically representable versions of children's problems.
+
+       Currently, eXpress Math only prints the problem to share with others. Problems can be shared "horizon
+       tally" among students in the same class/grade or "vertically" between students in upper or lower levels.
+       Work in progress will allow students to submit their problems to a World Wide Web server.                                                    Teach
+       ers/students could search the database and download word problems (eventually those written in other
+       languages).  For example, they could search for "all problems containing 'more than' && 'altogether'
+       && grade < 5." Web access to the interactive graphics tools is also planned.
+
+                                                                                                    Sample Topics
+                               Name:/Jenn                                             Astronomy                                 :9
+                               School: !Beechwood Knoll Elementary SchoolCity: !OuincyBotany                                    Entomology (Insects)Geology-/j![i
+                                Stale: I   MA                                                   ·I   ';111111·, IJIUGrade:II)Whales
+
+                                                                                                     Oceanography
+                                   I  like math. Mr. Nutola is a nice teacher.He makes it fun.'11'j£  eHpress Mcoral reefcurrentdensitydiatomdissolved oxygen
+                                                    I W Author j -   jsolution        echolocationechosystem             f,
+                                                                                    '::=====:--;:::::=
+                              I\IC-------,0=-0-=-1p""h.,.in-,.,W,-e-i= g-=-h-,,--(ndd Word to List)                    ( Delete
+
+                                   ·,    A dolphin   weighs    300    ounds.      His s ister
+                                   ·,    wei   hs 367    ounds and his brother
+                                   ·,    weighs 524 pounds.        How much do they__
+                                   ·,    weigh   alto  ether?
+
+                                   ·,    How much     more does    the brother wei                   h
+                                         than  the  sister?
+
+                        Figure 1:          eXpress Math screens for an actual student-created problem
+
+5. Conclusion
+
+     In the described approach to learning about word problems, mathematically relevant real-world problems
+discussed in class motivate students' own construction of word problems in interaction with teachers and with a
+computer learning environment.           The   computer graphics make explicit the multi-modal conceptual components
+of the problem portion of the student's written input, allowing the discovery of analogies between conceptually
+or mathematically similar problems.            Central to this environment are the children's own conceptualization and
+creation of word problems, their derivation from a real-world context, their conversion to various symbolic
+modes and their sharing with peers--an integrated means of promoting a situation-related sense of mathematics
+in young children.
+
+                                                                                                                                                      329
+ 6. References
+ [Barron & Kantor 1993]
+ Barron, B., & Kantor, R. (1993). Tools to enhance math education: The Jasper Series.    CACM, 36 (5), 52-53.
+
+ [Brugman & Lakoff 1988]
+ Brugman, C., & Lakoff, G. (1988).     Cognitive topology     and lexical networks. In S. Small, G. Cottrell & M. Tanenhaus
+ (Eds.), Lexical Ambiguity Resolution. San Mateo, CA: Morgan Kaufmann Publishers, Inc.
+
+ [Bums 1993]
+ Bums, J.E. (1993).   EDUCE:    An Arithmetic   Word Problem Parser, M.S. Thesis, Computer Science  Department, University
+ of New Hampshire, Durham, NH.
+
+ [Cobb 1994]
+ Cobb, P. (1994).  Constructivism and learning.  In T. Husen & T.N.    Postlethwaite (Eds.), International encyclopedia of edu
+ cation (2nd ed., p 1040-1052). Oxford, England: Pergamon.
+
+ [Cummins 1991)
+ Cummins, D.D. (1991).   Children's interpretations of arithmetic word problems.    Cognition and Instruction, 8 (3), 261-289.
+
+ [Cummins, Kintsch, Reusser & Weiner 1988]
+ Cummins,    D.D., Kintsch, W., Reusser, K.,   & Weimer,   R.  (1988). The  role of understanding in solving   word problems.
+ 405-438.
+
+ [Davis-Dorsey, Ross & Morrison 1991]
+ Davis-Dorsey, J., Ross, S.M., & Morrison, G.R.   (1991)."    The role of rewording and context personalization in the solving of
+ mathematical word problems. Journal of Educational Psychology, 83, 61-68.
+
+ [Decorte, Verschaffel & DeWin 1985]
+ DeCorte, E., Verschaffel, L., & DeWin, L. (1985). Influence of rewording verbal problems on children's problem represen
+ tations and solutions. Journal of Educational Psychology, 77, 460-470.
+
+ [Fuson, K. 1994]
+ Fuson, K.   (1994). Children's solving of the whole range    of addition and subtraction problems using schematic drawings.
+ Presented at the Annual Meeting of the American Educational Research Association (AERA-94), New Orleans, LA.
+
+ [Hegarty, Mayer & Green 1992]
+ Hegarty, M., Mayer, R.E., & Green, C.E. (1992). Comprehension of arithmetic word problems: Evidence from students' eye
+ fixations. Journal of Educational Psychology,  84 (1), 76-84.
+
+ [Janvier 1987]
+ Janvier, C. (1987).  Translation processes in  mathematics education.   In Problems   of Representation in the Teaching and
+ Leaming    of Mathematics, Janvier, C. (Ed.), Hillsdale, NJ: Lawrence Erlbaum Associates, Inc.
+
+ [Kaput 1992]
+ Kaput, J. (1992).   Technology and mathematics education.     In Handbook of Research  on Mathematics Teaching and Leam
+ ing, Grouws, D.A. (Ed.), New York: Macmillan, 515-556.
+
+ [Kintsch 1989]
+ Kintsch, W.  (1989). A theory  of discourse comprehension: Implications    for a tutor for algebra problems.  T hird European
+ Conference for Research on Leaming and Instruction.    Madrid.
+
+ [LeBlanc & Natola 1995]
+ LeBlanc, M., & Natola, T. (1995).  eXpress Math - A    tool for writing mathematically. Presented at the National Education
+ Computing Conference (NECC-95), Baltimore, MD.         TR 95-11, Dept.     of Mathematics and Computer Science, Wheaton
+ College, Norton, MA.
+
+ [LeBlanc & Weber-Russell in press]
+ LeBlanc, M.D., & Weber-Russell, S. (forthcoming).      A computer model of the role of text integration in the solution of
+ arithmetic word problems.   Cognitive Science.
+
+330
+[LeBlanc 1992]
+LeBlanc, M.D. (1992).   When more is less - interactive tools for relational language.  16th International Group of the Psy
+chology of Mathematics    Education  (PME-92),    3, 171. TR #92-14, Computer   Science   Dept,, Univ. of New   Hampshire,
+Durham, NH.
+
+[NCTM   1989]  NCTM     - National Council   of Teachers of Mathematics (1989). Curriculum   and Evaluation Standards      for
+School Mathematics.  Reston, VA: Author.
+
+[NCTM 1991] NCTM        - National Council of Teachers of Mathematics (1991). Professional Standards   for   Teaching Mathe
+matics. Reston, VA: Author.
+
+[Nesher 1982]
+Nesher, P. (1982). Levels of description in the analysis of addition and subtraction word problems. In Addition and subtrac
+tion: A cognitive perspective. Carpenter, T.M., Moser, J.M., and Romberg, T.A. (Eds.), Hillsdale, NJ:   Lawrence  Erlbaum
+Associates, 25-38.
+
+[Okamoto 1992]
+Okamoto, Y. (1992).  The role of central conceptual structures in children's arithmetic word-problem solving.   Presented   at
+the Annual Meeting of the American Educational Research Association (AERA-92), San Francisco, CA, April.
+
+[Pogrow 1994]
+Pogrow, S. (1994). Word Problem Processors:      A New Mathematical  Software Tool.    Demonstrated at the National Educa
+tional Computing Conference (NECC-94), Boston, MA. Educational Innovations, Inc.
+
+[Riley & Greeno 1988]
+Riley, M.S., & Greeno, J.B. (1988). Developmental Analysis of Understanding Language About Quantities and of Solving
+Problems.  Cognition and Instruction; 5 (I), 49-101.
+
+[Russell 1986]
+Russell, S. Weber (1986). Information and experience in metaphor: A perspective from computer analysis.       Metaphor and
+Symbolic Activity, 6 227-270.
+
+[Schank & Riesbeck 1981]
+Schank, R.C., & C.K. Riesbeck (1981).  Inside    Computer Understanding. Hillsdale, NJ: Lawrence Erlbaum.
+
+[Staub & Reusser 1995]
+Staub, F., & Reusser, K. (1995). The role of presentational structures in understanding and solving mathematical word prob
+lems. In Discourse Comprehension.    Essays in Honor of Walter Kintsch, Weaver, C.A., Mannes, S., & Fletcher, C.R. (Eds.),
+Hillsdale, NJ; Lawrence Erlbaum Asociates, Inc.
+
+[Trabasso & Sperry 1985]
+Trabasso, T., & Sperry, L.L. (1985). Causal relatedness and importance of story events.  Journal of Memory    and Language,
+24, 595-611.
+
+[Verschaffel & DeCorte 1996]
+Verschaffel, L., & DeCorte, E. (1996).  Teaching realistic wor(l)d problem solving in the upper elementary     school.    Pre
+sented at the Annual Meeting of the American Educational Research Association (AERA-96), New York, April 8-12.
+
+[Vosniadou 1995]
+Vosniadou, S. (1995). Analogical reasoning in cognitive development. Metaphor and Symbolic Activity, 10 (4), 297-308.
+
+[Winograd & Higgins 1995]
+Winograd, K., & Higgins,  K.M. (1995).  Writing, reading, and talking mathematics:     One interdisciplinary possibility. T he
+Reading Teacher, 48 (4), 310-318.
+
+Acknowledgements
+
+The authors wish to thank the Beechwood Knoll Elementary School in Quincy, Massachusetts, especially Jenn, for con
+tributing a sample of their use of eXpress Math.
+
+                                                                                                                          331
+

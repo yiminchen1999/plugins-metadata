@@ -1,0 +1,533 @@
+             Experiences with Interactive Lectures ­
+ Considerations from the Perspective of Educational Psychology
+                                         and Computer Science
+
+                        Nicolai Scheele1, Anja Wessels2, Wolfgang Effelsberg1,
+                                        Manfred Hofer2 & Stefan Fries2
+
+                            1 Department of Computer Science, University of Mannheim
+                                 {scheele,effelsberg}@informatik.uni-mannheim.de
+          2 Department of Educational Science II (Pedagogical Psychology), University of Mannheim,
+                                        {wessels,hofer,fries}@uni-mannheim.de
+
+       Abstract. The conventional lecture scenario implicates fundamental didactic problems due to a
+       lack  of   interactivity and  opportunity   for feedback.  In  an  interactive   lecture, each  student  is
+       equipped with a lightweight, mobile device that can be used to wirelessly interact with the lecturer
+       during the lesson. This creates an additional channel of communication. In this paper, we present
+       our experiences with this new scenario over the last three years. After discussing the benefits of
+       interactive lectures,    similar projects, and  possible  mobile   devices, we   introduce  the software-
+       toolkit used in our scenario and present a selection of results from over our six major studies.
+
+       Keywords: interactive lectures, ubiquitous computing, wireless communication, blended learning
+
+INTRODUCTION
+  In Germany, governmental and scientific institutions (e.g. Bundesministerium für Bildung und Forschung,
+2001; Fraunhofer-Gesellschaft, 2002) have launched several programmes to introduce the use of new media into
+the system of higher education. These aim to improve the quality and effectiveness of teaching in universities
+through the use of multimedia elements. Appropriate new teaching media and learning procedures should help
+to achieve a better adjustment to the individual learning needs, learning rates, and time budgets of students, as
+well as afford the instructors more flexibility in their teaching.
+  But    despite  the   various  multimedia  projects   and  the  efforts on  the  part  of  dedicated    instructors, the
+introduction of educational media has led to an only partial modernisation of the universities. This is particularly
+evident in the classical university teaching-learning scenario: the lecture. Lectures in universities have profited
+from many technical advances over the last few years. Blackboards were replaced by overhead projectors,
+which, in turn were substituted by video projectors and electronic whiteboards (Geyer & Effelsberg, 1998).
+Most lecture halls nowadays are equipped with computers, as well as video and audio systems, thus allowing the
+integration of every possible type of media into the lecture.
+  Nonetheless, the basic teaching paradigm continues to remain largely unchanged; one of the few exceptions
+is the scenario of the telelecture (e.g. Datta & Ottmann, 2001) or digitally recorded lectures (Zupancic & Horz,
+2002).   The main      disadvantage   of  lectures is  their lack  of  interactivity:   Conventional   lectures   can   be
+characterized as situations in which a teacher presents new information to the learners without guiding their
+learning processes. The limited opportunities for interaction in lectures engender a set of problems regarding
+students' attention and motivation, as well as the adaptivity of the lecturer's instruction.
+  Lecturers often attempt to overcome such problems by asking questions, to trigger feedback on how well the
+students have understood the presented material, as well as to provoke their active participation in the meetings.
+This is problematic in lectures with a large audience, since only a few students are able to interact with the
+lecturer in  this way.   The    overwhelming  majority   will not  benefit  from   this form  of  interactivity.  Further
+problems arise if the lecturer wants to get feedback on how the students accept the lecture or their suggestions
+for improvements. In lectures with a small audience, the teacher can typically deduce this information from the
+students' reactions,   e.g. bored  expressions.   In meetings   with  large audiences,   however,    this information   is
+usually  gathered  by   passing  out  feedback    questionnaires to  the  students at   the end  of  the  lecture  period.
+Unfortunately,    this approach   is rather imprecise   and  does  not  allow any   assessment    of  individual   lecture
+elements. Nor can the lecturer react quickly to problems. Other forms of interactivity are spontaneous questions
+by the students. These can often be difficult in large lectures. First of all, due to time constraints, not all students
+
+                                                           
+are able to ask questions. Secondly, many do not dare to ask questions in front of a large audience. Finally, if
+students can pose questions only at certain times, these will be out of context when finally put. Given all these
+problems, most students do not interact at all during the lecture.
+   Thus, despite the possible use of different media to illustrate lecture topics, interaction is hardly possible in
+mass meetings. This unidirectional communication leads to several motivational and cognitive problems:
+   From a pedagogic-psychological view, learning (in lectures) has to be reconstructed as an active process
+(e.g. Ernest,  1995; Jonassen,     1994;  Honebein,    1996;  Wilson  &  Cole, 1991).   Interactivity represents  an
+opportunity for the learner to take a hand in shaping the informational, communicational and learning processes,
+rather than remaining a passive recipient; thus, the active involvement of the learners has a great impact upon
+successful learning (Ramsden, 1992). In respect of the learning success in lectures, empirical results state that
+while lectures are not generally ineffective, they still are not suitable for a global knowledge transfer (see for an
+overview Gage & Berliner, 1996; Peterson, 1979).
+   Directly connected to the problem of the low interactivity in this method of teaching is the lack of adaptivity
+of the teacher's behaviour: During the lecture, the instructor can only adapt a limited portion of the contents or
+topics of his lecture to the learners' state of knowledge. On the other hand, in the instructional-psychological
+context, adaptivity is an essential tool to improve the learning process. The underlying rationale is to adapt
+explanations or curricula to the learners' current state of knowledge, thereby achieving greater efficiency and
+efficacy of instruction. Empirical findings reveal the effects of diverse learning-centred measures upon learning
+success (Sass, 1989; Cronbach & Snow, 1977; Bligh, 1971).
+   Finally, an essential problem in lectures is the continuous attention required of the learner, usually over 90
+minutes. This requirement is not realistic: Usually, the attention span is only about 20 minutes (Smith, 2001).
+Subsequently, an activity change must follow if students are to maintain their attention (e.g. a change from the
+lecture to the  discussion phase).  Studies    show that a  decreasing mental  performance  is  responsible for   the
+inferior knowledge acquisition (e.g. Siegel, Siegel, Capretta, Jones & Berkovitz, 1963; Bloom, 1953). However,
+such activity changes are not foreseen in the classic scenario, and if so, they depend exclusively on the ability of
+the lecturer (Ramsden, 1992).
+   In   dominant   instruction models    (e.g. Glaser, 1976;  Rosenshine,  1979),  the  diagnosis of   the learners'
+knowledge status by the teacher is a central element of the educational process: Each instruction cycle contains
+two diagnostic elements: the diagnosis of relevant learners' characteristics and the diagnosis of the learning
+achievement,   for the planning    of the further   educational procedure  and/or the   examination   of  success in
+learning.  Thus,  learner feedback    enables  an adaptive   teaching behaviour, which  can lead  to   an  improved
+learning process. Lecturers, for example, can adapt explanations or contents to the learners' knowledge status, in
+order to heighten the efficiency and effectiveness of their instruction.
+   Directed interactivity can strengthen learner-centred instruction. This is further strengthened if the learners
+feel they can communicate with the lecturer and give him feedback, thus have a real opportunity to affect the
+learning process - despite the rather passive role as receptive learners. Since successful learning represents an
+active process, active involvement of the learners should have a large effect on learning.
+   Effectively increased interactivity should promote students' attention and motivation and, finally, support
+their acquisition of knowledge. The pre-condition is that lecturers receive more exact information, to enable a
+micro adaptation of their presentation.
+   Hence, there are evident theoretical and practical reasons to improve this type of learning scenario or to
+create a new (more interactive) scenario as a replacement.
+   An innovative approach to improve interactivity and to realize bi-directional, synchronous communication in
+lectures is to equip the students with small electronic devices, such as handheld computers. These devices
+communicate with the lecturer's computer, thus allowing the exchange of information with the lecturer at any
+time, without disturbing the lecture.
+   The type of information exchanged can be arbitrarily complex, ranging from a simple "virtual hand-raising"
+over detailed feedback to quizzes that may even be counted towards the grades of the students. To avoid cost-
+intensive modifications of the lecture hall, the handheld PCs and the server are connected by a wireless LAN.
+   Two departments at the University of Mannheim (Computer Science and Educational Science) have initiated
+the LectureLab project (http://www.lecturelab.de) to create a new form of multimedia-enhanced teaching: the
+interactive lecture. We have designed and implemented a full-featured software system and carried out several
+major field studies to evaluate this concept.
+   In this paper we will:
+x     describe the possible use of mobile devices in large learning environments;
+x     present the scenario  of  the Interactive   Lecture, as well as  our own   technology  at the   University  of
+      Mannheim, WIL/MA (Wireless Interactive Lectures in MAnnheim);
+x     discuss the results of   two  detailed case studies  conducted   among   graduate students, focusing   on   the
+      comparison between the use of PDAs and notebook PCs; and
+
+                                                          
+x   give an overview of the results of six experimental field studies we carried out in computer science and
+    educational  science  lectures in order to investigate  the motivational   and  cognitive effects of  this new
+    teaching-learning-method.
+
+MOBILE DEVICES IN LECTURES
+Numerous projects focusing on the use of mobile devices in lectures in order to enhance learning and teaching
+have evolved over the last few years. Most of them have very unique ideas about what aspect of the lecture they
+intend to improve, and about how to cope with eventual problems. The following is a short list of past and
+ongoing projects, along with a short description of the basic ideas behind them.
+    Classtalk (Abrahamson, 1999, 1998; Webking, 1998; Dufresne, Gerace, Leonard, Mestre & Wenk, 1996) is a
+well-known Classroom Communication System by Better Education Inc.. For the better involvement of every
+single student, the teacher "beams" three to four Classtalk tasks per lesson to the students' devices; these can be
+calculators, organizers or personal computers, and the students often own them. A "task" can be anything from a
+simple  question to  a midterm  exam,   from a   group exercise  to a   survey of class  opinions. The results  are
+displayed immediately on the teacher's notebook PC; the teacher can either keep them confidential or show
+them to the class. The class sessions can be archived for review, and can be analyzed and compared to other
+sessions. Additional features include feedback (from the teacher), tests and grading. Classtalk can also be used
+for the so-called ,,peer-instruction"-method,  a  kind of   collaborative  learning in  which answers   to several
+questions (,,ConcepTests") are to be discussed in small learner groups (Mazur, 1997).
+A questionnaire study by Hake (1998) with more than 6 000 American physics-students showed that interactive
+learning environments (Classtalk vs. traditional instruction) enhanced the students' capability to solve problems.
+Abrahamson (1999) could also assess an increase of the knowledge gain if interactive elements were integrated
+into instruction. Another study, in the Netherlands (Massen, Poulis, Robens, & Gilbert, 1998), showed that with
+physics students, the integration of the so-called Audience Paced Feedback (APF), a system comparable to the
+Classtalk system, leads   to an enhancement    of learning  success.  Finally, Hartline  (1997) stated that using
+Classtalk improved the reading comprehension of elementary school pupils.
+    ClassInHand,  from   Wake   Forest  University,   turns a PDA     equipped   with  a wireless  adapter  into a
+presentation controller and a quizzing-and-feedback device for the lecturer (http://classinhand.wfu.edu/, last
+checked   11/10/04). Its major  components   are  a presentation   control application  and a web   server for  the
+PocketPC of the teacher; the clients only need a web browser to participate. The Presentation Control allows
+remote control of the Powerpoint slides on the lecturer's PC. It also gives him the possibility to forward the quiz
+results to the class. The Web Server enables concept tests (quizzes), textual feedback, a feedback meter, and
+easy document posting. The quiz feature can be used to present a question with up to four answers, and to view
+the results immediately   on  the  PDA  or  to forward  them    to  the students' devices.  The textual   feedback
+component allows students to send their questions directly to the teacher's PDA. Finally, the feedback meter
+enables students to submit numeric responses (range: -10 to 10).
+    ConcertStudeo, a project of the Fraunhofer Institute IPSI, uses an electronic blackboard combined with
+handheld devices (Dawabi, Dietz, Fernandez & Wessner, 2003). It features exercises and interactions, such as
+multiple-choice quizzes, brainstorming sessions, queries, or role-plays. During a lecture, the teacher introduces
+the exercise, and the learners enter their answers into their handheld devices. The software does the collection,
+analysis, and presentation.
+    Specifically designed for online feedback is CFS (the Classroom Feedback System), from the University of
+Washington (Anderson, Vandegrift, Wolfman & Yasuhara, 2003). It allows students to post annotations directly
+on lecture slides. The lecturer sees the annotations in real-time. The students use their notebook PCs to generate
+their feedback by clicking a location on a slide and selecting a category from a fixed menu (such as "more
+explanation", "got it", "example"). The teacher's screen shows the number of feedback requests for each slide,
+and displays the aggregated feedback with a shaded dot for each annotation at the actual presentation slide. The
+slides depict categorical information by colour (e.g., red for "more explanation"), and the slide context by
+location.
+
+THE WIL/MA SOFTWARE
+As  shown,  there are  many   different settings  and  ways  to take    advantage of  mobile  devices  to  improve
+interactivity in the lecture hall. Most of the earlier work has focused on specific issues, such as quiz only, online
+feedback only, or annotations only. Furthermore, the software is often designed to run only on a particular
+hardware device or, in some cases, only on very proprietary hardware. Finally, none of the existing projects
+features synchronous, bi-directional communication for large classrooms: in most cases, it is only the students
+who can send data to the teacher at any time, while the teacher cannot send personalized responses.
+
+                                                        
+Our software tools attempt to solve these problems: the same basic software architecture accommodates many
+different  interactivity services.  The   system is  written  in Java and   is portable  to almost all  modern  mobile
+devices.
+
+System Architecture
+The WIL/MA system is designed as a classical client/server application (see figure 1). As the central part of the
+architecture, the server provides all the fundamental functionality: management of the connections, users, and
+services. Connection management establishes connections to the clients upon request, processes incoming and
+outgoing data, and monitors the registered connections for broken links. User management identifies individual
+users via  password      and  stores personal   information   for  internal and  external   use.  Service   management
+dynamically loads a requested number of plug-in service modules, informs clients about the availability of
+certain services, and controls the data flow between the services within the server structure itself and between
+clients.
+
+                                          Figure 1: The WIL/MA architecture
+
+  All    functionality   that is visible to the  users is bundled  into services.  Services  are  built as  independent
+modules to be loaded by the server and the clients at start-up time; for each service, there is a server-module, a
+teacher-module and a student-module.
+  The     server-modules   are   the central   part of a  service. They  aggregate   all incoming    data,  analyze the
+information,  and  broadcast     trimmed  data  packets   in various ways   back  to the teacher  and   each individual
+student. The server software provides a sophisticated messaging system for this purpose. All other modules are
+loaded into the clients of the students and the teacher. While the teacher-module focuses more on editing various
+aspects of the service, as well as on the display of analyzed data, it is more important for the student-module to
+display prepared material appealingly and to provide an intuitive user interface.
+  The client for the lecturer runs on a machine typically connected to the server via a wired network; all other
+clients use the wireless LAN to connect to the server. By means of interface utilities, multiple servers can be
+connected to extend the range of an interactive lecture to other lecture halls easily, without overloading the
+network   in-between.    Interfaces  to  other similar software  systems  can   be created  to share   data of common
+services.
+  Besides the already discussed functionality, the server software also provides several tools to easily manage
+a larger number of students' devices. The two most important features are a DHCP server, allowing the central
+configuration of all network-related parameters, and a Java class server that offers all required Java classes for
+download. Thus, only a very small footage of classes has to be installed on the students' computers, while all
+other classes are loaded automatically at start-up. The class server can also be used to update all mobile devices
+whenever the software is changed (e.g. new releases, updates).
+
+Implemented Services
+Three services have been implemented so far: a quiz tool, an online-feedback tool, and a call-in tool.
+  The quiz tool allows the teacher to pose questions (that possibly include graphics or animations) about actual
+lecture contents and "beam" them via wireless LAN to the audience. The students work on them and send their
+answers back to the lecturer's computer. After a timeout, the cumulated results are presented graphically on the
+projector. In this way,    the   lecturer and   the students  gain representative  feedback    on  the  newly  acquired
+knowledge. Apart from two different multiple-choice question styles (only one correct answer, multiple correct
+
+                                                             
+answers), we integrated other optional question types into this service, which can be automatically analyzed. To
+give some examples: Clickable images can be used to ask the student to point into a certain area of a picture as
+an answer (for example: "point at the location of Moscow on a map of Russia"). Fill-in questions make it
+impossible for the student to accidentally guess the right answer to a mathematical exercise.
+  The feedback tool delivers direct and systematic feedback about different aspects of the lecture from all
+students to the lecturer, who can then instantly adapt his/her presentation style to the new situation. An aspect -
+or category - could be the speed or the level of the lecture; so students can ask the teacher during the lecture to
+progress more slowly or to discuss a certain topic in more detail. Technical issues also can be used as a feedback
+category; for example, video or audio distortions in telepresence scenarios can be discovered much sooner, or
+the students are able to complain, when their learning environment is suboptimal (because other students in the
+back rows are too loud ,or bright sunlight makes it impossible to read the projected lecture slides).
+
+         Figures 2a, 2b, and 2c: Screenshot of the students' client, showing a quiz, feedback, and call-in
+
+                Figures 2d, 2e: Screenshot of the administrator client and a typical quiz result
+
+  Finally, the call-in tool forwards spontaneous text questions to the teacher at any time during the lecture. The
+questions are stored in a list and can be dealt with in three ways: using the software, they can either be answered
+individually, or the answer can be sent to all students if the question is of general interest (of course, the
+anonymity of the original student is maintained). In these cases, FAQ lists can be created, which are then put on
+the Web for the next generations of students. The third way is to integrate questions or remarks from students
+into the lecture. A selection of screenshots from the teacher's client, as well as from the students' client, can be
+seen in figures 2a-e.
+
+Group Support
+From the software-engineering   perspective, there are three types of group support    to     be considered in an
+interactive lecture: device sharing, working groups and distributed working groups.
+  Device sharing is particularly interesting in lectures, where many students want to participate but only a
+limited number of devices are available. In this case, the software could allow multiple students to log in and
+then select their name before accessing a certain service. This way, each student in a group still acts as an
+individual, from the server perspective. In quiz rounds, for example, the students could work out their answers
+
+                                                        
+on a piece of paper and then use the device only to send them to the server. The ConcertStudeo software is one
+of the few projects that support device sharing.
+  Most projects - including WIL/MA - do not because of some severe problems with this feature (for example,
+the second student in a row can easily copy the answers of his predecessor). Furthermore, the second type of
+group support is an easy, but feasible, alternative: A group of students collaborates using a single device. The
+software has not to support this explicitly because there is little difference between a working group and an
+individual student when using only one login account.
+  The third type of group support is much more interesting because it offers a wide range of possibilities. In
+this scenario, students are able to form groups or are put into groups, but still have their own individual device.
+This way, they can still act individually in some services (feedback or call-in). In other services (quiz, or online
+brainstorming, for example), the server specifically aggregates the individual input, to form a homogenous
+group input.
+  This technique allows the formation of groups over wide distances, connecting students who don't know
+each other, or in crowded lecture halls, where group members often cannot sit next to each other. The group-
+building process is also much more interesting: students can advertise their skills in a list and can be invited by a
+group that lacks these skills. Or groups can be formed automatically using various heuristics, thus bringing
+together students of equal or complementary knowledge.
+  Obviously, this kind of group support places high demands on the software system. First of all, the students
+in a group have to be able to communicate. The communication must be easy to handle, must not disturb other
+students, and should be blended into the standard screen of the service as seamlessly as possible. During a quiz,
+for example, the students would see little coloured dots next to the answers that their fellow group members
+think to be correct. The brighter the dots are, the more confident is that group member of his or her selection.
+Whenever there is a disagreement, the students can switch back to a VoIP or chat screen to discuss the final
+answer.
+  Handling unresolved disagreements is a second demand on the software. The single analysis step of a system
+that only supports individual input has to forego a pre-analysis step, where heuristics decide the final input of a
+group in case of discrepancies.
+
+Using the Tools within an Interactive Lecture
+To dispatch an interactive lecture, only three devices are needed: a single access point is usually sufficient to
+handle the connections from more than 100 students. The server software can be run on any computer running
+Java; if it is installed in the lecture hall, a standard notebook is sufficient. This computer is usually used for the
+teacher software, as well. Finally, a projector is needed to display the aggregated results of several services
+(primarily the quiz service) to the audience.
+  Since most of the lecture halls are already equipped with projectors or large monitors, all equipment needed
+fits into one notebook travel bag and is installed and started in usually less than 5 minutes before the lecture
+starts, including the time needed to start the appropriate software.
+  Of course, it is quite time-consuming to hand out several dozens of PocketPCs to students who do not own a
+mobile device. This requires some assistance; but in our experience, the students are quite disciplined, and all
+the devices are usually treated very carefully. Furthermore, more and more students own a PocketPC or Palm or
+would like to use their notebook in the lecture anyway. Hence, it is most likely that having to provide large
+pools of mobile devices will no longer be an issue in the very near future.
+  Once the software is started, the students will begin to log in. In our case, the services: feedback and call-in
+are started right at the beginning and are thus accessible the whole time. Quizzes are scheduled approximately
+every 30 minutes. In our interactive lectures, the students thus had two breaks for the quiz rounds in each lesson
+of about three to four questions, which proved to be very effective. Also, a good practice may be to start with a
+short quiz, to see what the students have learned in the last lecture. The questions are prepared before the lecture
+and submitted to the students at an appropriate time during the lecture. Depending on the difficulty of the
+questions, the students are given three to five minutes to answer them; the discussion of the results usually takes
+another five minutes.
+  The results of all services are stored on the machine running the teacher's client in a portable XML-based
+format, so that the teacher can analyze the information at any time later.
+
+EXPERIMENTAL FIELD STUDIES AND EXPERIENCES
+  Altogether, we have conducted six experimental studies to date in order to investigate the motivational and
+cognitive impacts of  this scenario (assessed    in the form of questionnaires  with respect to acceptance, and
+through the application of tests with respect to the learning success). Four of the studies were carried out in
+
+                                                         
+computer science lectures, and two in education science meetings. A seventh study (in education science) is still
+running.
+   In the following chapter, we will give a brief overview of our studies' results, separated by the different
+faculties where the interactive lectures took place.
+
+Interactive Lectures in Computer Science
+   First, a test trial (winter semester 2001/2002) of the interactive lecture scenario was carried out (Wessels,
+Fries, Horz, Scheele & Effelsberg, submitted). In an experimental study (2x2 design), a first prototype of the
+WIL/MA tools was technically and empirically tested in a computer science lecture by comparing two wireless
+LAN-supported sessions with two conventional lectures on the same topic. The 44 randomly assigned students
+at this lecture each participated in both an interactive and in a conventional lecture session, then the groups were
+compared with respect to acceptance of the teaching method (questionnaire based on 13 items) and success in
+learning (pre-post measures). Regarding the acceptance, the interactive condition was evaluated significantly
+better  than  the  conditional one  (p<0,001;   K²=0.433,    respectively 0.325).Students   also reported significantly
+higher   levels of    assumed  attention,   activity, and   estimated  learning success  in  the interactive condition
+(p<0.001). Objective measurements indicated better learning results in the interactive condition, though the
+values fall just short of significance (p=0.068, ²=.081). And finally, there was no meaningful distraction during
+the interactive lectures.
+   As the next step, in summer semester 2002, a long-term integration of the system was realised, as well as an
+application of the scenario within a tele-lecture (Scheele, Mauve, Effelsberg, Wessels, Horz & Fries, 2003). The
+investigated computer science lecture was transferred as an MPEG-stream via the internet to a lecture hall at
+another  German    university.  Just   like the students  in Mannheim,    the   students at the  remote location  were
+included into the scenario and the study. The lecture was temporally split into a conventional and an interactive
+phase1, the latter of which was composed of eight consecutive sessions. For all 99 students participating in these
+two conditions, the acceptance of the two teaching methods (as measured in the first study), and their learning
+increases (pre-post measures) were quantified. We could replicate the good acceptance scores of the first study:
+again, the interactive meetings were rated very well and their acceptance was superior to that of the conventional
+lecture  (p<0.005, ²=0.332). The use of the interactive elements/tools had a highly significant effect on the
+knowledge acquisition in the respective lecture. The participants in the interactive lecture had a significantly
+higher and also faster learning increase (see figure 4) in comparison to those in the conventional sessions.
+   In the next summer semester (2003), a variation of feedback to the quiz rounds (i.e. the discussion of the
+results) within    an interactive computer     science  lecture was   performed  in another  quasi-experimental   study
+(Wessels, Fries, Horz & Hofer, 2003). The investigated computer science lecture was realized as an interactive
+meeting over the entire semester and was again transmitted as a tele-lecture. Within the lecture, a systematic
+temporary variation of the information capacity of the quiz feedback was realized. There were three conditions,
+whereby the verbal feedback from the teacher to the quiz rounds differed in each condition, becoming more and
+more informative over time. The 56 students were compared with respect to their acceptance of the lecture and
+the three feedback methods, and their respective learning increases. The study results show that the interactive
+lecture was once again highly accepted. Moreover, the students prefer an elaborated feedback to the quizzes that
+is related to information about the correct and incorrect solutions (see figure 5). Regarding the learning increases
+in each   condition,   the highest   increases  could    be seen  when    feedback  was   given  that included further
+information about the solutions (condition 2 vs. 1:      p<0.001, condition 3 vs. 1: p   =0.002, condition 2 vs. 3: not
+significant).
+   The aim of the fourth interactive lecture (summer semester 2004) was a realisation within a computer science
+course as close as possible to the reality in higher education. Therefore, the accompanying evaluation was kept
+as unobtrusive as possible: only at the beginning and at the end of the semester were measurements with respect
+to the knowledge and acceptance of the scenario and the tools carried out. Furthermore, we tested the WIL/MA
+group support tools for the first time. In contrast to the other studies, the 69 participating students were equipped
+with mobile computers for the duration of the semester. These were distributed at the first lecture of the semester
+and returned    at the final  lecture. Initial  results for this scenario indicate  a replication of  the earlier good
+acceptance, as well as of the better learning success of the students who visited the lecture as opposed to those
+students who did not participate (e.g. just learned on the basis of the lecture recordings). Especially those
+students who participated in the interactive lecture in groups attained better examination results at the end of the
+lecture.
+    In summary, our results for interactive lectures carried out with computer science students show that:
+
+1 Due to the fact that the study took place within a real lecture over the entire semester, a quasi-experimental
+ approach     was  realized  to   enhance   the ecological   validity. See  Cook    & Campbell    (19979)  for further
+ information about the limits of quasi-experimental designs.
+
+                                                            
+   1.    The students highly accept the interactive lecture.
+   2.    Learning efficacy increases through the use of the interactive tools.
+   3.    Regarding the feedback on the quizzes, students prefer informative feedback on the quiz rounds (which
+         includes further information about the quiz solutions), which leads to greater learning success.
+
+                            Figure 4: Study in Summer Semester 2003: Learning Increase
+            Note: arrows represent significant increases (continuous lines:    p<.001; dashed line: p<.05).
+
+                Figure 5: Study in Summer Semester 2003: Acceptance of the Feedback Conditions
+                                            Note: n.s.: not significant
+
+   The   next  step was  to  carry out interactive lectures  with participants  - and a lecturer - who    have less
+technical experience than computer science students. In order to generalize previous findings and to extend the
+research   by investigating a technically less experienced    sample, we   implemented   the scenario  within   an
+education science lecture.
+
+Interactive Lectures in Educational Science:
+  In an education science lecture (winter semester 2003/2004), our research focused on the questions whether
+and how a variation of individual feedback on the quiz performance will affect cognitive and motivational
+variables. Of  the  214 participants at the lecture,  69 were     equipped with   mobile computers   per   random
+assignment. The other students participated in the interactive sessions using a pencil & paper-based procedure.
+Additionally, the users of a mobile computer received personal feedback about their actual learning outcome in
+the quizzes via their mobile devices. This feedback was systematically varied between and within the groups
+
+                                                        
+with respect to the effects of different reference norm orientations (individual vs. social vs. none). The first
+results show, in terms of motivational factors, a very good acceptance of the scenario, independently of the
+manner of participation over the entire semester. Furthermore, all students were concentrated, and rated the
+actual lesson as being of more than average interest. With respect to the learning outcome, the variation of the
+reference norm orientation on the quiz feedback shows an advantage in favour of feedback under the use of an
+individually   oriented reference   with respect   to the learning   outcome,  as   opposed   to a   socially referenced
+feedback   (p=0.018,    K²=0.101   to   p=.082,   K²=0.056),   although   both types    were   accepted   equally   well.
+Furthermore, the results show that in both user groups: PocketPC vs. paper & pencil, the learning increase is
+significant (p<0.001, ²=0.510 for the PocketPC group, respectively: p<0.001; ²=0.589 for the paper & pencil
+group), and was stable over a period of one month after the end of the lecture. Concerning quiz performance,
+computer-based    participation  in  the quizzes     yielded greater learning  success   (p<0.001).   Additionally,  the
+learning increase, as measured by a pre/post measurement, also was higher if a PocketPC was used (p=0.034;
+²=0.041). In general, this study shows that the interactive lecture can be integrated in a non-technical faculty
+also.
+
+CONCLUSION AND OUTLOOK
+    Conventional   mass   lectures   entail various    serious   didactic problems     with  respect to  cognitive  and
+motivational conditions for learning. Their main disadvantage is that there is little or no interactivity between
+teachers and students. The students' attention and motivation ­ and as a consequence thereof ­ their learning
+success, are negatively influenced, as is the teacher's ability to react to their remarks.
+    In order to optimize education in mass lectures, we have started the LectureLab project. The idea was to
+support synchronous interactions between students and teachers by the use of mobile computers in a wireless
+network   (teaching­learning    scenario of   the  interactive lecture).  All students   are  equipped   with  handheld
+computers and use several wireless interactive learning services that enable feedback in both directions (to
+realise bi-directional, synchronous communication).
+    Our experiences show that with respect to the technical realisation, an interactive lecture is very easy to
+implement. Concerning the use of different mobile devices within this scenario, we strongly prefer PocketPCs
+and Notebooks.
+    The  experimental    field studies  show    that an  interactive mass   lecture that  involves   the use  of  mobile
+computers    strengthens the   learning  process  in  higher education    essentially. Particularly for  mass  meetings,
+wireless  networks  (together   with  an appropriate    didactic concept)  are a new    and   promising  opportunity  to
+actively  include the   students into   the process   of  learning.  Apart  from  promoting    students'  attention and
+motivation, a key point is that this scenario also supports the learners' acquisition of knowledge. Thus, the
+interactive lecture seems to be a successful effort to improve a dominant university instructional technology.
+    In the future, lectures will definitely not become obsolete in higher education in Germany or most other
+countries worldwide. Thus, an enrichment of this dominant teaching method around interactive and adaptive
+elements will be a persistent optimization. All faculties can use the technology to transform traditional lectures
+into interactive lectures as long as the learning content is to be mediated in lecture methods and there is a big
+audience (i.e. mass meetings). Because of the flexible application of the hard- and software, as well as the
+adaptive didactic concepts, no structural changes in the system of higher education are necessary. If interactive
+lectures are to be immediately integrated in different disciplines, the presence teaching can be strengthened by
+the   creation of an    individually   flexible  frame   model.  At   the  same   time,   the  problem   of   the "mass
+lecture" diminishes as to its negative didactic consequences. By means of an interactive lecture, it is generally
+possible to directly integrate new media into higher education in a didactically meaningful and technically
+economical fashion.
+    Nowadays, it is still necessary to equip the students with mobile devices. With respect to the hardware, one
+can assume that the distribution of mobile computers (PocketPCs) will increase rapidly in years to come. In the
+future, most of these devices will be able to communicate over radio, so the availability of this scenario will
+increase.
+    Group support will be a major issue for the next releases of the WIL/MA software and in subsequent field
+studies. The first steps in that direction have been taken, with an early prototype for collaboration in quizzes and
+an ongoing project that uses WIL/MA for participatory simulations.
+    Future research should also include the role of the teacher within this scenario. Even though the students
+obviously benefit from this new technology, and the teacher gets additional information about their learning
+processes and progress, the additional integration of interactive elements increase the cognitive load upon the
+lecturer. This may be especially a problem for teachers with no affinity for technology. Therefore, an important
+question  is how  to  deal with   the  rising demands:    What   is  the  appropriate  extent of information   from  the
+learners? Which kind of adaptive behaviour should occur in form and content, as well as with respect to the
+point in time of adaptivity (direct vs. indirect)?
+
+                                                           
+ACKNOWLEDGEMENTS
+Our thanks go to:
+x    Virtuelle Hochschule Oberrhein (VIROR, Virtual University of the Upper Rhine Valley), for financing the development of the first
+     prototype used in our earlier studies;
+x    Forschungszentrum L3S (Learning Lab Lower Saxony), for allowing us the acquisition of 25 PocketPC as well as many other hardware
+     needed to conduct our experiments;
+x    DFG (German Science Foundation), for financing all the major studies and the acquisition of further 50 PocketPCs; and
+x    Prof Dr Wolfgang Effelsberg (Department of Computer Science, University of Mannheim) and Prof Dr Manfred Hofer (Department of
+     Educational   Science  II (Pedagogical   Psychology,  University of  Mannheim),  who  were   willing to support the  development  of new
+     teaching media and to carry out interactive lectures.
+
+REFERENCES
+Abowd, G.D., Atkeson, C.G., Feinstein, A., Hmelo, C, Kooper, R., Long, S., Sawhney, N. & Tani, M. (2000): Teaching and Learning as
+         Multimedia  Authoring:    The Classroom   2000   Project. http://www.cc.gatech.edu/fce/c2000/pubs/mm96/index.html     (last  checked:
+         10/13/03)
+Abrahamson, A.L. (1999). Teaching with a Classroom Communication System - What it Involves and Why it Works. Mini-Course presented
+         at the VII Taller Internacional "Nuevas Tendencias en la Ensenanza de la Fisica", Benemerita Universidad Autonoma de Puebla,
+         Puebla, Mexico, May 27-30, 1999.
+Abrahamson, A.L. (1998). An Overview of Teaching and Learning Research with Classroom Communication Systems. Paper presented at the
+         International Conference of Teaching of Mathematics, Village of Pythagorion, Samos, Greece.
+Anderson, R.J., Vandegrift,    T., Wolfman,   S. & Yasuhara,  K.   (2003): Promoting  Interaction  in Large  Classes with Computer-Mediated
+         Feedback. In: Designing for Change in Networked Learning Environments, Proceedings of CSCL 2003, Bergen, pp. 119-123
+Bligh, D.A. (1971). What's the Use of Lecturing? Devon, England: Teaching Services Centre, University of Exeter.
+Bloom, B.S. (1953). Thought processes in lectures and discussions. Journal of General Education, 7, 160-169.
+Bundesministerium für Bildung und Forschung (2001). Untersuchung der Einsatzmöglichkeiten von Notebooks in Lehre und Ausbildung an
+         Hochschulen.    Konzeption  zur  Realisierung  zukünftiger   Notebook-Hochschulen    in  Deutschland.  http://www.tec.informatik.uni-
+         rostock.de/RA/Notebooks-HS (last checked: 03/22/2003)
+Cook, T.D. and Campbell, D.T. (1979). Quasi-Experimentation: Design and Analysis for Field Settings. Rand McNally, Chicago, Illinois.
+Cronbach, L., & Snow, R. (1977). Aptitudes and Instructional Methods: A Handbook for Research on Interactions. New York: Irvington
+         Publishers.
+Datta, A., & Ottmann, T. (2001). Towards a Virtual University. Journal of Universal Computer Science, 7, 870-885.
+Dawabi, P., Dietz, L., Fernández, A. & Wessner, M. (2003). ConcertStudeo: Using PDAs to support face-to-face learning. International
+         Conference on Computer Support for Collaborative Learning 2003, Bergen, Norway, 235-237
+Dufresne, R.J., Gerace, W. J., Leonard, W.J., Mestre, J.P. & Wenk, L. (1996). Classtalk: A Classroom Communication System for Active
+         Learning. Journal of Computing in Higher Education, 7, 3-47.
+Ernest, P. (1995). The one and the many. In L. Steffe & J. Gale (Eds.). Constructivism in education (pp. 459-486). Hillsdale, NJ: Erlbaum.
+Gage, N., & Berliner, D. (1996). Educational psychology (6th ed.). Boston, MA: Houghton, Mifflin.
+Geyer, W. & Effelsberg, W. (1998). The Digital lecture Board ­ A Teaching and Learning Tool for Remote Instruction in Higher Education.
+         Wold Conference on Educational Multimedia and Hypermedia (EdMedia) 1998, Frankfurt, Germany
+Glaser, R. (1976). Components of a psychology of instruction: Toward a science of design. Review of Educational Research, 46, 1-24.
+Fraunhofer-Gesellschaft    (2002).    New   Media    in    Education,  Lessons     Learned    from    a  German   Government     Programme.
+         http://www.gmd.de/PT-NMB/New_Media.pdf (last checked: 03/22/2003)
+Honebein,  P.  (1996).   Seven goals  for the design of constructivist learning environments.     In B.  Wilson (Ed.). Constructivist learning
+         environments (pp. 17-24). New Jersey: Educational Technology Publications.
+Mazur, E. (1997): Peer Instruction ­ A User's Manual. New Jersey: Prentice Hall.
+Jonassen, D. (1994). Thinking technology. Educational Technology, 34, 34-37.
+Peterson, P.L. (1979). Direct instruction reconsidered. In P.L. Peterson & H.J. Walberg (Eds.). Research on Teaching Concepts, Findings
+         and Implications (pp. 57-69). Berkeley, CA: McCutchan.
+Ramsden, P. (1992). Learning to Teach in Higher Education. London: Routledge.
+Rosenshine, B.V. (1979). Content, Time, and Direct Instruction. In P.L. Peterson & H.J. Walberg (Eds.). Research on Teaching Concepts,
+         Findings and Implications. Berkeley: McCutchan, 57-69.
+Sass, E. J. (1989). Motivation in the College Classroom: What Students Tell Us. Teaching of Psychology, 16, 86-88.
+Scheele, N., Mauve, M., Effelsberg, W., Wessels, A., Horz, H. & Fries, S. (2003). The interactive lecture - A New Teaching Paradigm based
+         on Ubiquitous Computing. Poster Proceeding of the CSCL 2003, pp. 135-137, Bergen, Norway, June 2003.
+Scheele, N., Seitz,  C., Effelsberg, W.,  & Wessels, A.   (2004).  Mobile  Devices in interactive lectures. World Conference  on Educational
+         Multimedia, Hypermedia and Telecommunications (EdMedia) 2004 (1), Lugano, Switzerland. 154-161
+Siegel, K., Siegel, L. C., Capretta, R., Jones, R. L., & Berkovitz, H. (1963). Students thoughts during class: A criterion for educational
+         research. Journal of Educational Psychology, 54, 45-51.
+Smith, B. (2001). Just give us the right answer. In H. Edwards, B. Smith, & G. Webb (Eds.). Lecturing. Case studies, experience and practice
+         (pp. 123-129). London: Kogan.
+Webking, R.H. (1998). Classtalk in Two Distinctly Different Settings. Extract from "Classtalk at University of Texas El Paso", CDROM
+         authored at the Dept. of Political Science, Univ. of Texas - El Paso, September '98.
+Wessels, A. Fries, S., Horz, H. & Hofer, M. (2003). Interactive lectures: using wireless networks to optimise lectures. Presentation at 10th
+         Conference of the European Association for Research on Learning and Instruction (EARLI). Padova (Italy), August 26th ­ 30th,
+         2003.
+Wessels, A., Fries, S., Horz, H., Scheele, N. & Effelsberg, W. (submitted). Interactive lectures: Effective Teaching and Learning in Mass
+         Meetings with Wireless Networks. Computers in Human Behaviour.
+Wilson, B., & Cole, P. (1991). A review of cognitive teaching models. Educational Technology Research and Development, 39, 47-64.
+Zupancic, B. & Horz, H. (2002). lecture Recording and its Use in a Traditional University Course. In D. Finkel (Ed.), Proceedings of the 7th
+         Annual Conference on Innovation and Technology in Computer Science, S. 24-28. ACM: Aarhus, Denmark.
+
+                                                                      
+

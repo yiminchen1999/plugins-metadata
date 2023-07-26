@@ -1,0 +1,252 @@
+     On the Progress of Developing Groupware to Support Notetaking
+
+                                                Dave Berque
+                                            dberque@depauw.edu
+              Computer Science Department, Depauw University, Greencastle, IN 46135 USA
+
+                                               LeAnn Gaerte
+                                            lagaerte@depauw.edu
+              Computer Science Department, Depauw University, Greencastle, IN 46135 USA
+
+                                                Tim Harrison
+                                              thhl@cec.wustl.edu
+              Computer Science Department,    Washington University, St. Louis, MO 63130 USA
+
+                                                  Matt Heitz
+                                            mheitz@cs.oberlin.edu
+                   Computer Science Department, Oberlin College, Oberlin, OH 44074 USA
+
+                                                  Ryan Ritz
+                                              rritz@depauw.edu
+              Computer Science Department, Depauw University, Greencastle, IN 46135 USA
+
+                                                Todd Witter
+                                             wittert@depauw.edu
+              Computer Science Department, Depauw University, Greencastle, IN 46135 USA
+
+                                                John Yoder
+                                            jyoder@depauw.edu
+              Computer Science Department, Depauw University, Greencastle, IN 46135 USA
+
+Background
+The Problem
+
+Teachers  traditionally write on  blackboards and similar devices while  delivering  their  lectures. Often the
+majority of   each student's energy is then devoted to  copying what  the instructor has   written into his/her
+notebook. Only occasionally does a student find time to listen to the lecture, think about the associated ideas,
+and appropriately annotate the copied notes.  The difficulties stemming from the need to copy  a large  amount
+of information arise in classes taught in many academic disciplines.  However, the problem is perhaps most
+pronounced in science and mathematics classes where a large amount of information, usually expressed using
+potentially confusing symbols and notation, is frequently presented very rapidly. A mathematics teacher who
+is very familiar with the notation of the discipline may very quickly write a formula like:
+
+on the blackboard, but students may require several minutes to copy it. Unfortunately, while the students are
+busy copying   the formula   they are often distracted from  thinking about the instructor's discussion  of its
+significance. A recent article in the Chronicle ofHigherEducation summariz.es the problem with the following
+
+                                                                                                            345
+comment made by a student at Cornell University: "In some classes, you're so busy trying to write down what
+the  professors  say that you miss  half of the information" [Collison  1992].   Statements like this are quite
+common and served as a primary motivation for our system design.
+
+Related Work
+The situation described in the previous subsection can be viewed as a group communications problem.       Simply
+stated, the teacher needs to efficiently and effectively communicate written information to each student in the
+group.  This information should be transmitted in   a way that does not impede the students'    ability to perform
+other  tasks which   are  essential to the learning process  Oistening, thinking, etc.)      Computer-Supported
+Cooperative Work (CSCW) is the branch of Computer Science which deals with developing technology to assist
+group communications. The term groupware·is often used to describe software systems related to CSCW. The
+reader who wants     background information on CSCW    or groupware is  referred to [Baecker    1993].
+
+Several groupware systems have been developed which place an electronic spin on standard blackboards and
+whiteboards.   The software component of such a system is commonly referred      to as whiteboarding software.
+For example the SoftBoara [Microfield 1995] is a whiteboard that is equipped with a laser which tracks pens
+as they write (with real ink) on the surface of the board.  Whiteboarding software is provided to display the
+information written on the SoftBoard simultaneously on a computer monitor.    Although the information cannot
+be interactively edited on the computer monitor, it can be printed, saved to a file, or imported into other
+documents and edited later.
+
+In some senses the LiveBoard, developed at Xerox PARC, is an interactive version of the SoftBoard.      In place
+of writing on a whiteboard, users write on a large electronic monitor which measures 46 x 32 inches.         This
+enables previously prepared material to be displayed on the screen and then edited interactively [Elrod et al.
+1992]. Software has also been developed which allows the Liveboard to be used for medical instruction.     Using
+this software  students  and teachers  can gather around the   Liveboard  and collaborate    on constructing and
+evaluating decision trees related to medical problems [Jain et al. 1994].
+
+Programs like GroupSketch,    GroupDraw [Greenberg    et al. 1994], and   Colah [Stefilc et al. 1994], provide a
+shared drawing surface for two or more users.   These systems  operate in a WYSIWIS (What You See Is What
+I See - pronounced Whizzy Whiz) mode.       Whenever a user writes or draws something on his/her monitor,    the
+result is immediately displaye4 on each of the other users' screens.· SlateMate [Hamilton 1993] provides a
+similar drawing surface with features designed especially for use in the classroom.     Although the system can
+be used in several ways, it is primarily intended to help a teacher provide rapid feedback to any student in the
+class. For example the teacher might pose a mathematics problem to the class.           Each student works   on a
+solution to the problem by writing with a special pen on their computer monitor.   By selecting different icons
+the  teacher can view  the progress  of any individual student in the class, and can    send that student written
+comments.    Thus the teacher can share a writing surface with any student in the class [Hamilton 1993].
+
+The DEBBIE System
+Overview
+The DePauw Electronic BlackBoard for Interactive Education (DEBBIE) is a groupware system designed by
+the authors to enhance  a teacher's ability to share written information with students. The system differs from
+other groupware in that it integrates a complete student-oriented notetaking system with a restricted form of a
+WYSIWIS shared writing surface.      Most shared writing groupware is designed for a homogeneous group; all
+members of the group are peers, and whatever is written by one person is displayed on every other person's
+monitor. The restricted form of WYSIWIS which DEBBIE uses was developed based on the observation that,
+from a note-taking point of view, many classroom groups are heterogeneous with the teacher being a special
+
+346
+member of the group.   The teacher may choose to transmit some information to the students in the class.     In
+this case the material written by the teacher should be seen by every student in the class.  However, as the
+students make written annotations on their individual copies of their notes, nothing should be transmitted back
+to the teacher (nor to other members of the class).   Thus the writing surface should be like a one-way mirror
+sharing information in only one direction.  We call this restricted form of a shared surface WYSIWISODO,
+(What You See Is What I See One Direction Only - pronounced Whizzy Whizz Odo).
+
+Classroom Coniiguration
+
+A DEBBIE-equipped classroom may contain one or more traditional writing surfaces (blackboards, whiteboards,
+overhead projectors, etc.)  In addition the room contains a SoftBoard as described earlier. The SoftBoard is
+attached to a teacher station which is a computer running the teacher version of DEBBIE.    This computer is
+also a node on a local area network. Each student in the class has a student station, a personal computer which
+is also attached to the network and which runs the student version of DEBBIE.
+
+The computers comprising the teacher and student stations may be any IBM compatible personal computers
+running Windows'" 3.1 or higher, although we have obtained best results when the computers are equipped with
+486 or pentium processors.    Since the computers must accept hand-written input, the user will find it most
+convenient if the computers are either standard computers augmented with a light pen, or specially designed
+pen computers which have an electronic pen in place of a mouse as an input device.
+
+The Teacher's View
+
+When the teacher speaks, or writes on standard writing surfaces (blackboard, overhead projector, etc.), the
+students can use DEBBIE to take notes in the usual way.    Although the students are writing with electronic
+pens, it is important to emphasize that they are interacting with the teacher in the traditional manner: the teacher
+delivers oral and written information, and the students selectively copy that information into their (electronic)
+notebooks.
+
+Only when the teacher chooses to write information on the SoftBoard does the interaction mode between teacher
+and students change significantly. Any information written on the SoftBoard can appear on a  student's screen
+automatically if the student so chooses. Thus the teacher is free to write information on the SoftBoard that s/he
+does not want the entire class to spend time copying. For example if a student in a poetry class asks a question
+about the structure of a Haiku, the teacher may want to show the class a specific Haiku in order to illustrate
+the answer to the question. While the students may want to have a copy of this Haiku in their notes, there is
+no benefit to be gained from having the students take the time to copy it. In fact the effort spent copying the
+Haiku will likely distract the students from listening to the teacher's explanation of its structure. Therefore,
+the teacher might choose to write the Haiku on the SoftBoard so that it appears immediately and automatically
+in the students' notebooks. As the teacher explains the poem's structure,  the students can annotate their notes
+appropriately.
+
+The Student's View
+
+When DEBBIE starts to run the screen appears as shown below [see Fig. 1].
+
+                                                                                                            347
+                                                          ·f3=1=11¥A4@®11'1dMi,i,
+                          file   Iools   .Eaper    Pisge Move   oftBoisrd    :,[iew  Animiste   Flag Y(ords
+
+                            Continuous    Page   1 of 1     x:169 y:45                         All Notes
+
+                                                Figure 1:     DEBBIE's Initial Display
+
+The next pair of figures show the screen on a student station after the instructor has written some information
+on the SoftBoard [see Fig. 2] and the same screen after the student has added some additional notes to those
+written by the teacher [see Fig. 3].
+
+                                                        ·J3=i=ii¥Vlfi®t®l!lffil1i1
+                       File  Tools    Paper   Pisge Move     SoftBoard   View    nimate      Flag Words
+
+         I            Continuous       Page 1 of 5 j    x:393 y:186     Modified           All Notes
+
+                                       Figure 2: DEBBIE Display with Imported Notes
+
+348
+                                                          ·J#=l=ll¥klfittt®'J:;gt3[,f,
+                         File  Tools    Pl!pcr   P,,gc Move   Soft8ol!rd  !{,cw   A,,iml!tc  Alig Words
+
+                         Continuous · ,  Pllge 1 of 5 I  x:404 y:313 I    Modified I        All Notes
+
+                                  Figure 3: Debbie Screen With Student Annotations
+
+As shown in the preceding figures DEBBIE displays several menu options at the top of the screen which can
+be selected using the pen.      Once selected,        these options display sub-menus which allow the following tasks to
+be performed:
+
+                · Savini notes to a disk file, and retrieving, deleting or renaming these notes at a later time.
+
+                · Changing the thickness and color of the pen (red, blue, black, and green are available), or
+      temporarily replacing the pen by an eraser.
+
+                · Changing the way the pages are lined (blank pages, horizontal lines, vertical lines, and
+      graph paper are available.)
+
+                · Moving         to     various     pages in the     notebook    (previous,    next,    first, last, or a page with a
+      specific number) and creating new pages.                 The student can view one page while the teacher is writing
+      on another.
+
+                · Specifying whether the screen should display only notes written by the teacher, only notes
+      written by the student, or both sets of notes simultaneously.
+
+                · Allowing students to take snap-shots of their notes as a complex diagram evolves in stages.
+      This permits students to store an animated set of notes.                       To take a very simple example, suppose a
+      teacher in a traditional classroom is showing a class how to draw a 3-dimensional cube.                             The teacher
+      would first draw a square on the blackboard which the students would copy into their notes. Next the
+      teacher would draw a second square shifted down and to the right, and overlapping with the first
+      square.  Again          the students would copy this into their notes.                 Finally the teacher would connect   the
+      corresponding comers of the two squares (and the students would do the same) thus completing the
+      cube.   The problem here is that although the students have a picture of the completed cube in their
+      notebooks,  they do not have a              record    of the process that was         used to construct the cube.   If the point
+      of the class was to teach the students how to draw a cube, then the students' notes do not capture the
+      spirit of the lecture.         Using DEBBIE, however, the students can store each step of the process as a
+      frame rather than saving only the final result.                    These steps can be played back at a later time either
+      continuously or by stepping forward and backward one frame at a time.
+
+                                                                                                                                  349
+                · Allowing one or more flag words to be stored on a specific page. For example the student
+       might wish to store the word "velocity" on all pages that contain material related to this concept. The
+       flag words are stored as ASCII text so that the student can search for pages containing specific flag
+       words at a later time. If a pen computer running the Windows for Pen Computing Operating System
+       is used as the student station, the flag words can be entered using the pen and the system will convert
+       them to ASCII text.    Otherwise the flag words must be entered at the keyboard.
+
+References
+[Baecker 1993] Baecker, R.M. (1993), Readings in Groupware and Computer-Supported Cooperative Work,
+San Mateo, CA: Morgan Kaufmann Publishers, Inc.
+
+[Berque 1993] Berque, D. (1993), Electronic blackboards: a vision of the future, Proceedings of the Tenth
+International Conference on Technology and Education, Boston, MA. 340-342.
+
+[Collison 1992] Collison, M. (1992), Sale of class notes: a new skirmish over an old idea, The Chronicle of
+Higher Education, April 8th, A35-A36.
+
+[Elrod et al. 1992] Elrod, S., Bruce, R., Gold, R., Goldberg, D., Halasz, F., Janssen, W., Lee, D., McCall,
+K., Pedersen, E., Pier, K., Tang, J., & Welch, B. (1992), Liveboard: a large interactive display supporting
+group meetings, presentations and remote collaboration, Proceedings of the 1992    ACM   Computer Human
+Interface (CHI) Conference, 599-607.
+
+[Greenberg et al. 1992] Greenberg, S., Roseman, M., & Webster, D. (1992), Issues and experiences designing
+and implementing two group drawing tools, Proceedings of the 25th Annual Hawaii International Conference
+on the System Sciences, Hawaii, 139-150.
+
+[Hamilton 1993] Hamilton, E. (1993), Remote sharing ofelectronic paper (SlateMate), Proceedings of the Tenth
+International Conference on Technology and Education, Boston, MA, 1068-1070.
+
+[Jain et al. 1994] Jain, N.L., Murphy, J.F., Hassan, S.W., Cunnius, E.L., Metcalfe, E.S., Schnase, J.L.,
+Schoening, P.A., Spooner, S.A., & Frisse, M. E. (1994), Interactive electronic whiteboards in the medical
+classroom. JAM/A 8-ymposium Supplement, SCAMC Proceedings, American Medical Informatics Association,
+Hanley & Belfus, Inc. Philadelphia, PA.
+
+[Microfield 1994] Microfield Graphics, Inc. (1994), About SoftBoard, Beaverton, OR.
+
+[Roberts 1984] Roberts, F. (1984), Applied Combinatorics, Englewood Cliffs, NJ: Prentice Hall.
+
+[Stefik 1993] Stefik, D., Bobrow, D.G., Foster, G., Lanning, S., & Tatar, D. (1993), WYSIWIS revisited:
+early experiences with multiuser interfaces, In R.M. Baecker (Ed.), Readings in Groupware and Computer
+Supported Cooperative Work, San Mateo, CA: Morgan Kaufmann Publishers, Inc. 585-595.
+
+Acknowlegements
+
+The work described in this paper was supported in part by the National Science Foundation under grant CDA-
+9322371 and by the DePauw University Faculty Development and Presidential Discretionary Funds.
+
+350
+

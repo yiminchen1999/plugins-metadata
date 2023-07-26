@@ -1,0 +1,411 @@
+                       Visualizations               in   Teaching         Chemistry
+
+                   Juan Moran,National Center for Supercomputing Applications (NCSA),
+                 University of Illinois at Urbana-Champaign,USA,jrnoran@ncsa.uiuc.edu
+
+     P. David Pearson,College of Education,Michigan State University,USA,ppearson@pilot.rnsu.edu
+
+       Lisa A. Bievenue,NCSA,University of Illinois at Urbana-Champaign,bievenue@ncsa.uiuc.edu
+
+   Carole S. Chang,Chemistry Department,University of Illinois at Urbana-Champaign,spaztic@uiuc.edu
+
+Steven D. Nelson,Chemistry Department,Univ. of Illinois at Urbana-Champaign ,sdnelson@students.uiuc.edu
+
+Spencer L. Pasero,Chemistry Department,Univ. of Illinois at Urbana-Champaign,s-pasero@students.uiuc.edu
+
+            Abstract:  Acquisition and   mastery  of chemistry   concepts depend    on  an   interpretative
+            framework that is microscopic and requires a three-dimensional dynamic representation.
+            The Visualizations  in Chemistry     project created   a  computational   environment   where
+            students can do simulations   of atomic  and molecular bonding     in order to develop a more
+            intuitive understanding   of  quantum    chemistry.      Students  used a  high  performance
+            computing  environment    to perform  calculations  and interactively  visualize the resulting
+            images. In this paper, we report on one detailed  implementation    where 7 conceptual   areas
+            were evaluated. The results showed improvements in students' visualizations of atoms and
+            molecules, but it was not clear  if the students' initial models were replaced.  Suggestions
+            for future implementation  include more attention    to   learning in the visual mode,  more
+            chemistry background preparation, and use of an improved interface.
+
+The Motivation
+This project,Visualizations in Teaching Chemistry (ChernViz),grew out of the quest to discover ways to render
+certain basic concepts of chemistry more vivid and visible to young learners.       Due to the microscopic nature of
+chemistry,many of its basic constructs and processes are "invisible" to students. The project's original principal
+investigator,Dr. Nora Sabelli,a professor of chemistry,pointed out the contrast between chemistry and physics
+and biology education (Sabelli,1995):
+
+      In physics and biology,mechanistic simulations have been used and studied extensively, whereas
+      in chemistry we cannot draw on students' previous intuition to aid in their understanding.        We all
+      learn over a  long time  the  intuitive   skills needed   to  count, measure, gauge      speed and    force,
+      understand motion,birth,death and growth,among other concepts.            These  concepts  (and associated
+      misconceptions) are macroscopic in nature and therefore observable; this is not true of many of the
+      basic concepts of modem chemistry as it is taught now, even at the introductory level.          When we
+      see chemical reactions (cooking,moving        cars,sun-burning,healing) we       do  not see what     we are
+      taught in chemistry and therefore,often enough we do not see 'chemistry' at all.
+
+Historically,chemistry educators have tried to render chemical structures and processes more visible through the
+use of vivid, albeit excessively simple, visual metaphors such as the solar system serving as a model of the
+structure of an atom. While marginally useful in early stages of learning, such metaphors eventually interfere
+with a rich understanding   of basic  chemical   concepts.     More    recent  pedagogical   work  has suggested    that
+computer-generated three-dimensional animations of certain basic processes,molecular bonding for example,are
+capable of providing students with   this type   of  richer visualization (e.g., Sabelli, 1991).     It has also been
+
+                                                                                                                     227
+ suggested that such visualizations help students obtain a better grasp of the abstract aspects of chemistry, such
+ as calculating algorithmically-based solutions to problems.
+
+ Building on these more recent findings, the investigators of the project proposed a pedagogical approach that
+ starts with a computational experiment     on an abstract concept, and then proceeds to present the model (the
+ visualization) to interpret the experiment. The computational experiment approach allows, in contrast to theory
+ and experimentation, students to explore how the "laws" of chemistry behave.           In a computational experiment
+ students  can do  simulations which   visually  and dynamically      replicate the  behavior  of  a  complex    chemical
+ process. An   example, prevalent in  this project, is   the numerical   solution    to the  Schrodinger  equation.    In a
+ computational experiment, students learn by doing because they can manipulate their learning environment,
+ testing different computations against models in an iterative fashion.
+
+  In order to explore this pedagogy, the investigators proposed to develop tools that would allow both teachers
+ and students  to  do the simulations  and    visualizations easily   and routinely   so  that the   students  develop    an
+ intuitive understanding of the chemistry "laws" behind the models.
+
+ Besides  computation  and visualization,  a third pivotal   piece in this approach is    access  to  a high-performance
+ computing environment (e.g., a Cray supercomputer) to conduct the simulations and create the images in time
+ frames (a few seconds of computing time) that make the manipulations feasible and at least theoretically useful
+ from a pedagogical perspective.
+
+ The  Substance       of  ChemViz:         Teaching      &   Learning       Abstract         Chemical     Concepts
+ The ChemViz    (an abbreviation of the   term  "Visualization in   Chemistry")      project was  and continues   to  be  a
+ curriculum materials development project wherein the computational approach to chemistry is used. The unique
+ aspect of this approach   is the use  of  a  high  performance     computing      environment    to obtain   images   and
+ animations of the atoms and molecules being studied.
+
+ The project   members  believed  the  computational     approach  would   have    a revolutionary   impact   on the  high
+ school  chemistry  curriculum.    This    approach would    allow    high  school      chemistry  students   to  use  the
+ supercomputer as a laboratory for designing experiments which would answer their questions concerning such
+ abstract concepts as electrons, atoms, molecules, and chemical bonding.        By generating images of the electron
+ densities for various combinations    of atoms,   students would     be   able to   understand   in  concrete   terms the
+ differences between equal and unequal sharing of electrons, bonding and anti-bonding orbitals, strong and weak
+ bonds, and the energy differences ofatoms at appropriate and inappropriate bond distances and angles.           Virtually
+ any concept involving chemical bonding could be explored using the computational tools.
+
+ To give the reader some idea of the chemistry concepts involved in ChemViz, sections describing the popular
+ models for teaching molecular bonding are presented here and are followed by a section more specifically related
+ to ChemViz and its approach to bonding.
+
+ Models    of  the atom
+
+ Currently, chemical bonding is   taught   in a  variety of ways   at the  high    school level.   In   most  high school
+ classrooms, the Bohr model of the atom is used to introduce students to the concept of energy levels.                This
+ model is the picture that most non-scientists have of the atom:       a hard ball as the nucleus with tiny electrons
+ whizzing around it in defined orbits. This   is an incorrect model,   but  it  is the first thing explained to   students
+ because it is easy to understand and introduces the concept of quantization of energy. The Bohr model, however,
+ cannot be used to explain bonding.
+
+ At some later point, the Bohr model is replaced by the electron cloud, or Schri:idinger wave-mechanical, model in
+ which electrons are no longer considered as being located at a given distance from the nucleus, but are instead
+ described as having a finite probability of occupying certain regions around the nucleus.         High school students
+
+228
+are more successful at visualizing the Bohr model of the atom because it is more concrete.        The Schrodinger
+wave-mechanical   model   is more   difficult for  high school  students   to visualize.  It  often  requires  some
+understanding of probability, 3D geometry, wave-particle duality, and quantum mechanics.
+
+Molecular     Bonding   Models
+
+The models of chemical bonding are all based on the Schrodinger wave-mechanical model of the atom.             Two
+common terms used in these models are valence electrons (or the electrons which occupy the outermost principle
+energy level) and core electrons (or the electrons in an atom which are not in the outermost principle energy
+level).
+
+The simplest of the bonding models is localized electron/ionic bonding model.    It is  based on two concepts:    the
+atoms in a molecule are at the lowest energy when the atom's outermost occupied principal energy level has
+achieved a noble gas configuration. Thus, in forming molecules atoms interact with each other to share, gain or
+lose enough electrons to achieve this.  Second, the atom tends to gain, lose, or share electrons according to a
+property of   elements called electronegativity,  which is  a relative measure  of  the  atom's  ability   to attract
+electrons shared in a bond to itself. This model is very good for predicting shapes of molecules, and for getting a
+general idea of the bonding.  However, it cannot predict bond distances or energies, and cannot explain        some
+phenomena such as paramagnetism.._
+
+Molecular orbital theory addresses a problem with the localized electron model:      it  allows the electrons  to be
+delocalized throughout the molecule (thus avoiding the problems of resonance). In molecular orbital theory, two
+atomic orbitals overlap and split into two separate orbitals, one bonding and one anti-bonding.   Electrons which
+are placed in the bonding orbital  contribute to  holding the molecule together,  while  those placed   in the anti
+bonding orbital to destabilizing the molecule. This theory avoids the problems of resonance and can be used to
+explain many phenomena, like paramagnetism.        However, it is unable to explain shapes,  and bond   lengths.     It
+is also difficult to apply to a molecule with three or more atoms.
+
+ChemViz uses the self-consistent field theory to calculate the orbitals and energies of molecules.       Given    the
+positions of atoms and the mathematical representations of the atoms (called basis sets), it then calculates the
+possible interactions of the electrons. Using this set of calculations, it recalculates, continuing until it gets two
+sets of calculations which agree with each other ("self-consistent").  From the calculations, then, mathematical
+descriptions of the molecule's orbitals and energy can be produced. This model is the most sophisticated of all
+those discussed here.  Though it gives very accurate results, it has two major drawbacks.        First, to use  this
+model, one needs a supercomputer to do the calculations. Second, the computer can only do calculations for the
+positions you give it; there is no direct way of getting the best configuration for a molecule from only the types
+of atoms in the molecule.
+
+Description    of the  Interface,   Chemistry      Software   and   Related    Programs
+
+For a student to obtain images to model the bonding process, a set of programs are used. First, the student uses
+the interface program, Boogie, to set the desired parameters and create the input file which will be sent to the
+Cray supercomputer.   Boogie   presents the   user with a  periodic table, from  which   the atoms   of interest  are
+selected. The user then defines such parameters as the coordinate of the atoms, which will define the distance
+between the atoms in angstroms and the bond angles, and     the charge on  the group of  atoms.  For example,     if a
+student wanted to model the   water molecule,    he would determine the  positions  for  the oxygen  and   hydrogen
+atoms, then use Boogie to create the input file and send it to the Cray.
+
+The Cray supercomputer uses DISCO, a research-level chemistry program, to do the calculations based on the
+input file from Boogie. The resulting output files are automatically returned to the student's personal computer.
+In order to view  the output files as images,  the  student uses the   imaging  program   NCSA    Collage,    which
+creates three-dimensional graphical images of the probability densities. The student can also analyze the output
+
+                                                                                                                  229
+ file containing     the  calculated energies  of the molecule   or molecules  modeled   using    the program   Graphical
+ Analysis, by plotting a graph of energy vs. atom-atom distance.
+
+ DISCO     is a  set of FORTRAN       programs that   determines the  molecular  orbitals, electron   density, dipole    and
+ quadrupole   electric    moments,   and equilibrium  structures of  molecules   (or atoms),  ions    or  radicals.  These
+ properties are determined by        the Direct SCf Optimization (thus the name DISCO) method              of solving    the
+ Hartree-Fock    (quantum     mechanical) equations.  DISCO    also  contains a  program     that estimates   the   electron
+ correlation energy from second order perturbation theory.
+
+ Because the user is able to specify exactly how he wants the atoms placed and can create series of images to
+ examine how the orientation of the atoms affects the bonding of the molecule, he cannot only view the electron
+ densities of a molecule, but can also observe the changes in the electron densities of a group of atoms as they
+ are moved, obtain energy values for each configuration in order to compare the relative stabilities, determine the
+ equilibrium structure of the molecules by finding the conformation with the lowest energy, and determine the
+ dipole and quadrupole electric moment.
+
+ Major     Study       Questions
+ Two major questions guided the evaluation, with a third embedded question.
+
+        1. How does learning       change as a function of this new approach to teaching atomic and molecular
+            bonding?
+        2. How does teaching         change as result of using ChemViz materials in the classroom?
+
+ Embedded within each of these two overarching questions is a third pervasive question:
+
+       3.   Should high peiformance computing         be used in the  high  school  classroom for  improving    the
+            teaching of chemistry?
+
+ Such  an  advanced      computational   approach  requires substantial  support in  the technical    and  communication
+ aspects, especially for the fieldtesters. What is the value added to students' learning and what are the benefits and
+ costs to teachers in this effort to integrate advanced technology and chemistry education?
+
+ A    ChemViz        Implementation
+ This  is just   one <;>f the case studies of the ChemViz   project.  This case  study is  selected   as an   exemplar   and
+ because it   is the more     detailed study. Each case study varied and  the common     findings  among    them    will be
+ presented briefly at the end. What we want to do here is to give an idea of a specific implementation.
+ David Bergandine teaches chemistry at the University High School in Urbana.           In  May,   1993,    an experimental
+ study was    designed    to  observe any changes   in learning  that   would be   obtained  by   emphasizing     scientific
+ visualization without requiring students to use the computer.       Available for this study were three classrooms of
+ first year (sophomore) chemistry students, for a total of 47 students. Over the course of three weeks a series of
+ lessons and activities were performed using the images and animations to teach atomic and molecular bonding.
+ For  assessment purposes,      the students were given  a pre-test  before beginning    the unit  and   a post-test at  its
+ conclusion.     For comparison purposes, the two tests shared seven common conceptual areas (denoted by a               *).
+ The concepts tested were: Periodic table use, Understanding of the atom, *Atom visualization (through drawing),
+ *Lewis  structure    drawing   (for  atoms),  *Understanding  of   the thermodynamics    of bonding,    *Lewis     structure
+ drawing (for molecules), *Molecule visualization (through drawing), *Understanding of "He2", Understanding of
+ a larger diatomic molecule (N2, 02, or F2), and *Understanding of a non-diatomic molecule (HF).
+
+230
+Res ults
+
+The pre- and post-test analysis of the 7 common conceptual areas are summarized in Table 1 below.             Each of
+the conceptual areas is then discussed in detail.
+
+     Conceptual       Area                                                       Pre-test         Post-test
+
+     Atom Visualization (see note 1)                                             5%               5%
+
+     Lewis structure drawing (for atoms) (see note 2)                            87%              49%
+
+     Thermodynamics of bonding                                                   33%              44%
+
+     Lewis Structure Drawing (for molecules)                                     53%              68%
+
+     Molecule Visualization (see note 1)                                         0%               18%
+
+     Understanding of "He2" (see note 3)                                         0% (38%)         51%
+
+     Understanding of a non-diatomic molecule (HF)                               4%               24%
+
+     I. Defined as drawing an electron "cloud"
+     2. The numbers may be misleading, as there was only    hydrogen   on the pre-test, and there were also helium
+        and fluorine on the post-test.
+     3. None of the students could produce the non-visualization answer on the pre-test, as they were not shown
+        the pictures. The pre-test number in   parentheses  represents the percentage   of students who  gave the
+        traditional answer.
+
+Table 1: Percentages of Students who Demonstrated Proficiency in the Areas Tested on the Pre- and Post-tests
+
+Atom     visualization
+
+The results of the analysis of this section were overwhelmingly negative.         86% of the students drew atoms as
+nuclei with electrons in circular orbits around them.      This is to  be  expected,  especially if the  students  have
+discussed the Bohr model of the atom.     The discouraging fact is that seven of every   eight of those  students drew
+atoms in exactly the same way after using ChemViz.          Only one of the thirty-eight students who began the
+program with a drawing a circular electron orbit abandoned that view completely, and four of the students drew
+both a picture of a circular orbit and a picture of an electron cloud.  Three students began the program drawing
+electron clouds (one of  them also included a drawing  of   a   circular orbit), but only  one of   them  retained that
+picture. Another drew only a circular orbit on the final exam, and the third drew very unusual dumbbell-shaped
+orbits.
+
+Lewis   structure     drawing  (for    atoms)
+
+This quality was more difficult to analyze, due to the fact that the only element for which the students were to
+draw a Lewis structure on the first exam was hydrogen.      Most of the students (87%) did do well at this,   but it is
+a very simple task.    More enlightening is how the students who drew hydrogen correctly responded to the
+symbols question on the post-test.     Of these thirty-nine students,  slightly  more than  half of those students   did
+well in  drawing  all  three of the    requested elements   on  the    post-test  (hydrogen,   helium,  and fluorine).
+Additionally, one in six did well on hydrogen and helium, but made mistakes on fluorine (normally putting all
+
+                                                                                                                     231
+ nine of its electrons in the valence shell). The remaining students     (slightly less than   one  in every three), drew
+ either poor Lewis structures or none at all, even though the question was worded in a similar fashion.
+
+ Understanding     of    the thermodynamics       of  bonding
+
+ This was a very difficult area of knowledge to assess accurately for two reasons.           First, the  range of    minor
+ misconceptions   that the  students had was wide, and very few    misconceptions     were held by     more  than two  or
+ three students. Clouding the issue further, it was often difficult   to tell if a student who  answered the    questions
+ poorly did so because they were confused about the topic, or because even though they understood what was
+ supposed to be going on,    they had trouble putting their ideas into words.        For those reasons, then, responses
+ were classed based on   evidence of  significant improvement across      the  exams  in   the student's  concept of   the
+ thermodynamics of bonding.      Twenty-nine of the     forty-three students (67%) had significant        flaws   in their
+ conceptions when they took the pre-test.      Nine of the twenty-nine (31 %) gave answers on          the post-test  that
+ showed a good understanding of the thermodynamics of bonding.         The rest of the students showed varied stages
+ of increased comprehension, from minor to none, and, unfortunately, there were even four students who seemed
+ to regress.
+
+ Lewis  structure     drawing    (for  molecules)
+
+ Lewis structure  drawing   was an area in which  the students appeared     to   improve  significantly.  The post-test
+ showed a 28% increase overall in students who were able to draw good structures, from just over half of the total
+ students on the pre-test to better than two-thirds on the post-test.       Additionally, students  appeared to   rebound
+ from common mistakes with a fair degree of success.     The most common mistake (one in every five students)
+ on the pre-test was miscounting the total number of electrons in the molecule.         This did not seem to be a real
+ problem, as most of the students were able to correct it on the post-test.        The second most common mistake
+ (roughly one in six students) was a failure to surround each atom in the molecule exactly eight electrons, and
+ five of the eight students were able to correct it on the post-test.  There is one negative aspect, however.        Less
+ than three quarters of  the students who  were able to  draw good structures on      the  pre-test did the same  on   the
+ post-test.  It is not clear whether this has anything to do with ChemViz.       It is curious nonetheless that 28% of
+ students who did well on the first test did not on the second, and 64% of those who did not do well on the first
+ test did on the second.
+
+ Molecule      visualization
+
+ The results of  this section were very comparable    to the results     of the  atom   visualization  section, although
+ students were more successful here, in that just over half of the students maintained their original image (as
+ opposed to seven in eight in atom visualization). The most popular misconception was that the hydrogen atom
+ looked like two protons with electrons in planetary orbits which happen to touch each other.          Nineteen of forty
+ nine students drew this type of picture on both the pre and post-tests; however, there was a total of twenty-eight
+ such drawings on the pre-test, and twenty-four on the post-test.        This is an improvement, but certainly not      a
+ marked one.    The only other significant misconception was very similar, but instead of two touching orbits
+ around separate nuclei, both of the electrons were in a planetary-type orbit around both of the nuclei.          Almost
+ one-fifth  of the students  answered this way   on the  pre-test, but   only    one in eight  did  so on   the post-test.
+ Finally, the fact that may be most noteworthy is that none of the students answered the "right" way, that is,
+ drawing an electron cloud, on the first test, but that almost one in five did so on the second test.
+
+ Understanding     of  "He2"
+
+ This was an interesting area.  Only 9% of the answers on the pre-test fell outside       of three  major categories, and
+ only 11% on the post-test outside of two.      On the pre-test, the popular responses were that He2 doesn't form
+
+232
+because "the shells are full," meaning that the atomic orbitals are unable to hold more electrons, there is a law
+(which was never explained or named) which prevents it, and no idea.    On    the post-test, many   students  did very
+well at interpreting the images that they were shown.    Unfortunately, many students also failed to see   the image
+of the cr orbital for what it is, and instead said that it showed that the molecule did not bond. An interesting
+observation about the tests was made:    When the students were discussing the roles that orbitals play in        the
+formation  of a molecule,    they tended to use  the  word  bonding   instead of  combining    (or  a  similar word),
+indicating that they did not recognize that the original s orbitals lose their individual identities when a molecule
+is formed.
+
+Understanding    of   a  non-diatomic      molecule   (HF)
+
+The results of this  section seem  to  show    primarily that, given a choice,   students  far prefer  to draw Lewis
+structures instead of other types of pictures. However, since that is a rather subjective judgment, data about    the
+students' conceptions is based solely on what they have drawn.       From that, it seems that there are some good
+things going on here. One quarter   of the students  ended the  unit correctly representing HF   as  a polar covalent
+molecule.   This is a 550% increase from the beginning of the unit.      There was also no regression from the
+"correct" answer, which is encouraging.  The    only significant misconception    (three out of four  on  the pre-test,
+over half on the post-test) was that HF is a nonpolar covalent molecule, and this is not too far from the truth.
+Some students (one in twenty on the pre-test, one in ten on the post-test) went to the other extreme of the
+bonding continuum and represented it as ionic.
+
+Conclusions
+
+Based solely on this data, there appeared to have been improvement in the students' knowledge of chemistry, but
+the most significant improvement came in areas which were not the focus of ChemViz. Of those areas which
+appear to be "targeted", visualization of atoms and molecules, there was very little improvement.      This is
+certainly not to say that ChemViz is not useful.  The students did improve their understandings of the
+thermodynamics of bonding, Lewis structure drawing, and the concept of polar covalency.
+
+ChemViz was likely very helpful in these areas.   It includes a feature that allows the energy of a system to be
+determined, and the energies of a time series (such as two atoms moving closer together) can be animated.       This
+feature was surely useful in demonstrating the thermodynamic phenomena that occur as atoms approach.
+Through images, ChemViz can also demonstrate the three types of bonding in a molecule (nonpolar covalent,
+polar covalent, and ionic).  The students in this class seemed to pick up well on distinctions between the three.
+In summary, ChemViz would be a useful classroom supplement for covering these topics; most students
+showed improvements in their understanding of these concepts.     ChemViz was also very helpful to a few
+students in changing the way in which they think about atoms and molecules, but the number of students
+affected in this way was minimal.
+
+Overall Results from the ChemViz Project
+The full ChemViz evaluation report reflects a complex evaluation with many stages and multiple data sources.
+In an effort to present the overall result we· will summarize the findings and insights of the various "probes"
+taken in a variety of implementation settings across the three years of the project. The overall analysis was done
+by contrasting a "perfect world" scenario of a perfect technological environment, a well-developed curriculum, a
+revolutionary learning environment, and a collaborative teaching environment to an "imperfect world" with all
+the fits and  starts and glitches  that  come   into  play when   real people,    fallible machines,   and  imperfect
+technologies are involved.
+
+                                                                                                                 233
+ Impact   on  learning
+
+ There is weak   to modest    evidence for the positive   impact of  ChemViz   on   learning. There  were  no broad
+ overwhelming effects, such as all of the students in a class reaching an epiphany about the nature of chemical
+ bonding  by  developing a clearer understanding of the   process or shifting to a  more  complex   model.  Instead,
+ there were individual cases of insight surrounded by other cases of misunderstanding or confusion.        For some
+ students, probably those with sufficient background knowledge to benefit from this approach, this environment
+ provided just the spark they need to move to the next level of sophistication. For others, it appears to be more
+ of the same. It is even less clear that the ChemViz environment     promoted    a research ethic and disposition; in
+ fact the data would suggest that the teacher, not the program, was the key variable in promoting student inquiry.
+
+ Impact   on  teaching
+
+ The teachers truly went out of their way to accommodate this new technology and the learning environment
+ accompanying it.   They did give up   their positions of privilege as the purveyors to   adopt the more facilitative
+ role that they must play in a discovery oriented environment.   In the final analysis, they were overwhelmed by
+ the technological barriers and hampered by the lack of instructional materials available to them.     Connectivity
+ problems were, in most cases and especially in the early phases, virtually insurmountable.
+
+ The   role  of high   performance       computing     in school  curricula
+
+ While this question is at the core of this project, it is impossible to answer with the data at hand.    Significant
+ time, energy, and resources were allocated to this project, and a generous description of the return was that the
+ benefits were modest for the students and somewhat more substantial for the teachers. Nonetheless, if the same
+ resources had been devoted elsewhere, then the participants would have been denied the learning opportunities
+ that they gained by working in a highly experimental environment.      Viewed from this perspective, the benefits
+ of ChemViz will    be not only in  the  specific curriculum developed as a   part of the project, but in the future
+ generations of interactive learning environments that depend heavily upon high speed communication and even
+ higher speed data analysis techniques.  In short, the full impact of ChemViz may not be known for some time.
+
+After Effects of ChemViz
+ Since the time of this study we have witnessed major changes in school networking and teaching methods.
+ Clearly the technological environment has improved and this is allowing teachers the opportunity to examine
+ their teaching and modify their curriculum to integrate uses of technology such as ChemViz.        Perhaps now we
+ will see the major benefits originally predicted for ChemViz; perhaps the glimpses of success pointed to in this
+ evaluation will be realized as breakthroughs in the teaching of chemistry; perhaps ChemViz will be recognized
+ as a stepping stone to significant changes in the way we think about teaching and learning with technology.
+
+ References
+ [Sabelli 1995] Sabelli, teaching of science. In DN..THho.,m&asL(iEvdsh.)i,tsS,ciLenSt.if(i1c9V9i5s)u.aliSzahtaiorninzgn multiple complementary Mathematics and Science representations in the Teaching, Association
+ for the Advancement of Computing in Education.
+
+ Acknowledgments
+ This research was supported by National Science Foundation grants in Research in Learning and Teaching (NSF#
+ MDR 91-54132) and in educational research (NSF# RED-9255347). The authors thank Dr. Polly Baker, Dr.
+ Lizanne Destefano, Dr. Robert Panoff, Dr. Kenneth Suslick and Dr. Steven Zumdahl for advice given throughout
+ this project. Special thanks to Mr. David Bergandine for his contributions to the ChemViz project.
+
+234
+

@@ -1,0 +1,456 @@
+A synchronous collaborative editing system for learning
+to write
+Yukiko Tanikawa, Hideyuki Suzuki, and Hiroshi Kato
+
+C&C Systems Market Development Division, NEC Corporation
+
+      Abstract: A synchronous editing system for creating a wall newspaper
+      collaboratively by using local area networks has been developed and
+      tested. This educational system is intended to foster writing skills through
+      a collaborative learning process that stimulates intensive interaction
+      among learners who edit the same document. It is designed to encourage
+      the writer's awareness of readers and intensive interaction among learners.
+      It has four characteristics: (1) learners are informed when someone else is
+      following their writing process on their screen; (2) learners can instantly
+      see what other learners are writing and revising; (3) the whole newspaper
+      is always displayed; and (4) learners can see which parts of the newspaper
+      other learners are writing and refer to their editing. The authors conducted
+      experiments with the editing system in an elementary school. And the
+      results indicate that (1) students interacted and collaborated well in the
+      writing process; (2) they revised articles repeatedly through interacting
+      with one another; and (3) the system supported the collaborative writing
+      process.
+
+      Keywords: collaborative writing, document sharing, network, interaction,
+      revision
+
+Introduction
+
+We have developed a synchronous editing system for creating a wall newspaper
+collaboratively by using local area networks. The educational system is intended to foster
+writing skills through a collaborative writing process that stimulates intensive interaction
+among learners who edit the same document.
+
+Learning to write is important for the following two reasons: (1) writing is an essential
+skill required in daily life; and (2) learning to write can be a method that helps learners
+develop skills required in our information-oriented society, such as independently
+searching for information, evaluating it, creating new ideas, and presenting them to
+someone.
+
+The following sections describe the reasons for focusing on the collaborative creation of
+a wall newspaper as an activity for learning to write and the design of the editing system
+we developed. It is also shown how learners interact in experiments using this system in
+an elementary school.
+Creating a wall newspaper collaboratively
+
+Our study of appropriate activities for learning to write focused on two of the
+characteristics discussed in recent research on writing and the composing process. One is
+that writing is an interactive medium for coherent communication between writers and
+readers (Nystrand, 1986). During the composing process, writers are continuously
+negotiating and balancing their own purpose and intentions with the expectations and
+needs of their intended readers, so that they can share knowledge with the readers. Reader
+expectations are therefore an essential factor in the composing process. The other is that
+the composing process is potentially recursive (Flower, et al., 1977). Writers generate
+ideas, write and revise in the composing process. This is not simple sequence. Writers are
+often prompted to generate new ideas by writing, and they revise their original ideas and
+texts according to these new ideas.
+
+Taking these characteristics into consideration, activities for learning to write have the
+following requirements. A learners' goal of activities should not be to be judged by
+teachers - but to communicate with readers about what they want to say or accomplish -
+since one of writing's main features is that it is a medium of communication. Moreover,
+activities should lead learners to revise their ideas and texts repeatedly since writing is a
+recursive process.
+
+Creating a wall newspaper collaboratively is an activity that meets the above demands.
+First, learners involved in the creating process are likely to write about information or
+ideas addressing and concerning particular readers, because they can clearly image the
+readers according to the place where the wall newspaper will be located. Second, learners
+who edit the same document, are expected to evaluate each other's writings (not be
+judged by teachers) and to intensively interact with others through exchanging views and
+impressions, questioning, explaining, and advising -- because they are readers as well as
+collaborators. This evaluation and interaction causes them to be aware of readers, to
+advance their own understanding (Scardamalia, et al., 1989), and to revise their writings
+and, thus, leads them to a collaborative learning process to write (Nystrand, 1986;
+Nystrand, et al., 1989).
+
+A Synchronous Collaborative Editing System
+
+Requirements of the design and functions to be designed
+
+As the previous section highlighted, the important factors in learning to write through
+creating a wall newspaper collaboratively are awareness of the reader and intensive
+interaction among learners. The editing system to support this activity should be designed
+according to these factors as well as provide various learners with a place to edit the same
+document simultaneously. Thus, there are two main design requirements:
+
+Requirement 1: Offering learners opportunities to be aware of readers, especially those
+involved in the writing process.
+Requirement 2: Opening each learner's writing and revising process to all learners who
+are collaborators in order to increase awareness and foster interaction.
+
+In order to meet these requirements, the following functions are designed into the system:
+
+Function 1: Inform learners that someone else is following their editing process on
+his/her (networked) computer screen. This helps them to be aware of readers involved in
+the writing process and thus satisfies Requirements 1. Moreover this causes them to
+interact with one another.
+
+Function 2: Show learners instantly what others are writing and revising. This meets
+Requirement 2. This helps them share the editing process of every article and thus causes
+them interaction.
+
+Function 3: Display the whole image of the newspaper always. This satisfies
+Requirement 2 and helps learners understand the editing process of the whole newspaper
+as well as individual articles. This fosters learners' interaction.
+
+Function 4: Show learners which part of the newspaper each learner is editing or reading
+and allow them to refer and follow his/her editing. This satisfies Requirement 2. This
+makes learners aware of other learners as collaborators and attracts their interests in other
+learners editing process and thus causes them to interact with one another.
+
+Our critical concern in the design of the system is to provide awareness to other learners.
+There have been studies that also pointed out the importance of awareness. Fisheye views
+(Greenberg, et al., 1996; Gutwin, et al., 1997) are well-known as awareness tools in
+collaborative editing. They provide both global overview and local detail within a single
+window by distorting a two-dimensional space. However, they are not appropriate for
+editing printed matter such as a wall newspaper, because spatial layouts indicating the
+relationship among objects are difficult to maintain in fisheye space. Therefore we
+propose an another solution in our editing system.
+
+Configuration
+
+The editing system is based on the distributed multimedia framework (Tabuchi, et al.,
+1998) so that it allows learners to edit the same document simultaneously.
+
+The system consists of a server that stores shared documents and editing terminals on a
+TCP/IP network. The server contains a transmitting manager and a document manager.
+Figure 1 shows the system configuration.
+
+Terminals open a shared document and temporarily store it on their own memory. When
+terminal A changes the document, this information (in Fig. 1, "Move a circle right
+horizontally.") is sent to every terminal and the document manager via the transmitting
+manager. According to this information, each terminal changes the document in its
+memory and the document manager changes the shared document on the server.
+                                             Fig. 1. System configuration.
+
+Functions and interface
+
+The process of creating a wall newspaper using this system is divided into four phases:
+Creating a shared document, which is an electronic sheet; laying out articles on it; editing
+articles; and printing out the document as a sheet and completing the wall newspaper.
+Each phase is described as follows:
+
+Creating a shared electronic sheet
+
+Teachers prepare a shared sheet (with optional sheet size) and register the group members
+who will edit the sheet.
+
+Laying out articles on the electronic sheet
+
+Group members make frames for articles and lay out them on the sheet as shown in Fig.
+2. Then they register the editors who will edit each article. The names of the editors of
+each article are listed on the sheet, so that balance of work assignments can be easily
+seen. The layout of articles can be changed any time after editing, and a message that
+informs other writers of the layout change is displayed on each member's screen with a
+sound. This will attract member's attention and cause them to participate in this editing
+activity.
+                     Fig. 2. A window for laying out articles on a shared sheet.
+
+Editing articles
+
+Each member of the group (editor) edits articles to which he/she is assigned by
+himself/herself or collaboratively, as shown in the window in Fig. 3. What he/she writes
+and revises is instantly displayed on both the editing area and the whole newspaper view,
+which is always displayed on that window [Functions 2 and 3]. And the particular part of
+the newspaper that each member is editing, called SCOPE, is always displayed on the
+whole newspaper view [Function 4].
+                     Fig. 3. A window for editing articles.
+
+Group members cannot edit articles of other members but they can read them. They can
+distinguish such articles from their own articles by their color on the whole newspaper
+view. If they want to edit other members' articles, they send a message to its editor
+asking for permission for collaborative editing. They do this by pushing the button for
+request. These functions prevent articles from being rewritten without the permission of
+their editors. Members also have permission to make their own texts and drawings
+invisible. Therefore they can decide whether they open their editing process to other
+members depending on their editing stage.
+
+In the editing process, it is important to refer to articles edited by others and to see how
+others edit them. A group member can read any part of the newspaper by moving their
+SCOPE. They can also follow someone's editing by clicking on that member's SCOPE
+[Function 4]. When they do this, they see a member's name on their screen (Fig. 4).
+Simultaneously a member who is being followed and observed sees the follower's name
+on their screen [Function 1].
+            Fig. 4. Observing how another group member edits an article.
+
+Printing out the electric sheet and completing a wall newspaper
+
+The whole electric sheet is divided into A4-size sheets and each sheet is printed out.
+Group members then put the printed papers together by hand and complete the wall
+newspaper.
+
+Interaction among learners during experiments
+
+Observation in classes for creating a wall newspaper collaboratively
+
+To see if our system supports a collaborative writing process, we observed a class of
+students using our system. And we focused on: (1) if the system fosters learners'
+awareness of readers; (2) if the system fosters interaction among learners; and (3) if this
+intensive interaction fosters learners to revise their writings.
+
+The classes for creating a wall newspaper collaboratively were conducted eight times
+between July and October in 1998 in an elementary school. Nineteen students, who were
+from the 4th to 6th grades and who belonged to the school's computer club, attended the
+class. The theme of the wall newspaper was the school summer camp held every summer
+vacation. The class activities included (1) learning rules for writing articles, such as
+5W1H, and ways to collect materials, (2) making a blueprint for the wall newspaper, (3)
+collecting materials, (4) choosing materials, (5) editing articles by following instructions
+about how to use the system, (6) working out a revision plan for each article and also the
+whole newspaper, and (7) revising the article. Activity (3) was done at summer camp or
+at recess. Classes for activities (5) and (7) were held five times using the system. Students
+were informed that the completed wall newspaper would be put up on the school bulletin
+board.
+
+Students were divided into three groups, which each collaboratively created a wall
+newspaper. Five computers were shared by each group. And two teachers directed the
+class activities. Moreover, five observers from outside the school participated in each
+class as assistant instructors. Their role was to provide advice about editing a newspaper,
+as well as technical support, and to foster students' awareness that writing is the medium
+of communication between writers and readers.
+
+One group, which consisted of six students: NS (6th grade), IN, ST, KN, MI (5th grade),
+and AK (4th grade), was chosen for observation. In this group, two male students, IN and
+ST, were chosen as the subjects for videotaping; their conversations and actions as well
+as their PC screen images, were videotaped throughout the class. IN was the group
+leader. AK, who moved to the school in September, did not join the summer camp and
+was a complete beginner at computers. The wall newspaper edited by this group had five
+articles, a newspaper title, and an editors' list (Fig. 5). Every student of the group, except
+AK, is assigned the chief editor of an article.
+
+The following section, based on the video data, demonstrates how the group
+collaboratively edits two articles, A and B (Fig. 5), and how the system supports
+interaction among the group members during the editing process.
+Fig. 5. A wall newspaper collaboratively edited by students.
+Results and Considerations
+
+Editing and revising article A collaboratively
+
+The editors of article A were ST, IN, and AK. And ST was the chief editor, so he had
+leadership role in writing the article. After ST wrote one third of the article, IN gave his
+view on this writing to ST.
+
+Fragment 1: in the 5th class, Oct. 7
+
+      [ST was editing article A at his computer. IN walked up to ST.]
+
+      IN (I-1): [standing behind ST] "I think this is only about Shodoshima
+      island. You had better write about Yoshima island because the subject of
+      the article is Yoshima island."
+
+      ST (S-1): "I know." [burying his head with his hands]
+
+      IN (I-2): "How about using a map of Yoshima island?"
+
+      ST (S-2): "The map?"
+
+      IN (I-3): "Yes. I saw Mr. TC-J's prepared maps."
+
+      ST (S-3): "Really?" [goes to teacher's desk]
+
+In this fragment, watching the screen of ST's computer, IN communicated his opinion on
+the subject of ST's writings and he then proposed how to revise it.
+
+ST adopted IN's proposal and informed IN during the 5th class that he would edit article
+A accordingly. The following fragment is from the 6th class.
+
+Fragment 2: in the 6th class, Oct. 14
+
+      [ST edited article B, which is also assigned him, at KN's computer. IN
+      focused on article A on his screen. ]
+
+      IN (I-4): [shouting] "Hey, ST. Can I insert the map in the article?"
+
+      [Some minutes passed while an assistant instructor showed IN how to
+      insert pictures.]
+
+      IN (I-5): "Come here, ST." [ST moves into IN's seat] "Where do you want
+      to insert this map? Around here?"
+
+      ST (S-4): "Yes"
+      [Some minutes passed while IN inserted the map into article A.]
+
+      IN (I-6): "Do you like this? Or would you like me to make it bigger, as big
+      as possible?"
+
+      ST (S-5): "Yes. Try to make bigger."
+
+      IN (I-7): "OK. Let's do that." [making the map bigger] "They may say it's
+      too big, but it's OK. Do you get an image of Yoshima island from this
+      map?"
+
+      ST (S-6): "Yes. It will help."
+
+In these fragments, IN took the leadership role and, with ST, edited article A by using
+IN's computer. The leadership moved from ST to IN, and the computer being used
+changed as well. This computer change shows that IN and ST understand that their wall
+newspaper was shared by the group students and could be edited by using any of their
+five computers. This shows that the system satisfies Function 2 and this function supports
+interaction, collaborative editing, and revising.
+
+After these fragments, ST became a leader again and edited article A by using his
+computer, and IN resumed editing the article of which he was chief editor. But IN
+followed ST's editing of article A, showed in the next fragment.
+
+Fragment 3: at around the end of the 6th class, Oct. 14
+
+      [IN discusses editing an article with an assistant instructor as they both
+      look at IN's computer. ST edits article A by using his computer. ]
+
+      IN (I-8): "Which article are you editing?"
+
+      ST (S-7): "Now?"
+
+      IN (I-9): "Yes. Have you finished editing the map?"
+
+      ST (S-8): "No. A little bit more editing is needed."
+
+      IN (I-10): "I see. A little bit more editing."
+
+This fragment shows that IN is supposed to increase his awareness of ST's activity and
+the awareness leads another interaction between them. And it is supposed to be done
+through interaction and collaboration as shown in fragments 1 and 2. This shows that
+Function 2 is clearly taking place in these fragments and fosters awareness and
+interaction.
+Engaging a student in editing article B collaboratively
+
+Editors of article B were KN and ST. And the chief editor was KN who had not earnestly
+engaged in the activity of a wall newspaper creation since the first class. The following
+fragment is from the 3rd class which group students started to write articles.
+
+Fragment 4: in the 3rd class, Sep.16
+
+      [IN sees how other members are editing articles by clicking on their
+      SCOPE one after another. A message that he is following KN's editing
+      and a blank image is displayed on his PC screen simultaneously.]
+
+      IN (I-11): [Shouting to KN] "Hey! You'd better write something.
+      Everybody makes some progress in writing an article except you. "
+
+In this fragment, IN advised KN to edit article B immediately after he saw KN's blank
+article on his screen. And after that, he frequently referred to KN's editing and advised
+him to write an article. The frequency became higher as the classes progressed and
+reached every ten minutes in the 5th class.
+
+This shows that referring KN's blank image on the screen led IN to try to engage KN in
+editing article B. Functions 2 and 4 are clearly taking place so we can say that the system
+supports an increase in awareness of other students and fosters interaction.
+
+In spite of IN's repeated advice, KN did not engage in writing and thus made little
+progress in article B. In the end, IN decided to leave it to ST in a short meeting held in
+the 5th class, whose purpose is that each group modified the work plan following the
+progress in its newspaper. Additionally, he asked AK, who wrote article A with ST, to
+assist ST.
+
+According to IN's decision, ST, AK, and IN edited article B collaboratively in the next
+class. After they made some progress in it, KN began to engage in their editing willingly.
+The following fragments show the change of his behavior.
+
+Fragment 5: in the 6th class, Oct. 14
+
+     [IN is editing article B.]
+
+     KN (K-1): [moves to IN's seat] "I'd like to insert a photo of the night
+     stall."
+
+      IN (I-12): "Do you have any?" [looking in an album that KN holds]
+
+      KN (K-2): "Yes. Here they are." [showing IN photographs in the album]
+      "How about this one? Don't you want to insert it? We can see the night
+      stall goods in it."
+      IN (I-13): "Oh, yes. Night stall goods are there."
+
+      KN (K-3): "You like photos of various goods being displayed, don't you?"
+
+      IN (I-14): "How about insert photos of various night stall scenes? I'd like
+      to choose the liveliest one. It's not this one, nor this one. " [turning over a
+      album page]
+
+Fragment 6: at around the end of 6th class, Oct. 14
+
+      [IN wrote article B talking with ST who is editing article A at his
+      computer.]
+
+      IN (I-15): "Another kind of goods is round fans, isn't it"
+
+      ST (S-9): [moves to IN's seat] "Round fans, folding fans. " [laughs]
+
+      IN (I-16): [laughs] "OK. Folding fans. Are these all? Do you think I can
+      write all of these in this frame?"
+
+      ST (S-10): "No problem. Probably you can."
+
+      KN (K-4): [moves to IN's seat] "Can I add goods sold in the fishing club
+      stall into this article?"
+
+In fragment 5, KN consulted IN about his own plan for article B. And in fragment 6, he
+told IN and ST that he wanted to participate in the collaborative writing between them.
+
+These fragments show that KN is supposed to increase his willingness to write an article.
+And it is supposed to be done because he saw that his article had been written
+collaboratively by other students, IN, ST, and AK. This shows the system satisfies
+Function 2 and this function supports engaging a student in a collaborative writing.
+
+Summary and Future work
+
+A synchronous collaborative editing system for learning to write was designed and tested
+in an elementary school. And it was shown how the learners in the experiments interact
+when using this system. The experiments indicate that (1) students interacted and
+collaborated well in the writing process; (2) they revised articles repeatedly through
+interacting with one another; and (3) the system supports the collaborative writing
+process.
+
+In the next step of our research we plan to analyze (1) the students' use of awareness
+functions in detail; (2) changes in the substances of individual articles and the entire wall
+newspaper which was edited by students. We also plan to compare the collaborative
+writing process using this system with those by hand and using other editing tools, such
+as word processor.
+
+Bibliography
+
+Nystrand, M. (1986): The structure of written communication. New York: Academic
+Press.
+
+Flower, L. and Hayes, J. R. (1977): Problem-solving strategies and the writing process.
+College English, 1977, 39, pp. 449-461.
+
+Scardamalia, M., Bereiter, C., McLean, R. S., Swallow J., and Woodruff, E. (1989):
+Computer-supported intentional learning environments, Journal of Educational
+Computing Research, 5, pp. 51-68.
+
+Nystrand, M. and Brandt, D. (1989): Response to writing as a context for learning to
+write. In C. Anson (Ed.), Writing in response: Theory, practice and research (pp.209-
+230). Urbana, IL: National Council of Teachers of English.
+
+Greenberg, S., Gutwin, C., and Cockburn, A. (1996): Awareness through fisheye views in
+relaxed-WYSIWIS groupware. Proceedings of Graphics Interface'96, pp. 28-38.
+
+Gutwin, C., and Greenberg, S. (1997): Interactive Fisheye Views for Groupware. Short
+technical note, Department of Computer Science.
+
+Tabuchi, Ayukawa, Ito, and Maeno (1998): A compound Document Middle-ware for
+group-ware and a Multimedia Group Learning System based on the Middle-ware.
+Transactions of Information Processing Society of Japan, Vol. 39, No. 10, (in Japanese).
+
+Authors' addresses
+
+Yukiko TANIKAWA (yukiko@cc.ho.nec.co.jp)
+C&C Systems Marcket Development Division, NEC Corporation; 5-7-1 Shiba, Minato-
+ku, Tokyo 108-8001, Japan; Phone: +81-3-3798-9142. Fax: +81-3-3798-9189.
+Hideyuki SUZUKI (h_suzuki@cc.ho.nec.co.jp)
+C&C Systems Marcket Development Division, NEC Corporation; 5-7-1 Shiba, Minato-
+ku, Tokyo 108-8001, Japan; Phone: +81-3-3798-6390. Fax: +81-3-3798-6851.
+Hiroshi KATO (kato@cc.ho.nec.co.jp)
+C&C Systems Marcket Development Division, NEC Corporation; 5-7-1 Shiba, Minato-
+ku, Tokyo 108-8001, Japan; Phone: +81-3-3798-6390. Fax: +81-3-3798-6851.
+

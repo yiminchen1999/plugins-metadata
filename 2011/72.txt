@@ -1,0 +1,489 @@
+CSCL 2011 Proceedings                                                                                   Volume I: Long Papers
+
+ Quantified Measures of Online Discourse as Knowledge Building
+                                                     Indicators
+
+                                  Jianwei Zhang, Yanqing Sun, University at Albany
+                                      Email: jzhang1@albany.edu, ysun@albany.edu
+
+         Abstract:    This    secondary  data  analysis   examined  a  set of  social  interaction  (e.g., social
+         network patterns), content (e.g., questions, ideas), and lexical measures (e.g., academic words,
+         domain terms) applied to a Knowledge Forum discourse database created by 22 fourth-graders
+         as they investigated optics over a four-month period.      Knowledge advancement was evaluated
+         based   on   student   portfolio   notes  focusing  on  the    depth  and    breadth of   their   optical
+         understanding.     Correlations  found   between  the measures    of  social interaction,  content, and
+         lexical usage     in the discourse  and  the  depth and  breadth   of student   understanding   help  to
+         empirically    justify   a set  of online   discourse measures     that are   sensitive to knowledge
+         productivity. The results suggest a framework to inform the selection, creation, and integrated
+         use of online discourse measures in research as well as design of automated assessment tools
+         embedded in collaborative learning environments.
+
+Introduction
+The field of computer-supported collaborative learning (CSCL) faces the challenge to develop methodologically
+justifiable measures    of  collaborative   knowledge   building as   a distributed   and  emergent    process driven    by
+students' diverse input.      Intensive effort has been made to analyze and assess student online discourse using
+quantitative and qualitative methods (e.g., de Laat, Lally, Lipponen, & Simons, 2007; Guzdial & Turns, 2000;
+Koschmann, 2001; Meier, Spada, & Rummel, 2007; Stahl, 2006; Suthers, Dwyer, Median & Vatrapu, 2010).
+Quantified measures are diverse, analyzing participation rate, social network patterns, vocabulary use, content
+contributions, and so forth. Choices of research measures for a given study are often made based on theoretical
+considerations of what such measures mean and imply. There is a need to examine and justify the importance of
+these  measures  to   collaborative   knowledge   building through  systematic    empirical   testing, which   will further
+provide a stronger research base for initiatives to create automated analysis tools (e.g., Rosé et al., 2008).           To
+address this need, the present study applied a range of quantified measures to the same discourse database and
+examined their relationship to student knowledge advancement.
+         Knowledge building--the creation of knowledge as a social product through collective and sustained
+efforts--becomes pervasive in a knowledge-based society (Bereiter, 2002). Recent educational initiatives thus
+emphasize    engaging    students   in  collaborative  knowledge    building   with   the  support  of   new   technology
+environments. Achieving this goal requires educational changes from individual to collaborative processes and
+outcomes; from teacher-designed to student-driven goals and processes; from a focus on content coverage to
+that on depth of understanding; and from standard learning outcomes to student diverse expertise (Brown, Ash,
+Rutherford,  Nakagawa,      Gordon,    & Campione,     1993; Scardamalia,     2002;  Stahl, 2006;   Zhang,   Scardamalia,
+Lamon,   Messina,     & Reeve,    2007). Traditional  assessment   tools focus   on   individual learning  processes   and
+outcomes based on predefined learning objectives and curriculum standards. Although these tools can also be
+used in knowledge building and CSCL research; they reveal very little, if any, about collaborative processes,
+emergent    and progressive    understanding,    and community    knowledge      advancement     (Zhang  &   Chan,  2008).
+Thus, CSCL researchers face the challenge to develop and integrate new research measures and assessments.
+         Various  research     measures     have  been  developed   in  the   CSCL    literature to analyze    and  assess
+collaborative   knowledge     building,  often using  student  discourse   as  a primary   data  source.   Three   types of
+quantified  measures    have   been   widely   used:  (a) Content  analysis   (Chi,   1997),  using coding     schemes   to
+categorize the nature of responses, types of questions, depth of ideas, evidence use, argumentation patterns, and
+so forth (e.g., Baker et al., 2007; Hakkarainen, 2003; Hmelo-Silver, 2003; van Aalst & Chan, 2007; Weinberger
+& Fischer, 2006; Zhang et al., 2007); (b) Socio interaction measures, focusing on contribution rate, reading rate,
+conversation threads (build-on trees), social networks of who reads or responds to whose postings (Aviv, Erlich,
+Ravid, & Geva, 2003; de Laat, Lally, Lipponen, & Simons, 2007; Guzdial & Turns, 2000; Hewitt & Teplovs,
+1999;  Hewitt,   Brett,  &    Peters, 2007;  Howell-Richardson    &   Mellar,    1996;   Zhang,  Scardamalia,  Reeve,    &
+Richard, 2009); and (c) Linguistic markers of discourse, such as occurrences of epistemic words and domain-
+specific key  terms     in discourse   (Hong   &  Scardamalia,   2008;   Sun,    Zhang,  &  Scardamalia,    2010).  These
+measures    have been      informed   by  various  CSCL    theories   and   models    to capture   important   aspects   of
+collaborative   learning   and  knowledge   building.  However,   the   significance  of  these  measures   in relation  to
+student knowledge advancement has rarely been systematically examined, partly because different researchers
+tend to use different measures to analyze CSCL discourse from their own point of view (Hmelo-Silver, 2003).
+
+© ISLS                                                                                                                   72
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+         On the basis of online discourse measures, efforts are made to create computer-based research tools to
+automate some of the analyses, such as using text classification technology to automate or aid content analysis
+(Law et al., 2007; Rosé et al., 2008), analyzing patterns of participation and interaction based on user log files
+(e.g., Burtis, 1998),  and    extracting,  comparing,  and  clustering key   terms used   in  online  discourse through
+semantic analysis (Teplovs & Fujita, 2009). Automated assessment tools are further designed and embedded in
+collaborative online environments to provide teachers and their students with concurrent feedback as their work
+proceeds   (Scardamalia,   Bransford,     Kozma,   &   Quellmalz, 2010).   With   data  mining    and other  computing
+technologies easing data analysis, the challenge becomes what to analyze and how to combine the different
+measures and rich amount of data based on a sound framework so researchers, teachers, and students can make
+meaningful interpretations and informed decisions.
+         In  our recent    research, we   developed  and adapted  a   set of research   tools to  examine collaborative
+knowledge building supported by an online environment. These included inquiry thread analysis for mapping
+out communal knowledge growth by identifying and tracing discourse contributions to different problem spaces
+(Zhang et al., 2007), social network analysis for evaluating collaboration and collective responsibility (Zhang et
+al., 2009), content analysis of student contributions and depth of understanding (Zhang et al., 2007, 2009), and
+lexical analysis of   student   discourse  to examine   the growth  of productive    written  vocabulary  in relation to
+scientific understanding    (Sun  et  al., 2010).  These measures     were   applied to  the  same   dataset--an online
+discourse database of a Grade 4 classroom focused on optics. The goal of the present study was to conduct a
+secondary analysis of the above measures to identify significant indicators of knowledge building, which can
+inform the selection of CSCL research measures and the design of automated analysis and assessment tools.
+
+Method
+
+The Knowledge Building Context
+The participants were 22 fourth-graders (11 girls and 11 boys) from an elementary school in downtown Toronto.
+This   study analyzed   their inquiry  of  optics conducted  over  a  four-month   period in  line with  principles and
+practices of knowledge building, supported by Knowledge Forum (Scardamalia & Bereiter, 2006). Knowledge
+Forum   provides    a  communal,     multimedia   knowledge    space,  represented   as  different views  (workspaces)
+corresponding    to   students' knowledge     building  goals.  Students   contribute   notes  to  views  to share  and
+continually advance their ideas, using a set of interaction tools (e.g., build-on, rise-above, referencing) to engage
+in knowledge building discourse (see Figure 1 for a screenshot). Both the students and their teacher had multiple
+years of experience with knowledge building pedagogy and Knowledge Forum.
+
+Figure 1. Knowledge Building Discourse in the Colors of Light View. Each small square icon represents a note,
+                                and a line connecting two notes represents a build-on.
+
+         During the optical inquiry, the fourth-graders generated problems of understanding, discussed diverse
+ideas  and theories   through   face-to-face  knowledge  building  discourse,  conducted  self-generated   experiments
+and observations, searched libraries and the Internet, and shared new resources through cooperative reading.
+Along   with   these  offline activities,  they  shared  their questions,  ideas,  data, and   information   sources  in
+Knowledge    Forum     for sustained   discourse  that extended   and  enriched their   classroom    conversations. The
+teacher  experimented   with    having the   whole class collaborate   opportunistically  to  understand  optics and  to
+progressively identify important, related issues (e.g., light sources, how light travels, colors, lenses and mirrors,
+vision) to deepen the inquiry. Knowledge Forum provided the public space in which their collective works were
+
+© ISLS                                                                                                                73
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+recorded, with new views created in line with emergent goals and linked to existing views. These interconnected
+views helped to keep the top-level goal center front and to keep the structure fluid: sub-goals were identified and
+elaborated in related views and small groups formed and reformed based on evolving needs. On a daily basis,
+students were free to explore any problem from any view in the database. They all took responsibility for the
+overall growth of the database. Near the end of the inquiry, each student wrote a reflective portfolio note to
+summarize   what   he/she    had learned  about  light. Analyses   of  student   portfolios and  a pre- and   post-test
+demonstrated productive advancement of knowledge (see Zhang et al., 2007 for details).
+
+Measures of Online Discourse
+The primary data source was student discourse in Knowledge Forum. Over four months, students created 287
+notes in seven views (e.g., Shadows, Colors of Light, How Light Travels). The optical discourse database was a
+proportion  of the    data analyzed in several related  studies (Zhang  et al.,  2007, 2009;  Sun  et al., 2010). This
+secondary analysis focused on three sets of measures that had been applied to this database, including social
+interaction measures, content-based coding, and lexical analyses. These measures are summarized in Table 1
+and elaborated below.
+
+Table 1: Measures of online knowledge building discourse.
+
+Category         Measures                Explanations
+Social           Note contribution       # of notes authored per student, as an indicator of their contrition to the
+interaction                              community space.
+measures
+                 Note reading            % of notes read, as an indicator of knowledge sharing and information
+                 percentage              spread.
+                 Note reading            Social network of who reads whose notes, with in-degree and out-degree
+                 network: in-degree      indicating the extent to which a member receives and sends out note-
+                 and out-degree          reading contacts from/to different members, respectively.
+                 Note linking            Social network of who links to whose notes through build-on, rise-
+                 network: in-degree      above, and reference citation, with in-degree and out-degree indicating
+                 and out-degree          the extent to which a member receives and sends out note-linking
+                                         contacts from/to different members, respectively.
+                 Note linking            In a social network of who links to whose notes, a clique is a sub-
+                 network: cliques        network of members who have more note linking ties to each other than
+                                         to members who are not part of the group. The number of cliques each
+                                         student belongs to indicates the level of dynamic collaboration and idea
+                                         contact.
+Content          Problems                # of notes raising and addressing deepening problems about the topic.
+measures
+                 Personal ideas          # of notes that contributed student understanding and claims.
+                 Information             # of notes rephrasing or summarizing information from readings, the
+                 sources                 Internet, the teacher, parents, etc.
+                 Evidence                # of notes that test and justify ideas using experiments, observations, or
+                                         life experiences.
+                 Inquiry threads         An inquiry thread is a conceptual stream of discourse that addresses a
+                                         shared principal problem. The number of inquiry threads each student
+                                         contributes to as an author indicates diverse participation in the
+                                         community's knowledge space.
+Lexical          Total words             Total words written per student in the online discourse.
+measures
+                 1st 1,000 words         Percentage of the 1st 1000 most frequent English word families used in
+                                         student notes, as an indicator of limited vocabulary and writing.
+                 Academic words          The percentage of academic words (e.g., theory, hypothesis, approach)
+                                         used in student notes, as an indicator of productive academic discourse.
+                 Domain-specific         Student use of domain-specific words as an indicator of their
+                 words                   appropriation of disciplinary discourse and knowledge.
+
+         Among   other     analyses of social interactions (e.g., note contribution,   reading), we  adopted  a set of
+measures  from  social     network  analysis (Wasserman    & Faust,   1994).  In a social   network, each  community
+member is represented as a node, and a relational tie (e.g., build-on) between two members as a line. We used
+social network analysis to examine two types of social relations recorded by Knowledge Forum: (a) who read
+
+© ISLS                                                                                                               74
+CSCL 2011 Proceedings                                                                                       Volume I: Long Papers
+
+whose notes, with reading peers' notes as a primary mean to understanding knowledge advances and challenges
+of the community; and (b) who linked to whose notes (i.e., created build-ons, rise-aboves, or references), as a
+indicator of complementary and connected contributions. Three measures were included in this analysis: (a) in-
+degree showing how many relational ties (e.g., reading, linking) a member received from peers, suggesting the
+level of his/her influence; (b) out-degree measuring the number of relational ties one sent out to other peers as
+an  indicator of his/her  effort   to understand    and build    on peer  contributions;    and   (c)  clique analysis,  which
+identified sub-networks each member belonged to in the note linking network, as an indicator of community-
+wide   dynamic   collaboration.   A   clique is "a  sub-set   of a  network    in   which  the actors   are more  closely  and
+intensively tied to one another than they are to other members of the network." (Hanneman, 2001, p. 79)
+         Content analysis (Chi, 1997) was adopted to code: (a) questions identified by students in their notes
+(e.g., how do solar panels work?); (b) student personal ideas that presented their own theories and claims often
+labeled  as "My   theory"   (e.g., "If  there   is no  light, there can't    be   a shadow");     (c) information   sources, to
+introduce   new  information   from    readings,   the Internet, the   teacher,   or parents,  etc.,  often labeled   as "New
+information," and use the information to deepen their understanding; (d) evidence, to examine and deepen their
+understanding using findings from experiments and observations; and (e) inquiry threads contributed to. An
+inquiry thread consists of a series of discussion entries that address a shared principal problem and constitute a
+conceptual line of inquiry in a community knowledge space (Zhang et al., 2007). These entries may involve
+multiple  physical    threads of  build-ons.  For   example,   students   in   this study  wrote    27  notes in  an  extended
+discussion  about  how   rainbows     are created,   constituting   an  inquiry     thread titled "Rainbows,"     with   deeper
+questions progressively addressed leading to improved understanding. Within the communal knowledge space,
+28  inquiry threads   were  identified, each    beginning   with   the first note   created  and   ending   with  the last note
+created or modified (see Zhang et al., 2007 a visual representation). Students engaged in the inquiry themes
+through opportunistic interactions based on their interest. Tracing student notes contributed to different inquiry
+threads helped to examine their emergent, diverse participation in the community's knowledge space.
+         Increasing use of sophisticated, low frequency words in free writing indicates growth of productive
+vocabulary and writing skills (Nation 2001). Thus, lexical frequency analysis was employed to examine student
+use of three types of words in their online discourse: (a) The first 1,000 most frequent word families in English
+(West, 1953). Low-proficiency writers tend to rely more on these basic word families in writing; (b) A list of
+academic words, including 570 word families that are typical of academic discourse across disciplinary areas,
+enabling references to other authors and findings (e.g., assume, establish, conclude) and processing of data and
+ideas (e.g., analyze, assess, category) (Coxhead 1998). Writers need to gain productive written control of the
+academic vocabulary in order to be recognized as a member of the academic discourse community (Corson,
+1997); and (c) Domain-specific terms, which included 89 domain words related to light (e.g., names of optical
+concepts, devices and phenomena) identified from the Ontario Curriculum (Sun et al., 2010).
+
+Assessing Knowledge Gains Based on Student Portfolio Notes
+Assessing student understanding based on reflective essays or portfolios has been tested in a number of studies
+(e.g., van Aalst & Chan, 2007; Zhang et al., 2007). This study analyzed student portfolio notes to assess their
+knowledge gains focusing on two aspects: knowledge diffusion and depth of understanding.
+         Knowledge diffusion (or idea spread) becomes an important issue in learning contexts that encourage
+diverse  participation  and   distributed  expertise   (Brown    et  al., 1993).    Our    analysis   thus examined    whether
+individual  students   could  benefit  from   the  community's      knowledge       advances   in diverse   inquiry themes   to
+achieve adequate breadth of understanding beyond their personal focus. Specifically, the first author segmented
+each student's portfolio note into idea units--the smallest unit of text that conveyed a distinct idea about light.
+Each idea unit was coded in relation to the inquiry threads (themes) that emerged from the knowledge building
+discourse (e.g., how light travels, nature of shadows, eclipses, rainbows) (see Zhang et al., 2009 for details).
+         To   look at  the depth    of student     understanding,   each  idea    unit was   additionally   rated in  terms  of
+epistemic complexity and scientific sophistication. Epistemic complexity indicates students' efforts to produce
+not only   descriptions  of   the  material  world,    but also   theoretical   explanations      and  articulation of   hidden
+mechanisms, which are central to the focus of science (Salmon, 1984). A four-point scale (1 - unelaborated
+facts, 2 ­  elaborated  facts,   3 ­  unelaborated     explanations,   and   4  -   elaborated explanations),    adapted   from
+Hakkarainen's (2003) work, was used to code each idea unit (for details and examples, see Zhang et al., 2007).
+Scientific sophistication focuses on the extent to which a student has moved from an intuitive toward a scientific
+framework. It is gauged through coding students' ideas in their portfolio notes based on a four-point scale (1 -
+pre-scientific, 2 - hybrid, 3 - basically scientific, and 4 - scientific) (for details, see Zhang et al., 2007), which
+was informed by Galili and Hazan's (2000) facets-scheme framework for analyzing students' misconceptions in
+optics. To assess inter-rater reliability, two coders independently coded 12 portfolio notes, Cohen's Kappa = .83
+for scientific sophistication, Cohen's Kappa = .75 for epistemic complexity (Zhang & Messina, 2010).
+         Epistemic complexity represents the level of complexity at which a student chooses to approach an
+issue. Scientific sophistication represents the level of success a student has achieved in processing an idea at a
+
+© ISLS                                                                                                                       75
+CSCL 2011 Proceedings                                                                               Volume I: Long Papers
+
+certain complexity level. It is easier to convey a scientific idea at a factual level (e.g., "there are different colors
+in a rainbow"), but harder to provide a scientific explanation of a fact (e.g., elaborate what causes a rainbow and
+why the colors are always in the same order). The meaning of the scientific score of an idea is dependent on the
+level  of its complexity.   Therefore, a  composite   score was   used to indicate   the depth   of understanding    by
+multiplying the above two ratings, weighting the rating of scientific sophistication with the level of complexity
+(Zhang et al., 2009). For example, an idea rated as "1 - unelaborated facts" and "3 ­ basically scientific" will
+have a composite score of 3, while an idea rated as "4 - elaborated explanations" and "3 ­ basically scientific"
+will have a composite score of 12.
+
+Results
+To identify quantified measures of online discourse that may have a strong connection with student knowledge
+productivity,  we  calculated the   correlations between   these  measures    and the  depth and  breadth   of student
+understanding,   which    represent two   independent  components    of   the  learning  outcome    with   virtually no
+correlation (r = -.03).
+
+Social Interaction Measures
+Table 2 reports the correlations between social interaction measures of the online discourse and the depth and
+breadth of student optical understanding gauged based on their portfolio notes. Student deep understanding of
+optics was associated with high rates of note contribution and note reading--both reading others' notes and
+being read by others--in the knowledge building discourse, with significant (p < .05) or marginally significant
+correlations (p < .10). Two of the social network measures of note linking contacts are significantly correlated
+with the depth of understanding achieved (p < .05). Students with deeper understanding received more intensive
+note linking contacts from their peers and collaborated with multiple sub-networks of students through building
+on, rising  above,    and referencing  one  another's work.  There  is  a close   to significant correlation   between
+students' in-degree in the note linking networks and the breadth of understanding achieved (p < .10), showing
+that students who understood a broader range of issues had received more note-linking contacts from peers in
+the knowledge building discourse.
+
+Table 2: Correlations (Pearson r and p) between social interaction measures of online discourse and student
+optical understanding.
+
+                 Notes     % of     Note reading   Note reading    Note linking Note linking        Note linking
+                 written   notes    network: in-   network: out-   network: in- network: out-       network: Cliques
+                           read     degree         degree          degree         degree            belonging to
+Depth of         .437*     .398     .519*          .398            .431*          .214              .469*
+understanding    (.042)    (.067)   (.013)         (.067)          (.045)         (.338)            (.028)
+Breath of        .198      .105     .308           .061            .364           -.068             .159
+understanding    (.377)    (.644)   (.164)         (.788)          (.096)         (.765)            (.478)
+Note.  p < .10, * p < .05
+
+Content-Based Measures
+As Table 3 shows, student deep understanding is significantly (p < .05) or marginally significantly (p < .10)
+correlated to their efforts to generate and contribute personal ideas, identify and address deeper problems, and
+incorporate   informative  sources  to help  them  better understand   light. Not surprisingly,  the breadth   of their
+understanding achieved is strongly correlated to the number of inquiry threads--each addressing a principal
+problem--they contributed to during the optical discourse.
+
+Table 3: Correlations (Pearson r and p) between the content-based measures of online discourse and student
+optical understanding.
+
+                   # of notes           # of notes          # of notes            # of notes     # of inquiry
+                   identifying          contributing        incorporating         using          threads/themes
+                   problems             personal ideas      new sources           evidence       contributed to
+Depth of           .582**               .365                .403                  .260           -.034
+understanding      (.004)               (.095)              (.063)                (.242)         (.879)
+Breadth of         .296                 .288                -.009                 .056           1.000***
+understanding      (.182)               (.193)              (.970)                (.806)         (.000)
+Note.  p < .10, ** p<.01, ***p<.001
+
+© ISLS                                                                                                                76
+CSCL 2011 Proceedings                                                                                     Volume I: Long Papers
+
+Lexical Measures
+Table 4 displays the correlations between the lexical measures of online discourse and the depth and breadth of
+student optical understanding. The depth of their understanding is positively correlated to the total number of
+words students wrote and the occurrences of domain-specific words and academic words in their online notes.
+Student   knowledge     productivity  is   associated   with their   engagement       in  online   written   discourse  that
+incorporates  a  larger number    of  domain-specific   words   in  optics   (e.g., shadow,   reflect, absorb,   wave)  and
+epistemic, academic words that are characteristic of academic discourse (e.g., hypothesis, conclusion).             There is
+a significant negative correlation between the depth of student optical understanding and the occurrence of the
+most basic, 1st 1,000 English word families in the online discourse, which indicates a limited level of vocabulary
+and writing.  A significant positive correlation was found between the breadth of understanding and the number
+of unique domain words students used in their notes. Spontaneous incorporation of domain-specific words in
+online discourse suggests the expanding scope and richness of inquiry in a domain.
+
+Table 4: Correlations (Pearson r and p) between the lexical measures of online discourse and student optical
+understanding.
+
+                        Total words      % of the 1st     % of the           # of unique      Total domain
+                        written          1,000 words      academic           domain words     words
+                                                          words
+Depth of                .646**           -.646**          .506*              .458*            .660**
+understanding           (.001)           (.001)           (.016)             (.032)           (.001)
+Breadth of              .250             -.302            .226               .594**           .218
+understanding           (.262)           (.172)           (.313)             (.004)           (.329)
+Note. * p<.05, **p<.01
+
+Discussion
+This   study investigated  a set  of  social interaction, content-based,     and  lexical  measures  applied    to the  same
+knowledge    building  discourse  database.   Examining   their  correlations    with the  depth   and  breadth  of  student
+understanding helped to identify and justify indicators of online discourse conducive to knowledge building.
+Several social interaction measures indicate productive discourse to achieve deep understanding, including the
+number of notes contributed, percentage of notes read, in-degree (being read by peers) and out-degree               (reading
+peers' work) in the note reading network, and in-degree (being built on by peers) and dynamic memberships in
+cliques (sub-networks) in the note linking network developed through build-ons, rise-aboves, and referencing
+citations of peer ideas. Content-based discourse indicators associated with student deep understanding involve
+the number    of notes  contributing  personal  theories,  identifying  deepening     problems,    and  incorporating   new
+information sources, with student contributions to multiple inquiry threads strongly connected to the scope of
+their optical understanding. The number of notes reporting evidence is not significantly correlated to the depth
+of  student  understanding,     possibly because   this analysis   only considered     the    frequency   of   evidence use.
+Additional measures might examine how evidence was used to support reasoning and discourse. Finally, all the
+lexical discourse measures have significant correlations to the depth of student understanding, including total
+words written, occurrences of academic words and domain-specific words (both total and unique words), and
+less frequent use of the 1st 1,000 English word families. Incorporating unique domain-specific words in the
+knowledge building discourse additionally suggests the expanding scope and breadth of inquiry.
+         The   above-identified    measures   collectively  characterize   productive     knowledge    building    discourse
+along four interrelated dimensions. (a) Interactive engagement in extended discourse, with community members
+understanding and successively building on to one another's intellectual input over time beyond short-threaded
+conversation  turns   (Engle,   2006; Guzdial   &  Turns,  2000;    Suthers  et  al., 2010;   Zhang    et al., 2007, 2009).
+Students are thus expected to have a high note contribution rate, note reading percentage, in-degree and out-
+degree in the note reading network, and in-degree and clique memberships in the note linking network. (b) Idea-
+centered, progressive    discourse,   with   students engaging   in  idea  generation     and improvement,     expanding  a
+shared   base of  knowledge,     and  identifying  deeper  challenges   as   their   understanding   deepens,    harnessing
+sophisticated language tools to communicate and develop ideas (Bereiter, 2002; Hakkarainen, 2003; Hmelo-
+Silver, 2003;  Zhang    et al., 2007; Zhang   &  Messina,   2010).   Such    efforts  are evident  when   students  actively
+identify  deepening    questions,  propose    initial theories   for peer    input,   and  develop     better  theories and
+explanations. (c) Constructive use of knowledge and language resources, through making constructive use of
+authoritative sources   and  appropriating   academic     vocabulary  and    discourse    (e.g., academic    words,  domain
+concepts) in the related domain areas to support idea development (Chernobilsky, DaCosta, & Hmelo-Silver,
+2004;   Hong   &  Scardamalia,     2008;   Sun  et al., 2010;   Zhang     et al.,   2007).  (d)   Student-driven,   dynamic
+
+© ISLS                                                                                                                    77
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+collaboration, with students identifying progressive goals and forming dynamic teams to address challenges
+emerged at the intersections of their interests. Analyses in this regard may examine student-generated questions
+and goals, distributed network patterns, and emergence of cliques in note link networks (Zhang et al., 2009).
+Efforts  along the    above  dimensions   help  foster  collective responsibility for  knowledge      advancement    in a
+community (Scardamalia, 2002; Zhang et al., 2009).
+         In conclusion, this study provides empirical justification for a set of quantified measures used in the
+CSCL literature. The three types of measures that capture four dimensions of knowledge building discourse may
+be used as a framework to guide the selection and integrated use of research measures in specific contexts and
+development    of  new  analyses  to capture   the interactional,  cognitive, and linguistic   processes  of knowledge
+building. This framework can be further elaborated and used to guide the design of automated assessment and
+feedback tools in collaborative learning environments. Focusing on these and additional indicators, automated
+assessment tools may provide coherent and accessible analyses of the interactional, cognitive, and linguistic
+processes to aid student reflection on and improvement of knowledge building. Automated analyses focusing on
+various aspects of online discourse can be integrated to address pedagogically valuable questions, such as: Is
+there  interactive engagement    in extended   discourse?   To  what extend   are we   improving    our  ideas and  what
+contributions are evident? Are we engaging in productive writing and discourse? Are we enacting collective
+responsibility for knowledge building?
+         This investigation of online discourse measures was based on a small sample of 22 students, which has
+prevented us from conducting confirmative factor analysis to further test how the different indicators capture
+different dimensions of productive online discourse. Although this study focused on quantified measures only,
+complementary qualitative analyses have been reported elsewhere that helped to elaborate and contextualize the
+quantified patterns through detailed accounts (Zhang et al., 2007; Zhang & Messina, 2010). Further analysis will
+include additional measures of student knowledge growth (e.g. post-test scores) and examine correlations across
+the three types of knowledge building indicators.
+
+References
+Aviv,   R., Erlich,   Z., Ravid,  G.,   & Geva,    A.   (2003).   Network    analysis of knowledge       construction   in
+         asynchronous     learning   networks.  Journal   of  Asynchronous     Learning  Networks,      7(3) (an online
+         journal).
+Bereiter, C. (2002). Education and mind in the knowledge age. Mahwah, NJ: Erlbaum.
+Brown,   A.L., Ash,   D.,  Rutherford,  M., Nakagawa,    K.,   Gordon, A.,    & Compione,     J. C. (1993).  Distributed
+         expertise in the classroom. In G. Salomon (Ed.), Distributed cognitions (pp.188-228). New York, NY:
+         Cambridge University Press.
+Burtis, J.  (1998).   Analytic Toolkit  report. Toronto,    ON:   Ontario Institute for  Studies   in Education  of   the
+         University of Toronto.
+Chernobilsky, E., DaCosta, M. C., & Hmelo-Silver, C. E. (2004). Learning to talk the educational psychology
+         talk through a problem-based course. Instructional Science, 32(4), 319-356.
+Chi, M. T. H. (1997). Quantifying qualitative analysis of verbal data: A practical guide. Journal of the Learning
+         Sciences, 6, 271-315.
+Corson, D.J. (1997). The learning and use of academic English words. Language Learning, 47, 671-718.
+Coxhead, A. (1998). An academic word list. Occasional publication Number 18, LALS, Victoria University of
+         Wellington, New Zealand.
+de Laat, M., Lally, V., Lipponen, L., & Simons, R.J. (2007). Investigating patterns of interaction in networked
+         learning and computer-supported collaborative learning. International Journal of Computer-Supported
+         Collaborative Learning, 2, 87-103.
+Engle, R. A. (2006).    Framing interactions to foster generative learning: A situative explanation of transfer in a
+         community of learners classroom. Journal of the Learning Sciences, 15(4), 451-498.
+Galili, I., &  Hazan,     A.   (2000).  Learners'  knowledge    in   optics:  Interpretation,  structure  and   analysis.
+         International Journal of Science Education, 22(1), 57­88.
+Guzdial, M. & Turns, J. (2000). Computer-supported collaborative learning in engineering: The challenge of
+         scaling   up  assessment.   In  M.  J. Jacobson    &   R. B.  Kozma    (Eds.),  Innovations     in science  and
+         mathematics education: Advanced designs for technologies of learning (pp. 227-257). Mahwah: NJ:
+         Lawrence Erlbaum Associates.
+Hakkarainen,   K.  (2003).   Progressive inquiry   in a computer-supported    biology   class.   Journal of  Research   in
+         Science Teaching, 40(10), 1072-1088.
+Hanneman, R. A. (2001). Introduction to social network methods. Riverside, CA: Department of Sociology,
+         University of California, Riverside.
+Hewitt, J., & Teplovs, C. (1999). An analysis of growth of patterns in computer conferencing threads. In C.
+         Hoadley      (Ed.),  Proceedings   of  the   third  international   conference  on      computer    support  for
+         collaborative learning (pp. 232­241). Mahwah, NJ: Erlbaum.
+
+© ISLS                                                                                                                  78
+CSCL 2011 Proceedings                                                                               Volume I: Long Papers
+
+Hewitt, J., Brett, C. & Peters, V. (2007). Scan Rate: A new metric for the analysis of reading behaviors in
+         asynchronous computer conferencing environments. American Journal of Distance Education, 21(4),
+         1-17.
+Hmelo-Silver, C.E. (2003). Analyzing collaborative knowledge construction: Multiple methods for integrated
+         understanding. Computers & Education, 41, 397-420.
+Hong, H.-Y., & Scardamalia, M. (2008). Using key terms to assess community knowledge. Paper presented at
+         the Annual Meeting of American Educational Research Association, New York, NY.
+Howell-Richardson, C., & Mellar, H. (1996). A methodology for the analysis of patterns of participation within
+         computer mediated communication courses. Instructional Science, 24, 47­69.
+Koschmann, T. (2001). Revisiting the paradigms of instructional technology. Proceedings of the 18th Annual
+         Conference of the Australian Society for Computers in Learning in Tertiary Education. Melbourne.
+Law, N., J. Yuen, Huang, R., Li, Y. & Pan, N. (2007). A Learnable Content and Participation Analysis Toolkit
+         for   Assessing    CSCL    Learning   Outcomes    and   Processes. Paper   presented   at  the   International
+         Conference on Computer Supported Collaborative Learning, July 16-21, New Jersey.
+Meier, A., Spada, H., Rummel, N. (2007). A rating scheme for assessing the quality of computer-supported
+         collaboration process. International Journal of Computer-Supported Collaborative Learning, 2, 63-86.
+Nation, I.S.P. (2001). Learning vocabulary in another language. Cambridge, UK: Cambridge University Press.
+Rosé,  C.,  Wang,   Y.-C.,  Cui,  Y.,  Arguello, J., Stegmann,   K.,  Weinberger,  A., Fischer, F. (2008).   Analyzing
+         collaborative learning processes automatically: Exploiting the advances of computational linguistics in
+         CSCL. International Journal of Computer-Supported Collaborative Learning, 3(3), 237-271.
+Salmon, W. C. (1984). Scientific explanations and the causal structure of the world. Princeton, NJ: Princeton
+         University Press.
+Scardamalia, M. (2002). Collective cognitive responsibility for the advancement of knowledge. In B. Smith
+         (Eds.), Liberal education in a knowledge society (pp. 67-98). Chicago, IL: Open Court.
+Scardamalia,    M.,   & Bereiter,  C.  (2006).   Knowledge    building: Theory,   pedagogy,  and   technology.   In  K.
+         Sawyer     (Eds.), Cambridge     Handbook    of  the  Learning   Sciences  (pp. 97-118).   New    York,   NY:
+         Cambridge University Press.
+Scardamalia, M., Bransford, J., Kozma, R., & Quellmalz, E. (2010). New assessments and environments for
+         knowledge       building.    Assessment     and   Learning    of   21st   Century    Skills.    Paper  posted
+         to http://www.atc21s.org/home/
+Stahl, G. (2006). Group cognition: Computer support for building collaborative knowledge. Cambridge, MA:
+         MIT Press.
+Sun, Y., Zhang, J., & Scardamalia, M. (2010). Knowledge building and vocabulary growth over two years,
+         Grades 3 and 4. Instructional Science, 38(2), 247-271.
+Suthers, D., Dwyer, N., Medina, R. & Vatrapu, R. (2007). A framework for conceptualizing, representing, and
+         analyzing     distributed  interaction.  International    Journal  of   Computer-Supported      Collaborative
+         Learning, 5(1), 5-42.
+Teplovs,   C.,  &  Fujita,  N. (2009).   Determining    curricular coverage   of student  contributions   to an online
+         discourse environment through the use of latent semantic analysis and term clouds. Proceedings of the
+         9th   international conference   on Computer     supported   collaborative learning  (Vol.   2, pp. 165-167).
+         International Society of the Learning Sciences.
+van Aalst,  J., &   Chan,   C.K.K.  (2007). Student-directed     assessment of knowledge    building  using  electronic
+         portfolios. The Journal of the Learning Sciences, 16(2), 175-220.
+Weinberger,    A.,  &   Fischer, F. (2006).  A   framework    to analyze  argumentative   knowledge    construction  in
+         computer-supported collaborative learning. Computers & Education, 46, 71-95.
+West, M. (1953). A general service list of English words. London, UK: Longman, Green & Co.
+Zhang,  J., &   Chan,   C.K.K.   (2008). Examining    the growth   of community    knowledge  in an   online  space. In
+         Workshop Proceedings of the International Conference on Computers in Education (ICCE 2008) (pp.
+         60-69). The Asia-Pacific Society for Computers in Education.
+Zhang, J., & Messina, R. (2010). Collaborative productivity as self-sustaining processes in a Grade 4 knowledge
+         building     community.    In K.  Gomez,    J.  Radinsky,   &  L.  Lyons   (Eds.), Proceedings    of  the  9th
+         International Conference of the Learning Sciences (pp. 49-56). Chicago, IL: International Society of
+         the Learning Sciences.
+Zhang,  J., Scardamalia,    M.,   Lamon,  M.,    Messina,  R., &   Reeve,  R.  (2007). Socio-cognitive    dynamics   of
+         knowledge building in the work of nine- and ten-year-olds.           Educational Technology Research and
+         Development, 55(2), 117­145.
+Zhang, J., Scardamalia, M., Reeve, R., & Messina, R. (2009). Designs for collective cognitive responsibility in
+         knowledge building communities. Journal of the Learning Sciences, 18(1), 7­44.
+
+© ISLS                                                                                                               79
+

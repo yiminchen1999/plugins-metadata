@@ -1,0 +1,252 @@
+Nodal and Matrix Analyses of Communication Patterns
+in Small Groups
+Donald W. Wortham
+
+University of Wisconsin-Madison
+
+      Abstract: This paper describes an analytic framework based on the
+      methods of social network analysis pioneered by Nieminen (1974) and
+      Freeman (1978/79) and used by structural anthropologists (e.g., Hage and
+      Harary, 1996). It extends the methodology for use in evaluating computer-
+      mediated communication in small groups and analyzes a sample dataset
+      drawn from synchronous chat room interaction of five adults involved in a
+      process of decision-making. The paper concludes with a discussion of
+      possible applications of social network analysis to computer-supported
+      learning, and limitations.
+
+      Keywords: computer mediated communication, evaluation
+
+Introduction
+
+In educational and work settings, people form groups to foster the dispersion of existing
+expertise and to accelerate the generation of new knowledge. Some groups interact in ad
+hoc fashion, while in others, the pattern of activity is structured. Examples of
+purposefully engineered groups include Jigsaw (Aronson, 1978) Group Investigation
+(Sharan & Sharan, 1992) and PIES (Kagan & Kagan, 1998).
+
+When investigating group interaction, instructors, researchers and designers of
+instructional environments have reason to describe or visualize the qualities of interaction
+among group members. They may also wish to quantify the number and types of
+interactions that take place among group members. This paper focuses on the latter
+interest, by describing a means of assessing patterns of interaction among group
+members. This method detailed in this paper is not meant as a substitute for qualitative
+analysis, but as a supplement to it. Additionally, the method may prove useful when put
+to use as a "sensor" in online learning communities, to help moderators, instructors or
+students themselves determine if certain group interactions are educationally desirable.
+
+The idea of quantifying interactions among members of small groups is not new. For
+instance, Lotan, Cohen and Morphew (1998) suggest that simply counting the number of
+interactions among participants in a learning environment may help designers assess the
+success of group-work interventions. This paper expands on this idea by describing
+models of group interaction and means for assessing data streams' fit to these models.
+These models may be particularly useful for those interested in assessing interaction
+among members of online learning environments for the purposes of improving that
+interaction.
+The paper is organized in the following way. First, we review two ways of representing
+patterns of interaction among members of groups: nodal networks and interaction
+matrices. We then describe a measure introduced by Nieminen (1974) and Freeman
+(1978/79) called degree of adjacency that is useful for describing the centrality of group
+members. After this, we discuss two network models...a "star" network (Freeman,
+1978/79) and an "all-channel" network, and review how these models relate to social
+roles in learning environments. Finally, we conduct a sample analysis, discuss how such
+analyses might be useful, and describe limitations.
+
+Representing Networks
+
+To represent relations between members in a group, Freeman (1978-79) used nodal
+networks, where a node or point represents each member of the group, and lines signify
+bi-directional connections between them. The figure below represents one of thirty
+possible models for five-person "transaction" networks identified by Freeman, where all
+connections funnel through a single node:
+
+ Figure 1. One of Freeman's (1978-79) thirty possible five-node transaction networks.
+
+This particular network has one very interesting property. Four of its nodes (persons 2, 3,
+4 and 5) are terminal points. This leads to inequality in the number of connections that
+each point holds. Borrowing from Nieminen (1974), Freeman (1978/79) refers to this
+quantification of connections as degree of adjacency, often represented as CD(Pk), which
+refers to the number of connections to a node (Pk), and "is viewed as important as an
+index of its potential communicative activity." (Freeman, 1978/79, p. 221.) In the graphic
+above, person 1 is the most central member of our five-person group, since this person
+shares more connections than others do.
+
+In addition to nodal diagrams, networks may also be represented in matrix form, with [1]
+representing the existence of links or connections between person-nodes, and [0] as their
+absence. More formally, CD(Pk) may be expressed as: CD(Pk) = Sa(pi,pk). Here, a(pi,pk)
+simply refers particular cells in a matrix defined by the networks' nodes. In such a
+matrix, a(pi,pk) = 1 if pI and pk are connected in graph form. In the case of nodes 1 and 5,
+there is a connection, so a(pi,pk) = 1. If there is no connection, as is the case between
+nodes 4 and 5 in our network, then a(pi,pk) = 0. Following this, Sa(pi,pk), or CD(Pk), is
+simply the sum of row entries. So, the matrix in Table 1 below re-represents the
+information from our nodal diagram (Figure 1):
+ Table 1. Matrix with an adjacency (CD(Pk)) calculation for Freeman's "star" network.
+
+Now let us visualize another network. The five nodes below are fully-connected, or as
+Freeman (1978/79) described, "all-channel."
+
+                     Figure 2. Freeman's "all-channel" network.
+
+We when we compute adjacency measures for the net, we see that it has a higher total
+degree of adjacency, and that the connections are equally distributed.
+
+                 Table 2. Matrix for Freeman's "all-channel" network.
+
+These representations of network interactions relate to theoretical approaches to learning.
+For instance, the pattern shown earlier in Figure 1 is consistent with the transmission
+model of learning, where information flows almost exclusively from one resource. On the
+other hand, the "all-channel" or fully-connected model is suggestive of some models of
+cooperative learning. Interestingly, both the star and all-channel models may be
+consistent with dynamic models of participation, such that proposed by Lave (1991) and
+Rogoff (1990). Here, learners have peripheral roles early on, but under guidance of an
+expert other (or others) gain increasingly legitimate roles in the social structure.
+
+How might apprenticeship and increasingly legitimate participation manifest themselves
+in these sorts of networks? Possibly, in the initial stages (time 0) of an apprenticeship
+situation, the interaction patterns might more closely resemble a "star" representation­
+they would hold fewer degrees of adjacency. As time passes (time1, time2, etc), students'
+participation shifts from peripheral to central, degrees of adjacency would likewise
+increase.
+Analysis of Online Data
+
+We turn now to the analysis of interaction data captured from an online chat room. Two
+university professors and three graduate students used this "virtual" communication
+medium as they discussed the design of an instructional environment in late 1998. This
+exchange consisted of 94 interactions among the five participants.
+
+Let us explore the question of whether all group members are equally participating in a
+small group. One way to approach this is to ask if the pattern of interactions conforms to
+the pattern of Freeman's all-channel five-node network. In this ideal network, the pattern
+of interaction among group members is symmetrical and equal. Since we know the
+number of total interactions among group members (94), we can compute the expected
+values for each cell (Table below).
+
+   Table 3. Expected cell values for 94 interactions, given an "all-channel" network.
+
+In the matrix above, antecedent behavior is marked by columns; subsequent behavior in
+rows. Therefore, the cell in Table 3 above in bold may be read, "LindaL responds to
+FredM 4.7 times."
+
+In fact, as the actual data presented in Table 4 below shows, LindaL responded 12 times
+to utterances made by FredM, the largest number of responses in this dataset. (Note:
+seven utterances in which persons "responded to" themselves were eliminated from the
+data trace.) At the other extreme are the patterns of interaction centering on KarenH; her
+five utterances­the smallest gross number in the group­were followed by utterances from
+JeffR.
+
+                    Table 4. Actual cell values for 94 interactions.
+
+To compute degree of adjacency (CD(Pk)), we can convert the data matrix in Table 4
+above to a table of binary responses. We do this by assigning all non-zero data in the
+table a "1." Summing across rows, we find that that degree of adjacency for this data is
+different from that expected in an all-channel net, where the vector would be [4,4,4,4,4]:
+         Table 5. Matrix and adjacency (CD(Pk)) calculation for binary data.
+
+We can also test the data to determine if there is a statistical difference between the actual
+data and that expected under the hypothesis that the group performed as an all-channel
+network. Indeed, a one-sample t-test of expected minus actual responses rejects the null
+hypothesis of no difference between expected values and actual values, p<.000001. In
+other words, if we take communicative interaction as proxy for network adjacency, then
+this group did not function in a way consistent with Freeman's all-channel network
+during the period observed.
+
+Visual inspection of the matrices in Tables 4 and 5 does little to disconfirm the statistical
+result. Looking across the bottom row and last column of the matrix, we see that
+KarenH's participation is marginal.
+
+The story seems even more straightforward when we represent the connections in the
+form of a weighted graph. Here, connections between members are drawn as lines in the
+direction of their flow. The lines are weighted to reflect relative connection strengths,
+with darker lines reflecting more responses. Absence of lines means no interaction.
+
+        Figure 3. Interaction paths for actual data presented in Table 4 above.
+
+In examining this graph, three points strike especially hard: KarenH appears to be very
+weakly connected to the group, having connections with only two of its members. Also,
+the relationship between GregW and LindaL is not particularly strong. Finally, FredM
+appears to be the most central member of the group, with the heaviest lines connecting
+him and three of the group's four other members. Interestingly, these visual patterns
+resonate with reality: FredM, in addition to being the group member with the strongest
+communicative connections, was also its leader. KarenH was one of the three graduate
+students in the group and by far the most junior.
+Applications
+
+Let us put aside our roles as researchers and designers of online learning environments. If
+we imagine for a moment that we are instructors concerned with facilitating the
+interactions within networks of students, the absence of all-channel group interaction
+might be a problem to solve, rather than a mere curiosity. The nodal and matrix
+representations of patterns of group interaction, along with the statistical analysis of these
+patterns, might prove as useful screening devices, if they were part of a real-time or near-
+real-time social network analysis toolkit. Instructors could use a social-network analysis
+to analyze whether or not work- and learning groups were functioning appropriately,
+given a particular model of learning. Student teams could likewise access the tool to self-
+assess their communicative processes. While it is beyond the scope of this paper to
+describe the implementation of such a tool, its design follows directly from the principles
+outlined in this paper.
+
+Limitations
+
+While the methods described in this paper (and proposals for tools based upon them) may
+well hold potential, it is important to understand their limits. Absent some understanding
+of the actual relationships among group members, knowledge of communicative structure
+of the group may not be particularly useful. Indeed, it may be misleading. For instance, in
+the case given above, KarenH's lack of participation might be perfectly appropriate given
+her status as "junior" graduate student. Were she a facilitator who was "fading" her
+influence on the group, in a manner consistent with the cognitive apprenticeship model of
+Collins, Brown and Newman (1989), her level of participation might also be appropriate.
+The point is that these judgements cannot be made in the absence of richer data about
+who KarenH is and her role in the group. The methods described here give us little
+purchase on that problem. Still, in combination with richer data, this approach may prove
+useful.
+
+Acknowledgements
+
+The author wishes to thank Dr. S. J. Derry and J. B. Kim for many productive
+conversations concerning the analysis of online communication, and Dr. S. B. Gilbert for
+a constructive criticism on this paper.
+
+Bibliography
+
+Aronson, E., N. Blaney, C. Stephan, J. Sikes, and M. Snapp (1978). The jigsaw
+classroom. Beverly Hills, CA, Sage.
+
+Collins, A., Brown, J. S., & Newman, S. E. (1989). Cognitive apprenticeship: Teaching
+the crafts of reading, writing, and mathematics. In L. B. Resnick (Ed.) Knowing,
+learning, and instruction: Essays in honor of Robert Glaser, Mahwah, NJ: Erlbaum.
+Freeman, Linton. C. (1978-79). Centrality in social networks: conceptual clarification.
+Social Networks 1, 215-239.
+
+Hage, P. & Harary, F. (1996). Island networks: Communication, kinship and
+classification structures in Oceania. Cambridge, England: Cambridge University Press.
+
+Harary, F., Norman, R.Z. and Cartwright, D. (1983). Structural models: an introduction
+to the theory of directed graphs. New York: Wiley & Sons.
+
+Lotan, R., Cohen, E. & Morphew, C. (1998). Beyond the workshop: evidence from
+complex instruction. In C.M. Brody and N. Davidson (Eds.), Professional Development
+for Cooperative Learning. Albany, NY: SUNY Press.
+
+Lave, J. (1991). Situated learning in communities of practice. In L.B. Resnick, J.M.
+Levine, and S.D. Teasley (Eds.), Perspectives of Social Shared Cognition. Washington,
+DC: American Psychologoical Association.
+
+Nieminen, J. (1974). On centrality in a graph. Scandinavian Journal of Psychology 15,
+322-336.
+
+Rogoff, B. (1990). Apprenticeship in thinking: Cognitive development in social context.
+Oxford: Oxford University Press.
+
+Sharan, S. & Sharan, Y. (1992). Group investigation. New York: Teachers College Press.
+
+Wampold, B. E. (1992). The intensive examination of social interaction. In Kratochwill
+and J.R. Levin (Eds.), Single-case research design and analysis: New directions for
+psychology and education. Mahwah, NJ: Erlbaum.
+
+Wertsch, J.V. (1991). Voices of the mind: A sociocultural approach to mediated action.
+Cambridge, MA: Harvard University Press.
+
+Authors' address
+
+Donald W. Wortham (wortham@macc.wisc.edu)
+Department of Educational Psychology; 1025 W. Johnson St.; Madison, WI 53706. Tel.
+(847) 612-8062. Fax (847) 405-5005.
+

@@ -1,0 +1,532 @@
+   A Framework for Eclectic Analysis of Collaborative Interaction
+                              Daniel Suthers, Nathan Dwyer, Richard Medina, Ravi Vatrapu
+                                    Laboratory for Interactive Learning Technologies
+                     Dept. of Information and Computer Sciences, University of Hawai`i at Manoa
+                              1680 East West Road, POST 309, Honolulu, HI 96822, USA
+                                         collaborative-representations@hawaii.edu
+
+          Abstract: The interactional structure of learning practices is a central focus of study for CSCL,
+          although challenges remain in developing and pursuing a systematic research agenda in the field.
+          Different  analytic approaches    produce    complementary    insights, but   comparison    is hampered   by
+          incompatible   representations   of the   object of study.  Sequential  interaction  analysis  is promising
+          but must   be  scaled  to   distributed   and   asynchronously   mediated   settings. Building     on  recent
+          analytic work within our laboratory, we propose a framework for analysis that is founded on the
+          concepts of media coordinations and uptake, and utilizes an abstract transcript representation, the
+          dependency    graph,   that   is suitable  for   use  by  multiple    analytical traditions    and supports
+          examination of sequential structure at larger scales.
+
+Introduction
+          Learning   in collaboration   with  others   is the foundation   of Computer     Supported  Collaborative    Learning
+(CSCL). An overview of the historical development of the field (Stahl, Koschmann, & Suthers, 2006) reveals the
+presence of several research traditions, including an analytic tradition that began with a conception of collaboration
+as a "continued attempt to construct and maintain a shared conception of a problem" (Roschelle & Teasley, 1995).
+More recently, there have been calls to focus work in the field on the study of "the practices of meaning-making in
+the context of joint activity" (Koschmann, 2002) or "intersubjective meaning-making" (Suthers, 2006b), from which
+"group cognition" (Stahl, 2006) emerges. The common emphasis is on the interactional structure of collaborative
+learning. Diverse lines of work exist in CSCL: we study interaction in different media, examine phenomena ranging
+from micro-episodes in small groups to large communities over periods of weeks to months, and analyze data using
+various   "qualitative" and   "quantitative"   analytic   approaches.   In order  to  enable  the  cross-pollination     of these
+different lines of   work, there is   a need   for  shared  definitions and   a common     formalism.    The work   in  our  own
+laboratory spans    some   of this  diversity, including     study of  co-present and   distributed   interaction   with  various
+synchronous    and   asynchronous     media,   and  applying   experimental     and  ethnographic   methodologies      at   scales
+including  pairs, small   groups   and   online   communities.     Because  of  this diversity  in our    own   work,   we  have
+encountered   the need   for  greater theoretical   and   methodological   dialogue; a  need  that also   exists in the  field of
+CSCL as a whole. We are committed to studying collaborative learning as a mediated interactional accomplishment,
+but wish to do so in settings beyond micro-episodes of synchronous interaction, and to apply a mixture of methods
+for hypothesis generation and testing. In this paper, we report on a framework for eclectic analysis of collaborative
+interaction that we have developed for our own work, in hopes that adoption by others may increase dialogue within
+the field as well. The framework is based on the concept of uptake and a few associated theoretical commitments
+that are necessary to define interaction as a common object of study. The primary feature of this framework is an
+abstract  transcript notation--the    dependency     graph--that    offers  a   common     representational  basis  for   diverse
+analytic methods applied to various media and interactional situations. The remainder of this paper documents the
+motivations, theoretical foundation, and practical aspects of the framework that has resulted, with selected examples.
+
+Motivations
+          The approach    is  based on   several   years  of  our  own  analytic work,  initiated  to expose    the practices  of
+mediated collaborative learning in data from our prior experimental studies. In an analysis undertaken in order to
+understand how knowledge building was accomplished via synchronous chat and evidence mapping tools, we used
+the concept of uptake to track interaction distributed across these tools (Suthers, 2006a). Subsequently, we began
+analyzing  asynchronous    interaction   involving   threaded  discussion   and  evidence   mapping    tools (Suthers,   Dwyer,
+Vatrapu, & Medina, 2007). The uptake analytic framework was further developed to handle the asynchronicity and
+multiple workspaces of these data. Below we summarize the view of learning underlying our current work, assess
+prevalent  analysis  methodologies    in   relation to  our  needs, and  then   discuss additional  requirements    for  eclectic
+methodologies.
+
+                                                               694                                                     CSCL 2007
+Learning as an Interactive Process
+          Although   we  believe   that the framework     we   offer   in this paper  can   support   analyses under    a  variety of
+views of learning, the framework is motivated by our own views of how learning takes place in social settings. We
+conceive of learning as an interactional process of change. This conception of learning as interactional is compatible
+with  theories of  learning that   identify individuals   (Beck,     1997;  Chi,  Bassok,   Lewis,    Reimann,    & Glaser,    1989),
+socially  embedded    individuals   (Doise  &   Mugny,    1984;     Vygotsky,    1978), social   systems    (Engestrom,     2001), or
+communities    (Wenger,  1998)     as the locus   of change.    Learning    need  not be  deliberately   sought:   it is  a result of
+participants'  attempts  to make    sense  of a   situation.  Meaning-making,      as we    call it  in this paper,   takes place  at
+multiple levels: solving a problem, maintaining interpersonal relationships, and/or affirming identity in a community
+(Bronckart, 1995). To study learning in social settings we must necessarily study individual trajectories of meaning-
+making and how they intertwine in practices of intersubjective meaning-making (Suthers, 2006b). In such settings,
+the meaning of a given contribution is best understood as a function of its relationships to prior interactions, and
+indexically with respect to the physical and social context (Koschmann, Zemel, & Stahl, 2004). Meaning-making is
+mediated by the physical and social environment in diverse ways (Wenger, 1998; Wertsch, 1998). As designers of
+media for online learning, this mediation gives us an avenue for influencing meaning-making and learning through
+the social affordances of the tools that we design (Suthers, 2006b).
+
+Statistical Aggregation
+          Many   approaches     to the  study  of  learning   follow   a   quantitative paradigm      in which    contributions    (or
+elements of contributions) are annotated according to a well-specified coding scheme (e.g., De Wever, Schellens,
+Valcke,   &  Van  Keer,  2006;  Rourke,    Anderson,    Garrison,    &  Archer,   2000).  Statistical   methods   are then    used to
+characterize  aggregate  behaviors    that  may   then be  compared       across  experimental   conditions.   This   approach    has
+three significant    strengths. First,  a   coding   scheme      is  a concrete    classification    of  behaviors    that  supports
+mathematical methods for estimating consistency (reliability) between multiple analysts. Second, the approach has
+well defined statistical methods for comparing results from multiple sources of data such as experimental conditions
+and replications of studies. Third, this approach can scale up analysis by quantifying data across large groups. The
+trade-off is that  "coding  and    counting"  obscures    the sequential   structure  and   situated  methods  of   the  interaction.
+"Coding" assigns the meaning of an act as an isolated unit, and therefore either does not take the indexicality of this
+meaning into account or fails to record the evidence on which the analyst relied in making a judgment. "Counting"
+or statistical aggregation loses the sequential methods by which media affordances are used in particular learning
+accomplishments, making it more difficult to identify important design elements at the same temporal and spatial
+grain as the actual interaction itself.
+
+Sequential Analysis
+          A contrasting approach finds the significance of each act in the context of the unfolding interaction. This
+approach    includes Conversation     Analysis  (Goodwin      &  Heritage,  1990;   Sacks,  Schegloff,    &  Jefferson,   1974)   and
+Interaction Analysis (Jordan & Henderson, 1995). Typically, these methods repeatedly examine the micro-structure
+of short interaction segments to uncover the methods by which participants make their actions accountable to each
+other (Garfinkel, 1967). This approach is a complement to statistical aggregation and has the opposite strengths and
+weaknesses. These methods document the actual practices of learning by attending to the sequential structure of the
+interaction,  producing  detailed     descriptions   that are   deeply    situated in   the medium      of   interaction.  However,
+sequential analyses are often time consuming to produce and difficult to generalize to different media or groups. A
+micro-analysis can capture sequential properties because analysis is focused on short interactions that an analyst can
+view and review, but progressively larger structures escape its grasp. The family of methods loosely classified as
+"exploratory   sequential   data   analysis"   (Sanderson     &     Fisher, 1994)    address     some    of  these  concerns      with
+computational support for statistical and grammatical analysis (Olson, Herbsleb, & Rueter, 1994).
+
+Additional Requirements
+          The  different environments       and   media   under     examination    have spawned       multiple environment-       and
+medium-specific analytic notations. For example, ethnography relies to a large extent on freeform notes taken by
+observers. Studies of conversation have used simple transcripts of utterances (Roschelle, 1992) and more detailed
+transcripts using Jeffersonian notation (Sacks et al., 1974). Video has become the standard recording medium for
+studies  of practice (Jordan    &  Henderson,   1995;   Koschmann       et  al., 2004). Video    analysis   tools (e.g.,  Pea, 2006;
+Woods,    2006)  provide  support   for  exploring   and   annotating     video  records,   but  the  annotations  are   tied  to this
+medium.     Online interaction  simplifies    the creation    of transcriptions:   software     tools can   record  a detailed    and
+
+                                                                 695                                                        CSCL 2007
+comprehensive log of an interaction. However, online media introduce asynchronicity and hide the production of
+contributions  (Clark   &  Brennan,    1991),  introducing    different demands     on   analytic notations.    Analysis   of the
+simultaneous use of many communication media and channels has relied on ad hoc, eclectic representations (see, for
+example,   Hmelo-Silver,   2003;    Suthers,  2006a).  Because  interaction    relies on many    different  semiotic  resources,
+analysis of interactional processes must be sensitive to the social affordances of the specific medium being analyzed,
+yet also be applicable across multiple media in order to facilitate dialog between researchers. This introduces a pair
+of related challenges to the creation of a generalizable method: it must be media agnostic but simultaneously media
+aware. A workable method needs to be independent of the form of the data under analysis. At the same time, the
+method needs to maintain a record of how people make use of the specific affordances of media. This is required to
+allow analysis to speak to design and empirically drive the creation of new, more effective media.
+
+          Much of the foundational work in sequential analysis of interaction has focused on face-to-face interaction.
+Production blocking and the ephemerality of spoken interactions constrain communication in such a manner that
+turns (Sacks et al., 1974) and adjacency pairs (Schegloff & Sacks, 1973) are appropriate units of analysis for face-to-
+face data. These units of analysis are not as appropriate for CMC since most online media support simultaneous
+production   and   persistence    of contributions.   Contributions     may    become    available  to   other  participants     in
+unpredictable orders, may not be immediately available, and may address earlier contributions at any time (Garcia &
+Jacobs, 1999; Herring, 1999). Because conceptual coherence can be decoupled from temporal or spatial adjacency,
+we  cannot  restrict analysis  to the relationships   between  adjacent    events. Nor   is it appropriate   to treat CMC     as a
+degenerate form of face-to-face interaction (e.g., by seeking an analog to adjacency pairs) since people use attributes
+of new media to create new forms of interaction (Dwyer & Suthers, 2006; Herring, 1999).
+
+          Based on considerations discussed in this section, we sought an analytic approach that (1) maintains the
+sequential  and  situational  context  of  activity so that an  account    of  the interactional  construction   of   meaning    is
+possible, (2) does    not assume     that the medium   of   interaction  has   any  particular  interactional   properties  (e.g.,
+synchronicity,   availability  of contributions,   or  persistence), but   (3) records   these  properties   where    they exist.
+Additionally,  it should   (4)   be  sufficiently formalized   to  enable  computational     support   for  analysis,    including
+sequential and statistical analysis, and (5) capture aspects of interaction that are critical to learning. The analytic
+framework we developed draws on other interaction analysis methods, but it uses generalized concepts of interaction
+elements and structures that are independent of any particular medium. The remainder of the paper describes the
+theoretical foundations for our analytic representation, and how it is constructed and used.
+
+Theoretical Foundations
+          We need a unit of interaction that abstracts from media-specific concepts such as adjacency, is applicable to
+the wide variety of temporal, spatial and notational properties of media, and is capable of tracing the entwinement of
+individual and intersubjective trajectories of meaning-making. Since collaborative learning is only possible when
+something is shared and transformed between participants, we built this unit of analysis on the concept of uptake
+(Suthers,  2006a).   Uptake   is  how  we   describe  the  act of  a participant   taking   reifications  of prior    or ongoing
+participation (e.g., expressions of information, attitudes and attentional orientation; whether ephemeral or persistent)
+as having certain relevance for further participation. Uptake is a transitive act, in that it always is oriented towards
+the taken-up  as  its  object, which   is  foregrounded    by  the act  as being   relevant.   Uptake  is  interpretative: some
+particular aspect of the object is brought forth and given (further) meaning. The "thematic connections" of Resnick,
+Salmon,   Zeitz,  Wathen,  &     Holowchak    (1993)   are an  example     of uptake,  although   our  conception     allows  for
+nonlinguistic forms of expression, and for other kinds of interpretative acts in addition to argumentative ones. A
+participant can   take up one's   own   prior reifications as  well  as those  of  others:  by  identifying  both, analysts   can
+characterize  visible  trajectories  of   intrasubjective  and  intersubjective    meaning-making.     Uptake    is   a  form    of
+participation: the act must be visible within a given realm of participation to be uptake in that realm. An individual
+working through ideas via mental processes and external notations has access to his or her uptake across as well as
+within these media, but in the social realm only visible acts can foreground and interpret prior reifications.
+
+          Our framework for uptake analysis tries to be useful to multiple theoretical and analytic paradigms, but is
+based on two theoretical assumptions about the nature of artifact-mediated collaborative interaction.
+·   Coordination: Efforts to coordinate between the personal and social realms are enacted through media
+    (including expressions and perceptions).
+·   Ongoing sequential structure: The sequential structure of these coordinations at successively overlapping and
+    expansive granularities is significant in understanding how meaning-making is accomplished.
+
+                                                               696                                                       CSCL 2007
+All interaction  is mediated  by  physical    and   cultural tools  (Wertsch,  1998),  whether  in ephemeral    media  such  as
+thought, speech and gesture, or persistent media such as writing, diagrams, or electronic representations. Distributed
+cognition  (Hutchins,   1995)    describes    how   information    is transformed   as  it propagates  via   coordinations   of
+representations through a distributed socio-technical system. According to Hutchins, the coordinated representations
+include individuals' internal conceptions in addition to external, perceptible representations. We draw on the idea of
+coordination, noting that coordination between personal and social realms can be accepted regardless of whether one
+accepts  the existence  of cognitive     representations. A  typical  distributed  cognition analysis starts  by identifying a
+system's function (e.g., steering a ship) and involves tracing the propagation of information through the system and
+identifying  transformations     that take    place at  points   of   coordination  between   the  participants  and   external
+representations. In  settings   fundamentally      concerned   with   the creation  of  new  knowledge,    this  focus on   the
+enactment of functional relationships implies too static an interaction structure, and indeed takes as a starting point
+that which analysis seeks to uncover. An analysis based on uptake, in contrast, starts with the identification of acts
+of  coordination and  the  dependencies     between    them,  and   seeks  to recognize    what is accomplished   through  the
+interaction. In doing so, we draw on the ethnomethodological idea that the meanings of actions are indexical (deeply
+tied to the time and place of their enactment), and the consequence that the sequential structure of activity is of
+fundamental importance (Garfinkel, 1967; Koschmann et al., 2004).
+
+         Motivated    by    the   need      for  a  common       transcript
+representation that exposes interactional structures in diverse forms
+of mediated interaction, and for a formal structure that is amenable
+to computation, we developed the dependency graph. A schema for
+the basic analytical elements is shown in Figure 1. Any empirical
+analysis must be built upon observable events. We assume that an
+analyst is interested in deliberate acts, not just any physical event.
+Therefore  the  analyst will  examine     the ongoing   stream   of   events        Figure 1. Schema for a dependency
+and identify   those that  appear     to be coordinations    between    the
+personal and public realms. These media coordinations are exemplified by mc1 and mc2 in Figure 1. The existence
+of conceptions   is implied  by  media    coordinations,  but  we   need  not (yet) identify these  conceptions  (see  Suthers,
+Dwyer et al., 2007 for further discussion of implied conceptions). The analyst need only make a commitment that
+certain coordinations are of interest.
+
+         If a media coordination mc2 is to be understood as taking up the contribution of a prior coordination mc1,
+then there must be some observable relationship between the media coordinations. Therefore, we further ground the
+uptake analysis in empirical evidence by identifying dependencies between media coordinations that suggest that
+there is uptake. Dependencies     can    be found   in media-level,   representational, and  semantic  relationships  between
+media  coordinations:   these will    be  discussed  below.   The   dependency    graph representation  takes   the form  of a
+directed acyclic graph consisting of media coordinations and the dependencies between them (see Suthers, 2006a for
+a formal definition) on which we may layer analytic interpretations. Dependencies provide evidence that uptake may
+exist, but not all dependencies as defined at the media level need be uptake. The distinction between dependencies
+and uptake is made because dependencies reflect the myriad of ways in which human action is deeply embedded in
+and sensitive to the environment and immediate history of interaction, while only some of these relationships enter
+into the realm of meaning in which participants are demonstrably oriented towards reifications as having relevance
+for ongoing participation. Once these relationships have been identified, the graph defined by reversing the arcs may
+be properly called an uptake graph, as in (Suthers, 2006a).
+
+         Although we have described uptake as something that participants do, uptake is more accurately understood
+as an etic abstraction that we as analysts use to identify interactionally significant relationships between acts. From
+an emic perspective, participants don't engage in the abstract act of uptake; they engage in specific acts that they
+affirm (through subsequent activity) as the accomplishment of recognizable activity (Garfinkel, 1967). The analyst's
+identification of uptake is a bridge between empirical dependencies and further analysis. Uptake analysis is a proto-
+analytic method that must be completed by further analysis motivated by a given research program. The dependency
+graph provides resources for this further analysis by offering potential instances of uptake and grounding analysis in
+empirical  media    coordinations.    This  representation   can   support   multiple methods   of  analysis, is amenable    to
+computational support and visualization, and is meant as a boundary object for discussion and collaboration across
+different analytical traditions.
+
+                                                               697                                                   CSCL 2007
+Uptake Analysis
+          This   section describes    the practical tasks  involved      in producing    and  interpreting  a  dependency     graph,
+accompanied     by  a discussion    of related  issues and   concrete    examples    from    our analysis  work.   In  practice,  the
+process may iterate between identification of media coordinations, dependencies, and uptake; and may be driven by
+specific analytic goals or may be more exploratory in nature.
+
+Identifying Media Coordinations
+          A   dependency    graph   is built   on  observed    media   coordinations     for which   conceptual    or  interactional
+significance is claimed. Media coordinations are a more general form of elements from other analytical methods.
+Content analysis methods that work with text highlight and code elements in the text record. Conversation analysis
+and video-based     micro-analysis    identify  points of interest  in   the media   recording   or  transcript, and  the  media    or
+transcript may be similarly coded or annotated. The analyst's identifications of media coordinations fulfill the same
+function   as these  annotations.   Media  coordinations   are  represented      as vertices in  the dependency     graph.  We   call
+these vertices fixed points since they constitute the points of departure for analysis. Fixed points are anchored in
+media coordinations that can vary in granularity from a single instant to a period of time. The fixed point's anchor
+should be specific enough to allow the analyst to return to the media action as accounted in the data record. As in
+most interaction analysis methods, the source data is always the final authority.
+
+          Some media coordinations are easy to identify. When analyzing spoken conversation or CMC, utterances
+and messages are obvious candidates for media coordinations. The creation of an object in a shared workspace is
+similarly  easy   to  identify  as  a  media    coordination.  We    use    the  general  term   expressions   to   refer  to media
+coordinations of this nature. Other media coordinations are less obvious. For example, if two items are placed near
+each other in a workspace this may be an expression of relatedness (Dwyer & Suthers, 2006). This illustrates the
+more general issue of not confusing the representational vocabulary of a medium with the actions supported by the
+medium. For example, a medium that supports spatial positioning may be used to create groups even if no explicit
+grouping tool is provided.
+
+          Perceptions    (e.g., hearing   or reading   another's   expression)      are another   form  of  coordination   between
+representation    and conception.   Explicit   identification  of  perception    is absent from   many  other    analysis  methods,
+which   implicitly   assume  that   each  participant  perceives   every     contribution,   and  does  so  at the   time  that  it is
+produced   or  displayed.   With    asynchronous    data  this assumption     is  clearly  untenable.   The   applicability   of this
+assumption    to  synchronous    interaction   can  also  be  questioned.    Therefore    our  abstract transcript   representation
+allows for explicit specification of evidence for perceptions as another form of media coordination. It is difficult to
+identify the conception that results from a perception, but it is sufficient to assume that some conception results and
+mark   the perception    event  as  a media  coordination.    Researchers    interested   only   in public  behavior   need   not   go
+further than   to use  the  perceptual  media   coordination    to  narrow    the   temporal  scope  of uptake    of  the perceived
+contribution.   Researchers     interested in   psychological     (e.g., cognitive)     claims   about  individual   learning    may
+subsequently attempt to infer the conception based on other evidence, including dependency relations. In either case,
+the observed evidence for perceptual coordinations has been made explicit.
+
+          A   fixed   point is  incomplete   without   a  description    of   the   evidence   on   which  the   analyst   based    its
+identification.  The  practice   of making   evidence    explicit  addresses     several  issues. It limits the   degree   to which
+analysts   can  make   assumptions     about   media   coordinations.    For  example,    maintaining   the    distinction between
+expression    and perception    has forced   us to question    our assumptions      about  which    contributions  are available    to
+others. Specifying the evidence distinguishes the descriptive "what" of the interaction from the explanatory "why"
+of the  analyst's interpretation,   making   clear the specific   details   that were   seen as  significant.  This  helps multiple
+analysts collaboratively review their observations and interpretations and facilitates trans-disciplinary discussions.
+
+Identifying Dependencies
+          The second task in constructing a dependency graph is to identify and document the dependencies between
+media coordinations. A dependency represents a grounded assertion that the media coordination identified by one
+fixed point enables the media coordination identified by another fixed point. Dependencies map out the sequential
+unfolding of the interaction. They are defined in terms of a set of participating media coordinations and grounded
+evidence for their interdependencies.
+
+                                                                698                                                        CSCL 2007
+    Figure 2. Comparison of threaded discussion reply structure (inset) and dependency graph (main graph) from
+      an online discussion. Fixed points without letters are evidenced by message postings and with letters are
+            evidenced by message reads. Dashed lines represent dependencies for intrasubjective uptake.
+          Two  or  more    media    coordinations   can participate   in a   dependency     relationship.    Dependencies    are
+directional and point backwards in time. A dependency expresses how a single media coordination depends on one
+or more prior media coordinations. If multiple coordinations are dependent on a single coordination, then multiple
+dependencies   are specified.   If mc2  depends  on   mc1 then   we  are claiming    that  mc1 enabled    mc2, but there  is no
+assertion that mc1   caused  mc2.   In  our work    we  have frequently     had  to  work  with  the ambiguity    of  "potential
+dependencies". Dependencies are a generalization of relationship types from other sequential data analysis methods,
+such as "adjacency pairs," "reply," "thematic connections," etc., and are candidate uptakes. Specifying the evidence
+for the dependencies    serves  the  same   purpose  as for  the fixed  points.   In particular, explicit  examination    of the
+evidence makes it easier to distinguish the assertion of the dependency from its interpretation. In contrast, in many
+coding  methods    the analyst  simply   asserts an  interpretation,  e.g., that  a  contribution is   an "elaboration"   on  or
+"objection" to  another,   and  the validity  of this  interpretation is established    through   computations    of  inter-rater
+reliability that do not make the evidence explicit. With dependencies, the evidence must support the assertion that
+one or more media coordinations played a role in enabling another media coordination. Some types of evidence are
+more easily identified than others. We have used three types of evidence for dependencies in our work. Starting with
+the most concrete they are media dependencies, representational association, and semantic relatedness. These are
+discussed below along with examples.
+
+          The most concrete evidence is in the form of media dependencies--one action on the representation could
+not have  taken place   in the  absence  of a previous  action.   A  reply  in  a threaded  discussion  depends    on the prior
+existence of the message being replied to, and modifying an element of a shared workspace depends on the previous
+act of creating the element. However, care must be taken not to fall into the trap of conflating the representational
+vocabulary  with   the steps  in   the interaction. Consider  a   reply  in a   threaded   discussion. The   reply message    is
+dependent on the message being replied to, but in terms of dependencies between coordinations it is more accurate
+to say that the creation of the reply message is dependent on the author's perception of the message being replied to.
+Figure 2 (adapted from Suthers, Dwyer et al., 2007) contrasts the reply structure of a short discussion (inset figure)
+with the  dependency   structure   (including perceptions)   from   which   we   inferred  uptake (main   figure). Nodes   with
+letters such as 8a, 7b, etc. represent media coordinations evidenced by message read events. When these perception-
+related media  coordinations    are included, a  much   different pattern   emerges.    In particular, participant 3's  posting
+(fixed point 2) is not only related to the single message being replied to, but is the result of a series of reads that
+encompasses two subthreads of the discussion.
+
+          The  second    type   of   dependency     evidence   is  representational     association.    The    use   of  similar
+representational attributes is often used to indicate relatedness (Dwyer & Suthers, 2006). The representations can
+have similar visual attributes (e.g., color or type face) or they can be grouped together or aligned spatially. Temporal
+proximity  can  also   indicate relatedness--expressions    that  follow    each  other closely  are   often part  of the same
+exchange. Each of these indications of relatedness can imply a dependency. In Figure 2, temporal proximity is part
+
+                                                             699                                                      CSCL 2007
+      Figure 3. Dependency graph of a dyad collaborating asynchronously with multiple media. Participant 1's
+       coordinations are above and Participant 2's coordinations are below the timeline. Vertical bars represent
+       workspace synchronizations in which the partner's recent work became available. Rectangles, octagons,
+       and ellipses represent coordinations with an evidence map, a threaded discussion, and a word processing
+       tool, respectively. The graph is partial and was constructed by identifying dependencies backwards from
+                                        the portions of the essays shown.
+
+of our evidence for the dependency of 2 on 7b, 5b, 6b, 4b, and 3a. In Figure 3 (an analysis of collaboration through a
+shared workspace to be discussed below), spatial connectivity is our evidence for the dependency of perception 20a
+on 19. Representational association can also consist of repeated words and phrases indicating a dependency on the
+media coordination in which they were introduced. This can sometimes be easy to identify, for example when copy
+and paste is observed, or a phrase is typed soon after reading it. However, in general it may be more difficult to
+identify the original source of any content or to determine whether or not its re-use is actually dependent on the prior
+use.
+
+        The final type of evidence is semantic relatedness: the semantic content of a media coordination can be
+traced to the semantic content of another media coordination. See for example the dependency of 7 on 20a in Figure
+3. Semantic dependency can be difficult to identify and is often open to debate. For example, in one case we looked
+at, one participant added three related nodes to an evidence map. The other participant, after reading them, added a
+fourth node that seemed  to  summarize the  first  three. In general, representational and  semantic  dependencies  are
+more  convincing if convergent evidence exists (e.g., temporal   proximity and semantic relatedness).
+
+Documenting other media elements
+        A dependency graph is a partial transcription of an interaction. It may be necessary to record additional
+information to contextualize the interaction. This additional information can annotate or augment the dependency
+graph  formalism.  For  example,  the  reply structure    of   a threaded   discussion is   an important  resource  for
+understanding the participants' view of the medium, and so is included in Figure 2. In (Suthers, Vatrapu, Medina,
+Joseph, & Dwyer, 2007), we used an asynchronous protocol. In order to identify which representational elements
+each participant had available at any point  in time,  we  incorporated   indications  of workspace   updates by which
+participants received new data from their partner, visualized as vertical bars in Figure 3.
+
+Iteration
+        Production   of the dependency graph    is an iterative  process of densification:  multiple passes through the
+data identify additional elements and provide new insights into the interaction. The formalism of the dependency
+
+                                                           700                                                 CSCL 2007
+graph provides support for this process. New fixed points and dependencies can be continually added to the graph.
+This has  the following   ramifications.    The  graph  can    grow  in complexity     to reflect  a deepening    knowledge      of   the
+data, but the graph can never be considered "complete," except with regard to particular representational elements
+(e.g., it is possible to claim that every discussion posting has been recorded as a fixed point). Therefore, one must be
+cautious about asserting that a practice or pattern never occurs. The quality of the analysis is proportional to the
+richness of the data. In our work with threaded discussions for online courses we only have log entries for when a
+message   was  created   and  when     a user  opened   a   message.  Other   media     coordinations    such  as  scrolling    are  not
+logged. On the other hand, our experimental configuration provides a complete record of every mouse and keyboard
+event, every action on the shared representation, and a video capture of the computer screen from each client. The
+richness of the latter data has allowed us to examine interaction at a much finer grain. Nonetheless, the threaded
+discussion  data  is sufficient for    coarser  grained  analysis.   Finally,  repeated    iterations may     identify  new     types  of
+representational elements, media coordinatins, and dependencies. Our work has suggested two other constructions:
+interactionally defined representational elements that do not correspond to any explicit representational notation, and
+composite media coordinations in which two or more media events seem to share a conception.
+
+Example of Discovery by Uptake Analysis
+         Figure 3 presents a dependency graph of data from a study of collaborative argumentation with evidence
+maps.  See   (Suthers,  Vatrapu   et   al., 2007)   in this  volume   for    details  of the study.   This    analysis    was   done   to
+understand how two participants used media resources to converge on the conclusion that aluminum is probably not
+the cause of a disease under consideration. (The relevant information had been distributed across participants in a
+hidden  profile.)   See  (Suthers,  Medina,     Vatrapu,    &  Dwyer,     2007)    in  this volume    for  discussion     of    whether
+convergence   is  achieved    by    information    sharing    alone  or   whether     interactional  "round    trips"   are   required.
+Construction of the dependency graph allowed us to discover an interesting interactional pattern that goes beyond
+simple round trips. The information that "aluminum is the third most abundant element" and that this contradicts
+aluminum as a causal agent has been successfully shared in an evidence map (media coordinations 27, 27a, 20, 19
+and  20a). From   an  information    sharing    perspective,   this sequence    is sufficient   to explain    the fact  that    both  the
+participants mentioned the abundance of aluminum (the successfully shared information) in rejecting aluminum as a
+disease factor. However, participants did another round trip for confirmation over 20 minutes later in the session (7-
+7a-8-8a). By exposing this dual round trip structure, the uptake analysis enabled us to hypothesize an interactional
+pattern in which information is first shared in one exchange, and then agreement on a joint interpretation of this
+information   is  accomplished      in a    second  exchange.    The    analysis   also   helped   us    discover    that participants
+accomplished     the second   confirmation     round   trip by  moving    to  a  different   interactional    medium,     the   threaded
+discussion.
+         We are often asked how long an analysis takes, and what tools we used. Time estimates that are predictive
+of future  work   are  not yet  possible,    because   the  analyses  reported     in this  paper   took  place   concurrently     with
+extensive  discussions    in  which    we   developed    the   theoretical   and   practical  basis   for  the    framework.     These
+discussions  took   place over  many     months    with multiple    revisions  of  the   analyses.  Visualizations     of dependency
+graphs were constructed using standard tools such as ExcelTM, VisioTM, and OmnigraffleTM. Software tools tailored
+to this task will support more efficient analysis.
+
+Discussion
+         The  initial  motivation   for   developing    the dependency       graph   formalism   was  to  support    our     analysis  of
+collaborative knowledge      construction    through    computer    media    (Suthers,   2006a).   As    this work     progressed,    we
+removed    implicit  assumptions    about   synchronicity    and availability    of   contributions  from     the notation.     We   also
+realized that we could use the dependency graph as a boundary object between our different analysis methods. We
+used the  dependency     graph  both   to   create aggregate   statistics of  interactions   and   their relationship     to the media
+(Suthers, Vatrapu et al., 2007), and to examine the sequential structure of interaction (Suthers, Dwyer et al., 2007).
+The  graph  allowed   us  to  trace asynchronous     interaction    between  pairs   of  participants back    from   aspects    of their
+essays that  we   wanted   to explain.    Our   most   recent  analysis of   the data    (Suthers,  Medina    et  al., 2007)    bridged
+statistical and sequential approaches by algorithmically identifying instances of an interaction pattern we refer to as
+a "round trip" and then applying statistical tests on their frequency across experimental conditions.
+
+         There   are  multiple   benefits    to the  dependency      graph   as  a   transcript  notation.    First, the   notation    is
+independent   of  the  interaction  medium      and  can    be applied    to face-to-face    and   online  interactions      as well   as
+interactions that take  place  in   multiple  media.   The   use of  generic   media     coordinations   allows   the  inclusion    of a
+
+                                                                 701                                                          CSCL 2007
+whole  range  of  communicative      actions,  including    perceptions   and interactionally    constructed     representational
+elements. The  concept     of dependency      extends    the concepts    of utterance     and  adjacency    pair  to online and
+asynchronous  media    and  accounts   for cases   where    media   coordination  is  the result of  multiple,   previous media
+coordinations. Second, the notation can be used to address the tradeoff between statistical aggregation and sequential
+analysis described at the beginning of this paper. The dependency structure can be used to document and interpret
+the sequential structure of the interaction and can also be coded or searched to provide data for statistical analyses.
+Third, the dependency graph adapts to the density of the source data. High-fidelity data can be used to produce a
+dense graph that can be subject to detailed analysis. On the other hand, sparse data will produce a sparse graph but
+will still support limited analysis. Fourth, the graph data structure is open-ended--additional data can always be
+added, although this does imply that skepticism about the completeness of the graph should be maintained. Fifth,
+grounding in explicit media coordinations allows analysis of correlations between interaction patterns and the media
+affordances  that shape  them.  Finally,   the formalism     of the  graph  structure  supports  building   tools to manage    its
+complexity and is amenable to algorithmic analysis and data mining techniques.
+
+        A   delimitation   of the framework       is that,  in  focusing  on  observed    interaction,  it  does  not  explicitly
+acknowledge the cultural or historical situatedness of the participants, or address identity and community, except
+where these constructs might be recorded in terms of prior interaction. Many theoretical and practical issues remain
+to be worked  out.  A  pressing  task  is  to extend  the   dependency   graph   formalism    to better incorporate    composite
+media  coordinations  and   the possible   ambiguity     of dependencies.   A complete     explication  of  these  two   items is
+necessary to extend   the  potential algorithmic     support   provided  by  the dependency      graph  structure.   The greatest
+practical need is to develop software tools to help construct and use the dependency graph. The need for improved
+analysis tools is a recurring theme (Sanderson & Fisher, 1994), and the size and density of the potential data sets
+exacerbates  this  need.   Elaborations    on  the   visual  representation   should    be   explored,  including    embedding
+dependency   graphs  in a  CORDTRA-style       representation    (Hmelo-Silver,   2003)   to  relate interaction  to both media
+and episodes of activity. An important aspect of evaluating this framework will be to determine how well it scales to
+the types of interactions  and  media   that   are of most   interest,  including larger   groups    across longer   time scales.
+Manual  identification  of media  coordinations      and dependencies    is time-consuming     at present,  but   with improved
+automation it might be possible to generate dependency graphs for larger online communities over the course of
+months or even years. Finally, the value of this framework in supporting multiple analytic traditions and producing
+"boundary   objects" for  CSCL   research     can only   be realized  in collaboration    with other  laboratories   undertaking
+analysis of collaborative interaction.
+
+References
+Beck, I. L. (1997). Questioning the Author: An Approach for Enhancing Student Engagement with Text. Delaware:
+        International Reading Association.
+Bronckart, J. P. (1995). Theories of action, speech, natural language, and discourse. In J. V. Wertsch, P. D. Rio & A.
+        Alvarez (Eds.), Sociocultural Studies of Mind (pp. 75-91). New York: Cambridge University Press.
+Chi, M., Bassok, M., Lewis, M., Reimann, P., & Glaser, R. (1989). Self-Explanations: How Students Study and Use
+        Examples in Learning to Solve Problems. Cognitive Science, 13, 145-182.
+Clark, H. H., & Brennan, S. E. (1991). Grounding in communication. In L. B. Resnick, J. M. Levine & S. D. Teasley
+        (Eds.), Perspectives on Socially Shared Cognition (pp. 127-149): American Psychological Association.
+De Wever, B., Schellens, T., Valcke, M., & Van Keer, H. (2006). Content analysis schemes to analyze transcripts of
+        online asynchronous discussion groups: A review. Computers & Education, 46(1), 6-28.
+Doise, W.,  & Mugny,     G. (1984).   The  Social    Development     of the Intellect, International   Series  in  Experimental
+        Scoial Pscychology (Vol. 10): Pergamon Press.
+Dwyer, N., & Suthers, D. D. (2006). Consistent Practices in Artifact-Mediated Collaboration. International Journal
+        of Computer-Supported Collaborative Learning, 1(4), 481-511.
+Engestrom, Y. (2001). Expansive Learning at Work: toward an activity theoretical reconceptualization. Journal of
+        Education and Work, 14(1).
+Garcia, A. C., & Jacobs, J. B. (1999). The Eyes of the Beholder: Understanding the Turn-Taking System in Quasi-
+        Synchronous Computer-Mediated Communication. Research on Language and Social Interaction, 32(4),
+        337-367.
+Garfinkel, H. (1967). Studies in Ethnomethodology. Englewood Cliffs, New Jersey: Prentice-Hall.
+Goodwin, C., & Heritage, J. (1990). Conversation Analysis. Annual Review of Anthropology, 19, 283-307.
+Herring, S. C. (1999). Interactional coherence in CMC. Journal of Computer Mediated Communication, 4(4).
+
+                                                                702                                                    CSCL 2007
+Hmelo-Silver,    C.   E. (2003).   Analyzing   collaborative  knowledge    construction:   Multiple   methods    for integrated
+         understanding. Computers & Education, 41, 397-420.
+Hutchins, E. (1995). Cognition in the Wild. Cambridge, Massachusets: The MIT Press.
+Jordan,  B., &   Henderson,     A.  (1995).  Interaction   analysis: Foundations    and  practice. Journal    of the  Learning
+         Sciences, 4(1), 39-103.
+Koschmann, T. (2002). Dewey's Contribution to the Foundations of CSCL Research. In G. Stahl (Ed.), Computer
+         support for collaborative learning: Foundations for a CSCL community: Proceedings of CSCL 2002 (pp.
+         17-22). Boulder, CO: Lawrence Erlbaum Associates.
+Koschmann,      T., Zemel,  A.,  &  Stahl, G. (2004).  The  video    analyst's manifesto  (or the implications   of  garfinkel's
+         policies   for  studying   practice within  design-based    research). In  Y. Kafai,  N.  Sandoval,  N.    Enyedy, A.
+         Nixon & F. Herrera (Eds.), Proceedings of the Sixth International Conference of the Learning Sciences (pp.
+         278-385). Mahwah, NJ: Lawrence Erlbaum Associates.
+Olson,  G.   M., Herbsleb,    J. D.,  &  Rueter,   H. H.   (1994). Characterizing    the  sequential  structure  of  interactive
+         behaviors through statistical and grammatical techniques. Human-Computer Interaction, 9, 427-472.
+Pea, R. (2006). Diver. Retrieved Nov. 26, 2006, from http://diver.stanford.edu
+Resnick, L.  B.,    Salmon,  M., Zeitz,  C.  M., Wathen,   S.  H., &  Holowchak,    M.   (1993).  Reasoning   in conversation.
+         Cognition and Instruction, 11(3&4), 347-364.
+Roschelle,   J. (1992).  Learning    by  Collaborating:  Convergent    Conceptual   Change.    The Journal    of the  Learning
+         Sciences, 2(3), 235-276.
+Roschelle, J., & Teasley, S. D. (1995). The construction of shared knowledge in collaborative problem solving. In C.
+         E. O'Malley (Ed.), Computer-Supported Collaborative Learning (pp. 69-197). Berlin: Springer-Verlag.
+Rourke, L., Anderson, T., Garrison, D. R., & Archer, W. (2000). Methodological Issues in the Content Analysis of
+         Computer Conference Transcripts. International Journal of the Learning Sciences, 11.
+Sacks, H., Schegloff, E. A., & Jefferson, G. (1974). A Simplest Systematics for the Organization of Turn-Taking for
+         Conversation. Language, 50(4), 696-735.
+Sanderson,   P.,    & Fisher,    C. (1994).   Exploratory   Sequential  Data     Analysis: Foundations.    Human-Computer
+         Interaction, 9, 251-317.
+Schegloff, E. A., & Sacks, H. (1973). Opening up closings. Semiotica, 8, 289-327.
+Stahl, G. (2006). Group cognition: computer support for collaborative knowledge building. Cambridge, MA: MIT
+         Press.
+Stahl, G., Koschmann,       T.,  &  Suthers,  D.  D.  (2006).  Computer-supported      collaborative  learning:  An   historical
+         perspective.    In  R.  K.  Sawyer    (Ed.), Cambridge      handbook    of the   learning   sciences (pp.   409-426).
+         Cambridge, UK: Cambridge University Press.
+Suthers,  D.    D.   (2006a).    A  qualitative   analysis  of  collaborative    knowledge    construction    through   shared
+         representations. Research and Practice in Technology Enhanced Learning (RPTEL), 1(2), 1-28.
+Suthers, D. D. (2006b). Technology affordances for intersubjective meaning-making: A research agenda for CSCL.
+         International Journal of Computers Supported Collaborative Learning, 1(3), 315-337.
+Suthers, D.  D.,    Dwyer,   N., Vatrapu,    R., &   Medina,   R.  (2007). An    abstract  transcript notation   for analyzing
+         interactional construction of meaning in online learning. In Proceedings of the 40th Hawai`i International
+         Conference      on  the System    Sciences   (HICSS-34),    January   3-6, 2007,  Waikoloa,   Hawai`i    (CD-ROM):
+         Institute of Electrical and Electronics Engineers, Inc. (IEEE).
+Suthers, D.     D.,  Medina,    R., Vatrapu,   R.,  &  Dwyer,     N.  (2007).   Information   Sharing  is Incongruous     with
+         Collaborative Convergence: The Case for Interaction. In Computer Supported Collaborative Learning 2007
+         (this volume).
+Suthers, D.  D.,    Vatrapu, R.,   Medina,   R., Joseph, S.,  & Dwyer,   N.    (2007). Conceptual     representations enhance
+         knowledge      construction  in asynchronous    collaboration. In     Computer  Supported    Collaborative   Learning
+         2007 (this volume).
+Vygotsky, L. S. (1978). Mind in society. Cambridge, MA: Harvard University Press.
+Wenger, E. (1998). Communities of Practice: Learning, Meaning and Identity. Cambridge: Cambridge University
+         Press.
+Wertsch, J. V. (1998). Mind as Action. New York: Oxford University Press.
+Woods, D. (2006). Transana. Retrieved Nov. 26, 2006, from http://www.transana.org
+
+Acknowledgments
+This work was supported by the National Science Foundation under CAREER award 0093505.
+
+                                                               703                                                    CSCL 2007
+

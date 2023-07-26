@@ -1,0 +1,269 @@
+    Exploring Interface Options in Multimedia Educational Environments
+
+    Gordon Shippey                    AshwinRam                  Florian Albrecht               Janis Roberts
+  College Of Computing        College Of Computing           College Of Computing           College Of Computing
+  shippey@cc.gatech.edu       ashwin@cc.gatech.edu           florian@cc.gatech.edu           janis@cc.gatech.edu
+     Mark Guzdial             Richard Catrambone                 Michael Byrne                   John Stasko
+  College Of Computing        School Of Psychology           School Of Psychology           College Of Computing
+  guzdial@cc.gatech.edu       rc7@prism.gatech.edu            byrne@cc.gatech.edu           stasko@cc.gatech.edu
+                                          Georgia Institute of Technology
+                                          Atlanta, Georgia 30332, USA
+
+Introduction
+
+       Multimedia technology allows information to be organized and represented in a wide variety of ways.        For
+a computer-based educational environment    to be effective, the subject    matter must be  presented in a  clear and
+comprehensible format.  Many multimedia applications organize information based on         its physical format,   i.e.,
+sound clips, still images, text, and so on.    However it is  also   possible to organize  information based  on  the
+learner's plan to use information.  Such "cognitive media types", media organized around cognition rather than
+physical format, include definitions, examples, worked problems, and problem sets [Recker,Ram, Shikano, Li &
+Stasko 1995).
+       AlgoNet was an educational multimedia environment designed to test the effectiveness of these cognitive
+media types.  Subjects using AlgoNet's cognitive media organization fared significantly better in a post-test than
+those using a traditional physical media organization [Recker et al. 1995). While  AlgoNet did  show   that cognitive
+media types helped students learn, how to best interface cognitive media types into a learning environment remained
+an open question. AlgoNet2 was created in order to explore some of the possible interface options for supporting
+cognitive multimedia. AlgoNet2 includes exactly the same domain information as AlgoNet, but with several new
+enhancements that allow users to navigate more easily and keep better track of their progress through the system.
+       In order to test AlgoNet2 in a real-life situation, we deployed the system in an introductory undergraduate
+computer science class at the Georgia Institute of Technology.   The results of our study provide insights into the
+factors important in the design of a computer-based educational environment.
+
+The AlgoNet2 System
+
+       The   AlgoNet2  program     is a prototype of an   educational   software   package incorporating multimedia
+technology combined with features applying recent findings in cognitive science.   AlgoNet2 is the second version of
+a computer learning environment that is being developed to explore possible interfaces for cognitive media learning
+environments. This version, as its predecessor, AlgoNet, teaches basic concepts in graph theory.
+       Figure 1 shows a typical AlgoNet screen.     Domain information is presented in the large window in        the
+upper left hand comer of the screen.   To the right of the domain window is the Topic Tree & History window.
+This window provides information about the organization of the domain information, the user's current position
+within the system, and a graphical trace of pages the user has visited. In the lower left part of the screen are four
+cognitive media buttons that provide access to different kinds of cognitive media    In the box on the lower right,
+users can select from a list of questions to ask about the current topic.   The bottom edge of the screen contains
+buttons for moving back to the last node visited, invoking the help system, and for exiting AlgoNet2.
+
+496
+                                                                                                             ropic- rtct:i U-tfiftolp ,,,                 , ,          ,  f.3
+                                                          Graph Basics
+
+                            A graph Is made up or two elements: VERTICES and EDGES.
+
+                            A VERTEX Is a node In the graph.    This node can represent a condition or a
+                            state in some situation. VERTICES can be reached by lra\leling along the
+                          . EDGES between nodes.     Hence, VERTICES can be thought of as the 'stopping
+                            points· In the graph.
+
+                            An EDGE is simply a line or path that connects two VERTICES.  One EDGE
+                          . can only connect two VERTICES.     However, a single VERTEX may have many
+                          , different EDGES connected   to it.
+
+                                                        Figure 1: A Typical AlgoNet2 Screen.
+
+      Just as in AlgoNet, information presented in AlgoNet2 is divided into groups of pages.                                                                                     Each of these
+groups (or nodes) covers exactly one topic. Each page within a node belongs to one of four cognitive media types:
+definitions, examples, pseudocode, and animations (dynamic visualizations).
+                                                   :m·Hldb·iiffiHP
+
+                                                      ,                             SPA
+                                                   liiIB1r ·    :;::,: :=::: ·   ·;,:y·
+                                     Figure 2: The Topic Tree and History Window.
+
+      To allow access           to pages           within       the current     node,     we        provide   graphical buttons                                   for     the   cognitive media
+types (Figure 1, lower left comer).                     The     small  images           simplify         the mental association                                   between       the button  and
+content or type of domain information                    "behind" it.          The current active view is highlighted.                                                   Buttons corresponding
+to cognitive media types unavailable in the current node are "ghosted" and drawn in light gray.                                                                               The four graphical
+
+                                                                                                                                                                                          497
+ buttons remain on the screen at all times, unlike AlgoNet's buttons which were simple text boxes that changed from
+ node to node.
+         AlgoNet2 allows for two different types of navigation between topics (nodes).                                                    One of these navigation
+ styles was based on the idea that it would be very natural and familiar for a student to ask questions about the
+ current topic.  To avoid   the rigors  of natural language  understanding,                                               we  instead   presented a box   with  pre
+ formulated questions for each topic (Figure l , lower right).  When     the                                            user clicks on  a question, a  related topic
+ containing the answer to this question is shown. The "back" button allows users to return to the previously visited
+ node. It was   hoped that the question-based   format would encourage   students                                             to ask  questions of both their  peers
+ and instructors as well as themselves. This question asking/answering behavior has been linked to learning goals
+ [Chi, Bassok, Lewis, Reinmann & Glasser 1988; Chi & VanLehn 1991; Ng & Bereiter 1991; Ram 1991; Ram &
+ Leake 1995; VanLehn & Chi 1992].       We intentionally   omitted   a "next page" function (contained in                                              the original
+ AlgoNet) that allows users to proceed through the system in some pre-formulated, linear fashion.                                                 By removing   this
+ feature we forced the users to choose their own paths through the system, hoping to encouraging active learning and
+ reflection on learning goals and strategies.
+        Another   new feature   in  AlgoNet2   was the  Topic   Tree &   History                                             window.      This window   provides  a
+ hierarchical, "bird's eye" view ofthe information in AlgoNet2.  Each node is an instance or                                               type of its parent, e.g.,
+ cycles and paths are two types ofgraph basics.    We anticipated that adding this structure to the domain                                             information
+ would encourage students to incorporate a similar structure in their own mental models, facilitating the retention of
+ the material.
+
+                                                                         Tree
+                                                                    lm
+                                                                           .;.
+                                                                                                                      I
+
+                                                                         Prim's
+
+                                                   SPA
+                                Figure 3. Topic tree links are shown as solid lines.
+                              User generated jumps are represented as dotted lines.
+        In addition to the question-asking interface, a student can also move directly to any node by clicking the
+appropriate node on the topic tree.  As the student navigates, the topic tree provides feedback,                                               relating which nodes
+have been most recently visited as well as which nodes have yet to be visited.                                                   This additional information was
+intended to    prevent the user from becoming     lost in a  tangle  of pages                                              and   links, a common    problem    with
+hypermedia-based systems. The topic tree color codes the nodes. The current node is highlighted with a light red
+background.    All previously visited nodes have a light blue background.                                                Unvisited nodes are rendered light    gray.
+A history ofthe last seven steps is provided by color-coding the links between nodes drawn using a "hot to cold"
+metaphor. The most recently used link is indicated by a bright red arrow, the next                                               six  most recently used links  are
+colored various shades from orange to blue, blue being the least recently used link.                                                  Links used more than seven
+steps ago, or not at all, are represented as thin, black lines.  In  the topic                                            tree, we  distinguish   between "regular"
+moves within the topic tree (solid lines) and random jumps to other parts of the system (dashed lines) (Figure 3).
+This color-coded path through the topic tree is provided in order to give context to the current node, helping to
+answer questions such as "Why did I come to this node in the first place?"                                                "What information was I looking for?"
+and "What do I do with it when I have found it?"
+
+498
+Evaluation
+          The AlgoNet2 system was evaluated in anticipation of fielding the system as a routine component of the
+introductory level computer science curriculum at Georgia Tech.        Participants in the empirical studies were 148
+students enrolled in a first-year introductory computer science course. The AlgoNet2 study was designed to take the
+place ofone ofthe regular laboratory sessions in this course.
+          One goal of the empirical study was to determine the extent to which students could use the system as a
+stand-alone module for self-directed learning.  As    such, the subject material included   in the   AlgoNet2  system   was
+not covered in classroom lectures. In addition, no formal instructions were given to the participants on the use of
+the system itself.
+          The laboratory  sessions  in this  course are not   normally    designed  to provide   students  with   hands-on
+experience in computer problem-solving.      In order to evaluate the system in as natural a setting as possible,       the
+empirical studies were conducted    within  the context of a routine laboratory assignment and       were  directed  by the
+students' normal   laboratory instructors  and teaching   assistants.  Our  lab    assignment  asked  students to   solve a
+problem involving graph theory imbedded in a situation from the popular computer game Doom.                  By   applying
+graph theory to a graph representing a part ofone level ofthe game, students were able to ''win" the game and solve
+the lab.
+         The  students were given   a lab assignment and    were told  only   that AlgoNet2    would   be of assistance   in
+completing the assignment.    In order  to   successfully complete    the lab assignment,   students   needed  to learn an
+appropriate graph  algorithm  and   underlying concepts,    (one of two   "minimum     spanning   tree" algorithms)   from
+among those presented in the system and then execute the algorithm.           No   attempt was made    to explicitly direct
+students to specific graph concepts or definitions.
+         After completing the lab assignment, the students were directed to exit AlgoNet2 and complete a post-lab
+questionnaire.   The questionnaire  elicited   personal information    from   each  student  ( e.g., about their  previous
+computer  experience) and  asked   some   general system    evaluation questions.    The questionnaire also included a
+section that contained questions designed to test the students' understanding of some basic graph concepts.
+         In addition to the lab assignment and the post-lab questionnaire, there were two other sources of data.        The
+AlgoNet2 system automatically logged each participant's interactions with the system.            We  also videotaped  four
+volunteers to help identify any system usage difficulties or other activities ofinterest.
+
+Results
+
+ Question-Asking Interface          Natural method of inquiry, encourages           4.2
+                                    metaco     "tion.
+ Topic Tree                         Puts current node in context, shows             22.6
+                                    overall layout of system, shows users
+                                    where the 've been.
+ Cognitive Media Icons              Provides consistent, easy access to the         14.6
+                                    co    ··        ·     es.
+          Table 1:   Students used the topic tree far more often than the question-asking interface.
+         Recall that students had three different ways of navigating through the AlgoNet2.        Table 4 recounts these
+methods and the rationale behind each one. The right hand column shows the average number oftimes each student
+used each type ofnavigation.  Users used the topic tree far more than the     question-asking interface   even though   the
+two provide essential the same functionality: the ability to move between different nodes in the system.
+         Overall,  users showed   a slight   preference for    examples    and   visualizations  over   pseudocodes     and
+definitions. However there was no significant correlation between users' experience levels and their preference for
+one cognitive media type over another.      Over two-thirds (68%) of the students responding said that they were
+satisfied with the AlgoNet2 system in the post-lab survey.
+         Students tended to view visualizations far longer than any other form of cognitive media type as measured
+by the amount of time spent with each media type (Figure 4).     This tendency to dwell on     visualizations was echoed
+in the original AlgoNet study [Recker et al. 1995].
+         Analysis  of the numerical    data  produced  several meaningful     and  statistically significant  correlations.
+Students' time viewing the visualization was positively correlated with their performance on the lab assignment, (r
+= .290,p < .01).  SAT-verbal scores were negatively correlated with time viewing the mostly textual        definition   and
+
+                                                                                                                     499
+example pages, (r = .335, p < .01).    SAT-verbal scores were also negatively correlated with use of the question
+asking interface (r = -.211, p < .05). Number of uses of the topic tree interface was negatively correlated with the
+students' self-report of the difficulty of the lab (r = .192, p < .1).  Post-lab quiz scores correlated positively with
+students' viewing times for definitions and examples (r = .323 and .215 respectively, both at p < .05).
+         Some correlations were conspicuously absent         Previous background, including major field, SAT scores,
+and previous computer science background had no significant bearing on students' performance on the lab or the
+post-lab quiz.
+
+               21a0o0.-,....,..- ....,---------------------------------- -- -- -- - -,----
+               114600--++--- -- --- --- --- ---- ------ --------- ,----------- --------------------------- -------------------
+Seconds        110200+;--,-,---,-----,--,---------- -,--- -,-- ,---- --,------,- -,------- ,-----,----------,-----,----,-----,- ----------------------
+                80-t------,-----,---,------,---,-------------------,,_
+                4600 +----=====--------------------------------------------
+                20
+                 0
+                          Definition            Example               Pseudocode            Animation
+                                                 Cognitive Media Type
+
+               Figure 4.  Relative viewing times for cognitive media types.         Students spent more
+                than three times as much time viewing visualizations as any other media type.
+
+Discussion
+         Student reports of the difficulty of the lab were negatively correlated with their usage of the topic tree.
+Students using the topic tree more often found the lab to be easier overall. While this result is purely correlational,
+we are hopeful that we can demonstrate that our experimental interface does in fact increase ease-of-use.
+         The question-asking interface and the topic tree both provide the same function: the ability to move from
+one node to the next.  However, the students  used      the topic tree far more than the question-asking                                                        interface.    One
+reason for this difference might be that the topic tree allowed instant access to any node in the entire system while
+the question-asking interface only allows one-hop moves along the topic tree.      The students' preference                                                        for the topic
+tree may be pure convenience.  Alternately, the larger, more graphical topic tree may draw the students' attention.
+Finally, the topic tree may actually be a more comprehensible interface.        Additional research is needed to explore
+these possibilities.
+         The negative correlation between SAT-verbal scores and        time     viewing  definitions                                                        (which tend    to  be
+composed of plain-English definitions of concepts) can be explained in the following way: highly verbal students
+viewed the sanie number of definitions and examples, but needed less time to absorb the same amount of content as
+less-verbal students. This suggests that students with different abilities use cognitive media types differently.
+         One ofthe clearest messages in the log data is that "glitzy" multimedia, i.e., fancy animations, is not an
+atheoretical luxury.  Multimedia is capable of capturing and holding the subject's attention                                                           far better than any other
+media type we studied.   There was only one visualization in the entire system, but users spent far                                                          more time     at this
+page than of any other category of page.    This finding is confirmed by the post-lab questionnaire as well.                                                               When
+asked what the system lacked, students often requested more multimedia support.           Students'                                                         suggestions    ranged
+from, "More animations for algorithms," to "Add kewl (sic) sounds."
+         When queried on their learning strategies, very few students could give a clear answer, if any at all.                                                            Of the
+students responding   to the question, the   most  common         strategies cited were  ''wander                                                         randomly,"   and "read
+everything." Students also reported :frustration with this type of instruction, citing a lack                                                          of "direction"  and ''what
+to do next information." This clearly demonstrates that our question-asking protocol was not enough to encourage
+students to effectively guide their own thinking process and suggests that there is a need for the effective teaching of
+learning strategies.
+         While students were unable to identify their learning strategies, experimenters circulating through the labs
+did notice a consistent learning strategy. Many students tended to scan all of the    content information quickly,                                                            then
+begin solving the lab.   As they worked on their lab, students often returned to the AlgoNet2 system, suggesting
+
+500
+that they were actively hunting for information they needed.  This suggests that students do use learning strategies,
+but may not be aware of them.
+
+Future Work
+           Our pilot study of AlgoNet2 produced large amounts of data.      Our  next  step will be to continue  the
+analysis of the data and report any additional trends discovered. When all the data have been analyzed, we will
+begin work on AlgoNet3, a third version of the AlgoNet system which will include more cognitive media types
+such as problem sets and worked problems as well as more multimedia and interactive components.            The next
+system will also be applied to domains outside ofgraph theory.
+           Future versions of AlgoNet can be useful in three distinct ways. First, they can be deployed in actual
+classrooms as instructional tools. Second, we can continue to study students' interaction with the  systems in  order
+to refine the learning environments and develop design guidelines as we have done in this    paper.  Finally, future
+systems    can help us explore the learning itself, revealing students' strategies and understandings  of their own
+learning processes.
+
+References
+     Chi,  M.T.H.,   Bassok, M.,   Lewis, M.W., Reinmann, P.,     & Glaser, R.     (1988).  Self-explanations: How
+Students Study and Use Examples in Learning to Solve Problems.    Learning Research and Development Center.
+     Chi, M.T.H.,   & VanLehn, K., (1991).   The Content of Physics Self-Explanation.       Journal of the Learning
+Sciences 1(1), 69-105.
+     Ng, & Bereiter. (1991). Three levels of goal-orientation in learning. Journal of the Learning Sciences, 1(3/4),
+243-271.
+   Ram, A. (1991) A Theory ofQuestions and Question Asking. Journal ofthe Learning Sciences, 1(3&4), 273-
+318.
+   Ram, A. & Leake, D.B.      (1995). Learning, Goals, and Learning Goals,    Goal Driven Learning.    Cambridge,
+Massachusetts. MIT Press.
+   Recker, M.M., Ram, A., Shikano, T., Li, G., & Stasko, J. (1995).         Cognitive Media Types for Multimedia
+Information Access. Journal ofEducational Multimedia and Hypermedia 4(2/3), 185-210.
+   VanLehn, K., & Chi, M.T.H., (1992).       A Model of the Self-Explanation Effect.       Journal  of the Learning
+Sciences 2(1), 1-59.
+
+Acknowledgments
+Funding for this research was provided by the Office ofNaval Research (contract number N00014-95-1-0790) by the
+National Science Foundation's SUCCEED initiative (cooperative agreement EID-9109853), and by the EduTech
+Institute.
+
+                                                                                                                501
+

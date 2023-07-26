@@ -1,0 +1,473 @@
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+           Conversational Strategies that Support Idea Generation
+                                         Productivity in Groups
+   Rohit Kumar, Language Technologies Institute, Carnegie Mellon University, 5000 Forbes Ave, Pittsburgh,
+                                               PA, rohitk@andrew.cmu.edu
+       Jack L. Beuth, Department of Mechanical Engineering, Carnegie Mellon University, 5000 Forbes Ave,
+                                        Pittsburgh, PA, beuth@andrew.cmu.edu
+         Carolyn P. Rosé, Language Technologies Institute, Carnegie Mellon University, 5000 Forbes Ave,
+                                         Pittsburgh, PA, cp3a@andrew.cmu.edu
+
+         Abstract: Our recent work has shown that conversational tutors that use social interaction
+         strategies can achieve significant learning improvement through better management of student
+         attention. In continuation with this line of investigation, this paper presents an experiment that
+         measures     the separate  and  joint  effects of the    nature  and style of automatically   generated
+         interventions. We investigate aspects of designing intervention prompts from two different
+         angles: first in terms of the addition of socially oriented turns over and above the instructional
+         turns required to keep the students on track, and second in terms of the style of presentation of
+         the tutor's instructional turns. We see positive effects of both manipulations, but on different
+         outcome metrics. Thus, we conclude that the two directions can be productively combined
+         into    a single socially  enhanced    feedback   approach,    which  contributes   to the  literature on
+         dynamic forms of support for collaborative learning.
+
+Introduction
+Inquiry  as   an approach    to learning   is popular in  many    areas  of instruction, but  particularly in   science  and
+engineering instruction. Idea generation is of central importance in the inquiry process, and some prior work
+shows an important connection between idea generation productivity and learning in a scientific inquiry task
+(Wang et al., 2007). Notice that the goal for students here is not to select and then apply a known procedure for
+solving  a problem.   In  contrast, the  main   purpose   here is  to let students  actively and  creatively    generate the
+candidate problem solving steps/options by themselves. Beyond offering students the opportunity to generate
+possible  solutions   to  problems,   these   tasks offer students  the   opportunity  to weigh   and  balance   trade-offs
+between   alternative  solutions  proposed     by themselves   and  their   team mates.   Thus,  these problems    draw   on
+student creativity and offer opportunities for students to develop their social skills and creative problem solving
+skills at the same time.
+         While idea generation in groups is purported to be more effective than idea generation for individuals,
+it is a well known problem that when groups engage in idea generation together, a phenomenon referred to as
+process loss occurs. In particular, it has been repeatedly demonstrated that a group that is interacting while
+doing idea generation together may not always perform better than a collection of non-interacting individuals
+whose    contributions   are simply   pooled   afterwards  (i.e., nominal   groups), both  in   terms of the  quantity   and
+quality of unique ideas, and in fact may sometimes perform significantly worse (Hill, 1982; Diehl & Stroebe,
+1987; Nijstad & Stroebe, 2006). Often inquiry learning tasks are done collaboratively in the classroom. To the
+extent that process losses that affect productivity in idea generation may lead to corresponding reductions in
+learning, the issue of process losses in group idea generation is an important issue to investigate. Nevertheless,
+learning   in idea  generation   tasks  may    arise from  multiple   different  mechanisms,     not  only from    the  idea
+generation process per se. For example, while evaluative statements may inhibit productivity in idea generation,
+it is a form of transactivity in collaborative discourse, which shows that group members are attending to one
+another's contributions and making explicit links between their contributions and those that came before, which
+is associated with learning (Joshi & Rosé, 2007). Supporting such behavior has been shown in other work to
+support  learning   (Weinberger    et al., 2005).   Thus, the  mere   existence  of  process  losses  does not   lead  us to
+conclude hastily that collaborative idea generation is ill advised from an instructional standpoint. Rather we
+seek to find support that can enable students to benefit from the interaction without incurring the negative side-
+effects.
+         Tutorial dialogue agents have been effective as an interactive form of support for collaborative learning
+including collaborative problem solving (Kumar et al., 2007a), collaborative design (Kumar & Rosé, 2011) and
+collaborative idea generation (Wang et al., 2007), leading to substantial improvements in learning sometimes
+greater than a standard deviation effect size (Kumar et al., 2007b). However, despite the effective support that
+automated tutors offer to students learning in groups, it has been reported that groups of students often ignore
+and abuse the tutor, unlike the case where students are individually tutored (Kumar et. al., 2007b, Bhatt et. al.,
+2004). We reason that the presence of other students in collaborative learning scenarios causes the tutors to
+compete for the attention of the students. Since the tutors do not participate in social interaction during the
+
+© ISLS                                                                                                                    398
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+formative phase of the group, they are pushed to the periphery of the learning group and have to struggle to
+make themselves be heard. In our earlier work (Chaudhuri et. al., 2008, 2009), we have explored the use of
+interaction tactics that can help the tutor grab the conversational floor before presenting its instructional content
+to the students. On the other hand, empirical research in the area of small group communication suggests that
+leaders in small groups perform optimal levels of task related and socio-emotional interaction with the group
+members to maintain a non-peripheral position in the group (Bales, 1958). Existing research on conversational
+tutors has largely focused on presenting only task related information, i.e., lessons and instructions in the case of
+tutors. In  this paper   we  report observations  from  a study  in  our continuing   investigation on  the effects that
+conversational agents in general can achieve if they are equipped with social conversational skills. Recent work
+explores   how   social  strategies employed    by   conversational  agents  results in greater  effectiveness  of  their
+support (Kumar et al., 2010; Ai et al., 2010).
+           Wang et al. (2007) demonstrated that automatically generated intervention prompts increased both idea
+generation productivity and learning, but did not fully compensate for the loss incurred by the group. In this
+paper, we focus specifically on the design of the prompts, carefully manipulating both its nature and its style in
+order   to fine  tune it for increased  effectiveness. Our   results point to a specific  design   inspired by work  on
+analysis   of  social positioning   from the    systemic  functional   linguistics community     as  being  particularly
+promising for enhancing idea generation productivity. Furthermore, the analysis of the connection between idea
+generation and learning in our data suggests that the relationship may be more complex than what was indicated
+by the prior Wang et al. study, which raises interesting questions for future work. We conclude by outlining our
+next steps, which build upon these results.
+
+Designing Conversational Strategies
+Theoretical   and  empirical  study  of group    interaction processes   has been  of interest  in the  communications
+research community since the 1950's. McGrath (1984) reviews various theories that address the functions of
+group interaction processes. Among these, Robert F. Bales (1950) proposed that two fundamental processes
+operate within groups, i.e., instrumental (task related) vs. expressive (socio-emotional). Over attention on one of
+these processes causes lapses on the other. Hence, interaction shifts between these two in order to keep the
+group functional. Participations in the interaction balance their positioning among the task leader and social
+leader roles through the use of these two types of interaction processes.
+           In the case   of  conversational  tutors,  the task   related interactions   include common      aspects like
+instructing students about the task, delivering appropriate interventions in suitable form and providing feedback.
+Work in the area of affective computing and its application to tutorial dialog has focused on identification of
+students' emotional states (D'Mello et. al., 2005) and using those to improve choice of task related behavior by
+tutors. However,    there   has been  only  limited  study   of expressive   (socio-emotional)  aspects  of  the tutor's
+conversations with learning groups (Kumar et al., 2010; Ai et al., 2010). Those studies demonstrate positive
+impacts of social strategies when conversational agents offer support to students learning in groups.
+           In our  current   work,   we  independently      manipulate   two  different  factors   that influence   how
+conversational agents deliver intervention prompts to students. One dimension is identical to that investigated in
+prior work (Kumar et al., 2010), which is based on Bales' IPA, and discussed in the next section. This factor
+determines whether or not certain social prompts are delivered to students in addition to task related prompts.
+The    second   dimension    determines  the    form of the   tutor's prompts.  We    apply the    distinction between
+heteroglossic contributions and monoglossic contributions from Martin & White's Engagement system (Martin
+& White, 2005), where a heteroglossic assertion is made in such a way as to acknowledge the possibility of
+alternative perspectives and a monoglossic assertion is one that speaks matter-of-factly "as the voice of God",
+without such an acknowledgement. This distinction is discussed in greater detail below.
+
+Social Behaviors Motivated by Bales' IPA
+We have used the interaction process analysis (IPA) schema developed by Bales (1950) to identify the social
+behaviors that tutors can employ. Our choice of interaction categories from IPA is based on the appropriateness
+of the unit of analysis on which IPA is applied, i.e., individual utterances, since the tutor's behavior is realized
+typically one utterance at a time. IPA identifies three positive socio-emotional interaction categories: showing
+solidarity, precipitating tension release, and agreeing. We have mapped these categories to eleven practically
+implementable     conversational    strategies, which   are  distinguishable  from   each other    and  are relevant  to
+interactive situation employed in our experiment. This mapping is shown in Table 1.
+           Most of these strategies are realized as prompts triggered at appropriate moments during the interaction
+by manually developed rules. For example, strategy 1e is triggered when one or more students in the group are
+found to be inactive for over 5 minutes. In this event, the tutor chooses to raise the status of the inactive students
+by eliciting contributions from them through a prompt like: Do you have any suggestions Mike?
+
+© ISLS                                                                                                               399
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+Table 1: Social Interaction Strategies based on three of Bales' Socio-Emotional Interaction categories.
+            1. Showing Solidarity: Raises other's status, gives help, reward
+            1a. Do Introductions: Introduce and ask names of all participants
+            1b. Be Protective & Nurturing: Discourage teasing
+            1c. Give Reassurance: When student is discontent, asking for help
+            1d. Complement / Praise: To acknowledge student contributions
+            1e. Encourage: When group or members are inactive
+            1f. Conclude Socially
+            2. Precipitating Tension Release: Jokes, laughs, shows satisfaction
+            2a. Expression of feeling better: After periods of tension, work pressure
+            2b. Be cheerful
+            2c. Express enthusiasm, elation, satisfaction: On completing significant task steps
+            3. Agreeing: Shows passive acceptance, understands, concurs, complies
+            3a. Show attention: To student ideas as encouragement
+            3b. Show comprehension / approval: To student opinions and orientations
+
+Prompt Variations Based on Martin and White's Engagement System
+In Martin and White's (2005) specification of what counts as heteroglossic, three requirements must be met:
+First, some propositional content must be being asserted in some form, although it may be done in such a way as
+to communicate extreme uncertainty. All of the examples in Table 2 assert something, so they all meet this
+requirement.   However, questions that are framed in such a way as the reader believes the speaker was asking an
+honest question, for which no specific answer seems to be presupposed do not count as heteroglossic. Rather
+than asserting something, questions request information.        Interjections, like "Yay", that cannot be interpreted as
+ellipsis, and thus have no propositional content are not considered heteroglossic, however, fixed expressions like
+"no", and "yes" that implicitly assert the propositional content of the yes/no question they are a response to do
+count  as expressing   propositional   content.  For   example,   if someone  asks  "Can ease   of use be   increased  by
+increasing the length of the wrench handle?" and if I say, "Yes.", then what I am asserting is "Ease of use can be
+increased by   increasing   the length of the   wrench   handle."     The context makes  it clear  what   I am asserting
+through ellipsis.     Other forms of   ellipsis (e.g., "titanium"    in response to "Which  type   of metal  would    you
+choose?") and do-anaphora (i.e., "I did." In response to "Did you select a material for the wrench?") similarly
+also count as having propositional content.
+
+Table 2: Examples of Heteroglossic and Monoglossic variations of the tutor's instructional turns.
+
+       Original/Neutral         Think about how we can improve this?
+       Heteroglossic            I suggest that you think about how to improve this
+       Monoglossic              Think about how to improve this
+       Original/Neutral         Maybe we can use a safer material this time!
+       Heteroglossic            Using a safer material would be strongly advisable!
+       Monoglossic              Use a safer material this time!
+
+       Original/Neutral         We keep a factor of safety to avoid reaching yield stress.
+       Heteroglossic            It would make sense to keep a factor of safety to avoid reaching yield stress.
+       Monoglossic              Keep a factor of safety to avoid reaching yield stress.
+
+          Second, an   awareness   must   be    made   visible to the   presence of alternative perspectives   than   that
+represented by the propositional content of an utterance. This distinction is illustrated through three examples
+that appear  in Table   2.   In  each  case  we   see  a monoglossic     and  heteroglossic version   for each    of three
+propositions.  In particular, bald claims, even if they are biased, do not acknowledge alternative perspectives.
+For example, "Titanium is the obviously superior choice" is undoubtedly subjective, but it is not heteroglossic.
+It doesn't show any awareness that someone else might disagree. If a speaker goes on, however, to give reasons
+to defend  the  statement,  then  that speaker   is showing    awareness   of other perspectives.  These    cases will be
+caught by the third requirement, which is that in order to count as heteroglossic, the acknowledgement of other
+perspectives must be expressed grammatically (e.g., through a model auxiliary like "might") or paraphrastically
+(e.g., "I think") within the articulation of that propositional content. If it is implicit or signaled through the
+
+© ISLS                                                                                                                 400
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+discourse structure, then that is not enough to count strictly as heteroglossic in the Martin and White sense,
+although they would acknowledge it as heteroglossic "in spirit".
+          The Engagement system begins with the distinction between heteroglossia and monoglossia, which we
+have just discussed. Once we have determined that an utterance counts as heteroglossic, we can then further
+subdivide  it into  utterances  that Contract    the positions  or  perspectives   that are  treated  as viable   within a
+conversation,  or   conversely,   ones  that Expand     the   scope of  what    is treated  as viable.   Either   way,   an
+acknowledgement is made that more than one way of looking at the world is at play. Utterances that contract
+that scope, such as making an absolute assertion that leaves no room for questioning, or out right rejecting a
+position, are typically seen as taking a more authoritative stance than ones that expand the options, such as
+making a suggestion. This notion of levels of authoritativeness is one important component of expressing the
+positioning of the speaker in relation to the propositional content. However, it also says something about where
+the speaker positions himself in relation to the audience. Taking an authoritative stance casts the other speaker
+into a less authoritative stance. Furthermore, when this system is again further subdivided, we see other options
+for positioning.  For  example,   what  is referred  to as  a Distancing move,     in  which the   source of   authority is
+ascribed to a third party, allows an authoritative statement to be made, which may contract options, but does not
+interfere with the    positioning between  the  speaker  and  the   audience. The   speaker  remains   committed    to the
+authoritative proposition, but is not responsible for it.
+
+Implementation of Conversational Agents
+The interaction between the students and tutor in the experiment presented in this paper is situated in a freshmen
+engineering course. In this course college students learn about basic mechanical engineering concepts like force,
+moment,   stress,  etc. The   students  interact  with  an    automated  tutor  as  part  of a  computer-aided      design
+competition where the students are asked to design a better wrench with consideration to ease of use, safety and
+material cost. Students could interact with each other and the tutor using a text-based chat room that includes a
+shared whiteboard (Stahl, 2006; Kumar & Rosé, 2011).
+
+Table 3: Excerpt of a tutor providing a lesson to a team of four students.
+
+    Speaker    Contribution
+64  Tutor      Intuitively, if you wanted to make the wrench easier to use, would you make it longer or shorter?
+67  S5         Longer
+70  Tutor      That's right. A longer wrench is better.
+72  Tutor      Why is a longer wrench easier to use though! Let's look at the concept of Moment.
+73  Tutor      When you use a wrench to turn a bolt, do you want a higher or lower moment?
+74  S16        Higher
+
+          The task of the tutor is to provide lessons on the underlying theoretical concepts while the students
+work through a worksheet to explore various design choices. An excerpt of a lesson on the concept about the
+relationship between the length of a wrench and its ease of use is shown in Table 3 above. Besides performing
+its task related functions,  the  tutor also employs    the social  interaction strategies  listed in Table    1. We have
+implemented    this   tutor using  the  Basilica  architecture. Details  about     the inner workings    of  the   Basilica
+architecture are described in a separate publication (Kumar & Rosé, 2011).
+
+          Figure 1. Basilica Component Network for Avis, the Freshmen Mechanical Engineering Tutor.
+
+          Using   the  Basilica   architecture, conversational   agents  are  modeled     as a  network    of  behavioral
+components. Each component implements a behavior that could be a combination of perception, thought and
+action. There are three types of components: actors (actuators / performers), filters (perceptors / annotators /
+coordinators)  and    memories.   Each   component    can   generate events    carrying  signals   and   data. Connected
+
+© ISLS                                                                                                                  401
+CSCL 2011 Proceedings                                                                                   Volume I: Long Papers
+
+components can receive and process the events and generate further events. This architecture allows a developer
+to build agents by adding behavioral components incrementally. Since each component is only loosely coupled
+to a small number of other components, it provides the flexibility to easily change a single behavior. Also, it
+allows components to be reused between agent/tutor implementations for different tasks.
+          The tutor agent developed for the freshmen mechanical engineering learning domain is comprised of
+22 Basilica components: four actors, sixteen filters and two memories. The tutor uses a gender neutral name
+Avis. Figure 1 below shows a simplified depiction of the component network of Avis. Actor components are
+shown     as ovals  and   filter components      are shown  as  rectangles. Arrows   depict    connections  and  possible
+directions of event flow.
+          Three of the actor and filter components correspond to three observable behaviors of the tutor, i.e.,
+Introducing, Prompting/Hinting and Tutoring about concepts. Most of the other filters (depicted as fa, fb, fc, fd
+here) form a sub-network that processes student turns from the chatroom, as shown by filters fa through fd in
+Figure 1. This sub-network annotates turns with applicable semantic categories, accumulates them to identify
+inactive students and generates events that regulate the coordinators (fsocial and fplan).
+          The fplan coordinator is responsible for executing the task-related interaction plan of the tutor. On the
+other hand, the fsocial coordinator interleaves social prompts into the interaction. Before the prompts generated by
+the actor    components    are   sent  to the students,  an appropriate    variation of   the  prompt  ( heteroglossic  /
+monoglossic ) is selected by the prompt selection filter depending on the tutor's configuration.
+
+Method
+The  rest  of the  paper   describes   the procedures   and results from    a  controlled experiment    we  conducted  to
+investigate the impact of the nature and style of feedback offered to students in an idea generation task.
+
+Experimental Design
+Our experimental design was a 2x3 between subjects factorial design. The first independent factor in our study
+manipulates    whether    social  prompts   motivated   by  Bales'  IPA    are inserted   into the conversation.   In the
+experimental    condition  (Social),   students  interacted with  a tutor   that was equipped    with  the  eleven social
+interaction   strategies, unlike   the   control condition  (Task)  which   is our lower   baseline   condition. In both
+conditions, students would receive the same task related information (instructions / lessons / feedback) through
+the automated tutor. Based on the examples in Table 3 above, we notice that in the task condition, the tutor has
+features (like asking questions and giving feedback) that most common tutors do.
+          The second independent factor manipulates the form of the task related prompts presented by the tutor.
+In the first experimental condition (Heteroglossic), turns are presented in a Heteroglossic style. Approximately
+90%    of these were   expressed   in  the Heteroglossic   expand   style, whereas   about 10%   were   expressed  in the
+Heteroglossic contract style. In the second experimental condition (Monoglossic), all task related prompts were
+authored in a Monoglossic style. In the Control condition (Neutral), employed as an ecological control, we used
+the same task prompts that were used in an earlier study (Kumar et al., 2010).
+          The time allotted for the interaction is the same for each group.
+
+Procedure and Outcome Measures
+We  conducted     a   between-subjects    experiment    during  a college   freshmen  computer-aided     engineering  lab
+project. 131 mechanical engineering students enrolled in the lab and participated in the experiment, which was
+held over six sessions spread evenly between two days. The two days of the experiment were separated by two
+weeks. Students were grouped into teams of three to four individuals. Each group communicated using a private
+chatroom (Stahl, 2006). No two members of the same group sat next to each other during the lab. The groups
+were evenly distributed between the six conditions in each session.
+          The procedure of the experiment comprised of 5 steps:
+          (1) Each session started with a follow along tutorial of computer-aided analysis where the students
+analyzed a wrench they had designed in a previous lab. Students spent about 25 minutes on the analysis.
+          (2) A pre-test with 11 questions (7 multiple choice questions and 4 brief explanation questions) was
+administered.
+          (3) The experimental manipulation happened during the Collaborative Design Competition after the
+pre-test.  Students   were  asked     to  work   as  a team  to   design a  better wrench      taking three aspects   into
+consideration: ease of use, material cost, and safety. Students were instructed to make three new designs and
+calculate success measures for each of the three aspects under consideration for their designs. They were also
+told that a tutor will help them with the first and the second designs so that they are well prepared to do the final
+design. No additional details about the tutor were given.
+          (4) After the students spent 35 minutes on the design competition, a post-test was administered.
+          (5) Following the test, student filled out a perception survey. The survey comprised of ten items to be
+rated on a seven point Likert-scale ranging from Strongly Disagree (1) to Strongly Agree (7). These questions
+
+© ISLS                                                                                                                 402
+CSCL 2011 Proceedings                                                                            Volume I: Long Papers
+
+are shown in Table 4. Additionally, we asked students to check all of the following personality descriptors that
+they   felt described   the tutor  agent: Encouraging,  Inspiring,  Assertive, Wishy   Washy,    Accommodating,
+Manipulative, Supportive, and Pushy.
+
+Table 4: Items about Tutor and Learning Task rated by students on a 7-point Likert Scale.
+
+             Q1   The tutor provided very good ideas for the discussion.
+             Q2   I am happy with the discussion we had during the design challenge.
+             Q3   The tutor was part of my team.
+             Q4   The tutor was very cordial and friendly during the discussion.
+             Q5   The tutor received my ideas positively during the discussion.
+             Q6   The tutor helped keep tension low during the design activity.
+             Q7   The design challenge was exciting, and I did my best to come up with good designs.
+             Q8   Overall, I liked the tutor very much.
+             Q9   I think the tutor was as good as a human tutor.
+            Q10   Overall, I think we were successful at meeting the goals of the design challenge.
+
+Results and Discussion
+
+Idea Generation Productivity
+In our analysis, the most important outcome factor is idea generation productivity. Idea generation productivity
+was estimated using an automatic measure developed in an earlier study using the same design task (Kumar et
+al., 2010). A dictionary was constructed using keywords from design ideas contributed in transcripts from the
+earlier studies. Counts of occurrences of words in this dictionary in the contributions of a student can serve as a
+rough estimate of idea generation productivity. Although this is a noisy measure, the effect of our experimental
+manipulation was strong enough to show significant differences between conditions. In order to identify the
+optimal design for feedback in an idea generation scenario from the standpoint of productivity, we used an
+ANOVA       model with   our  estimate  of  idea generation   productivity as  the dependent variable. The   two
+independent   factors  manipulated  to determine  the composition  of  feedback presented to students  were  each
+independent   variables. We   also included  an  interaction term that computes the  interaction between the two
+independent factors in our design. There was no significant effect of the Social factor F(1,125) = 0.0045, p =
+.97. However there was a significant effect of the Heteroglossia manipulation F(2,125) = 5.1, p < 0.01, whereby
+the Heteroglossic condition was significantly higher than the Neutral condition (effect size 0.61 s.d.) and the
+Monoglossic condition (effect size 0.52 s.d.). Overall, this result confirms the hypothesis that a heteroglossic
+presentation style encourages more exploration and more productive idea generation.
+
+Figure 2. Interaction between the Social Manipulation and the Heteroglossia Manipulation on Idea Productivity.
+
+© ISLS                                                                                                          403
+CSCL 2011 Proceedings                                                                                        Volume I: Long Papers
+
+          There was a significant interaction effect (displayed in Figure 2) such that in the No Social condition,
+Heteroglossic is better than Neutral but not Monoglossic, and in the Social condition, Heteroglossic is better
+than Monoglossic, but not Neutral, F(2,125) = 3.18, p < 0.05. We find that the use of heteroglossic prompts
+could potentially compensate for the tutor's lack of social capabilities.
+
+Learning Outcomes
+There was no significant effect of either factor on learning, nor was there any significant interaction between
+factors on learning. Furthermore, whereas Wang and colleagues (2007) found a significant correlation between
+idea generation productivity and learning, we found no such relationship in our data. Wang and colleagues very
+carefully designed their preparatory reading materials, tests, and tasks in such a way that the act of generating an
+idea would provide opportunities for students to reflect on connections between facts presented in the reading
+materials  and  to   generate    bridging inferences     akin to  self-explanations    (Chi et  al., 1994).  We    believe   this
+explains the difference in findings. In our task, learning occurs from deepening the understanding of principles
+through application. While we expect that factors that affect how deeply students reflect on the principles they
+are applying    would  have   an   effect  on  learning  in   our   task, it is  not necessarily the  case   that  this level of
+engagement with the material corresponds to the number of design ideas students contribute to the discussion
+during the task. While we do not make any strong claims about learning and idea generation from our results,
+we  believe    this raises questions  about     the nature    of the  connection     between   learning  and  idea  generation
+productivity, leading us to believe that the connection is complex and highly contextual.
+
+Perception Ratings
+On perceptual questionnaire, the Social manipulation had a relatively minimal effect. There were no significant
+main effects and no significant interactions between factors. There was a marginal effect of Social on Q5 such
+that students felt that the tutor received their ideas more positively in the Social condition, F(1,125) = 3.55, p =
+0.06. Unfortunately, this is not necessarily a positive result since there was a negative correlation between the
+Q5 ratings and our idea productivity measure, R = -0.34, p < 0.0001.
+          The Heteroglossia manipulation had a larger effect. There was a significant effect of Heteroglossia on
+Q2, indicating that students in the Heteroglossia condition were significantly happier with the discussion than
+students in the Control condition, and the Monoglossic condition was not different from either, F(2,125) = 3.65,
+p <    0.05. There    was  also  a significant    effect  of  Heteroglossia      on  Q8,   indicating that   students   like  the
+Heteroglossic and Monoglossic tutor agents more than the agent in the Control condition, F(2,125) = 3.48, p <
+0.05. There were also two marginal effects. First, students felt that the tutor agent was as good as a human tutor
+marginally more often in the Heteroglossic condition than the Control condition, with the Monoglossic agent
+not being different from either, F(2,125) = 2.6, p = 0.08. Similar to Q5, this was found to have a significant
+negative correlation with our idea productivity measure as well, R = -0.22, p = 0.01. Also, there was a marginal
+effect of  Heteroglossia     on  Q10  such  that   students   in  the Heteroglossic    condition   felt that they   were    more
+successful than students in the Monoglossic condition, with students in the Control condition not being different
+from   either, F(2,125)    = 2.84, p =    0.06. There    was  no    correlation  between   idea generation   success    and  this
+perception of success.
+          Overall,   these   are relatively weak    effects,  although     they  do  demonstrate   some    preference    for  the
+Heteroglossic   style  of    presentation.  However,     when    we   evaluated    the effect   of condition  on    personality
+indicators using binary logistic regressions, the story became a little more complex. There were only significant
+effects of the Social manipulation such that the Social condition rated the tutor agent more Supportive and less
+Pushy than the Control condition. There was no effect of the Heteroglossic manipulation. Thus, we see that the
+Social  manipulation    had   more   of  an effect   on  the  perception     of  the tutor agent's   personality   whereas    the
+Heteroglossia manipulation had more of an effect on how the students felt about working with the agent and
+how successful they were in their task. Since we do not see significant interactions between factors, we can
+conclude   that we    can  achieve   the  best of  both  by   combining      the Heteroglossic  style   with the   added  social
+strategies of the Social condition.
+
+Conclusion
+First  and foremost,   the   study presented    in  this paper   shows    that   conversational tutors  used  in   collaborative
+learning   scenarios  can  be    improved   significantly   by   making    them   socially capable    while  keeping    the  task
+(tutoring) related behavior the same. In this study, we investigated social strategies from two angles. The first
+angle was to insert additional socially focused prompts over and above task related prompts. The effect of this
+addition was to make the tutor agent appear more supportive and less pushy. The second angle was to explore
+the style of presentation of task related prompts using the Martin and White (2005) Heteroglossia framework.
+Here we see an advantage in terms of supporting idea generation productivity in addition to eliciting more liking
+of the tutor agent and more satisfaction with the task.
+          In our future work we will continue to explore additional stylistic dimensions of tutor feedback and
+their  associated   effect   on  the student    experiences      in collaborative    contexts,  including    their own    social
+
+© ISLS                                                                                                                        404
+CSCL 2011 Proceedings                                                                                     Volume I: Long Papers
+
+positioning within their groups, their effective participation within those groups, and ultimately their learning. In
+particular,  we have   discussed    how   the construct  of heteroglossia   introduces   the   notion that the  voice of  the
+speaker is situated among other voices. But beyond that acknowledgement of the existence of other voices, what
+we do not see in this simple binary distinction is the manner of that positioning. The details of that positioning
+are further specified within Martin and White's Appraisal framework (Martin & White, 2005), which includes
+Attitude, in which feelings are revealed towards propositional content, Graduation, in which feelings are either
+magnified or downlplayed, and Engagement, in which a speaker positions herself in relation to the propositional
+content of the utterance, positions the audience in relation to the propositional content, and positions herself in
+relation to the audience (Martin & White, 2005).        The observed effects of the Heteroglossia manipulation in this
+study demonstrate how productive it may be to explore how constructs from sociolinguistics might inspire the
+design of more effective support for social interactions in computer supported collaborative learning.
+
+References
+Ai, H., Kumar, R., Nguyen, D., Nagasunder, A., Rose, C. P. (2010). Exploring the Effectiveness of Social Capabilities
+         and Goal Alignment in Computer Supported Collaborative Learning, in Proceedings of Intelligent Tutoring
+         Systems, Pittsburgh PA
+Bales, R. (1958). Task Roles and Social Roles in Problem Solving Groups, Readings in Social Psychology, E.E.
+         Maccoby, et al. (eds.), New York: Holt, Rinehart, and Winston
+Bales,  R.F.  (1950).  Interaction   process   analysis:  A method     for the  study of small   groups,   Addison-Wesley,
+         Cambridge, MA
+Bhatt, K.,  Evens,    M., Argamon,     S. (2004). Hedged    responses  and   expressions  of   affect in  human/human    and
+         human/computer tutorial interactions. In Proc. of the Cognitive Science Society, 114-119, Chicago, IL.
+Chaudhuri, S., Kumar, R., Joshi, M., Terrell, E., Higgs, F., Aleven, V., Rosé, C. P. (2008). It's Not Easy Being Green:
+         Supporting    Collaborative   Green   Design    Learning.  In Proc.    of Intelligent Tutoring   Systems, 807-809,
+         Montreal, Canada.
+Chaudhuri, S., Kumar, R., Howley, I., Rosé, C. P. (2009). Engaging Collaborative Learners with Helping Agents. In
+         Proc of AI in Education, 365­372, Amsterdam.
+Chi, M. H., De Leeuw, N., Chiu, M., Lavancher, C. (1994). Eliciting self-explanations improves understanding.
+         Cognitive Science, 18, 439-488.
+Diehl, M., & Stroebe, W. (1987). Productivity loss in brainstorming groups: toward the solution of a riddle. Journal of
+         Personality and Social Psychology. 53(3), 497-509.
+D'Mello, S. K., Craig, S. D., Gholson, B., Frankin, S., Picard, R., Graesser, A. C. (2005). Integrating Affect Sensors
+         in an Intelligent Tutoring System. In Proc. of Workshop on Affective Interactions: The Computer in the
+         Affective Loop at IUI, 7-13, New York, NY
+Hill, G. W. (1982). Group versus individual performance: are N+1 heads better than one? Psychological Bulletin,
+         91(3), 517-539.
+Joshi, M.   &  Rosé,   C.  P.  (2007).  Using  Transactivity  in   Conversation    Summarization     in  Educational  Dialog.
+         Proceedings of the SLaTE Workshop on Speech and Language Technology in Education, 53-56, Farmington,
+         PA.
+Kumar, R., Gweon, G., Joshi, M., Cui, Y., Rosé, C. P. (2007a). Supporting students working together on Math with
+         Social Dialogue. Workshop on Speech and Language Technology in Education, Farmington, PA.
+Kumar, R., Rosé, C. P., Wang, Y. C., Joshi, M., Robinson, A. (2007b). Tutorial Dialogue as Adaptive Collaborative
+         Learning Support. In Proc. of AI in Education, 383-390, Los Angeles, CA.
+Kumar,   R., Ai,  H.,  Beuth,   J., Rosé,  C. P.  (2010). Socially-capable    Conversational    Tutors   can be Effective in
+         Collaborative Learning Situations, in Proceedings of Intelligent Tutoring Systems, 156-164, Pittsburgh, PA.
+Kumar,   R.  &  Rosé,   C. P.  (2011).    Architecture  for building   Conversational  Agents    that support   Collaborative
+         Learning, IEEE Transactions on Learning Technologies Special issue on Intelligent and Innovative Support
+         Systems for Computer Supported Collaborative Learning, 4(1), 21-34.
+Martin, J. R. & White, P. R. (2005).   The Language of Evaluation: Appraisal in English, Palgrave
+McGrath, J. E. (1984). Groups: Interaction and Performance. Prentice-Hall, NJ
+Nijstad, B. A., & Stroebe, W. (2006). How the group affects the mind: a cognitive model of idea generation in groups.
+         Personality and Social Psychology Review, 10(3), 186-213.
+Stahl, G. (2006). Group cognition: Computer support for building collaborative knowledge. Cambridge, MA: MIT
+         Press.
+Wang, H-C., Rosé, C.P., Cue, Y., Chang, C-Y. Huang, C-C., & Li, T-Y. (2007). Thinking hard together: the long and
+         short  of collaborative     idea  generation  in scientific   inquiry, in  Proceedings   of    Computer   Supported
+         Collaborative Learning, New Brunswick, NJ.
+Weinberger,   A., Ertl,   B., Fischer, F., &   Mandl,  H.   (2005). Epistemic   and   social scripts  in computer-supported
+         collaborative learning. Instructional Science, 33 (1), 1-30.
+
+Acknowledgments
+This research was supported in part by NSF EEC 0935145, NSF DRL 0835426, and NSF SBE 0836012.
+
+© ISLS                                                                                                                    405
+

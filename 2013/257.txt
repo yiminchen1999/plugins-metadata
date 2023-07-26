@@ -1,0 +1,121 @@
+CSCL 2013 Proceedings                  Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+          COMPS Computer-Mediated Problem Solving Dialogues
+                   Michael Glass, Melissa Desjarlais, Valparaiso Univ., Valparaiso IN 46383
+          Jung Hee Kim, Kelvin S. Bryant, North Carolina A&T State Univ., Greensboro NC 27411
+    Email: melissa.desjarlais@valpo.edu, michael.glass@valpo.edu, jungkim@ncat.edu, ksbryant@ncat.edu
+
+         Abstract:     COMPS     is  a  web-delivered    platform  for  collaborative        problem-solving
+         conversations.   When   deployed   in classroom exercises  the teacher       joins the  dialogues as
+         needed. The two goals for COMPS are a) environment and protocol that promotes group
+         cognition,   and b)  machine-generated   real time status display      showing  the  teacher  which
+         groups need assistance. This poster shows an example dialogue containing group cognition at
+         work and reports the first results of computer classification of student utterances.
+
+Introduction
+The COMPS project has students solve problems through monitored, computer-mediated group discussion. We
+are working in two problem domains: quantitative literacy word problems and computer programming skills and
+concepts. COMPS dialogues are typed computer chat on web pages. COMPS also contains specialized problem-
+specific software for exploratory learning. Problem-solving discussions are monitored by the instructor, who can
+intervene in  the discussion   (Desjarlais, Kim,  &  Glass, 2012). Research       goals for  the COMPS     project are
+broadly:  facilitating group  cognition  in  problem-solving  dialogues   and     developing    computer   monitoring
+technology to assess the progress of the conversations in real time. COMPS is still under development. We have
+deployed problem solving exercises in two different classes (Java programming and mathematics education) for
+testing purposes. We have the first experiments with computer language classifiers.
+
+Example of Group Cognition in Programming Problem Dialogue
+Our initial deployment dialogues show many examples of what Stahl (2009) calls group cognition. Figure 1 is
+an extract of students solving a problem in class inheritance in the Java programming language. The students
+have the problem on paper with multiple-choice answers, the prompt specifies they must all agree on an answer.
+In this protocol the instructor checks whether the agreed-on answer was correct. Turns in Figure 1 are marked
+with I (initiate) or R (respond) according to exchange structure analysis. In this dialogue group cognition is
+achieved by the students taking different roles in the problem-solving process. Our analysis is like this:
+         Student A is in control of the dialogue. All but one of the Initiate dialogue moves came from A. And A
+         is the person who evinces the least understanding. However we observe that it is A who suggested a
+         problem solving strategy (turn 4), invoked a reasonableness check on a proposed answer (turn 8), and
+         caused   the  answer  to be   summarized   in a single  argument       (turn 18).  Student A   provided   the
+         metacognitive regulation in this process.
+         Student B provided most of the reasoning and the summary (turns 5, 7, 11, 13, 19).
+         Student C, who participated the least, was the first to moot the correct answer into the discussion (turn
+         16) after only one contribution late in the game (turn 14). Clearly C had been mentally engaged in
+         following the problem-solving activity taking place between A and B.
+With A directing and checking the problem-solving activity, B doing most of the figuring out, and C providing
+the last step, it is clear that these students are indeed reasoning as a group.
+
+Example of Computer Classification of Dialogue Turns
+The   COMPS    project    has been  using   both  Latent Semantic   Analysis      (LSA)     and  Nonnegative   Matrix
+Factorization to build classifiers that recognize problem-specific features in the dialogues. The technique is to
+compare dialogue turns to bundles of exemplar sentences     (Dion, Jank, & Rutt, 2011). For these results we have
+been using a quantitative literacy problem: determining whether there is a winning strategy in a Nim-like game
+called Poison. COMPS contains a facility for the students to practice playing Poison while chatting at the same
+time. In  the Poison   dialogues  here are  three key  behaviors that the computer      will  monitor, with   our  best
+achievable LSA recognition accuracy for each:
+         Dialogue turns where students express the idea that you want to leave your opponent with 1, 4, 7, . . .
+         tiles. This is a key realization in the solution path. All successful groups come to this conclusion. We
+         can recognize it with 63% accuracy.
+         Dialogue directly concerned with playing the game (e.g. who goes next, what move to make). We can
+         recognize these turns with 86% accuracy.
+         Dialogue where the students are clarifying the rules of the game to each other. Recognized with 96%
+         accuracy.
+
+© ISLS                                                                                                             257
+CSCL 2013 Proceedings                 Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+As of this writing the classifier has been trained on exemplar sentences taken from verbal dialogues. We will re-
+train it using typed-chat dialogue collected from students using the online COMPS system before deploying
+real-time monitoring.
+
+Conclusion
+COMPS has been used with four problems (two each in quantitative literacy and programming), on seven
+different occasions, collecting 48 discussion groups. Hand coding and analysis of the transcripts reveals that
+most dialogues show evidence of either a) collaboration in problem-solving or b) achieving a common level of
+understanding. Initial training of LSA classifiers for future real time computer monitoring shows that some
+categories of utterance are highly recognizable.
+
+Figure 1: Solving a Programming Puzzle in Class Inheritance
+  1    A  do you guys understand this second problem                I    A Most initiate-response pairs in this
+                                                                         group are initiated by A.
+  2    B  this one is confusing.                                    R
+  3    C  yeah this one got me thinking                             R
+  4    A  lets try and take it like one output at a time...how are  I    A sets the problem-solving agenda
+          we gong to get this to print Foo_3 first?
+           [ellipsis dots in the original]
+  5    B  we need to first make foo_2 extend foo_2                  R      B moots first important idea
+  6    A  why                                                       I    A prompts for explanation
+  7    B  because foo_2 starts the main method but it isnt the      R      B explains
+          first thing that prints
+  8    A  wait hold on..that cant be right its not a choice bro     I    A notices the multiple-choice answers
+                                                                         do not include the proposed answer.
+          so it has to start with foo 3 or 4
+          or object
+  11   B  oh that's what i meant . we have to make foo_2            R      B corrects first idea
+          extend to foo_3 my bad
+  12   A  so when you do foo 2 extends foo 3 , the program          I    A articulates B's idea more fully
+          goes down to foo 3 and prints out "From Foo_3"?
+  13   B  yes and then it goes back to foo_2 to print "From         R      B finishes
+          foo_2" .
+  14   C  so what is the main calling when it says Object foo_2     I    C shifts focus to next part
+          = new Foo_1?    and for the other
+  15   A  idk it kinda looks like a swap without the "temp"         R      A provides not-relevant analogy
+          thing/example Dr. <Instructor> showed us
+  16   C  I got answer c                                            I    C is first to provide correct answer
+  17   B  i do too.                                                 R      B concurs
+  18   A  can you explain it to me because i am confused            I    A prompts for explanation
+  19   B: ok , i got it now. (types first part of explanation, 42   R      B explains all
+          words. Subsequent dialogue elicits rest.)
+
+References
+Desjarlais, Melissa, Jung Hee Kim, and Michael Glass. COMPS Computer Mediated Problem Solving: A First
+       Look. In Proc. Midwest AI and Cognitive Science Society Conference (MAICS 12), Cincinnati, 2012.
+Dion, L., J. Jank, and N. Rutt, 2011. Computer monitored problem solving dialogues. Report of 2011 VERUM
+       summer REU. Department of Mathematics and Computer Science, Valparaiso University, Valparaiso,
+       IN. Retrieved March, 2013. http://www.valpo.edu/mcs/pdf/reu2011glasspaper.pdf
+Stahl, G. (2006) Group Cognition. Cambridge, MA: MIT Press.
+
+Acknowledgments
+This work is supported by the National Science Foundation under awards 0851721 and 0634049 to Valparaiso
+University and 0633953 to North Carolina A&T State University. We also recognize the efforts of our hard-
+working students.
+
+© ISLS                                                                                                        258
+

@@ -1,0 +1,512 @@
+Effects of Alternate Representations of Evidential
+Relations on Collaborative Learning Discourse
+Daniel D. Suthers
+
+University of Hawai'i at Manoa, Department of Information and Computer Sciences
+
+      Abstract: Over the past decade or so, a number of software environments
+      have been created to support students engaged in collaborative
+      investigations in science (e.g., Belvedere, CoVis, CSILE, SenseMaker,
+      and WebCamile). These environments have used a variety of
+      representations for recording information such as alternate hypotheses,
+      empirical observations, and evidential relations (e.g., node-link graphs,
+      structured lists, and containers). There are both empirical and theoretical
+      reasons to believe that the expressive constraints imposed by a
+      representation and the information (or lack of information) that a
+      representation makes salient may have important effects on students'
+      discourse during collaborative learning. However, to date no systematic
+      study has been undertaken to explore possible effects. This paper outlines
+      a research agenda to address this need; provides theoretically motivated
+      predictions; and reports initial results from a pilot study. Students worked
+      together in groups of two on hypertext-based "science challenge"
+      problems. Two groups used each of free text (MS Word), matrix (Excel)
+      or graph (Belvedere) representations of evidence, for a total of six groups.
+      Analysis of discourse transcripts suggests that these representations have
+      quite different effects on the extent to which students discuss evidential
+      relations.
+
+      Keywords: HCI, discourse analysis, representational tools
+
+Introduction
+
+For a number of years, the author and his colleagues (see acknowledgments) have been
+building, testing, and refining a diagrammatic environment ("Belvedere") intended to
+support secondary school children's learning of critical inquiry skills in the context of
+science. The diagrams were first designed to capture scientific argumentation, and later
+simplified to focus on evidential relations between data and hypotheses. This change was
+driven in part by a refocus on collaborative learning, which led to a major change in how
+we viewed the role of the interface representations. Rather than being a medium of
+communication or a formal record of the argumentation process, we came to view the
+representations as resources (stimuli and guides) for conversation (Roschelle, 1994;
+Suthers, 1995).
+
+Meanwhile, various projects with similar goals (i.e., critical inquiry in a collaborative
+learning context) were using radically different representational systems (Bell, 1997;
+Guzdial et al., 1997; O'Neill & Gomez, 1994; Scardamalia et al., 1992; Suthers et al.,
+1997). There are both empirical and theoretical reasons, some of which are summarized
+in this paper, to believe that the expressive constraints imposed by a representation and
+the information (or lack of information) that a representation makes salient may have
+important effects on students' discourse during collaborative learning. However, to date
+no systematic study has been undertaken to explore possible effects of this variable on
+collaborative learning. This paper motivates and describes such a study being undertaken
+by the author and reports initial results from a pilot study.
+
+Representations in critical inquiry software
+
+To provide examples and motivation for discussion, several alternate representational
+approaches taken in computer supported collaborative learning (CSCL) systems for
+critical inquiry are characterized below.
+
+Hypertext/hypermedia systems include CLARE (Wan & Johnson, 1994), CSILE
+(Scardamalia et al., 1992), the Collaboratory Notebook (O'Neill & Gomez, 1994), and
+Web-Camile and Web-SMILE (Guzdial et al., 1997). (Seminal systems include gIBIS
+(Conklin & Begeman, 1987) and NoteCards (Harp & Neches, 1988), which were not
+developed for educational applications.) These systems all have in common a linking of
+different comments relevant to an issue, usually with categorization of the hyperlinks or
+their targets with labels. There is wide variation in this category: some take the form of a
+threaded discussion or other tree structure that may be viewed in summary form (see
+Figure 1a for a characterization), while others support construction of graphs of "nodes"
+or "cards" through which one navigates, viewing one card at a time. Mature systems such
+as CSILE or its successor, Knowledge Forum, use several of the representational
+approaches discussed herein.
+
+Several argument mapping environments, including Belvedere (Suthers et al., 1997;
+Suthers & Weiner, 1995), ConvinceMe (Ranney et al., 1995), and Euclid (Smolensky et
+al., 1987), utilize node-link graphs representing rhetorical, logical, or evidential
+relationships between assertions (usually categorized as "hypothesis" versus "data" or
+"evidence"). Belvedere is characterized in Figure 1c: rounded shapes represent
+hypotheses and rectangles represent empirical observations. The entire graph is viewed
+and manipulated at once, distinguishing these systems from hypermedia environments in
+which one normally works with one node of the graph at a time.
+
+SenseMaker (Bell, 1997) exemplifies an intermediate approach between graphs and
+hierarchies. Statements are organized in a 2-dimensional space and viewed all at once, as
+in argument graphs (see Figure 1b). However, SenseMaker uses containment rather than
+links to represent the relationship of evidential support: an empirical statement is placed
+inside the box of the theory it supports. SenseMaker also uses containment to represent
+decomposition of a theory into hypotheses, a feature that was tried in early versions of
+Belvedere.
+Finally, another representation is an evidence or criteria matrix. Several forms are
+possible. One organizes hypotheses along one axis, and empirical evidence along another,
+with matches between the two being expressed symbolically in the cells of the matrix
+(e.g., Figure 2c). Puntambekar et al. (1997) experimented with a matrix representation in
+a paper-based collaboration tool.
+
+The differences in representational notations provided by existing software for critical
+inquiry is striking. Yet more striking is the fact that there appear to be no systematic
+studies comparing the effects of external representations on collaborative learning
+discourse. Exceptions include (Guzdial, 1997; Wojahn et al., 1998). Given that these
+representations define the fundamental character of software intended to guide learning, a
+systematic comparison is overdue.
+
+Substantial research has been conducted concerning the role of external representations in
+individual problem solving, generally showing that the kind of external representation
+used to depict a problem may determine the ease with which the problem is solved
+(Koedinger, 1991; Kotovsky & Simon, 1990; Larkin & Simon, 1987; McGuiness, 1986;
+Zhang, 1997). One might ask whether this research is sufficient to predict the effects of
+representations in collaborative learning. A related but distinct line of work undertaken in
+collaborative learning contexts is needed for several reasons. The interaction of the
+cognitive processes of several agents is different than the reasoning of a single agent
+(Okada & Simon, 1997; Perkins, 1993), so may be affected by external representations in
+different ways. In particular, shared external representations can be used to coordinate
+distributed work, and will serve this function different ways according to their
+representational biases. Also, the mere presence of representations in a shared context
+with collaborating agents may change each individual's cognitive processes. One person
+can ignore discrepancies between thought and external representations, but an individual
+working in a group must constantly refer back to the shared external representation while
+coordinating activities with others. Thus it is conceivable that external representations
+have a greater effect on individual cognition in a social context than they do when
+working alone (Micki Chi, personal communication). Finally, much prior work on the
+role of external representations in individual problem solving has used well-defined
+problems. Further study is needed on ill structured, open-ended problems such as those
+typical of scientific inquiry.
+
+Representational bias
+
+This section sketches a theoretical perspective to guide the research agenda, beginning
+with definitions. Representational tools are artifacts (such as software) with which users
+construct, examine, and manipulate external representations of their knowledge. The
+present work is concerned with symbolic as opposed to analogical representations. A
+representational tool is an implementation of a representational notation that provides a
+set of primitive elements out of which representations can be constructed. Developers
+choose a representational notation and instantiate it as a representational tool, while the
+user of the tool constructs particular representational artifacts in the tool. The present
+work focuses on interactions between learners and other learners, specifically verbal and
+gestural interactions termed collaborative learning discourse.
+
+Each given representational notation manifests a particular representational bias,
+expressing certain aspects of one's knowledge better than others (Utgoff, 1986). The
+phrase knowledge unit is used to refer generically to components of knowledge one might
+wish to represent, such as hypotheses, statements of fact, concepts, relationships, rules,
+etc. Representational bias manifests in two major ways: Constraints: limits on logical
+expressiveness, and in the sequence in which knowledge units can be expressed (Reader,
+unpublished, Stenning & Oberlander, 1995); and Salience: how the representation
+facilitates processing of certain knowledge units, possibly at the expense of others
+(Larkin & Simon, 1987). Representational tools mediate collaborative learning discourse
+by providing learners with the means to articulate emerging knowledge in a persistent
+medium, inspectable by all participants, where the knowledge then becomes part of the
+shared context. Representational bias constrains the knowledge that can be expressed in
+the shared context, and makes some of that knowledge more salient and hence a likely
+topic of discussion. Sources of constraint and salience are discussed below.
+
+Zhang (1997) distinguishes cognitive and perceptual operators in reasoning with
+representations. Cognitive operations operate on internal representations; while
+perceptual operations operate on external representations. Perceptual operations take
+place without making an internal copy of the representation, although internal
+representations may change as a result of these operations. Expressed in terms of Zhang's
+framework, the present work is concerned primarily with perceptual operations on
+external representations: the question is how representations that reside in learners'
+perceptually shared context mediate collaborative learning discourse. While it is the case
+that cognitive operations on internal representations will influence interactions in the
+social realm, CSCL system builders do not design internal representations ñ they design
+tools for constructing external representations.
+
+Stenning and Oberlander (1995) distinguish constraints inherent in the logical properties
+of a representational notation from constraints arising from the architecture of the agent
+using the representational notation. This corresponds roughly to the present author's
+distinction between "constraints" and "salience." Constraints arise from logical limits on
+the information that can be expressed in the representational notation, while salience
+arises from how easily the agent recovers the information (via perception) from the
+representational artifacts. Information that is recoverable from a representation is salient
+to the extent to which it is recoverable by automatic perceptual processing rather than
+through a controlled sequence of perceptual operators (Lohse, 1997, Zhang, 1997).
+
+The discussion now turns to predictions based on differences between representational
+notations.
+
+Notations have ontological bias
+
+The first hypothesis claims that important guidance for collaborative learning discourse
+comes from ways in which a representational notation limits what can be represented
+(Reader, unpublished; Stenning & Oberlander, 1995). A representational notation
+provides a set of primitive elements out of which representational artifacts are
+constructed. These primitive elements constitute an "ontology" of categories and
+structures for organizing the task domain. Learners will see their task in part as one of
+making acceptable representational artifacts out of these primitives. Thus, they will
+search for possible new instances of the primitive elements, and hence (according to this
+hypothesis) will be biased to think about the task domain in terms of the underlying
+ontology. Ontological bias will not be addressed further in this paper.
+
+Salient knowledge units are elaborated
+
+This hypothesis states that learners will be more likely to attend to, and hence elaborate
+on, the knowledge units that are perceptually salient in their shared representational
+workspace than those that are either not salient or for which a representational proxy has
+not been created. The visual presence of the knowledge unit in the shared representational
+context serves as a reminder of its existence and any work that may need to be done with
+it. Also, it is easier to refer to a knowledge unit that has a visual manifestation, so learners
+will find it easier to express their subsequent thoughts about this unit than about those
+that require complex verbal descriptions (Clark & Brennan, 1991). These claims apply to
+any visually shared representations. However, to the extent that two representational
+notations differ in kinds of knowledge units they make salient, these functions of
+reminding and ease of reference will encourage elaboration on different kinds of
+knowledge units.
+
+                    Figure 1. Example of Elaboration Hypothesis
+
+For example, consider the three representations of a relationship between four statements
+shown in Figure 1. The relationship is one of evidential support. The middle notation uses
+an implicit device, containment, to represent evidential support, while the right-hand
+notation uses an explicit device, an arc. It becomes easier to perceive and refer to the
+relationship as an object in its own right as one moves from left to right in the figure.
+Hence the present hypothesis claims that relationships will receive more elaboration in
+the rightmost representational notation.
+The opposite prediction is also plausible. Learners may see their task as one of putting
+knowledge units "in their place" in the representational environment. For example
+(according to this competing hypothesis), once a datum is placed in the appropriate
+hypothesis container (Figure 1b) or connected to a hypothesis (Figure1c), learners may
+feel it can be safely ignored as they move on to other units not yet placed or connected.
+Hence they will not elaborate on represented units. This suggests the importance of
+making missing information salient.
+
+Salience of missing units guides search
+
+Some representational notations provide structures for organizing knowledge units, in
+addition to primitives for construction of individual knowledge units. Unfilled "fields" in
+these organizing structures, if perceptually salient, can make missing knowledge units as
+salient as those that are present. If the representational notation provides structures with
+predetermined fields that need to be filled with knowledge units, the present hypothesis
+predicts that learners will try to fill these fields.
+
+For example, Figure 2 shows artifacts from three notations that differ in salience of
+missing evidential relationships. In the textual representation, no particular relationships
+are salient as missing: no particular prediction about search for new knowledge units can
+be made. In the graph representation, the lack of connectivity of the volcanic hypothesis
+to the rest of the graph is salient. Hence this hypothesis predicts that learners will discuss
+its possible relationships to other statements. However, once some connection is made to
+the hypothesis, it will appear connected, so no further relationships will be sought. In the
+matrix representation, all undetermined relationships are salient as empty cells. The
+present hypothesis predicts that learners will be more likely to discuss many relationships
+between statements when using matrices.
+
+                  Figure 2. Example of Salient Absence Hypothesis
+
+Empirical studies
+
+The author has begun studies that test the effects of representational notations on
+collaborative discourse and learning. The question is not "what system is better?" but
+rather "what kinds of interactions, and therefore learning, does each representational
+notation encourage?" It may well be the case that all of the above representations are
+useful, albeit for different learning and problem solving phases or task domains.
+
+The studies intentionally use representations that differ on more than one feature, as
+summarized in Table 1. The research strategy is to maximize the opportunity to observe
+predicted effects on learners' discourse, in order to explore the large space of
+experimental comparisons within the time scale on which collaborative technology is
+being adapted. These results will then inform well-motivated selection of studies that
+vary one feature at a time as needed to disambiguate alternate representational
+explanations for the results.
+
+            Table 1. Features of Selected Representational Formalisms
+
+Experimental materials and procedure
+
+A pilot study was conducted comparing MS Word (unstructured text), MS Excel (tables),
+and Belvedere (graphs), with two pairs of subjects run in each condition. (Early results of
+the pilot are reported below.) Future experiments will use versions of Belvedere that have
+been modified to provide the alternative representations in Table 1. This approach will
+reduce nonessential differences between the representational tools, and enable uniform
+recording of all manipulations of the representations in the Belvedere server database.
+
+Subjects are presented with a "science challenge problem" in a web-browser. A science
+challenge problem presents a phenomenon to be explained (e.g., determining the cause of
+a mysterious disease), along with indices to relevant resources. It is important that these
+are relatively ill-structured problems: at any given point many possible knowledge units
+may reasonably be considered. This provides the necessary degrees of freedom within
+which representational bias can work.
+
+One side of the computer screen contains the representational tool, such as Text,
+Containment, Graph, or Matrix. The other side contains a web browser open to the entry
+page for the science challenge materials. Students seated in front of the monitor are asked
+to read the problem statement in the web browser. They are then asked to identify
+hypotheses that provide candidate explanations of the phenomenon posed, and evaluate
+these hypotheses on the basis of laboratory studies and field reports obtained through the
+hypertext interface. They are asked to use the representational tool to record the
+information they find and how it bears on the problem. The session is videotaped with the
+camera pointed at the screen over the shoulder of one of the participants. The camera is
+adjusted to show the screen in sufficient detail to see its contents, yet also show the
+immediate space around the screen to capture gestures in the vicinity of the screen. At the
+conclusion of the problem solving session, subjects are asked to write a brief essay and
+take a content knowledge test. Analysis is based on transcripts of subjects' spoken
+discourse, gestures, and modifications to the interface; as well as measures of learning
+outcomes (not discussed in this paper).
+
+Pilot study results
+
+The pilot data is currently under analysis. The purpose of this analysis is twofold: to
+identify trends suggesting that there is a phenomenon worthy of further study; and to
+refine analytic techniques. At this writing, pilot study videotapes from the six one-hour
+problem solving sessions have been transcribed and segmented, and limited coding has
+been completed. A segment was defined to be a gesture, a modification to the external
+representation, or a single speaker's turn in the dialogue, except that turns that expressed
+multiple propositions were broken into multiple segments. Segments were coded on the
+following dimensions (among others), using the QSR Nud*ist software package.
+
+      Representation: Values include Graph, Matrix, Text. This coding applies
+      to an entire transcript, and indicates the independent variable for the
+      session.
+
+      Mode: This dimension is used to filter and select segments for particular
+      hypothesis tests. Values include Verbal, Gestural, and Representational
+      (modifications to the software representations).
+
+     Evidential Content: Values include Consistent, Inconsistent, Choice.
+     Identification of segments where subjects discuss or identify the nature of
+     the evidential relationship between two statements as being one of
+     consistency or inconsistency; or raise the question of which relationship
+     holds.
+
+A coarse-grained test of the Search hypothesis was conducted as follows. Recall that
+Search predicts that subjects will be more likely to seek evidential relations when using
+representations that prompt for these relations with empty structure (Text < Graph <
+Matrix). This analysis simply counted, for each treatment group, the percentage of verbal
+segments that were coded with any one of the three Evidential values (Consistent,
+Inconsistent, Choice). The results are shown in Table 2.
+
+               Table 2: Frequency Data for Evidential Statements
+
+Examining the percentage of verbal segments that are concerned with evidence
+(rightmost column), the results appear to be consistent with the Search hypothesis (Text <
+Graph < Matrix). Although this trend is encouraging with respect to the question of
+whether there is a phenomenon worth investigating, this sample data cannot be taken as
+conclusive. Caveats (all of which are being addressed by ongoing work) include the small
+sample size (hence no test of significance), the lack of multiple coders (hence no test of
+inter-rater reliability), the need to test learning outcomes, and the need for a more direct
+test of the claim that representational state affects subsequent discourse processes.
+Analyses that are based on frequencies of utterances across the session as a whole fail to
+distinguish utterances seeking evidential relations from those elaborating on previous
+ones (i.e., between the Search and Elaborate hypotheses), or to show a causal relationship
+between the state of the representation and the subsequent discourse. A more
+sophisticated coding is required to test whether the representation or salient absence of a
+particular (kind of) knowledge unit influences search for or elaboration on that unit. This
+problem will be addressed as follows. Every change to the representations will be coded
+with the set of knowledge units that are (a) expressed or (b) saliently missing from that
+point onwards to the next change. Then, subsequent utterances within a time-window
+defined by a decay function will be tested for either (a) elaboration on those knowledge
+units or (b) search for other knowledge units related by evidential relations. This provides
+a more stringent test of the causal relationship between salience and discourse claimed by
+the research hypotheses.
+
+Qualitative observations
+
+Examples and discussion of the artifacts created and of transcripts are provided here to
+help illustrate the predicted effects and related issues.
+The document created by group 5 (text) had no expression of evidential relations between
+the hypotheses and data, and there was no overt discussion of evidential relations in the
+transcript of verbal discourse. All of the discussion of evidence in the text condition
+occurred in group 6 at the end of their session (the longest session in the pilot study),
+when the subjects spontaneously identified a hypothesis impacted by each datum
+gathered.
+
+A document produced by group 1 (graph) is reproduced in Figure 3, followed by a
+portion of the corresponding transcript in Table 3. Note the linearity of the graph
+(normally considered a nonlinear medium). The pattern of {identify, categorize, add, link}
+seen in the transcript (underlined) is typical of interactions in this transcript. This pattern
+of activity, which leads to the linearity of the graph, is consistent with the competitor to
+the Elaboration hypothesis: subjects may feel that the primary task is to connect each new
+statement to something else, after which it can be ignored.
+
+                           Figure 4. Group 1's Graph
+
+                      Table 3. Group 1's Transcript Sample
+Finally, a matrix produced by group 4 (Excel) is reproduced in Table 4, followed by a
+portion of the group's transcript in Table 5. Table 4 is especially striking because
+students were not specifically instructed to fill in all the cells. In the transcript, note the
+systematic identification of evidential relations as students work down the column, and
+the appropriate use of the column to rule out a hypothesis that the students proposed
+(radiation from atomic bombs caused disease, second column).
+    Table 4. Group 4's Matrix
+
+Table 5. Group 4's Transcript Sample
+Summary
+
+Prior experience with Belvedere suggested that variation in features of the
+representational tools can have a significant effect on the learners' knowledge-building
+discourse and on learning outcomes. The paper sketched a theoretical analysis of the role
+of constraints and salience in representational bias, outlined an investigation being
+undertaken by the author, and reported promising but preliminary results of a pilot study.
+Continued work in this area will inform the design of future software learning
+environments and provide a better theoretical understanding of the role of
+representational bias in guiding learning processes.
+
+Acknowledgments
+
+This work was funded by DoDEA's Presidential Technology Initiative while the author
+was affiliated with the University of Pittsburgh's Learning Research and Development
+Center, and by NSF's Learning and Intelligent Systems program under the author's
+present affiliation. The author is grateful to numerous LRDC colleagues, especially Alan
+Lesgold, Eva Toth, and Arlene Weiner, for collaborations on the design of Belvedere; to
+Micki Chi, Martha Crosby, and John Levine for discussions concerning the role of
+representations in learning, visual search, and social aspects of learning, respectively; and
+to Cynthia Liefeld and David Pautler for assistance with the pilot studies.
+
+Bibliography
+
+Bell, P. (1997). Using argument representations to make thinking visible for individuals
+and groups. In Proc. Computer Supported Collaborative Learning ë97, pp. 10-19.
+University of Toronto, December 10-14, 1997.
+
+Clark, H.H. & Brennan, S.E. (1991). Grounding in Communication. In L.B. Resnick,
+J.M. Levine and S.D. Teasley (eds.), Perspectives on Socially Shared Cognition,
+American Psychological Association, 1991, pp. 127-149.
+
+Conklin, J. & Begeman, M.L. (1987). gIBIS: A hypertext tool for team design
+deliberation. In Hypertext'97 Proceedings, Chapel Hill, NC, pp 247-252. New York:
+ACM.
+
+Guzdial, M. (1997). Information ecology of collaborations in educational settings:
+Influence of tool. Proc. 2nd Int. Conf. on Computer Supported Collaborative Learning
+(CSCL'97), Toronto, December 10-14, 1997. pp. 91-100.
+
+Guzdial, M., Hmelo, C., Hubscher, R., Nagel, K., Newstetter, W., Puntambekar, S.,
+Shabo, A., Turns, J., & Kolodner, J. L. (1997). Integrating and guiding collaboration:
+Lessons learned in Computer-Supported Collaborative Learning research at Georgia
+Tech. Proc. 2nd Int. Conf. on Computer Supported Collaborative Learning (CSCL'97),
+Toronto, December 10-14, 1997. pp. 91-100.
+Koedinger, K. (1991). On the design of novel notations and actions to facilitate thinking
+and learning. Proc. Int. Conference on the Learning Sciences, pp. 266-273.
+Charlottesville, VA: Association for the Advancement of Computing in Education. 1991.
+
+Kotovsky, K. and H. A. Simon (1990). "What makes some problems really hard:
+Explorations in the problem space of difficulty." Cognitive Psychology 22: 143-183.
+
+Larkin, J. H. & Simon, H. A. (1987). Why a diagram is (sometimes) worth ten thousand
+words. Cognitive Science 11(1): 65-99. 1987.
+
+Lohse, G. L. (1997). Models of graphical perception. In M. Helander, T. K. Landauer, &
+P. Prabhu (Eds.), Handbook of Human-Computer Interaction (pp. 107-135). Amsterdam:
+Elsevier Science B.V.
+
+McGuiness, C. (1986). "Problem representation: The effects of spatial arrays." Memory
+& Cognition 14(3): 270-280.
+
+Okada, T. & Simon, H. A. (1997). Collaborative discovery in a scientific domain.
+Cognitive Science 21(2): 109-146.
+
+O'Neill, D. K., & Gomez, L. M. (1994).The collaboratory notebook: A distributed
+knowledge-building environment for project-enhanced learning. In Proc. Ed-Media '94,
+Vancouver, BC.
+
+Perkins, D.N. (1993). Person-plus: A distributed view of thinking and learning. In G.
+Salomon (Ed). Distributed cognitions: Psychological and Educational Considerations pp.
+88-111.Cambridge: Cambridge University Press.
+
+Puntambekar, S., Nagel, K., Hübscher, R., Guzdial, M., & Kolodner, J. (1997). Intra-
+group and Intergroup: An exploration of Learning with Complementary Collaboration
+Tools. In Proc Computer Supported Collaborative Learning Conference ë97, pp. 207-
+214. University of Toronto, December 10-14, 1997.
+
+Ranney, M., Schank, P., & Diehl, C. (1995). Competence versus performance in critical
+reasoning: Reducing the gap by using Convince Me. Psychology Teaching Review, 1995,
+4(2).
+
+Reader, W. (Unpublished). Structuring Argument: The Role of Constraint in the
+Explication of Scientific Argument, manuscript dated November 1997.
+
+Roschelle, J. (1994). Designing for Cognitive Communication: Epistemic Fidelity or
+Mediating Collaborative Inquiry? The Arachnet Electronic Journal on Virtual Culture,
+May 16, 1994. Available: ftp://ftp.lib.ncsu.edu/pub/stacks/aejvc/aejvc-v2n02-roschelle-
+designing
+Scardamalia, M., Bereiter, C., Brett, C., Burtis, P.J., Calhoun, C., & Smith Lea, N.
+(1992). Educational applications of a networked communal database. Interactive
+Learning Environments, 2(1), 45-71.
+
+Smolensky, P., Fox, B., King, R., & Lewis, C. (1987). Computer-aided reasoned
+discourse, or, how to argue with a computer. In R. Guindon (Ed.), Cognitive science and
+its applications for human-computer interaction (pp. 109-162). Mahwah, NJ: Erlbaum.
+
+Stenning, K. & Oberlander, J. (1995). A cognitive theory of grahical and linguistic
+reasoning: Logic and implementation. Cognitive Science 19(1): 97-140. 1995.
+
+Suthers, D. (1995). Designing for internal vs. external discourse in groupware for
+developing critical discussion skills. CHI'95 Research Symposium. Denver, May 1995.
+
+Suthers, D., Toth, E., and Weiner, A. (1997). An Integrated Approach to Implementing
+Collaborative Inquiry in the Classroom. Proc. 2nd Int. Conf. on Computer Supported
+Collaborative Learning (CSCL'97), Toronto, December 10-14, 1997. pp. 272-279.
+
+Suthers, D. and Weiner, A. (1995). Groupware for developing critical discussion skills.
+CSCL '95, Computer Supported Cooperative Learning, Bloomington, Indiana, October
+17-20, 1995.
+
+Utgoff, P. (1986). Shift of bias for inductive concept learning. In R. Michalski, J.
+Carbonell, T. Mitchell (Eds.) Machine Learning: An Artitificial Intelligence Approach,
+Volume II, Los Altos: Morgan Kaufmann 1986, pp. 107-148.
+
+Wan, D., & Johnson, P. M. (1994). Experiences with CLARE: a Computer-Supported
+Collaborative Learning Environment. International Journal of Human-Computer Studies,
+October, 1994.
+
+Wojahn, P. G., Neuwirth, C. M., & Bullock, B. (1998). Effects of interfaces for
+annotation on communication in a collaborative task. Conf. on Human Factors in
+Computing Systems (CHI 98), 18-23 April, Los Angeles, pp. 456-463.
+
+Zhang, J. (1997). The nature of external representations in problem solving. Cognitive
+Science, 21(2): 179-217, 1997.
+
+Author's address
+
+Daniel D. Suthers (suthers@hawaii.edu)
+University of Hawai'i at Manoa, Dept of Information and Computer Sciences, 1680 East
+West Road, Honolulu, HI 96822. Tel (808) 956-3890. Fax (808) 956-9639.
+

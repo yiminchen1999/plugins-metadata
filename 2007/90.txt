@@ -1,0 +1,468 @@
+ Supporting controversial CSCL discussions with augmented group
+                                             awareness tools
+
+                                            Jürgen Buder, Daniel Bodemer
+                                  Psychological Institute, University of Tübingen
+                             Email: j.buder@iwm-kmrc.de, d.bodemer@iwm-kmrc.de
+
+         Abstract: An experimental study investigated the influence of an augmented group awareness tool
+         on controversial online discussions    and  decisions  made   by  4-person learner  groups. The study
+         employed an informed minority paradigm where one group member holds a correct viewpoint, but
+         is faced with a 3-person majority holding an incorrect viewpoint. Within this paradigm, groups
+         using an augmented group awareness tool based on learner ratings of agreement and novelty of
+         contributions were compared to groups using a standard online discussion tool. It was shown that
+         majority influence  occurred  in   unsupported   groups, whereas  augmented   group   awareness tools
+         strengthened  minority influence,   as indicated  by  group   decisions and individual   correctness of
+         decisions.
+
+Introduction
+         Since the early 1990s the notion of awareness has figured quite prominently within the field of CSCW
+(computer-supported cooperative work). The concept of awareness is rather vague, but there is some agreement that
+it refers to the perception and knowledge of contextual variables about the material and social world that surrounds a
+person or a group (Endsley, 1995). This paper seeks to empirically explore the question whether the concept of
+awareness can be fruitfully adapted and applied to the field of computer-supported collaborative learning (CSCL).
+
+         There is a huge diversity of how the term awareness is employed in the literature, and several attempts have
+been made   to categorize this field  (e.g. Carroll, Neale, Isenhour,   Rosson   &  McCrickard;   2003;  Christiansen   &
+Maglaughlin; 2003; Gross, Stary & Totter, 2005). For the purpose of this paper it is sufficient to state that we make
+a distinction between situational awareness (knowledge and perception about the material environment surrounding
+a person) and group awareness (knowledge and perception about the social environment surrounding a person). This
+paper involves an inquiry into group awareness, i.e. knowledge and perception about the presence, the activities, and
+the products of other persons in a collaborative setting.
+
+Group Awareness
+         Group awareness is comprised of several elements, among them knowledge and perception of who is there,
+where other persons are located, where they are looking at, and what they are doing (Gutwin & Greenberg, 2002). It
+is evident that group awareness is easily available in face-to-face (FTF) scenarios. However, once group members
+are spatially separated, group awareness has to be facilitated by means of technological support. Consequently, the
+use of group awareness technologies has become widespread in digital environments, ranging from lists of active
+users in online discussion forums (who is there) over avatar embodiments in virtual environments (where are they
+located, where are they looking at) to video screens, shared scroll-bars in collaborative editors, activity indicators,
+timelines, and other widgets used in shared workspaces (what are they doing).
+
+         Against this background our own research on group awareness and development of group awareness tools
+departs in two directions. Our first extension of group awareness refers to the type of information that participants
+receive about their group. Group awareness is a natural by-product of FTF interaction. Consequently, many CSCW
+approaches try to re-establish FTF conditions by technological means. Most examples of group awareness tools refer
+to information about the group and its members that would be easily available in FTF settings (e.g. seeing who is
+there, seeing what others are doing). While providing FTF-like conditions by technological means is a legitimate
+goal for systems  designers, we  would  argue   that the  true power   of  technological  support can be shown    only  if
+technologies give rise to kinds of interaction that actually surpass FTF levels to some degree. The focus of our own
+research therefore  is on augmented    group  awareness    tools  that provide   information that would  be   difficult or
+impossible  to yield in FTF  interaction.   More specifically,   our tools are   designed to provide  information  about
+entities having no physical equivalent, e.g. on non-observable psychological constructs like knowledge, attention,
+attitudes, preferences, or emotions.
+
+                                                            90                                                  CSCL 2007
+         The principle of augmentation is far from novel. Therefore, our own research draws heavily from work in
+the field of social navigation (Höök, Munro & Benyon, 2002). Social navigation describes the various influences
+that the visualization and feedback about other users' behavior has on the navigational behavior of an individual.
+Many   forms  of  social  navigation  focus   on    so-called  recommender     systems   where    an individual's   choices are
+informed   by recommendations     of  other persons.     Social  navigation   can either  be direct  (i.e. users explicitly rate
+certain items which leads to recommendations for other users), or it can be indirect where the online navigation of
+users will be captured in order to gain information about their preferences. The latter method is popular in online
+book stores where products will be recommended on the basis of the purchasing behavior of customers who bought
+the product one is currently inspecting. Augmented group awareness tools employ social navigation principles (e.g.
+taking user ratings about non-observable entities) and combine them with group awareness principles. E.g., unlike in
+social navigation the information will be collected from group members one is actually interacting with, rather than
+from an anonymous collective. Moreover, the provided information does not refer to external products like books,
+but to products created by the particular group one is belonging to, viz. their discourse contributions. In this respect
+augmented group awareness tools are a hybrid between social navigation tools and classical group awareness tools.
+
+         A   second  extension   of   classical group    awareness    research   that our work    is exploring   relates to the
+application of augmented group awareness tools to the field of CSCL. Very few attempts have been made in this
+direction, and the few applications in this field either focus on observable entities like learner activities (thus being
+classical group awareness tools) or provide information for the observing scientists rather than the group itself (cf.
+Jermann  et  al., 2001,  for an  overview).   It is  an  open   question   whether    groups make    use   of awareness-related
+information, how they use it, and if the use reflects in different kinds of group behavior. In any case augmented
+group  awareness    tool  provide   a somewhat       novel  technology     metaphor.   While   some   CSCL     approaches   use
+technology as an unstructured medium (potentially leading to learner disorientation), and while other approaches
+rely on rather directive means of structuring collaboration (potentially leading to overscripting; Dillenbourg, 2002),
+augmented    group  awareness   tools provide    a   middle  ground   between    these two   extremes.  They   are  designed to
+engender completely autonomous, but well-informed learner actions.
+
+         We have set out to explore the use and usefulness of augmented group awareness tools for collaborative
+learning scenarios. Our current work focuses on a general group awareness tool that is designed to support both
+synchronous and asynchronous forms of online group discussions. The basic idea here is to require learners to rate
+the written contributions in an online discussion on one or more dimensions. The tool itself performs the functions
+of a) taking the learner ratings as input; b) aggregating and/or transforming these inputs; and c) visualizing and
+feeding back transformed contextual variables as graphical output to the group. In this way learners are informed
+about the current state of the group with respect to some contextual variables in real-time.
+
+Minority Influence in Collaborative Learning
+         In order to test the usefulness of these augmented group awareness tools we applied them to a particular
+scenario  of  collaborative  learning,  viz.    the  case   of  controversies  and    conflicting viewpoints.    According   to
+educational theorizing, controversies and conflicts are often seen as important antecedents of collaborative learning
+(Doise   & Mugny,    1984).   Some    collaborative     learning  methods    are  even  specifically  tailored   to engender  a
+controversial discussion   among    learners,   e.g. Structured     Controversy   (Johnson   &  Johnson,    1992).  Despite the
+potential of controversies to facilitate elaboration of and negotiation among learners, there might be some pitfalls to
+these methods. The social psychological research literature points at various deficiencies of controversies because
+they can give rise to patterns of social influence that might be detrimental to a group's functioning, particularly if the
+sub-groups   advocating   the  viewpoints    are    of  different   size. For  instance,  there is   an  abundance    of social
+psychological  literature that points  at the   difficulties   that minorities in a   group  have  on   influencing   conflicting
+majority viewpoints   (Asch,   1956),  especially    if the task  at hand  is not demonstrable    (i.e. a  particular viewpoint
+cannot easily be proven to be a correct one). If this robust finding is applied to collaborative learning one can only
+assume that controversial discussions in a learning domain are also prone to the influence of a majority, irrespective
+of the validity or justifiability of the majority viewpoint. Generally, the suppression of minority viewpoints would be
+detrimental to collaborative learning because it prevents groups from gaining divergent, flexible perspectives on a
+particular domain. These detrimental effects of lacking minority influence are even exacerbated when the minority
+holds  a scientifically  correct viewpoint      that fails  to  influence   an incorrect  majority   perspective.   Given   that
+collaborative learning requires the joint construction of a shared understanding it could well be the case that in such
+a scenario the minority would rather comply with the incorrect majority perspective than vice versa.
+
+                                                               91                                                      CSCL 2007
+         In  the context   of group-decision   making   these   patterns of  social influence   are   often investigated    in a
+quantifiable manner by employing so-called hidden profiles (Stasser & Titus, 1985) with an informed minority. In
+these scenarios a minority group member receives unshared, critical information that should lead to a different, but
+better group decision quality than the shared pieces of evidence that the majority members receive. In addition to the
+general finding that groups are often unable to uncover a hidden profile (i.e. identifying the best alternative) studies
+employing an informed minority have shown that groups focus less on critical (minority-held) information when the
+task did not appear to be demonstrable (Stewart & Stasser, 1998), that minority influence was even diminished when
+groups were using an anonymous group decision support system (McLeod, Baron, Marti & Yoon, 1997), and that
+the discovery    rate  of the best decision    alternative (out  of three)   was only   10%    using  an   informed    minority
+(Brodbeck, Kerschreiter, Mojzisch, Frey & Schulz-Hardt, 2002).
+
+         However,     social psychology    has also outlined  several conditions   that should   lead  to enhanced     minority
+influence. These beneficial principles are important because they informed the particular design of our augmented
+group   awareness  tool.  For instance, it  was   reported that  minorities  exert more  influence    over  majorities   if they
+appear consistent in their argumentation even in the face of controversy (Moscovici, 1976). If members consistently
+perceive that there is a conflict in the group, efforts to resolve conflict and seek for a resolution are likely to be
+maintained rather than ignored. A second important antecedent for minority influence stems from the theoretical
+distinction between normative and informational influence (Deutsch & Gerard, 1955). The influence of a majority
+on the minority is normative, i.e. minorities often conform to the majority viewpoint because of social pressure. The
+influence that a minority can have on the majority, however, is usually informational influence, i.e. majorities will
+be more likely to conform with a minority viewpoint if the arguments brought forth by the minority are particularly
+persuasive. Similarly, Nemeth (1986) has reported that a key factor in minority influence is the potential novelty of
+the arguments brought forth.
+
+         The design of our augmented group awareness tool for the informed minority scenario was building on
+these principles   via two   mechanisms.   First, group  members    were  required  to  rate   their agreement    with a given
+contribution. Because     one could   expect   that average  agreement   with   minority    contributions   is lower   than  for
+majority contributions, the visualized arithmetic means of agreement ratings should visually separate majority and
+minority contributions. This would serve as a constant reminder to the group that a conflict might still exist between
+viewpoints, thereby precluding false consensus. Moreover, this visual separation of contributions should enhance the
+consistency   of the   minority  viewpoint.  Second,   group   members   were    required   to rate  the  novelty  of  a given
+contribution. Here one could expect that the novelty of majority contribution is rated as relatively low (because
+majority arguments are shared, and tend to be redundant), whereas minority contributions should yield high novelty
+ratings. By   emphasizing     on the  redundancy    of contributions  by   a majority   its  normative   influence   might   be
+decreased, whereas informational influence of the minority should be increased by focusing on their novelty. Thus,
+by making the unique contributions of a minority salient, it was expected that their influence on the (incorrect)
+majority viewpoint would be increased. A specifically designed group awareness tool requiring ratings of agreement
+and  novelty  should   therefore  lead  to strengthened    minority influence.  This   should  be    reflected in better group
+discussions,  and  due  to using   an informed    minority paradigm   lead   to better group   decisions   and  learning.   This
+hypothesis was explored in an experimental study.
+
+Method
+         In  the study,   small  groups of four   learners used  a text-based   online discussion    environment   in  order   to
+come to an agreement on a conflicting physics topic. Similar to the informed minority paradigm (Stewart & Stasser,
+1998), learning material, consisting of pieces of evidence, was previously distributed across the group members in
+such  a  way  that one  learner  ­ the  informed    minority ­  received information    that should   lead  to a  scientifically
+correct viewpoint on the issue, whereas three other learners (majority members) received information that should
+lead to a plausible, but incorrect viewpoint.
+
+Design
+         Two experimental conditions were compared that differed with respect to the support learners received
+regarding the awareness of other group members' contributions during the online discussion. While learners in the
+control condition were only provided with an online discussion environment, learners in the treatment condition
+were additionally provided with a rating-based augmented group awareness tool.
+
+                                                              92                                                     CSCL 2007
+Participants
+         64 students (26 males and 38 females, ages 19 to 31; M = 22.05; SD = 2.35) at the University of Tübingen
+were randomly assigned to the two experimental conditions and ­ within the small groups ­ to the minority or to the
+majority. They were paid for their participation. To prevent a very high level of prior knowledge physics students
+were excluded from participation.
+
+Materials
+         The application domain was comprised of physics concepts concerning light propagation.
+
+         The instructional material was taken from the web-based inquiry science environment WISE module "How
+far does light go" (Bell, 1995). The entire pool of learning material consisted of six pieces of evidence concerning
+light propagation.  Two    pieces of evidence   were  in line  with  a scientifically plausible,  but  incorrect  viewpoint
+("Light dies out"), whereas three pieces of evidence were supporting the scientifically correct viewpoint ("Light
+goes forever"). A sixth piece of evidence was irrelevant with respect to the conflicting viewpoints. The six pieces of
+evidence  were distributed   across  the group  members    prior  to  the  group   discussion   according  to the informed
+minority paradigm of Stewart and Stasser (1998). The three majority members received four pieces of evidence
+each: two (shared) information pieces supporting the incorrect viewpoint; one (unshared) information piece about
+the correct viewpoint;   and the  irrelevant  piece of evidence.  Taken    together,  the  information   distribution in the
+majority was identical to a hidden profile, i.e. each member would be more likely to prefer the incorrect alternative
+based  on   shared  information,  whereas   a group's  preference   should   shift towards   the correct  alternative if the
+unshared information pieces were pooled during discussion. The fourth member of the group (informed minority)
+received all six pieces of evidence which should lead to a preference for the correct viewpoint. Prior tests revealed
+that this type of information distribution predicted learner preferences quite accurately, i.e. independent learners who
+received the same material as the minority, tended to favour the correct viewpoint, whereas learners who received
+the same material as the majority, were biased in favour of the incorrect viewpoint.
+
+         The online discussion environment used in both experimental conditions was developed at the Knowledge
+Media Research Center in Tübingen as part of the groupware system VisualGroup (in its current version renamed as
+Bebop).  It enabled  the  small  groups  to discuss in a text-based    and synchronous    way.   Contributions   were  listed
+sequentially in temporal order. To control for effects of acquaintance among participants actual names were replaced
+by neutral handles ("person A" etc.), i.e. contributions were made anonymously. The group awareness tool provided
+to the small groups in the treatment condition was embedded into the online discussion environment. It consisted of
+(1) seven-point Likert rating scales that allowed learners to rate each contribution (except their own) with respect to
+(a) the agreement    with  a contribution,  and  to (b)  the  novelty  of  a contribution    in  the discussion,  and  (2) a
+visualization of the contributions represented as dots on a two-dimensional graph, where the x-axis represented the
+average agreement rating, and the y-axis represented the average novelty rating that a given contribution received.
+The   visualization was  personalized in  that learners  could  distinguish  their  own   contributions   from other  group
+members'    contributions, and  by indicating  contributions  a learner   hadn't   rated yet (Figure  1). By  clicking on  a
+particular dot in the visualization learners could read the corresponding contribution.
+
+                    Figure 1. Screenshot of the visualization used (translated from German).
+
+                                                            93                                                    CSCL 2007
+         The   test material for  assessing  the  knowledge    of the learners consisted  of  two  test sheets  that were
+individually administered before and after group discussion. The first test sheet required participants to state their
+preference for one of the two controversial viewpoints, and to indicate their confidence with this rating. The second
+test sheet which was administered after the discussion asked learner to state the decision that the group arrived at.
+Moreover, learners were required to indicate their individual preference for one of the controversial viewpoints, and
+a confidence rating for the individual decision.
+
+Measures
+         Group decisions (correct vs. incorrect decision) were extracted from the contents of the group discussions.
+Since subjects were also individually required to explicitly state the group decision after the discussion, these data
+could be used in cases where the actual group decision was not evident. It was expected that groups in the treatment
+condition would make better group decisions than groups in the control condition.
+
+         Measures of learning were derived from the decisions among the two conflicting viewpoints that both the
+groups and the individuals made after discussion. In order to gain access to a rough indicator of individual learning
+the preferred  decision alternative and   the confidence  ratings  were  used  to calculate   a correctness   value of the
+decision ranging from 0% (wrong answer and confidence rate of 100%) to 100% (correct answer and confidence
+rate of 100%). It was expected that in treatment groups (with augmented awareness tool) minorities would exert a
+greater influence on the group decision, thereby yielding higher correctness values across group members.
+
+         Discussion   parameters   were   derived as  indicators  for knowledge   building  processes.  Log   files of the
+discussion contents were used to generate general measures of participation (e.g. number of written contributions).
+The   discussion content   was   additionally coded   by  two  independent   coders.  Single    contributions  were  rated
+according to   three categories  (knowledge   construction; negotiation  of preferences;  others). It   was  expected  that
+groups in the treatment condition would display a lower number and rate of contributions rated as negotiation of
+preferences because the visualization already contained the corresponding information. As a consequence, it was
+tentatively hypothesized that this might lead to a higher number and rate of knowledge construction contributions.
+On the level of the whole group discussion sessions independent coders additionally categorized the deliberation
+style of groups.    Deliberation style is a concept  drawn  from   research on   mock   juries. E.g., Hastie, Penrod   and
+Pennington (1983) have found that some juries discuss evidence-driven, i.e. they start by exploring the evidence
+before integrating the evidence into a verdict. Other groups, however, are verdict-driven, i.e. they start by collecting
+and integrating individual verdict, and then start a (biased) search for information in support of this verdict. It was
+expected  that without  augmented   group   awareness  tools   groups  might be   tempted  to   reach a consensus   overly
+quickly, thereby employing a verdict-driven style. Due to the small sample size deliberation style of groups was only
+analyzed in descriptive terms.
+
+Procedure
+         The   experiment   consisted  of two phases:  an individual   learning  phase, and   a  group  discussion  phase.
+During the entire experiment subjects of a group were seated in separate rooms. In the first phase learners received
+information  about   light propagation  individually (10  minutes).   While the  information    distribution was identical
+across conditions, it differed within the small groups according to the informed minority paradigm of Stewart and
+Stasser (1998), as described above. Subsequent to the individual learning phase, but prior to the group discussion,
+individual preference and confidence were measured. After the learning phase individual group members were given
+the opportunity to test the online discussion environment by writing contributions. Group members in the treatment
+condition were additionally asked to rate test contributions by other participants.
+
+         In the second phase groups were instructed to discuss the conflicting viewpoints. All learners were made
+aware that other group members might have received different pieces of evidence. Groups were asked to make a
+decision about   the  conflicting viewpoints   within the   allotted  discussion time (30  minutes).    According   to the
+experimental design of the study small groups in the control condition were only provided with the online discussion
+environment, while small groups in the treatment condition were additionally provided with the group awareness
+tool. After the discussion phase individual learners were asked to repeat the group decision, state their individual
+preference and indicate the confidence in their individual preference. Subjects were briefed about the study at the
+end of the experiment.
+
+                                                            94                                                   CSCL 2007
+Results
+Manipulation check
+         Across both conditions, all minority subjects showed a preference for the correct viewpoint, as indicated by
+pre-discussion choice.   However,  among   the  majority  members   only  41 out   of 48  subjects   chose the  incorrect
+viewpoint. The distribution of pre-discussion choices between the two conditions was not different, i.e. out of the 7
+subjects that did not adhere to the manipulation, 3 were in the condition without group awareness tool vs. 4 in the
+experimental condition, thus yielding no significant differences between conditions ­ (2(1, N = 64) =          .68, n.s.).
+Although  results  using actual pre-discussion  choice   as  independent  variable were   slightly more   favorable with
+respect to the hypotheses, results described in this paper are based on the more conservative independent variable of
+member status (majority vs. minority), as intended by the manipulation.
+
+Group decisions
+         Among     the eight groups  using the  augmented    group  awareness tool,   six arrived  at the  correct group
+decision vs. two   for the incorrect decision.  In contrast, groups without  group  awareness    support   arrived at the
+incorrect decision in six cases, at the correct decision in one case, while one group did not arrive at a conclusion
+during the allotted time. The difference in arriving at the correct solution is significant between conditions (2 (2, N
+= 16) =  6.57, p   < .05). This provides evidence   that augmented   group  awareness     tools were  reversing the   bias
+towards majority opinion.
+
+Individual correctness
+         Table 1 shows the correctness values for minority and majority subjects within the treatment and control
+condition. A 2x2 analysis of variance (ANOVA) with support and member status as independent variables yielded a
+significant main effect for member status; F(1,60) = 4.74, p < .05. The main effect for support and the support x
+status-interaction approached   significance (p =  .08 in   both cases). However,   the data    from Table 1 show     that
+majority members in the treatment condition were scoring much higher than majority members in control groups.
+An additional, one-tailed t-test revealed that this difference was highly significant; t(46) = 3.56; p < .01. In other
+words, there is evidence for the hypothesis that majority members moved from the incorrect to the correct viewpoint
+if they were using an augmented group awareness tool.
+
+Table 1: Individual correctness values for learners across member status (majority vs. minority) and
+support (treatment vs. control).
+
+                                                                 Status
+                                  Support           Majority Minority      Overall
+                                  Control       M    37.17       78.63     47.53
+                                                SD   36.89       32.51     39.76
+                                  Treatment MSD      74.5836.02  78.3836.1875.5335.51
+                                  Overall       M    55.88SD40.7278.5033.2361.5339.97
+
+Discussion parameters
+         Table 2 shows the absolute number of contributions written by majority and minority members across the
+two conditions, separated by the three coding categories (knowledge construction, negotiation of preferences, other).
+Results of 2x2-analyses of variance (ANOVA) indicate that members from control groups wrote more contributions
+than group members in the treatment condition; F(1,60) = 21.75, p < .01. No differences were found for member
+status or the support x status-interaction. A main effect for support could also be found by only taking into account
+messages that were coded as knowledge construction contributions; F(1,60) = 5.70, p < .05. However, an analysis of
+relative amounts of knowledge construction messages reversed this effect; F(1,60) = 6.49, p < .05. In other words,
+treatment groups produced a higher relative amount of knowledge construction contributions than control groups (M
+= .67, SD =.18 vs. M = .51, SD = .17).
+
+                                                            95                                                 CSCL 2007
+Table 2: Number of contributions across conditions that were coded as knowledge construction (KC),
+negotiation of preferences (NP), or others.
+
+                               Majority                         Minority                           Overall
+ Support              KC           NP        Other      KC          NP       Other       KC         NP          Other
+ Control      M       9.37       4.67        3.63     10.63        5.13      2.63       9.69        4.78         3.38
+              SD      6.11       2.76        2.00       7.33       4.49      1.92       6.33        3.20         2.00
+ Treatment MSD        6.212.86   2.211.38     .50       7.00       3.00      1.38        6.41       2.41.662.271.93.922.711.54.72.81
+ Overall      M       7.79SD4.98 3.442.49    2.062.16   8.815.56   4.063.51  2.001.59    8.055.11   3.592.76     2.052.02
+
+          The descriptive analysis of the groups' deliberation style indicated that seven out of eight control groups
+were following   a   verdict-driven style. Four   of  the  treatment groups  were   using an   evidence-driven    style of
+deliberation vs. three  verdict-driven   groups.  The remaining    two groups   in both conditions  were   not  uniformly
+classified among raters. In others words, a deliberation style that started with collecting evidence before arriving at a
+decision  was only   to be  found  in treatment   groups.  Additional  analyses revealed  that all four    evidence-driven
+groups, the two mixed-style groups and only one of the verdict-driven groups arrived at the correct group decision.
+In contrast, all verdict-driven groups made a decision in favor of the incorrect majority viewpoint.
+
+Discussion
+          An experimental   study  showed    that group using   an augmented    group awareness    tool showed    a  higher
+performance in terms of group decision and individual correctness than unsupported discussion groups.
+
+          On a larger scale addressing the entire CSCL community one of the most interesting findings of the study
+was the fact that majority influence indeed occurred in the unsupported control groups. It was often mentioned that
+CSCL tends to look at positive results, thereby neglecting instances where collaborative learning might actually fail.
+Our studies have shown that in learning scenarios social psychological factors like majority influence are at work.
+While this might not be surprising to social psychologists, this point is hardly addressed in the CSCL literature. We
+hope that in the future findings from social psychology will be merged with findings from CSCL, thereby arriving at
+a clearer picture of collaborative learning.
+
+          While  it appears that collaborative    learning groups  might arrive at  suboptimal solutions   because   of an
+overpowering majority influence, our experiment indicated that this inherent bias can be overcome by technological
+means. An    augmented   group  awareness    tool specifically  designed to focus  on learner  ratings  of agreement  and
+perceived novelty significantly increased minority influence, thereby leading to better group and individual learning
+performances. Of course, in natural learning settings it is not always the case that a correct minority is facing an
+incorrect majority.  However,   it can be  expected   that minority  viewpoints frequently occur,  and     they tend to be
+overlooked, irrespective of their correctness. Therefore, augmented group awareness tools should contribute to a
+more thorough consideration of diverse viewpoints, a goal that probably aligns with a huge range of CSCL accounts.
+The  benefit of  allowing  for diversity was  also  illustrated in our analyses of  deliberation style. Whereas     control
+groups were frequently focusing on finding an initial verdict, followed by identifying supporting evidence, it appears
+that the augmented group awareness tool used in the treatment groups led to a much more open, evidence-driven
+discussion before groups settled on a decision.
+
+          Although outcome measures indicate differences between conditions the more general question of what
+mechanisms might have produced the obtained results were not explicitly addressed thus far. In other words, what
+parts of the augmented group awareness tools were conducive to strengthened minority influence? On the one hand,
+simply requiring learners to rate contributions might lead them to reflect on the content, to serve as a metacognitive
+prompt, and thereby leading to minority influence and better learning outcomes. This potential effect would hold
+even in the absence of a visualization. On the other hand, the visualization might exert specific influence on learner
+behavior by making aspects of collaboration particularly salient (e.g. novelty of a contribution), thereby guiding
+
+                                                             96                                                  CSCL 2007
+learners' attention to relevant information. Of course, both mechanisms might as well work additively. We will test
+these two conflicting explanations in a follow-up study that includes a ratings-only condition. Another interesting
+question is what actually happens when a majority member shifts preference. Is it because convincing arguments
+were brought forward (content-related) irrespective of their source, or is it because these arguments were brought
+forward by a particular source (person-related). In our present experiment the identity of authorship was confounded
+with the content, i.e. contributions in the visualization were color-coded with respect to the authors. The follow-up
+study will disentangle these effects by either using a non-color-coded visualization of contributions (content-only), a
+visualization that only displays the group members as dots (person-only), or a combined visualization.
+
+Future Directions
+         It is apparent that  the  augmented   group  awareness       tool used  in this  study  was  specifically  tailored  to
+scenarios   of majority-minority   conflicts. However,     it can  be   assumed     that  the  general  type    of rating-based
+augmented   group  awareness   tools can  be  adapted   to other   scenarios    as  well.  For instance,   other   studies could
+investigate this tool not for group awareness, but for social navigation in a stricter sense by requiring learners not to
+mutually rate their contributions, but to rate external sources like learning materials. For other scenarios it might be
+suitable to visualize the given instead of the received ratings. Moreover, depending on the research question learners
+could rate  contributions  on different  dimensions,  e.g.    liking, conclusiveness.    The   tool itself could   use different
+means of aggregation and visualization. Whereas the tool in the current study was simply using arithmetic means of
+agreement   and   novelty, other tools could  visualize standard      deviations (an   indicator of  the   degree  of  conflict),
+correlations, or even make use of advanced statistical procedures like cluster analysis and factor analysis in real
+time. Finally, it will be an interesting question to compare direct social navigation (explicit ratings) with indirect
+social navigation where learner behavior will be implicitly captured. In the social navigation literature indirect social
+navigation  algorithms  are  often regarded   as superior  because     they  do  not   burden  subjects    with the potentially
+tiresome  task  of rating  contributions. However,    our     discussion   on the   explanatory     mechanisms     for minority
+influence in this experiment might indicate that this additional burden might be a key factor in producing favorable
+learning results.
+
+Conclusions
+         We believe that augmented group awareness tools enrich our repertoire of CSCL technologies both for
+practical use and for scientific inquiry. Whereas some considerations for the scientific investigation of these tools
+were addressed in the preceding section, it is evident that practical use of augmented group awareness tools faces
+additional hurdles. Issues of learner compliance and scalability across group sizes are the first that come to mind.
+Research into practical use of these group awareness tools might be conducted in mobile learning scenarios, thereby
+taking into account affordances and constraints of this particular technology.
+
+         In terms of the scientific analysis of tools we believe that they are open to investigations based on a range
+of epistemologies (Suthers, 2006). While many processes involved in collaborative learning can be made visible and
+quantifiable with these tools, thereby lending themselves to an experimentally-oriented epistemology of knowledge
+communication, it is of course possible to hermeneutically describe and analyze knowledge building processes that
+take  place during  group   discussions, and  examine   the   ways    they  unfold  under   the  influence   of  ratings   and/or
+visualizations. On a final note, it should be repeated that augmented group awareness tools as described in this study
+stand for a potentially new   philosophy  of  learner guidance.    While    they   are far from  being   as directive  as  other
+methods (e.g. scripted cooperation), they avoid the pitfall of leaving collaborative groups without any guidance.
+Being well-informed, but fully autonomous might be an interesting metaphor for collaborative learning that is well
+worth studying in entirely different contexts of CSCL.
+
+                                                              97                                                       CSCL 2007
+References
+Asch,  S. E.   (1956).  Studies  of  independence  and   conformity:  A   minority  of  one  against a  unanimous    majority.
+          Psychological Monographs, 70 (whole no. 416).
+Bell, P.  (1995). How    far  does  light go?:  Individual  and collaborative   sense-making   of science-related    evidence.
+          Annual Meeting of the American Educational Research Association, San Francisco (poster presentation).
+Brodbeck, F., Kerschreiter, R., Mojzisch, A., Frey, D. & Schulz-Hardt, S. (2002). The dissemination of critical,
+          unshared   information    in decision-making    groups: The   effects  of  pre-discussion  dissent. The  European
+          Journal of Social Psychology, 32, 35-56.
+Carroll,  J. M.,  Neale,   D. C.,   Isenhour,  P. L., Rosson,   M.  B., &     McCrickard,   D. S. (2003).   Notification   and
+          awareness: Synchronizing task-oriented collaborative activity. International Journal of Human-Computer
+          Studies, 58 (5), 605-632.
+Christiansen, N & Maglaughlin, K. (2003). Crossing from Physical Workspace to Virtual Workspace: be AWARE!,
+          Proceedings    of  HCI    International  Conference    on   Human-Computer       Interaction,  Lawrence    Erlbaum
+          Associates, New Jersey 1128 ­ 1132.
+Deutsch, M. & Gerard, H. B. (1955). A study of normative and informational influence upon individual judgement.
+          Journal of Abnormal and Social Psychology, 51, 629-636.
+Dillenbourg, P. (2002). Overscripting CSCL: The risks of blending collaborative learning with instructional design.
+          In P.   Kirschner   (Ed.), Three   Worlds   of  CSCL:   Can   we   support  CSCL?    (pp.  61-91).  Heerlen:  Open
+          Universiteit.
+Doise, W. & Mugny, C. (1984). The social development of the intellect. Oxford: Pergamon.
+Endsley, M. (1995). Towards a theory of situation awareness in dynamic systems. Human Factors and Ergonomics
+          Society, 37(1), 32-64.
+Gross, T.,   Stary, C.  &  Totter,  A.  (2005). User-Centered    Awareness    in Computer-Supported      Cooperative    Work-
+          Systems:   Structured   Embedding     of Findings  from     Social  Sciences. International   Journal   of Human-
+          Computer Interaction, 18, 323-360.
+Gutwin,   C. &   Greenberg,   S. (2002).   A  descriptive framework    of workspace    awareness  for   real-time groupware.
+          Computer Supported Cooperative Work, 11, 411-446.
+Hastie, R., Penrod, S. D. & Pennington, N. (1983). Inside the jury. Cambridge: Harvard University Press.
+Höök, K., Benyon, D. & Munro, A. (Eds.) (2002). Designing Information Spaces: The Social Navigation Approach.
+          London: Springer.
+Jermann,   P., Soller,  A.  &  Mühlenbrock,     M.  (2001).  From   mirroring    to guiding: A  review   of  the  state of art
+          technology for supporting collaborative learning. Proceedings of Euro-CSCL 2001, 324-331.
+Johnson,  D.   W.   &  Johnson,  R.  T. (1992).   Creative  Controversy:   Intellectual Change    in the Classroom.     Edina:
+          Interaction Book.
+Konstan,  J.   A.   &  Riedl, J.  (2002)   Collaborative   Filtering: Supporting    Social  Navigation   in Large,   Crowded
+          Infospaces.   In K.  Höök,    D. Benyon     &  A. Munro     (Eds.), Designing    Information  Spaces:   The   Social
+          Navigation Approach (pp. 43-82). London: Springer.
+McLeod, P., Baron, R. S., Marti, M. W., & Yoon, K. (1997). The eyes have it: Minority influence in face to face and
+          computer mediated group discussion. Journal of Applied Psychology, 82, 706-718.
+Moscovici, S. (1976). Social Influence and Social Change. London: Academic Press.
+Nemeth, C. (1986). Differential contributions of majority and minority influence. Psychological Review, 93, 23-32.
+Stasser, G.  &  Titus,  W.   (1985).   Pooling of  unshared information   in  group  decision  making:   Biased   information
+          sampling during discussion. Journal of Personality and Social Psychology, 48, 1467-1478.
+Stewart, D.D. & Stasser, G. (1998). The sampling of critical, unshared information in decision-making groups: The
+          role of an informed minority. European Journal of Social Psychology, 28, 95-113.
+Suthers, D. D. (2006). Technology affordances for intersubjective meaning making: A research agenda for CSCL.
+          International Journal of Computer-Supported Collaborative Learning, 1(3), 315-337.
+
+                                                              98                                                     CSCL 2007
+

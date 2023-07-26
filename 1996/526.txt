@@ -1,0 +1,332 @@
+ SAGE Storytellers: Learning about Identity, Language and Technology
+
+                                               Marina Umaschi
+                                             MIT Media Laboratory
+                                             E l5-320R, 20 Ames St.
+                                           Cambridge, MA 02139 USA
+                                            marinau@media.mit.edu
+
+Introduction
+
+Storytelling is an ancient art that allows us to share experiences, thoughts and values. In the oral tradition,
+stories were told in a conversational way by the elders in order to give indirect advice and communicate morals.
+Each culture or community has its repertoire of inspirational stories or "literature of the spirit" (Campbell, 1988)
+that serves similar pedagogical functions as myths. They indirectly transmit how to live a human life and are not
+intended to perfectly match the addressed situation: time, characters, historical period and plot vary from the
+listener's situation. The power of this kind of storytelling lies in enabling the listeners to learn more about
+themselves by constructing personal meaning and interpretation. It is believed that in the very act of finding
+relevance the listener will find answers.
+
+This paper emphasizes the counseling and self-awareness possibilities of storytelling by presenting a new type
+of computational storytelling authoring environment, SAGE (Storytelling Agent Generation Environment), that
+allows children to design their own sage storyteller agents, create their own data-bases of inspirational stories
+and interact with them. Many new technological tools enable people to learn about the outer world. SAGE
+explicitly aims to enable children to explore their inner world, developing a better sense of who they are and a
+set of values for constructing their role in the world. On one hand, by constructing their own storyteller agents
+children start to explore the dynamics of storytelling and the complexity of meaning and interpretation in
+communication. On the other hand, the need for formalizing in the computer the flow of the conversational
+interaction and the tum-taking rules, allows them to play with powerful computational ideas.
+
+Background Work and Motivation
+Research on learning has argued that new technologies may help children become builders of their own
+knowledge. Extensive work has been done within the constructionism educational philosophy on creating tools
+to help children think in different ways about sciences and mathematics (Harel and Papert, 1993, Resnick,
+1994), but little work has yet been done on how to design technological tools that help children learn about
+themselves, cultural values, narrative and language. Constructionism asserts that learners are likely to create
+new ideas when they are actively engaged in making external artifacts that they can reflect upon and share with
+others (Papert, 1980). In the light of this approach, SAGE's research focuses on   building narratives and sage
+storytellers as "evocative objects" (Turkle,1984) that invite reflection about identity and communication issues.
+When children start looking at their own culture in order to detect communication patterns and specific
+vocabulary in conversations, they behave as young ethnographers in search of data.
+
+Learning about the self and the inner world is not an easy task. Narrative seems to serve at least three vital
+functions. A cognitive function: personal stories are fundamental constituents of human memory and new
+experiences are interpreted in terms of old stories (Schank, 1995). A social function: conversational personal
+stories have an important role in the social construction of the self from early childhood (Miller, 1990) and in
+the creation of coherent life stories (Linde, 1993). An emotional function: storytelling has been used in very
+different forms of psychotherapy. The     value of tales has been explored by the work of Milton Erickson in
+hypnotherapy (Rosen, 1982) and in fairy tales by (Bettelheim, 1976). A good overview of different uses of
+narrative in therapeutic experiences can be found in (Wigren, 1994).
+
+Some work on artificial intelligence has approached narrative with the vision that computers should re-create
+the cognitive processes that people use to understand stories. In this direction, research has been done on
+
+526
+reproducing models of the world that contain particular knowledge organized around standard situations,
+scripts, or cases (Schank, 1981; Domeshek, 1992). This research in AI aims to shift the design of expert-systems
+from rule-based to case-based reasoning. The work presented in this paper is conceived within a behavioral
+based approach to AI that emphasizes behaviors in the real world rather than knowledge representation
+structures (Maes, 1993, Th6risson, 1994). The sage storytellers in SAGE behave by having a conversation with
+the user. Meaning is constructed through the actions taken by conversants. This approach of saying is doing
+focuses on "doing things with words" (Austin, 1962) and employs collections of behavior-producing modules
+along with static knowledge structures. These modules can be thought of as a society of simple task-oriented
+agents behaving in "the mind" of a more complex agent (Minsky, 1985).
+
+The sage storyteller can be defined as an agent because it meets (Foner, 1993) demarcation criteria: autonomy,
+personalizability, discourse abilities, risk and trust, limited domain of interaction, graceful degradation,
+cooperation, anthropomorphism and fulfillment of user's expectations. The notion of the sage storyteller as an
+agent resonates with research on the creation of believable and emotional agents in drama narratives (Bates et
+al, 1995). SAGE approaches storytelling  by focusing on conversational personal stories and in the social role
+played by sage storytellers (Benjamin, 1968) who, in the oral tradition, were the elder with more experiences
+and therefore, more stories to tell (Stone, 1988).
+
+The present research goes a step further within a genre initiated by Eliza in the 1960's (Weizenbaum, 1976) ,
+defined by (Murray, 1991) as a parodic interactive character whose computational rigidities model recognizably
+predictable human types. SAGE borrows from Eliza, Parry (Colby, 1975) and Julia (Mauldin, 1994) the notion
+of a   simple conversational system but, first, extends the domain to the world of narrative;          second, allows
+character construction and not only interaction.
+
+Implementation
+
+SAGE is an authoring   tool that allows children to design their own sage storytellers. It offers children two
+levels of  engagement with storytelling. The first   level,    "Interacting", allows them to     play with previously
+programmed sage storytellers.The second level, "Authoring", allows them to write new scripts for the sage, to
+program the flow of the conversational interaction and to create a data-base of hand-annotated stories.
+
+The conversational flow is built on top of seven phases of a script-based interaction with a sage in a counseling
+through storytelling session (see Figure 1). These phases are: 1) Greetings, 2) Introduction -- the sage shares
+some of his background and requests user's background, 3) Personal telling --the sage asks for user's personal
+story, 4) Restatement --the sage.makes sure of understanding, 5) Counsel --the sage offers an inspirational story,
+6) Confirmation --the sage asks for connections between the inspirational story and user's story in order to offer
+another story, 7) Farewell --the sage offers a final blessing.
+
+                                                                        arewell
+                                                                                     Interaction
+
+                                                                                     Computation
+
+                     Figure 1: Phases of interaction with a sage and the underlying computation.
+
+Each of the seven phases of the interaction is a finite state machine with several actions or speech acts that occur
+between Sage and User. The biggest feedback loop exists between the confirmation and the counsel phase, in
+which the system needs to make sure that it has gathered the right data to match an inspirational story. Kids can
+
+                                                                                                                   527
+design their own conversational flow by creating a new finite state machine and adding states and actions. For
+example, Figure 82 shows Sag the finite Actionstate 1 machine created for the User's phase name "Greetings".Action 2
+                      Shalom.username(name?)                                        To phase                         2Introduction
+                                                            Ac  톙n  3
+                                 Usertell                  "I  see...  youwanttobe
+                                                           anonymous"
+
+            Figure 2: "Greetings" finite state machine with two states (Sage and User) and three actions.
+
+The system parses user discourse (personal narratives) by using a part-of-speech tagger. It checks for nouns and
+verbs that describe the point being made by user's story. In each turn it assigns higher scores to the most
+repeated words. The system augments the keywords with synonyms, hyponyms and hypernyms found through
+WordNet, an on-line lexical reference system (Miller et al, 1993). This augmentation is done in order to match
+user's personal story with an inspirational story stored in the data-base.
+
+Each inspirational story is indexed with three descriptors: "Commandments", "Nouns" and "Verbs". The
+decision to annotate the stories by hand instead of automatically responds to the educational goal of SAGE. To
+annotate a story requires people      to think about    the point being     made by    that story.                      The descriptor
+"Commandments" is weighted more heavily because it sets up the story domain according to one of the
+universal values that can be inferred from the Ten Commandments. In the Bible, the Ten Commandments are
+written in a negative form, however, when they are inverted to a positive form, they talk about respect for
+different life domains: God or a superior entity, self-awareness, traditions, life cycles, family members, nature,
+commitment, things or objects, social justice and people.
+
+The system is implemented on top of DISSCO, a programming language that models directed, interactive,
+scripted storytelling conversations. It allows users to design the conversational flow, the script and the indexed
+data-base, without worrying about the low-level computation. SAGE works by the combination of three
+DISSCO files that are sent to an interpreter developed in Macintosh Common Lisp: a "code" file which directs
+the flow of the conversation by specifying the actions in the finite state machine, a "script" file containing the
+utterances that the sage might say in each tum, and a "story-index" file that provides the interpreter with the
+annotated inspirational stories.
+
+"Rabbi" and "Tao": two examples
+"Rabbi" and "Tao" are two examples of sage storyteller agents built with SAGE. "Rabbi" simulates an old rabbi
+that always has a Hasidic story at hand related to a user's problems. He uses Yiddish words, signals the tum
+taking with "Nu" and uses traditional Jewish ways to avoid answering precise questions. For example, as
+presenting himself as an old rabbi who is becoming deaf, he maintains the suspension of disbelief when the
+parser fails to parse user's personal story. "Tao" simulates a Taoist sage that responds to user's concerns by
+offering teachings of "The Tao". He uses a language that can be recognized as coming from a Chinese sage and
+a stereotyped way of handling stories related to truth.
+
+The construction of emotional and believable characters is requisite to maintain the contract between storyteller
+and listener. Users need to identify the conversational situation with an experience to which they can relate to.
+To do so, they need to have a sense of the socio-cultural role of the sage storytellers in counseling situations. To
+construct a believable character children become ethnographers in their own culture and benefit from the
+anthropological experience that (Geertz, 1973) calls "being there" .
+
+528
+Both "Rabbi" and "Tao" construct their "persona" through the different conversational turns in order to set a
+socio-cultural context  without    limiting the interaction.  The rules   of thumb for modeling         the conversation
+according to the real world  are the following:
+� Sage storytellers can find in every story a central point that addresses at least one of the values stated in the
+modified Ten Commandments.
+� Sage storytellers  first listen to personal stories without interrupting to ask questions.
+� Sage storytellers  aren't verbose. Rather, they listen and rephrase stories in order to help the teller re-tell his/her
+story.
+� Once the tellers finish their story, Sage storytellers ask questions to get the point that needs to be addressed
+with an inspirational story.
+� Sage storytellers  do not always need or want to understand the complex situation of the tellers to offer them
+an inspirational story as counsel.
+� Sage storytellers assume that there is not a perfect match between inspirational stories and personal stories, but
+they know that people will attribute meaning and interpret them according to their personal situations.
+
+Owen is a  20 year old Chinese-American student. He is very much in touch with the traditions of ancient China
+from an intellectual perspective, but his beliefs are centered around Christianity. This is a conversation that he
+had with "Tao":
+         SAGE: Nin hau, what is your name ?
+         USER: Owen
+         SAGE: Owen, I am Chuan-Tzu, the Taoist sage of the cyberspace who seeks freedom from labeling things
+         right or wrong. What is your age, Owen ?
+         USER: 20
+         SAGE: I am 80 years older than you... I am older than the mountains and the seas, while you, Owen are still
+         young. What brings you to my solitary place ?
+         USER: Well if you think there is nothing right or wrong, I don't see how you can help me.
+         SAGE: I need more details...
+         USER: You see, with your philosophy there is only escape, never fulfillment of the true good.
+         SAGE: Keep talking, Owen.
+         USER: Of course you might disagree with me, but according to you, I can not be wrong. You see the
+         problem?
+         SAGE: I see, but you are not alone in your quest for the Way. Owen, let me tell you... The Sage accumulates
+         nothing. Having used what he had for others, he has even more. Having given what he had to others, what he
+         has is even greater. Have you grasped the meaning ?
+
+The Taoist story matched in the data-base was indexed under the Commandment "Justice" and the verb "help".
+Bellow is shown part of the run-time augmentation the system made in order to search for a good story in the
+data-base:
+        matched aid (4): SYNONYM of help (2) with SYNONYM of help (2)
+        matched assist (1): HYPONYM of help (1) with HYPONYM of help (1)
+        matched judge (6): HYPERNYM of think (1) with SYNONYM ofjustice (6)
+        matched propose (2): SYNONYM of think (2) with HYPERNYM of offer (1)
+Interactions and Reflections
+
+More than eighty people have interacted with "Rabbi" and "Tao". Some opened up while others only wanted to
+understand how the system worked. A few of them, especially women not familiar with technology, repeated
+the same scene that Weizenbaum observed many years ago and asked to be left alone while talking with the
+Sages. People need to tell personal stories and are willing to give details about their experiences. However, the
+role of a sage storyteller in a counseling situation is not clear for everyone, especially for kids. For example,
+Abraham, a 14 year old from New Jersey that goes to a Jewish school and is very used to talking with rabbis,
+said that he wanted to build a sage basketball player because that is the person he admires. However, he enjoyed
+listening to the Hasidic stories and even asked for a print out of the stories to share with his younger sister. This
+is the conversation he had with "Rabbi":
+           SAGE: Shalom... oy vey...I can't remember your name, you are ?
+           USER: Abraham
+           SAGE: You seem a little shy , Abraham . I also was shy to tell stories, but since my father and my
+           grandfather were Hasidic Rabbis I knew I had to become one. That is the way it is. Nu, Abraham, how old
+           are you ?
+           USER: 14
+
+                                                                                                                       529
+          SAGE: Oy vey, I am 76 years older than you.
+          SAGE: You know Abraham , a story is more than a story...a story has power. Nu, what is your story ? what
+          is in your mind ?
+          USER: Once I was learning gemarah and I could never understand the lines.
+          SAGE: Oy vey... go on, Abraham.
+          USER: I kept on trying and trying, but no matter how much I studied I could not get it.
+          SAGE: I see Abraham ... what else do you have to share with this old rabbi ?
+          USER: I have the same problem with chumash, dinim and all other subjects.
+          SAGE: Oy va voy, Abraham let me see if this rabbi understands. Once you were learning gemarah and you
+          could never understand the lines. You kept on trying and trying, but no matter how much you studied you
+          could not get it. You have the same problem with chumash, dinim and all other subjects.   Is this right ?
+          USER: yes
+          SAGE: Your situation reminds me of a story. Remember,there is power on the stories. The Gerer Rabbi
+          said: "Exile contains redemption within itself, as seed contains the fruit. Right work and real diligence will
+          bring out the hidden reward. Abraham, do you see the point of this story related to your own story ?
+          USER: yes, so now I see that I just have to keep on trying no matter what.
+          SAGE: I hope it was helpful. Zie gezunt, be well. May the Lord, Source of Life, bless you Abraham with
+          peace, and may you find your inner peace. Amen.
+
+The Hasidic story   selected    by  SAGE     was   indexed  in the data base       with the   commandment        or  value
+"Commitment" , the noun "work" and the verb "travel". Abraham used the verbs "learn" and "study" in his
+personal story. The system augmented them through WordNet and found the shared hypernim "work". This
+verb established the story domain or value as "Commitment" and matched the corresponding Hasidic story.
+Despite the simple matching method used by the system, most of the subjects found that the inspirational stories
+were relevant for their situation. Martin, a student that played with "Rabbi" expressed:
+       "First I thought that the story didn't make sense because I was trying to fit myself into the characters of the
+       story. But then I realized that those characters were referring to me in an indirect way. The story was not
+       telling me how to act, but it was giving me a different way of looking at my problem. "
+
+Martin had the following conversation with "Rabbi":
+       USER: All the best girls are already taken.
+       SAGE:  Oy vey, all the best girls are taken. Nu ?
+       USER: Yeah, the only girls I want to go out with already have boyfriends or are married!
+       SAGE:  Ahhaaa, but do you think you are the first one in this situation.? This reminds me of a story...
+         "A couple unable to have children came to see Rabbi Shimon bar Yohai,       asking to be divorced. The rabbi
+       suggested that the couple celebrate their divorce with a feast in the same way that they celebrated their
+       wedding. The event was sad considering the situation, and during the feast, the husband announced that he
+       would like to offer a toast to his wife. He said, "For ten years we have lived very peace full and happy lives.
+       The only reason for our separation is that we have no children. To show my affection for you, please take any
+       object you wish in the house". That night, as the husband slept, the wife asked their servants to carry him to
+       her father's house. The husband awoke in the morning,   and asked how he had gotten there. "You are here
+       because of your own request," his wife answered. You asked me to choose any object I wished, and I chose
+       you as the object most precious to me," The couple remained together. They had their first child the
+       following year." Do you get the point of this story related to you, Martin?
+       USER: Hmm...you mean there is no point waiting for married couples to get divorced?
+       SAGE: Go on, keep talking
+       USER: I see, you are telling me that married couples consider each other the most precious things in the
+       world, so I should not waste my time hoping that one day they will break up so I can claim the bride.
+
+It is extremely hard to predict which inspirational story is going to be selected since the keyword augmentation
+produced by WordNet     works    in many    different hierarchical levels. Another      problem    is the search     time.
+Sometimes a personal story with many relevant keywords (around 20) can take as long as 60 seconds to be
+augmented and make the story matching. However, results of people interacting with both "Rabbi" and "Tao"
+confirmed that an approach to storytelling focused on a        communicational model taken from oral tradition,
+conversational personal stories and counseling is successful. Results showed that in a storytelling system of this
+kind, where the goal is to get the user to tell a personal story and to construct meaning and personal relevance, a
+complex matching and indexing system is not always needed.
+
+530
+Future work
+Current work involves re implementing DISSCO as a more friendly programming environment so kids can
+easily create their own sage storytellers. In that direction, research is being done on visual programming
+languages. On the narrative interest, the focus is on what kind of discourse structures the system should parse in
+order to abstract the point made by a personal story and show a smarter linguistic behavior. Such a "tool to tell
+with", which only manipulates language structures but doesn't understand them, could help children start
+thinking about the complexity of meaning and interpretation in communication. By playing with language and
+storytelling,  children can get  an  early access  to the world        of narrative. Finally, work    is being done on
+embodying      the storytellers in a physical   object. The natural       children's   tendency  to  establish intimate
+relationships with their stuffed animals is leveraged by adding computational abilities (speech synthesis, speech
+recognition, sensors, etc.) so the toy can give feedback and allow interesting multimodal interaction.
+References
+Austin, J. (1962) How to do things with words. Harvard University Press.
+Campbell, J. (1988) The power of myth. NY: Doubleday.
+Bates, J.; Maes, P., and Hayes-Roth, B. (1995) AAAI Working Notes Spring Symposium: Interactive Story Systems: Plot
+and Character
+Benjamin, W. (1968) The storyteller. Illuminations. NY, Schocken Books.
+Bettelheim, B.(1976) The uses of enchantment : the meaning and importance of fairy tales. NY: Knopf.
+Colby, K. (1975) :Artificial Paranoia.: A computer Simulation of Paranoid Processes. NY: Pergamon Press.
+Domeshek, E (1992) "Do the right thing: a component theory for indexing stories as social advice". ILS, Nothwestem
+University.
+Foner, L.(1993) What's an agent, anyway? A Sociological Case Study. Agents Memo 93-01.      MIT Media Laboratory.
+Geertz, C.   (1973) The interpretation of cultures, NY: Basic Books.
+Hare!, I. & Papert, S. (ed.)(1993) Constructionism. NJ:Ablex Publishing.
+Linde, C. (1993) .Life Stories. The creation of coherence.NY: Oxford University Press.
+Maes, P.(1993) Behavior-Based Artificial Intelligence. Second Conference on adaptive behavior, MIT Press.
+Mauldin, M. (1994) Chatterbots, TinyMuds & Turing Test: Entering the Loebner Prize Competition. 12th Conference on AI.
+Miller, G., Beckwith R., Fellbaum C. ,Gross D. & Miller K. (1993) Introduction to WordNet: An On-line Lexical Database.
+Miller, P.,Potts R., Fung, H., Hoogstra, L & Mintz J.(1990) Narrative practices and the social construction of self in
+childhood. American Ethnologist :17(2) 292-311.
+Minsky, M. [1985) The society of mind. NY: Simon & Schuster Inc.
+Murray, J. (1991) Anatomy of a New Medium: Literary and Pedagogic Uses of Advanced Linguistic Computer Structures,
+Computers and the Humanities 25:1-14. Netherlands: Kluwer Academic Publishers.
+Papert, S. (1980) Mindstorms: Children, Computers and Powerful Ideas. NY: Basic Books.
+Resnick, M. (1994) Turtles, Termites and Traffic Jams:Explorations in Massively Parallel Microworlds. MIT Press.
+Rosen, S. (ed.) (1982) My voice will go with you:The teaching tales of Milton H. Erickson. NY:Norton.
+Sack, W. (1995) The Holzer Machine. http://mu.www.media.mit.edu/people/wsack/holzer-machine.html
+Schank, R. & Riesbeck, C. (1981) Inside Computer Understanding: Five Programs plus Miniatures. NJ: Lawrence Elbaum.
+Schank, R. & Abelson R. (1995) Knowledge and Memory: The Real Story. Advances in Social Cognition, Volume VIII, 1-
+85.NJ: Lawrence Elbaum.
+Stone, E. (1988) Black sheep and kissing cousins. NY: Times Books.
+Weizenbaum, J.(1976) Computer power and human reason. SF: Freeman & Cia.
+Th6risson, K. Computational Characteristics of Multimodal Dialogue. AAAI Fall Symposium. Embodied Language and
+Action Working Notes. MIT, November, 102-108.
+Turkle, S (1984). The Second Self:Computers and the Human Spirit. NY:Basic Books.
+Wigren, J. (1994) Narrative Completion in the Treatment of Trauma, Psychotherapy, vol.31, no.3.
+
+Acknowledgements
+
+This research began as a project for the class "The Language of Conversation & Story", taught by    Prof. Justine Cassell,
+Marilyn Walker and Scott Prevost at the MIT Media Lab, where I learned a discourse approach to narrative. I am also
+grateful to Justine for her challanging support and belief in the need of working with personal stories, and to Mitchel
+Resnick for   shaping my ideas on designing technological tools for learning. I also thanks Ien Cheng for his excellent
+DISSCO implementation, Warren Sack for his inspiring Holzer Machine and Rick Borovoy, Hannes Vilhjalmsson, Kristinn
+Th6risson, Scott Prevost and Joshua Bers for valuable comments and interactions. Finally, I owe a big thanks to Moshe
+Waldoks, Sarah Queen and Chris Cleary for their guidance on building believable Hasidic and Taoist sages and on selecting
+the stories.
+
+                                                                                                                        531
+

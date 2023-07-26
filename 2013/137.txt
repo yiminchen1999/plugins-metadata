@@ -1,0 +1,408 @@
+CSCL 2013 Proceedings                                                           Volume 1: Full Papers & Symposia
+
+                   The Benefits and Limitations of Distributing a
+                              Tangible Interface in a Classroom
+                                     Sébastien Cuendet and Pierre Dillenbourg
+                         Ecole Polytechnique Fédérale de Lausanne (EPFL), Switzerland
+                                  {sebastien.cuendet, pierre.dillenbourg}@epfl.ch
+
+          Abstract: We report the design and testing of TapaCarp, a CSCL environment for carpenter
+          apprentices. From the start, we designed TapaCarp for a classroom usage. This led to an
+          interface distributed over several components and modalities. A first user study conducted in a
+          classroom environment and involving 24 carpenter apprentices produced mixed conclusions
+          about the distribution of the interface. On one hand, it proved suitable in terms of classroom
+          integration and flexibility. On the other hand, it hurt usability, both at the group level and at
+          the classroom level. Based on these results, we discuss the relevance of distributing a learning
+          environment interface and introduce the concept of "over-Hutchins threshold", a point after
+          which the distribution of the interface becomes harmful to classroom orchestration.
+
+1. Introduction
+Classroom orchestration has been a rising topic in the CSCL community in the last few years (Dillenbourg,
+Järvelä, & Fischer, 2009). A core idea of classroom orchestration is that bringing learning technologies to the
+classroom should accommodate the many constraints of classroom management, including practical constraints
+(time, discipline, etc.). These constraints have often been somehow neglected in CSCL either because studies
+where conducted in labs or because technologies were designed to be used `anywhere'.
+          Our recent work has focused on designing technology for face-to-face learning in the classroom. To
+design for the classroom,    we   consider   both  the intrinsic pedagogical constraints   that make for an  effective
+learning tool (how people learn, who is the audience, what are the content features) and the extrinsic constraints
+that come with the deployment of the learning environment in the classroom (time, discipline, teacher's energy,
+space, etc.). In this article, we describe how we created TapaCarp, an augmented reality environment for the
+specific context of a classroom of carpenter apprentices attending a vocational school.
+          With other tangible interfaces we tested in vocational schools and elementary schools, we found paper
+to be  a  specific type of   interface that  fits particularly well  within classroom   practices. Two  decades   ago,
+Hutchins (1995) provided an explanation of why paper was surprisingly useful in an aircraft cockpit, which is a
+supposedly high-tech environment. According to him, the two pilots and the various artifacts spread over the
+physical cockpit environment form a distributed system in which information flows across different media. A
+classroom is a more diverse environment than a cockpit, but Hutchins' analysis is nonetheless relevant for the
+classroom.  We     therefore used it   while designing   TapaCarp    and to  interpret the data  collected during the
+deployment of Tapacarp in a classroom.
+          TapaCarp is the result of an iterative design process conducted with a teacher and his students over two
+years. Our continuous attempt to integrate the environment into the classroom life led to a highly distributed
+interface. We could even call it a `scattered' interface: the learning activities imply interactions across five
+different modalities:   tangible  wooden     blocks,   paper cards,  paper  sheets, digital augmentation    and even
+sometimes a computer mouse.       Conceptually, with such a scattered interface, the environment does more or less
+disappear  as one   environment;  it   somehow    `molds' into   the classroom ecosystem.   Practically however,  we
+found that distributing the interface too much leads to usability issues, both for the teacher and for the learners.
+          We first describe the context of carpenters training and the interface that resulted from participatory
+design. Second, we present the results of a study conducted with three classes. Finally, we discuss the concept of
+distributed interface and the tensions that can appear between the individual usability and the `orchestrability' of
+the classroom, which Dillenbourg defined as the first and third circles of usability (Dillenbourg et al, 2011).
+
+2. The design of TapaCarp
+Context
+This work focuses on carpenter apprentices, (mostly male) students aged between 16 and 20. They follow a dual
+system, which means that they work four days a week in a company and go to school for the remaining day.
+Carpenter apprentices were chosen for 3 reasons: (1) CSCL work on young adults other than university students
+is rare; (2) carpentry involves hard 3D reasoning skills that are challenging for apprentices; and (3) we wanted
+to see if the tangible-paper distributed approach we successfully tested with logistics apprentices (Zufferey,
+Jermann, Lucchi, & Dillenbourg, 2009) would be relevant in a different professional domain. After visiting five
+companies and following the apprentices at their workplace as well as at school, we identified three main topics
+
+© ISLS                                                                                                            137
+CSCL 2013 Proceedings                                                            Volume 1: Full Papers & Symposia
+
+in which  carpenters need to  be trained: the  law of statics for building,   spatial reasoning skills, and building
+physics  (sound/heat/humidity/insulation). This  study  focuses   on     spatial reasoning  skills, which carpenters
+typically develop through drawing classes. Learning the practice of drawing is controversial in the carpenter
+community. Although the school curriculum for carpenter apprentices allots 3 hours of drawing classes per
+week for 3 years, at their workplace it is their superiors that draw the roof structures and not the apprentices
+themselves. In fact, most of the time the plans are not drawn by hand anyways but instead with CAD software.
+Our research addresses this tension between the needs of the companies and the practices at school: Could
+apprentices develop the spatial reasoning skills they need at work in a more efficient way?
+
+Blocks and Cards
+Our learning environment, TapaCarp, runs on the Tinkerlamp, a camera-projector tabletop system (see Figure 1,
+left). The projection area has a dimension of 70 by 50 centimeters. The system detects objects equipped with
+fiducial markers and provides visual feedback through the projector. This environment is designed for teams of
+2 or 3 students seated around the table on which the lamp sits.
+
+      Figure 1. The Tinkerlamp (left) and the layout of TapaCarp (right): the wooden block and a perspective
+                  representation of it, as well as the three orthographic projections of the block.
+         TapaCarp is a collaborative learning environment that has been iteratively designed with the assistance
+of a carpentry teacher and his students. The teacher's main complaint about his students was that they did not
+make the link between the 2D representations of an object (its orthographic projections) and its 3D shape. This
+leads them to draw plans that are wrong, i.e. correspond to unbuildable roof structures. According to the teacher,
+students tend  to follow  descriptive geometry  "recipes"  to draw   their   plans, without  understanding  the link
+between the orthographic projections that they are drawing and the final object that they mean to represent.
+         The interface of TapaCarp is distributed over several components. The first component is a set of 3D
+wooden blocks. The blocks are equipped with fiducial markers (Figure 2, left), which allows Tapacarp to track
+their position and orientation accurately. Knowing the topology of a block, TapaCarp displays its orthographic
+projections and   a perspective  view  of  the object (Figure   1, right).   The   2D  and  3D  representations  are
+dynamically linked, allowing the users to explore the 2D-3D relationship by moving the blocks and seeing the
+effect of the movements on each view. The blocks serve both as an external representation of the drawing and as
+input for the system. Using tangible blocks that have the same geometrical shape as the digital object that they
+represent has been shown to be beneficial for learning (Cuendet, Bumbacher, & Dillenbourg, 2012).
+         While blocks are the core manipulation handles of the interface, they do not allow the users to trigger
+specific actions such as "launch activity 1", or "show feedback". We therefore introduced the second component
+of the interface: a set of papers cards. Cards are used to issue actions or to change options such as to launch an
+activity, to check the correctness of a solution, to ask for help, and to change features of the display. Each card
+has only one function and the number of functions provided by the system is therefore proportional to the
+number of cards available. This makes it easy to adapt the number of features to the students' level of expertise:
+the teacher simply gives them the appropriate set of cards. Cards were also chosen for practical reasons, such as
+their ease  of distribution, storage, and  sharing, all of which   go     in the  direction of reducing   the global
+orchestration load faced by the teacher. They are easy to manipulate and share between several users. This opens
+up possibilities for role taking (Burton, Brna, & Treasure-Jones, 1997).
+         A third component of TapaCarp is a standard computer mouse that was used to interact with the digital
+models. We do not have as a principle that modern interfaces should avoid using traditional computer input
+devices. Instead, we  are looking for  the most  appropriate   artifact  for each   type of interaction. In previous
+usability tests, which compared the mouse to tangible `selectors', the mouse proved to be the fastest and most
+accurate tool to select a thin line on the views projected on the table.
+
+© ISLS                                                                                                          138
+CSCL 2013 Proceedings                                                       Volume 1: Full Papers & Symposia
+
+Activity booklet and drawing tools
+Based on the blocks and cards interface, we developed a series of learning activities to help apprentices learn to
+link the 2D and 3D representations. For instance, one activity was the following: given an edge shown on the 3D
+representation, the students had to identify it on the three orthographic projections. Another activity asked the
+student to place and   orient one  or several  blocks based on two of   the three  orthographic     projections. The
+activities could be completed in a short amount of time (less than 5 minutes). Their level of difficulty was
+adaptable by selecting simple versus complex blocks.
+
+                 Figure 2. The blocks (left) and the cards (right) used to command the system.
+        Although the teacher had participated in their design and testing, he did not want to use them "for real",
+i.e. as genuine classroom activities, because the activities were not part of the regular curriculum. This came as a
+surprise, since TapaCarp activities and the ones done routinely in the classroom had the same goal (improving
+the 2D-3D link), an observation that the teacher did not refute. The major issue was that the professional and
+school  environments   of a carpenter  are deeply embedded   with paper  and drawing,  and        that TapaCarp  used
+neither paper nor drawing tools. Drawing-based practices are the DNA of these classrooms.
+        We therefore added a new interface component a paper activity booklet (Figure 3, left), so that students
+could perform the act of drawing on paper. They drew with their regular drawing tools (Figure 3, right), which
+further satisfied the teacher ­ learning to use those tools properly is a curriculum requirement. The booklet was
+composed of A4 pages, each page being a separate activity and equipped with a fiducial marker so that the
+system could augment it with instructions and feedback. New activities were designed to make use of the paper
+and drawing tools. In the end, except for the presence of the block and the possibility to augment the paper with
+the projector, the activities were very similar to the ones done in the regular curriculum.
+        This  booklet   and   the set of tools constitute respectively the  fourth and      fifth component   of our
+distributed interface. In fact, the tools are not properly speaking part of the interface ­ they are not tracked by
+the camera and are hence not an input device ­ but the same fiducial markers could be used for instance, to
+check if the center of a protractor is accurately placed in the center of an angle to be measured.
+
+              Figure 3. The activity booklet (left) and the regular students' drawing tools (right).
+        While it met the teacher's requirements, introducing the activity booklet had a side effect: the use of
+TapaCarp became closer to the usual classroom pedagogical structure, and more scripted. Each activity was now
+designed as a step-by-step process through which the students were guided by dynamical instructions projected
+by the system, as can be seen in Figure 3 (left). It is this final system that was tested in a classroom environment.
+We were closer to the teacher's needs but further away from socio-constructivists principles.
+
+© ISLS                                                                                                           139
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+3. User study
+         Evaluations of TapaCarp were conducted in a classroom in one vocational school over three days. The
+class was split into two halves: half of the students attending the normal class with the teacher, while the other
+half used TapaCarp under the supervision of one researcher acting as the teacher. Ideally we would have liked
+the teacher to give the class with Tapacarp, but practical constraints made it impossible (someone had to take
+care of the other half-class). The goal of the 1.5 hours lesson was to teach the apprentices how to find the true
+size of an object from its orthographic projections. This is one of the key tasks in the 2D-3D passage. There are
+various techniques to find the true size of an object from its orthographic projections, but carpenters mainly use
+the rabattement technique, introduced by Monge (1798) and graphically explained in Figure 4. This technique
+and descriptive geometry are important subjects not only for carpenters, but also for many other professions
+such as mechanical engineers, architectural draftsmen, and even dentists (Sheryl Sorby, 2009).
+
+ Figure 4. (a) The rabattement technique on 2D projections: to find the true size of the edge a by rabattement,
+ one typically takes its height h on the face view and report it perpendicularly on the top view; the true size is
+                           then the red line. (b) A 3D representation of a rabattement.
+
+3.1. Participants and procedure
+Apprentices used TapaCarp in pairs. The activities had been designed together with the teacher. There were 11
+activities presented in an increasing level of difficulty and grouped in three parts. All of them included exercises
+around   the notion of   rabattement: the first part  (activities 1-3)  was   an introduction  to the principle    of
+rabattement; the second part (activities 4-6) dealt with finding the true size of an edge; the third one exercised
+finding the true size of a face (activities 7-11). The apprentices were all males aged between 17 and 31 with a
+mean age of 19. A total of 24 apprentices (12 pairs) used TapaCarp for 1.5 hours.
+         The blocks, the cards, the paper tools, and the activity booklet were provided to the apprentices. They
+were also asked to use their own regular tools: pencils, a ruler, a protractor, an eraser, and a compass. None of
+the activities required the mouse, which was hence not included for the study. In total, six blocks were given to
+each group. Each activity made use of one block. All the material was given to the apprentices at the very
+beginning of the class, except for three cards managing the animated feedback: These were given to them after
+they completed activities 3 and 4.
+         The data used for the analysis of the results were collected through the log files of the application, a
+questionnaire given to the students at the end of the experiment, and video recordings.
+
+3.2. Results
+One frequent concern with learning technologies is how fast students learn to use them. All apprentices were
+shown a short demonstration of TapaCarp (less than 5 minutes). To reduce the novelty effects that could distract
+them from the activities, the apprentices were allowed to play with the system for as long as they wanted before
+starting the activities. They typically tried   the system for    2-3 minutes  before starting the  activities, and
+completed the activities for the remaining time within the 1.5 hour allotted.
+
+Users feedback
+We gathered both formal (written questionnaire) and informal (class discussion) feedback from the users. The
+questionnaire included 13 assertions to be assessed on a seven-point Likert scale, and 5 more open questions. A
+large majority of apprentices (18) had positive opinions, 2 were neutral and 4 were negative. From the 4
+negative ones, most of the criticisms came from the lack of accuracy of the projection due to some calibration
+inaccuracies between the camera and the projector. The students were enthusiastic about the system, both in
+terms of perceived usefulness of TapaCarp for their training as well as in terms of its usability. For instance,
+they were interested in using TapaCarp more often (0.96 on the Likert scale) and said TapaCarp helped them
+
+© ISLS                                                                                                          140
+CSCL 2013 Proceedings                                                          Volume 1: Full Papers & Symposia
+
+understand   the rabattement   better (1.25). Only   three apprentices    said TapaCarp did not    improve   their
+understanding of the rabattement, out of which two said that they had already understood it beforehand. The
+animations were deemed especially useful to better understand the rabattements (1.95).
+
+Left-right differences
+The manipulation of objects by the two users reflects the asymmetry and the modularity of the interface. Figure
+5 shows the number of activities in which the user on the left or right of the workspace performed an action or
+manipulated an object. There was a significant difference in the usage of the modalities: the participant to the
+right manipulated the blocks more, while the left participant used the cards more. Part of this asymmetry can be
+explained by the physical placement of the manipulation zone of the blocks (on the right). However, the cards
+could be used anywhere, so the fact that they were used mostly by the left participant is more surprising. These
+differences in the usage of the interface did not lead to different learning outcomes (F[1,22]=3.54, p = .07),
+although in 9 groups out of 12, the post-test score of the apprentice sitting on the left was higher than his
+colleague's.
+
+    Figure 5. Average number of activities (with standard errors) in which each student on the left or right
+                         performed an action or manipulated the objects at least once.
+
+Blocks and their interaction with the paper and tools
+None of the groups tried to use the wrong block for an activity, most likely because a perspective view of the
+block was printed at the top of each activity page. The blocks serve both as manipulation handles and as an
+external representation. The apprentices' behavior showed that they understood this, and that they made the link
+between the 3D block, their drawing, and the projected representations. They used the blocks extensively to take
+measurements,    check their  solutions, or   change the   angle   of the displayed  projection. They  measured
+dimensions both on the block and on the orthographic projections, and laid the block on their drawing to check
+that the length of an edge that they found by rabattement actually matched the real length. One could say that
+some of them even understood all too well how to use the blocks, since they sometimes used it not only to check
+their solutions but to find the solution by measuring the true size of an edge or face directly on the block instead
+of finding it by rabattement.
+
+Usually, carpenter apprentices do not dispose of the physical model of what they are asked to draw on paper.
+Our activities forced them to link the actual block to the drawing. This link between the block and the drawing
+was done either directly by laying the block on the drawing, or indirectly by taking measurements on the block
+and reporting them on the drawing. Noteworthy is the fact that some groups did not make a direct link between
+the blocks and the paper and always used an additional tool ­ ruler or compass ­ to make this link. Others, on
+the contrary, used the block directly by laying it on the drawing.
+
+© ISLS                                                                                                       141
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+Activity booklet
+The activity booklet had a good `orchestrability': easy to distribute and gather, no ordering problems or loss of
+activities. The apprentices are used to receiving exercises this way and did not question it. The navigation
+between the activities was not programmatically enforced, allowing students to browse through all the activities
+without any mandatory checkpoints. This resulted in some students not calling the teacher when the written
+instructions asked them to (so that the teacher could check their solution and give them more cards). A minor
+issue was that after completing several activities and flipping the pages, the stapled corner of the page was
+higher than the other ones, leading to some misdetection of the fiducial marker. This could easily be fixed by
+placing additional fiducial markers on the page.
+
+Other observations
+The augmentation of the paper with dynamic instructions and feedback generated a split attention effect. Some
+basic instructions had been printed on the paper to help students complete the sheet in a structured way. The
+dynamic instructions were projected on the top of the page. However, despite the flashing of a bright color the
+projected instructions were sometimes ignored. When they were stuck and asked for help, the teacher simply
+pointing to the instructions often solved the problem.
+        Each group received a total of ten cards and six blocks. These came in addition to the drawing tools and
+the activity booklet, and resulted in a large number of objects to manage on the tabletop. It was sometimes
+complicated for the students to find the card they were looking for; in some instances, a card was activated by
+mistake. Although students did not complain about that in their feedback, this appears to be a usability issue.
+From the orchestration point of view, the instructor had difficulties distinguishing what activity the students
+were working on from a distance, because the table was so cluttered with objects.
+        The experiment was not focused on learning outcomes. Actually, the cognitive activities we designed
+were not optimal   and the  learning gain  in the context of   this study  was   rather modest (4%).    Experiments
+focusing on the evaluation of the learning gain from using TapaCarp have been reported elsewhere (Cuendet,
+Bumbacher, & Dillenbourg, 2012; Cuendet, Jermann, & Dillenbourg, 2012). The focus of this article is to
+investigate the usability of a distributed interface in a classroom environment.
+
+4. Discussion
+TapaCarp was designed with the constraints of the classroom in mind. The interface needed to be easy to use
+and robust to potential mishandling by new users. This led to a first version of the system with two modalities:
+the blocks as the main items of the interface, and cards to control the flow of the activities. Then the system
+evolved towards a more complex interface including three more modalities: a paper booklet, the mouse and
+drawing tools.
+        In terms of usability, the results of the field study were globally positive. With just a few minutes of
+introduction to TapaCarp,   the students  were able  to use it to   complete  complex    activities. Their feedback,
+although it must be taken with a grain of salt in light of the novelty effect, was positive both on the perceived
+usefulness and  on the global   usability of  TapaCarp.  The distributed   interface allowed   it to  mold  into the
+classroom ecosystem by using some of the media traditionally used in the classroom (paper and drawing tools).
+TapaCarp also allowed the students to work as usual on a tabletop and to keep their habit of working in pairs.
+        Another positive aspect of the distributed interface was that it fostered the emergence of roles within
+the pairs. Typically, while one student manipulated the cards, the other manipulated the blocks. On several
+occasions, one student prompted his partner with phrases such as "OK, we're good, now you can use the card to
+go to the next step". Role distribution in collaborative learning can be beneficial to learning (Burton et al., 1997)
+and has  the advantage of   engaging  both  students in the pair.   In the case  of tangible interfaces,   where the
+"manipulation   temptation" has  been shown    to be   counter-productive  to  learning  (Do-Lenh,    2012), paying
+attention and controlling who is manipulating what and when is especially important.
+        The positive aspects of a distributed interface in the classroom should not prevent us from seeing its
+limitations. We describe the limitations that we have observed in the next section.
+
+Limitations
+        From its original orderly distributed configuration, the TapaCarp interface became over-distributed
+with its components being spread out all over the place without much order. This can be observed in Figure 6:
+on the left side of the lamp there is a ruler and a setsquare. On the right side, one can distinguish another
+setsquare, the six blocks, and an eraser. Close to the students' arms are the cards, the compass, as well as some
+pencils and pens. With all the objects added across the four modalities, the final interface represented a total of
+twenty objects. We analyze the impact of the distributed interface on the usability by using the three levels of
+usability linked to the classroom orchestration theory (Dillenbourg et al., 2011).
+
+© ISLS                                                                                                           142
+CSCL 2013 Proceedings                                                          Volume 1: Full Papers & Symposia
+
+     Individual level: as mentioned earlier, there were no major usability issues at the individual level.
+     Group level: During the study, we observed that the large number of objects led to some usability issues at
+     the group level, although the students did not explicitly complain about it. The issues arise mainly from the
+     cards, which students either unintentionally activated or, in some case, had trouble locating. For example,
+     the "next" card was unintentionally pushed under the projection surface ­ and therefore activated ­ which
+     led to a rapid "completion" of the activity that was not planned by the students. On several occasions, the
+     students wanted to ask the system for help and had to look for the "help" card because it was hidden under
+     the activity booklet or another card, or behind a block.
+     Class level: The number of objects also reduced the teacher's awareness of learners work by making it
+     difficult for him to see what group was working on what activities from a distance. This increases the
+     teacher's orchestration load (Dillenbourg, 2013), namely the effort to assess the progress of each group.
+
+Figure 6. A group of students working with TapaCarp. One can see the various modalities: the drawing tools in
+ the foreground, some cards close to the students' hands, and the blocks in the background. One block is active,
+                            and the students are reading off of the activity booklet.
+
+        While it had some positive impact, the distribution of the interface also led to some usability issues.
+The impact of the distributed interface on classroom orchestration can be better understood in the light of the
+four following   design principles of  classroom orchestration   (Cuendet,   Bonnard,  Do-Lenh,   &    Dillenbourg,
+2012): integration, flexibility, awareness, and minimalism. The distribution of the interface stemmed from a
+need to integrate into the classroom environment ­ the activity booklet and the drawing tools were included on
+the teacher's request to fit in the classroom. The resulting flexibility is also increased: it is easy to add/remove
+part of the interface depending on the level of students, or to distribute the interface over three students rather
+than two if a class has an odd number of students. The usability issues described for the group level can be
+interpreted as a lack of minimalism in the design of the interface. As for the usability issues at the class level,
+they were directly linked to the lack of awareness resulting from the clutter of objects on the table.
+        Hutchins    exposed how    the distribution of  information   could help  a  cockpit remember      its speed
+(Hutchins, 1995). Similarly to Hutchins' approach, we developed a learning environment in which the interface
+is distributed across several modalities and media. Hutchins' analysis of a cockpit assessed the distribution of
+information as positive. In our study, we witnessed that the distribution of the interface has potential benefits,
+but also that over-distributing the interface can lead to a usability reduction on some of the three usability levels.
+The  question  that begs an answer    is: how many   objects    can a distributed interface  have without    hurting
+usability? In other words, could there be a point, which we could call the "Hutchins threshold", beyond which
+distribution of the interface could be harmful? In reality, Hutchins neither claimed that an interface should be
+distributed, nor how  much  it should  be  distributed.  As   a tribute to his work,  we simply   use  his  name  to
+discriminate the point where the advantages of distributed may be counterbalanced by the shortcomings.
+        We do not have an answer to this question. This threshold is not simply a number of objects, it also
+depends on the characteristics of the objects: how much space they occupy on the interaction surface, how easily
+they can be stacked, sorted and put away, how often they are moved unintentionally (e.g. because they are too
+light), etc. It would take many carefully designed experiments to answer it in the case of TapaCarp. What we
+observed in the user study is that some distribution of the interface increased collaboration and decreased the
+orchestration load, but that a higher degree of distribution hurt the usability of TapaCarp and increased the
+
+© ISLS                                                                                                          143
+CSCL 2013 Proceedings                                                        Volume 1: Full Papers & Symposia
+
+orchestration load. While it is doubtful that there exists a general theory linking the number and type of objects
+in a distributed interface with   the  collaboration   and orchestration loads,  we believe    that the degree   of
+distribution of an interface is worth considering when designing a learning environment for the classroom.
+         For example, in TapaCarp, it is mainly the cards and the blocks that brought TapaCarp beyond the
+Hutchins threshold and caused the decreased of usability. It may be that reducing the number of cards and
+blocks needed simultaneously would solve the usability issues. This can be achieved by placing only the objects
+needed for the current activity on the tabletop. The cards could, for example, be bundled with the corresponding
+activity sheet, while the blocks could be stored in a corner of the classroom where students could go to pick up
+the block corresponding to their current activity.
+
+5. Conclusion
+The approach presented for the design of TapaCarp is distinctive in that we sought from the start to design
+TapaCarp for a classroom usage, and that it led to a distributed interface. Following the observations of the user
+study, we discussed the benefits and drawbacks of a distributed interface for a learning environment. On one
+hand, distributing the interface proved suitable in terms of classroom integration and flexibility. On the other
+hand, it hurt the usability of TapaCarp, both at the group level and at the classroom level.
+         We see great potential in distributed interfaces for learning environments. However, over-distribution
+may hurt usability, and to this end we introduced the concept of the "Hutchins threshold", a point at which the
+distribution of the interface breaks one of the five principles of classroom orchestration design. We do not claim
+that the Hutchins threshold can be computed and will hold true invariant of the conditions. Rather, we see it as
+an important design concept to keep in mind when designing tabletops and tangible interfaces for learning.
+
+Acknowledgements
+The authors would like to thank Stéphane Testuz, Yongsung Kim and Sara Alsudairy for their contribution to
+the development of Tapacarp. We are grateful to Patrick Jermann for his many suggestions all throughout the
+project. We also thank the reviewers for their insightful comments. This work is supported by the Swiss State
+Secretariat for Education, Research and Innovation (SERI).
+
+References
+Burton, M., Brna, P., & Treasure-Jones, T. (1997). Splitting the collaborative atom: How to support learning
+      about collaboration. AI in Education.
+Cuendet, S., Bonnard,  Q.,  Do-Lenh,   S.,  &  Dillenbourg,   P. (2012). Designing  Augmented       Reality for the
+      Classroom. Computers and Education, Special Issue on Augmented Reality for Learning.
+Cuendet, S., Bumbacher,    E.   W., &  Dillenbourg,    P.  (2012). Tangible  vs. Virtual     Representations: when
+      Tangibles Benefit the Training of Spatial Skills. The Seventh Nordic Conference on Human-Computer
+      Interaction (NordiCHI 2012).
+Cuendet, S., Jermann, P., & Dillenbourg, P. (2012). Tangible interfaces: when physical-virtual coupling may be
+      detrimental  to learning. Proceedings    of  the 2012  British Computer    Society Conference   on    Human-
+      Computer Interaction.
+Dillenbourg, P. (2013). Design for Classroom Orchestration. Journal of Computers in Education.
+Dillenbourg, P., Järvelä,  S.,  &  Fischer, F. (2009).    The Evolution   of Research    on   Computer -Supported
+      Collaborative   Learning. In  N. Balacheff,   S. Ludvigsen,  T. Jong,  A.  Lazonder,    & S.  Barnes    (Eds.),
+      Technology-Enhanced Learning (pp. 3­19). Springer Netherlands.
+Dillenbourg, P., Zufferey, G., Alavi, H. S., Jermann, P., Do, L. H. S., Bonnard, Q., Cuendet, S., et al. (2011).
+      Classroom orchestration : The third circle of usability. Connecting Computer-Supported Collaborative
+      Learning to Policy and Practice: CSCL2011 Conference Proceedings. Volume I -- Long Papers (Vol. 1,
+      pp. 510­517). International Society of the Learning Sciences.
+Do-Lenh, H. S. (2012). Supporting Reflection and Classroom Orchestration with Tangible Tabletops. EPFL,
+      Lausanne.
+Hutchins, E. (1995). How a Cockpit Remembers Its Speeds. Cognitive Science, 19(3), 265­288.
+Monge, G. (1798). Géométrie Descriptive. J. Klostermann fils, Paris.
+Sheryl Sorby. (2009). Educational Research in Developing 3-D Spatial Skills for Engineering Students, 31(3),
+      459­480.
+Zufferey, G., Jermann, P., Lucchi, A., & Dillenbourg, P. (2009). TinkerSheets: Using Paper Forms to Control
+      and Visualize Tangible Simulations. TEI'09, Third International Conference on Embedded and Tangible
+      Interaction.
+
+© ISLS                                                                                                          144
+

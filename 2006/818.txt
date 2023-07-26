@@ -1,0 +1,330 @@
+                Designing an Online Service for a Math Community
+
+  Martin Wessner1,3, Wesley Shumar1, Gerry Stahl1,2, Johann Sarmiento1,2, Martin Mühlpfordt3, Stephen Weimar1
+                                           Virtual Math Teams Project, a collaboration of:
+                                              1Math Forum @ Drexel, Philadelphia, USA
+                     2College of Information Science & Technology, Drexel University, Philadelphia, USA
+                                               3Fraunhofer IPSI, Darmstadt, Germany
+                                                  martin.wessner@ipsi.fraunhofer.de
+
+        Abstract. In the Virtual Math Teams project an online service for groups of people to discuss
+        and    collaboratively   solve  mathematical     problems     is being  developed.    The   paper   takes   a
+        qualitative approach to looking at the design-based research process of developing the platform
+        for   a synchronous    math   problem   solving   environment.     We   sketch the  transition  from  early
+        experiments with commercially available tools to a series of studies conducted with a research
+        tool finally to the design of a platform which provides the technical basis to a scalable public
+        service.  For   this design   we   had to take  into account     requirements  from   students, tutors, the
+        service   provider   as  well   as researchers   from  various    disciplines. We   discuss  some    design
+        decisions    which   lead  to a platform  which   addresses    the diverse   requirements   of  the various
+        stakeholders. The paper underscores the value of a design-based research process and a self-
+        reflexive process as we develop insights about online math problem solving.
+
+Enabling and Supporting an Online Math Community
+        So much math done by students is done at the individual level. Even when students work on math problems
+together they are often doing the work individually. The goal of the Virtual Math Teams (VMT) project is to provide
+an online service, as part of The Math Forum's regular suite of interactive math education services, that would allow
+students the opportunity to work together collaboratively in a synchronous environment in order to talk about math
+and  solve  math  problems.    The  idea   of the VMT     project is  to  bring together  students,  teachers,  designers   and
+researchers all in a collaborative way to help design, develop, test, and use an online collaborative math chat service.
+
+        The ultimate goal of the VMT project is to create a self-sustaining system that would allow individuals to
+join a chat,  become    part  of  a well-working     group,  and  make    progress   together  toward   increasing  their math
+knowledge and problem solving skills. But this ultimate goal raises several important challenges. First, are there
+specific dynamics of a good online group. There is some conflicting literature regarding the work of collaborative
+groups that is unclear about whether similar ability groups work best together or if mixed ability groups work best
+(Ireson and Hallam, 2001). Also, should there be specific roles in the group of online problem solves and should
+those roles be arbitrarily pre-assigned to students or should the system pick people with different characteristics to
+assign them to a group together. Perhaps the most challenging issue is how to support a group as they attempt to
+make progress in problem solving and what to do if the group gets stuck at some point in their problem solving
+activities.
+
+Theoretical Considerations
+        The   VMT     project  has  taken  a  design-based  research     perspective (Stahl et al., 2006,   The Design-Based
+Research    Collective, 2003;   Hoadley    2002). As   Stahl  et  al. (2006)   describe, the   project  involves  the  iterative
+development    of the   online synchronous     math  chat service.    That iterative design   process  involves   a number   of
+collaborators: research team, students, and math teachers. Here we will discuss the role of the research team a bit
+and talk more about the students and the teachers later in the paper. The research team is collaborative group of
+researchers  from  a  number   of   different fields and  math educators    who  meet   weekly  to  develop   and   discuss the
+evolution of the online synchronous math chat system. The research team has done everything from collaboratively
+designing services to working on the analysis of data from a number of different perspectives. The research group
+also includes a number of off-campus collaborators who follow the research progress of the team and some of whom
+become on-site visiting researchers for periods of time.
+
+        For the purposes of this paper we are taking a more ethnographic perspective to talk about the overall
+design development process in the research team. Barab et al (2004:254) define critical design ethnography as "...a
+
+                                                              818                                                     ICLS 2006
+process that sits at the intersection of participatory action research, critical ethnography, and socially responsive
+instructional design." From  their perspective  their goal was  to effect social change    through a   process of being
+immersed in a community and at the same time providing for that community educational design work that was
+developed in collaboration with the community.     Porpora (1999) has suggested that action research is the highest
+stage of service learning because it is a form of educational opportunity where students learn from real life service
+opportunities in living communities, a truly inquiry and experience based process. Reason (2004:270) makes some
+similar points reflecting Barab et al. (2004). He suggests that action research is at the intersection of "knowledge in
+practice" and "participation and democracy". Barab et al. are describing a kind of parallel process to both Porpora
+and Reason where the immersion of the design team in the life of the community enriches the work of both groups.
+
+        The VMT is not a critical design ethnography project.    However it shares several features of that work and
+involves an ethnographic component to the self-reflection that the research group engages in. The work in the VMT
+is a highly collaborative and reflective process. The research team works through all design issues and research
+issues together as they think about what effects changes in the chat environments are having on student participants.
+They also think about the nature of the math problems and which problems are best suited to collaborative online
+work as well as the nature of the mathematical conversations the students are having in the chats. The research team
+also has engaged in problem solving themselves in the chats as they attempt to get a feel for the experience of the
+participants in math chats. Finally the research team has involved students in the process encouraging them to tell us
+about what worked in the chats and what they would like to see changed in future versions of the chats. Recently we
+have also begun to work with a group of teachers on the project as well.
+
+        The   current  paper attempts to take   an ethnographic  perspective in  that   it is a  large overview   of the
+development of the chat environment and it critically reflects on the progress that we have made so far and the
+challenges we face. As such the data for the current paper comes from the notes that we have taken on our own
+process as we have in part become the subjects of our own analysis.
+
+First Phase: Experimenting with Diverse Tools
+        In our   design-based  research  at the Virtual  Math   Teams  project   (Stahl et  al., 2005),  we started  by
+conducting chats in a variety of commercially available environments: AOL Instant Messenger (AOL IM), Babylon,
+Blackboard, WebCT. Most of the early work concentrated on the use of AOL Instant Messenger for a set of math
+chats that we called PoW-wows after the Math Forum's Problem of the Week (PoW) on which the chats were based.
+The choice of AOL IM was a simple one, it was a piece of technology that most students had on their computers and
+could be used to self organize math chats very quickly. Further in our informal conversations with students they
+liked AOL IM very much and saw it as a "cool" medium in which to construct the math chats. Finally AOL IM is a
+very basic piece of synchronous chat technology and so it was a good place to start from in order to see what other
+features we might need to enhance math chats.
+
+        The early experience with the PoW-wows was very interesting. There were many interesting things that we
+began to see about the math chats themselves and several researchers on the project undertook an effort to code the
+chat data to look for patterns of interaction in the conversation. The chats were also analyzed from a conversation
+analysis perspective (Stahl 2005a; 2005b; Stahl et al., 2006; Zemel, Xhafa, F,   Cakir, 2005; Zemel, Xhafa, & Stahl,
+2005).
+
+        But beyond the content based research that was taking place in the project there were a number of critical
+design issues that began to clearly emerge from the chat process. An interesting feature of chat is that it is a medium
+that moves very quickly. People often do not write whole sentences and ideas flow very rapidly. This is especially
+true if there are more than two people in a chat. It has become very clear that one thing that was needed was a place
+where a group could save some ideas that they developed through the chat. They needed a place to store established
+ideas and a way to organize those established ideas and math facts.
+
+        It was also the case that students often missed ideas that others in the group articulated. This is a funny kind
+of "shunning" that goes on in online chats. On the one hand it may be that an idea is articulated by a member of the
+group and the rest of the group does not see the idea. On the other hand the idea may fall outside of the main flow of
+the conversation and because the conversation is moving so fast people do not take the opportunity to respond to the
+person who's posts fall outside of the main focus of the conversation. Another related process that goes on is that
+
+                                                          819                                                  ICLS 2006
+sometimes   in these chats two   or more   conversations  would  occur   in parallel  at the same   time. This  meant   that
+participants needed to let the others know which conversation thread s/he was posting a response to.
+
+         Due to the complexity of the problem or time restrictions of participants in many cases the problem solving
+involves several chat sessions. In later sessions groups would like to review the conversation they had in previous
+sessions. Thus, they could easily identify the state of the problem solving in their group. This would be especially
+helpful when group membership changes between sessions as it was the case in our experiments due to coordination
+problems or drop outs. It would also allow late-comers or participants who missed one session to catch up with the
+other group members quickly. To support changing membership and multi-session processes a persistent storage of
+the chat conversation is needed by the students.
+
+         Finally it became clear that with many of the math problems the student were doing it was helpful to have a
+shared graphical representation of the problem and the problem solving. When they did the problem solving together
+in AOL IM they often drew on a sheet of paper and talked about their drawing on IM. They also began to upload
+drawings to the Math Forum site so they could share drawings with each other while they talked about the problem.
+
+         All of this interaction made it clear that there were some very specific features that such a math chat needs.
+First it was clear that students need a space where they could put ideas. They need a text box where the questions
+they wanted to address could be listed, or the ideas they had could be listed or formulas used could be listed etc.
+Related to this kind of listing function, it became very clear that it would be useful for students to have a place
+where they could draw or place drawings in order to facilitate the problem solving process. In addition, they need a
+persistent storage of chat logs to allow late-comers or new group members to fully participate in the group and to
+provide bridges between different problem solving sessions. Finally the students needed a "referencing" function
+where they could point to posts in the chat or place in the drawing and bring other participants attention to specific
+places. These  four  functions,  listing, drawing, storage and   referencing  became     the core of the  next  phase  of a
+specific chat development.
+
+         There were some additional problem solving issues that the team is continuing to think about even as the
+design of phase two was going ahead. One thing we found in the problems is that there were two dominant modes of
+discourse in the problem solving. We've labeled these modes expository and exploratory (Stahl et al, 2006). In the
+expository mode one or more participants are explaining how to do the problem to the others in the group. The
+others may or may not know how to do the problem solving that the explainer is talking about at that point. In the
+exploratory mode, all participants are exploring together how to solve the problem and that exploration may or may
+not be successful. These patterns of interaction have raised the question of whether groups should be mixed or same
+ability, and then how those groups ought to be scaffolded if they need scaffolding. The research team is continuing
+to think about  these issues  as they involve   some   teachers  in the  project and  plan   deeper,   more   context based
+explorations of how the kids are thinking about the problem solving.
+
+Second Phase: Using ConcertChat Rooms
+         The   VMT   project decided  to   use ConcertChat,  a  research chat  environment     with  a shared  whiteboard,
+persistent storage  and  special referencing   tools  (Mühlpfordt   &  Wessner,   2005).   In  collaboration   between  the
+software developers and the educational researchers several versions of the environment have been tried out by the
+researchers as  well  as with groups  of    students. In response   to the  analysis  of the  chat  logs  as  well as other
+information  gathered from   the  moderators,   service  providers, and  the  students   the  environment     was  gradually
+modified.
+
+         To address the above mentioned four requirements (listing, drawing, storage and referencing) ConcertChat
+provides a variety of features supporting math chats (see figure 1 for a screen view):
+
+·   Listing and  drawing:  A  shared  whiteboard   allows  chat  participants to list ideas,  formulas   etc. and  to create
+    drawings using circles, squares, lines, free-forms, text-boxes etc. In addition, participants can place pictures on
+    the whiteboard taken from a gallery, the file system or from any part of the screen using the screenshot feature.
+
+·   Storage: All chat messages, editing activities on the whiteboard and all systems messages (e.g. about joining or
+    leaving participants) are stored persistently in the chat environment. Late-comers or new group members can
+
+                                                            820                                                    ICLS 2006
+     load all previous messages from the room's history. This also allows asynchronous participation in the problem
+     solving process.
+
+·    Referencing (1): When someone types a new chat message, they can select and point to a rectangular area or an
+     object on the whiteboard. When that message appears in the chat as the latest posting or as a selected posting, a
+     bold line appears connecting the text to the area of the drawing (see figure 1).
+
+·    Referencing (2) Similarly, a chat message can point to one or more earlier textual postings or parts of postings
+     to indicate for example a response to a previous posting. ConcertChat also includes a threaded view of the chat
+     postings that, based on the explicit references between postings, displays them like a typical threaded discussion
+     with responses indented under the posting that they reference.
+
+  Figure 1. Screen view of a ConcertChat room. One of the messages provides a graphical reference to an area
+  on the whiteboard.   The whiteboard  also contains textboxes  to   present the problem     and to  list ideas and
+  formulas.
+
+         In May 2005,   a series of chats using ConcertChat   have   been conducted.    Five virtual math   teams were
+formed, each containing about four middle-school students selected by volunteer teachers at different schools across
+the USA. The teams engaged in online math discussions for four hour-long sessions over a two-week period. They
+were given a brief description of a non-traditional geometry environment: a grid-world where one could only move
+along the lines of a grid (Krause, 1986). The students were encouraged to come up with their own questions about
+the grid-world, such as questions about shortest paths between points A and B in this world.
+
+         Technically, the students received a URL for each session where they accessed their group's chat room.
+From the administrator's point of view a web page provided a list of all available chat rooms and the functionality to
+create new rooms.
+
+                                                         821                                                   ICLS 2006
+         The chats were facilitated by a member of our research project team. The facilitator welcomed students to
+the  chat, pointed them    toward  the task,  briefly demonstrated the use    of the system  focusing on  the  graphical
+referencing tool and then kept generally quiet until it was time to end the session.
+
+         The new functionality, the shared whiteboard and the graphical referencing functionality were accepted by
+the  students. However,    the degree  of  usage  varied between   different  groups. Reasons  include the  lack  of an
+exhaustive manual as well as some usability issues as we learned from the chat logs (some usability issues were
+mentioned and discussed by the students during the sessions) as well as from our own experiments with the tool.
+
+         The instructional design for the experiments with the students included gathering ideas in the individual
+groups in the first session. In the second session students were asked to reflect on all ideas gathered by all groups
+and to select those ideas they want to work on. This required some preparation on the side of the moderators in order
+to collect and prepare the groups' results. Also the initial assignment of students to groups, the distribution of the
+problem and the handling of drop-outs had to be done by the facilitators. In general, it became clear that an ideal
+environment should not only provide support for (multiple) chat rooms but also provide support the formation of
+groups and help to bridge different groups and sessions to allow (self-) organization, awareness of other groups and
+their problem solving activities and results.
+
+         As mentioned above, the ultimate goal of the VMT project is to provide a self-sustaining system which
+offers a maximum of flexibility to engage in joint math problem solving. For this additional issues have to be taken
+into account.  One  critical issue is  to support the  communication  between    the  groups and a tutor. This includes
+submitting a solution, requesting feedback on the problem solving process or asking for help if a problem occurs.
+Another issue is how to communicate the "state" of a chat room to other groups and individuals. This includes
+questions like: Am I allowed to join that room? Does this group need additional group members? Is the problem
+already solved? Do they plan to continue this problem solving? From the legal point of view there must be a way to
+handle rude or even illegal behavior in chat rooms. As a default all activities are stored in the chat history including
+pictures posted to the whiteboard etc. Questions of ownership, of personal accountability arise (not only) from this
+legal perspective.
+
+From Multiple Rooms to a Math Community
+         As a third phase we are currently extending the ConcertChat environment to address the above mentioned
+issues. As  a  new component    of the  system a  "Lobby"   has  been designed    and implemented  which   provides  the
+starting point for all problem solving activities in the math community. Here, students find a list of problems they
+can work on and all chat rooms they can enter to jointly work on a given or self-defined problem. They also can
+create new rooms either for new groups or to work with the same group on a new problem. A chat in the lobby
+supports communication between all students, across groups as well as self-organized group formation. Students can
+explore all other rooms including rooms where they already have participated and rooms of other groups as long as
+these are  not restricted. This  allows   communication   and   collaboration between  groups  and exchange    of ideas,
+material and group results. For each room a number of fields exists which communicate the state of the room. All
+online and offline members, the owner, the related problem and other information such as room name or planned
+session times can be seen for each room. In addition, it is clear from the system's room organization which rooms
+can be accessed by whom. See figure 2 for a screen view of the Lobby.
+
+         With respect to the rooms different types of rooms have been designed in order to meet the different kinds
+of problems and groups. This ranges from rooms where the problem and the participants are assigned by a facilitator
+in advance, rooms with a given problem but open to self-organizing groups to rooms which can be used by all
+students to work on arbitrary problems. Thus both self-forming of groups and tutor-formed groups can be supported.
+Inside each room the room topic and problem description is available as well as communication facilities which
+allow the group and the tutor to communicate not only via chat but also asynchronously via email.
+
+                                                            822                                                ICLS 2006
+  Figure 2. Screen view of the ConcertChat Lobby. On the left side the rooms are organized by access rights (see
+  tabs "Welcome", "My Rooms", "Open Rooms", "Limited Access") and topics (listing of rooms in each tab).
+  For each room additional information on participants and their online-status, scheduling etc. is displayed. The
+  small window presents the view of one topic, here: a collaborative Sudoku.
+
+Conclusions and Outlook
+       In the process of  designing and using the Concert     Chat environment  we  have made     many  important
+realizations about math problem solving and math problem solving online. Math is a subject that is challenging for
+many students. Using chat takes advantage of a medium that is very popular with kids and one where it is possible to
+lose oneself a bit in the interaction process. These are potentially good things for the math student. But chat can also
+be so dissipating that one may not only lose oneself but lose sight of where one is in the problem solving process.
+And so to that end we have attempted to outfit a chat environment with many of the tools one will need to engage in
+successful collaborative math problem solving. This includes listing, drawing, storage and referencing to improve
+the math collaboration in a group as well as various organizational aids to facilitate group formation, access rights
+and community building.
+
+       Further we have begun to work toward a whole community of online problem solvers and problem solving
+activities. Our experiments with different kinds of math problems have shown us that perhaps some problems need a
+more structured group in order to fruitfully get through the problem. While other math problems can casually be
+explored by groups that come together just to talk about a little math. And finally for those groups that want to
+develop continuity over time they can do so. ConcertChat will provide an environment where individuals might find
+very different kinds of groups and different kinds of problems. This evolution is very in keeping with the tradition of
+The Math Forum where different kinds of learners can find the level of support they need in order to improve their
+ability to engage in fruitful mathematical conversation and become deeper mathematical thinkers.
+
+                                                        823                                                ICLS 2006
+References
+Barab, S., Thomas, M. K., Dodge, T., Squire, K., Newell, M. (2004). Critical design ethnography: Designing for
+        change. Anthropology and Education Quarterly 35(2)254-268.
+Design-Based Research Collective (2003). Design-based research: An emerging paradigm for educational inquiry.
+        Educational Researcher 32(1)5-8.
+Hoadley, C. P. (2002). Creating context: Design-based research in creating and understanding CSCL. In G. Stahl
+        (Ed.), Computer support for collaborative learning: Foundations for a CSCL community (pp. 453-462).
+        Proceedings of the Conference on Computer Support for Collaborative Learning (CSCL) 2002, Boulder,
+        USA. Hillsdale, NJ: Lawrence Erlbaum.
+Ireson, J. & Hallam, S. (2001). Ability grouping in education. London: Sage Publications.
+Krause, E. (1986). Taxicab geometry: An adventure in non-euclidean geometry. New York, NY: Dover.
+Mühlpfordt, M., & Wessner, M. (2005). Explicit referencing in chat supports collaborative learning. In T.
+        Koschmann, D. Suthers, & T. -W. Chan (Eds.), Computer Supported Collaborative Learning 2005: The
+        Next 10 Years. Proceedings of the Conference on Computer Support for Collaborative Learning (CSCL)
+        2005, Taipei, Taiwan. Mahwah, NJ: Lawrence Erlbaum.
+Pimentel, M., Fuks, H., & Lucena, C. (2005). Mediated chat development process: Avoiding chat confusion on
+        educational debates. In T. Koschmann, D. Suthers, & T. -W. Chan (Eds.), Computer Supported
+        Collaborative Learning 2005: The Next 10 Years. Proceedings of the Conference on Computer Support for
+        Collaborative Learning (CSCL) 2005, Taipei, Taiwan. Mahwah, NJ: Lawrence Erlbaum.
+Porpora, D. V. (1999). Action Research: The Highest Stage of Service Learning? In Ostrow, J., Hesser, G. and
+        Enos, S. (Eds), Cultivating the Sociological Imagination: Concepts and Models for Service Learning in
+        Sociology. Washington, DC: American Association of Higher Education in association with the American
+        Sociological Association.
+Reason, P. (2004). Critical Design Ethnography as Action Research. Anthropology and Education Quarterly
+        35(2)269-276.
+Stahl, G. (2005a). Sustaining online collaborative problem solving with math proposals. Paper presented at the
+        International Conference on Computers and Education (ICCE 2005), Singapore, Singapore.
+Stahl, G. (2005b). Group cognition in chat: Methods of interaction / methodologies of analysis. Paper presented at
+        the Kaleidoscope CSCL SIG Workshop on Analysis of Interaction and Learning (NAIL 2005),
+        Gothenburg, Sweden.
+Stahl, G., Weimar, S., Fetter, A., & Sarmiento, J. (2005). Virtual Math Teams: Studying and supporting online
+        collaborative problem-solving. Paper presented at the Annual Meeting of the National Council of Teachers
+        of Mathematics (NCTM 2005), Anaheim, CA.
+Stahl, G. (2006). Group cognition: Computer support for building collaborative knowledge. Cambridge, MA: MIT
+        Press. Retrieved from http://www.cis.drexel.edu/faculty/gerry/mit/.
+Zemel, A., Xhafa, F., & Cakir, M. (2005). What's in the mix? Combining coding and conversation analysis to
+        investigate chat-based problem-solving. Paper presented at the 11th Biennial Conference of the European
+        Association for Research on Learning and Instruction (EARLI 2005), Nicosia, Cyprus.
+Zemel, A., Xhafa, F., & Stahl, G. (2005). Analyzing the organization of collaborative math problem-solving in
+        online chats using statistics and conversation analysis. Paper presented at the CRIWG International
+        Workshop on Groupware, Racife, Brazil
+
+Acknowledgments
+The Virtual Math Teams Project is a collaborative effort at Drexel University. The Principal Investigators are Gerry
+Stahl, Stephen Weimar and Wesley Shumar. A number of Math Forum staff work on the project, especially Stephen
+Weimar, Annie Fetter and Ian Underwood. The graduate research assistants are Murat Cakir, Johann Sarmiento,
+Ramon  Toledo and Nan    Zhou. Alan  Zemel is a post-doc.   The following   visiting   researchers have spent 3  to 6
+months on the project: Jan-Willem Strijbos (Netherlands), Fatos Xhafa (Spain), Stefan Trausan-Matu (Romania),
+Martin Wessner  (Germany),   Elizabeth  Charles (Canada).     The ConcertChat        software was  developed  at the
+Fraunhofer Institute IPSI in Darmstadt, Germany, by Martin Mühlpfordt, Martin Wessner and colleagues. The VMT
+project is supported by grants from the NSDL, IERI and SoL programs of the US National Science Foundation. The
+perspectives in this paper are those of the authors, not necessarily NSF or others.
+
+                                                        824                                                   ICLS 2006
+

@@ -1,0 +1,536 @@
+Meta-Communication Widgets for Knowledge Building in
+Distance Education
+Robert S. McLean
+Ontario Institute for Studies in Education /University of Toronto
+
+   Abstract: "Knowledge Building" is a theory of learning, which emphasizes the
+   collaborative construction of knowledge by a group of learners. Students develop their
+   understanding through sustained inquiry that pursues collective goals of understanding; it
+   is driven by student questions and explanations, in self-directed small groups. Although it
+   can be practiced without computer support, computer software such as Knowledge
+   ForumTM is designed to support such collaborative learning. "Widgets" are software user
+   interface elements that display information and allow the user to manipulate the
+   information display or to accomplish some task. This paper suggests specific classes of
+   widgets that might help learners better attain knowledge building objectives, by
+   distinguishing between the substance of knowledge building and the "meta-
+   communication" which surrounds its development. Widgets designed according to
+   knowledge building principles may help facilitate and articulate this meta-
+   communication component of knowledge building. This is particularly so in distance
+   learning, where the meta-communication usually cannot occur outside the system, as it
+   could in a face to face environment.
+
+   Keywords: knowledge building, widgets, meta-communication, object-oriented design
+
+Introduction
+
+Current Web documents often feature small embedded forms that allow users to do something ­
+provide feedback, purchase something, rate an article, search a search engine ­ all in the context
+of the content of the Web page. This paper proposes that this kind of interaction may be a useful
+extension of knowledge building learning environments. Further, we attempt to make explicit the
+learning principles underlying our design (Koschmann, in press), by examining the principles of
+knowledge building and then proposing user interface elements ("widgets") which are consistent
+with that design.
+
+The goal is to separate and enhance the "meta-communication" between learners when they are
+talking about the learning process, as distinguished from their articulation of the "substantive"
+learning, itself. The hope is to increase the focus on the substantive knowledge and
+understanding being developed, by providing a separate channel for the support communication,
+and to do it in an easy, focussed, and context-aware manner. This may be particularly useful
+when the opportunity for face-to-face meta-communication is missing, as in much distance
+learning.
+
+Additionally, the "widgets" are computational entities, which can enhance the communication
+beyond the simple transmission of textual content. They can serve as agents, performing
+notification, reminding, calendar management, prioritization, agenda management, referral, and
+other processes consistent with enhanced knowledge building.
+Knowledge Building Systems and Principles
+
+"Knowledge Building" systems, such as Knowledge ForumTM (Learning in Motion, 1998), are
+networked computer software systems designed to help a community of learners develop their
+knowledge through sustained collaborative pursuit of collective goals of understanding. Learners
+do this by contributing to a communal database which reflects the knowledge of the group
+members and which is an intellectual object open to collective scrutiny and elaboration by the
+group of learners.
+
+Knowledge Building, as a concept and practice (Scardamalia and Bereiter, 1991, 1994, 1996),
+can be characterized by these principles:
+
+·  Knowledge Building is an activity of the whole learning community.
+
+·  It involves sustained, in depth inquiry, focusing on specific problems.
+
+·  Inquiry is self-directed, usually in small groups, and driven by student questions.
+
+·  There are collective goals of understanding .
+
+·  Discourse is taken seriously, and it focuses on explaining and articulating individual
+   understanding.
+
+·  Articulation of individual understanding is publicly available to the group.
+
+·  Continual improvement of ideas is achieved by revisiting them for collaborative, iterative
+   refinement.
+
+·  The teacher is a facilitator, an expert learner, and not the source of all knowledge.
+Although Knowledge Building could be practiced in ordinary classrooms without special
+computer assistance, it is best supported by networked computer software which supports these
+principles. For instance, Knowledge Forum serves as the communal database where student
+inquiry takes place and their ideas are articulated and refined. Such software provides knowledge
+building affordances that encourage and manage the development of understanding.
+
+Human interaction is particularly crucial to knowledge building. When knowledge building
+software is used in the face to face classroom, students and teacher interact directly to manage
+the learning experience. Much of that interaction is communication about the process of
+knowledge building: how to do research, tips about what to explore next, who to get help from,
+how to plan, which sub-goals might be more productive, who is working on similar aspects of
+the problem, suggestions of ideas to revisit or recast, deadlines, work plans, timelines, and many
+more aspects of getting the job done. Much of this communication has little substantive content,
+but is crucial because it serves to organize and facilitate the knowledge building process.
+
+However, in distance education environments based on computer conferencing or email, all
+communication flows through the same medium, where substantive and other types of
+communication are intermixed. As a result, the substantive knowledge production is often
+diluted by the other communication activity.
+In this paper, we advocate the separation of communication in knowledge building environments
+into two streams, depending on whether it is substantive or not. The latter is the "meta-
+communication" of the knowledge building process. By "meta-communication" we mean all
+communication between the members of the learning community, which is not communication
+of the substantive understanding itself.
+
+We propose that separating the meta-communication from the substantive communication may
+be useful in two ways. 1) In the design of collaborative learning systems, the separation may
+offer a design perspective that is more faithful to the principles of knowledge building. 2) In
+actual collaborative software, the separation can provide learners the affordances which help
+make evident and reinforce good knowledge building practices.
+
+Thus, the aim is to provide a more effective means of communication of the substantive
+understanding by separating out the various communication acts that are not substantive. The
+non-substantive communication may be central to developing the substantive understanding,
+such as planning, management, evaluation and team building, or it may be incidental, such as
+general encouragement and group chit-chat, but it may be usefully separated from the substance
+of the learning.
+
+Some knowledge building software does attempt such separation, although the facilities may be
+limited. For instance, in the Collaboratory Notebook of CoVis (O'Neill and Gomez, 1994),
+students provide substantive information by creating "notebook pages", while each page
+distinguished by its "type" (question, conjecture, plan). These in turn, automatically
+communicate the intent of the page, and thereby imply or control the types of information that
+other students can provide in response. O'Neill and Gomez suggest that this mechanism would
+further the students' research strategy, with more emphasis "directly on facilitating a learning
+dialog between collaborators than on an individual's thinking." (p. 419 ) The "type" of page
+designation applies to the whole page and is external to it, whereas the widgets envisioned here
+will be within a page and context-aware.
+
+In Knowledge Forum, students are encouraged to articulate their understandings in the notes they
+write in the database, and to use "scaffolds" and "supports" to perform a meta-communication
+function. These serve a dual purpose of helping organize the writer's expression of their thoughts
+and the process of their development, and also communicating to others the intent of the
+information in the note.
+
+For instance, a standard scaffold oriented to theory building has:
+Theory  Building
+          My  theory
+          I  need    to  understand
+          New    information
+          This    theory   cannot  explain
+          A  better    theory
+          Putting     our  knowledge     together
+These scaffolds and supports serve an implied meta-communication function in some cases,
+particularly when the relationship of the scaffold user to the original author of the base idea is
+taken into consideration. For instance, a build-on note that gives "New information" in response
+to a note which has an "I need to understand" support, has shown implied meta-communication
+between the two notes' authors.
+In Knowledge Forum, these supports can be inserted into the note text at any point and thereby
+mark the subsection of a note and represent a particular category or intent of that portion of the
+note. Thus, a scaffold can serve as a writer's compositional aid, an explicit part of the
+articulation of an idea, an implicit request to the reader, or perhaps some other meta-
+communication purpose.
+
+Multiple Knowledge Forum supports may be used anywhere in a note, to communicate
+something about the process of knowledge building or ­ implicitly ­ to solicit an action by other
+learners. Thus, they serve meta-communicative purposes, even to oneself, but are limited to
+human interpretation of the textual notation.
+
+Knowledge Building Widgets
+
+We propose a class of meta-communicative entities that are modeled on the use of scaffolds, but
+which provide much more capability because they go beyond textual labeling to harness the
+computing capabilities underlying a computer based knowledge building system.
+
+We use the term "widgets" for these entities. In the human-computer interaction literature,
+"widgets" are software interface elements which display information to the user and (often)
+allow the user to manipulate the interface either to alter information display or to accomplish
+some task. Examples include windows, scroll bars, menus and buttons. Widgets have been used
+in real-time educational groupware to provide awareness of the presence and activities of other
+learners (Gutwin, Stark and Greenberg., 1995).
+
+Widgets are usually provided in the user interface as built-in software features, separate from the
+document content. However, here we extend the idea to provide entities that the user can insert
+into the substantive document (note) and which then effectively become part of a specialized
+user interface, specific to that note. These widgets, like the scaffolds in Knowledge Forum, may
+appear anywhere in a note and by their placement, imply a connection to the note content with
+which they are associated. They could appear as a small icon with a distinctive design to
+indicate the widget's function, much like the annotation icons in some word processors.
+
+Moreover, it is important to note that these widgets would initiate and control a computer-based
+process. These widgets can be thought of as agents, containing information and carrying out
+activities to advance the knowledge building process for the individual and the learning
+community. We will discuss widget agency below. Additionally, the widgets can, together,
+represent knowledge building facilities that surpass the impact of any one of them, through their
+cumulative ability to record, notify, summarize, and ­ perhaps ­ work together.
+
+The idea and practice of adding such widgets within documents is now commonplace on Web
+pages, where icons and forms can be included at any point. When activated, they cause some
+effect, such as allowing the reader to email the author, provide evaluative feedback, purchase a
+product, define a term, etc. Although this use is commonplace on the Web, the point here is to
+suggest a principled set of knowledge building widgets for use in the distance education
+environment, and demonstrate how the associated computer-based process can serve those
+knowledge-building principles.
+
+The widgets proposed here also seem to implement aspects of elaborate hypertext systems
+(Nelson, 1999; Berners-Lee, 1999), although our emphasis is less on connection to other
+documents, and more on the processing power of the computer and the knowledge building
+theory base of the present task. Also, our widgets' behavior and the idea of widgets as agents are
+reminiscent of the types of agents that can be created in a MOO or the methods and general
+characteristics of objects in the Object Oriented programming paradigm (Fowler, 1997).
+
+Goals of meta-communication in Knowledge Building
+
+Widgets should embody Knowledge Building principles. One of the prime ideas of knowledge
+building is that student understanding and ideas are articulated and progressively refined by the
+interaction of the community of learners. For this to occur, ideas need to be revisited frequently
+by many different members of the community, for purposes of refinement and elaboration.
+Members of the community need to take on this task on a frequent and continual basis; the
+software affordances should encourage and support this revisitation, iteration and refinement of
+ideas. Knowledge building widgets should encourage these behaviors.
+
+Knowledge Building is a group collaborative activity of learners, contributing "value-added" to
+each other's learning. The importance of high quality learner cognitive involvement is crucial.
+For instance, higher cognitive operations (describing, analyzing, and synthesizing) are more
+useful in knowledge building than are simple mechanical and rote operations (copying, telling).
+Thus, when a fellow learner suggests a resource and gives their assessment of it, it is more
+valuable in this context than the output of a Web search engine. Learners providing support for
+an assertion is more important than the assertion itself. Widgets might help gather and organize
+that support.
+
+We propose meta-communication widgets which facilitate and support human behaviors that
+contribute to knowledge building. We envision widgets which, once installed in a note, will
+automatically interact with other learners, external databases and data sources, and
+communication systems. But the overall goal is to support communication between learners,
+communication that increases their knowledge building effectiveness by focusing on the task,
+revisiting ideas, encouraging collaborative involvement, and making explicit effective
+knowledge building strategies and activities.
+
+These widgets should offer principled but "low cost" ways to participate in knowledge building.
+The meta-communication should be explicit, often simple and stylized, consisting of selecting an
+appropriate widget from a palette and inserting it into the substantive note at the appropriate
+place. Some widgets can ask for additional information, through the use of pull-down menu,
+radio-button or text box components. Other students who come across a widget already placed in
+the substantive note can click on it and interact with the resulting display of information or
+information input elements. Thus the "cost" or effort of contributing in this way is much less
+than having to create a whole note. While it is expected that all members will make substantive
+contributions, the meta-communication widgets may encourage those who might otherwise be
+inclined to "lurk" to enter the active knowledge building process, and thus broaden participation.
+
+Agency of Knowledge Building Widgets
+
+The proposed widgets are computationally active annotations on the substantive content of the
+ideas being developed by the individual and the learning community. They can harness the
+computer and network power in a number of useful ways:
+·  Alert colleague learners and/or the teacher/facilitator, bringing to their attention the note, a
+   portion of it, an assertion, a place where they could contribute.
+
+·  Provide feedback or evaluation, show one's presence in a note.
+
+·  Solicit feedback, agreement, prioritization, and organization.
+
+·  Plan, sequence, optimize, remind.
+
+·  Display alternatives: histories, expression, approach.
+
+·  Associate instances, counterexamples, data sources and evidence, including normal academic
+   citations, but also active searching mechanisms within and outside of the current database.
+
+·  Motivate by comment, data, temporal considerations, or external events.
+
+·  Summarize and track the knowledge building activity.
+
+·  Provide an attention-directing facility by producing an individual "update page,"
+   summarizing what's new.
+
+All of these can be initiated by the note author or by a reader, but use computation and the
+involvement and action of other learners to accomplish their ends.
+
+Example Knowledge Building Widgets
+
+The following is a list of possible examples, illustrating classes of Knowledge Building Widgets
+and suggesting how they might harness computer power and other learners' activities to achieve
+knowledge building principles.
+
+Scaffolds: Scaffolds and supports are already features of Knowledge Forum, though they are
+currently inert text which is valuable only if discovered (or found in a search) and used by a
+human learner. Marrying the current concept with computing potential suggests that there may
+be a class of scaffold or support widgets that could perform ancillary services. For instance, an "I
+need to understand" scaffold might issue a request for help to a colleague or mentor, or record
+the need on a common list of pending issues. Such a scaffold could also automatically record
+suggestions made by visitors (or, more pessimistically, record the transient presence of visitors
+with nothing to offer to meet this need).
+
+Comments: These annotations on the substantive text can be of several types, from a range of
+sources and serve many purposes. Although basically textual, the computing capability of
+widgets makes additional functionality possible. At a minimum, a comment widget could
+provide feedback to the commentor that the note author has seen or reacted to the comment. This
+could be in the form of explicit alerts or silent logs of one's effect on the learning process. Class-
+wide logs could also be kept and used appropriately to guide the knowledge building and for
+formative and summative assessment.
+
+There might be several variants of comment widgets, each contributing to knowledge building:
+
+Elaborative comments might include extensions of the target ideas for possible inclusion, or
+indication of the intent (or exclusion of other interpretations)
+Evaluative comments could come from the teacher or from learning colleagues. An appropriate
+set of widgets could make evaluative feedback more specific by pinpointing the instance within
+the note that prompted the evaluation. Widgets could automatically participate in the preparation
+of an evaluation portfolio, by recording the evaluator's comments and explicit characteristics of
+the target substantive text. The evaluations of the widget could be structured, scaled, or rubric-
+based, possibly automatically adjusting to the structure, scale, or rubric that is appropriate to the
+target item.
+
+Feedback comments can close the loop and provide a structured way to provide comment (by
+author and/or third parties) about the feedback, itself. In a knowledge building community, such
+comment has its own knowledge building value.
+
+Suggestion solicitation: This is perhaps a more focused version of "I need to understand"
+scaffolding, but is a generic way of enlisting help from the knowledge building community. It
+would require the author to specify what sorts of suggestions are solicited. The widget then sits
+in the document, and may be used by anyone who reads the note. Each suggestion is
+accumulated, and the author is notified of the suggestions according to some specified criteria.
+When the author uses a suggestion, the suggestor might get some sort of credit or reward, or at
+least, notification. The processes associated with this widget should encourage revisiting notes,
+weighing colleagues' ideas, revision, and community involvement.
+
+Suggestion: The suggestion widget, on the other hand, can be used spontaneously by a reader.
+Its processes also include notification of the note author as appropriate, as well as possible
+feedback and/or reward to the suggestor.
+
+Brainstorming: The suggestion class of widgets might also be structured to encourage and
+organize idea generation.
+
+Coaching: A coaching widget would provide stylized and distinguished way to offer advice on
+knowledge building processes. Although other widgets could be used for this purpose, the
+coaching widget might have special facilities such as templates for making coaching suggestions
+politely (which would be recognized as having a coaching intent), standard sorts of ground-rule
+reminders that could be sent, and lists of desirable behaviors that should be encouraged. Inserted
+into a note by a reader or the teacher, they would automatically indicate the content to which
+they applied. The widget could have logging capabilities to be used appropriately as part of
+formative and summative evaluation.
+
+Knowledge building significance: This widget could be used to indicate the author's own
+assessment of how a particular note item holds special significance for collaborative knowledge
+building. While it could be used to convey one's best knowledge building examples to the
+teacher (say, for evaluation, because that is a course requirement), it could also be used for its
+own value in understanding and encouraging knowledge building practices. The widget could
+contribute to a common list of candidates for "knowledge building act of the week" or for review
+or presentation (e.g., at an open house) or perhaps serve as a measure or catalog of the
+knowledge building achievements of the learning community. It could automatically contribute
+to the learner's ongoing portfolio and would aid reflection on knowledge building that has been
+accomplished.
+Resource: This can serve in the manner of the current bibliographic citations, or it can be a
+suggestion of a resource. It behaves like a suggestion in the latter case. It also is an active
+process, allowing direct hyperlink access to the resource (when possible), creating a community
+wide list of resources (including the context in which used/suggested and who used/suggested it
+and when). The list should be useful for further knowledge building, cross-note reference and
+referral, and evaluation purposes.
+
+Vote, rating or tally: Some aspects of knowledge building may be matters of preference or
+opinion. A vote widget solicits and manages the voting process for a question specified by the
+author. It could publicize the vote, say on a central list of voting opportunities, with direct
+reference to the context of the vote (possibly requiring access to the original note). A rating
+widget similarly displays colleagues' responses. Either widget should encourage revisiting notes.
+The widget would record the votes or ratings and display them in the note context when
+appropriate. It could also impose limits, such as one vote per member, time limits, prerequisites
+for voting (e.g., having accessed some other resource); it could also notify the author or voters of
+the results when the voting is over. The opportunity to vote and the results could be automatic
+inputs to the content of the individually generated daily update page.
+
+Quiz or challenge: A widget might allow a note author to challenge readers to take a quiz or
+other challenge which would require them to test or articulate their knowledge of a particular
+point. This widget might be uniquely useful in two ways: 1) the challenge or quiz could be
+motivating, both to the author and to the reader, and 2) the offered answers may indicate
+misconceptions, alternative interpretations, poorly articulated ideas, etc. A challenge might
+require that the reader find other notes with related ideas, and the widget might keep both a score
+and a record of the offered ideas, the latter to be used for further knowledge building by bringing
+strands of ideas together and showing their relationships.
+
+List of instances: This could start out being a clarification of examples that the author intends in
+a generalized assertion, but it could develop into a community-developed list of exemplars and
+counter-exemplars. Again, the widget manages collection, organization, notification and display
+of these instances.
+
+Referrals to others: This widget can serve as an alert agent, possibly suggesting other
+community members who should be notified of something (the "somethings" might already be
+covered elsewhere in this list). Referrals may be by the author or by any reader, to a third party,
+as in "Chris should comment on this assertion". Again collection, notification, credit, and
+follow-up can be handled automatically.
+
+Elaboration: This widget would manage the plans for elaborating an idea: goals, conditions,
+responsibilities, ... (obviously, such a widget would be useful here).
+
+Work list, Responsibility list: Widgets could manage what needs to be done and who is going
+to do it. A wide range of functionality is possible here, including notification, management of the
+work and deadlines, inclusion on the participants' to do list, giving credit, and entries in the
+evaluation trail.
+
+Goals and milestones: This is a planning tool. One would use the widget to state the goal and
+how it will be reached; the steps might be distributed to individual to-do lists and the deadlines
+managed automatically. Readers would have the ability to post potential alternative goals or
+steps.
+
+Timeline: A timeline widget might be an organizational tool (see Goal and milestones) or a
+factual statement that would automatically integrate onto a community timeline, and allow for
+notification of discrepancies and possibly interesting coincident events.
+
+History: Here one could find out what has happened with this note or this idea, including not
+just its content, but who's interacted with it and how; it could also manage accountability for
+changes made. Agent actions could also be detailed or summarized here.
+
+Deadline: This time management widget can also contribute to a common list of deadlines,
+possibly managing their priority.
+
+Checklist: A widget could manage a list of requisite events or components and automatically
+participate in an alert system.
+
+To-do: A simple widget for noting things to do, it automatically integrates itself onto the
+individual's (and perhaps others') to-do list.
+
+Prerequisite manager, follow-up manager: This agent notes that follow-up is required and
+looks after orchestrating it.
+
+Data (base) access: Such a widget supplies or manages data. It could connect to external
+databases or sources of data, for whatever purpose (e.g., to provide timely instances related to
+the knowledge building substance).
+
+Behavioral Characteristics of Widgets
+
+The proposed widgets manage active software processes and agents. They contain information
+and have behavior with the following characteristics:
+
+·  They exist in a specific place and scope within a note. Thus, they refer to a specific segment
+   of text or drawing. They know what they refer to and provide access to it, and can provide its
+   characteristics to other widgets, agents or data capture mechanism.
+
+·  They can provide specific and tailorable functionality to their owners and to visitors to the
+   note, by presenting a user interface for getting comments, voting, rating, accessing data,
+   displaying data, etc.
+
+·  They may have autonomous behaviors based on events, conditions, or times.
+
+·  They can store data which they will display or summarize when invoked (voting results,
+   comment lists, timelines)
+
+·  They can communicate with members of the knowledge building community by means
+   within the knowledge building system, or by external email.
+
+·  They can cooperate with other portions of the knowledge building system to construct and
+   manage documents that facilitate the knowledge building process (to do lists, alerts, activity
+   summaries, and evaluation summaries).
+Can Meta-Communication Widgets Work?
+
+We have proposed that knowledge building communication should be viewed as two separate
+classes of activity: 1) substantive content and 2) meta-communication that is used to conduct the
+knowledge building. We propose that the separation be represented by use of widgets to perform
+the meta-communication function; these widgets would be inserted into the substantive
+knowledge objects being built, and would provide computationally rich assistance to the
+knowledge building process.
+
+The success of this proposal hinges on at least three conditions: Can such widgets be designed
+and implemented? Can the separation of process and product be successfully represented,
+taught, and used by learners? Does the separation and its representation provide more useful
+knowledge building, particularly in environments that do not provide a separate opportunity to
+manage the learning process?
+
+The examples suggested above seem to imply feasible designs, and their implementation is
+easily within the capabilities of Web forms, CGI scripts, database-backed Web sites, and other
+current Web technologies and possibly Java applets, although the mechanism for exact
+placement within a text will be awkward with current HTML. Thus there seems to be no doubt
+about implementation in the Web environment. In the proprietary network-based learning
+software environment, implementation is equally possible, through it may be more difficult
+depending on the implementation technologies available.
+
+The principal feasibility questions would seem to be centered on how to represent and teach the
+idea of meta-cognitive widgets to users of knowledge building systems. This involves design
+effort for the widget representation (their icons), their affordances, the visible effects they have,
+and the types of results that they produce. User training and motivation may be the biggest
+challenge, since it takes extra effort to learn new systems of representation and to understand
+when they are to be used (cf., the Belvedere system, Suthers, 1998).
+
+Widget agency is also a design challenge. The proposed examples include many which initiate
+automatic events such as notification, logging, summarization, etc. These will lead to workflow
+design challenges which will require design sensitivity and tradeoffs to avoid introducing
+additional levels of information overload or perceptions of onerous requirements "to satisfy the
+system."
+
+Once a prototype system is developed that can be used, observations and research can be
+undertaken to determine if this is useful.
+
+Conclusion
+
+We have proposed extensions to a knowledge building learning environment, attempting to make
+explicit the learning principles underlying our design (Koschmann, in press). The proposal
+separates out much of the non-substantive communication in a knowledge building environment,
+thereby hoping to increase the focus on the substantive knowledge and understanding being
+developed. The separated communication has been termed "meta-communication". Because
+much meta-communication makes an important contribution to the knowledge building, we
+propose that it be represented within the substantive documents through the use of knowledge-
+building "widgets", displayed as icons, which are computationally rich and aware of the portion
+of the substantive communication to which they apply. Additionally, we have tried to illustrate
+how the computational capabilities of the widgets can be used to enhance the knowledge
+building capabilities according to underlying principles. The use of these widgets is predicted to
+provide additional types of opportunities for participation in knowledge building, in part by
+offering a lower "cost" of entry into active contribution for those who might otherwise be
+"lurkers".
+
+Bibliography
+
+Berners-Lee, T. (1999). World Wide Web Design Issues. Collection available at:
+http://www.w3.org/DesignIssues/
+
+Fowler, M. (1997). UML Distilled. Applying the Standard Object Modeling Language. Reading,
+MA: Addison-Wesley.
+
+Gutwin, C., Stark, G., and Greenberg, S. (1995). Support for Workspace Awareness in
+Educational Groupware. CSCL'95. Available: http://www-
+cscl95.indiana.edu/cscl95/gutwin.html
+
+Koschmann, T. (in press) Tools of Termlessness. To appear in O'Shea, T. (Ed) Virtual Learning
+Environments. Available: http://edaff.siumed.edu/tk/articles/UNESCO.pdf
+
+Learning in Motion. (1998). Knowledge Forum -A second generation CSILE product. Available:
+http://www.motion.com/lim/kf/KF1.html
+
+Nelson, T. (1999). Homepage of Ted Nelson. Available: http://www.sfc.keio.ac.jp/~ted/
+
+O'Neill, D.K., and Gomez, L. M. (1994) The Collaboratory Notebook: a networked knowledge-
+building environment for project learning. In T. Ottmann & I. Tomek (Eds.), Educational
+Multimedia and Hypermedia, 1994: Proceedings of Ed-Media '94 (pp. 416-423).
+Charlottesville, VA: Association for the Advancement of Computing in Education.
+
+Scardamalia, M. and Bereiter, C. (1991) Higher levels of agency for children in knowledge
+building: A challenge for the design of new knowledge media. Journal of the Learning Sciences,
+1(1), 37-68.
+
+Scardamalia, M., & Bereiter, C. (1994). Computer support for knowledge-building communities.
+Journal of the Learning Sciences, 3 (3), 265-283.
+
+Scardamalia, M., & Bereiter, C. (1996). Computer support for knowledge-building communities.
+In T. Koschmann (Ed.), CSCL: Theory and practice of an emerging paradigm. Mahwah, NJ:
+Lawrence Erlbaum Associates.
+
+Suthers, D. (1998) Representations for Scaffolding Collaborative Inquiry on Ill-Structured
+Problems. Available:http://advlearn.lrdc.pitt.edu/advlearn/papers/aera98/AERA98.html
+
+Author's address
+Robert S. McLean (mailto:RMcLean@oise.utoronto.ca)
+Ontario Institute for Studies in Education/University of Toronto, 252 Bloor St. W., Toronto, ON,
+M5S 1V6, Canada. Tel. 416-923-6641 ext. 2254.
+

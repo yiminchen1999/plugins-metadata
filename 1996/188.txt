@@ -1,0 +1,457 @@
+           Problem-Based                  Learning       Meets         Case-Based             Reasoning
+                            Janet L. Kolodner, Cindy E. Hmelo, and N. Hari Narayanan
+                                                The EduTech Institute
+                                                College ofComputing
+                                            Georgia Institute ofTechnology
+                                               Atlanta, GA 30332-0280
+                                           {jlk, ceh, narayan}@cc.gatech.edu
+
+              Abstract:    The  modem     education community   agrees that deep  and effective   learning is
+             best promoted      by situating   learning in authentic   activity.  Many     in the education
+             community have put in place constructivist classroom practices that put students into
+             situations where they must make hypotheses, collect data, and determine which data to use
+             in the process of solving a problem or participating in some kind of realistic analysis or
+             investigation.    Research in case-based reasoning (CBR), which provides a plausible model
+             of learning from problem solving situations, makes suggestions about education that are
+             consistent with these educational theories and methodologies and which can provide added
+             concreteness and detail.      In this paper, we show how CBR's suggestions can enhance
+             problem-based learning (PBL), which is already a well-worked-out and successful approach
+             to education.      The  computational     accounts   CBR  provides   of reasoning    activities,
+             especially    of  knowledge   access,  access to old   experiences   (cases), and  use   of old
+             experiences    in  reasoning,  suggest    guidelines about materials    that  should  be made
+             available as resources, the kinds of reflection that will promote transfer, qualities of good
+             problems, qualities of the environment in which problems are solved (e.g., affordances for
+             feedback), and sequencing a curriculum.     The two approaches complement each other well,
+             and together, we believe they provide a powerful foundation for educational practice in the
+             constructivist    tradition, one  that at  once combines   lessons   learned  from   classroom
+             practice with sound cognitive theory.
+
+1.  Introduction
+
+The modern education community agrees that deep and effective learning is best promoted by situating learning
+in authentic  activity.    Anchored   instruction,     project-based   learning,  problem-based     learning,  and other
+constructivist approaches to classroom practice all focus on putting students into situations where they must
+make hypotheses, collect data, and determine which data to use in the process of solving a problem or
+participating in some kind of realistic analysis or investigation (Barrows, 1985; Blumenfeld, et al, 1991;
+CTGV, 1993; Williams, 1993).       Research shows that students participating in these kinds oflearning activities
+are more motivated to learn, that what they learn is more usable than the knowledge learned by students carrying
+out rote   activities, and that they tend   to better  learn higher  order  thinking  skills  than do    students in other
+learning situations (Blumenfeld, et al., 1991; CTGV, 1993; Hmelo, 1995).
+
+Designing such activities well requires an understanding ofwhat needs to be learned and the kinds ofexperiences
+that will lead to such learning.   But making learning activities work well requires that their use in the classroom
+be informed by lessons ofpractice.    The classroom is complicated. Social issues, personality issues, capabilities
+ofteachers, the comfort ofthe classroom, and other issues all play a role in student learning, muddling the best
+educational designs or allowing poor ones to work despite their weaknesses.                Designing effective learning
+activities thus requires   (1) cognitive (and social) theory to    provide guidelines     about learning,  (2) classroom
+methodology, or lessons ofpractice, to provide guidelines about operationalization, and (3) trial, analysis, and
+refinement (Linn & Songer, 1988) over time aimed toward operationalizing the activities well.               Logic tells us
+that the more operational cognitive theories are, the easier it will be to put their guidelines into practice; and the
+closer the match between the guidelines for learning and the classroom methodology, the more chance that each
+could contribute toward better understanding ofthe other.
+
+This logic, plus a desire to put the educational philosophy ofcase-based reasoning into practice and a need to
+advise faculty at Georgia Tech about how to help their students learn from problem solving activity, has led us
+to begin to put into place a marriage between problem-based learning and case-based reasoning.                 Case-based
+reasoning (Schank, 1982; Kolodner, 1993), which originated as a methodology for implementing computer
+programs that could solve problems based on their past experiences, provides a cognitive theory that situates
+
+188
+learning in  reasoning  about real-world  situations.   The computational accounts it provides of reasoning
+activities, especially of knowledge access, access to old experiences (cases), and use of old experiences in
+reasoning, provide suggestions about what makes a good problem, the range of problems students should solve,
+the kinds of materials and resources students need to use, ways to manage the complexity of hard problems and
+the kinds of reflection that should be encouraged.    Some of CBR's principles have been used to inform the
+design of stand-alone learning environments (Schank, et al., 1993), but when we wanted to put its principles
+into practice in classrooms, we found that CBR was lacking in telling us about the teacher's role and other
+issues of classroom practice.  We thus sought an educational methodology that would provide principles of
+practice to go along with CBR's educational principles.
+
+We chose problem-based learning because of its parallels to case-based reasoning.        Problem-based learning
+(Barrows, 1985) provides a classroom methodology that situates learning in problem-solving activity.        It has
+been in use in medical schools for twenty years and specifies activities of students and teachers that promote
+learning from problem-solving experiences.     It originated from the intuitions of excellent teachers and has
+evolved into a well-developed system of practice through systematic refinement.      Problem-based learning gives
+. reflection on problem-solving activity a central role, and specifies roles for students as researchers who discover
+knowledge and teachers as facilitators of this constructivist process.
+
+The two approaches complement each other well, and together, we believe they provide a powerful foundation
+for educational practice in the constructivist tradition, one that at once combines lessons learned from classroom
+practice with sound cognitive theory.   In this paper, we explore how these two views complement each other,
+presenting each in turn, and then synthesizing them and describing the implications of their synthesis.      Each
+adds to the other; CBR adds reason and specificity to some of PBL's practices and suggests some new ways of
+accomplishing PBL's goals, while PBL provides for CBR a vehicle for putting its philosophy into practice.
+
+2.  Problem-Based Learning:              A Model of the Practice of Learning from
+Problem-Solving         Activity
+In problem-based learning, students learn by solving problems and reflecting on their experiences. PBL is used
+substantially at medical and business schools (Barrows, 1985; Williams,      1993).    Students learn by solving
+authentic real-world problems; in medicine, this means diagnosing and managing patient cases.     Because the
+problems are complex, students work in groups, where they pool their expertise and experience and together
+grapple with the complexities of the issues that must be considered.    Coaches guide student reflection on their
+problem-solving experiences, asking students to articulate both the concepts and skills they are learning, and
+helping them identify the cognitive skills needed for problem solving, the full range of skills needed for
+collaboration and articulation, and the principles behind those skills. But coaches do not tell students what to do
+or show them how to solve problems; rather students decide how to go about solving problems and what they
+need to learn, while coaches question students to force them to justify their approach and explain their
+conclusions.  In this way, skills needed for life-long learning are also acquired. Research shows that students in
+problem-based curricula are indeed learning facts and concepts and the skills needed for critical problem solving
+and self-learning (Hmelo, 1995; Norman & Schmidt, 1992).
+
+In its classical form (Barrows, 1985), students take no classes, but rather work on a series of 100 problems over
+their first two years of medical school. Small groups of 5-7 students and a coach meet to discuss a patient case.
+Cases are presented to students in an authentic way; the presenting symptoms (those the patient reports) are first
+presented to students, and as the students feel they need more information about a patient, they ask for it.   A
+patient record holds all such information and is indexed by questions that traditionally come up in a medical
+consultation. Problem solving begins with an attempt to interpret what is wrong with the patient; it continues
+with an attempt to manage the patient's care.  Students keep track, on a set of white boards, of facts they know,
+hypotheses they have about what might be wrong, ideas about treatment, and issues they do not yet understand
+and need to learn more about (learning issues).  They follow a methodology of first, writing down what they
+know, then generating hypotheses, then identifying the things they still need to find out about the patient and
+the issues they need to learn more about. After considering the case with their naive knowledge, students divide
+up the learning issues they have generated among  the   group and research  them.   When  they get back together,
+they return to their problem-solving activity, this time using what they have learned through research to move
+farther forward in their solutions. They reconsider their hypotheses and/or generate new hypotheses in light of
+their new learning. This cycle continues until students are satisfied that they    have solved the problem.  They
+
+                                                                                                                189
+are then presented with the expert opinion on the problem and discuss its pros and cons if different than their
+conclusion.
+
+3.   Case-Based Reasoning:                A Cognitive  and     Computational           Model   of     Learning
+from   Problem-Solving        Activity
+The term case-based reasoning refers to reasoning based on previous experience.       It might mean solving a new
+problem by adapting an old solution or merging pieces of several old solutions, interpreting a new situation in
+light of similar situations, or projecting the effects of a new situation by examining the effects of a similar old
+situation. In short, case-based reasoning means using the lessons learned in old situations to understand or
+navigate new ones.   The basic premise underlying CBR is the preference to reason using the most specific and
+most cohesive applicable knowledge available.    Inferences made using specific knowledge are relatively simple
+to make.   Inferences made using cohesive knowledge structures, i.e., those that tie together several aspects of a
+situation, are relatively efficient. Cases, which describe situations, have both of these properties. In addition,
+they record what is possible, providing a reasoner with more probability of moving forward in a workable way
+than is provided by using general knowledge that is merely plausible.     Furthermore, reasoning based on previous
+experience seems natural in people; an understanding of how it is done well and effectively can provide
+guidelines for helping people to effectively use this natural reasoning process.
+
+A good example of case-based reasoning comes from architecture.     An architect is designing an office building
+with a long naturally lit atrium in the middle and a circular row of offices surrounding it. She wants the office
+to get as much light as possible so daytime energy consumption can be minimized.       She remembers the design
+of a library that   has no atrium     but where the designer solved       the problem of bringing in  sunlight by
+constructing exterior walls of glass.   She realizes that this solution can be used in the current building -- the
+office space can be separated from the atrium by a circular glass wall. But upon further thought, she remembers
+the problems that a courthouse had, in which a glass wall was used in a row of offices with heavy public traffic.
+While the offices were well lit, the constant presence of the public interfered with the privacy and work of the
+office workers.    The library did not have this problem because the glass wall faced a wooded area.   While the
+first case provides a means of dealing with her new design, the second case, and its difference from the first,
+alerts her to a potential problem with that solution.  Comparing these two cases with the current one, she
+realizes that the potential for the problem exists, but to a lesser degree. While the atrium is not deserted like the
+woods, it is not a heavily-trafficked area either. She decides to use the first solution but modifies it slightly by
+using translucent glass bricks instead of clear plate glass for the wall.
+
+While originally derived to explain reasoning and problem solving, the cognitive model underlying case-based
+reasoning also provides an explanation of the role memory plays in reasoning -- how memory is accessed during
+reasoning and how reasoning contributes to changes in the content and organization of memory.         Thus, CBR
+addresses the ways experiences are recalled to be used in reasoning, the use of old experiences in reasoning, and
+the ways in which new experiences are analyzed, indexed, and stored in memory.
+
+Learning, in the CBR paradigm, means extending one's knowledge by incorporating new experiences into
+memory, by re-indexing old experiences to make them more accessible, and by abstracting out generalizations
+from experiences. Thus, a major issue case-based reasoning addresses is the indexing problem: identifying old
+situations that are relevant to a new one. Two sets of procedures allow such recognition to happen:     (1) those
+that operate when cases or experiences are encoded and inserted into long-term memory and (2) those that operate
+at retrieval time.  At insertion time, a reasoner interprets a situation and identifies at least some of the lessons
+it can teach and when those lessons might most productively be applied.         The case is labeled according to its
+applicability conditions, i.e., the circumstances in which it ought to be retrieved.     The most discriminating
+labels on a case will be derived by a reasoner that has taken the time and effort, and that has the background
+knowledge, to carefully analyze a case's potential applicability. At retrieval time, a reasoner uses his/her current
+goals and understanding of the new situation as a probe into memory, looking for cases that are usefully similar
+to the new one.    The extent to which a reasoner is willing or able to interpret the new situation determines the
+quality of the probe into memory.     An uninterpreted situation is likely to yield poorer access to the contents of
+memory than is one that is more embellished.     The more creative a reasoner is at interpreting a situation, the
+more likely he is to find relevant knowledge and experience to use in reasoning about it.
+
+190
+CBR gives failure a central role in promoting learning. During reasoning, when the reasoner's expectations fail,
+it is alerted that its knowledge or reasoning is deficient, and a need to learn arises. Similarly, an unsuccessful
+outcome or solution warns the reasoner of a deficiency and therefore a need to learn.    Failure at applying an old
+case in a new situation triggers explanation that might result in reinterpreting (reindexing) old situations and/or
+discovering new kinds of interpretations (indexes).    Crucial to interpreting failure is useful feedback from the
+world. A reasoner that is connected to the world will be able to evaluate its solutions with respect to what
+results from them, allowing indexing that discriminates usability of old cases   and allowing good judgments
+later about reuse.
+
+4.  CBR and PBL:             A Synthesis
+PBL and CBR have much in common.          Both point toward a constructivist mode of education, in which one
+learns by extracting wisdom from one's experiences. Each focuses on different but complementary aspects of the
+experience.   The  methodology   of  PBL asks  students to  solve problems  and then    reflect on what  they have
+learned from the experience.   The problems students solve serve two purposes:    they become cases for use in
+later reasoning and they are vehicles for learning.    Case-based reasoning suggests that learning well from
+experience requires assessing what lessons an experience teaches and predicting the circumstances when those
+lessons might be appropriately applied, adding to PBL's call for reflection specificity about what particular
+things to reflect on.  CBR also makes suggestions about the kinds of problem solving experiences a learner
+should have.   CBR suggests furthermore the importance of acquiring feedback on decisions made, in order to be
+able to identify the holes in one's knowledge.
+        Overall, there are many areas where CBR and PBL together make more concrete suggestions about
+educational   practice than does either one  alone:   identifying the qualities of good problems, the kinds of
+materials and resources that ought to be made available to students as they are generating learning issues,
+qualities of the environment in which problems are solved, managing the complexity of solving hard problems,
+encouraging the kinds of reflection that promote transfer, facilitating cognitive flexibility, and sequencing the
+curriculum.
+
+4.1  What     makes    for a good    problem?
+
+Experiences with medical PBL have led to a number of guidelines about what makes for good problems.             In
+order to learn real-world reasoning skills, problems are purposely complex, ill-structured, and open-ended,
+lending themselves to several interpretations and/or solutions, and painting a cohesive, holistic view of an issue
+or situation. This is for several pragmatic reasons, most important in order for students to learn skills and facts
+in situations of realistic complexity.  It is important, also, that problems be realistic, that they resonate with
+the experiences  and knowledge of students, and that they are problems the students want to solve.       This is to
+insure that students will become engaged in the activity and will be motivated to learn, and will be capable of
+getting started based on what they already know.    Also important is that problems are complex enough to have
+several interrelated parts, all important to a good solution.  This is necessary so that the learning issues that
+students generate are related enough so that they have background, having researched one issue, to understand the
+explanations of fellow students when they report about other learning issues, and so that, having researched a
+single learning issue, they have an increased understanding of the problem as a whole.      And problems should
+promote conjecture, argumentation, and peer criticism, by lending themselves to multiple interpretations or
+solutions, sometimes    depending on   which   of a variety of conflicting perspectives   students  take on.  The
+intuition here is that collaboration and collaborative learning will work best if students have something to work
+out together and if they have an authentic need to ask each other to justify their points of view.
+
+Student roles and goals should be made clear in a problem as well.    They might be asked to act as physicians
+and come up with a solution to a problem, as medical students are asked to do, or they may be asked to act as
+scientists, engineers, or consultants of some kind to create a product or performance (e.g., Barrows & Kelson,
+1995; Boud & Felletti, 1991; Ram & Hmelo, 1995), e.g., design an experiment to evaluate some evidence or
+produce a marketing plan.
+
+An added benefit, if problems fit the criteria listed, is that, in general, they will require students to integrate
+knowledge     from  across  multiple disciplines.   In medical  problems,   students    may  deal   with anatomy,
+physiology, and pharmacology in a single case; a chemistry problem might elicit consideration of biology at the
+
+                                                                                                                 191
+same time students are learning chemistry; a design problem might integrate mathematics, life science, and earth
+science.
+
+CBR adds several things to this already well-articulated list of descriptors, based on its finding that failure is a
+powerful motivator of learning and that connections with the world that afford feedback are critical to learning.
+These two findings suggest several things about good problems.     (1)   The most effective problems for learning
+will be those where students can acquire feedback along the way that allows them to recognize the holes and
+misconceptions in their knowledge, refine their knowledge and reasoning strategies, and evaluate the goodness of
+their knowledge and reasoning strategies.  (2)   Problems should present difficulties for students, to give them an
+opportunity to see where the real complexity in situations or domains lies.     (3)  There is much to learn from
+situations where problems are not solved correctly or well.    Students do not always have to be successful at
+solving problems, as long as they are learning from the experience.      These statements also make a suggestion
+about the products of problem solving experiences.    It is important for the product or performance asked for in a
+problem to be something that provides the kinds of feedback that allow students to identify issues that need to
+be addressed or identify holes in their knowledge or reasoning. Of course, if students fail in negative ways, they
+will give up and lose confidence.   It is important, therefore, that difficulties and failures be orchestrated in gentle
+ways and that students understand their role in learning.
+
+4.2  Materials   and     resources
+
+PBL tells us that it is important that resources used during early inquiry into a problem supply authentic
+information about the problem situation and make that information available in an authentic way.      The patient
+case is used for medicine, where patient signs and symptoms and the results of tests are indexed by typical
+questions asked during a medical examination. For an engineering or design problem, the kinds of materials that
+would typically be available to a practicing engineer or designer working on the problem need to be made
+available to learners.
+
+But PBL   does not     provide all the guidance  that might be needed    to identify important issues or relevant
+subgoals.  Nor does it identify materials and resources that will help students to solve a problem.   Case-based
+reasoning provides guidelines on these things.    Cases recalled during everyday reasoning can serve several
+purposes.  They can point out issues to focus on, suggest solutions to problems, warn of potential pitfalls,
+support projection of the effects of a chosen solution, and so on. While a person working alone has only his or
+her own experiences to use as cases to guide reasoning, when working with others, the range of experiences of
+those in the group can all contribute to reasoning about a situation.  The case-based reasoning community has
+turned this observation into a guideline for using case-based reasoning to help people solve problems:      case
+based design aids (Domeshek, Kolodner & Zimring, 1994) and other kinds of case libraries (Bell et al., 1993,
+Kass et al, 1993) store the cases or experiences of others (often experts) for problem solvers to peruse while
+reasoning. Human reasoners can use such systems to augment their own memories.           Had the architect in the
+example above not known of examples of buildings with good daylight lighting, she would probably have
+looked in architectural magazines or files to find such examples and reasoned with them as if they were her own
+experiences.  This is typical of the way expert designers get started solving problems; case libraries make such
+examples readily available.
+
+Case-based reasoning suggests making case libraries available to learners as they are solving hard problems.
+PBL suggests that the cases in the case library be indexed in ways that will promote identifying issues that need
+to be addressed to come up with a good problem solution (learning issues) and that will suggest potential
+solutions or parts of solutions or ways of addressing issues.  Case-based reasoning suggests that,  in addition, it
+is important to include cases that can help with projecting effects of potential solutions and to index cases to
+facilitate such reasoning.
+
+4.3   Managing     complexity      and   promoting     successful  problem     solving
+
+The PBL approach asks students to solve very hard problems.        But the methodology also provides ways of
+managing the complexity and helping students to be successful.     Complexity is managed in a variety of ways.
+(1)  Students work     together in collaborative groups,  pooling  their expertise,  experience, ideas, and time.
+Students can build on each others' strengths.   Working in groups also promotes learning how to articulate and
+
+192
+justify; one cannot work successfully in groups without being able to understand others and to make oneself
+clear to others.  (2)  Coaches are trained to help students manage the complexity of problems.    They help them
+to manage their collaborations well, to stay on track in solving problems, and to reflect on their experiences at
+critical points. Particularly critical to promoting successful problem solving is asking for reflective summaries
+at times when they feel that it is time to bring together all the disparate pieces of the deliberations. Also critical
+is helping students draw the connections between learning issues they have identified and the ways in which
+those learning issues will help them accomplish their problem solving goals.       (3)  The white boards and the
+methodology for problem solving that students are taught help them organize       their deliberations.   White board
+columns help them keep track of what they know, ideas they have had, and what they still need to do and learn.
+(4) Students are expected to solve problems only to the level of detail they are prepared to deal with at the time.
+Thus, they may revisit the same problem early and late in the curriculum and come up with very different
+solutions.
+
+To this CBR adds several suggestions.     (1) Students should learn to carry out case-based reasoning well.   It is a
+natural process, but one that is often done poorly.  A major difficulty lies in realizing that suggestions made by
+cases must be verified. Other difficulties are in recognizing what to focus on, carrying out adaptations, and
+determining which of several recalled cases might be most applicable.       Using CBR well can be learned, we
+believe, by carrying it out and reflecting on its use, just as PBL does to facilitate learning other cognitive skills.
+(2) Several kinds of tools to help manage the complexity should be made available to students as they are
+deliberating:    on-line libraries that provide cases of similar situations which help students generate and test
+issues and ideas, tools for comparing and contrasting cases to each other, and tools for articulating what is
+important.
+
+4.4   Reflection
+
+Reflection is a major part of PBL activity, and several kinds of reflection are built into its practice.     (1) At
+several points in the case, the students pause to reflect on the data they have collected so far, to generate
+questions about the data, and to hypothesize about underlying causal mechanisms for the patient's problems.
+The coach pushes students to reflect in this way when they are having difficulty moving on, in order to bring
+students back into the discussion who have not been participating, when much has been done and a summary
+seems in   order, and  when students   believe  they  are at a transition point.  This reflection helps students
+summarize, helps them recognize where they still need to concentrate efforts, and helps them develop causal
+models of   mechanisms underlying the explanations they are constructing.         (2) Before leaving to research
+learning issues, students discuss how they might go about doing the research and the kinds of resources they
+might use. When they return, before they go back to solving the problem, they discuss their experiences with
+those resources.  (3)  At the conclusion of solving each problem, the facilitator helps the students to reflect on
+the experience to abstract the lessons they learned.   Focus here is on concepts learned, their participation as
+collaborators and problem solvers and how they might improve, and reasoning used to solve problems, with
+some additional summary, perhaps, of resource access and use.        They might also reflect here on why their
+solution was different than that of the expert.  Reflection helps learners identify what they are learning, turn
+experiences into cases, and extract causal models from what they are learning; it is used to promote transfer and
+cognitive flexibility.
+
+Case-based    reasoning  makes suggestions     about accomplishing   several of   these goals.  First, it provides
+guidelines about what makes a good case and therefore how to help students turn their experiences into cases that
+will be useful to them in later problem solving. The extent to which an old situation was interpreted determines
+the extent to which it can be useful. (1)  With only a description of a problem situation and its solution, an old
+solution can be repeated. (2)  Knowledge of whether the solution succeeded when applied gives the reasoner a
+basis for deciding whether or not to reuse an old situation.     (3) If, in addition, the reasoner knows what
+happened as a result of applying the solution, it    can make more reasoned judgments      (e.g., does that result
+make sense in my new situation?).     (4) If, in addition, factors responsible for the result (success or failure) are
+known, the reasoner can make even more reasoned judgments (e.g., are the aspects responsible for failure in the
+old situation present in the new one?  If not, the same failure might not recur). CBR's analysis of the quality of
+cases tells us about the quality of the feedback students need on their decisions and about the depth of the
+reasoning they should do as they are analyzing each of their experiences.
+
+                                                                                                                  193
+CBR also makes recommendations about the how to effectively index experiences, especially to promote
+transfer. Transfer refers to the ability to use knowledge in situations other than those in which it is learned.
+PBL aims for students to be able to successfully use knowledge acquired during problem solving and to be able
+to use the complex skills acquired during problem solving in a variety of circumstances. The transfer literature
+(e.g., Salomon & Perkins, 1989) tells us that transfer requires looking forward at the time of an experience or at
+the time knowledge is acquired to consider the circumstances in which it might prove useful and looking
+backward when solving a new problem to consider whether such an experience has been encountered before.
+CBR's computational explanation of looking forward and backward provides more concrete suggestions about
+how to look backwards and forward.    Looking forward, it suggests, should include identifying what lessons an
+experience teaches and predicting the circumstances when those lessons might be appropriately applied
+(Kolodner, 1993). Looking backward involves incrementally making plausible elaborations on a new situation;
+when such elaboration is not fruitful, attempting to reassess the situation from a different point of view and re
+represent it; and when that is not fruitful, using more complicated search strategies to search for related types of
+situations.
+
+Case-based reasoning also makes suggestions about promoting cognitive flexibility. Cognitive flexibility refers
+to knowing a concept in its full complexity so as to be able to effectively use it in novel situations. Since a
+single experience with a concept shows only one way it can be used, cognitive flexibility theory (Spiro, et al,
+1988) suggests that concepts be revisited from several points of view. CBR suggests that knowledge will be
+more accessible, flexible, deeply learned, and accurate if learners have the opportunity to encounter (first hand or
+by report) multiple situations in which the knowledge is used and multiple ways in which similar situations are
+addressed, and if students have the opportunity to reuse and try out knowledge gained through experiences.
+Making case libraries available to learners not only can help them generate ideas and solutions, it can also
+promote flexibility. Since developing flexibility requires recognizing that a concept used earlier is applicable in
+a new problem, CBR suggests that problems be written in such a way that they promote reminding of earlier
+problems in which the same concept was used and that coaches help students notice that concepts are being
+reused and abstract from the range of ways in which the concept is encountered.
+
+4.5  Sequencing      the  curriculum
+
+When PBL is used most effectively, it provides the curriculum (Barrows, 1985).        Thus, it is important that
+problems cover the material that the curriculum needs to cover.   As the discussion above points out, for
+purposes of developing an authentic understanding of concepts, flexibility, and transfer, problems that form a
+curriculum should be chosen so that key concepts are visited over a number of cases. Case-based reasoning adds
+to that a suggestion about what coverage means (Kolodner, 1993).  Providing coverage in a problem solving
+domain means that students should encounter typical problems in the domain, typical solutions, typical
+situations in which each problem and solution occur, typical reasoning pitfalls, and several important atypical
+situations as well.
+
+5.  Implications
+
+Merging PBL and CBR has several implications.       First, it suggests ways to refine PBL to aim toward better
+learning.   Second, this analysis plus analysis of why PBL works (e.g., Hmelo,       1995) can contribute to an
+understanding of how to move PBL to new environments. PBL was developed for professional education, where
+students are mature reasoners already, and where solving problems is the entire curriculum. Changes in practice
+are needed if students are doing PBL as only one course, if students are less mature reasoners, and if there is no
+homogeneity among students in terms of their life goals and interests.  To move PBL to such environments,
+there's a need to understand the cognition behind its essential features. Third, the combination of PBL and CBR
+makes several suggestions about the design of software to facilitate learning from problem solving activity.
+The analysis we've done suggests several functions the software should have.    (1) It needs an environment for
+keeping track of problem solving deliberations.   PBL suggests that this be done on white boards.    Electronic
+white boards have the added advantage of allowing connections to be marked between items in the different
+columns, and, in general, allowing connections to be made between white board entries and their justifications
+and other products of deliberations. (2) Case libraries should be available in the environment. (3) The software
+environment might provide the same kinds of scaffolding of problem solving that coaches support.         This is
+especially important for situations in which facilitators are not available for individual work groups.   (4) It
+
+194
+might also provide scaffolding of the kinds of reflective activity that encourage transfer.             Looking forward, for
+example, might be facilitated by asking students to create electronic cases based on their experiences to help
+others solve later problems. We are aiming toward implementing these principles in McBAGEL (Narayanan, et
+al, 1995), our experimental software environment.            We are piloting the environment, along with refined PBL
+practices and problems we have developed, in several middle school and undergraduate classes in winter and
+spring, 1996.
+
+6.     References
+
+Barrows, H. S. (1985). How to design a problem-based curriculum for the preclinical years. NY: Springer.
+Barrows, H., & Kelson, A. C. (1995). Problem-based learning in secondary education and the problem-based learning
+ institute (Monograph 1). Springfield IL: Problem-Based Learning Institute.
+Bell, B., Bareiss, R., & Beckwith, R. (1993). Sickle cell counselor: A prototype goal-based scenario for instruction in
+ a museum environment. The Journal of the Learning Sciences,            3(4), 347-386.
+Blumenfeld, P., Soloway, E., Marx, R., Krajcik, J., Guzdial, M., & Palincsar A.(1991) Motivation Project-based
+ Leaming:      Sustaining the Doing,  Supporting     the Learning. Educational    Psychologist, vol. 26 (3&4), pp.  369-398.
+Cognition    and   Technology   Group     at Vanderbilt.  (1993).  Anchored   instruction  and  situated  cognition  revisited.
+ Educational      Technology, 33(3),  52-70.
+Domeshek, E. A.., Kolodner, J. L., & Zimring, C. M.., (1994).         The design of a tool kit for case based design aids.  In
+ Gero,    J.S. & Sudweeks, F.     (Eds.), Artificial Intelligence in Design  '94, Kluwer  Academic   Publishers, Netherlands,
+ pp. 109-- 126.
+Hmelo, C. E. (1995). Problem-based learning: Development of knowledge and reasoning strategies. In Proceedings of
+  the Seventeenth    Annual Conference of the Cognitive Science Society.       Hillsdale NJ: Erlbaum.
+Kass, A., Burke, R., Blevis, E., & Williamson, M. (1993). Constructing learning environments for complex social
+ skills. The Journal of the Learning Sciences,        3(4), 387-428.
+Kolodner, J. (1993). Case-Based reasoning. San Mateo CA: Morgan Kaufmann.
+Linn,  M. C.,  &   Songer, N.  B.    (1988). Curriculum   reformulation:   Incorporating technology  into science   instruction.
+ Paper presented at the American Educational Research Association Annual Meeting, New Orleans.
+Narayanan,     N.  H., Hmelo,     C. E.,  Petrushin,  V.,  Newstetter,  W.    C., Guzdial, M.,   &   Kolodner,   J. L. (1995).
+ Computational       support  for  collaborative   learning through   generative   problem solving.  In  J. L. Schnase  (Ed.),
+ Proceedings of CSCL 95: The First International Conference on Computer Support for Collaborative Leaming, (pp.
+ 247-254). Hillsdale NJ: Erlbaum.
+Norman,   G.   R., &   Schmidt,   H. G..  (1992).    The psychological  basis of  problem-based   learning:  A  review  of the
+ evidence.     Academic   Medicine,  67,  557-565.
+Ram,   P. &    Hmelo,  C. (1995,   December).     The PEBBLES      project: PBL   in chemistry.  Presented  at Conference  on
+ Supporting project and problem-based learning. Atlanta, GA.
+Salomon, G. & Perkins, D. N. (1989). Rocky roads to transfer: Rethinking mechanisms of a neglected phenomenon.
+ Educational Psychologist, 24, 113-142.
+Schank,   R.   (1982). Dynamic    Memory:     A Theory   of Learning    in  Computers  and   People.   New  York:   Cambridge
+ University Press.
+Schank, R., Fano, A., Bell, B. & Jona, M. (1993). The design of goal-based scenarios. The Journal of the Learning
+ Sciences,     3(4), 305--346.
+Spiro, R.  J., Coulsen,   R.  L., Feltovich,   P. J., &  Anderson,   D. K.  (1988).  Cognitive  flexibility theory:  Advanced
+ knowledge acquisition in ill-structured domains. In Proceedings of the Tenth Annual Conference of the Cognitive
+ Science Society.      Hillsdale, NJ:Erlbaum.
+Williams,  S.  M.  (1993).    Putting  case   based   learning into  context: Examples   from   legal, business, and   medical
+ education. Journal of the Leaming Sciences, 2, 367-427.
+
+Acknowledgments
+
+This work was supported by the EduTech Institute through a grant from the Woodruff Foundation.
+
+                                                                                                                                 195
+

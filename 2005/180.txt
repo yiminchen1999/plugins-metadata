@@ -1,0 +1,544 @@
+ ACT: A Web-Based Adaptive Communication Tool
+
+Agoritsa Gogoulou, Evangelia Gouli, Maria Grigoriadou                                     Maria Samarakou
+      Department of Informatics & Telecommunications,                                 Department of Energy
+                           University of Athens                                     Technology, Technological
+                    {rgog, lilag, gregor}@di.uoa.gr                              Education Institute of Athens
+                                                                                           marsam@teiath.gr
+
+      Abstract.     This paper   presents  a web-based    adaptive   communication    tool,  called  ACT.    ACT
+      supports and guides the learners' communication/collaboration by implementing the structured
+      dialogue    either  through   sentence  openers  or   communication     acts.  The   scaffolding  sentence
+      templates are adapted according to the cognitive skills addressed by the learning activity, the
+      model of collaboration followed and the educational tool used. The learners have the possibility to
+      personalize   the    communication/    collaboration  process   by  enriching  the   provided    set of   the
+      scaffolding   sentence  templates    with  the desired   ones  and to  monitor  their  debate  in a   visual
+      graphical     representation  form   through   the  Dialogue   Tree.   The    first empirical  results    are
+      encouraging    regarding   the  predetermined   set   of the  scaffolding sentence    templates   and   their
+      proper use, the adaptation framework supported, the provided facilities and the coherence of the
+      dialogue.
+
+      Keywords:      Communication,       structured  dialogue,    sentence   openers,     communication      acts,
+      scaffolding sentence templates, adaptation, Dialogue Tree
+
+INTRODUCTION
+Peer interaction is acknowledged as a significant factor in collaborative learning. However, the learners do not
+necessarily  have   the  desired productive   collaboration/communication     skills (e.g.  provide    explanations,  ask
+questions, engage in argumentative discussions) (Lazonder, Wilhelm & Ootes, 2003; Soller, 2001). Structuring
+approaches aim to create appropriate conditions by designing and scripting the collaboration framework before
+the interaction begins (Andriessen, Baker & Suthers, 2003). In this context, the structuring of the dialogue is
+used as an approach to encourage and guide learners to certain types of communication (Andriessen, Baker &
+Suthers,  2003). The    structured  dialogue  may    follow a  fully or  semi-structured   form   implemented    through
+sentence  openers   or  communications     acts,  enabling  learners  to  compose    their  message    and  denote   their
+underlying intention by using predetermined Scaffolding Sentence Templates (SST).
+  Results from various research efforts indicate that the use of the structured dialogue supports and increases
+learners' task-oriented  behavior,   leads to more   coherence   in  discussing  argumentatively    the subject     matter,
+promotes reflective interaction, lightens the learners' typing load, guides the sequence and the content of the
+dialogue, enables the monitoring and the interpretation of the ongoing discussion and is characterized as an
+adequate pedagogical approach for virtual learning groups (Baker & Lund, 1997; Soller, Lesgold, Linton &
+Goodwin, 1999; Hron, Hesse, Cress & Giovis, 2000). However, the potential improper use of the SST and the
+restriction of the learners' choice of words imposed by the structured dialogue are two disadvantages to be taken
+into account during the development of synchronous communication tools (Lazonder, Wilhelm & Ootes, 2003).
+According to Lazonder et al. (2003), the SST should be derived from naturally occurring online text-based free
+dialogues while Soller (2001) states that it is important to provide the widest and most appropriate range of SST.
+  A   number     of synchronous     communication     tools have    been  developed   (either  integrated    in a   CSCL
+environment or as standalone tools) to support the dialogue through a structured communication interface. In
+BetterBlether (Robertson, Good & Pain, 1998), the communication interface consists of sentence openers, which
+support the skills of good communication, trust, leadership and creative conflict. The communication tool of the
+LeCS environment (Rosatelli & Self, 2002) provides a set of sentence openers, which facilitates the process of
+reaching  an  agreement,    while   specific expressions    enable  learners to express     their emotional   state.  The
+communication tool of the EPSILON environment enables learners to communicate through sentence openers
+which are    classified to categories  according  to  the   Collaborative Learning   Conversation      Skills Taxonomy
+(Soller, 2004). ALEX (Hirsch, Saeedi, Cornillon & Litosseliti, 2004) is a structured dialogue tool, which enables
+learners to make arguments by selecting and completing partial sentences (sentence openers) and facilitating
+learners  to make   references   to already  sent messages.    Jermann   and  Schneider    (1997)   in their  tool  called
+
+                                                          
+Conference MOO, support both the free-text and the structured dialogue; the structured dialogue is implemented
+through four buttons (e.g. "I don't understand") and four sentence openers (e.g. "I propose"). They assert that
+the learners' preference on a specific dialogue mode (free or structured) depends on the particular content type
+(i.e. task, strategy and interaction management). Also, the Co-Lab tool (Lazonder, Wilhelm & Ootes, 2003)
+supports the free-text and the structured dialogue. All these tools support the implementation of the structured
+dialogue through sentence openers and provide a fixed set of SST regardless of the context of the collaborative
+activity and the collaboration framework followed. Moreover, they provide limited degree of personalization
+(i.e. few tools enable learners to select between the structured and the free form of the dialogue).
+     Our research efforts take previous work in structuring the dialogue in synchronous communication tools one
+step further, by attempting to:
+(i)   implement the structured dialogue either through sentence openers or communication acts depending on
+      the   learning  outcomes (i.e. cognitive  skills) addressed   by the   collaborative activity and  the  model    of
+      collaboration followed by the group members,
+(ii)  provide the most meaningful and complete set of SST adapted according to the collaboration framework
+      followed    in the collaborative activity (i.e. the  cognitive skills  addressed by  the  collaborative    learning
+      activity, the model of collaboration followed and the educational tool used), and
+(iii) offer  learners  the possibility to personalize   the  communication/collaboration    process   by enriching    the
+      provided set of the SST with the desired ones.
+     To this  end,   we  developed   a synchronous    communication    tool  with  adaptive  capabilities called   ACT
+(Adaptive    Communication     Tool).  The  learners    can  monitor   the   dialogue progress    and reflect   on their
+communication/collaboration by accessing the Dialogue Tree as well as the results of the quantitative analysis of
+their debate at any time during the elaboration of the activity. The first results revealed from the formative
+evaluation of the ACT tool are encouraging regarding the predetermined set of the SST and their proper use, the
+adaptation framework, the provided facilities (the monitoring of the dialogue through the Dialogue Tree and the
+enrichment of the SST) and the coherence of the dialogue. Moreover, they drew useful implications concerning
+the way the SST are provided to learners as well as the adaptive and adaptable capabilities of the ACT tool.
+     The rest of the paper is structured as follows. In the following section, we present in detail the functionality
+of the ACT tool in terms of the SST provided, the adaptive capabilities supported, and the facilities provided to
+the learner. Afterwards, we discuss the results from a study that we conducted in the context of the formative
+evaluation of the ACT tool. The paper ends with the main points of our work and our near future plans.
+
+THE ACT TOOL
+ACT was developed in the context of a web-based adaptive collaborative learning environment, referred to as
+SCALE (Supporting Collaboration and Adaptation in a Learning Environment) (Grigoriadou, Gogoulou, Gouli
+&    Samarakou,    2004).  The SCALE      environment   follows  the conceptual    framework   of the   Activity Theory
+(Engeström, 1987; Cole & Engeström, 1993) and supports (a) the individualized learning: enables learners to work
+on learning activities, provides personalized feedback and guides/supports learners during the elaboration of the
+activity through pedagogical agents, (b) the collaborative learning: enables learners to work on collaborative learning
+activities, supports   the group formation  of  the   learners based   on their individualized  characteristics  and  the
+characteristics of the activities, supports alternative models of collaboration between the group members, promotes
+and   facilitates the  synchronous  communication     between  the  group  members,   and  guides   the learners   at the
+communication and at the learning level through pedagogical agents, and (c) the assessment process: supports the
+automatic assessment of the activities, the collaborative assessment and the peer assessment and provides feedback
+tailored to learners individual characteristics and needs.
+     The ACT tool can run as a standalone communication tool or in the context of the SCALE environment,
+supporting   the   synchronous   communication   of   the  learners in groups   of up  to  four persons.  The    learners
+communicate       in the context of  a specific collaborative   activity  which  addresses  cognitive    skills  that are
+classified to one of the four levels: Comprehension level (Remember + Understand), Application level (Apply),
+Checking-Critiquing level (Evaluate) and Creation level (Analyze + Create) (Gogoulou, Gouli, Grigoriadou &
+Samarakou,    2004).   Moreover,   a specific model    of  collaboration  is followed  during   the elaboration   of  the
+activity; the group members may collaborate either having the same duties or undertaking different roles. In any
+case, one of the group members plays the role of the moderator, being responsible for the coordination of the
+group process (e.g. proceed to the next question, terminate the communication session), the summarization of
+the debate and the submission of the final answer.
+     The ACT tool aims to guide and support the learners appropriately during their debate. To this end, we
+followed the structured form of the dialogue aiming to (i) eliminate the off-task discussions, (ii) guide the
+learners towards the underlying learning outcomes of the activity or the duties and responsibilities implied by
+the model of collaboration, and (iii) enable the automatic interpretation of the learners' interaction as well as the
+
+                                                            
+tracing of the dialogue states. The functionality of the ACT tool in terms of the SST and the facilities provided
+to the learner as well as the adaptivity of the tool are discussed in the following.
+
+Using ACT
+The ACT tool enables learners to communicate and collaborate in the context of a learning activity. The learners
+have to fill, in the corresponding log in form, their username, the activity index and the sub-activity index. Once
+all the group members are logged in, the tool enters into the communication mode otherwise the tool enters into
+the wait mode, showing which members of the group are already connected. Figure 1 presents the main screen
+of the ACT tool as it appears at the communication mode. It consists of the following areas:
+x   The Dialogue Area, which shows the debate that has taken place. The messages are recorded, numbered and
+    presented in a chronologically sent order. Each dialogue message has the form: [message_number] [sender]:
+    [message composed by the sender].
+x   The Message Composition Area, which enables the learner to construct the desired message on the basis of
+    the SST provided (an analytical description of the message composition process is given in the section
+    entitled "Communicating with ACT").
+x   The Message   Submission   Area,   which  enables   the learner to submit   the   message to  all or to selected
+    members of the group.
+   Upon the completion of the collaboration in the context of the activity, the learners may proceed to the
+elaboration of another    subactivity (they  can select   the desired  one  through    the option "Session/Change
+Subactivity") or terminate the communication session and exit the tool (i.e. by selecting "Session/Exit" or the
+button "End Chat" from the Message Submission Area).
+
+                                    Dialogue
+                                    Area
+
+                                                                           Message
+                                                                           Composition
+                                                                           Area
+
+                                               Message
+                                               Submission
+                                               Area
+
+                    Figure 1:  A screen shot of the ACT tool at the communication mode
+
+Predetermined Scaffolding Sentence Templates
+In ACT,  the   structured form of     the dialogue  is supported  utilizing both     the sentence openers   and the
+communication acts. For the determination of the most appropriate sets of the scaffolding sentence templates,
+we followed a research-based approach (Gouli, Gogoulou, Grigoriadou & Samarakou, 2003; Gogoulou, Gouli,
+Grigoriadou & Samarakou, 2004). More specifically, we conducted three empirical studies during the design
+phase of the tool in order to determine the appropriate sets of the sentence openers and the communication acts.
+The supported sets of the SST have resulted from the text-based free dialogues and the feedback received from
+the participants as well as the experience of the authors. The provided SST are categorized to one or more of the
+following discourse categories: Proposal (P), Question (Q), Reasoning (R), Clarification (C), Motivation (M),
+Agreement (A), Disagreement (D), Need (N), Opinion (O), and Social Comments (S). The provided sets of the
+sentence openers as well as the communication acts include:
+
+                                                         
+(i)   a subset dedicated to the development of the cognitive skills addressed by the collaborative activity (e.g.
+      the sentence openers: "I propose" , "I agree with"; the communication acts: "Proposal", "Agreement").
+(ii)  a subset dedicated to the development of communication skills (e.g. the sentence openers: "I don't know.
+      Can you help me?", "Can you explain?"; the communication acts: "Social Comments", "Comments on the
+      Activity"), and
+(iii) a subset available only to the moderator of the group concerning cognitive as well as communication skills
+      (e.g. the sentence openers: "We conclude that the answer is", "Let's move on to the next question"; the
+      communication acts "Answer", "Group Coordination").
+
+Communicating with ACT
+In the Message Composition Area of the ACT tool, the learner has access to the provided SST and has the
+possibility to construct the desired message by filling in the required arguments depending on the SST. In
+particular, regarding the sentence openers, the available SST include:
+x     [Sentence] (fully structured SST): the sentence text as it appears on the list (e.g. "Very good idea", "I don't
+      know. Can you help me?"),
+x     [Sentence Opener][Argument] (semi-structured SST): the sentence opener plus an argument which may be
+      an explicit reference to an already sent message appearing on the Dialogue Area (e.g. see Figure 1, "Can
+      you explain? [1. rgog: ...] ", where in [...] appears the already sent message by the learner) or may be filled
+      in by the learner (e.g. see Figure 1, "I propose as an answer for the first question the (b)").
+      In some     sentence openers,  like  "I agree  with........",  the [Argument]  may   consist of  both a reference
+      message and a filled in text (e.g. "I agree with [reference to an already sent message] free text" where the
+      filled in "free text" specifies further the learner's belief),
+x     [Sentence Opener][Argument1][Conjuction][Argument2] (semi-structured SST): the [Sentence Opener] and
+      the [Conjuction] are predetermined sentence texts while [Argument1] and [Argument2] may be an explicit
+      reference to an already sent message appearing on the Dialogue Area or may be filled in by the learner (e.g.
+      see Figure 1, "Because the number has to be greater than 10 ­ argument for [1. rgog: I propose as an answer
+      for the first question the (b)]": the first argument has been filled in by the learner while the second one is a
+      reference message),
+while regarding the communication acts, the available SST include:
+x     [Communication act][Argument]: the communication act label plus an argument which is filled in by the
+      learner (e.g. "Proposal: lets look at the diagram first"),
+x     [Communication act][Reference to a message][Argument]: the communication act label plus a reference to
+      an already sent message appearing on the Dialogue Area plus an argument which is filled in by the learner
+      (e.g. "Clarification  [15. rgog:  What     is "st"?]: By   "st",   I mean  the total  number  of  students");  the
+      [Argument] in some communication acts is optional (e.g. "Agreement [3. lilag: The answer is (c)]").
+     In case the [Argument] is a reference message, the learner can select the desired one from a pulldown list
+appearing next to the corresponding SST in the Message Composition Area.
+     Besides the predetermined sets of SST, the learner may determine his/her own SST in case the available ones
+do not cover his/her needs. The learner's determined SST are part of the student's model and become available
+each   time   the learner  uses the ACT    tool. For  each   additional    SST, the learner determines  the  text to be
+displayed, the accompanied arguments and the discourse category (e.g. Proposal (P), Question (Q)). At any
+time, the learner may edit his/her set, through the option "Student Model/Personal Sentence Templates" from the
+menu    or  by  selecting  the  button "Personal     Sentence  Templates"      from the toolbar,   and proceed  to  any
+modifications (e.g. change the text) and/or deletions (i.e. delete one of his/her own defined SST). In this way,
+the   learner  has the possibility  to personalize   the communication/collaboration       process and  to  exceed  any
+potential restrictions imposed by the use of the predetermined sets of SST.
+
+Adapting the Provided Scaffolding Sentence Templates
+According to the Activity Theory, the object of the learning activity, the mediational tools used, the rules and the
+division    of labour  followed   by   the learners,  constitute    essential elements  of  the conceptual  framework
+(Engeström, 1987; Cole & Engeström, 1993). In ACT, the object of the learning activity is closely related to the
+expected learning outcomes, the mediational tools involve any tool that may be used during the elaboration of
+the activity (e.g. educational software), the rules include the provided sets of SST and the division of labour
+depends on the model of collaboration followed. Taking into account these elements and having as an objective
+to support the learners' communication/collaboration, to prevent floundering and to guide their thinking towards
+the desired directions, we adapt the provided SST on the basis of (i) the level of the learning outcomes (i.e.
+cognitive skills) addressed by the activity, (ii) the specific roles that the learners undertake in the context of a
+specific model of collaboration, and (iii) the educational tool, if any, used for the elaboration of the activity.
+
+                                                            
+   On  the basis  of the   proposed adaptation   framework,  the sentence        openers  are aligned with   the
+Comprehension, Application and Checking-Critiquing level of the cognitive skills, while the communication
+acts are aligned with the Creation level and the role that each learner undertake. Also, the communication acts
+are used to support the learners' dialogue in case learning activities do not explicitly address one out of the four
+aforementioned levels of cognitive skills, but they rather aim to cultivate to the learners skills in communication,
+and/or to enable them to discuss/exchange ideas on a specific topic or on the subject/solution of an activity. We
+support the sentence openers for the Comprehension, Application and Checking-Critiquing level of cognitive
+skills as these are more concrete. The communication acts are considered more appropriate for higher order
+cognitive skills or when a model of collaboration with roles is followed since it suffices to guide/assess the
+learners in terms of their intention/action. We verified and finalized the above design principles of the adaptation
+framework  by the results of the three empirical studies we  conducted        (Gouli, Gogoulou,  Grigoriadou &
+Samarakou, 2003; Gogoulou, Gouli, Grigoriadou & Samarakou, 2004).
+
+                      Figure 2. The three-level process of the adaptation framework
+
+   The adaptation framework follows a three-level approach depicted in Figure 2:
+x   1st Level: At the 1st level, the adaptation mechanism checks if the group members are going to undertake
+    specific roles during the elaboration of the activity/subactivity or to collaborate having the same duties. In
+    the first case, the communication acts are used while in the second case the adaptation mechanism proceeds
+    to the 2nd level in order to check the level of the learning outcomes.
+
+                                                       
+x     2nd Level: This level takes as input and checks the level of the learning outcomes. In case the level coincides
+      with one of the Comprehension, Checking-Critiquing or Application levels, then the dialogue is carried out
+      with sentence openers otherwise with communication acts.
+x     3rd Level:  Once   the  provision     of   sentence    openers and   communication       acts has been     specified,    the
+      appropriate sets   need to   be selected.     In  case of sentence   openers,   the  set of the SST    dedicated     to  the
+      development of cognitive skills depends on the level of the learning outcomes (e.g. the set of the SST for
+      the Comprehension level is different from the one provided for the Checking-Critiquing level). In case of
+      communication acts, when a model of collaboration with roles is followed, the provided SST are adapted to
+      each  member   according     to the   underlying    role. An   additional   factor,  which    influences the    set  of  the
+      provided SST is the educational tool used (e.g. for a concept mapping tool, sentence openers like "I propose
+      to link [concept] to [concept]", "Do you agree with the proposition [concept-link-concept]?" are available).
+   From the above, it becomes obvious that all the group members (except from the moderator of the group,
+who has at his/her disposal additional SST compatible to his/her additional duties) have at their disposal the
+same set of SST if they collaborate having the same duties. For example, in case the activity addresses learning
+outcomes of the Comprehension level, then all the members of the group may use sentence openers like "I
+propose",   "I  believe",  "I agree"   while     in case  the   activity  addresses   learning  outcomes    of the    Checking-
+Critiquing level, then all the members of the group have at their disposal sentence openers like "I propose ...
+because ...", "I believe ... because ...", "I agree ... because" urging them to justify their point of view. In case a
+model of collaboration with roles is followed, the provided SST are different for the group members supporting
+their roles  appropriately.   For   example,     in Figure   3, the  two   learners   with user   names  "rgog"    and    "lilag"
+collaborate according to the "Driver-Observer" model: the "driver" (learner "lilag") is responsible for making
+proposals, answering to the "observer's" questions, and implementing the task while the "observer" (learner
+"rgog") is responsible for making comments, asking questions for clarifications, expressing her opinion, giving
+the answer and guiding the elaboration of the activity. The provided SST are different for the two learners (e.g.
+"Proposal", "Clarification-Explanation", "Justification" for the "driver" "lilag" and "Question", "Opinion" for
+the "observer" "rgog").
+
+                                The   user "rgog"   is
+                                responsible   to  ask                                                  The  user  "lilag"  is
+                                questions, to  express                                                 responsible to  make
+                                her opinion, to submit                                                 proposals,  to     give
+                                the final  answer and                                                  explanations, etc.
+                                to    coordinate    the
+                                collaboration.
+
+    Figure 3. Adaptation of the communication acts according to the roles implied by the collaboration model
+
+Monitoring the Dialogue
+In assessing     learners'   interaction   and    subsequently     their  collaboration,   the  CSCL    environments        offer
+mechanisms to automatically trace learners' actions and/or their dialogue. Usually, the data are recorded into log
+files and   may   be  further   analyzed    in    terms   of high-level   indicators.  According     to Jerman,     Soller     and
+Mühlenbrock (2001), the CSCL environments may gather data about the learners' interaction and show this
+information to the learners in a visualization form or process the data and coach/guide their interaction.
+   In ACT, the learners' interaction is recorded into log files, which are accessible, by the tutor. Moreover,
+since  we   are  interested  in assessing     the learners'   communication       in terms  of  the  skills addressed     by   the
+collaborative   activity  or  the  collaboration    model,   we  keep     records of  the  learners' messages      as these    are
+classified  to  the  aforementioned       discourse     categories  (i.e. Proposal    (P), Question     (Q), Reasoning         (R),
+Clarification   (C), Motivation     (M),   Agreement     (A),   Disagreement  (D),    Need  (N),    Opinion  (O),   and    Social
+
+                                                                
+Comments (S)) and proceed to their quantitative analysis. The data resulted from the analysis are accessible both
+to the learners and the tutor and concern the number of messages sent by each group member for each one of the
+discourse categories (e.g. number of Proposals), the groups that have performed the specific activity/subactivity,
+the models of collaboration followed in the context of the specific activity/subactivity, etc. The learners can
+have access to these data at any time during their communication through the option "Group Model".
+    As the learners' communication is carried out, their messages are visually represented in a tree structure,
+grouped according   to the  reference message.   In particular, ACT  supports   a facility  for       the automatic
+construction and update of the Dialogue Tree as the learners submit their messages. The messages are grouped
+into sub-trees according to the message that they are referring to. The learners can have access to the Dialogue
+Tree at any time during the communication through the option "Options/Dialogue Tree" or through the button
+"Dialogue Tree" from the toolbar. The main advantage of such a graphical representation of the dialogue is that
+the learners can see the dialogue in a different form, can trace the sequence of the dialogue more easily and can
+have a clear view of the dialogue progress. Also, the Dialogue Tree can stimulate the learners to reflect on their
+dialogue and improve their participation. In Figure 4, a screen shot of a dialogue tree is presented.
+
+                 Figure 4. The Dialogue Tree represents the learners' debate in a graphical form
+
+EVALUATING ACT
+During the formative evaluation of the ACT tool, an empirical study was conducted. The aim of the study was
+two fold: (a) to investigate whether (i) the predetermined set of the SST cover the learners needs in terms of
+their completeness, understandability, accessibility and facilitation of the dialogue, (ii) the adaptation framework
+is  appropriate and complies  to the  learners' communication   preferences, and  (iii) the provided       facilities
+(Dialogue Tree and enrichment of the SST) serve their aim, and (b) to analyze the learners' dialogue in terms of
+investigating the proper use of the provided SST, the coherence of the dialogue and the degree of the learners'
+participation.
+    The empirical study took place during the spring-semester of the academic year 2003-2004 in the context of
+the postgraduate   course of "Distance  Education   and  Learning"  at the   Department    of    Informatics   and
+Telecommunications of the University of Athens. Thirty students participated in the study, coming from a range
+of backgrounds and having different expertise in the use of communication media. The duration of the study was
+4 hours; each student worked on his/her own computer. We grouped participants into two-person (9 groups) and
+three-person (4 groups) teams; one of the members undertook the role of the moderator.
+    The working sheet included (a) a brief description of the ACT tool, (b) a description concerning the form of
+the dialogue followed and the SST provided, (c) four collaborative learning activities, and (d) a questionnaire
+concerning the facilities provided. Upon the completion of each learning activity, the students were asked to
+answer a series of questions (multiple choice and open questions) concerning the usability of the tool, the
+communication process, the role of the moderator, any problems identified, etc. For the first three activities, the
+students of each team had the same duties and acted equivalently while in the context of the fourth activity,
+specific models of collaboration were followed, i.e. the "Questioner-Responder" model for the two-person teams
+and the "Questioner-Responder-Assessor" model for the three-person teams. The first activity asks the students
+to follow a specific scenario enabling them to explore the facilities of the tool and become familiar with the form
+of the provided SST. The second learning activity addresses cognitive skills, which concern the students' ability
+to remember and understand things (Comprehension level) and therefore sentence openers were used. The third
+activity urges the students to think of/reason/discuss/exchange ideas on a specific topic using communication
+acts. Finally, the fourth activity addresses cognitive skills, which concern the students' ability to check the
+correctness and the completeness of a given "product", to reason about their opinion and to proceed with any
+
+                                                        
+necessary modifications of the "product" (Checking-Critiquing level and Application level). According to the
+adaptation framework,    communication    acts were   used in the   fourth  activity as the models  of collaboration
+implied specific roles.
+
+Empirical Results
+The empirical results, concerning the first aim of the study, were drawn from the analysis of the students'
+responses on the questions accompanied each collaborative learning activity and the questionnaire included in
+the working sheet. The analysis of the students' answers concerning the provided sets of the SST is depicted in
+Figure 5. More specifically,
+x   the majority of the students characterized the completeness of the predetermined sets of SST as sufficient
+    and rather sufficient (90% for sentence openers and 87% for communication acts).
+x   a considerable    number   of students  characterized  the  way     the SST  are  presented  and  especially   the
+    localization process of the desired SST, as easy (sufficient and rather sufficient). However, 25% of the
+    students found difficulties to localize the appropriate sentence opener to be used (characterized the specific
+    criterion as average and rather insufficient). They considered that the provided SST could be grouped
+    instead of presenting them in a list. This result was taken into consideration and we redesigned the form that
+    the SST are provided to the learners (a group formation of SST is supported; see Figure 1).
+x   most of the students (70% for sentence openers and 94% for communication acts) believed that the use of
+    the provided SST facilitated their dialogue (characterized the specific criterion as sufficient and rather
+    sufficient).  Although   a  small percentage   (6%)    of   the students   believed   that the provided    set of
+    communication acts made the communication process difficult, the corresponding percentage for the set of
+    sentence openers was quite high (30%). The students' answers indicate that the size, the form and the
+    number    of arguments   of the  sentence  openers  may   cause   difficulties;  on the contrary, the set  of  the
+    communication acts is smaller and the form as well as the number of arguments to be filled in is simpler
+    than in the case of the sentence openers. It is important to mention that most of the students, who found
+    difficult the use of sentence openers, have high degree of expertise in the use of chat tools and prefer the
+    free dialogue.
+   As  far  as   the application  of  the  adaptation  framework     is concerned,    the majority  of  the  students
+(approximately 80%) considered the provision of the sentence openers or the communication acts in line with
+the context of the activities. A percentage of students (approximately 10%) argued that the communication acts
+(sentence openers) could also serve the underlying outcomes of the second (third and forth) activity and some of
+the students (10%) preferred the sentence openers (communication acts) instead of the provided communication
+acts (sentence openers).
+   Regarding the facilities provided to the students, the analysis of the students' answers showed that
+x   a considerable number of students (76%) found the facility of connecting a message with an already sent
+    message very useful since it reduces the typing load. However, 24% of the students characterized the
+    specific facility as indifferent because they believe that the complexity of the composition message process
+    is increased.
+x   the majority of the students (83%) considered the capability of the ACT tool to group messages into sub-
+    tress and to represent the dialogue in a visual graphical form (Dialogue Tree) very useful because it enables
+    them to monitor the dialogue in an organized and enjoyable manner, to evaluate the collaboration process
+    more easily and to proceed to interventions in order to improve their participation. However, a number of
+    students (17%) mentioned that there was no need to consult the Dialogue Tree.
+x   most   of the students (66%)    characterized the  facility of  enriching  the   predetermined sets   of sentence
+    openers   and  communication     acts with  their own   phrases   useful.  Approximately,    50%   of them   took
+    advantage of the specific facility during the elaboration of the activities, defining one or two phrases.
+   The analysis of the students' dialogues (log files and dialogue trees) revealed the following:
+x   The majority of the exchanged messages indicate that the provided SST were used in correct manner. It
+    seems that the students understood the underlying intention and they selected carefully the most appropriate
+    SST. In one case, one of the group members was quite eager to participate and was inclined to conclude the
+    main points of the discussion, although he was not assigned the role of the moderator (since he didn't have
+    at his disposal such a phrase, he made use of the possibility to define his own phrase).
+x   The dialogues presented sequential coherence as the students listened carefully to their interlocutors and
+    related their answers to the appropriate message. In some cases, the depth of the dialogue trees was five
+    levels deep showing that the students were able to agree/disagree, justify their opinions and follow up the
+    others' contributions. To this direction, the provided facility of connecting a message with an already sent
+    message helped quite a lot. However, there were a very few cases that the dialogue seemed to be quite flat
+    as one of the group members didn't not contribute in time while the rest two members continued the
+    discussion.
+
+                                                         
+   Persentage of Students
+
+                                   Suf
+                                       RSuf
+                                            Ave
+                                                RIns
+                                                     Ins
+                                                         Suf
+                                                             RSuf
+                                                                  Ave
+                                                                       RIns
+                                                                            Ins
+                                                                                Suf
+                                                                                    RSuf
+                                                                                         Ave
+                                                                                             RIns
+                                                                                                  Ins
+                                                                                                       Suf
+                                                                                                           RSuf
+                                                                                                                Ave
+                                                                                                                    RIns
+                                                                                                                         Ins
+                                                                                                                             Suf
+                                                                                                                                 RSuf
+                                                                                                                                      Ave
+                                                                                                                                          RIns
+                                                                                                                                               Ins
+                                                                                                                                                   Suf
+                                                                                                                                                       RSuf
+                                                                                                                                                            Ave
+                                                                                                                                                                RIns
+                                                                                                                                                                     Ins
+                                                                                                                                                                          Suf
+                                                                                                                                                                              RSuf
+                                                                                                                                                                                   Ave
+                                                                                                                                                                                       RIns
+                                                                                                                                                                                            Ins
+x   All                     the  members             of  each     group      participated         actively      in   the     discussion.       The     students       appreciated           their
+    interlocutors' opinions (e.g. they used the phrase "Very good idea") and they perceived the need as well as
+    they were motivated by their interlocutors' questions to elaborate on their opinions.
+   Although the above results are preliminary, the provided SST as well as their usage and accessibility seem to
+be satisfactory                        and      they     caused       minor      difficulties         resulting      into    coherent          dialogues.       Also,     the      adaptation
+mechanism proved to be appropriate regarding the selected set of the SST and the facility of enriching the
+predetermined                          sets    of    SST     with     the   learner's        ones,    gives      a  degree       of   freedom       to      the learners.      The      visual
+representation of the Dialogue Tree supports the monitoring of the dialogue and the students claim that serves as
+a means to reflect on the collaboration process.
+                          100%
+
+                           80%
+
+                           60%
+
+                           40%
+
+                           20%
+
+                             0%
+
+                                    Completeness         Understandability       Easiness    of   the   Facilitation of       Completeness          Easiness    of   the   Facilitation of
+                                    of the  prov ided     of the   prov ided        localization           the dialogue       of the prov ided         localization           the dialogue
+                                       set  of  SO           set   of SO         process f or the        when SO are             set  of  CA        process f or the        when CA are
+                                                                                 appropriate SO             prov ided                               appropriate CA             prov ided
+
+   Figure 5. Results concerning the provided set of sentence openers (SO) and communication acts (CA). The
+                           abbreviation Suf stands for Sufficient, RSuf for Rather Sufficient, Ave for Average, RIns for Rather
+                                                                             Insufficient and Ins for Insufficient
+
+CONCLUSIONS AND FUTURE PLANS
+In this paper, we presented ACT, a synchronous communication tool enriched with adaptive capabilities. The
+discriminative characteristics of the ACT tool are: (i) the use of both sentence openers and communication acts
+for the implementation of the structured dialogue, (ii) the adaptation of the provided sets of the SST according to
+the learning outcomes addressed by the collaborative learning activity, the model of collaboration followed by
+the group members, as well as the educational tool used for the elaboration of the activity, (iii) the capability of
+alleviating the possible restriction of the learners, imposed by the structured form of the dialogue, by enabling
+learners to define their own SST and enrich the provided sets, and (iv) the monitoring of the group dialogue and
+its graphical representation through the Dialogue Tree. The provided facility of connecting/grouping messages
+by making explicit reference to a previous message as well as the capability of defining SST enhances the
+contextual structure of the exchanged messages and enables the learners to follow the communication forms that
+match as much as possible their own preferences and needs. Our near future plans include the enhancement of
+the adaptive and adaptable capabilities of the tool with respect to the learners' preferences and interaction
+behavior (e.g. support of the free dialog after a negotiation of the group members) and the enrichment of the
+monitoring facilities with additional features regarding the visualization of various quantitative collaboration
+indicators, such as the density of interaction and the degree of collaboration.
+
+ACKNOWLEDGMENTS
+This work is co-funded by 75% from E.E. and 25% from the Greek Government under the framework of the
+Education and Initial Vocational Training Program ­ Archimedes.
+
+REFERENCES
+Andriessen,                      J.,   Baker,        M.,  and     Suthers,       D.      (2003)       Argumentation,             Computer          Support,     and      the   Educational
+                           Context of Confronting Cognitions. In J. Andriessen, M. Baker & D. Suthers (Eds.), Arguing to Learn.
+
+                                                                                                      
+        Confronting   Cognitions  in   Computer-Supported    Collaborative  Learning Environments,   2003    Kluwer
+        Academic Publishers, 1-25.
+Baker, M., and Lund, K. (1997) Promoting reflective interactions in a computer-supported collaborative learning
+        environment. Journal of Computer Assisted Learning, 13, 3, 175-193.
+Cole, M., and Engeström, Y. (1993) A cultural-historical approach to distributed cognition. In G. Saloman (Ed.),
+        Distributed cognitions: Psychological and educational considerations. New York: Cambridge University
+        Press.
+Engeström, Y. (1987) Learning by Expanding: An Activity-Theoretical Approach to Developmental Research,
+        Helsinki, Orienta-Konsultit Oy.
+Gogoulou,    A.,   Gouli, E., Grigoriadou,  M.,   and  Samarakou,      M. (2004)  Adapting   the "Communication-
+        Scaffolding" Tools in a Web-based Collaborative Learning Environment. Proceedings of the ED-MEDIA
+        2004, World Conference on Educational Multimedia, Hypermedia & Telecommunications, Vol. 2004
+        (1), (Lugano, Switzerland, June 2004), 1153-1161.
+Gouli, E., Gogoulou, A., Grigoriadou, M., and Samarakou, M. (2003) Towards the Development of an Adaptive
+        Communication Tool Promoting Cognitive and Communication Skills. Proceedings of the PEG 2003
+        Conference, (St. Petersburg, Russia, June 2003).
+Grigoriadou, M., Gogoulou, A., Gouli, E., and Samarakou, M. (2004) The activity as a fundamental unit of
+        learning + collaboration in SCALE. In Grigoriadou, M., Raptis, A., Vosniadou, S., and Kynigos, X.
+        (Eds.): Information   and Communication     Technologies    in Education, Proceedings  of  the 4th Hellenic
+        Conference with International Participation, Vol. A, (Athens, September 2004), 525-534.
+Hirsch, L., Saeedi, M., Cornillon, J., and Litosseliti, L. (2004) A structured dialogue tool for argumentative
+        learning. Journal of Computer Assisted Learning, 20, 72-80.
+Hron,   A., Hesse,  F., Cress,  U., and  Giovis, C.   (2000) Implicit  and explicit dialogue  structuring in virtual
+        learning groups. British Journal of Educational Psychology, 70, 53-64.
+Jermann, P., and Schneider, D. (1997) Semi-structured interface in collaborative problem-solving. Proceedings
+        of the First Swiss Workshop on Distributed and Parallel Systems (Lausanne,Switzerland).
+Jermann, P., Soller A., and Mühlenbrock, M. (2001) From Mirroring to Guiding: A Review of State of the Art
+        Technology for Supporting Collaborative Learning. Proceeding of EuroCSCL, (Maastricht, NL), 324-
+        331.
+Lazonder,   A.,  Wilhelm,   P., and  Ootes S. (2003)   Using   sentence   openers to foster  student interaction in
+        computer-mediated learning environments. Computers & Education, 41, 291-308.
+Robertson, J., Good, J., and Pain, H. (1998) BetterBlether: the design and evaluation of a discussion tool for
+        education. International Journal of Artificial Intelligence in Education, 9, 219-236.
+Rosatelli, M., and Self, J. (2004) A Collaborative Case Study System for Distance Learning. International
+        Journal of Artificial Intelligence in Education, 14, 97-125.
+Soller, A., Lesgold, A., Linton, F., and Goodwin, B. (1999) What makes peer interaction effective? Modelling
+        effective  communication    in an intelligent CSCL.    Working    papers of the  American  Association   for
+        Artificial Intelligence Fall Symposium   on   Psychological    Models of  Communication   in Collaborative
+        Systems, 116-124, Menlo Park, California.
+Soller, A. (2001) Supporting Social Interaction in an Intelligent Collaborative Learning System. International
+        Journal of Artificial Intelligence in Education, 12, 40-62.
+Soller, A.   (2004)  Computational   Modeling and     Analysis of   Knowledge    Sharing in Collaborative  Distance
+        Learning. User Modeling and User-Adapted Interaction: The Journal of Personalization Research, 14, 4,
+        351­381.
+
+                                                         
+

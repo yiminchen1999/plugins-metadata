@@ -1,0 +1,494 @@
+CSCL 2013 Proceedings                                                             Volume 1: Full Papers & Symposia
+
+    Supporting school group visits to fine arts museums in the 21st
+ century: A CSCL concept for a multi-touch table based video tool
+     Moritz Borchers, Knowledge Media Research Center, Schleichstrasse 6, 72076 Tuebingen, Germany,
+                                             m.borchers@iwm-kmrc.de
+               Philipp Mock, Department of Computer Science, University of Tuebingen, Sand 14,
+                           72076 Tuebingen, Germany, philipp.mock@uni-tuebingen.de
+  Carmen Zahn, University of Applied Sciences and Arts ­ Northwestern Switzerland, Riggenbachstrasse 16,
+                                  4600 Olten, Switzerland, carmen.zahn@fhnw.ch
+          Jörg Edelmann, Knowledge Media Research Center, Tuebingen, j.edelmann@iwm-kmrc.de
+          Friedrich W. Hesse, Knowledge Media Research Center, Tuebingen, f.hesse@iwm-kmrc.de
+
+         Abstract:   School   visits to art  museums   are   a  vital  aspect  of art  education  and  cultural
+         participation. In this paper we present a CSCL concept designed to encourage students to
+         observe closely and reflect on art works in art museums. The concept is based on a multilevel
+         perspective on learning in art museums. It is implemented by means of a multi-touch tabletop
+         and   a video  tool  with   functions enabling    students    to collaborate   on  processing  digital
+         reproductions of art works in small groups during a collaborative visual design task.
+
+Introduction
+Visits to arts  museums    and   exhibitions are  a  vital aspect   of arts  education  and cultural  participation (for
+indicators of cultural participation, see Morrone, 2006). School visits to arts museums provide access to arts and
+high culture for a broad range of children and youth ­ including those coming from family backgrounds where
+parents  are not  able to  or not  interested  in visiting  fine  arts museums.    Hence,   school   museum  visits  are
+considered particularly suitable occasions for framing participation in public spaces (Nespor, 2000).
+         School visits are supported by museums in various ways ­ be it free entrance for school groups, special
+guided tours, or high quality educational services for K­12 educators on museum webpages. For example, The
+Metropolitan Museum of Art (NY) offers among other services detailed topic-specific lesson plans that relate
+explicitly to the National Visual Arts Standards and comprise suggestions for advanced learning activities to
+explore and reflect on art objects in the museum's collections (1).
+         Targeting the intersection of museum and school education, we propose in this paper a CSCL concept
+to support analysis and interpretation of art works during school visits to fine arts museums. Specifically, we
+investigate a concept that fosters students' close observation and reflection of art works, while sustaining the
+experiential flavor of the museum visit (cf. Duke, 2010). It is implemented by means of a multi-touch tabletop
+(MTT) and a video tool for collaborative visual design tasks in small groups. The concept has been developed
+through close interdisciplinary cooperation of psychologists, computer scientists and museum educators. Our
+work is based on our previous CSCL research which shows that advanced digital technologies offer specific
+opportunities for fostering knowledge construction and learning during collaborative design activities (e.g.,
+Zahn,  Pea,  Hesse,  &  Rosen,   2010)  and   for knowledge    communication      in  museums  (Knipfer,  Mayr,   Zahn,
+Schwan, & Hesse, 2009). It is also firmly rooted in related CSCL perspectives, assuming multiple levels of
+learning ranging from individuals to communities, and assuming small group interaction to be the primary unit
+that mediates between individual learning and community learning (Engeström, 1999; G. Stahl, Koschmann, &
+Suthers,  2006;  G.  Stahl, 2006).   In the  following     sections we    will describe the  theoretical and    technical
+underpinnings    of our   concept.   We  will  first review    curricular    and  museum    educational  requirements.
+Subsequently, we will elaborate on how the collaborative visual design approach backed by MTT hardware can
+meet these requirements. The tool's implementation and functionality will be described thereafter.
+
+Theoretical Framework
+K­12 visual art education and museum educational goals
+Among the most important skills which should and can be learned in visual art education, are the analysis and
+interpretation of visual material (National Art Education Association, 1994; Winner, 2007). In this respect,
+Winner (2007) differentiates between observation and reflection. Observation encompasses attending to aspects
+and details  of  works  of  art, especially  when   they   are not  obvious.   Reflection  refers to activities such as
+questioning,  explaining  and  evaluating   one's own  works    and    those of  others (Winner,  2007). For    example,
+students may "explain what some part of their drawing depicted, how they had achieved a certain effect, why
+they had made something the way they did, and what changes they were planning in their work" (Winner, 2007,
+p. 28; italics in original). In addition to these academic learning objectives, museum educators stress the point
+that the museum visit provides an opportunity to have unique (aesthetic) experiences (cf. Pekarik, Doering, &
+
+© ISLS                                                                                                               57
+CSCL 2013 Proceedings                                                            Volume 1: Full Papers & Symposia
+
+Karns, 1999) and to learn from those experiences beyond the "right answer paradigm" (Duke, 2010, p. 271). In
+this way, Barrett (2008) emphasizes the importance of multi-perspectivity in the interpretation of works of art.
+Such a    constructivist approach     to  museum    education  is in  line with  the    current   trend   toward shifting
+interpretative power from authorities like curators and art historians to the common visitors (cf. Barrett, 2008;
+Hooper-Greenhill, 2000; Trant, 2006). In the specific case of school group visits, the goals of academic visual
+arts education and museum education coincide in a collaborative learning situation. The specific challenge is to
+support such collaborative learning in fine arts exhibitions showing inestimable and untouchable (!) original art
+works.
+          We argue here from a CSCL perspective that advanced media applications in museums are suitable for
+supporting close observation and reflection, as well as active and collaborative learning (cf. Knipfer et al.,
+2009). More specifically, we argue that learning through collaborative visual design with digital video tools is a
+promising approach for meeting those requirements in a fine arts museum. In the following sections we will
+explain why.
+
+Supporting observation and reflection in the art museum ­ a CSCL concept
+Building on CSCL theory (e.g., Engeström, 1999; G. Stahl et al., 2006; G. Stahl, 2006), we develop our concept
+for school class visits in a fine arts museum according to the following framework:
+          We    assume   a multilevel     structure of  observation   and   reflection  in    a   museum    environment
+distinguishing five levels: (i) a cognitive level, where observation and reflection of art works is performed by
+the individual student in front of an original art work in "silent dialogue", guided by individual knowledge and
+information  processing    abilities (cf. Leder, Belke, Oeberst,   &  Augustin,  2004).    (ii) a socio-cognitive   level,
+where observation and reflection is a collaborative activity of two or more students engaging in what Pea (2006,
+p. 1332) termed the "look-notice-comment cycle (LNC)" ­ the iterative sequence of observing, directing another
+person's attention and commenting (Pea, 2006). In these cycles, one person's observation becomes the starting
+point for a discussion, which in turn leads to further discoveries and interpretations by other group members and
+so forth. (iii) a  socio-constructivist   or: small group level,  where    the whole    process   of  the students'  joint
+observation and reflection is held and supported by a task structure, which transforms those processes into a
+lasting artifact, mediated by technological affordances (cf. Suthers & Hundhausen, 2003). (iv) a class level,
+where observation and reflection and their manifestation in students' group products (artifacts) form a collective
+museum experience that is guided by curricular goals and standards (cf. National Art Education Association,
+1994) and moderated by the teacher. (v) a socio-cultural or: community level, where observation and reflection
+consist of a museum's contextualized activities for knowledge building (Scardamalia, 2002), e.g., collecting,
+storing and presenting art works as cultural heritage, and providing for constant dialogues between artists and
+viewers/visitors mediated by expert curators.
+          We assume the five levels in our art educational concept for school class visits in a fine arts museum as
+being connected by small group student interaction. In accordance with related CSCL research, we thus put
+small groups at the core of the concept: Small group interaction is the primary unit that mediates between the
+multiple levels ranging from individual learning to community learning (G. Stahl et al., 2006; G. Stahl, 2006).
+Specifically, we suggest that learning through collaborative visual design (Zahn, Krauskopf, Hesse, & Pea,
+2010) is a task that connects individual cognition to participation in knowledge building (Zahn, Krauskopf,
+Hesse, & Pea, 2009). By accomplishing design tasks together, students are cognitively active, they collaborate
+and they produce new knowledge products for the community ­ thereby deepening their own knowledge and
+adding to  the  community    knowledge.     Moreover,   collaborative visual   design   is in   line with curricular and
+museum educational needs: It is suitable for fostering observation and reflection skills and ­ as a constructivist
+approach ­ it is capable of sustaining the experiential flavor of the museum visit.
+          In order to allow students to learn through collaborative visual design in the art museum of the 21st
+century, it is crucial to provide for hardware and software solutions, which are not only appropriate for the task
+(cf. Pea, 2006; Zahn, Pea, et al., 2010) but also meet the special requirements of a museum environment (cf.
+Hinrichs, Schmidt, & Carpendale, 2008; Jacucci et al., 2010). In search of appropriate hardware that can support
+a collaborative design task in the museum, we explore the potential of MTTs, which have already made their
+way into many museums. In terms of software, we rely on digital video tools that have a tradition of being used
+for observation and analysis skills development, including those from our own research (e.g., Goldman, 2004,
+2007; Pea, 2006; Salomon, 1974; Spiro, Coulson, Feltovich, & Anderson, 1994; Zahn, Pea, et al., 2010).
+
+Providing task structures for school group visits: Learning through collaborative visual design
+Our concept builds on the learning through collaborative design approach for small groups of students (similar
+to learning through design, Kafai & Resnick, 1996). For decades, computer supported design tasks have been
+successfully implemented in schools (Harel, 1990; Kafai & Ching, 2001; Kafai & Resnick, 1996; Kolodner et
+al., 2003; Lehrer, Erickson, & Connell, 1994; Papert & Harel, 1991). Studies investigating collaborative visual
+design tasks    in the domain  of    history  have  repeatedly shown   how     students acquire   substantial historical
+
+© ISLS                                                                                                                58
+CSCL 2013 Proceedings                                                              Volume 1: Full Papers & Symposia
+
+knowledge and visual skills when they design websites for a virtual history museum, using a historical newsreel
+and advanced video editing tools in their history lesson (Zahn, Krauskopf, et al., 2010; Zahn, Pea, et al., 2010).
+The conceptual underpinnings of the collaborative visual design approach have been described in earlier CSCL,
+JLS and iJCSCL papers (Zahn, Pea, et al., 2010; Zahn et al., 2005; Zahn, Krauskopf, Hesse, & Pea, 2011, 2012).
+The basic assumption is that visual design leads to a deep and meaningful engagement with content, since it
+links people, form and content in a combined design space. People engaging in a collaborative design task have
+to negotiate not only the content (what should be designed) but also the form (how it should be designed for a
+specific audience; cf. Harel, 1990; Kafai & Ching, 2001), while coordinating their collaborative process at the
+same time (Zahn et al., 2012). In this sense, collaborative design constitutes a form of complex problem solving
+that is distributed over the cognitive systems of different people in a joint problem space (Zahn, Krauskopf, et
+al., 2010; cf. Roschelle & Teasley, 1995).
+
+Providing digital tools with socio-constructivist potential: Multi-touch tabletop technology
+Our    concept includes  the  use  of a multi-touch     tabletop  system   (see Figure    1).  Multi-touch  tabletops are
+horizontal displays that allow simultaneous interaction of several people by touch input (Harris et al., 2009).
+They have received a lot of attention recently ­ not only by museums around the world, which incorporate
+MTTs in their visitor information systems and exhibits (e.g., Correia, Mota, Nóbrega, Silva, & Almeida, 2010;
+Geller, 2006; Hornecker, 2008), but also from the CSCL community (cf. Dillenbourg & Evans, 2011; Higgins,
+Mercier, Burd, & Hatch, 2011): MTTs are assumed to afford a more collaborative and constructivist working
+mode, thereby favorably suited for learning activities (cf. Kaplan et al., 2009). Dillenbourg & Evans (2011, p.
+491) have characterized this as the "socio-constructivist flavor" of tabletops. The authors identify four key
+features, which may set MTTs apart from other computing devices in terms of their potential as learning tools:
+MTTs are designed for (i) co-located (ii) multiple users, who interact with each other via (iii) multiple forms of
+communication (i.e. gestures, talk, and actions), while primarily engaging in (iv) hands-on problem solving
+activities (i.e. manipulation   of   virtual objects).  Building   on  this  socio-constructivist    potential and  their
+increasing availability in museums, we consider MTTs to be promising candidates as tools for learning through
+visual design in museum art education. As a matter of fact, MTTs have already been used as a basis for design
+and video editing tasks (e.g., de Sa, Shamma, & Churchill, 2012; Rick, Rogers, Haig, & Yuill, 2009; Warnecke,
+Dohrmann, Jürgens, Rausch, & Pinkwart, 2011). However, as Dillenbourg & Evans (2011, p. 500) point out,
+although   the medium   may     lend itself  to a certain use,   the technology    itself does  not  have  any "intrinsic
+pedagogical effects". Whether or not a device can be utilized as an effective learning tool depends mainly on the
+respective  task  and   on  the conditions   of   its usage.   As we   intend   to illustrate  below,  learning  through
+collaborative visual design offers a framework that allows for meaningful tasks which make full use of the
+MTTs' socio-constructivist potential.
+
+Providing digital tools to support observation, analysis and reflection
+Research in the learning sciences has provided ample evidence for using digital video technology to support a
+variety of socio-cognitive functions. Since early research on the educational value of films, where Salomon
+(1974) found that filmic coding elements can facilitate individual students' mastery of mental skills necessary to
+attend to details of art works, video was repeatedly suggested as a tool for observation, analysis and reflection
+(Goldman, 2004, 2007; Pea, 2006; Pea et al., 2004; Spiro et al., 1994). It was shown in experiments how
+different  video  tools influence    collaborative    epistemic activities (grounding,    negotiation, comparison     and
+interpretation   processes) for students    using those  video  tools (e.g., Zahn,   Pea,   et al., 2010):  Results from
+different studies show that the affordances of specific video tools (e.g., WebDiverTM, Pea et al., 2004) better
+support learners' interactions in making them more productive, compared to interactions performed with simple
+technological solutions. The results were improvements in learning outcomes and observation abilities (Zahn,
+Pea, et al., 2010). A field study further revealed that the differences in learners' interactions persist in the real,
+"noisy" history classroom with 16-year old students (e.g., Zahn, Krauskopf, et al., 2010). In these studies it was
+the student's task, to design a website for a virtual history museum, based on their analysis and decomposition
+of an original newsreel about the 1948 Berlin Blockade. In their products, the students reflected and commented
+upon the different camera and cutting techniques and the respective effects that these techniques evoked. Yet
+there are no studies available concerning the use of advanced video tools in art education or in art museums.
+
+Learning through collaborative visual design in the art museum
+
+The task concept
+Derived from our multilevel CSCL framework, we have developed the following task structure: During a school
+visit, students  individually browse   the   museum's    collection  (cognitive  level,   see above),  guided  by an  art
+educational group task (for possible tasks see scenario below and table 1), and collect digital reproductions of
+art works   from  the museum     space  (community      level)  using smartphones.   The      reproductions then  can  be
+
+© ISLS                                                                                                                59
+CSCL 2013 Proceedings                                                          Volume 1: Full Papers & Symposia
+
+transferred to the MTT and processed by means of a video tool in order to produce a video clip in each group
+(socio-constructivist or small group level, see above). Thereby, students discuss with other students, which
+reproductions should be selected and how they should be further processed in the video clip production (socio-
+cognitive level). The clip will eventually be saved, which enables classmates, teachers or other people to share,
+discuss and enrich the product (class and community level).
+        In the next section, we will elaborate more deeply on how students will be supported during video clip
+production  through  socio-cognitive   tool functions.   The task workflow    is depicted  in Figure  1.   For details
+regarding the general design task structure please refer to Zahn, Krauskopf, Hesse, & Pea     (2010).
+
+Implementation of socio-cognitive functions in the MTT video editing tool
+We  implemented    specific  video  functions  to support  observation  and   reflection (socio-cognitive    level, see
+above). The video functions consist of three basic socio-cognitive functions that are based on related research in
+cognitive psychology and the learning sciences: counterfactual image manipulations, highlighting of aspects
+within images, and linking images to create sequences. All functions constitute epistemic actions, as described
+by Kirsh and Maglio (1994). Counterfactual image manipulations are image modifications based on digital
+imaging filters, which change an image's formal appearance; for instance, a painting's strong light and dark
+contrasts can be changed to more subtle lighting differences and vice versa (see example scenario below).
+Counterfactual  image   manipulations    were  implemented    in  accordance  with  the  concept  of  counterfactual
+thinking (e.g., Byrne, 2005) and the understanding of manipulations as cues to causality (cf. Woodward, 2005).
+We assume the following: Because generating mental alternatives to reality (counterfactual thinking) can assist
+people in thinking about the causes of effects and events (causal reasoning; e.g., Spellman & Mandel, 1999),
+creating alternatives to visual material (counterfactual image manipulations) can help to reflect upon the causes
+of  certain visual effects. We    implement  a tool based    strategy  here, since  it can be   difficult to  mentally
+manipulate   a painting (i.e. to  create a  counterfactual   painting; cf. Brandimonte,    Hitch, &   Bishop,   1992;
+Chambers & Reisberg, 1985). So far, four specific image filters have been implemented in our tool: Saturation,
+lightness, color temperature and vertical orientation (reversal of left/right orientation). For possible filter uses
+see Table   1. Highlighting   is  a well-known    function that  helps to  bring  out  specific features   of (visual)
+information. This function has already been investigated in detail with respect to arts education (cf. Salomon,
+1974) and implemented in video analysis tools (Pea et al., 2004). Figure 1e shows an example of a highlighting
+function: An important detail of an art work is marked by a freehand drawing tool. Other planned functions
+contain spotlight, zoom and text annotation functionalities. Linking images to create new sequences is a tool
+function known from hypertext and hypervideo tools research in the learning sciences (Spiro & Jehng, 1990; E.
+Stahl & Bromme, 2004; Zahn & Finke, 2003). In our tool, reproductions of paintings can be linked to compose a
+slideshow, thereby facilitating, for example, comparisons regarding content, epoch, style and artist. For instance,
+the linking function offers a convenient way to tell the history of portrait painting or to give an overview of
+variations  on the  same    motif throughout   different epochs.  The   activity of linking   images  creates   (new)
+connections among them. We assume that this leads to mental integration and, finally, to building respective
+knowledge structures.
+        According to our CSCL concept for supporting school visits to art museums, and as a basis for further
+research, we develop example learning scenarios in cooperation with a fine arts museum in Germany (2).
+
+Figure 1. Task workflow (a; see also Zahn, Krauskopf, et al., 2010) and tool functions for collaborative visual
+design in a fine arts museum: Collecting digital reproductions in the museum via smartphones (b). Selecting
+collected reproductions from the smartphone at the MTT (c). Processing digital reproductions collaboratively at
+the MTT (d). Detail view of a highlighting function (drawing a circle around an important detail) (e).
+
+© ISLS                                                                                                              60
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+Example Scenario: Light and Shadow
+Let's say that an advanced art class visits a fine arts museum in order to study the effects of different light-
+shadow techniques. In order to learn about the use of light in art, the teacher asks the arts class to accomplish a
+collaborative visual design task to compare the effects of strong light-dark contrasts (a technique known as
+chiaroscuro) to more subtle light-dark contrasts. Students are divided into two groups. Each group will be
+encouraged to focus on one technique (chiaroscuro vs. subtle contrasts) and to "collect" digital reproductions of
+appropriate art works with smartphones while browsing the museum's exhibition (see 1b). After returning to the
+MTT, the students can transfer their collected art works to the MTT and discuss in small groups which of them
+should be included in the video clip (see Figure 1c). Following this selection phase, the students will start the
+video editing (cf. Figure 1e). They use different image filters in order to find out how the appearance and the art
+work's effect will change due to alteration of contrast and lightness: Shifting an image towards a strong light-
+dark contrast   evokes  a chiaroscuro with   dramatic appeal, while   a reduction  creates   the opposite  effect. If
+necessary, images can be annotated with short texts. Parallel to the editing, the students can decide on the
+sequence (cf. Figure 1d) in which the art works will be presented within the clip. A playback function enables
+the users to preview and revise their work. Subsequent to the editing phase, the students can save the clip.
+Finally, the clip will be made accessible through the museum's website and can be used for further discussion in
+class. The described scenario is just one example, for other possible applications please refer to Table 1. Also
+please note: The examples provide only a basis for supporting teachers and museum staff, who will decide on
+how the tool will be integrated in a particular school visit. Under ideal conditions, a specific learning scenario
+could be prepared in class, played out in the museum using the MTT and reinforced, again, in class. Art teachers
+can  also invent different tool-based scenarios,  which allow  for  a more  spontaneous     use  of the  tool on-site.
+Moreover ­ after careful reviewing by museum staff ­ successful user-generated scenarios will be provided at
+the MTT for other visitors, thereby establishing a scenario database to be used in the long run.
+
+Table 1. Examples for topics and possible scenarios supported by MTT and video editing tool.
+
+ Topic              Possible scenario and technology support (MTT video editing)
+ Light and          Students tell the history of shadow depiction in visual art (cf. Gombrich, 1995) in a video
+ shadow             clip, or they illustrate the difference between cast and attached shadows (cf. Jacobson &
+                    Werner, 2004) with different reproductions.
+ Details/Motifs     Students look out for art works with interesting but less obvious details (e.g., symbols,
+                    motifs). They collect them and use highlighting functions to bring out the details in digital
+                    reproduction of the art works. By linking images in a slideshow, students recognize the
+                    same motif in art works across different artists, styles, epochs etc.
+ Composition        Students identify the compositional structure of a painting: They test hypotheses regarding
+                    the   composition  by  sketching  overlays  directly   on  the  reproduction.     By  flipping
+                    reproductions horizontally, students can learn about the importance of left-right orientation
+                    in paintings (cf. Bennett, Latto, Bertamini, Bianchi, & Minshull, 2010; Zaidel & Fitzgerald,
+                    1994).
+ Color              Students collect reproductions of particular warm and cold colored paintings and discuss
+                    how a change in color temperature affects the impression and meaning of these paintings.
+
+Discussion and Outlook
+In this paper we have presented a multilevel CSCL concept for learning through collaborative visual design with
+an MTT based advanced video editing tool that can be adopted in fine arts museums to foster the observation
+and reflection required in academic art education. Our concept constitutes a method that can be tailored to
+further topics  and  learning objectives. Although  the learning   through  visual design    method   is empirically
+validated, the present concept warrants further research: In a next step we intend to investigate the concept and
+the tool within a sample scenario. For further experimental research, multilevel approaches will be considered.
+Notwithstanding future research, in our view the concept proposed in this paper offers at least three advantages
+for museum    and curricular  art education: (i) Museums  and   schools   are both social   places  which  serve   an
+educational purpose ­ our CSCL concept can account for that fact by supporting "21st century collaborative
+learning". (ii)  The educational   concept  meets  both  curricular   and museum    educational     requirements.  It
+complements other art educational strategies and is highly adaptable to specific learning goals. (iii) Building on
+the high popularity of interactive displays among young adults (cf. nielsenwire, 2012), the present concept may
+help to bridge the gap between young students and old masters through new media. However, some curators are
+concerned that digital media could actually hinder appropriate art appreciation. Since this concern is justified in
+certain cases (cf. Hsi, 2003), it should be deliberated whether the use of a certain technology offers an added
+value (cf. Buder, 2007). As original paintings cannot be altered, annotated or even viewed from close distances,
+
+© ISLS                                                                                                             61
+CSCL 2013 Proceedings                                                             Volume 1: Full Papers & Symposia
+
+we consider the added value of our video tool to be evident. Furthermore, our task ensures a close relationship
+between digital reproductions and original art works.
+
+Endnotes
+(1) http://www.metmuseum.org/en/learn/for-educators/lesson-plans-and-pre-visit-guides
+(2) Herzog Anton Ulrich-Museum, Braunschweig,      Germany.
+
+References
+Barrett, T. (2008). Interactive Touring in Art Museums: Constructing Meanings and Creating Communities of
+           Understanding. Visual Arts Research, 34(2(67)), 76­84.
+Bennett, K. M., Latto, R., Bertamini, M., Bianchi, I., & Minshull, S. (2010). Does left-right orientation matter in
+           the perceived expressiveness of pictures? A study of Bewick's animals (1753-1828). Perception, 39(7),
+           970­981.
+Brandimonte, M. A., Hitch, G. J., & Bishop, D. V. M. (1992). Manipulation of visual mental images in children
+           and   adults.  Journal    of  Experimental    Child   Psychology,     53(3),   300­312.    doi:10.1016/0022-
+           0965(92)90041-4
+Buder, J. (2007). Net-Based Knowledge Communication in Groups. Zeitschrift für Psychologie / Journal of
+           Psychology, 215(4), 209­217. doi:10.1027/0044-3409.215.4.209
+Byrne, R. M. J. (2005). The Rational Imagination: How People Create Alternatives To Reality. Cambridge, MA,
+           US: MIT Press.
+Chambers, D., & Reisberg, D. (1985). Can mental images be ambiguous? Journal of Experimental Psychology:
+           Human Perception and Performance, 11(3), 317­328. doi:10.1037/0096-1523.11.3.317
+Correia,   N.,   Mota, T., Nóbrega,     R., Silva, L.,  &  Almeida,    A. (2010). A     multi-touch tabletop for robust
+           multimedia    interaction in  museums.     In   Proceedings    of the ACM     International  Conference   on
+           Interactive Tabletops and Surfaces 2010 (pp. 117­120). New York, NY, US: ACM.
+De Sa, M., Shamma, D., & Churchill, E. (2012). Live Mobile Collaboration for Video Production: Design,
+           Guidelines, and Requirements. Personal and Ubiquitous Computing.
+Dillenbourg, P., & Evans, M. (2011). Interactive tabletops in education. International Journal of Computer-
+           Supported Collaborative Learning, 6(4), 491­514. doi:10.1007/s11412-011-9127-7
+Duke, L. (2010). The Museum Visit: It's an Experience, Not a Lesson. Curator: The Museum Journal, 53(3),
+           271­279. doi:10.1111/j.2151-6952.2010.00028.x
+Engeström, Y. (1999). Activity theory and individual and social transformation. In Y. Engeström, R. Miettinen,
+           & R.-L. Punamäki (Eds.), Perspectives on Activity Theory (pp. 19­38). Cambridge, UK: Cambridge
+           University Press.
+Geller, T.    (2006).  Interactive Tabletop    Exhibits in Museums     and   Galleries. IEEE Computer    Graphics    and
+           Applications, 26(5), 6­11.
+Goldman, R. (2004). Video perspectivity meets wild and crazy teens: a design ethnography. Cambridge Journal
+           of Education, 34(2), 157­178. doi:10.1080/03057640410001700543
+Goldman,      R. (2007). Video    Representations  and   the  Perspectivity  Framework:   Epistemology,  Ethnography,
+           Evaluation, and Ethics. In R. Goldman, R. Pea, B. Barron, & S. J. Derry (Eds.), Video research in the
+           learning sciences (pp. 3­36). Mahwah, NJ, US: Lawrence Erlbaum Associates.
+Gombrich, E. H. (1995). Shadows: The Depiction of Cast Shadows in Western Art. London: National Gallery
+           Company Ltd.
+Harel,  I. (1990).    Children as  Software    Designers:  A  Constructionist   Approach   for Learning  Mathematics.
+           Journal of Mathematical Behavior, 9(1), 3­93.
+Harris, A., Rick, J., Bonnett, V., Yuill, N., Fleck, R., Marshall, P., & Rogers, Y. (2009). Around the table: Are
+           multiple-touch   surfaces    better  than   single-touch  for   children's   collaborative  interactions?  In
+           Proceedings of the 9th international conference on Computer supported collaborative learning (pp.
+           335­344). ISLS.
+Higgins,   S.  E., Mercier,   E.,  Burd, E.,   &  Hatch,   A. (2011).  Multi-touch  tables  and  the  relationship with
+           collaborative classroom pedagogies: A synthetic review. International Journal of Computer-Supported
+           Collaborative Learning, 6(4), 515­538. doi:10.1007/s11412-011-9131-y
+Hinrichs, U., Schmidt, H., & Carpendale, S. (2008). EMDialog: Bringing Information Visualization into the
+           Museum.     IEEE    Transactions    on  Visualization  and     Computer    Graphics,  14(6),  1181    ­1188.
+           doi:10.1109/TVCG.2008.127
+Hooper-Greenhill, E. (2000). Changing Values in the Art Museum: rethinking communication and learning.
+           International Journal of Heritage Studies, 6(1), 9­31. doi:10.1080/135272500363715
+Hornecker, E. (2008). "I don't understand it either, but it is cool" - visitor interactions with a multi-touch table
+           in a  museum.   In  TABLETOP        2008: Proceedings    of IEEE   International  Workshop   on   Horizontal
+           Interactive Human Computer Systems (pp. 113­120). Amsterdam, the Netherlands: IEEE.
+
+© ISLS                                                                                                               62
+CSCL 2013 Proceedings                                                             Volume 1: Full Papers & Symposia
+
+Hsi, S.  (2003). A    study of  user experiences    mediated  by  nomadic   web   content  in a  museum.    Journal of
+         Computer Assisted Learning, 19(3), 308­319. doi:10.1046/j.0266-4909.2003.jca_023.x
+Jacobson, J., & Werner, S. (2004). Why cast shadows are expendable: Insensitivity of human observers and the
+         inherent ambiguity of cast shadows in pictorial art. Perception, 33(11), 1369­1383. doi:10.1068/p5320
+Jacucci, G., Morrison, A., Richard, G. T., Kleimola, J., Peltonen, P., Parisi, L., & Laitinen, T. (2010). Worlds of
+         information: designing for engagement at a public multi-touch display. In Proceedings of the SIGCHI
+         Conference on Human Factors in Computing Systems (pp. 2267­2276). New York, NY, US: ACM.
+         doi:10.1145/1753326.1753669
+Kafai, Y. B., & Ching, C. C. (2001). Affordances of Collaborative Software Design Planning for Elementary
+         Students'     Science       Talk.     Journal     of     the     Learning      Sciences,     10,    323­363.
+         doi:10.1207/S15327809JLS1003_4
+Kafai, Y. B., & Resnick, M. (1996). Constructionism in Practice: Designing, Thinking, and Learning in A
+         Digital World. Mahwah, NJ, US: Routledge.
+Kaplan, F., DoLenh, S., Bachour, K., Kao, G. Y., Gault, C., & Dillenbourg, P. (2009). Interpersonal Computers
+         for Higher Education. In P. Dillenbourg, J. Huang, & M. Cherubini (Eds.), Interactive Artifacts and
+         Furniture Supporting Collaborative Work and Learning (Vol. 10, pp. 1­17). New York, NY, US:
+         Springer.
+Kirsh, D., & Maglio, P. (1994). On distinguishing epistemic from pragmatic action. Cognitive Science, 18(4),
+         513­549. doi:10.1016/0364-0213(94)90007-8
+Knipfer, K.,   Mayr,  E., Zahn,    C.,  Schwan, S.,    & Hesse,  F.  W.   (2009). Computer    support  for knowledge
+         communication      in science  exhibitions: Novel  perspectives   from   research on  collaborative learning.
+         Educational Research Review, 4, 196­209. doi:10.1016/j.edurev.2009.06.002
+Kolodner, J. L., Camp, P. J., Crismond, D., Fasse, B., Gray, J., Holbrook, J., ... Ryan, M. (2003). Problem-
+         Based   Learning   Meets    Case-Based  Reasoning     in the   Middle-School    Science  Classroom:  Putting
+         Learning by DesignTM into Practice. The Journal of the Learning Sciences, 12(4), 495­547.
+Leder, H., Belke, B., Oeberst, A., & Augustin, D. (2004). A model of aesthetic appreciation and aesthetic
+         judgments. British Journal of Psychology, 95(4), 489­508. doi:10.1348/0007126042369811
+Lehrer, R., Erickson, J., & Connell, T. (1994). Learning by designing hypermedia documents. Computers in the
+         Schools, 10(1-2), 227­254. doi:10.1300/J025v10n01_15
+Morrone, A. (2006). Guidelines for measuring cultural participation. Montreal, Quebec, Canada: UNESCO
+         Institute for Statistics.
+National Art Education Association. (1994). The National Visual Arts Standards. Reston, VA, US: National Art
+         Education Association.
+Nespor, J. (2000). School field trips and the curriculum of public spaces. Journal of Curriculum Studies, 32(1),
+         25­43. doi:10.1080/002202700182835
+nielsenwire.   (2012, February     23). Introducing  Generation   C:  Americans    18-34   Are  the  Most  Connected.
+         Retrieved from http://blog.nielsen.com/nielsenwire/online_mobile/introducing-generation-c/
+Papert, S., &  Harel,  I. (1991).   Situating Constructionism.    In S. Papert &   I. Harel (Eds.),   Constructionism.
+         Norwood, NJ, US: Ablex Publishing Corporation.
+Pea, R. (2006). Video-as-Data and Digital Video Manipulation Techniques for Transforming Learning Sciences
+         Research, Education, and Other Cultural Practices. In J. Weiss, J. Nolan, J. Hunsinger, & P. Trifonas
+         (Eds.), The International Handbook of Virtual Learning Environments (pp. 1321­1393). Dordrecht, the
+         Netherlands: Springer.
+Pea, R., Mills, M., Rosen, J., Dauber, K., Effelsberg, W., & Hoffert, E. (2004). The Diver project: interactive
+         digital video repurposing. IEEE MultiMedia, 11(1), 54 ­ 61. doi:10.1109/MMUL.2004.1261108
+Pekarik, A. J., Doering, Z. D., & Karns, D. A. (1999). Exploring Satisfying Experiences in Museums. Curator:
+         The Museum Journal, 42(2), 152­173. doi:10.1111/j.2151-6952.1999.tb01137.x
+Rick, J., Rogers, Y., Haig, C., & Yuill, N. (2009). Learning by doing with shareable interfaces. Children, Youth
+         and Environments, 19(1), 321­342.
+Roschelle, J., & Teasley, S. D. (1995). The construction of shared knowledge in collaborative problem solving.
+         In C. O'Malley (Ed.), Computer supported collaborative learning (Vol. 128, pp. 69­97). Germany:
+         Springer.
+Salomon,    G. (1974).  Internalization   of filmic  schematic  operations  in interaction  with  learners'  aptitudes.
+         Journal of Educational Psychology, 66(4), 499­511. doi:10.1037/h0036753
+Scardamalia, M. (2002). Liberal Education in a Knowledge Society. In B. Smith (Ed.), Collective Cognitive
+         Responsibility   for  the  Advancement     of Knowledge     (pp. 67­98).  Peru,   Illinois, US:  Open Court
+         Publishing.
+Spellman, B. A., & Mandel, D. R. (1999). When Possibility Informs Reality. Counterfactual Thinking as a Cue
+         to  Causality.   Current    Directions  in    Psychological  Science,    8(4), 120­123.     doi:10.1111/1467-
+         8721.00028
+
+© ISLS                                                                                                              63
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+Spiro, R. J., Coulson, R. L., Feltovich, P. J., & Anderson, D. K. (1994). Cognitive flexibility theory: Advanced
+         knowledge acquisition in ill-structured domains. In R. B. Ruddell, M. R. Ruddell, & H. Singer (Eds.),
+         Theoretical models and processes of reading (4th ed.) (pp. 602­615). Newark,      DE,    US: International
+         Reading Association.
+Spiro, R. J., & Jehng, J.-C. (1990). Cognitive flexibility and hypertext: Theory and technology for the nonlinear
+         and multidimensional traversal of complex subject matter. In D. Nix & R. J. Spiro (Eds.), Cognition,
+         education, and   multimedia:   Exploring   ideas  in  high technology    (pp. 163­205).   Hillsdale,  NJ,
+         England: Lawrence Erlbaum Associates, Inc.
+Stahl, E., & Bromme, R. (2004). Learning by Writing Hypertext: A Research Based Design of University
+         Courses in Writing Hypertext. In G. Rijlaarsdam, H. Bergh, & M. Couzijn (Eds.), Effective Learning
+         and Teaching of Writing (Vol. 14, pp. 547­559). Dordrecht, the Netherlands: Springer.
+Stahl, G. (2006). Group Cognition: Computer Support for Building Collaborative Knowledge. Cambridge, MA,
+         US: MIT Press.
+Stahl, G., Koschmann, T., & Suthers, D. D. (2006). Computer-supported collaborative learning: An Historical
+         Perspective.  In  R. Sawyer  (Ed.),   Cambridge   handbook    of the  learning  sciences  (pp.  409­426).
+         Cambridge University Press.
+Suthers, D.  D.,  & Hundhausen,   C.  D.   (2003). An Experimental     Study   of the  Effects of Representational
+         Guidance   on Collaborative Learning   Processes.  Journal  of the  Learning  Sciences,  12(2), 183­218.
+         doi:10.1207/S15327809JLS1202_2
+Trant, J. (2006). Exploring the potential for social tagging and folksonomy in art museums: Proof of concept.
+         New Review of Hypermedia and Multimedia, 12(1), 83­105. doi:10.1080/13614560600802940
+Warnecke, T., Dohrmann, P., Jürgens, A., Rausch, A., & Pinkwart, N. (2011). Collaborative Learning through
+         Cooperative Design Using a Multitouch Table. In Y. Luo (Ed.), Cooperative Design, Visualization, and
+         Engineering (Vol. 6874, pp. 22­29). Germany: Springer.
+Winner, E. (2007). Visual thinking in arts education: Homage to Rudolf Arnheim. Psychology of Aesthetics,
+         Creativity, and the Arts, 1(1), 25­31. doi:10.1037/1931-3896.1.1.25
+Woodward, J. (2005). Making Things Happen: A Theory of Causal Explanation. New York, NY, US: Oxford
+         University Press.
+Zahn, C., & Finke, M. (2003). Collaborative knowledge building based on hyperlinked video. In B. Wasson, R.
+         Baggetun,  U.  Hoppe,   &  S. Ludvigsen    (Eds.), Proceedings     of the  International  Conference   on
+         Computer Support for Collaborative Learning - CSCL 2003, COMMUNITY EVENTS - Communication
+         and Interaction (pp. 173­175). Bergen, NO: InterMedia.
+Zahn, C., Hesse, F., Finke, M., Pea, R., Mills, M., & Rosen, J. (2005). Advanced digital video technologies to
+         support collaborative learning in school education and beyond. In Proceedings of th 2005 conference
+         on Computer support for collaborative learning: learning 2005: the next 10 years! (pp. 737­742).
+         International Society of the Learning Sciences.
+Zahn, C., Krauskopf, K., Hesse, F. W., & Pea, R. (2009). Participation in knowledge building "revisited":
+         reflective discussion and information design with advanced digital video technology. In Proceedings of
+         the 9th international conference on Computer supported collaborative learning - Volume 1 (pp. 596­
+         600). International Society of the Learning Sciences.
+Zahn, C., Krauskopf, K., Hesse, F. W., & Pea, R. (2010). Digital video tools in the classroom: How to support
+         meaningful collaboration and critical advanced thinking of students? In M. S. Khine & I. M. Saleh
+         (Eds.), New Science of Learning: Cognition, Computers and Collaboration in Education (pp. 503­
+         523). New York, NY, US: Springer.
+Zahn, C., Krauskopf, K., Hesse, F. W., & Pea, R. (2011). Digital Media in the Classroom: A Study on How to
+         Improve Guidance for Successful Collaboration and Learning in Student Teams. In H. Spada, G. Stahl,
+         N. Miyake, & N. Law (Eds.), Connecting Computer-Supported Collaborative Learning to Policy and
+         Practice:  CSCL2011    Conference   Proceedings.   (Vol. 1, pp.    152­159).  Hong    Kong: International
+         Society of the Learning Sciences.
+Zahn, C., Krauskopf, K., Hesse, F. W., & Pea, R. (2012). How to improve collaborative learning with video
+         tools in the  classroom? Social   vs. cognitive guidance   for student   teams. International  Journal of
+         Computer-Supported Collaborative Learning, 7(2), 259­284. doi:10.1007/s11412-012-9145-0
+Zahn, C., Pea, R., Hesse, F. W., & Rosen, J. (2010). Comparing Simple and Advanced Video Tools as Supports
+         for Complex   Collaborative  Design   Processes.  Journal  of  the Learning   Sciences,  19(3), 403­440.
+         doi:10.1080/10508401003708399
+Zaidel, D. W., & Fitzgerald, P. (1994). Sex of the face in Western art: Left and right in portraits. Empirical
+         Studies of the Arts, 12(1), 9­19.
+
+Acknowledgments
+The project is funded by the Leibniz Association as part of the ,,Wettbewerbsfonds 2011".
+
+© ISLS                                                                                                          64
+

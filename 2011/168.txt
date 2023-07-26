@@ -1,0 +1,491 @@
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+     Improving the mCSCL Approach of a Mobile Chinese Character
+              Forming Game via a Design-based Research Cycle
+  Lung-Hsiang Wong, Learning Sciences Lab., National Institute of Education, 1, Nanyang Walk, Singapore
+                                         637616, lunghsiang.wong@nie.edu.sg
+     Ivica Boticki, Faculty of Electrical Engineering and Computing, University of Zagreb, Unska 3, Zagreb,
+                                             Croatia, ivica.boticki@fer.hr
+           Jizhen Sun, Chinese Culture University, 231 Section 2, Jian-Guo S. Road, Taipei, Taiwan,
+                                                ccsun@sce.pccu.edu.tw
+Chee-Kit Looi, Learning Sciences Lab., National Institute of Education, 1, Nanyang Walk, Singapore 637616,
+                                                cheekit.looi@nie.edu.sg
+
+         Abstract:     We  describe   one cycle   of  design-based   research    (DBR)   in  which    we  explore
+         mCSCL through an iterative process of (re)designing and testing the learning approach with
+         students. The mCSCL application assigns each student a component of a Chinese character
+         and requires them to spontaneously form groups that can assemble a Chinese character. We
+         observe the enactment of the learning design in two modes (with and without the ICT), and
+         found the students favor the card mode over the phone mode due to their emergent trial-and-
+         error strategy. That triggered us to examine the scaffolding strategies by exploring domain-
+         oriented  theories   to inform   us in  deciding  how    we   should  accommodate      their use   of  the
+         strategy. This cycle of DBR has reshaped our learning design. This paper brings to the fore the
+         value of the interplay of theories, implementations and reflections as advocated by DBR.
+
+Introduction
+The proliferation of networked computers supplemented with software applications has provided us with a new
+network-based     medium   to design  educational    services.  A variety  of  studies  in the field  of mCSCL      (mobile
+Computer   Supported    Collaborative    Learning)  has  explored   opportunities   for designing   learning    applications
+through  mobile    technologies   (Looi,  Wong,     &    Song,  in-press;  Zurita  &    Nussbaum,     2004).    While    such
+innovations coupled with learning design look promising, we need to deal with the challenge of adoptability in
+real classrooms.   We    adopted  a   design-based    research  (DBR)    perspective    to provide    a cyclic   process   of
+designing, testing and redesigning the learning design and applications, and to integrate design principles with
+technological affordances     to render  plausible  solutions.  Our goal   is to conduct   reflective   inquiry  to test  and
+refine innovative learning environments as well as to refine new learning design principles.
+         Building on prior studies, we propose the design of a model for a mobile synchronous collaborative
+learning game     with the unique    characteristic of spontaneous     small  group formations.    In   the game,   students
+follow or adapt the collaboration rules or scaffolds imposed both by the teacher and by the computer system. To
+complete  the learning   tasks,  they must   draw   upon  their  social relationships   with other  students    to  negotiate
+acceptable  solutions.  Previously,   we  developed    a fraction addition   game  system    and did    trials with primary
+school  students. This   work    yielded positive   findings in students'  emergent    collaborative    strategies  (Boticki,
+Looi, & Wong, 2010; Boticki, Wong, & Looi, 2010). We then reused the generic software architecture and
+game model to implement "Chinese-PP", a game-based learning approach on collaborative Chinese character
+formation. PP refers to  or "Pin yi Pin" in Chinese, which roughly means "trial assembling". Our DBR
+methodology allowed us to collect and analyze data to many factors simultaneously and to use the rich data to
+iteratively improve a design more rapidly than might be accomplished through systematic experimentation on
+each   individual factor (Design-Based    Research    Collective, 2003).    Echoing  Roschelle   et   al.'s (2010)  call  for
+transforming handheld collaborative tools to classroom modules, our ultimate goal is to elevate our game model
+to a pedagogically-oriented learning environment that can facilitate the students' learning growth over the time,
+rather than drilling   them through   repetitive  game   playing.  We   envisage  a series   of learning    activities to  be
+conducted on a regular basis with varied scaffolds and rules undergirded with a theoretical framework.
+         Now  that    we  have   the  mCSCL     tool, our  discovery    of the students'   collaborative    patterns   in the
+fractions game and a theoretical framework for pedagogical design, we would like to adapt the model and the
+tool to a different domain ­ the forming of a Chinese character from components. The students involved in
+Chinese-PP  game      may  demonstrate    different   collaborative  patterns  and  encounter    different     challenges  in
+achieving their game tasks as compared with the previous fractions game. Therefore, it was necessary for us to
+conduct  experiments    with  students   using  Chinese-PP    as  part  of the DBR     process  of building     the learning
+environment.
+         This paper focuses on such a pilot trial of Chinese-PP, which was conducted in two modes, namely,
+one using digital technology - the "phone mode" and the other without the digital technology - the "card mode".
+The trial enabled us to examine the domain-independent and ­dependent collaborative patterns and attitudes of
+
+© ISLS                                                                                                                    168
+CSCL 2011 Proceedings                                                                               Volume I: Long Papers
+
+the students in each mode. With that, we gained a better understanding in the affordances of mobile technologies
+in facilitating such a game. The findings will inform us in the subsequent revision of both the game model and
+the mobile application, as well as assist us in fine-tuning of our pedagogical framework.
+
+Background Literature
+
+Chinese Character Learning
+The Chinese script has always been the biggest challenge for learners of Chinese (Wong, Chai, & Gao, 2010; Y.
+Zhu    & Hong,   2005).  Fan,  Tong    and  Song  (1987)  claim  that the logographic  nature   of the Chinese  script
+constitutes the primary hurdle. Shen (2002) attributes the challenge to the retention of the combination of sound,
+shape and meaning of a character in learners' long-term memory. This makes it even more difficult for a learner
+whose first language is based on an alphabetic writing system to master Chinese (Ho, Ng, & Ng, 2003).
+         The Chinese scripts are a principled and rule-based system ­ each Chinese character comprises of one
+or more components, spatially arranged with certain principles (Liang, 2004). Most of the components have
+fixed roles to play, as either a semantic component or a phonetic component; only a few of them play both roles.
+Furthermore,  the  number   of    commonly    used  characters for learners   (1,000-3,000) is  much   larger than the
+number of component types (< 100). The number of characters' spatial configuration is also limited and rule-
+based. Zhao and Jiang (2006) propose that there are 10 basic spatial configurations for characters (see Figure 1).
+
+1 ()          2()          3()          4()         5()          6()        7()        8 ()        9()        10()
+          Figure 1. 10 Basic Spatial Configurations for Chinese Characters (with One Character Example Each).
+
+         Studies (e.g., Wang, Perfetti, & Liu, 2003; Z. Zhu, 2004) have indicated that those who have acquired
+Chinese characters recognize them mainly based on their structural elements such as graphic forms and spatial
+configuration, treating each character as a salient perceptual unit. Tan and Peng (1991) also argue that analyzing
+the 3-dimensional characteristics (spatial configuration, semantic element and graphic form) is the necessary
+route leading to the effective recognition and reading of characters. Informed by language acquisition theories
+(e.g., Comprehensible    Input    (Krashen, 1985),  Information  Processing   (Bialystok,  1978),  and Connectionism
+(Gasser, 1990)) and Bloom's Taxonomy, we argue that there are six steps in acquiring Chinese characters, in
+hierarchical order: comprehension, combination, memorizing, application, analyzing, and creation. The fact that
+a limited number of semantic components and phonetic components can form a large number of characters leads
+us to argue that learning characters through rearranging and combining their components in different positions is
+cognitively effective,  as  it allows   learners to comprehend,    remember   and  apply   the principles of  character
+formation.  This  process   also  has  the  potential to nurture the  ability of using educated    guesses when  they
+encounter unfamiliar characters in reading (e.g., a character with the component is likely to carry a meaning
+relevant to liquid, e.g.,  = river,  = wet).
+
+Mobile-assisted Language Learning and mCSCL
+In recent years, we have witnessed the paradigmatic development of the Mobile Assisted Language Learning
+(MALL) framework in enhancing language learning (Wong, Chin, Tan, & Liu, 2010; Wong & Looi, 2010). The
+focus of MALL research is shifting from content-based (delivery of relatively static learning content through
+mobile devices) to design-oriented (design of authentic or social mobile learning activities) studies (Kukulska-
+Hulme & Shield, 2007). In particular, Zurita and Nussbaum (2004) tapped on Syllable-mCSCL, a 1:1 (one-
+device-per-student) mobile learning game to facilitate Spanish vocabulary learning for young children. In their
+game design, the students were given language tasks that they had to solve by working in groups of three. A
+syllable is assigned by the system to each group member's mobile device (e.g., "si", "la" and "bi") and the three
+students need to determine sequences of the syllables to form correct Spanish words (e.g., "silabi").
+         Latest developments in the field of mCSCL extend the idea of mobile learning with the collaborative
+scaffolding   in order  to  include    both social  and  epistemic collaboration   scripts encouraging    small group
+participation (Nussbaum,       et al., 2009). The   design  of  collaborative  scaffolding  should   encourage  social
+interactions, facilitate joint problem solving, lead to richer knowledge construction and at the same time take
+into account different and emerging roles, joint group goals and actions and facilitate verbal explanations. These
+developments     mesh  well with   our  goal  of designing a component-based     Chinese   character learning  activity
+through socio-cognitivist and socio-constructivist means.
+
+© ISLS                                                                                                              169
+CSCL 2011 Proceedings                                                                                   Volume I: Long Papers
+
+Towards a One-to-One mCSCL Solution for Chinese Character Learning
+Building on the work of other researchers (Zurita & Nussbaum, 2004), we developed the Form-A-One (FAO)
+System, a mobile collaborative learning game with flexible, small group sizes. In Nussbaum's work, students
+are assigned to fixed small groups before the beginning of the activities. We adapted Nussbaum's design so that
+students would have to find and negotiate with other students to form their own groups spontaneously with no
+fixed size. The activity is conducted in multiple rounds. In each round, a set of fractions are assigned by the
+system server via 3G connections to individual students for them to form groups with the sum of the members'
+fractions of each group equals one (e.g., a group of three with 3/6, 1/4, 2/8). When the game advances to the
+next round, the existing groups are disbanded and a new set of fractions is assigned to the students. The activity
+consists of  three    main    scaffolding sources:    technological, social  and the    teacher.    Technology    provides
+scaffolding in both generic and context-specific rules and logic (in the form of software affordances), while the
+teacher acts as facilitator and helps the students in dealing with impasses. Social scaffolding is encouraged in
+order to increase student interaction and collaboration (Boticki, Looi & Wong, 2010).
+         We conducted a pilot study in late 2009 that involved 16 Primary 3 students (Boticki, Looi, et al.,
+2010) in Nan Chiau Primary School, Singapore. One important finding was the students' modification of their
+initially chosen ad-hoc strategies (e.g., gender or personal preferences, looking for the same fractions, randomly
+sending out invitations, etc., which inevitably ended with impasses) coming as a consequence of them realizing
+the importance of achieving the global goals besides their local group goal, therefore learning how to collaborate
+(e.g., breaking out groups for improved solutions). We then analyzed the process by examining the evidence and
+what it took, in the form of teacher, technology or social scaffolding, to achieve the four elements/principles of
+cooperative learning (Johnson & Johnson, 1994): positive interdependence, maximum peer interaction, equal
+opportunity to participate, and individual accountability.
+         Similar to the fractions game, the Chinese-PP activity is conducted in multiple rounds. In each round, a
+set of Chinese components are assigned by the FAO system server to individual students' smart-phones (with
+the Chinese-PP client application installed ­ see the screenshots in Figure 2a). Students are required to form
+groups by choosing appropriate characters out of the assigned components, thereby forming a valid Chinese
+character. Members of each group then discuss and choose one of the general Chinese character configurations
+(see Figure 1) to organise their components properly via templates (character configurations) supplied by the
+Chinese-PP   application   (arrows  <  and  >     in Figure 2a). For example,   with the  components  ,           and    ,
+students could decide to choose template no. 9 (Figure 1) and place the components in the correct order to form
+the character.
+
+Figure 2a. A student's smart-  Figure 2b. A student's         Figure 2c. A teacher's view of the Chinese language
+phone application showing      smart-phone application        learning activity (the "Group Status Window"). The screen
+an assembled character out     showing a list of student      shows the characters from four groups of students. Each
+of individual components.      with components                group has an assembled character framed into a template
+                               participating in the Chinese   chosen by the students on the device.
+                               learning activity.
+
+         In preparing each round of the game, the teacher needs to select a set of components according to the
+number   of participating  students and   input   them   to the system. The  choice  of components     should   allow    the
+construction   of as   many   eligible characters     as possible, and  with at  least  one global     solution   (i.e., no
+component/student will be left out) available. For example, for an eight-player game, a possible component set
+is [       ], where students could form three groups and construct the characters [  ] or
+[  ] without any player being left out. However, there exist other combinations such as [  ], with
+andbeing left out (no character with the combination of these components), and a lot more. Although students
+should be encouraged to socially figure out a combination where all the components are used to form characters,
+
+© ISLS                                                                                                                   170
+CSCL 2011 Proceedings                                                                            Volume I: Long Papers
+
+it is a tall order for our target students to achieve that, given their limited language proficiency (Chinese L2
+standard) and cognitive ability (Primary school level). However, we had been keen to introduce game rules to
+motivate them to form characters with as many components as possible and try to minimize the number of left-
+out peers. In turn, students who have formed groups should continue to explore other possibilities, perhaps by
+inviting another peer to join the group and form a new character (e.g., a group with the character may invite
+their peer with the componentto form), or even disband an existing group, combine and reshuffle with other
+components to form two or more new groups!
+
+Micro-cycle of Design, Evaluation and Re-design with Chinese-PP
+We ran the first implementation of Chinese-PP in Nan Chiau Primary School, involving 37 Primary 4 (10-year-
+old) students. These were mixed ability students in Chinese Language and had had one year's experience in
+using HTC TyTN II smart-phones on a 24x7 basis (and were therefore adept in using the device) for learning
+science, English and math. Among them, 16 students were also involved in the trial of the FAO fractions game
+in the previous year. As such a game may also be carried out, for example, using cards with individual character
+components being printed, we experimented on both the "phone mode" and "card mode" (with four rounds of
+each game) on two different days. The students were split into two subgroups. Subgroup A with 19 students
+played one hour of card game followed by one hour of phone game. Subgroup B with 18 students went through
+both games in reverse order. Table 1 shows the schedule of both subgroups' Chinese-PP experiences.
+
+Table 1: The experimental process of Chinese-PP.
+                                      Day 1                                            Day 2
+Subgroup A       Card game A-1             Focus group FA-1        Phone game A-2             Focus group FA-2
+Subgroup B       Phone game B-1            Focus group FB-1        Card game B-2              Focus group FB-2
+
+         The games were played in a special classroom with more open space than usual so that the students
+could freely move around to negotiate with different peers in group forming. For the phone games, the students
+could invite potential group members and accept/reject invitations through the phone application. The teacher
+facilitated all the   games by controlling the   game pace,  hinting the students on-the-fly  concerning  possible
+groupings, verifying students' groupings, and determining when to terminate a round.
+         We   video    and audio recorded  all the games  to document    and code   students' game   behaviors and
+collaborative patterns. The software logs of the students' interactions during the phone games were also used for
+triangulation. In addition, we conducted focus group interviews as noted in Table 1 (each session involved six
+students, three of whom had also played the previous fractions game) in order to find out their perceptions in the
+games and the reasons behind the collaborative behaviors that we observed. Due to the space constraints, we
+will not show detailed coding and analysis of students' spatial movements and discourses, but will present high-
+level findings and how they have informed us in our subsequent adaptation of the learning environment.
+         The reason that we designed the experimental process in this way (Table 1), as opposed to the usual
+experimental-control group design, is that we wanted to let both subgroups of students to experience the game
+played in both modes. This approach permitted us to investigate the changes of their perceptions and to see if
+that might be influenced by the order of experiencing the two modes. Nevertheless, our initial analysis on the
+focus groups shows that both subgroups of students have expressed fairly consistent perceptions in both modes,
+and therefore the factor of "which mode was played first" did not have any substantial impact in our analysis.
+
+Findings
+
+Domain-independent Collaborative Patterns
+In all the card and phone game sessions, the students exhibited similar discussion patterns as in the previous
+fractions games. Note that in both types of games, we encouraged the students to form legitimate groups with
+more   peers, and   to minimize  left-out peers. Typically, in the beginning  of  a game round,   students  started
+exchanging ideas verbally about arranging the components. Most students started with identifying a classmate
+each to discuss, and then expand from pairs to clusters of 3-4 to discuss alternative possibilities. An initial set of
+groups was created in the process, with a few left-out students still looking for groupings. However, personal
+and gender preferences often influenced the formation of these initial groups. If the small amount of left-out
+students could not form new groups among themselves, they would seek peers' or the teacher's assistance in
+identifying other solutions. Meanwhile, some students who had already formed groups had considered helping
+their left-out peers by thinking of the possibilities of adding a group member or even splitting their own group.
+There came minor changes in the groupings with the effect of personal and gender preferences gradually fading
+out. Nevertheless,    such positive tendencies were  not good  enough  to make   the students  achieve  any global
+solution (i.e., no peer was left out) in all the Chinese-PP sessions, which we will explicate below.
+
+© ISLS                                                                                                           171
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+          The gender-shy issue is relatively minor but still shows intriguing influences in the game dynamics ­ as
+it might result in sub-optimal solutions at the early stage of each game round which potentially jeopardizes the
+chance of eventually reaching a global solution. In the card games, as face-to-face (f2f) discussion was the only
+mode   of collaboration,  we   observed  that  students   almost always  started with  physical  clusters  of the  same
+gender to carry out initial explorations. Students who were left out at this stage then proceeded to move around
+the classroom to seek groupings with members of opposite gender. Conversely, the phone games allow two
+modes of communication ­ f2f and phone invitation. We examined both the videos and the software logs and
+discovered that the same groups of students were less reluctant to invite members of the opposite genders to
+form groups even in the initial stage. In addition, we compared the final groupings of all the game rounds and
+found that 65.3% of the groups formed during the card games were comprised of members of the same gender,
+which was a high contrast with the phone games with only 40.2% of the groups were such. Among the 12
+students interviewed during FA-2 and FB-2, 8 of them admitted that they were more gender-shy during the card
+games but not so during the phone games, while the rest claimed that they were not gender-shy in either mode.
+          Indeed, with two communication modes being offered by the phone mode, individual students may opt
+for their most comfortable method in interacting with their peers, which was one of the advantages of the mode.
+Nevertheless, due to the nature of the domain (Chinese characters) and the software UI design, most of them had
+surprisingly indicated their preference in the card mode after the study, which we will explicate below.
+
+Domain-specific Collaborative Patterns
+During   the card games,   we  observed   the  students   who clustered together   often physically manipulated    their
+cards by trial placing them in different spatial configurations. We identify it as a form of social scaffold. Figure
+3 illustrates a scenario we observed in one of the card game rounds. Two students who carried the components
+ and  respectively tried all four possible configurations to bring them together (i, ii, iii, iv), but none of them
+formed  a legitimate  character. Third  student who  carried     joined them, and  tried to match  the component   with
+the first two students' components individually (v, vi), and legitimate characters were formed in both cases (,
+). They then faced a dilemma of "which friend to `sacrifice'", thus deciding to try forming a three-component
+character instead. They formed  (vii) but thought that it was not a character (this is a legitimate but rarely
+used one that they had not learned before). They eventually figured out vertical placing of the three components
+and formed the character       (viii).
+
+                                                                                                                    
+                                                                                                                    
+                                                                                                   
+                                                                                                                    
+
+  (i)                   (ii)           (iii)         (iv)          (v)           (vi)            (vii)             (viii)
+               Figure 3. A Scenario of Three Students Manipulating Their Cards in a Card Game.
+
+          This is a strategy that we loosely call "trial and error" in this paper. We did not teach them this strategy
+but they figured it out by themselves. We observed that all students applied this strategy almost all of the time in
+the card games. The card mode offers the convenience of doing so while the phone mode does not. During the
+phone games, the students had to study the "peers' components" screen, and mentally construct and picture
+characters before deciding whom to invite. When playing the phone games, some students still approached each
+other  physically  to   discuss, albeit  not  being  able   to   physically "trial construct"   characters  from   their
+components. In one instance during A-2, two students carried their phones close enough and manipulated their
+placements to imitate card manipulations (although they found it cumbersome).
+          At the end of A-2 and B-2, we asked for a quick show of hands to reflect the students' preference
+between playing card and phone game. More than 80% of them chose the former. The focus group interviews
+showed a similar tendency, which could be summarized in two points, (1) After A-1 and A-2, most of students
+had a good expectation in the phone game regardless of whether they had tried it, perhaps due to their technical-
+inclined  mindset after  using   their phones  for a year;  (2)  Having tried both  modes    after B-1  and   B-2, most
+students got used to the trial-and-error strategy and found that only the card mode was conducive to that.
+          Obviously, the UI design and the invitation mechanism of the smart-phone application, both of which
+were inherited from the fractions game, had been too complicated as well as imposing an additional cognitive
+burden to them. We asked the students who had played the fractions game before to compare their experiences
+to the Chinese-PP game. Most of them did not mind playing the fractions game in phone mode as they were
+capable   of the  required   mental calculations,  while   spatial configurations   were    not applicable  to fraction
+additions. This suggests that the application UI was not an issue for this group of students who had been using
+the phones 24/7 for a year. Instead, it was the domain-specific factor that posed the challenge to them.
+
+© ISLS                                                                                                               172
+CSCL 2011 Proceedings                                                                                   Volume I: Long Papers
+
+Towards the Pursuance of Global Solutions in Game Playing
+Regardless of the game modes, the unique game design of Chinese-PP (as well as the fractions game), apart
+from spontaneous group formation with flexible sizes, is the reinforcement of global solutions (i.e., no student to
+be left out). In order to work toward this goal, students ought to set aside personal preferences and the pursuance
+of local (individual) goals to help their peers. While some groups might have formed their characters, the others
+might  have   reached  a   dead-end   situation.  Students  are  then required  to  put their global goal   in  front of the
+individual or group goals and start thinking about other possible solutions or group configurations ­ that is, they
+need to draw and integrate their thinking and collaborative skills and their linguistic knowledge to achieve this.
+          In order to encourage the students to work toward the goal, we projected the grouping status window
+which was originally designed for and only accessible by the teacher, to the students during the phone game.
+The  display  offers  the  up-to-date     student groupings  where    students  could  study  and  consider  if  they could
+reshuffle or break existing groups to form better solutions. This is a potentially powerful affordance that the card
+mode cannot offer. However, according to our analysis of the two phone game sessions, the students often took
+a glance at the display, merely out of curiosity. When we explained to the students during the Focus Group FA-
+2 and FB-2 on how they could take advantage of the display, they all agreed (including those who did not favor
+the phone game) that they could benefit from it if they were given another chance to try the phone game.
+          In addition, after A-1 and B-1, we developed a scoring scheme and applied it in A-2 and B-2. Students
+accumulated scores by forming legitimate groups ­ 10 points for a 2-component character (same score to be
+awarded to each group member), 30 points for a 3-component character, 50 points for a 4-component character,
+and so on. This was to encourage the students to form bigger groups to fulfil "local" goals. However, in order to
+motivate them to assist their left-out peers (part of the "global" goal ­ to reduce the number of left-out students),
+each student who has formed group and earned points was penalized by 5 points times number of peers left out
+by the end of a game round. Due to a certain resource and time constraint, we did not automate this functionality
+in the phone game system. Thus, for both A-2 and B-2, we recorded the scores manually and wrote them on the
+whiteboard, which was logistically cumbersome and time consuming. However, some students reported to us
+that the new scoring system did stimulate them to pay more attention in balancing the "local" and "global"
+goals.
+
+Subsequent Reflections and Further Work
+
+ICT or non-ICT?
+The trial seemed to leave us with more uncertainties. Shall we give up the phone mode and settle with the card
+mode   for  Chinese-PP     due   to the   nature  of the  domain?   Conversely,    what  are  the  potential technological
+affordances of the phone mode that may justify the mCSCL solution? If the answer is the latter, how can we deal
+with the perceived "incompatibility" between the phone game and the students' favorite trial-and-error strategy?
+          We further analyzed the designed and enacted game processes, and concluded that the critical success
+factor of this game is the intertwining of the local and global goals for the student players that would stimulate
+their active Chinese character retrievals, thinking of alternatives, applications of component rules, and making
+educated    guesses   when     encountering      unfamiliar  characters.  It   may   also  further   reinforce   individual
+accountability, equal opportunity to participate, positive interdependence, and maximize peer interactions. We
+believe that the transparency of the global game view (the grouping status window) and the scoring scheme are
+two  potentially  powerful    scaffold    forms  which  should   be retained.  Both  scaffolds, however,    are  logistically
+cumbersome if executed manually. In addition, a minor advantage of the phone mode is that the gender-shy
+issue could be eliminated at the beginning of each game round, instead of gradually fading out towards the end
+of a card game. In this regard, we believe that the retention of the technological form of Chinese-PP is justified.
+
+Is "Trial and Error" a Suitable Learning Strategy or a "Bad Learning Habit"?
+With that, we decided to provide a theoretical treatment on the emergent trial-and-error method to see if this is a
+justifiable strategy  for  Chinese    character   learning  that we   should  support,  or a  "bad learning    habit" to be
+rectified ­   and if  that is the   case, how    can we   design  scaffolds  to help  students  shake   off  the habit?  We
+conducted another round of literature review on the relevant issues, which is summarized below.
+          The  acquisition    of any  subsystems     of a  language   involves  how   learners  establish the   connections
+between forms and their meanings. Most learners attend meaning before form in an attempt to communicate
+with   others (Krashen,    1982).   Ellis (1994)  argues   that the processes   for the acquisition  of semantic   and   the
+formal components of words are distinct. The form-meaning connection is initially made when learners register
+a form,   a meaning   and   the  fact that the   form encodes    that meaning   in  some  way,  or the  meaning   could  be
+encoded by that form (VanPatten, 2004). Such a process is applicable to Chinese character acquisition as well.
+          Given the complexity of a form or a meaning that learners should acquire in order to establish the
+proper relationship between them, it is likely that learners would go through more than one attempt to make the
+form-meaning connections. Such a view is consistent with Piaget's theory of cognitive developmental stages
+
+© ISLS                                                                                                                   173
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+that include the sensory-motor period, preoperational period, concrete operational period and formal operational
+period. Piaget suggests that children first learn by actively doing in a random way and, as a result of experience
+and  reconstruction,   gradually    move to   think logically and  more    objectively during    the concrete  operational
+period that spans from 7 to 11 years old (Inhelder & Piaget, 1958). In our experiment, the students' learning
+strategies reflect the characteristics of the concrete operational period in which they assimilate in a collaborative
+learning mode using both trial-and-error and logical thinking as the main strategies to reach the next stage.
+          One of  the    strengths  of mCSCL     is its capability for  multiple branching   and     for allowing   learners
+making   multiple   attempts    at problem  solving,  or in  this case, at  form-meaning    connections.     Therefore,  we
+conclude that we should exploit suitable technological affordances to support such a strategy that students find it
+natural and even fun to apply.
+
+Redesigning the Technological Support
+Informed by our reflections, we revamped the technological support for Chinese-PP. A major redesign of the
+smart-phone application UI will take place. The two key improvements that we envisage are (1) to make the UI
+more intuitive and convenient for the students to perform their personal and social learning tasks; and (2) to
+allow  multiple learning     pathways   catering to  individual   students' preferences    (Looi, et   al., 2009).  We   are
+designing a brand new UI where students will be given a working space on the screen, with their own and other
+peers' components all displayed at the edges in the form of "virtual cards". The students could easily drag and
+drop their chosen virtual cards onto and around the working space. The students will not have to construct the
+characters mentally but can perform a quick personal, virtual "trial and error" before inviting and negotiating
+with their peers. Furthermore, the invite-accept-reject mechanism will be simplified; an inviter's trial-composed
+characters will be automatically sent to all their invitees to support the latter's decision making.
+          Apart from     the smart-phone   application,  the  game  status  window    will also  be  enhanced    to support
+students' global goal pursuance. Other than the formed characters of the committed groups, the window will
+also display left-out components. Putting all such information in the same display will further stimulate the
+students  to consider    alternative   groupings that   may  improve    the overall   solutions. Score    tracking  will be
+automated; and the students' scores and rankings will be updated dynamically in the same window. We hope
+that the combined use of the personal UI on the phone and the shared display will further reinforce the balancing
+between the students' pursuance of local and global goals. However, additional teacher scaffolds need to be in
+place to ensure students making good use of the resources. We will investigate such scaffolds, experiment with
+them in the subsequent studies, and incorporate them as either technological or social scaffolds.
+
+Transforming Chinese-PP into an Effective Classroom Module
+As  stated before,  we   envisage   elevating Chinese-PP     beyond  a  one-off  or repetitive   mCSCL      game design  to
+become an ongoing pedagogical practice that facilitates students' language learning growth. We will co-design 8
+one-hour learning session with teachers, with varied teacher/social/technological scaffolds and game rules (e.g.,
+a new game rule "allow cloning of components in the same character" such as composing  with two instances
+of ,   or  alerting   them   on the  relevant linguistic  rules through  the  teacher  or  technological    means)   across
+different sessions. We will vary these elements not just for injecting new excitement to sustain the students'
+interest. We will strive for mapping a theory-informed (language acquisition theories and Bloom's Taxonomy)
+Chinese character learning process into the variations of the game elements. We intend to conduct a full-fledged
+study by implementing the new pedagogical model, with the revamped mCSCL infrastructure in place.
+
+Conclusion
+We have narrated our journey of conceptualization, prototyping, trial implementation, reflection, and refining of
+Chinese-PP   which    is our  mCSCL     solution for  Chinese   character   learning. We   adopted   a   DBR  approach   to
+embark on an iterative process of (re)designing and testing the learning approach by examining the effects of the
+technological and social scaffolding. In each iteration, we anticipated how the proposed learning design might
+be realized in a classroom, and how the students might collaborate, interact and learn as they participate in the
+activities. From the enactment of the learning design in two modes, we analyzed the actual process of student
+collaboration and learning in each of these two modes. On the basis of this analysis, we drew conclusions and
+made recommendations for the next learning design which will combine the best of the two modes.
+          Thus we found versatility and flexibility via the DBR methodology guiding our quest towards a refined
+solution to address the challenges that we encountered when students used the current design. In prior mCSCL
+(or learning  technology     in general)  studies,  the  grounding  of  domain-specific    learning  theories  tend  to  be
+accorded a lower priority. In the early stage of our study, we observed how domain-specific factors undermined
+the learning model. That is, the students performed well in, and positively perceived the previous phone-based
+fractions games. However, in the Chinese-PP games, they preferred the card mode due to their emergent trial-
+and-error strategy. That caused us to further examine the scaffolding strategies by conducting another round of
+literature review. We let the domain-specific theories guide us in deciding whether we should accommodate or
+
+© ISLS                                                                                                                   174
+CSCL 2011 Proceedings                                                                               Volume I: Long Papers
+
+rectify the students' use of their emergent strategy. Our early exploratory study of the project has effectively
+reshaped   our  overall learning model   design,   bringing to the fore the  value of the  interplay and  iterations of
+theories, implementations and reflections, as advocated by DBR.
+
+References:
+Bialystok, E. (1978). A theoretical model of second language learning. Language Learning, 28, 81-103.
+Boticki, I., Looi, C.-K., & Wong, L.-H. (2010). Doing collaboration and learning fractions with mobile devices.
+          Proceedings of the Global Chinese Conference on Computers in Education 2010 (pp. 9-15), Singapore.
+Boticki,  I., Wong,   L.-H., &  Looi,  C.-K.  (2010). Can   one-to-one computing   help children  learn cooperatively?
+          Proceedings of the International Conference on Computers in Education 2010 (pp. 407-411), Putrajaya,
+          Malaysia.
+Design-Based Research Collective. (2003). Design-based research: an emerging paradigm for educational inquiry.
+          Educational Researcher, 32(1), 5-8.
+Ellis, N. (1994). Implicit and explicit language learning - an overview. In N. Ellis (Ed.), Implicit and Explicit Learning
+          of Languages. London: Academic Press.
+Fan, L., Tong, L., & Song, J. (1987). The characteristics of Chinese language and children's learning to read and write.
+          In D. A. Wagner (Ed.), The Future of Literacy in a Changing World (pp. 87-94). New York: Pergamon.
+Gasser, M. (1990). Connectionism and the universals of second language acquisition. Studies in Second Language
+          Acquisition, 12, 179-199.
+Ho, C. S. H., Ng, T. T., & Ng, W. K. (2003). A `radical' approach to reading development in Chinese: the role of
+          semantic radicals and phonetic radicals. Literacy Research, 35(3), 849-878.
+Inhelder, B., & Piaget, J. (1958). The Growth of Logical Thinking from Childhood to Adolescence. New York: Basic
+          Books.
+Johnson, R., & Johnson, D. (1994). An overview of cooperative learning. In R. V. A. N. J. Thousand (Ed.), Creativity
+          and   Collaborative  Learning:   A  Practical Guide  to  Empowering     Students and Teachers   (pp. 31-43).
+          Baltimore, MD: Paul H. Brookes.
+Krashen, S. D. (1982). Principles and Practices in Second Language Acquisition. Oxford, England: Pergamon Press.
+Krashen, S. D. (1985). The Input Hypothesis: Issues and Implications. London/New York: Longman.
+Kukulska-Hulme, A., & Shield, L. (2007). An overview of mobile assisted language learning: can mobile devices
+          support collaborative practice in speaking and listening? Paper presented at the EuroCALL 2007, Coleraine,
+          UK.
+Liang, Y. (2004). The characteristics of Chinese character components and Chinese as a Foreign Language teaching.
+          Language Education and Research, 6, 76-80.
+Looi, C.-K., Wong, L.-H., So, H.-J., Seow, P., Toh, Y., Chen, W., et al. (2009). Anatomy of a mobilized lesson:
+          Learning my way. Computers & Education, 53(4), 1120-1132.
+Looi, C.-K., Wong, L.-H., & Song, Y. (in-press). Discovering Mobile Computer Supported Collaborative Learning. In
+          C. Hmelo-Silver, A. O'Donnell, C. Chan & C. Chinn (Eds.), The International Handbook of Collaborative
+          Learning. New York: Routledge.
+Nussbaum, M., Alvarez, C., McFarlane, A., Gomez, F., Claro, S., & Radovic, D. (2009). Technology as small group
+          face-to-face Collaborative Scaffolding. Computers & Education, 52(1), 147-153.
+Shen, H. H. (2002). Level of cognitive processing: Effects on character learning among non-native learners of Chinese
+          as a foreign language. Language and Education, 18, 167-182.
+Tan, L., & Peng, D. (1991). The visual recognition process of the Chinese characters. Psychology, 23(3), 272-278.
+VanPatten, B. (2004). Input and output in establishing form-meaning connections. In B. VanPatten, J. Williams, S.
+          Rott  &  M.   Overstreet (Eds.),   Form-meaning   connection  in second  language   acquisition (pp. 29-47).
+          Mahwah, NJ: Erlbaum.
+Wang, P., Perfetti, C. A., & Liu, Y. (2003). Alphabetical readers quickly acquire orthographic structure in learning to
+          read Chinese. Scientific Studies of Reading, 7(2), 183-208.
+Wong, L.-H., Chai, C.-S., & Gao, P. (2010). Singapore primary school students' perceptions and challenges faced in
+          using  Chinese  computer     input systems  for compositions.    Global Chinese   Journal  on Computers    in
+          Education, 6(1-2), 46-61.
+Wong, L.-H., Chin, C.-K., Tan, C.-L., & Liu, M. (2010). Students' personal and social meaning making in a Chinese
+          idiom mobile learning environment. Educational Technology & Society, 13(4), 15-26.
+Wong, L.-H., & Looi, C.-K. (2010). Vocabulary learning by mobile-assisted authentic content creation and social
+          meaning-making: Two case studies. Computer Assisted Learning, 26(5), 421-433.
+Zhu, Y., & Hong, W. (2005). Effects of digital voiced pronunciation and stroke sequence animation on character
+          memorization of EFL learners. Chinese Language Teachers Association, 40(3), 49-70.
+Zhu,   Z. (2004). Chinese    character structures and Chinese  as  foreign language teaching  and learning. Language
+          Teaching and Research, 4, 35-41.
+Zurita, G.,   & Nussbaum,    M. (2004).  Computer   supported  collaborative learning using  wirelessly interconnected
+          handheld computers. Computers & Education, 42(3), 289-314.
+
+© ISLS                                                                                                               175
+

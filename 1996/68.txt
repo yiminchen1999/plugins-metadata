@@ -1,0 +1,318 @@
+                              Teaching Real-World Analysis Skills
+                                 With a Goal-Based Scenario
+
+                                                     David A. Foster
+                                    The Institute for the Learning Sciences
+                                          Northwestern University
+                                          mfalcon@ix.netcom.com
+
+               Abstract:  This paper introduces a software architecture useful for teaching a particular
+               class of real-world analysis tasks. It is based on a kind of teaching framework called a goal
+               based scenario, a "learning by doing" environment in which the student acts in a realistic
+               role and obtains helpful coaching while performing assigned tasks.     I describe a fully
+               operational prototype system, Financial Report Analyst (FRA), which was built using this
+               architecture. In FRA, the student learns skills in financial statement analysis by playing the
+               role of a lending officer at a bank.    The approach offers several advantages over the
+               traditional business case method.   Usability tests of FRA were conducted with students in
+               the Kellogg Graduate School of Management at Northwestern University.     It is proposed
+               that the software architecture is applicable to teaching a variety of realistic analysis tasks,
+               both inside and out of the domain of business administration.
+
+   Introduction
+   Financial Report Analyst (FRA) is a multimedia educational software system that is designed to teach
+   students and professional trainees how to understand and critically analyze financial statements.           Its design is
+   based on a teaching framework called a goal-based scenario, in which the student becomes an actor in a
+   realistic scenario with an explicit role and an explicit objective [Schank, 1994].   In the course of trying to
+   achieve the objective, the student is provided with intelligent coaching and access to relevant cases, stories,
+   and explanations.
+
+   The concept of goal-based scenarios is grounded in cognitive principles including failure-driven learning,
+   cased-based reasoning, and learning by doing.     By using FRA, students can acquire knowledge in a way such
+   that in future situations they are able to recognize the conditions of applicability of their knowledge and apply
+   it appropriately. As will be discussed, the approach offers advantages over the traditional business case
+   method. Furthermore, the software architecture may have utility for teaching a wider range of analysis tasks.
+
+   The analysis tasks under consideration have a number of characteristics:
+
+      1. There is a relatively large amount of information and data that must be factored into the analysis.
+
+     2. Knowledge in the domain of interest is uncertain/probabilistic.
+
+     3. The nature of the analysis task is such that no single solution path can plausibly be identified as the
+      "correct" one.
+
+     4. Performance of the analysis task requires extensive reasoning with background knowledge.
+
+   These characteristics make it difficult to provide effective tutoring, for two principal reasons. The first is that,
+   since much of the task consists of reading, reasoning, and mulling, the program bas little evidence of what the
+  student is thinking during the interaction. The second is that there typically is not just one correct solution to
+   the problem, making it difficult and risky to criticize the student's actions and conclusions.
+
+68
+Advanced Business Education
+As with other areas of business administration, much of the knowledge in financial statement analysis is not
+easily captured by facts and rules. Thus it is reasonable to believe (in agreement with many graduate schools
+of business administration) that the extensive use of the case method in business education is a wiser and
+more effective approach than various approaches emphasizing general principles.
+
+Although there is not just one form of the business case method [Dooley & Skinner, 1977], the "classic" form
+of the business case method is aimed at promoting decision-making skills [Hunt, 1951].     Students are given
+case materials that describe a complex, real-world business situation which has a problem or issue requiring a
+decision.   Before class, they analyze the case and prepare a recommended decision or solution.      In class,
+which may     typically have  between   20 and  80 students,   the instructor  leads  a discussion  in which
+recommendations from some students are critiqued and debated.       Often, students also hand in a write-up
+which is graded by the instructor or an assistant. However, in practice the principles and ideals of case
+method administration are often not realized [see Argyris, 1980]; and Smith has pointed out that there has
+been little research which has closely examined the effectiveness of the business case method [Smith, 1987).
+At a close level of scrutiny, several shortcomings of this method can be discerned.
+
+    · Students get little or no help while they are working on the case.
+
+    · Feedback to the student is limited and comes long after the student performs her analysis.
+
+    · The method depends on the availability of a skilled, knowledgeable instructor who at some point can
+    give the students feedback, discussion, or an evaluation of their recommendations.
+
+    · Due to time constraints or teacher unwillingness, a concrete, detailed, step-by-step analysis solution is
+    rarely demonstrated to the student.
+
+    · Students' motivation for analyzing the case may too often be socially-oriented and "indirect" instead of a
+    direct interest in "participating" in the case scenario. Students' primary motivations often center on
+    getting a good grade, impressing the instructor, and/or protecting their egos during the class discussion.
+
+A computerized goal-based-scenario (GBS) can be effective in addressing each of these shortcomings.    Using
+a GBS to teach   financial statement analysis provides students with individualized tutoring and   coaching-
+typically impossible to provide in a large business class --in a comfortable setting without the time constraints
+of a class.
+
+Financial Report Analyst (FRA)
+In a goal-based scenario, the student is given a meaningful goal in a realistic scenario; this can enhance
+motivation and result in greater retention and transfer because students can see what the knowledge is for
+[Schank, Fano, Jona, & Bell, 1994].     In FRA, the student plays the role of a junior lending analyst in the
+corporate lending department of a bank; the goal is to make a good decision about whether or not to lend
+money to a company, and to do this the student must carefully analyze the company's financial statements.
+
+The software architecture includes several major components including: an analysis environment, containing
+tools and resources that support the student's efforts; a set of coaching rules that determine what advice is
+given to the student in what circumstances; a Recommendation Report that helps the student to structure her
+analysis and exposes some of the student's thoughts; and an expert demonstration, which induces the student
+to reflect upon her own analysis. Each of these components will be briefly described.
+
+The analysis environment
+
+The student is given a "company file" containing the financial statements and other relevant data, involving a
+request for some kind of long-term or short-term debt financing.   The student's job is to analyze the set of
+statements and to produce a report that lists her conclusions about the company and her recommendation
+concerning the proposed loan.
+
+                                                                                                                69
+   The student works in an analysis environment which contains: all of the items of the current company file; a
+   simple spreadsheet with capabilities similar to commercially-available spreadsheets; and a button pad [Jona et
+   al., 1991] which the student uses to navigate through FRA and to request information or coaching [Figure I].
+   The student can easily flip though the items in the company file and use data in the financial statements to
+   perform trend analyses, ratio analyses, projections, and other improvised calculations in her spreadsheet.                                                                               In
+   addition, the student has access to an embedded hypermedia system containing useful text and video.
+
+              IJotnn -    i,    IXIIO:idctllla
+              :eloticn:cio witb     me                    a:f the
+              fvttCw'ca·aicOaaltt.&oDa1a%:a1,.-R.tiqir:aali,:t 'ftlt
+              u wall.>   :i:·- :mm. t.all:inJ                                            ·
+              ::;-:; :i                bm-Jlli.mt. l'd _.,. to
+                                                       ra
+              11.-.   u, aat<UJg    tor                   ·   t&1.r1:r .u.bL·   ten           lNn       i.o bill,  tu»,zi,ot
+       rin.t:U:°!r.?i.ia ti!< Loo:!> ieolest """"·
+              l;a1D, W'H   UWDJ        I                   t11rly:bttty      cbZliC        ot  amqlltit,           1JOt. J
+                                                                     t                 r    r                                  r
+   == u:,.--;: :. = 1;1-=) Lm!;-ti,& u  iu1:!t_.  ·
+       o r :z:i:r- C:.tt D, ::"i=-Mw.
+    -I          ::w,u1.d aa:a.tisn Unt.                   I' TC bee.rd    a caor         tbclt  there       bD:s  bc'Cl1 a.
+              rccmt. increc:11: in produ.c:t rctum:I                        o.t. -               I 4m' t knot i1
+              :it'· a ...nous pne,i- ac no1-.                            Uo.   I .-.S           :D:,Ml1a u--. 11:l.11
+                                                                                                      1       11\
+              ;! C=,                                                                       !:                     IC..
+
+              I 11M  :rorvua    to }"OQ?'                  x1J>On.
+
+                           Figure 1:                                   The analysis environment.                                       On the left side is the company file and the
+                           company file item selector, which in this case contains eleven items.                                                                On the right
+                           is a general purpose spreadsheet. and at the bottom is the button pad
+
+   Coaching roles
+
+   Coaching is an important aspect of the system.                                                                                     To increase students' interest and to provide them with
+   memorable stories and perspectives on the task of financial statement analysis, we have gathered videotaped
+   interviews with a number of experienced analysts in the banking industry as well as an accounting professor at
+   the Kellogg Graduate School of Management at Northwestern University.                                                                                  Upon the student's request,     brief
+   video clips containing relevant war stories and analysis techniques are shown to the student while she is
+  working in the analysis environment
+
+  Coaching in FRA is analogous to the situation where an apprentice has been working on an involved, complex
+   activity with a human mentor nearby, and then realizes that she wants help and calls the mentor over.
+  Sometimes, with a quick look at the apprentice's progress, the mentor can give a terse piece of advice which
+  immediately satisfies the apprentice.                                                                           On the other hand, often the apprentice has some responsibility for
+  communicating to the mentor what her specific problem is, since there are a large number of paths the
+  apprentice could have taken and the mentor does not have a detailed model of the apprentice's mental state.
+  After the mentor has selected and delivered the most appropriate piece of advice, the apprentice often will
+
+70
+have follow-up questions that request clarifications, examples, the big picture, or more detail. She will often
+want to ask several questions in succession, perhaps sometimes backing up to previous topics.
+
+The mentor, knowing well the issues and details of the problem that the apprentice is working on in this
+instructional setting, will sometimes notice an aspect which the apprentice has overlooked, or some technique
+which it would benefit the apprentice to try. The mentor will seldom interrupt immediately, but instead will
+wait to see if the apprentice discovers it himself, because he knows the satisfaction the apprentice will get if
+she does discover by himself, and realizes that she will learn it more permanently that way. However, at some
+point the mentor will make the apprentice aware that he has a piece of advice if the apprentice is interested if
+the apprentice assents, the advice is given and then follow-up questions are answered.
+FRA is designed to have the coaching capabilities that this mentor has.  The foregoing description is an
+idealization, of course, but it aptly depicts the motivations and design rationale for FRA's "Coach". Coaching
+is adaptive and context-sensitive: exactly what kind of advice is given at a particular time is dependent on
+what actions the student has done so far, what conclusions she has drawn, and what advice has already been
+given. These tests are codified in a set of coaching rules.  The student may request advice at any time by
+clicking on a "Now What?" button, and occasionally advice may be preemptively offered by the Coach by
+lighting up a "New Advice" button.
+
+In general, the coaching rules   are designed to address all detectable failures the student may   have  while
+working on the task. The advice provided is not insistent on a particular solution, but can alert the student to
+unrecognized opportunities and warn the student about indefensible conclusions.
+
+The Recommendation Report
+
+During the analysis the student fills out a Recommendation Report, in which he indicates his conclusions and
+the reasons for them [Figure 2].
+
+                                                                                                                 71
+          Recommendation Report                                                                                                                                            twB AmNwK
+            Company:      The Refina     Coean y
+            Report by:    .Jeon Knowalo    t                                                                                                                   Date:   Septe111ber 1,     1988
+          CONCLUSIONS
+            Ouerall financial soundness:                                              ._IF_ a_ ir_ ! _______.......
+              Finaeial Problem Areas (checl: oe or both):                                    D Balaee sheet                                               [8] Gash eows and/or operations
+              Particular Problem Areas (checl: ell which apply):
+           D Buildup of inventories                                                                   [8] Oe¸rstatee accounts receivable
+           D Stretching trade credit                                                                  D Slo"w or decreasing sales
+           D1:8:1 oUtnhperroe(letxabplleaionp)e:rate¨p!io_nes_r_co_v_"r_ _ ag "_e©_t_io---[8l-Un- acce-pta- bly-hig-h C- 03tS-----------,
+            1:8:1 Questionable or improper accounting decisions
+           D Earnings manipulations
+             [gl Quegtioeble estimetes                                                     Descr1 be: eece ivab I es aI I ence                                   shrinking  oo  fast
+           D Materiel informetion unrepoe«ed                                                                                                                                t
+           D Misclae±iemed accounts or transactions
+           D Unejvorable auditor's opinion
+            Predictions  for duration     of  loan                                        period  (assumie loan is made as propoe°d in Loan                                 Request memo)
+          Proentability: Liquidity: ;;:::======== I Fair ,.. , ._IPo_or_____,......,i        Predicted Net Income in year of maturity:                                $1...._______,I
+             Lieelihed ofability to eke all agreed e yents to Upto"'n Bane as 3Cevduled: ._IMe_di_ u_m____,..__.i
+          .....i'...d.o. ·n· ·l:·r·u·p·'.c./i.s.ol.e·n··Y·:··[· .......................:""..!..........................
+            Other conclusions
+             eerall accountie oractices:  -                                           innLOAN RECOMMENDATION: I Lend only with special terms or covenantsr:E;::::,'.: eª [)ie¹dee restrictioe to demond,,.. I\1:8:1 Call-in Speculative __.l provisions Condition(s) oftechnical deekult: o;:r.1'.d..Q-bt_-_to_-_"_e£_ preisions i_t_y_r_a_t o _i ____::::::::I:::::l=',s=·=Cl====II$If.w;J,_1.r,!}
+            Resume analysis, wort on report later                                                      [ Recommendations complete: Submit report )
+
+              Figure 2:   A Recommendation Report that has been completed.                                                                                           The top portion
+             indicates the student's conclusions and some of their supporting justifications and
+              evidence, and the bottom portion indicates the student's specific recommendation.
+  The Recommendation Report serves several important purposes.                                                                                          One is to focus the student's attention on
+  what the specific goals of the analysis are; she thus is made aware of what issues are relevant for the task and
+  domain, and has an implicit model for the analysis task.                                                 Another is that the report serves as a limited but
+  needed window into the student's mind; as the student draws specific conclusions and so indicates on the
+  Recommendation Report, the program uses this evidence to assess (via the coaching rule mechanism) how
+  well she is grasping the significant issues in the case and what problems or misconceptions she might have.
+  The format of the Recommendation Report is designed to structure the argument being constructed by the
+  student
+
+72
+Expert demonstration
+
+After the student has submitted her recommendation, she finds out how the company subsequently performed.
+She then has the opportunity to see a demonstration of how an expert analyzed the financial statements of the
+company.     The expert demonstration is performed in the same kind of analysis environment as that used by
+the student in her own analysis.  Step by step, the expert types formulas into the spreadsheets, flips back and
+forth between the different financial statements, and points at particular numbers. Pach step is annotated with
+a description of what the expert analyst is thinking: what his current action is, why he is doing it, the
+hypotheses or conjectures he is pursuing, and/or the conclusions he is drawing.  The student, h aving studied
+the same case in the same analysis environment, gets a clear and concrete picture of the sorts of things one
+must do during an analysis, as well as a valuable point of reference on the actions and conjectures she tried
+during her own analysis.   The progress of the expert analysis is controlled by the student. At any time, she
+can stop it to ask questions via the hypermedia system, or to temporarily retrieve her own previous analysis
+for comparison.
+
+This approach is useful because, as stated earlier, there typically will not be just one correct solution to the
+analysis problem. The expert demonstration does not analyze the student's solution for her, but it induces her
+to reflect on her own solution.
+
+Usability Test
+
+Although there   are logical  arguments   for the appropriateness   of FRA's  architecture,  the pedagogical
+effectiveness of the approach in FRA will require empirical validation.    A prerequisite hurdle, however, is
+ensuring that the program is usable and understandable to students.    Accordingly, a usability study on the
+system was conducted.
+
+Twenty-one students in Northwestern University's Kellogg Graduate School of Management used FRA as a
+required assignment in a course entitled Corporate Reporting and Analysis, taught by Professor K. Ramesh.
+All students had previously had an introductory course in Financial Accounting.  Students analyzed a detailed
+case involving a medium-sized manufacturer.    The goal of the test was to expose any problems with the user
+interface, to see whether the problem scenario and analysis environment were comprehensible to students, and
+to obtain students' reactions to the program. Pach student spent approximately four hours working on FRA
+(including case analysis, submission of a Recommendation Report, and demonstration of the expert analysis.)
+Three types of data were collected: while the program was used, all student actions were automatically
+recorded and saved for later review; students filled out a questionnaire after use; and students were informally
+interviewed during and after use.
+
+Overall, the results were very encouraging.   To a large extent, success can be judged by the lack of negative
+feedback given by students: when the coaching, interface, and so forth work effectively, users tend not to
+notice them and assume that "of course that's how it should work."      Students generally found FRA to be
+understandable, helpful, and "user friendly", and uniformly claimed to enjoy using it. Several of them singled
+out the expert analysis as being particularly effective. However, a number of the students complained that the
+spreadsheets lacked features that they expected and wanted.      And many of the students wished they could
+have had more   time to   explore the  system, which     was not possible during this test due to scheduling
+constraints. A review of the recorded action-transcripts yielded few surprises.  In general, the spreadsheets
+were heavily used, and the Recommendation Reports completed by students were generally sensible and not
+far off from the "intended" analysis.
+
+Summary
+
+The software architecture that has been described--including the analysis environment, the report, the
+coaching rules, and the expert demonstration--may be applicable to a category of analysis tasks that is wider
+than just business administration. These same techniques could be used whenever the student is expected to
+analyze a case having a large amount of information and to make some kind of reasoned judgment or decision
+about the case situation. For example, there are a variety of administrative decision-making tasks in public-
+
+                                                                                                                 73
+   sector administration (e.g. health and welfare agencies, the military) and in the various professions (e.g.
+   medicine, law) which fit this mold.    The idea is that, whenever the   task revolves around making sense of a
+   situation or entity, analyzing alternatives, and making a decision, the same kind of environment can be used:
+   a domain-specific     Recommendation    Report     can   be  designed, coaching rules    formulated, and  an expert
+   demonstration scripted. Details of the architecture are given in Foster [Foster, 19%].
+
+   References
+   [Argyris, 1980]. Argyris, C. (1980).  Some limitations of the case method: Experiences in a management development
+   program.   Academy of Management Review,     5, 291-298.
+
+   [Dooley & Skinner,   Im].  Dooley, A. and Skinner, W. (1977).   Casing case method methods.   Academy of Management
+   Review, 2, 277-288.
+
+   [Foster, 1996]. Foster, D. (1996). A Goal-Based Scenario Framework for Teaching Analysis Skills in Realistic Contexts.
+   PhD Thesis, Northwestern University.
+
+   [Hunt, 1951].   Hunt, P. (1951). The case method of instruction. HarvardEducational Review, 21. 175-192.
+
+   [Jona et al., 1991]. Jona, M.· Bell, B., and Birnbaum. L (1991).  Button Theory: A Taxonomic Framework for Student
+   Teacher Interaction in Computer-Based Learning Environments.     Technical Report #12. April 1991, The Institute for the
+   Leaming Sciences, Northwestern University.
+
+   [Schank, 1994].  Schank, R (1994).  Goal-based scenarios: A radical look at Education. Journal of the Learning Sciences,
+   3 (4). 429-453.
+
+   [Schank, Fano, Jona, & Bell, 1994}.   Schank. R. Fano, A., Jona. M.. and Bell, B. (1994).   The design of goal-based
+   scenarios. Journal of the Learning Sciences, 3 (4), 305-345.
+
+   [Smith, 1987].  Smith, G. (1987).  The use and effectiveness of the case study method in management education: A critical
+   review. Management Education and Development,      18, 51-61.
+
+   Acknowledgements
+
+   This work has been supported in part by the Defense Advanced Research Projects Agency, monitored by the Office of
+   Naval Research under contracts N00014-90-J-4117 and N00014-91-J-4092.   The Institute for the Leaming Sciences was
+   established in 1989 with the support of Andersen Consulting.
+
+74
+

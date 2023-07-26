@@ -1,0 +1,165 @@
+     Combining Structural, Process-oriented and Textual Elements to
+       Generate Awareness Indicators for Graphical E-discussions
+            Rakheli (Rachel) Hever, Reuma De Groot, The Hebrew University of Jerusalem, Jerusalem, Israel,
+                                   Email: mt.scopus@gmail.com, msruma@mscc.huji.ac.il
+                     Maarten De Laat, The University of Exeter, Exeter, UK, M.F.DeLaat@exeter.ac.uk
+                     Andreas Harrer, Ulrich Hoppe, University of Duisburg-Essen, Duisburg, Germany,
+                                       Email: harrer@collide.info, hoppe@collide.info
+                Bruce M. McLaren, Oliver Scheuer, Deutsches Forschungszentrum für Künstliche Intelligenz,
+                                              Saarbrucken, Germany,
+                                          Email: bmclaren@dfki.de, olsch@dfki.de
+
+        Moderation   of  e-discussions  can  be   facilitated by online feedback  promoting     awareness    and
+        understanding   of the   ongoing  discussion. Such    feedback  may  be  based on     indicators, which
+        combine structural and process-oriented elements (e.g., types of connectors, user actions) with
+        textual  elements  (discussion  content). In  the ARGUNAUT       project (IST-2005027728,       partially
+        funded by the EC, started 12/2005) we explore two main directions for generating such indicators,
+        in the context of a synchronous tool for graphical e-discussion. One direction is the training of
+        machine-learning   classifiers to classify discussion    units (shapes  and paired-shapes)      into pre-
+        defined theoretical categories, using structural and process-oriented attributes. The classifiers are
+        trained with examples categorized by humans, based on content and some contextual cues. A
+        second direction is the use of a pattern matching tool in conjunction with e-discussion XML log
+        files to generate "rules" that find "patterns" combining user actions (e.g., create shape, delete link)
+        and structural elements with content keywords.
+
+Introduction
+        The term awareness is defined as "an understanding of the activities of the others which provides context
+for your own activity" (Dourish & Belloti, 1992). A great variety of tools for e-discussion and e-collaboration are
+available today, many of which offer awareness features for participants or moderators of discussions (for a review,
+see Soller, Martinez, Jermann, & Muehlenbrock, 2005). Awareness feedback in the different awareness tools has
+been based on various properties of the discussion, such as social interaction patterns, participation information,
+temporal stages and text analysis.   An interesting example of feedback on structural issues in e-discussions is the
+DREW system (Baker, Quignard, Lund & Sejourne, 2003), which highlights opposing opinions in discussion graphs
+Yet, a systematic integration and combination of structural, process-oriented, and textual aspects has only recently
+been  discussed  in initiatives such as  the  Interaction Analysis   project in the European     Kaleidoscope     network
+(http://www.noe-kaleidoscope.org).
+
+        One of the goals of the ARGUNAUT project (IST-2005027728, http://www.argunaut.org) is to obtain more
+meaningful indicators upon which to base online feedback to the moderators of synchronous graphical e-discussions.
+The methods described here were applied to the discussion products of a graphical e-discussion tool called Digalo
+(http://dunes.gr), but are relevant to other synchronous discussion tools, particularly graphical e-discussion tools.
+
+        Digalo discussions are held within an object space called a "map". Within this space, users contribute to the
+discussion by adding shapes representing argumentative ontology (e.g., rectangle for claims) and typing their text
+into them. Users    may also  link shapes  to other   shapes,  using arrows  of  different   types (support,   opposition.
+reference). The shape and arrow objects may be modified or deleted. All user actions are logged, and XML log files
+are generated detailing all the actions taken by the users (e.g., user_1 created a claim shape at time_x). For each such
+discussion map, we can investigate structural, process-oriented and textual elements. The structural elements are the
+direct or computable attributes of each shape or arrow object (such as type, creator, number of characters) and any
+combination using these attributes as building blocks. The process-oriented elements are comprised of user actions
+on the discussion objects, and sequences thereof (stressing the dimension of time and the process of discussion
+rather than the end product). The textual elements are the    free text contributions typed within each shape.
+
+                                                          286                                                    CSCL 2007
+          Within the context of the ARGUNAUT project, we are confronted with the challenge of combining some
+of the above-mentioned elements to generate awareness indicators. These awareness indicators will help us discover
+meaningful patterns in e-discussions. This approach is facilitated by the collaboration of specialized teams with
+expertise in various fields (pedagogy, argumentation, linguistics, software development, and machine learning). We
+believe our ongoing progress in this endeavor will have theoretical, pedagogical and technological implications for
+the evaluation of graphical e-discussions and for supporting the moderation of collaborative work and discussions.
+
+Analyzing Graphical E-discussions: Methods and Initial Results
+          We have focused on two approaches to the analysis of e-discussions, combining structural, procedural and
+textual elements: machine-learning classifications and a rule-based approach for the definition and discovery of
+action patterns. These approaches are expected to yield complementary analysis results for e-discussions. We have
+applied these two approaches to Digalo log files of classroom e-discussions with some promising initial results. The
+following sections present both approaches and a brief summary of our progress so far.
+
+          During  the  conference, we   plan   on demonstrating    both methods   described below:     the application  of
+machine learning to our pre-annotated examples and the definition of action sequence patterns and pattern-matching
+log-file search for these patterns, using a specialized tool (also described below).
+
+Machine-learning classifications
+          Taking a cue from previous work on automated analysis of collaborative argumentation (e.g., Domnez,
+Rosé, Stegmann, Weinberger, & Fischer, 2005), we applied machine-learning algorithms to the task of classifying
+the content of e-discussion contributions.
+
+          Graphical e-discussions (and specifically Digalo maps), may be coded or annotated at different levels of
+granularity. We began by focusing on individual contributions (shapes) as the classified units. We also classified
+contributions at a more complex unit of analysis, paired shapes, comprised of two contributions (shapes) and the
+link between them (arrow). This unit goes beyond a single utterance: it includes two distinct but related pieces of
+texts, and can   only  be interpreted  or categorized  using  both contributions. Additionally,    its definition  includes
+structural relationships (a connector), and the interpretation of the intent behind the text must also consider the order
+of their appearance, a process-oriented element.
+
+          The attributes selected for single-shape classification included: the type of shape, the length of text within
+it, and the presence or absence of several classes of links (e.g., presence of outgoing links to a shape by the same
+user). We selected three sets of attributes at the paired-shape level for analysis: a basic set that did not consider the
+order  of shapes  (e.g.,  whether the  shapes  were   created by the same  user,  their combined    text   length, type of
+connector), a set that assumed the shapes appeared in a particular order (e.g., whether the link created by the same
+user as the first shape), and a set that relied on our previous annotations for the shape level.
+
+          For each level of analysis, we created coding schemes based on theoretical, pedagogical and empirical
+considerations related to fostering productive collective argumentation. The coding schemes included, for example,
+labels   such as 'task management'     (shape level), and 'contribution followed  by  counter-argument'    (paired-shapes
+level). The coding schemes are content-oriented, but take into account other elements (e.g., type of link), in some
+cases where the text's intention is unclear. The initial coding schemes were fine-tuned via a process of 2 or 3 coders
+annotating a small number of maps and subsequent discussion between them. The resulting schemes were used to
+code 42 Digalo discussion maps at the shape level, and 21 of those maps at the paired shapes level. Inter-rater
+reliability was assessed and coding differences were resolved by discussion or decision rules.
+
+          The coded sheets were then analyzed by a variety of machine-learning schemes, implemented within the
+WEKA framework (Witten and Frank, 2005, e.g., C4.5 Decision Tree, OneR, AdaBoost with OneR, PART), to try
+and generate  accurate classifiers for new contributions. The initial results have been promising, in   particular for the
+shape-level label of `critical reasoning' (the C4.5 Decision Tree had 86% of overall accuracy) and the paired-shapes
+label of `question followed by answer' (the PART algorithm had 94% overall accuracy).       Some of the other
+classifiers also resulted in high accuracy, but relied too much on biased data (e.g., 89% of the shapes were 'on
+topic').
+
+                                                            287                                                  CSCL 2007
+The Pattern Discovery Tool: Creating Rules to Detect Meaningful Action Sequences
+         The Pattern  Discovery  Tool, developed    by  the  COLLIDE       research group (Harrer,  Vetter,  Thür,  &
+Brauckmann, 2005), was applied to the task of searching for patterns of user actions in e-discussion logs.
+
+         Sequences of actions, units comprised  of  sequential  user actions  logged  by the discussion   tool, can be
+considered process-oriented elements. Each action can be defined using the type of action (e.g., create, delete), the
+type of object(s) involved, the user(s) involved, and keywords to search for in the text parts of the objects. The
+generated PROLOG rule defining a sequence of such actions also includes a temporal element of order (first action,
+second action, etc.), and referencing information (for users and objects). For example, you can define a sequence in
+which a 'claim' shape is created by a user, modified by the same user, and later deleted by another user.
+
+         Our approach in the ARGUNAUT project is to pre-define possible action sequences which we think may
+be meaningful, i.e. representing specific theoretical or pedagogical phenomena, and to look for such sequences in
+XML logs of discussions.  For example, consider a sequence in which one user creates a shape, another user creates
+a question shape (or a shape containing a question keyword)    and then links it to the first user's shape, followed by
+the first user creating a shape with keywords such as 'because', 'reason', 'therefore' and linking it to the question
+shape. This could represent a request for clarification or reason (perhaps the initial contribution was an unsupported
+claim), which prompted the first user to give reasons for his or her opinion. This is exactly the type of pedagogical
+phenomenon within e-discussions that interests us.
+
+         However, the 'hits' for a particular rule in the discussion logs may not always reflect the phenomenon we
+wish to capture. We may therefore attempt to annotate the hits received according to whether they truly represent the
+semantic interpretation assigned to  them ('good   hits'), and then  to use  machine  learning  on these   annotations
+(pending a sufficient number of coded examples to serve as a training set for classification learning).
+
+Future Directions in the Support of e-discussion Moderation
+         Our vision is to utilize the products of the approaches described above to support the ARGUNAUT system,
+a tool currently in development. This tool is aimed at supporting online moderation of graphical e-discussions (e.g.,
+Digalo discussions), providing meaningful feedback and advice to the moderators. The first prototype of the system,
+to be completed in January 2007, is expected to integrate an AI classifier for 'critical reasoning' as well as a few
+PROLOG rules that can identify action patterns.
+
+   It will take further theoretical and empirical work to reach a close-to-optimal set of indicators. To reach this
+goal, we plan to use an iterative process of experimentation and refinement, in which we will receive feedback from
+end users (moderators) about the effectiveness of the produced indicators. We also plan to observe and analyze the
+effect of the use of our awareness tools on the quality of e-moderation and e-discussion. However, we can already
+say that these innovative approaches to combining structural, process-oriented and textual elements have displayed
+great potential for analyzing graphical e-discussions and providing support to moderators of such discussions.
+
+References
+Baker, M., Quignard, M, Lund, K., & Séjourné, A. (2003). Computer-Supported Collaborative Learning in the
+         Space of Debate. In Proc. of Computer Supported Collaborative     Learning  2003, pp. 11-20.
+Donmez, P., Rosé, C. P., Stegmann, K., Weinberger, A., & Fischer, F. (2005). Supporting CSCL with Automatic
+         Corpus Analysis Technology. In Proc.   of Computer Supported Collaborative Learning     2005, pp.   1-10.
+Dourish, P., &  Belotti, V. (1992).  Awareness     and Coordination     in Shared   Workspaces. Proceedings     of  the
+         Conference on Computer-Supported Cooperative Work, pp. 107-114.
+Harrer, A., Vetter, M., Thür, S., & Brauckmann, J. (2005) Discovery of Patterns in Learner Actions. In Proc. of
+         Artificial Intelligence in Education (AIED), IOS Press, Amsterdam, pp. 816-818.
+Soller, A., Martinez, A., Jermann, P. & Muehlenbrock, M. (2005). From Mirroring to Guiding: A Review of State of
+         the Art Technology for Supporting Collaborative Learning. International Journal of Artificial Intelligence
+         in Education, 15, 261-290.
+Witten, I. H. & Frank, E. (2005). Data Mining: Practical Machine Learning Tools and Techniques, Second Edition,
+         Morgan Kaufmann.
+
+                                                         288                                                  CSCL 2007
+

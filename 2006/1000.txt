@@ -1,0 +1,113 @@
+HelioRoom: Problem-solving in a whole class visual simulation
+
+                                       Mark Thompson and Tom Moher
+      Department of Computer Science, University of Illinois at Chicago, Chicago, IL 60607 USA
+                                  Email: mthomp2@uic.edu, moher@uic.edu
+
+       Abstract: HelioRoom simulates the orbital motion of the planets in the Solar system on a
+       set of synchronized computer displays situated on the walls of the classroom, with planets
+       "orbiting" around the periphery of the room. Third grade students used the application for
+       a   problem-solving    activity requiring    the  collection   of evidence    in  support   of theories
+       concerning       the identity   of  planets    whose    size   and    surface   characteristics    were
+       intentionally obscured.
+
+Introduction
+       Classroom     phenomenaria      such   as ant   farms     and  moth   hatcheries   afford   students   access  to
+phenomena whose rate of change requires observation and data collection ranging over extended courses of
+time, important skills in observational sciences such as astronomy and seismology. Phenomenaria of this
+kind have three important characteristics that arguably contribute to their value as learning artifacts, and
+that could inform the design of technology analogues. First, they are public, in that they are accessible to all
+members of the class. Second, they are persistent; phenomenaria are accessible continuously, during the
+whole school day. Finally, they involve the presentation of the phenomena over days and weeks instead of
+class periods. In this paper, we briefly describe an effort to construct a simulation of one phenomenon--the
+orbital motion of the planets in the Solar system--incorporating these three characteristics in our design,
+and our experience with its use in a third grade classroom to support an evidence-based learning activity.
+
+HelioRoom
+       HelioRoom      is a  visual simulation    of the  orbital motion    of  the planets   in the   Solar system   that
+explicitly attempts  to  adopt   the public,  persistent,   and  long    term  attributes   of  phenomenaria.     In our
+implementation,   a tablet  computer   is Velcroed    to  the  middle   of each   of the four   walls  of a  classroom.
+                                                    Adopting    the  pretense  that  the Sun    is coincident   with the
+                                                    center    of  the    room,     the   tablet    computers    become
+                                                    synchronized     viewports    into  the  Solar    system,  with  the
+                                                    planets   revolving  360º    around   the  periphery,   temporarily
+                                                    entering a viewport, then leaving and becoming invisible for
+                                                    a while,     then entering    the   next   viewport,    and   so on.
+                                                    HelioRoom presents a greatly simplified model of the Solar
+                                                    system. The Solar system is reduced from ratio to ordinal
+                                                    scale;  the  order   of   the  planets   is maintained,     but  the
+                                                    distances  among     them  are   not proportional    to their actual
+                                                    distances    from    the  Sun.   Orbital    periods   are   reduced
+                                                    proportionately. Size and surface features are intentionally
+                                                    ignored; each planet is represented only as a uniform size
+      Figure 1. HelioRoom display.                  sphere of a distinct color. The overall illusion is of colored
+                                                    discs  traveling  in a   counter-clockwise     fashion  at  different
+speeds, with some discs crossing in front of other discs as they overtake them (see Figure 1).
+
+Classroom Experience
+       HelioRoom was introduced to a third grade classroom of 25 children, with the cover story that our
+research lab had built the simulation, but now couldn't remember which color belonged to which planet.
+The students  had   just completed   an   introductory    unit on   the  Solar system,   focusing     on the  order  and
+properties (e.g., size,  orbital period)  of the planets.   Our   goal   was  to  leverage  their  nascent   declarative
+astronomy   knowledge    in the  performance     of an   ambitious    evidence-based     inquiry.  The   simulation  ran
+continuously for nine class days (until the end of the school year). During that period, as students would
+
+                                                         1000                                                      ICLS 2006
+make observations about the relative order of colored disks, they wrote their observations on index cards
+and posted them (and theories drawn from them) to a public "Idea Board" on the wall. Periodically, the
+students would come together as a whole class to propose theories about planet colors. As consensus was
+reached on the identity of a planet-color combination, it was written on the blackboard.
+
+         Not surprisingly, the task proved challenging for the third graders. As a group, after nine class
+days they had correctly identified six planets. The primary instructional design implication of the activity
+became evident after the first few group discussion sessions: the density and lack of organization of the
+observations on the Idea Wall made it extremely difficult for students to retrieve the evidence they needed
+to construct    argument   chains  to  support  their  theories.  Rather   than    populating  a  data  space   with
+observations  and  then  exploring   the aggregate   data   set  for a global  solution,  the students  adopted   an
+incremental  "inside-out"   strategy,  first identifying (within  seconds     of the introduction  of  the activity)
+Mercury, and then building out planet by planet away from the Sun.
+
+         As individuals, students posted an average of 3.5 index cards (many with multiple observations or
+theories) and verbally presented an average of 3.3 theories over the course of the whole-class discussions.
+Some students "specialized" in certain planets; Pluto, for example, drew over 30% of references during
+class discussions  and   20%   of  references  on  the index    cards. Students   supported   written  theories with
+evidence just over 50% of the time; support for theories was a procedural requirement during the group
+discussions. Interestingly, students favored the velocity evidence base over occlusion evidence by about a
+2:1 ratio.
+
+         There   was   concern  at the outset   that the dynamism      of the  displays   might  raise problems   of
+competing attention during other class activity. In practice, this proved not to be a problem, as the students
+quickly relegated the displays to the background of their attention as appropriate. The classroom teacher
+encouraged participation and devoted occasional class time for students to work on the task.
+
+Conclusion
+         HelioRoom is an example of a broader class of applications that we call embedded phenomenon:
+simulations that map dynamic science phenomena to the physical space of classrooms, and allow students
+to act as scientists by using computers as simulated instruments for measuring or viewing those phenomena
+(Moher, et al., 2005).   Inspired by the concepts of participatory simulations (Colella, 2000) and ambient
+devices (Wisneski, et al., 1998), embedded phenomena share important commonalities with other research-
+based  classroom   (Rogers,  et al.,  2002)  and  outdoor   (Klopfer,  Squire,   &   Jenkins, 2002)   environments,
+including the use of distributed embedded technologies to represent simulation state to groups of learners.
+Embedded phenomena differ from these along the dimensions of persistence and duration; it is not used as
+a serial component of instruction, but rather runs concurrently and continuously as instruction proceeds.
+HelioRoom is currently undergoing a second classroom trial, augmented by a scaffolding application that
+provides a simple database where students can store and retrieve observation data.
+
+References
+Colella, V.  (2000).   Participatory  Simulations:   Building    collaborative understanding    through   immersive
+         dynamic modeling. The Journal of Learning Sciences, 9(4), 471-500.
+Klopfer, E., Squire, K., & Jenkins, H. (2002). Environmental Detectives: PDAs as a window into a virtual
+         simulated world. Proceedings Wireless and Mobile Technologies in Education 2002, 95-98.
+Moher, T., Hussain, S., Halter, T., & Kilb, D. (2005). RoomQuake: Embedding dynamic phenomena within
+         the physical space of an elementary school classroom. Extended Abstracts ACM Conference on
+         Human Factors in Computing Systems 2005 (CHI 2005), 1665-1668.
+Rogers,  Y., Scaife,   M., Harris, E., Phelps,  T.,  Price,  S., Smith,   H., Muller, H.,  Randell,   C., Moss,  A.,
+         Taylor, I., Stanton, D., O'Malley, C., Corke, G. & Gabrielli, S. (2002). Things aren't what they
+         seem to be: innovation through technology inspiration. Proceedings Designing Interactive Systems
+         2002, 373-377.
+Wisneski,   C., lshii, H., Dahley,   A., Gorbet,   M.,  Brave,   S., Ullmer,   B., &  Yarin,   P. (1998).  Ambient
+         displays: Turning   architectural   space into  an  interface  between    people and  digital information.
+         Proceedings International Workshop on Cooperative Buildings 1998, 22-32.
+
+                                                        1001                                                    ICLS 2006
+

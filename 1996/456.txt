@@ -1,0 +1,307 @@
+           ICONCHESS: An Interactive CONsultant for CHESS Middlegames
+
+                               Santos Gerardo Lazzeri               Rachelle Heller
+                               lazzeri@seas.gwu.edu                 sheller@seas.gwu.edu
+
+                              Department of Electrical Engineering and Computer Science
+                                           The George Washington University
+                                                          U.S.A.
+
+    1         Introduction
+
+              Ever since Shannon [Shannon 50] published his proposal for a chess playing program, most programs
+    have followed the brute force approach to chess, which relies on searching a large number of possible chess
+    positions in order to produce  a move    that is  appropriate  for a given  chess position.  Programs   that  have
+    dominated the computer chess scene through the years, such as those described in [Marsland et al. 90], rely
+    primarily on fast search-based algorithms and/or special purpose chess hardware rather than on an intensive
+    application of knowledge. A few systems have used a knowledge-based approach to deal with chess positions.
+    Unfortunately, these programs [Wilkins 80], [Pitrat 77] have been able to deal only with very limited subsets
+    of the game. The problem of teaching chess has also been rarely explored. In addition to the canned tutorials
+    found with several commercial chess programs, the intelligent tutoring system illv1RAO [Gadwal 90], and the
+    Chessmaster's natural language advisor, while limited, are perhaps the most representative examples of the
+    application of artificial intelligence (AI) techniques   for teaching chess.  Despite  the  limited effort in this
+    direction, cognitive psychology research suggests the importance of different factors, such as inexact pattern
+    recognition [De Groot 78], [Newell et al. 72], and high-level knowledge [Cooke et al. 93] which have been
+    successfully handled by AI techniques, such as case-based reasoning (CBR) [Schank 89], and fuzzy logic in
+    the creation of learning environments in other fields, [Schank et al. 94], [Edelson 92], [McNeill et al. 94].
+    ICONCHESS combines some of these techniques in a learning environment for chess middlegames.
+
+    2         ICONCHESS: A General View
+
+              The main purpose of ICONCHESS is to provide high-level advice about chess middlegame positions.
+    This paper highlights some of the main features of ICONCHESS, a complete description can be found in
+    [Lazzeri 95]. From the user's point of view, ICONCHESS is capable of doing the following main high-level
+    tasks: 1) Analyze  a chess  position,  extracting its relevant features. This analysis is particularly targeted    to
+    chess middlegame positions, even though it might be applied to other types of positions. Furthermore, it is
+    expected that players with a moderate level of skill will benefit the most from this analysis. 2) Evaluate a chess
+    position and suggest possible strategies for each side in terms of the relevant features of the position. 3)
+    Retrieve similar positions from the knowledge base in order to obtain additional advice. 4) Present the analysis
+    to the player using a graphical approach, by highlighting relevant squares in a chess diagram, or a textual
+    approach, by giving brief textual explanations of the most relevant features of a position.
+              [Fig. I] presents the information flow through the system. ICONCHESS has two main components,
+    an EXPERT, used to compile all the knowledge relevant to a specific position, and a CONSULTANT, used to
+    present this information to the student in the most appropriate format. Furthermore, several knowledge bases
+    are required in order to generate the advice. These knowledge bases take different forms, such as case bases,
+    rule bases, and fuzzy tables, as illustrated in [Fig. I]; they will be explained in detail in subsequent sections.
+              A typical session with ICONCHESS is started by the user providing the ORIGINAL POSITION,
+    which is the case the user wants to analyze. The CONSULTANT handles this interaction and, when requested
+    by the user, passes the necessary information to the EXPERT, so that the position can be evaluated and its
+
+456
+similarity metric computed. The evaluation and similarity metric are then passed back to the CONSULTANT,
+which displays them for the student. Some additional advice may now be requested by the user in order to
+clarify this information. The CONSULTANT can provide the new advice in the form of a textual description
+or as visual advice displayed by highlighting relevant squares on the ORIGINAL POSITION. The user can
+now either modify some of the characteristics of the suggested similarity metric, or use it as is, in order to
+obtain a list of similar positions from the case base. The similarity metric is passed back to the EXPERT,
+which uses it to rank the positions in the case base according to their similarity with the case study, and then
+returns a sorted list that is displayed to the user by the CONSULTANT. The user can then choose from this list
+those cases to be retrieved for further study. Once retrieved and displayed by the CONSULTANT, cases can be
+studied  by applying to  them  any  of the commands                         that  can   be applied to  the ORIGINAL    POSITION.
+Furthermore, specific advice about each of the similar cases can be obtained, along with a list of those actions
+that were recommended for the case retrieved and are likely to be appropriate in the ORIGINAL POSITION.
+
+                                                              SIMILAR
+                                                               CASES
+
+Figure 1: Information Flow in ICONCHESS                                           Figure 2: Influence Subdivision
+
+3        Chess Knowledge Structures
+         Since the main    focus of  ICONCHESS                          is the middlegame,    four  main   factors are used   in the
+evaluation: material, pawn structure, king protection, and influence. ICONCHESS uses these factors to give
+detailed information about their relevance, and to compose a similarity metric that can be used to retrieve
+similar cases from a case base of relevant chess middlegame positions. The material metric indicates not only
+the material strength for each player, but it can also be used to determine how close the position is to the
+endgame or opening. The material is computed by using the following standard table of values for each piece
+and pawn, similar to the one used in [Shannon 50]: king = 200, queen = 9, rook = 5, bishop= 3, knight = 3,
+pawn = 1. The pawn structure is useful to determine to some extent the type of opening that was used to reach
+a position, this is the first step to determine the possible strategic objectives for both players. ICONCHESS
+relies on a set of Fuzzy Tables which are predefined patterns that represent some of the most common pawn
+structures  encountered in the middlegame   (i.e.                       Canonical Structures). Each    Fuzzy Table  represents   one
+particular Canonical Structure. A Fuzzy Table allows the system to classify the pawn structure that appears in
+a given position in terms of how close it is to the Canonical Structure represented by this particular Fuzzy
+Table. In order to determine which Canonical Structure is closer to the pawn structure displayed in a                         given
+position, a metric is computed. This metric is called the Closeness Value of the pawn structure of a color
+corresponding to a given chess position with respect to the Canonical Structure with which it is being
+compared. Implementation details can be found in [Lazzeri 95]. Three different factors compose a king's
+protection evaluation in ICONCHESS:   the king's location, which allows the program to guess if it has castled
+or not; the pawn cover, or the number and location of pawns that protect it; the strength of the defensive and
+attacking pieces that have a direct impact of the king's position. These factors are used to index a table that
+contains information about  specific weaknesses                        of the  specific configuration. The  influence  metric is  an
+attempt to determine the impact of the fast pieces (e.g. queens, rooks, bishops, and knights) on the different
+
+                                                                                                                              457
+  parts of the board, thereby getting a general idea of the balance of power throughout the board. Influence is
+  related to the well known concept of mobility in chess, and it is defined as the number of possible moves of the
+  fast pieces  of a color in 6 different                   sectors     of the board  as defined  in [Fig. 2],                 for    which  the         following
+  abbreviations apply: UQS = Upper Queen Side, UC = Upper Center, UKS = Upper King Side, LQS = Lower
+  Queen Side, LC = Lower Center, LKS = Lower King Side.
+
+                                                                                                                        lad's p!IWI skuclllre aivice:
+                                                                                                                        lose Matc!i. c1mmen1J; should be accurate. :,:
+                                                                                                                       There are usually 2 stroag piea:(s): !Gog'sishop, Knights. Time a,e usually 1 weak{\l
+                                                                                                                       piea:s: Queen's Bishop. There are usually )
+                                                                                                                       3 importanl leatlre{s): N 1n K5 · Coaol        }
+                                                                                                                       11 ctt, diagon1I b&h2 is Open · The            {
+                                                                                                          lollowi1g 1 idc Abel: f actionls) are reaimmended: King } . There arc no important at!ions
+                                                                                                                       o    ,.,,.al
+                                                                                                                       !!!.  n\Chessa<Mdalas\lmlcauf.pos           :ii: :!i:
+                                                                                                                            He's pawn swcture advice:
+                                                                                                                        edl11n Match. c111me are somewbat
+                                                                                                                       a ppropriate. There are no parlicelarly slrong
+                                                 Lazzeri                                                                eces. There are asualy 1 wealc plms: Q
+                                                Lazzeri  1Lazzeri-1WCICEA»iubaSanllls G. LaneriGouid_o    :ll!::5[=7   rec111mended: Rellm Material, II necessary.Develop piea:s, Trade pieces tt possible. TheiI.i.I,)I.!
+
+        Figure 3: Retrieving a Similar Case                                                   Figure 4: Sample Advice
+
+          For any case-based reasoning system to work, it is necessary to develop a similarity metric for the
+  cases or situations that the system will encounter. This similarity metric will allow the program to identify
+  those cases  in   the knowledge   base                   that    are similar enough    to the  current  problem                     to provide           relevant
+  information. In the case of chess positions, it is necessary to consider not only syntactical similarities (i.e. the
+  exact position of pieces), but also semantical similarities (i.e. positions where the strategical goals/plan for
+  each  player are  similar, even though                       the actual pieces  in the   board or their positions                   are  not         the     same).
+  Previous attempts to formulate a similarity metric for chess positions are described by Levinson [Levinson 85],
+  and  Botvinnik   [Botvinnik  84). One                    of the   main     contributions of ICONCHESS                     is the    development                     of                                    a
+  similarity metric  that can  consider                    both    syntactic  and semantic  similarities  between                    chess positions.                  The
+  second main contribution of this work is the development of an algorithm to utilize this similarity metric in
+  order to generate high level advice for a given chess position. ICONCHESS's similarity metric is based on the
+  4 evaluation factors described above. As the evaluation factors are computed, a specific weight is assigned to
+  each of them according to the particularities of the position. These weights are used to combine the different
+  evaluation factors through a weighted average in order to generate a similarity metric that can be used for
+  retrieval. The weights are an estimate given by the program as to how important each factor is to classify the
+  position. Since it is always desirable to give some degre of control to the user, particularly in learning
+  environments, the user is given the opportunity to select alternative pawn structures and to modify the weights
+  that are involved in the computation of the similarity metric before making the actual search for relevant cases.
+          ICONCHESS uses 2 different kinds of similarity: 1) Straight Similarity, where white features in the
+  current position are compared to white features in the case and black features in the current position are
+  compared to black features in the case, and 2) Reversed Similarity, white features in the current position are
+  compared to black features in the case and black features in the current position are compared to white features
+  in the case. A list of all the cases in the case base, sorted by straight similarity and displaying also the reversed
+  similarity value for each case, is presented to the user in a Similar Cases Scrolling Window. The user can then
+  select and retrieve the case/cases to look at. The information displayed to identify each case includes Names of
+  Players and Place and Date [Fig. 3]. Each position in the case base contains a case description and provides
+  some high-level advice for both players. The most relevant pieces of information for each case are: I) Position
+
+458
+Type Descriptors,   which  give general    information about   the position, (e.g. open,  strategical, etc.), and 2)
+Recommended Actions for each player, which includes specific actions, as well as the number of moves where
+each action is illustrated, preconditions per action, goal for each action, success/failure of the action in the
+case, and a brieftextual explanation of the position.
+
+4          Different Types of Advice
+           For each evaluation factor, a summary advice is presented in a textual/numeric format with a brief
+evaluation   of the position. More    detailed advice, visual  or  textual,  can be obtained by    clicking   on  the
+appropriate buttons. [Fig. 4] illustrates the different types of advice. There are several ways to take advantage
+of the similar cases in order to get a better understanding of the main issues in the position. The first option is
+to display the continuations of the similar cases just to get a suggestion about how to proceed from the position
+we are studying. This approach is particularly useful when the case is highly similar to the position under
+study. A second analysis is to evaluate the case position and compare the advice provided for each evaluation
+factor obtained from the two positions being compared. A third way to get advice from the case is to review the
+summary of the main features of the case and the recommended actions for each player as well as those
+recommendations that according to ICONCHESS can be transferred from the case to the position under study.
+
+5          Preliminary Tests and Conclusions
+           Two experiments were done in order to validate the usefulness of ICONCHESS. The format of the
+main experiment was similar to what is known as a "Simple One-Group Design", with I subject pool, and 2
+different  treatments. In Treatment     1, the subject analyzes    a chess   middlegame   position prior   to  using
+ICONCHESS, (i.e. no treatment). After a training session, the subject is asked to use ICONCHESS in order to
+analyze the position (i.e. Treatment 2), and then modify the original evaluation in case anything new was
+learned from using ICONCHESS.         Finally, the subject is asked to analyze a 2nd middlegame chess position,
+where the effect ofusing ICONCHESS on the subject's overall ability to analyze a chess position is observed.
+           Ten subjects, 7 male and 3 female, ranging in age from mid-20's to mid-50's, in chess skill from
+beginners that still had trouble understanding special moves, (i.e. castling and promotion), to experts (i.e.
+approximately 2000 rating points in the U.S. rating system), and in familiarity with the computer platform
+(MS-Windows)     from   beginners to   advanced users. Most    of the users  had   played against  computer    chess
+programs but had not used any computer assisted instructional system for chess at the level of sophistication of
+ICONCHESS. The users seemed to like the advice provided by ICONCHESS. According to the questionnaires,
+most ofthe different categories of advice received an average of at least 3.7 in a scale of I - 5 where l was the
+worst possible value and 5 the best possible value. See [Tab. I], [Tab. 2].
+
+           AVERAGE EVALUATION                                            AVERAGE EVALUATION
+Advice            VISUAL              TEXT                               USEFULNESS         EASE OF USE
+Material          3. 7                3.3              Weight Changes               3.0                4.4
+Pawn Structure    3.9                 3.8              Similar Cases               4.1                 4.1
+King Protection   3 .8                4.0              Case Advice                 4.4                 4.0
+fu.fluence        4.5                 4.0              Transfer Advice              3.9                4.1
+                                                       Case Browsing               4.6                 4.6
+                                                       Overall                     3.8                 4.3
+           Table 1: Quality of Advice                           Table 2: Usefulness & Ease of Use
+
+           It seems that the subjects were able to understand and utilize the advice provided by those categories
+(e.g. the visual and textual advice for pawn structure) quite well. They were most impressed with the visual
+advice for influence which was rated at 4.5, close to the maximum possible evaluation. They all found that the
+way this advice was presented gave them a feel of the distribution of the forces of each player in the chess
+board at a glance, something that was difficult for them to do without ICONCHESS. The ease of use of the
+
+                                                                                                               459
+  features related to the case-based advice was rated above 4.0 for all the categories, which indicates that they
+   did not  have   any major   problem  understanding or    using the  interface provided    to use those  features.
+  Furthermore,   the  usefulness of most  of these features  was  also ranked high, in  the  range  3.8-4.6, which
+   indicates that the subjects found the case-based approach to be appropriate to learn new concepts about chess
+   positions. Two features were rated particularly high, case advice at 4.4, and case browsing at 4.6. It seems the
+   subjects found the detailed descriptions of similar cases (e.g. case advice) useful to understand the high level
+   ideas that could be applicable to their problems, while the ability to browse through the moves of similar cases
+   (e.g. case browsing) gave them hints about specific moves or series of moves that could be appropriate to deal
+   with their particular problem positions. These results indicate that the only categories that rounded to 3.0 were
+   the textual advice for material and the usefulness ofthe ability to change the weights of the components of the
+   similarity metric. The former seemed not to provide much more information beyond what is evident for most
+  players, even the beginners. The latter received the average score primarily because most of the subjects did
+   not have enough a priori knowledge to feel confident in modifying the weights and therefore preferred to
+   follow the program's recommendations. A few of the subjects did not even attempt to use this feature and did
+  not evaluate it at all. The objective of the last section of the questionnaire was to determine, from the pojnt of
+   view of the subjects, if they had found ICONCHESS useful    to understand the two positions presented to them.
+  The average values given to the question in this final section were: Knowledge acquired from ICONCHESS
+  about position 1: 3.2, Knowledge acquired from ICONCHESS         that was useful to understand position 2: 3.8,
+  Similarity between positions 1 and 2: 1.9. These results show that the advice was to some extent useful for the
+  subjects to understand position 1 (e.g. average evaluation slightly over 3), and more importantly, the subjects
+  found that ICONCHESS provided them with valuable information that helped the subjects in their study of
+  position 2 (e.g. average evaluation close to 4). A few of the users were able to recognize the reversed similarity
+  between both positions, yet only one of them assigned a value as high as 3 to the similarity between the two
+  positions; therefore the average evaluation for that question was so low (i.e. barely below 2).      The results
+  obtained from the questionnaires were encouraging, yet their reliability is not very high, since they are only the
+  reflection of the   subjective evaluation by the subjects. A   more  objective evaluation  of ICONCHESS      was
+  obtained by looking at the performance ofthe subjects in the tasks presented to them before and after its use.
+            The Expert Evaluation was done by comparing the performance of the subjects in the questionnaires
+  about position I before and after using ICONCHESS, and also in the questionnaire about position 2. We define
+  the concept of profitability to be the degree of a subject's qualitative performance improvement after using
+  ICONCHESS according to the expert observer's judgment. The subjects can be divided into 3 different groups
+  according to the level ofprofitability (A, B, C). Group A was the group for which the use ofICONCHESS was
+  most profitable. The subjects in this group either made dramatic improvements in their evaluations or were
+  able to refine their ideas after using ICONCHESS. Group B consisted ofthree subjects who were able to profit
+  to some extent from their session with ICONCHESS, yet not in a way as dramatic as those subjects in Group
+  A. Subjects in this group were able to fine-tune their evaluations and to obtain new evaluation guidelines that
+  were applied in subsequent evaluations. Subjects in Group C did not profit much from ICONCHESS. Some of
+  them obtained a few general ideas. Their level of chess skill was at the extremes of the skill range in the
+  subject pool. This group also consisted of 3 subjects. One of them was an advanced player, while the others
+  were absolute beginners. The results ofthe main experiment were: 1) The evaluation ofICONCHESS given by
+  the users was positive. The average results indicate that they liked particularly the visual advice on influence
+  and the case advice. 2) The session with ICONCHESS helped most of the users to improve the evaluation of
+  position 1 and to direct their evaluation ofposition 2. 3) The subjects were able to profit from ICONCHESS at
+  different  levels. Subjects who  were  at the extremes  of the  subject pool   chess skill range  (i.e. advanced,
+  beginners) were the ones who profited the least from ICONCHESS, while subjects in the middle of the skill
+  range had an easier time learning from the program. From these observations and results we can conclude that
+  ICONCHESS was useful to provide strategic advice. Even though some of the subjects had problems with
+  some of the features of the program, the average results indicate that the majority of the subjects were able to
+  profit from their session with ICONCHESS. Particularly appealing to the users were the visual advice on
+  influence and the case advice. The advice provided by ICONCHESS reached beyond one specific position,
+  since the subjects were able to apply some ofthe knowledge obtained while analyzing position I in their study
+  of position 2. This is an indication that the case based approach is actually appropriate for teaching chess
+  middlegames.     The subjects were able to profit from ICONCHESS at different levels. Some of them greatly
+  improved   their   understanding of the   game, others had  smaller  gains  in knowledge/insight,  while   others
+
+460
+obtained just a small amount of new knowledge from their experience with ICONCHESS. This is also an
+indication that the implementation ofa student model may improve the ability ofICONCHESS to help more
+substantially a wider variety ofusers.
+       A follow-up experiment was carried out in order to confirm the :findings ofthe first experiment. Two
+subjects came back for a second session, one from Group A, and one from Group B, according to their results
+in the first experiment. This experiment only differed from the main one in the level ofdifficulty ofthe 2 chess
+positions used, which was somewhat higher. The elapsed time between taqe participation ofthese subjects in
+the 2 experiments was between 2 and 3 weeks, during which they did not use ICONCHESS. The subject from
+Group B was a strong chess player who was able to understaod quite well the problems in this session, which
+reduced the impact ofICONCHESS. The other subject, a beginner-intermediate chess player was able to grasp
+several interesting ideas from using ICONCHESS, including the importance ofpiece mobility and the concept
+ofreversed similarity. The questionnaires showed similar ptterns as those found in the first experiment for
+these 2 subjects. In short, this experiment confirmed that the level of skill of the subjects was important to
+determine the usefulness ofICONCHESS. Some ofthe future work in ICONCHESS that was suggested by the
+results ofthe experiments includes the incorporation of larger knowledge bases and the implementation ofa
+student model. Even though ICONCHESS was specifically designed for chess, some ofthe techniques, such as
+the schemes used for the similarity metrics may be applied to other domains. The combination offuzzy logic
+and CBR as used in ICONCHESS may also be used as the basis for learning systems in other domains that are
+complex and where exhaustive analysis of possibilities for a given situation are difficult or impossible to
+achieve. Some domains that meet these conditions are, for example, militap applications, medicine, and
+nattayl language processing. The definition        of problems in those domains is different than those problems
+presented in chess, but the same principles may be applied. For example, for military strategy, a classification
+ofthe different possible deployments ofdifferent types oftroops and weapons could be developed to be used
+instead ofthe knowledge base·ofpawn structaures.
+
+6     References
+
+[Botvinnik 84]      Botvinnik, M. (1984). Computers in Chess, Solving Inexact Chess Problems.  NY: Springer-Verlag.
+(Cooke et al. 93]  Cooke, N., Atlas, R., Lane, D., & Berger, R. (1993). Role Of High-Level Knowledge In Memory For
+                    Chess Positions. American Jotazal Of Psychology, 106, 321-351.
+(De Groot 78]      De Groot, AD. (1978). Thotavt and Choice in chess. The Hague:Mouton.
+(Edelson 92]       Edelson, D. (1992). When Should a Cheetah remind you of a bat? Reminding in case based teaching.
+                   AAAI- National Conference on A.I., 1992. 667-672.
+[Gadwal 90]        Gadwal, D. (1990). UMRAO: A chess endgame tattor. Master's taresis, University of Saskatchewan,
+                   Saskatoon, Canada. 90-4.
+[Lazzeri 95]       Lazzeri, S. G. (1995). An Intelligent Consultamt System for Chess, Doctoral Dissertation, The George
+                   Washington University.
+[Leta}nson 85]     Leta~on, R. (1985). A Self-Organizing Retaseval System for Graphs, PhD Thesis, Technical Report
+                   from Artificial Intelligence Laboratory, University of Texas at Ata{n.
+[Marsland et al. 90]Marsland, T. A., & Schaeffer, J. (1990). Computers, Chess, and Cognition. NY: Springer-Verlag.
+[McNeill et al. 94] McNeill, D., & Freiberger, P. (1994). Fta| Logic. Simon & Schuster.
+[Newell et al. 72] Newell, A., & Simon, H. (1972). Htawan Problem Solving. NJ:Prentice-Hall Inc.
+[Pitrat 77]        Pitrat, J. (1977). A Chess combination Program which uses plans. Artificial Intelligence, 8, 275-321.
+[Schank 89]        Schank, R C. (1989). Inside Case Based Reasoning. NJ:Erlbaum.
+[Schank et al. 94] Schank, R. C., Kaas, A., & Riesbeck, C. K. (1994). Inside Case Based Etalanation. NJ:Erlbatax.
+[Shannon 50]       Shannon, C. (1950). Programming a digital computer for platang chess. Philosophical Magazine, 41,
+                   (7), 356-375.
+[Wilkins 80]       Wilkins, D.E. (1980). Using patterns and plans in chess. Artificial Intelligence, 14, 165-203.
+
+Acknowledgements
+
+      Partial sponsorship by CONACYT, (Consejo Nacional de Ciencia y Tecnologia), Mexico.
+
+                                                                                                                    461
+

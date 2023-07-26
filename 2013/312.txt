@@ -1,0 +1,508 @@
+CSCL 2013 Proceedings                                                            Volume 1: Full Papers & Symposia
+
+                          Designing for Group Math Discourse
+             Rachel M. Magee, Drexel University, Philadelphia, PA, USA, rachelmagee@drexel.edu
+          Christopher M. Mascaro, Drexel University, Philadelphia, PA, USA, cmascaro@gmail.com
+                 Gerry Stahl, Drexel University, Philadelphia, PA, USA, Gerry@GerryStahl.net
+
+         Abstract:  We    are developing   a socio-technical  system   to support  group   cognition  among
+         math    students in  the form  of   significant mathematical   discourse  about   dependencies      in
+         dynamic-geometry     constructions.  Analysis   of a pilot trial in a   typical early cycle     of our
+         design-based-research approach revealed barriers to group success from both software and
+         mathematics   issues,  and   demonstrated  that  participants  "cycled"   between   these   types   of
+         issues. We are responding by developing a curriculum to address the uncovered technical and
+         cognitive issues. We present the findings of our pilot study and the curriculum design criteria
+         that are emerging from continuing cycles of re-design, prototyping, testing and analysis.
+
+Introduction
+We  are  interested in promoting    group  cognition  (Stahl,  2006)   among   math   students  learning    high-school
+geometry by enhancing their ability to engage in significant mathematical discourse. Recent research on math
+learning points to the central role of language, enabling articulation and verbal reflection about mathematical
+relationships (Sfard, 2008; Stahl, 2008). Because we want to exploit the computational power of computers and
+the advantages of networking to support online collaboration incorporating math discourse, we necessarily face
+the dual design constraints of technical software development and social-practice scaffolding.
+         Increasingly, high school students are learning online, with home schooling, resources like the Khan
+Academy of math YouTube videos and virtual high schools. The problem with online learning is that the current
+models   for this are  often  lacking in social  interaction  and   collaborative  learning.  This   is, of  course  the
+motivation for CSCL research and innovation.
+         Discourse is fundamentally a group process, so we want to provide support for small groups of students
+to engage together in math discourse. This is complicated in terms of both the discourse and the technology as
+there are multiple facets to "significant mathematical discourse" (Stahl, 2013d). Furthermore, we are interested
+in taking advantage   of  networked   computers  to allow   groups   of students   to discuss  math  and    to  work on
+mathematical tasks together online. We want to supply computer support for their math work and computer
+recordings   for maintaining  persistence  of their discourse--which      raises technological  barriers     to students
+navigating the interface.
+         As a research project, we approach this task with the idea of combining VMT (Stahl, 2009; Stahl,
+Mantoan   &   Weimar,  2013)--a    generic   computer    environment for  collaborative   learning   by  "virtual  math
+teams"--with GeoGebra (www.geogebra.org)--a popular open-source application for dynamic geometry. This
+involves  enhancing   VMT     and transforming  GeoGebra    from  a  single-user  application  to  a multi-user   client
+integrated into VMT. When developing a socio-technical system, in addition to the technical development we
+need to guide the group-cognitive work by providing helpful resources and scaffolding group practices.
+         To  get  a realistic sense  of how   groups  of   students will  interact within  the  environment      we  are
+designing, we need to conduct pilot tests throughout our design process. In order to try out our system in
+naturalistic settings as part of our socio-technical, design-based-research approach, as well as to provide a basis
+for eventual deployment, we have developed relationships with two professional education schools, where we
+will eventually deploy our system with practicing math teachers.
+         In our preliminary stage, we have run informal pilot tests with available groups. Our findings showed
+that these students encountered significant problems due to a lack of preparation for using the technology and
+for engaging in the mathematics. As a result of the analysis of these sessions--as discussed below--we realized
+that we would have to carefully craft a curriculum, which the teachers could follow and then adapt for their own
+classrooms.  This  curriculum  would    need to incorporate   not only  math   lessons,  but also  tutorials   about the
+technological environment. We started to sketch out a curriculum based on existing best practices and theories.
+We were fortunate that the Common Core State Standards for Mathematics (CCSSI, 2011) had recently been
+released and adopted by most states in the US. This provided an up-to-date, research-based outline of content
+for a geometry course, which was widely accepted.
+         As we looked at results of the initial trials analyzed below, we realized many problems needed to be
+addressed. These involved design issues in extending VMT, in making GeoGebra multi-user, in supporting
+collaboration around the activities, in teaching the deep conceptual ideas in geometry, in taking advantage of
+computer-supported dynamic math and in promoting significant math discourse (Stahl, 2013d). We ran several
+cycles of additional trials within our research group and with available college students. In each cycle, we
+
+© ISLS                                                                                                               312
+CSCL 2013 Proceedings                                                            Volume 1: Full Papers & Symposia
+
+revised the curriculum, revised the software, ran the trial and analyzed the behaviors. Generally, there were clear
+lessons from each trial, which led to the next cycle.
+          Gradually, a set of design criteria for the curriculum was formulated and evolved. In this paper, we
+report findings from the early session without curriculum to identify challenges faced by technologically adept
+individuals when attempting to engage in significant math discourse within the GeoGebra environment. Then
+we review some of the lessons for the technology and some of the aspects of the discourse that we believe are
+important.  Based  on these    lessons,  we  are now   developing   a curriculum   based  around    online, small-group
+activities. This paper discusses the criteria for the design of that curriculum, as it is emerging from testing of
+trial curriculum drafts.
+          From a socio-technical standpoint, the curriculum is central because it mediates between the people
+and the technology. It tells the people what activities they should be engaging in while communicating through
+and working within the technology. It also models for them how to talk about math. For an online course, in
+which there is no teacher present to orchestrate activities and interaction, the textual curriculum provides the
+major scripting of collaborative sessions and the primary scaffolding of the group cognition.
+
+Relevant Literature
+Our approach to online dynamic-geometry education is based on previous research by our own team and by
+others in the fields of groupware design, collaborative learning and mathematics education.
+
+Dynamic-Mathematics Software
+The research on dynamic-mathematics software--such as Geometer's Sketchpad, Cabri and GeoGebra--is new
+and limited. Much of it merely popularizes the availability and the novelty of the approach. However, there are
+some important studies of aspects such as the dynamic dragging of geometric objects and the implications of
+dynamic   visualizations   for student   conceptions  of proof. A   recent  review    of 37  publications   on  dynamic
+mathematics summarized the research to date (Powell & Dicker, 2012). Dynamic geometry can be effective in
+improving student understanding of geometry through support for visualization and exploration. There is a
+trade-off between   having     students  do  their  own  constructions  versus    having  them   manipulate     prepared
+constructions.  While the   construction    process may  deepen  understanding,    it takes  much   longer  and  can   be
+distracting from curricular goals. The ability to manipulate constructions dynamically aides students in making
+conjectures, exploring them and understanding their significance, but it can be seen as a substitute for deductive
+proof and can lower student motivation to engage in rigorous proof procedures.
+          The  utilization of  dynamic-math     environments  by  teachers  has  allowed   them  to  extend    traditional
+materials found  in textbooks,    allowing   for better interaction with   their students  in  both the classroom    and
+through technological mediation (Hohenwarter, Preiner & Yi, 2007). These dynamic-math environments have
+been found to make mathematical tasks more efficient and allow for more interaction and application of the
+theoretical knowledge    associated    with the  mathematical task  (Laborde,    2001;   Öner, 2008). This     success of
+dynamic-math environments in the classroom setting is heavily influenced by the given tasks and the interaction
+with the instructor who is leading the exercise (deVilliers, 2004; Mariotti, 2001; Sanchez & Sacristan, 2003).
+The research in dynamic math is limited to specific pedagogical approaches and needs to be developed further.
+In particular, previous studies focus on individual learning. This is at least in part because until now dynamic-
+math applications have been designed for single users. Another weakness in the literature is the lack of focus on
+dependencies, which we feel are central to understanding dynamic geometry (Stahl, 2013c).
+
+Online Math Collaboration
+The ability for students to co-construct knowledge using technology together has been studied for decades.
+Depending on the context, the students and teachers play different roles (Jonassen, Peck & Wilson, 1999).
+While technology adoption in the classroom has met with varying levels of success, using small groups for
+learning and co-constructing knowledge has been illustrated to be productive through all levels of education
+(Springer, Stanne & Donovan, 1999).
+          Researchers have approached studying math discourse and cognition in face-to-face media through the
+utilization of technology (Dion, Jank & Rutt, 2011). Research on Group Scribbles use in a primary science
+classroom   in Singapore   illustrates a transitional stage between    the physical   classroom  and  a strictly   online
+context (Chen   &  Looi,   2011). The    Group   Scribbles environment   provides    similar  capabilities  to the VMT
+environment,   but  the    interaction occurs   in  a classroom   through   tablets.  The   students' interactions     are
+technologically mediated, and the teacher in the classroom provides physical mediation, allowing for technology
+problems to be quickly overcome so participants may focus on the problem at hand. In a series of tasks carried
+out using Group Scribbles, it was found that students had more agency and were given more participation
+opportunities compared to traditional approaches. This was found to particularly benefit passive students (Chen,
+Looi & Ng, 2009).
+
+© ISLS                                                                                                              313
+CSCL 2013 Proceedings                                                             Volume 1: Full Papers & Symposia
+
+         Technology has also taken the place of moderating a learning environment in an effort to facilitate
+more discourse and reduce direct teacher involvement in student problem solving. In an attempt to automate the
+support  of  group   math  cognition  in the   VMT  environment,     research has  been initiated to understand    how
+conversational agents could be used (Cui et al., 2009). These agents are used to encourage academic discourse
+and accountable talk (Michaels, O'Connor & Resnick, 2008), but have been met with only limited success so far
+(Stahl, 2013a; Stahl et al., 2010).
+         Understanding the technological environment of the student and how this contributes to successful or
+unsuccessful learning is integral to the analysis of the learning and the design of an online system (Suthers &
+Medina, 2010). As evidenced by prior research (Valentine, 2002) and our findings below, technology use in a
+learning scenario can harm the experience of students, hindering communication as much as facilitating it.
+Understanding the extent of barriers and modes of facilitation of math discourse in a dynamic-math environment
+is still limited.
+
+Math Discourse
+The  theory  of    math   learning  through  participation    in math   discourse (Sfard, 2008)   specifies  important
+mathematical discourse moves, such as encapsulation, reification, saming, routines, deeds, explorations and
+rituals--all defined, systematized and passed down through the community, culture, tools, procedures, language
+and traditions of mathematics. These interactional resources can traverse levels between individual learning,
+group  cognition     and  community     knowledge   (Stahl,   2012;  2013b;  Stahl  &  Öner,  2013).    The  theory of
+accountable  talk    (Michaels,   O'Connor  &   Resnick,  2008;    Resnick,  O'Connor   & Michaels,    2007) specifies
+discourse   moves    that promote    accountability to    the group,  to  standards of  math  reasoning   and   to  the
+characteristics   of the  math  objects. Speaking   meaningfully     in math  discourse "implies   that responses   are
+conceptually based, conclusions are supported by a mathematical argument and explanations include reference
+to the quantities in the problem context as opposed to merely describing the procedures and calculations used to
+determine the answer" (Clark, Moore & Carlson, 2008, p. 298). Socio-mathematical norms include what counts
+as  an acceptable,   justifiable, easy, clear, different, efficient, elegant  and sophisticated  explanation (Yackel,
+1995; Yackel & Cobb, 1996). Mathematical practices emerge from interaction, are taken up by participants and
+are applied repeatedly (Medina, Suthers & Vatrapu, 2009). Though Sinclair and Yurita (2008) study of how
+dynamic geometry changes discourse began the process, research into the nature of mathematical discourse in a
+collaborative dynamic-mathematics environment has yet to be conducted.
+         While     the importance   of  collaborative  learning   for online  education   may be   obvious   to CSCL
+researchers (Stahl, Koschmann & Suthers, 2006) and its possible advantages have been well documented in
+cooperative-learning (Johnson & Johnson, 1989; Slavin, 1980) and CSCL research for decades (Sawyer, 2006),
+support for collaboration is still not always designed into new educational platforms. For instance, the latest hot
+approach to university instruction--massive open online courses or MOOCs--are generally based on the lecture
+paradigm, in which students passively watch talking-head videos of famous professors and are not given any
+sanctioned opportunities for interaction. Similarly, the acclaimed Khan Academy offers thousands of YouTube
+videos explaining detailed topics in school mathematics, but students have no support for interactively exploring
+the topics   themselves   or discussing   them  with  peers.   These  technological  opportunities are  generally   not
+designed to incorporate constructivist learning principles (Bransford, Brown & Cocking, 1999).
+
+Method
+In Fall 2011, we examined four one-hour-long chat logs from information-science graduate students taking a
+course on CSCL using the VMT environment. In these chats, the groups met online and attempted to solve a
+geometry problem within the GeoGebra environment. The students had used the VMT environment to perform
+collaborative writing exercises in previous weeks, but had not previously used GeoGebra. These students were
+enrolled  in majors    related  to  technology,  suggesting    that  they were engaged    rather  than  nervous  about
+technology use. As part of the exercise, there was no explicit introduction to the GeoGebra tool or further
+instructions other than the assigned problem.
+         We were interested in analyzing these groups' interactions and their strategies for navigating a new
+online collaborative environment. Each log was examined independently using a thematic analysis approach
+that revealed themes that were typical stages of conversation. These stages include: social niceties, problem
+identification, technical discourse, math discourse, design suggestions and future planning. While these are
+separate stages of conversation, we found that each group moved back and forth between technological and
+mathematical discourse, behavior we termed "cycling."
+         We examined the logs using our initial categories as a guide to further examine this process of cycling.
+In our subsequent analysis, we identified the cyclical behavior triggered by individual statements distinctly
+indicating technical issues (involving software usage issues or software problems) versus mathematical issues
+and discourse (involving attempts to understand, represent and solve the geometry problem). By examining the
+chat logs we are able to observe phases of group interaction, how technology affects each phase and how the
+
+© ISLS                                                                                                             314
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+technology can both facilitate and inhibit successful completion of the task in an online environment new to
+group members.
+
+Findings
+Analysis of the group chat logs illustrates the presence of a variety of stages of conversation by the members of
+the groups in the context of the problem-solving task. Each of the chats begins with an orientation, including the
+exchange of social niceties and resolution of unrelated issues, typically lasting two to three lines per group
+member.
+        Following the orientation stage, the groups identified the problem by either explaining it in the chat to
+the other group   members   or by   referring to the posted  problem  in  another tab. This  typically involved    a
+statement to orient the group:
+     Quick summary ­ we have to work thru the problem (see topic). Summarize the process in the Summary
+     tab and post a few sentences on the wiki too. We good? (Group 1, line 16)
+This quote illustrates some    of the important  characteristics of this type of  focusing statement,  including   a
+description of what the "speaker" is going to do with the statement, instruction and then a leading question to
+ensure the team is on the same page.
+        Table 1 illustrates the different stages identified in the chat logs of the four groups and the different
+places in the discussion in which math discourse began. This varied for each group, and even when groups did
+not start with technical issues, they arose very quickly.
+                                Table 1. Stage identification of each of the groups
+                     Group 1             Group 2                 Group 3                   Group 4
+Opening Stages       Orientation; Problem Identification
+Intermediate         Role                Math Discourse          Technical Issues          Technical issues
+Stages               Assignment
+                     Technical           Technical Issues        Math Discourse            Role Assignment
+                     Issues
+                     Math Discourse      Design Suggestions      Math Confusion            Math Discourse
+                                                                 Technical Issues          Use   of    Alternative
+                                                                                           Tools
+                                                                 Technical Confusion
+Concluding           Summarization of task/experience; social niceties; next steps
+Stages
+        Once Group 3 reached math discourse, they experienced confusion about the mathematical concepts,
+further compounded by technical issues with the tool that further confused the participants in the group and
+degraded the quality of math discourse:
+     I'm trying to figure out how to delete this line... I kind of messed up... do you still see a line on the screen?
+     (Group 3, line 24-25)
+This quote highlights a number of issues that were common across multiple groups: not knowing how to delete
+an object (an option expected by participants), and group members being unsure that they were looking at the
+same objects as their fellow group members.
+        Both Group 1 and Group 4 achieved significant math discourse as each of the team members attempted
+to solve the problem, but did so with the help of outside tools. Group 1 used PowerPoint. Group 4 experienced
+confusion because the VMT environment did not display the same screen to all group members, so one emailed
+a screenshot to share the solution. This indicates that use of familiar tools or tools that work intuitively enables
+groups to more quickly reach effective math discourse that achieves a solution.
+
+Overcoming Technological Barriers
+While the technological tool--multi-user GeoGebra--provided many opportunities and options, it often served
+as a barrier for users. Barriers could be as simple as not being able to undo an action. However, even simple
+barriers stopped the groups from engaging in fluid math discourse and sometimes even went unresolved as the
+individuals found ways to work around issues. One example of this is the issue of not being able to easily
+rename an object. The mathematical problem these groups were attempting involved making an angle ABC.
+Groups began by playing with the system by adding objects to their GeoGebra screen. However, each group
+discovered that they were unable to simply rename the points on their screen, and the names they needed (A, B
+and C) were already in use by the system, though the objects they developed later in the process were better
+suited to solving the problem. This meant that their refined objects were confusingly named (for example, J, K
+and L), making math discourse about the objects in relation to the problem statement more complicated:
+     One thing we can state is how the lettering got messed up... I think that is helping to confuse us. (Group 3,
+     lines 58-59)
+Each group experienced this issue; because of their lack of familiarity with the system, none were able to fix it.
+
+© ISLS                                                                                                      315
+CSCL 2013 Proceedings                                                           Volume 1: Full Papers & Symposia
+
+         Other barriers were easier for the groups to work around creatively. When the tool put up barriers,
+these groups were quick to try to work around the resulting issues, employing their understanding of other
+technologies to inform their decision in the VMT environment or solve the problem and move forward to math
+discourse. While it was unsuccessful, in the above barrier, the group attempted to rename an object when it had
+difficulty, which is a common solution in other tools. Additionally, many groups wished for an undo option, a
+common affordance in other tools:
+      Is there an undo function... not that I could find. That would be nice. (Group 1, lines 97-99)
+Because  of the   nature of   the work, as  groups  overcame    tool issues and  moved   into math    discourse, new
+mathematical objectives (e.g., renaming a point, adding a ray) resulted in a return to the tool and often the
+discovery of a new technological barrier. Even in the face of such issues with the tool, multiple groups managed
+to achieve effective math discourse that led to solutions. Each successive cycle of math discourse and tool use
+also led to difficulty with the mathematical concepts at hand, which we will now discuss.
+
+Discourse about Math Difficulties
+The goal of these chats for the students was to experience a new tool, but also to achieve math discourse around
+the visualization and solution of a geometry problem. Reaching math discourse proved to take some time for
+multiple groups, despite the fact that they were actively pursuing this goal, often within the first few lines of
+chat. Typically,  the  first approach  involved  developing   a shared    understanding of what   the  mathematical
+problem was, which we termed "problem identification" in our stage-identification process. Groups quickly
+entered into discussion of technological issues with the tool, but had difficulty returning to the larger goal of
+mathematical discourse.
+         Participants often employed a question structure to encourage a return to math discourse, and usually
+included words    like "okay,"    "well,"  or  "so" to bridge   from   the previous topic, which   was   typically  a
+technological issue. In Group 4, one participant states:
+      Ok, we are on the same page now... we need a point in the middle. (line 179-180)
+In an attempt to move past the technological barrier of not being able to effectively rename objects and establish
+common ground among the participants, one participant transitioned with:
+      Well, anyway, do we all at least see i, j, k? (Group 4, line 83)
+In addition to bridging words, participants also employed explicit questions to reorient the group, for example:
+      Can i start by drawing two lines to create an angle? (Group 3, line 22)
+These  structures  serve to  call attention to a reorientation, and  to give  other participants the  opportunity  to
+request a pause in that reorientation to ensure they share understanding with the rest of the group.
+         Reorienting questions also served to highlight an understanding gap, pulling the group back into math
+discussion  to provide   an   explanation   or confirm   an understanding.   One  example   of   this math-question
+reorientation comes from Group 2:
+      If you try to construct a line EF trying to connect AB and BC, wouldn't that mean A=C. (line 94)
+The use of reorienting statements rotates through group members, indicating that it was not always the same
+participant to return the group to math discourse. Talking about technological issues could quickly grab the
+attention of the group, but these reorienting statements were effective at refocusing the groups' attention on the
+mathematical   issues. When    groups returned   to this higher level  of  math discourse, there were   a variety  of
+approaches  employed     by   individuals.  Multiple   participants  displayed  something  akin  to   math  anxiety,
+highlighting their lack of experience or inability:
+      I haven't done geometry in a long time... I'll need the hints. (Group 1, line 18)
+Often, members of the group shared in their confusion, as evidenced by Group 3's experience with making the
+decision to look at the hints during a series of math discourse. The group looked at the hints as a whole, but each
+member admitted to being more confused after doing so, imagining that it could be their unfamiliarity with math
+causing the issue:
+      I'm not sure if its cause I haven't done these types of problems in a while or the hints just aren't that good.
+      (Group 3, line 95)
+However, Group 1 and Group 4 were able to achieve math discourse and a solution, notably, with the use of
+familiar outside technologies.
+
+Cycles of Problems
+The analysis of the pilot trial revealed cycles of problems, with the groups having to go back and forth between
+confronting technical problems with the software and cognitive problems with the mathematics. The cyclic
+nature of the alternation between technical and mathematical difficulties may have been an artifact of the task
+and the preliminary state of the software prototype. Though the task was to work on a geometry construction,
+within the online environment, software problems intervened and distracted the group. Groups tried to quickly
+get around the technical problems and cycle back to the math. There, they found themselves poorly prepared to
+tackle a geometry problem. Both the technical and the cognitive problems were consequences of the situation of
+
+© ISLS                                                                                                           316
+CSCL 2013 Proceedings                                                            Volume 1: Full Papers & Symposia
+
+pilot-test participants in a design-based-research project. The socio-technical goal of the project was still in the
+distant future and the necessary supports for the participants were not yet in place. Thus, it is not a surprise that
+the subjects met with many serious difficulties. The point is to learn from the pilot trial: what are the most
+important social and technical features to be developed next?
+
+Discussion
+The experiences of the groups highlight interesting aspects of group-cognitive processes and how tool and math
+skills can hinder the ability to solve the problem by otherwise competent users. Clearly, while math discourse
+was a goal of each group, it proved difficult to achieve in the face of tool issues and feelings of math anxiety.
+When    faced  with a  technical issue, the  individuals   blamed  the tool  for the  inability to  solve  the problem,
+because they felt they were technically competent in general:
+     I'm an IT consultant and have to deal with various software programs meaning I'm familiar with how
+     software should be designed and navigating my way around...this was definitely tough. (Group 4, lines
+     310-313)
+On the other hand, when faced with a mathematical concept that they were not familiar with, members of the
+groups blamed themselves for not being mathematically focused:
+     My High School Math teachers are furious with me right now I can feel it. (Group 3, line 96)
+         This dichotomy between technical ability and mathematical inability was identified in each log. While
+this is an interesting case in our specific dataset pertaining to mathematically oriented online-learning contexts,
+we suspect that this phenomena may be evident in other collaborative-learning situations. Working to learn both
+content and   the technology   used  to   deliver that  content  can  be   overwhelming   and   may  distract  from the
+conceptual intent of the lesson. These difficulties are evident in our analysis as triggers of cycling and may be
+applicable  to many    technologically  mediated     learning  situations. Because   of these   identified issues, it is
+important  to  build   technological familiarity     into any   educational  groupware    environment      to  overcome
+technological issues early in the process. We find that in the face of tool adversity individuals defaulted to tools
+they were comfortable with such as PowerPoint, paper/pencil or screenshot/email. The use of familiar tools
+allowed the members of the groups to focus on the actual math discourse and problem solving, and isolate the
+effects of the tool on their productivity.
+         One   of the  most striking elements     of our  analysis is the  concept   of cycling  in the group   process
+between tool issues and math discourse. There was a salient presence of software functionality issues that when
+coupled with gaps in knowledge derailed mathematical discourse. This derailment and the students' interest in
+getting back   on task  led to   cycling.  Though    each  group  experienced  cycling,  the  groups   that   were most
+successful were able to quickly manage technological barriers and return to math discourse for the majority of
+their chats. We speculate that problems will exist in many groupware situations, including math learning, in
+which there are gaps in ability to manipulate the technology used for the learning. We believe that these findings
+may be transferable to other environments and contexts. As highlighted by one of the participants,
+     The issue with our first attempts was the usability of the tools ­ and lack of familiarity of the capabilities
+     available within GeoGebra (Group 1, line 109)
+An increase in familiarity with the system may reduce cycling; however, further research into groups learning a
+system is required to determine how this might manifest under different circumstances.
+         In addition to our analytical findings, each of the groups had recommendations for ways to improve the
+technology and the process of group math problem solving in the VMT-with-GeoGebra environment. These
+ranged from calls for an undo option to hopes for a primer or tutorial to alleviate some technological issues.
+
+Curriculum Design Criteria
+In response to the analysis of the GeoGebra use sessions, we have been drafting a set of dynamic-geometry
+curricular activities, interspersed with   tutorials of   the technology   features. Curriculum    activities have been
+designed to promote collaborative learning, particularly as exhibited in significant mathematical discourse about
+geometry. Collaborative learning involves a subtle interplay of processes at the individual, small-group and
+classroom  levels   of engagement,   cognition    and  reflection. Accordingly,   the   activities are structured  with
+sections for individual work, small-group collaboration and whole-class discussion. It is hoped that this mixture
+will enhance motivation, extend attention and spread understanding.
+         The goal of our set of activities is to improve the following skills in math teachers and students:
+1.       To engage in significant mathematical discourse; to collaborate on and discuss mathematical activities
+         in supportive small online groups.
+2.       To   collaboratively  explore    mathematical    phenomena    and   dependencies;    to   make    mathematical
+         phenomena visual in multiple representations; and to vary their parameters.
+3.       To construct mathematical diagrams--understanding and exploring their structural dependencies.
+4.       To notice, wonder about and form conjectures about mathematical relationships; to justify, explain and
+         prove mathematical findings.
+
+© ISLS                                                                                                              317
+CSCL 2013 Proceedings                                                             Volume 1: Full Papers & Symposia
+
+5.       To understand core concepts, relationships, theorems and constructions of basic high-school geometry.
+         In other words, the activities seek a productive synthesis of the five areas of: discourse, visualization,
+construction and argumentation skills applied in the domain of beginning geometry. The set of activities is
+designed to provide an educational experience in basic geometry to math teachers and students, taking them
+from a possibly novice level to a more skilled level, from which they can proceed more effectively without such
+designed, scaffolded activities. By providing activities on different levels for each of the dimensions, we hope to
+help math teachers and students to increase their relevant skills ­ in different ways for different people.
+
+Conclusion
+Our focus has centered increasingly on facilitating and supporting lessons involving geometric dependencies
+(Stahl, 2013c). GeoGebra allows one to construct systems of inter-dependent geometric objects. Students have
+to learn how to think in terms of these dependencies. They can learn through visualizations, manipulations,
+constructions and verbal articulations. These can all be modeled and these skills can be developed gradually; our
+pilot study   indicates that for   successful math   discourse to be achieved,    supporting   these skills  must be  an
+explicit priority of the socio-technical system. We are now drafting and piloting versions of curricular activities
+designed   to  develop  significant  mathematical    discourse focused  on   dependencies     among  geometric   objects
+(Stahl &   Öner, 2013).   Concomitantly,     we  are implementing    software   support   for teachers  and  students to
+explore the dependencies and assembling materials for professional development to prepare teachers to enact
+this curriculum with their students (Stahl, 2013d).
+         Our design work is guided by socio-technical implications of continuing pilot studies as the technology
+and   pedagogy  of  our  project   co-evolve.  We  are  countering  the problems     that caused    negative cycling  of
+technical  and  cognitive  distractions  by   improving  the software  and   testing the  curriculum.   The  curriculum
+integrates  tutorials about  using   the  VMT    and GeoGebra     interfaces with  carefully   structured sequences   of
+dynamic-geometry      activities for virtual  math teams.  The  activities   systematically   build up  the  background
+knowledge, group practices and problem-solving orientation needed for engaging in mathematical discourse.
+
+References
+Bransford, J., Brown, A., & Cocking, R. (Eds.). (1999). How people learn: Brain, mind, experience, and school.
+         Washington, DC: National Research Council. Web: http://books.nap.edu/html/howpeople1/.
+CCSSI. (2011). High school -- geometry. In Common Core State Standards Initiative (Ed.), Common core state
+         standards for mathematics. (pp. 74-78)
+Chen,  W.,    & Looi,   C.-K.    (2011).  Active  classtoom  participation   in a Group    Scribbles    primary science
+         classroom. British Journal of Educational Technology. 42(4), 676-686.
+Chen, W., Looi, C.-K., & Ng, F.-K. (2009). Students' active learning leveraged by interactive technologies:
+         Group Scribbles in a primary science classroom. Paper presented at the AERA. San Diego, CA.
+Clark, P. G., Moore, K. C., & Carlson, M. P. (2008). Documenting the emergence of "speaking with meaning"
+         as a sociomathematical norm in professional learning community discourse. Journal of Mathematical
+         Behavior. 27, 297­310.
+Cui, Y., Kumar, R., Chaudhuri, S., Gweon, G., & Rosé, C. P. (2009). Helping agents in VMT. In G. Stahl (Ed.),
+         Studying virtual math teams. (ch. 19, pp. 335-354). New York, NY: Springer.
+deVilliers, M.   (2004).  Using    dynamic    geometry  to expand  mathematics     teachers'  understanding   of  proof.
+         International Journal of Mathematics Education in Science & Technology. 35(4), 703-724.
+Dion, L., Jank, J., & Rutt, N. (2011). Computer monitored problem solving dialogues. Paper presented at the
+         Research Experience for Undergraduates. Bloomington, Indiana.
+Hohenwarter,    M.,   Preiner, J., &  Yi, T.  (2007).  Incorporating  GeoGebra     into  teaching   mathematics   at  the
+         college level. Paper presented at the ICTCM. Boston, MA.
+Johnson, D. W., & Johnson, R. T. (1989). Cooperation and competition: Theory and research. Edina, MN:
+         Interaction Book Company.
+Jonassen, D. H., Peck, K. L., & Wilson, B. G. (1999). Learning with technology: A constructivist perspective.
+         Upper Saddle River, NJ: Merrill/Prentice Hall.
+Laborde,    C.  (2001).  Integration  of  technology    in the  design  of   geometry     tasks with    Cabri-geometry.
+         International Journal of Computers for Mathematical Learning. 6(3), 283-317.
+Mariotti, M. A. (2001). Justifying and proving in the Cabri environment. International Journal of Computers for
+         Mathematical Learning. 6(3), 257-281.
+Medina,   R.,  Suthers, D.   D., &   Vatrapu,  R. (2009).  Representational   practices   in  VMT.   In G.  Stahl (Ed.),
+         Studying virtual math teams. (ch. 10, pp. 185-205). New York, NY: Springer.
+Michaels,   S., O'Connor,      C.,  & Resnick,    L.  B. (2008).   Deliberative   discourse    idealized  and   realized:
+         Accountable talk in the classroom and in civic life. Studies in the Philosophy of Education. 27(4), 283-
+         297.
+
+© ISLS                                                                                                               318
+CSCL 2013 Proceedings                                                              Volume 1: Full Papers & Symposia
+
+Öner,  D.   (2008).  Supporting   students'   participation   in authentic    proof  activities in  computer     supported
+         collaborative     learning  (CSCL)    environments.      International      Journal    of  Computer-Supported
+         Collaborative Learning. 3(3), 343-359.
+Powell, A. B., & Dicker, L. (2012). Toward collaborative learning with dynamic geometry environments. Paper
+         presented at the 12th International Conference on Mathematical Education. Seoul, Korea.
+Resnick,  L., O'Connor,    C.,  &   Michaels, S.   (2007).  Classroom     discourse,  mathematical   rigor,   and student
+         reasoning: An accountable talk literature review: LearnLab, Pittsburgh Science of Learning Center.
+Sanchez, E., & Sacristan, A. I. (2003). Influential aspects of dynamic geometry activities in the construction of
+         proofs. Paper presented at the 27th PME international Conference. Proceedings pp. 111-118.
+Sawyer,   R.  K. (Ed.).  (2006).  Cambridge    handbook     of   the learning  sciences.   Cambridge,   UK:     Cambridge
+         University Press.
+Sfard,  A.   (2008).  Thinking    as   communicating:      Human     development,     the  growth    of  discourses    and
+         mathematizing. Cambridge, UK: Cambridge University Press.
+Sinclair, N., & Yurita, V. (2008). To be or to become: How dynamic geometry changes discourse. Research in
+         Mathematics Education. 10(2), 135-150.
+Slavin, R. (1980). Cooperative learning. Review of Educational Research. 50(2), 315-342.
+Springer, L., Stanne, M. E., & Donovan, S. S. (1999). Effects of small-group learning on undergraduates in
+         science, mathematics, engineering, and technology: A meta-analysis. Review of Educational Research.
+         69(1), 21-51.
+Stahl, G. (2006). Group cognition: Computer support for building collaborative knowledge. Cambridge, MA:
+         MIT Press.
+Stahl, G.  (2008).  Book    review:  Exploring   thinking   as   communicating    in  CSCL.     International   Journal  of
+         Computer-Supported Collaborative Learning. 3(3), 361-368.
+Stahl, G. (2009). Studying virtual math teams. New York, NY: Springer.
+Stahl, G. (2012). Traversing planes of learning. International Journal of Computer-Supported Collaborative
+         Learning. 7(4), 467-473.
+Stahl, G. (2013a). Interaction analysis of a biology chat. In D. Suthers, K. Lund, C. P. Rosé & N. Law (Eds.),
+         Productive multivocality. New York, NY: Springer. Web: http://GerryStahl.net/pub/multivocal.pdf.
+Stahl, G.   (2013b).  Learning    across   levels. International     Journal  of   Computer-Supported       Collaborative
+         Learning. 8(1), 1-12.
+Stahl, G.  (2013c).  Poster:   Discovering  dependencies:     A  case   study of  collaborative    dynamic  mathematics.
+         Presented   at  the International  Conference     of  Computer-Supported      Collaborative    Learning  (CSCL
+         2013), Madison, WI. Web: http://GerryStahl.net/pub/cscl2013dependencies.pdf.
+Stahl, G.   (2013d).  Translating    Euclid:  Creating     a  human-centered      mathematics:     Morgan    &   Claypool
+         Publishers. Web: http://GerryStahl.net/pub/translating.pdf.
+Stahl, G.,  Koschmann,     T., &  Suthers, D.  (2006). Computer-supported         collaborative   learning: An   historical
+         perspective.   In R.  K. Sawyer   (Ed.),  Cambridge     handbook     of the  learning  sciences.  (pp.  409-426).
+         Cambridge, UK: Cambridge University Press. Web: http://GerryStahl.net/elibrary/global.
+Stahl, G., Mantoan, A., & Weimar, S. (2013). Demo: Collaborative dynamic mathematics in virtual math teams.
+         Presented   at  the International  Conference     of  Computer-Supported      Collaborative    Learning  (CSCL
+         2013), Madison, WI. Web: http://GerryStahl.net/pub/cscl2013demo.pdf.
+Stahl, G., & Öner, D. (2013). Resources for connecting levels of learning. Paper presented at the International
+         Conference     of  Computer-Supported     Collaborative     Learning    (CSCL     2013).  Madison,     WI. Web:
+         http://GerryStahl.net/pub/cscl2013resources.pdf.
+Stahl, G., Rosé, C. P., O'Hara, K., & Powell, A. B. (2010). Supporting group math cognition in virtual math
+         teams with software conversational agents. Paper presented at the First North American GeoGebra
+         Conference. Ithaca, NY. Web: http://GerryStahl.net/pub/geogebrana2010a.pdf.
+Suthers, D., & Medina, R. (2010). The temporal development of representational practices: Implications for
+         theory and analysis of situated learning. Paper presented at the Hawaii International Conference on
+         System Sciences.
+Valentine,  D.  (2002).  Distance   learning: Promises,    problems     and possibilities. Online   Journal   of Distance
+         Learning Administration. 5(3)
+Yackel,  E.  (1995). Children's   talk in  inquiry  mathematics      classrooms.   In P.   C.  H.  Bauersfeld   (Ed.), The
+         emergence    of   mathematical  meaning:    Interaction     in classroom    cultures.  Hillsdale,  NJ:  Lawrence
+         Erlbaum Associates.
+Yackel,  E.,  &  Cobb,   P.  (1996). Sociomathematical      norms,    argumentation,   and    autonomy  in  mathematics.
+         Journal for Research in Mathematics Education. 27(4), 458-477.
+
+Acknowledgments
+This work is supported by the NSF Graduate Research Fellowship Program under Grant No. 2011121873.
+
+© ISLS                                                                                                                 319
+

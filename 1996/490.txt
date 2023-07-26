@@ -1,0 +1,310 @@
+        Super       Tangrams:      A   Child-Centered             Approach        to  Designing     a
+           Computer           Supported         Mathematics       Learning        Environment
+
+                                                Kamran Sedighian
+                    Department of Computer Science, The University of British Columbia,
+                                     Vancouver, B.C., V6T 1Z4, Canada
+                                        E-Mail: kamran@cs.ubc.ca
+                                                  MariaKlawe
+                    Department of Computer Science, The University of British Columbia,
+                                     Vancouver, B.C., V6T 1Z4, Canada
+                                        E-Mail: vpsas@unixg.ubc.ca
+
+In this paper we describe our experience in designing and evaluating a computer supported mathematics learning
+ environment. This experience is part of an ongoing long-term study aimed at investigating design features of
+ mathematical computer activities which promote reflective cognition and thinking in children and improve their
+ conceptual understanding of and attitude towards formal school subjects. This experience covers a period of over two
+ years of close collaboration between a university researcher, almost 50 students in grades 6 and 7 (10 to 12 year old
+ children), and their teacher, and, we believe, can provide useful insights on issues of importance in the design of
+ electronic learning environments for children.
+     One of the difficult tasks teachers face is to engage children in the learning of abstract mathematical concepts.
+ Often many children find such subjects difficult to understand and boring. Two primary reasons for this are the
+ cognitive challenge that many mathematical subjects present and the lack of motivation on the part of children.In
+ recent years knowledge acquisition and motivation have been studied in the context of coherent, unified, and
+ integrated learning activities. Researchers have found that motivational processes play a central role in any learning
+ activity, and that motivation and learning interact very closely [Dweck, 1986; Snow, & Farr, 1987]. A number of
+ researchers have suggested the use of computer games as a possible means to enhance children's motivation to learn
+ school subjects such  as mathematics [.Lepper,   & Malone, 1987; Klawe,   1992]. We decided  to investigate     this
+ possibility in the context of a grade 6-7 French immersion class, many of whose students were not particularly
+ interested in mathematics and found it boring. Our decision to use computer games as a means of motivating
+ students to learn school subjects has since been supported by the input we have received from the students, as well as
+ by our preliminary findings of a change in their attitude and an increase in their learning of quite sophisticated
+ mathematics concepts. Our research forms one part of E-GEMS (Electronic Games for Education in Math and
+ Science), a large university-industry project between the University of British Columbia, Queen's University,
+ Electronic Arts, and several elementary schools, involving the design of both prototype and commercial educational
+ computer games and evaluation of their effectiveness in the classroom and at home [Klawe, & Phillips, 1995].
+    From the outset of our research our intent was to create a game that would be a meeting place between the goals
+ and objectives of educators and the needs of children. We wanted our design choices to be informed by children's
+ expectations of a fun and engaging learning environment, but also wanted to make sure that we did not compromise
+ the educational quality of the learning environment through making it all play and entertainment. Specifically, we
+ wanted the game to be compatible with textbook materials in terms of mathematical substance, to be challenging, to
+ be fun to. play with, to promote reflective thinking and cognition, to help children construct deep conceptual
+ understanding of the mathematical domain, and to provide a cognitive tool or a reference point by which classroom
+ discussion could be generated. To meet these goals we implemented Super Tangrams, a computer game aimed at
+ assisting children in learning  2-dimensional   transformation geometry. This paper presents an account      of the
+ development of Super Tangrams, and the positive response that this game has invoked in the students with respect to
+ both attitude and learning.
+
+The     Initial  Investigations
+ Our investigation of electronic games began in Summer of 1993 when we observed thousands of children playing
+ electronic games at an especially constructed exhibition in a science museum [Inkpen, et al., 1994; Lawry, et al.,
+ 1994]. In March of 1994 we placed 4 LC III Macintosh computers in our grade 6-7 class. We initially installed a
+ few prototype games on negative numbers and coordinate systems that had been developed in Hypercard by the E-
+
+490
+  GEMS team and a few commercial games. One of the authors (Sedighian) visited the class weekly for 1 to 2 hours.
+  During these visits, we observed the students playing the games and conducted class discussions about the
+  educational contents of the games, children's likes and dislikes, and what they thought they were learning. In
+  addition, we asked the students to keep a journal of their computer activities. We found that the students were often
+  very difficult to satisfy; rarely did the majority of them consider a game 'cool'. Furthermore, virtually all the games
+  polarized the students along gender lines. In February and March of 1995 Sedighian interviewed all the students
+  individually to find out what they expected from games, as well as what they considered to be attractive and engaging
+  ways to learn mathematics. Points that were brought up by the majority of the students included: 1) mathematics is
+  both difficult and boring when studied from a book (i.e., it is neither interactive nor fun); 2) unlike books, computer
+  games provide a worthwhile and challenging goal which motivates students to do mathematics; 3) music in games is
+  not only fun but also can act as a memory cue for remembering the mathematics content of the game at a later time;
+  and 4) attractive colors and graphics are important motivating factors. The information gathered in the initial phase
+  of our investigation provided the basis for the design of Super Tangrams.
+
+· The Design
+  Super Tangrams involves the traditional Chinese tangram puzzles in which the player is challenged to put together 7
+  geometric pieces to fit an outline. Once a piece is selected, the player must choose one of three transformations to
+  move it, namely, translation, rotation, or reflection. Figure 1 depicts a puzzle in which the player has chosen to use
+  rotation to move the square piece. As indicated, the key elements in Figure 1 include: 1) the selected piece, 2) a
+  formal representation of an arc of rotation with two handles (one for changing the center of rotation and the other for
+  changing the angle of rotation), 3) a ghost image indicating the final position of the selected piece given the current
+  settings for the angle and center of rotation. Once the player is satisfied with the current transformation settings,
+  (s)he must click on the 'GO' button which results in an animation of the transformation of the selected piece to the
+  location of the ghost image. Each transformation has a unique sound effect associated with it -- a whooshing sound
+  for the animation of translation, a ticking sound for changing the angle of rotation and its animation, and a projectile
+  plus thump sound for reflection.
+
+     Our general objective in designing Super Tangrams is to assist students in moving beyond their informal and
+  intuitive understanding of 2D transformations, and to stimulate them to think about the formal mathematics
+  involved [Sedighian, & Klawe, 1995]. A few of the more specific learning goals include understanding that:
+     1) a rotation involves setting an angle as well as a center of rotation,
+     2) rotating an object both turns it and translates it,
+     3) a translation arrow indicates the distance and direction in which an object will move, and
+
+                                                                                                              491
+     4) composite    reflections are  sufficient for performing    all  transformations,  i.e., that the effect of  any
+ transformation can be achieved by an appropriate sequence of reflections.
+     To make the puzzles progressively challenging, create cognitive dissonance as needed, and take the player
+ through progressive zones of learning comfort, we have built the following features into the game:
+     1) some puzzles only allow the player the use of a subset of the transformations;
+     2) each puzzle's pieces have a unique initial configuration;
+     3) each puzzle allows the player to make a maximum number of moves;
+     4) each puzzle has a score which is inversely proportional to the number of moves made; and,
+     5) the game  has  3 levels,  where   higher   levels provide  less visual   feedback thus  giving  more cognitive
+        responsibility to the player (i.e., level 1 displays the ghost image, level 2 hides the ghost image, and level 3
+        hides other elements of the mathematical representation).
+ As educators, we had initial reservations about the effect of giving scores and limiting the number of moves, but our
+ investigations revealed very positive support from students for these features.
+     Next, we discuss the reasons for choosing transformation geometry and tangrams as the subject matter of our
+ game. Russell and Bologna (1982) noted that the most neglected area of the elementary school mathematics
+ curriculum is geometry. This is especially true of transformation geometry. Many teachers either leave this subject
+ out of their curriculum or provide a very cursory treatment of it. Nevertheless, the National Council of Teachers of
+ Mathematics [NCTM, 1989] emphasizes the importance of the study of this subject. Furthermore, according to
+ Crowley, a mathematics educator:
+
+     [transformations] serve as powerful problem-solving tools. They link traditionally compartmentalized
+     areas  of mathematics. And      they have   applications in  areas  outside   of mathematics.   All these
+     characteristics promote the learning of mathematics! [Crowley, 1995].
+
+     A number of educators have suggested that tangrams are particularly useful for learning transformation geometry
+ [Russell, & Bologna, 1982; Rahim, & Swada, 1989]. While solving tangram puzzles, the player is constantly
+ moving the pieces about by sliding, turning, and flipping them. In other words, transformations are embedded in the
+ puzzle-solving task in a very natural way. This is considered to be very important for the effectiveness of a learning
+ environment by researchers in situated cognition [Brown, et al., 1989].
+     Among the games we used in our observations prior to designing Super Tangrams were a tangrams game and
+ Geometric  G olfer. Many children    found  the   tangrams game    boring, and    almost all kids  had  problems  with
+ understanding the structural and operational representations of rotation and reflection in Geometric Golfer. Observing
+ the students interact with these games provided us with valuable insights into the design of transformation geometry
+ games, especially the need for appropriate user interfaces that assist children in constructing desirable mental models
+ of the subject. Furthermore,    the games  provided  a   point of reference   for the children  to  inform us  of their
+ motivational needs.
+     In creating Super Tangrams, we paid special attention to the following elements: interface representations of the
+ transformations, color, graphics, sound effects, music, and the par and scoring system. We first developed numerous
+ representations for each transformation and tested them for their educational effectiveness. We then created and
+ evaluated dozens of sound effects for each transformation animation to find ones that provided the most appropriate
+ auditory feedback. Moreover, we selected and tested numerous popular songs to match the mood of the puzzles.
+ Similarly, in our search for interfaces that would retain children's interest without overly distracting their attention
+ from the mathematical content, we experimented with a large variety of popular cartoon characters, color and texture
+ combinations, exotic patterns, and interesting images.    Finally, we developed a score and par system that would
+ encourage thoughtful play (i.e., to get a high score, players have to think about which transformations to select and
+ how to use them to solve puzzles in the fewest number of moves).
+
+The     Response
+ The game was first tested at a UBC Open House attended by hundreds of people, both children and adults, in mid
+ October of 1995. As a result of our observations at the Open House, the interface was slightly modified to promote
+ better understanding of its mathematical content.
+     In late October, we introduced Super Tangrams to our class and observed the students interact with it over a trial
+ period of three weeks. The immediate reaction of all the students to the game was very enthusiastic. This was the
+ first game for which we observed a unanimously positive response with no difference along gender lines. Despite the
+ obvious mathematical content of Super Tangrams, every child wrote strongly positive comments about it in their
+ journals, and almost all indicated that they appreciated learning mathematics in a fun·way. Furthermore, from our
+
+492
+observations of and interactions with the students, we found that they recognized that Super Tangrams was not
+simply a game for having fun, but that to advance through the game and get high scores they had to think hard and
+learn difficult transfonnation geometry concepts.Here are a number of typical journal entries from the first trial
+period:
+         I think this game is superb. It is sooooooooo much fun. I love the new music and how they use
+   cartoons for pieces of the puzzle. ... I'm learning a lot about geometry but this game makes it much more
+   fun and intersting.(grade 7 girl)
+
+         When I was in grade 2 math was fun then in grade 3 math was not fun until grade six with Super
+   Tangrams.Its a fun way oflearning math, and a fun way to do math.(grade 6 boy)
+
+         I think that super tangrams is one of the best games that I ever played....The music gives it a nice
+   rythem to work on.I think that this game is a good way to learn motion giomatry instead of reading it
+   from a text book for a lot of ways.One you can not move thing in a text book.2 a text book does not talk
+   to you.3 [ends here] (grade 7 boy)
+
+         I think this game is neat.I liked the graphic and sound effects.The point of the game is simple but as
+   the game progresses it gets harder. This game makes math (geometry) seem more fun and less boring.I
+   liked this game because you're playing and learning at the same time.(grade 6 girl)
+
+        It was really fun.I learned the real way to do a flip.But I thought it was a bit hard.But it was fun....
+   I really like the game.(grade 7 girl)
+
+         I like this game....It's little difficult for me.So I have to practice more.(grade 7 girl)
+
+         It was really cool.... The music, graphics were really cool....I learned that even though geometry
+   is boring if you add something to it people will really like it alot.(grade 6 boy)
+
+         Super Tangrams was very educational.You have to use your brains alot.(grade 6 boy)
+
+   After making a few minor modifications, we reinstalled Super Tangrams in our classroom in mid-November.
+All students regularly played the game until the Christmas holidays. During this time, we selected 4 students,
+considered by their teacher as weak achievers in mathematics, to study the effects of using Super Tangrams with
+adult mediation. In addition, three weeks before the holidays, we started a Super Tangrams tournament in the class
+as a means to encourage the students to tackle the more mathematically-challenging puzzles and to generate
+classroom discussion of transformation geometry.As expected, the tournament created a strong sense of challenge
+and a lot of excitement and social interaction in the class.
+   In addition to the fun and excitement, students have started learning some mathematical concepts that are rather
+sophisticated for their age group.For example, the first puzzle is very simple and only involves sliding the pieces
+into place.All students can easily solve it and are thus encouraged to try the next puzzle.By the time they get to the
+4th puzzle, they are only allowed to use rotation to solve the puzzle, and many of them become very excited when
+they find out that they can use rotation to both turn and slide an object.By the time they get to puzzle 18, they can
+only use composite reflections to solve the puzzle.At this point, many students begin to articulate that any piece
+can be moved to a desired location using two or three flips, except for the 'funny shape' (i.e., the parallelogram
+which is asymmetric).In level two, since there is no ghost image, they have to know the exact angle of rotation as
+well as have a formal understanding of the translation arrow to solve the puzzles.By mid-December the 4 mediated
+students had reached level 2, and the rest of the class was close to the end of level 1.The following are some excerpts
+from the students' journals written during the second trial period:
+
+         I've learned a lot such as when you use rotation you turn the object and slide it You can use flip to get
+   lots of things in if you use it more than once.(grade 7 girl, mediated)
+
+        In my experience of playing ST I learned that you can use turn once instead of using turn then slide.
+   You can also use flip twice to get a shape anywear, (grade 6 girl, mediated)
+
+        In Super Tangrams I learned more about rotating shapes.I learned that when you rotate something it
+   goes along the curved arch. I also learned that the + sign beside the angle number means counter-clockwise
+
+                                                                                                            493
+     and the - sign is clockwise.I learned more about the center of rotation....I learned that the circle is called
+    the arc of rotation, and when you rotate somthing it goes along that line.(grade 7 girl -- not mediated)
+    One particularly encouraging aspect of our study has been the impact of Super Tangrams on students with a
+ history of low achievement in mathematics.In particular, it seems to have increased their confidence in their ability
+ to do mathematics.The following excerpts are from the journal entries of one of the grade-6 mediated students
+ recorded over a period of one month, playing one hour per week. This student is described by his teacher as
+ particularly weak in all subject areas, and as someone who has difficulty understanding abstract concepts:
+        On the first day of Super Tangrams I though[t] that the game was hard, but then I though[t] it was
+    pretty cool....The music, graphics were really cool....I enjoyed how you can't use flip or turn and
+    only use slide on some puzzles....Level [2] was really good even though we didn't get past the first
+    puzzle....I learned how to find the right angle without the ghost image, which is all the lines have to be
+    parrarel to where you're going to put the object(s).And each point has to go in the right place....I found
+    out that if you're on a negative angle and you go to 0° and you turn one more you'll get a positive angle...
+    .I've learned that with turn you can rotate and translate in one move....I've spoke to some of my friends
+    and they love the game, alot of them have learned alot just like myself.Even if the puzzles are hard I still
+    like it.Some other things I learned about were the arc of rotation, angle of rotation and center of rotation.
+    The arc of rotation is that arrow shows how much you're going to rotate the object.The first time I saw an
+    arc of rotation arrow was in this game.The angle of rotation shows how much you've turned or fliped your
+    object The center of rotation is the green dot on the radius, here's an example: [drawing of the rotation arc].
+    If the object can't go in you must use two moves[.] if the point of the object is in its place only turn to
+    angle and leave it Now I can visulize angles really good in my head.Every move someone makes I think
+    in my head and tell the person if its wrong or right ... This game makes me always do more....Last
+    couple of times that I played this game I was pretty slow on my angles, but Monday I was so quick I even
+    felt it inside of me.(grade 6 boy, mediated)
+    Written comments from two of the other mediated students also indicate the development of a sense of
+ visualization of angles and a feeling of self-assurance.
+        I'm learning a lot about geometry.Such as angles like 270° is the same as -90°....I learned that the
+    arc of rotation show's how far and how much to turn it.I can see the angles in my head how far it should
+    go.I don't really know why it's just that I can see it's just something I can see now.(grade 7 girl)
+        Today I learned how to rotait an image without a ghost image.I had not learned to do this till I played
+    this game.Most if not all of the thing in this game I did not know onti.11 I played this game.I can now
+    gess angles without a protracter.(grade 7 boy)
+    It is important to note that these students find it very difficult to record their understanding of their learning.For
+ instance, the boy quoted above has very poor writing skills and shows little initiative towards general classroom
+ activities.However, in our close interactions with him, we have been astounded by his ability to quickly grasp
+ difficult mathematics concepts and by the degree to which he has been captivated and motivated by the game.Often
+ the verbal comments made by the students reveal much more than their written comments, thus we have been
+ videotaping all the mediated sessions.
+    Finally, we found that successfully solving a puzzle with the number of moves allowed, beating the par, and
+ getting a high score were very important to the students.We were impressed by how much reflection and reasoning
+ they would put into every move in order to solve a puzzle with the best combination of transformations.
+
+ Conclusions and Future Work
+
+ Our preliminary experience with Super Tangrams shows that computer games can provide motivating mathematics
+ learning environments for children.Super Tangrams has also been tested in a grade 7-8 classroom in Ontario with
+ similarly positive responses.Our findings reinforce the importance of child-centered design in which children's
+ motivational needs are taken into account.This, however, does not imply a compromise in the educational quality of
+ the game environment.From our experience it seems it is feasible to combine fun with the learning of formal
+ mathematical subjects in a computer game. This can help change children's attitude towards the learning of
+ mathematics and create a social environment in the classroom where the students are eager to discuss mathematics.
+
+494
+   Some of our preliminary findings indicate that the inclusion of colorful textures and patterns, popular music,
+cartoon characters, and sound effects play an important role in motivating children to play educational games.
+Moreover, pars and scores are important in creating a sense of challenge and in promoting thoughtful action. Last
+but not least, user interfaces are critically important in assisting with the learning of the mathematics subject.
+   To examine our preliminary findings in greater depth, we will conduct a 6-week experimental study with
+approximately 150 grade 6 students who have not previously been involved in our research. The purpose of this
+study will be to investigate the effect of different interfaces on children's learning, the effect of sensory stimuli (such
+as color, graphics, sound effects and music) on children's attitude towards the game and tlie mathematics subject, and
+the effect of adult intervention on both children's learning and attitude. The children will be divided into a control
+group plus 5 other groups which will each use a different version of Super Tangrams. All children will be given pre
+and post-tests before and after the required number of game treatments to measure their knowledge of transformation
+geometry, their attitude towards transformation geometry and geometry as a whole, and their attitude towards Super
+Tangrams itself.
+
+Acknowledgements
+Special thanks go to Andishe Sedighian, Ann Anderson, Marv Westrom, Nick Harvey, Carolyn Dymond, and Doug Super
+for helpful comments and obseivations,  and to NSERC, EA Canada, BC ASI, and Apple Canada for their financial support
+
+References
+[Crowley, 1995]. Crowley, M. L. (1995). Transformations: Making Connections in High School Mathematics. In P. A.
+House  & A.  F.  Coxford  (Eds.), Connecting  Mathematics    across the  Curriculum.   Reston, VG:    The National  Council  of
+Teachers of Mathematics, Inc.
+[Dweck, 1986]. Dweck, C. S. (1986). Motivational processes affecting learning. American Psychologist, October, 41(10),
+1040-1048.
+[Inkpen, et. al., 1994]. Inkpen, K., Upitis, R., Klawe, M., Lawry, J., Anderson, A., Ndunda, M., Sedighian, K., Leroux, S.,
+& Hsu, D. (1994).   "We Have Never-Forgetful Flowers in Our Garden:'.' Girls' Responses to Electronic Games. Journal of
+Computers in Mathematics and Science Teaching, 13(4), 383-403.
+[Klawe, 1992]. Klawe, M. M. (1992).      Bringing    mathematical   research to  life in the schools.  Proceedings  of the  7th
+International Conference on Mathematics Education, Quebec, Canada.
+[Klawe, & Phillips, 1995]. Klawe, M. M. & Phillips, E. (1995).     A classroom study:    Electronic games engage children as
+researchers. Proceedings   of Computer Support  for Collaborative Learning   '95 (CSCL), Bloomington,     Indiana.
+[Lawry, et. al., 1995]. Lawry, J., Upitis, R., Klawe, M., Anderson, A., Inkpen, K., Ndunda, M., Hsu, D., Leroux, S., &
+Sedighian,   K.  (1995).  Exploring  common     conceptions about   boys and  electronic  games.  Journal     of  Computers  in
+Mathematics and Science Teaching, 14(4), 439-459.
+[Lepper, & Malone, 1987]. Lepper, M. R. & Malone, T. W. (1987). Intrinsic motivation and instructional effectiveness in
+computer-based education. In R. E. Snow and M. J. Farr (Eds.), Aptitude, learning, and instruction (Vol 3): Conative and
+affective process analyses. Hillsdale, NJ: Lawrence Erlbaum Associates.
+[NCTM, 1989].     Curriculum  and  Evaluation   Standards   for School Mathematics.      Reston, VG: The National Council of
+Teachers of Mathematics, Inc.
+[Rahim, & Sawada, 1989]. Rahim, M. & Sawada, D. (1989).            Inventing tangrams through dissection-motion geometry.
+School Science & Mathematics, 89(2), 113-129.
+[Russell, & Bologna, 1982]. Russell, D. S. & Bologna, E. M. (1982). Teaching Geometry with Tangrams.                Arithmetic
+Teacher, 30(2), 34-38.
+[Sedighian,  &   Klawe,  1995]. Sedighian,   K. &   Klawe,  M.  M.  (1995).  An  interface   strategy for promoting  reflective
+cognition in children. Proceedings of CHI '96, Vancouver, Canada. Available from:
+<http://www.cs.ubc.ca/nest/egems/home.html>.
+[Snow, &   Farr, 1987].  Snow, R. E. & Farr, M.  J. (Eds.) (1987). Aptitude, learning,  and  instruction (Vol 3):  Conative
+and affective process analyses. Hillsdale, NJ: Lawrence Erlbaum Associates.
+
+                                                                                                                       495
+

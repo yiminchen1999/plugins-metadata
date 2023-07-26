@@ -1,0 +1,310 @@
+           A   Heterogeneous                            Animated                Platform               for
+              Educational                    Participatory                   Simulations
+
+                                                  Bill Tomlinson
+                             ACE (Arts Computation Engineering) program
+                                       University of California, Irvine
+                                                   wmt@uci.edu
+
+       Abstract.  This  paper describes   a  multi-user interactive  installation featuring  real time  animated
+       creatures and a  mobile   interaction  paradigm.     This   paradigm  has  been   designed   to serve  as a
+       platform for education in a variety of content domains.       Drawing   on  previous  research  in   mobile
+       computing  and   animated  educational      systems,   this project contributes   a  novel   metaphor   for
+       interactions among real and virtual creatures and worlds. This "Land/Water" metaphor offers that
+       virtual space is like land for virtual     creatures, and   real space is   like  water for  them.     The
+       interaction paradigm involves groups of animated creatures that live on desktop screens, and may
+       be transported   from  screen   to   screen by   means   of   mobile   Tablet  PCs    carried   by   human
+       participants. This paper presents a working implementation of this paradigm and describes its use
+       as an educational tool.
+
+       Keywords: Human-Computer Interaction, Handheld/Mobile Devices, Virtual/3D Environments,
+       Participatory Simulations
+
+INTRODUCTION
+The continual    development     of    new   computational
+technologies presents the opportunity for the creation of
+novel  modes   of interaction    that  may   contribute    to
+educational processes.   Computer      graphics   have  been
+embraced by the      educational community      in   a  wide
+variety of domains such as chemistry (Wilson, 2002) or
+history  (Jenkins,   2002).    More     recently,    mobile
+computational  devices   have  begun    to   play  a role  in
+education   through   participatory    simulations,     e.g.,
+(Klopfer  &   Woodruff,  2003),  and   university    campus
+deployments,   e.g., (Tatar et al.,    2003).   This   paper
+presents an interaction paradigm       that  embraces both
+computer graphics and mobile   devices    in an educational
+context and describes a working implementation of this
+paradigm.       This     interaction        paradigm    and      Figure   1: The   Virtual   Raft   Project.  Desktop
+implementations based on it offer a viable platform for          screens   serve  as "virtual   islands"    and  tablet
+presenting  a range  of  educational   content  areas   in  a    PCs serve as "virtual rafts."
+compelling interactive way.
+  The interaction paradigm presented here is a multi-user experience involving several fixed computer displays
+and several mobile handheld devices (see Figure 1).     Each fixed display serves as     a "virtual island"  inhabited by
+populations of 3D    animated  virtual creatures.  When   a human   participant   brings one of   the  mobile  devices  (a
+"virtual raft") close to the screen, one of the creatures on the virtual island moves onto the virtual raft.           The
+participant may then carry that creature to a different virtual island; once the raft is close enough to the other
+island, the creature can move off the handheld onto the other desktop screen.        This interaction paradigm, where
+people  participate  in the migration     and dispersal    of individuals    and  populations,    encourages   an   active
+engagement from participants in the unfolding of the natural or cultural history existing on the islands.            This
+interaction may serve as a platform for a range of educational content, including anthropology, social science,
+mythology, ecology and environmental biology (such as the study of biodiversity or invasive species.)               For a
+better sense of the interaction, please view the following short video:
+   http://www.ics.uci.edu/~wmt/movies/HomeschoolVideo.mov
+  The core metaphor in this interaction paradigm draws a parallel between the land/water distinction in the real
+world and the virtual space/real space distinction. In this "Land/Water" metaphor, virtual space serves as land for
+virtual creatures, and real space functions as water.   Virtual creatures may  move   around  in    virtual space, but are
+
+                                                           
+not able  to move   around  in real space;   similarly,  real land
+animals are able to operate effectively on land   but   not  nearly
+so well in water.
+    This metaphor provides a set of organizing principles for
+an interactive educational simulation.       It distinguishes   the
+operational domain of virtual creatures from that of people,
+thereby providing a way of explaining how people are meant
+to  interact with   the  system.   It provides    inspiration   for
+subject matter that may be effectively conveyed through this
+kind of simulation. And it provides guidance for the visual,
+acoustic,  tactile  and   other  elements    of  the  interactive
+experience.  While the platform is not     ideal for all topics of
+education, it does provide a useful framework for exploring
+topics  that deal   with  groups   of   people   (e.g.,  social or
+cultural  education,    see Figure    2), groups   of    biological
+organisms    (ecology,  evolution,  etc.)  and  potentially   other    Figure   2:  A  community       of   autonomous
+topics (math, languages) as well.                                      animated characters inhabits each virtual
+                                                                       island in one version of the system.
+RELATED WORK
+This project builds on previous work in educational technology in two main areas.               The first area, computer
+graphics  and animation, has a long history of engagement with         education.  Computer graphics   have   been   used to
+teach chemistry by visualizing molecules (Wilson, 2002), astronomy through collaborative virtual reality (Hay
+et al., 2002), history through interactive history-based games (Jenkins, 2002) and many other topics.            Animated
+characters are becoming common in education and training simulations, e.g., (Hill et al., 2003). Affective
+characters, in particular, are also being used to help the educational process (Schaub et al., 2003). The system
+presented  here offers  graphics that are  competitive   with   the high  end   of modern   computer     games,  using  3D
+autonomous characters, real-time shadows, and particle system fire and water effects.
+    Mobile computational devices are also on the rise in the popular cultures of industrialized societies, with the
+rapid penetration of cell phones and PDAs over the last few years.          Numerous researchers have considered the
+capabilities of these mobile formats in educational contexts, e.g., (Roschelle & Pea, 2002).                  The    Teacher
+Education    Program   at MIT   has done   pioneering    work   in  developing    participatory simulations    (Klopfer   &
+Woodruff, 2003).    Other   researchers have    explored the use of  mobile  devices  in education    through  a variety  of
+different platforms (Borovoy et al., 1998). The project described in this paper uses mobile devices with high end
+graphics and built-in accelerometers (sensors for detecting the motion of the device); the use of these capabilities
+helps  to create a  novel   mobile  interaction   with   believable  autonomous     characters and    virtual  worlds,  and
+distinguishes this work from previous research efforts.
+    This project also builds on previous work in autonomous characters and interactive installation design.             The
+system   extends  a code   base developed    by  the  author  and   his   collaborators, e.g.,  (Isla et  al., 2001),   and
+incorporates ideas in believable characters (Perlin & Goldberg, 1996), affective computing (Picard, 1997) and
+biomorphic computation.     By synthesizing elements from each of these areas,       the  project   presented  here  offers a
+unique and novel educational interaction.
+
+INTERACTION               PARADIGM
+A challenge in building virtual environments is deciding how real space and virtual space should relate to each
+other.  An effective way   to present  the virtual/real  boundary   is to offer a  metaphor   that gives people  a   starting
+point for their understanding.   For example, the metaphor in a flight simulator      is that   the user is a  pilot sitting
+in the cockpit and the computer screen is the front windshield of the airplane.          Other computational metaphors
+suggest that the computer screen is a "desktop" and that areas of the screen are "windows."
+    The central metaphor presented in this paper draws a parallel between the virtual space/real space distinction
+and the commonly understood distinction between land and water.           This core "Land/Water"     metaphor    has served
+as the primary focus in developing all elements of the interaction paradigm and has had numerous implications
+for the  design of  the system.  The    core elements    of the interaction paradigm     are: animated   creatures,  virtual
+islands, virtual rafts and human participants.    This section addresses each of these elements in turn.
+    The goal of this interaction paradigm is to provide a way for human participants to engage with animated
+creatures.   These creatures provide the central focus for the educational content to be delivered by the system.
+Each stationary computer screen provides a fixed window onto an island community inhabited by the animated
+creatures. The screen itself serves as the boundary between virtual land ­ the area where the         virtual creatures live
+and that people can see ­ and virtual water ­ the "gulf" of real space where people live and virtual creatures can
+not go.   The animated creatures are constrained to exist on a virtual island, but are able to look out over            the
+virtual water and interact with things they see there (by means of a web cam mounted on top of the screen).
+
+                                                             
+          While    the virtual  islands  allow    people   to   have  some
+simple interactions with the virtual creatures via the web cams on
+each island,  the  primary  mode     of  interaction   is through    several
+Tablet PCs that people carry around the installation space.           These
+Tablet PCs serve   as virtual rafts that are able  to  carry creatures   and
+interact with the islands and with each other. Each raft has a water
+simulation    running  on  it, with   simple   real-time   waves     and  an
+animated wooden platform in the middle of the screen (see Figure
+3). The Tablet PCs have two-axis        accelerometers built    into  them,
+which   provide    information   about   how   the   device   is  moving.
+These accelerometers make it possible for the character            to   react
+when   the   participant tilts the  device.     This   simple     mode    of
+interaction,  where the virtual raft   responds   to  real world   gravity,
+creates a strong link between the virtual and real worlds.                      Figure 3: A view of the screen on the
+   This interaction    paradigm     is   designed     to   situate   human      tablet PC based virtual raft.
+participants at the conceptual center of the installation.      People use
+the rafts to  help characters  move    onto new   islands;   in this regard,   the participants  serve   the role of   an  ocean
+current or other force of nature.   By   putting  people in   a   position to  move  creatures around the      world and    view
+the ensuing   results,  the project    seeks   to enable   an   active  engagement      with  the  ideas  presented    by   each
+installation. This  centrality   of the  participants  will  be   particularly important   in the   upcoming ecology-based
+version of the project (see Future Work section below), which seeks in part to demonstrate that environmental
+stewardship is an active, hands-on process.
+
+PLATFORM            FOR     EDUCATION
+The virtual raft interaction paradigm has been designed to help people have interactive educational experiences.
+Storytelling, and   in particular interactive   storytelling,   have  been    used effectively  as  learning   tools (Rossiter,
+2002; Roussos et al., 1997).      The   Virtual   Raft paradigm    provides    many  of the   ingredients   of good   stories ­
+characters, voyages, encounters with different kinds of creatures ­ and thereby encourages people to find stories
+in the events that they find there.    By   giving   participants  the  raw   materials of stories, the  project  lets them   to
+create their own narratives through which they can assemble an understanding of the material presented.
+    The paradigm    also provides   a  fertile platform   for   providing  a   range of educational    content.   The current
+installation has been developed with humanoid characters as a means for addressing color theory, social content
+and mythology.     Another version is currently bring planned        in  collaboration  with  the  Discovery Science      Center
+in  Orange   County,   CA,  that features animated     versions   of  several  animal   species   and  may   be   used  to  help
+students learn ecological concepts such as the spread of biodiversity and the impact of invasive species.
+    The value  of  this paradigm    comes   not   just from   its ability  to  be  adapted to  a  range  of  different  content
+domains, but also from its ability to encourage people to engage in critical thinking.                 The   system   does   not
+necessarily prescribe a certain set of ideas, but instead allows participants to interact with a system and discover
+for themselves     the effects of their  actions.    While    the  computational     design   of  each   implementation      will
+determine the cause-and-effect relationships to which participants will be exposed, the value judgments may be
+left to the participants themselves.
+    This paradigm also encourages participants to engage in real-time problem solving.                   Each  version    of the
+system has a multiplicity of outcomes based on how people interact.            The design of the system allows       people   to
+try out certain solutions and then attempt to change the impact that they have had.               While people's actions are
+effectively irreversible, there is nevertheless an abundance of opportunities to recover from previous actions.              By
+combining    the irreversibility of action  and   the  potential  to  recover  from  mistakes    with  multiple   user-defined
+opportunities for "success," the system encourages an active engagement with the concepts being presented.
+
+EVALUATION
+A fully functional prototype    based  on this paradigm    was created in summer 2004.        This prototype    was  exhibited
+at the opening   of a  new  building   on the  campus     of the  University   of  California,   Irvine, in  November     2004.
+Approximately 200 participants interacted with the installation over two days, in nine groups of 20 and several
+small groups.    These participants included industry professionals, academic administrators, professors, college
+students and a few grade school children.       Each group visited the installation for a total of ten minutes.             This
+visit consisted of a two minute introduction to the overall research, a one minute orientation to the installation
+itself, a five minute interaction with the installation, and two minutes for questions at the end. While it was not
+possible to collect data through questionnaires or other experimental instruments at this event, the video cited
+above offers some first hand evidence that the installation had the impacts described in this section.
+    The focus of this installation was to teach participants how the colors of light blend together. When each
+group of participants arrived, the three islands had red, green and blue fires on them, and each of the islands was
+inhabited by three characters with torches the same color as the fire.             Whenever   a  character   moved   to   a  new
+island, it would walk over to the fire on that island and add its torch color to it.             Therefore, if    a participant
+
+                                                              
+carried a character with a red torch to a green island, the red character would walk over to the green fire and the
+fire would turn yellow. The participants were assigned the task of using the three rafts to disperse the characters
+so that each island ended up with white fire on it.          To accomplish this       task required at  least six   successful
+character transmissions (a character with a red torch needed to go to the blue island and the green island, a blue
+character needed to go to red and green islands, and a green character needed to go to the blue and red islands).
+    All nine large groups completed the task of turning all three fires white within the allotted five minutes.              In
+the course   of observing   200  people   interact  with   the  installation, several hypotheses  about    the   system  were
+drawn.   First, the success of all nine groups supports the idea that the interaction paradigm       draws    on  a metaphor
+that people readily understand.    Since each group was able to perform the assigned task after         only  one   minute   of
+introduction to  the interaction,  the island/raft interface appears to   be intuitive.  People of all ages were willing     to
+carry the virtual raft interface and convey characters around the space. While 200 people mostly from southern
+California does not represent a cross sample of humanity, it did appear that the installation did not rely upon a
+given language or cultural perspective for the core interaction paradigm to retain its effectiveness.
+    Second,    since people  took   turns carrying     the interface, the  paradigm   is   transferable and   lends  itself  to
+cooperation among multiple users.       Whereas    many    mixed   or augmented    reality environments    require  some  sort
+of tethered interface such as a heads up display or data glove, this interaction paradigm allows people to move
+fluidly  in  and out of  the role  of   primary  interactor  without   any  significant  changeover  cost.    The   multi-user
+aspect of the virtual raft system caused the groups to work together to accomplish the task, including both raft-
+holders  and    bystanders.     It was    common       to  hear
+exclamations    such  as, "Ooh,    this island  has  a yellow
+fire, so it needs  somebody     with a  blue   torch!" and  to
+have people share information with each other about
+where characters of various colors were in the space
+    A third feature of the system is that the interaction
+appears to be engaging to people.        When each group,
+which had been through an hour of speeches and were
+now   at the    end  of  an  hour-long    tour  of   projects,
+reached the installation space, they were largely quiet
+and subdued.     However,    once  the  interaction  with   the
+Virtual  Raft   Project began,   they   became   much     more
+animated.       During    the   five    minute     interaction,
+members     of each  of the  groups     talked and  interacted
+physically   with   each  other.   At   the    end of  several
+interactions, when the group accomplished its goal, the
+participants broke   into   spontaneous    applause.       This
+applause was not directed at the people demonstrating              Figure   4:   Multiple   participants    may     interact
+the project, but rather at the group itself for succeeding         with   the installation   simultaneously      by means
+at its task.                                                       of several virtual rafts.
+
+FUTURE WORK
+    This project  is developing    in   two  main   directions.    First, this  system   could be used     as a  platform   for
+exploring    and learning    about  social  and    cultural phenomena.        Themes     such as the    spread   of  cultures,
+acceptance/discrimination, communication and teamwork could all be addressed by means of a system in which
+characters encounter communities that are new to them and try to find their place in that social system.             In order
+to develop   these  facets  of the system,   it will   be  necessary  to  build  a more    comprehensive   system   of social
+intelligence in the characters.    Previous work by    the  author  has  focused   on social  intelligence in virtual wolves
+(Tomlinson, 2002), and will provide a starting point for human-like computational social competence.                         In
+particular,  mechanisms     for characters to remember information about           their world  and to   communicate      this
+information to each other will be important parts of this future implementation.
+    The research team that created the Virtual Raft Project is also currently in the design stages for a version of
+the system based on ecology. By letting people move animated species among several virtual islands, the
+installations will allow them to understand concepts such as the spread or contraction of biodiversity, the role of
+predator/prey interactions, and the impact of invasive species.           This project is being designed in      consultation
+with educational curators at Discovery Science Center in Orange County, CA.                 The creators are developing      it
+with an awareness of the California Science Standards (in particular focusing on the life sciences curriculum); the
+system will be evaluated based on its effectiveness at helping visitors learn that content.                   In order to   be
+exhibited in a science center, it will be necessary to make the mobile elements of the system more robust to
+handling by thousands of children every year.          In addition to producing a California specific       installation,   the
+system will be designed to produce a series of regionally specific installations featuring species from a range of
+regional ecosystems.      By   designing  the   system  from   its inception  to develop   multiple versions,    the  research
+team hopes to make it significantly easier to be able to develop new bodies of content for the same core
+interactive platform. The broad goal of the project is to give visitors to regional science centers and museums an
+
+                                                               
+opportunity to think critically about the science of ecology by engaging with locally relevant ecological themes
+in an interactive setting.
+
+CONCLUSIONS
+This paper has presented a novel interaction paradigm for multi-user participatory simulations.   This paradigm
+involves desktop computer screens that serve as virtual islands populated by autonomous 3D animated creatures,
+and mobile devices, such as tablet PCs, that serve as virtual rafts that participants may use to carry creatures
+between the islands. This paper described how this "Island/Raft" paradigm may   serve   as an interactive platform
+for education in several different content domains, and presented a functional implementation of the paradigm.
+  This paper and the research it represents contribute to a new generation of educational systems that draw on
+technological advances     in mobile   computing,   ubiquitous  computing,    computer   graphics  and    artificial
+intelligence, and compete effectively against emerging forms of interactive entertainment.    By harnessing these
+technologies and drawing elements from entertainment media to create an engaging experience, computational
+systems will be able  to   present content in ways that are of interest to learners and growing  effectiveness  as
+educational tools.
+
+ACKNOWLEDGEMENTS
+The author would like to thank Man Lok Yau, Jesse Gray, Sara Goetz, Eric Baumer, Jessica O'Connell, Ksatria
+Williams and So Yamaoka for their work on the Virtual Raft Project, as well as the staff of Discovery Science
+Center. This research was supported by the ACE (Arts Computation Engineering) program, the Donald Bren
+School of Information & Computer Sciences, the Claire Trevor School of the Arts, the UC Game Culture &
+Technology Lab, and the California Institute for Telecommunications & Information Technology.
+
+REFERENCES
+Borovoy, R., Martin, F., Vemuri, S., Resnick, M., Silverman, B., & Hancock, C. (1998). Meme tags and
+        community mirrors: Moving from conferences to collaboration. Paper presented at the Proceedings of
+        the 1998 ACM conference on Computer supported cooperative work.
+Hay, K. E., Elliott, D. M., & Kim, B. (2002). Collaborative network-based virtual reality: The past, the
+        present, and the future of the virtual solar system. Paper presented at the Proceedings of the Computer
+        Support for Collaborative Learning: Foundations for a CSCL Community.
+Hill, R. W., Douglas, J., Gordon, A., Pighin, F. P., & van Velsen, M. (2003). Guided conversations about
+        leadership: Mentoring with movies and interactive characters. Paper presented at the Proceedings of the
+        Fifteenth Innovative Applications of Artificial Intelligence Conference (IAAI-03), Acapulco, Mexico.
+Isla, D., Burke, R., Downie, M., & Blumberg, B. (2001). A layered brain architecture for synthetic creatures.
+        Paper presented at the Proceedings of the International Joint Conferences on Artificial Intelligence
+        (IJCAI), Seattle, WA, USA, August 4-10.
+Jenkins, H. (2002). Game theory: Digital renaissance. MIT Technology Review, 1-3, March 29.
+Klopfer, E., & Woodruff, E. (2003). Platforms for participatory simulations - exploring systems and generating
+        discourse with wearable and handheld computers. Paper presented at the Conference on Computer
+        Supported Collaborative Learning, Oslo.
+Perlin, K., & Goldberg, A. (1996). Improv: A system for scripting interactive actors in virtual worlds. Paper
+        presented at the Proceedings of ACM SIGGRAPH 96, New Orleans, LA, USA, August 4-9.
+Picard, R. (1997). Affective computing. Cambridge, MA: MIT Press.
+Roschelle, J., & Pea, R. (2002). A walk on the wild side: How wireless handhelds may change cscl. Paper
+        presented at the Proceedings of the 2002 Conference on Computer Supported Collaborative Learning,
+        Boulder, CO.
+Rossiter, M. (2002). Narrative and stories in adult teaching and learning. Clearinghouse on Adult, Career and
+        Vocational Education, 241.
+Roussos, M., Johnson, A. E., Leigh, J., Vasilakis, C. A., Barnes, C. R., & Moher, T. G. (1997). Nice:
+        Combining constructionism, narrative and collaboration in a virtual learning environment. SIGGRAPH
+        Comput. Graph., 31(3), 62--63.
+Schaub, H., Zoll, C., & Aylett, R. (2003). Modelling empathy: The eu-project victec (virtual information and
+        communication technology with empathic characters). Paper presented at the Fifth International
+        Conference on Cognitive Modeling, Bamberg, Germany, April 10-12.
+Tatar, D., Roschelle, J., Vahey, P., & Penuel, W. R. (2003). Handhelds go to school: Lessons learned.
+        Computer, 36(9), 30--37.
+Tomlinson, W. (2002). Synthetic social relationships for computational entities. Unpublished Ph.D.,
+        Massachusetts Institute of Technology, Cambridge, MA.
+Wilson, E. K. (2002). Computer learning hits its stride. Chemical & Engineering News, 80, 35-39, 9/16/02.
+
+                                                         
+

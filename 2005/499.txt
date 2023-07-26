@@ -1,0 +1,278 @@
+                Mediated Chat Development Process:
+ Avoiding Chat Confusion on Educational Debates
+
+                 Mariano Pimentel, Hugo Fuks, Carlos José Pereira de Lucena
+                                    Computer Science Department
+                                 Catholic University of Rio de Janeiro
+                            {mariano, gerosa, hugo, lucena}@inf.puc-rio.br
+
+     Abstract. The objective of this research is to reduce confusion in chat conversation, which is the
+     main problem regarding the use of chat tools for holding online course debates. This problem is
+     investigated using a Groupware Engineering approach. A number of successive versions of the
+     Mediated Chat tool have been developed as part of this research. This research aims at producing
+     an enhanced chat tool designed for educational debates through which a chat conversation could
+     be followed more easily.
+
+     Keywords: Chat Confusion, Education Debates, Online Education
+
+1. INTRODUCTION
+Textual chat tools have achieved widespread popularity and, increasingly, people want to use these tools in
+activities that go beyond    socialization and recreation.  In  this research project, a chat tool for running
+synchronous debates as part of online courses is investigated.
+  Among the potential educational uses of chats is the establishment of a space to explore new educational
+models where there is an absence of expositive content, a high level of dialogue and the de-characterization of
+the teacher as a repository of knowledge. It has been identified that informal conversation, which is typical of
+this tool, makes it possible for learners to better perceive others and to better see themselves as part of the group.
+This provides a space for emotions that reduce the feeling of something impersonal and isolated. The continued
+and integrated use of chat tools for educational activities is a way of keeping learners motivated and engaged in
+order to guarantee the success and continuity of distance learning courses.
+  However, conversational confusion has been identified as the main limitation of the educational use of chat
+tools. The participants of the synchronous debates being researched, although usually excited about the activity,
+frequently complain about the chat confusion: "It is not easy to communicate through such a chaotic tool"; "I
+liked this debate...however, I couldn't follow what was being discussed very well". In a chat with a number of
+participants talking at the same time, the result is a tangle of messages where it is sometimes difficult to identify
+who is talking to whom about what. This problem has been called Chat Confusion (Pimentel, Fuks & Lucena,
+2003; Thirunarayanan, 2000).
+  The objective of this research is to discover which problems cause the participants to consider the chat
+conversation    confusing. Using a Groupware     Engineering    approach,   problems have  been identified and
+mechanisms for chat tools that can avoid chat confusion have been developed--this research methodology is
+presented in section 2. For each problem identified, a new version of the Mediated Chat tool is developed and
+then experimented within an online course--the versions and their evaluations are presented in section 3. The
+conclusion of this research is presented in section 4.
+
+2. GROUPWARE ENGINEERING TO DEVELOP THE MEDIATED CHAT TOOL
+The AulaNet environment is a Learning Management System based on a groupware approach that has been
+under development since June 1997 by the Software Engineering Laboratory of the Catholic University of Rio
+(PUC-Rio). The AulaNet is a freeware application available in Portuguese, English and Spanish versions at
+http://groupware.les.inf.puc-rio.br and http://www.eduweb.com.br. The group that is developing the AulaNet
+learningware also teaches the Information Technology Applied to Education course, ITAE (Fuks, Gerosa &
+Lucena, 2002), in the Computer Science Department at PUC-Rio. This course has been taught entirely online
+through AulaNet since 1998.2 (the second semester of 1998). This course provides a real environment where the
+experiments related to AulaNet are carried out. Among the ITAE course's activities are synchronous debates
+held through the AulaNet Debate service, which runs the Mediated Chat, the chat tool being researched.
+
+                                                         
+                                                                               Revision
+  To guide the research of problems related to chat confusion and to systematize the development of Mediated
+Chat versions, a Groupware Engineering approach has been used (Fuks, Raposo, Gerosa & Lucena, 2004). It is
+based on a collaboration 3C model: Communication, Coordination and Cooperation. These concepts are used to
+analyze the  ITAE       debate sessions in a search  for problems           related   to     chat confusion. For      each     problem
+identified, a new Mediated Chat version is developed, as in the process shown in Figure 1.a.
+
+           typical chat tool                        COMMUNICATION                                  Mediated Chat x.x
+
+                                                                                                       Improved
+                                           Groupware Engineering                                    Mediated Chat
+                                                                                                     version to run
+                                                                                                  education debates
+
+                                          COOPERATION              COORDINATION
+
+              (a) Groupware Engineering applied to the development of the Mediated Chat tool
+
+                                          2001.1
+
+                                                  Version: HyperDialog
+                                                   3C-Aspect: Communication
+                                                     Problem: Co-text Loss
+                                                  Mechanism: Message Thread
+
+                                          2002.2
+
+                                                Version: Mediated Chat 2.0
+     2000.1                                       3C-Aspect: Coordination
+                                                    Problem: Dynamics Interruption
+                                                 Mechanism: Conversation Techniques
+
+        Version: Mediated Chat 1.0
+      3C-Aspect: CommunicationProblem: no one2004.1                           Revision
+     Mechanism: Communication Channel                                                   2005.1
+                  Framework
+
+                                                Version: Mediated Chat 3.0                        Version: Mediated Chat 5.0
+                                                  3C-Aspect: Coordination                      3C-Aspect: Cooperation
+                                                    Problem: Message Overflow                    Problem: De-contextualization
+                                                 Mechanism: Message Queue                     Mechanism: Session Register
+
+                                           2004.2
+
+                                                  Version: Mediated Chat 4.0
+                                                    3C-Aspect: Cooperation
+                                                      Problem: Reading and Writing Interface
+                                                   Mechanism: Interface improvements
+                                             (b) Mediated Chat versions
+                                   Figure 1. Mediated Chat Development Process
+  Each new Mediated Chat version implements a mechanism to solve a problem related to chat confusion that
+has been identified. The development process is presented in Figure 1 and described on the next section.
+
+3. MEDIATED CHAT VERSIONS
+This section describes      each  Mediated   Chat  version developed               focusing   on   the problem        identified,  the
+mechanism implemented, the data collected from its use on an ITAE edition, and its evaluations.
+
+                                                         
+                                                                              Revision
+3.1 - Mediated Chat 1.0: the typical chat tool
+Despite few features, Mediated Chat 1.0 is a typical chat tool. The development of this version had not been
+driven by an effort to solve a chat confusion problem. The main objective was to support the synchronous
+textual message interchange between the participants of an AulaNet course.
+  When the Mediated Chat 1.0 was first used to run the debates on ITAE 2000.1 edition (first semester of
+2001),  the participants   considered the chat  conversation  too  confusing.  This  research   project  started to
+investigate the causes of chat conversation confusion aiming at developing a Mediated Chat tool through which
+debates would be better understood.
+
+3.2 - HyperDialog: Co-text Loss and the Threaded Messages
+Among the symptoms of conversation confusion, the occurrence of Co-text Loss was identified; a problem that
+occurs when one participant is not capable of establishing the structure of the discourse--that is, s/he cannot
+identify which message (prior to the given message) is being answered. Analysis of the linguistic aspects of the
+ITAE2000.1 debates led to the hypothesis that one of the causes of chat confusion was the non-linearity of the
+chat session messages (Pimentel, Fuks & Lucena, 2003). The HyperDialog tool, where messages are threaded,
+was developed in order to deal with the Co-text Loss problem. Besides presenting messages chronologically
+ordered, the tool also presents the tree message associations. In this organization, the text sequences--the way in
+which the dialogues are linked together--are evident. In an isolated thread, the conversation remains linear:
+each message is associated with the message that comes immediately before it. The thread mechanism would
+reduce the occurrence of co-text loss because it organizes the non-linearity of the chat.
+  Contrary to what was expected, the experiment held in 2001.1 showed that the Co-text Loss problem was not
+reduced using the HyperDialog. It was noted that co-text losses through the use of the HyperDialog tool were
+accused  regarding   the messages  where  the sender had  not specified   the association  with  the   message  s/he
+referred to. When the messages are not adequately associated (7.5% of messages were not correctly linked), the
+threads become useless and can make it even more difficult to identify the co-text. While the message thread
+mechanism has the potential to prevent the Co-text Loss problem, it nevertheless introduces other problems. The
+conversation became inappropriately more formal. The message tree structure dispersed the participants who
+were focused on different branches, making coordination of the debate more difficult. Compared to typical chat
+tools, HyperDialog used a much more complex interface that introduced a number of problems regarding the use
+of the shared space.
+  The thread mechanism implemented in the HyperDialog tool is similar to that implemented in Threaded Chat
+(Burkhalter, Cadiz & Smith, 2000), and the users who experimented the Threaded Chat tool also indicated that it
+was significantly worse than a typical chat tool. In future works, a simplified version of the thread mechanism
+will be researched.
+
+3.3 - Mediated Chat 2.0: Dynamics Interruption and Conversation Techniques
+  To systematize and facilitate coordination, a better defined sequence of steps for the ITAE debates was
+established. The dynamics, applied as of the ITAE 2002.2 edition, prescribes a set of activities and expected
+messages for each debate step. Using this better structured conversation dynamics, the debate session becomes
+easier to follow. Compared to the preceding editions, there was a reduction of Co-text Loss by half in the ITAE
+2002.2 edition--an indication that better conversation flow implies in less chat confusion.
+  The application of these new dynamics made it clear that some of the messages were not appropriate for the
+ongoing step, being identified as Interruptions (Pimentel, Fuks & Lucena, 2004). Nevertheless, the Mediated
+Chat 1.0 tool, as well as the majority of typical chat tools, does not have specific mechanisms to support
+coordination (Pfister &    Mühlpfordt, 2002).  For that  purpose,  the Mediated  Chat     2.0 tool implements    the
+following set of conversation techniques:  Free Contribution, where participants can send messages at any time;
+Circular Contribution, where participants are organized in a circular queue and, one by one, the first one in the
+queue can send a message; and Unique Contribution, where each participant must send a single message at any
+time. It is also possible to Block-Unblock the sending of messages by the learners.
+  The number of Interruptions characterizes the difficulties in coordinating the debate session (the perfectly
+coordinated stage is one in which no Interruptions take place). It was expected that the use of the conversation
+techniques implemented in Mediated Chat 2.0 would reduce the occurrence of Interruptions resulting in a better
+debate coordination and, thus, in less chat confusion. However, the experiment conducted in the ITAE2002.2
+edition showed that the number of Interruptions remained unchanged when the Mediated Chat 2.0 was used. A
+further analysis of  these  sessions  pointed out  that the interruptions took  place  because     the conversation
+techniques  are too  rigid to deal with unexpected   situations. Improvements   on  the   mechanisms    tested were
+proposed (Pimentel, Fuks & Lucena, 2004) and then implemented on the Mediated Chat 5.0 version (subsection
+3.6).
+
+                                                        
+3.4 - Mediated Chat 3.0: Message Overload and Message Queue
+Another problem related to chat confusion frequently mentioned by learners is the difficulty in reading all the
+messages  during  the debate session.        This problem is aggravated  when a    large number  of messages  are
+exchanged within a short period of time, making it impossible for participants to read all of them. In this
+research this phenomenon  is termed   Message       Overload. A  similar problem   is known  as Flood in the IRC
+literature (Oikarinen, 1993). However, Flood is the high rate of messages sent by a single participant, whereas
+Message Overload is the high rate of messages sent in the session by all participants.
+  Mediated Chat 3.0 tool was developed to deal with the Message Overload problem. In typical chat systems,
+each message that the server receives is immediately dispatched to the clients. In the Mediated Chat 3.0 tool, the
+server waits after publishing a message and before publishing the next one, allowing the participants to read all
+the published messages successfully. This mechanism was based on the Chat Circles tool (Viegas & Donath,
+1999), where the message remains visible for a limited period of time. However, in the Chat Circles tool there is
+nothing that prevents other messages from being simultaneously presented, thus Message Overload may still
+occur. In addition, in both tools there is the indication of a typing-participant represented by a pulsating circle.
+  The Mediated Chat 3.0 tool was used in the ITAE 2004.1 edition. The interviews that were conducted with
+the participants demonstrate that nobody complained about message overload. However, a lot of the participants
+did not become aware of the message queuing mechanism. Some of them thought that the chat tool was too slow
+because some of their messages had their publication delayed (their message was in the queue but they did not
+notice it) and were unsatisfied with the new version. To deal with this collateral problem, the Mediated Chat 5.0
+version (subsection 3.6) implements the queuing representation in the Participant List in such a way that it is
+more visible and easier to understand, similar to the one implemented in the PalTalk tool. The typing indication
+was quickly and well understood by the participants and aided the chat coordination. This mechanism also
+reduces the occurrence of a specific type of interruption caused by the lack of visibility of turn in progress
+(Vronay, Smith & Drucker, 1999).
+  Although not conclusive yet, the results show that the queuing mechanism used in this version prevents
+Message Overload, and the typing indication prevents the interruption caused by lack of turn in progress. Both
+mechanisms help chat coordination reducing chat confusion.
+
+3.5 - Mediated Chat 4.0: Interface to a better Reading and Writing process
+Some problems concerning the reading and writing process causing chat confusion have been identified. Then,
+Mediated Chat 4.0 was developed. To improve the reading process, the debate session text is formatted to
+increase the visual distinction between different types of information: date published, sender and the content of
+her/his message; messages of participants and messages automatically sent by the system (to inform who entered
+or left the debate session). Only the nickname of the participant is presented, not his/her full name, to decrease
+the amount of text identifying the sender. The scrollbar stops scrolling automatically when the reader scrolls it
+up to read the messages no longer visible on the screen, and resumes scrolling automatically when the reader
+scrolls it down to the last published message. To improve the writing process, the typing area increased to 3
+visible lines of text (instead of just one).
+  The versions Mediated Chat 1.0 and 4.0 were used to hold the ITAE 2004.2 debates. The participants were
+interviewed and they all stated that the new interface helps reading the published messages and to writing new
+ones. New interface improvements were suggested by the participants during the debate sessions and interviews.
+They were analyzed and then implemented on Mediated Chat 5.0.
+
+3.6 - Mediated Chat 5.0: Session Register to avoid De-contextualization
+All mechanisms tested in previous Mediated Chat versions were revised and implemented in Mediated Chat 5.0.
+The latest version is going to be experimented in the ITAE 2005.1 debates. The objective is to find out the
+degree of chat confusion that occurs when using all these mechanisms together.
+  A new mechanism developed to avoid the de-contextualization problem (Hedestig & Kaptelinin, 2002) will
+also be investigated. This problem happens when a participant enters an ongoing debate session. The other
+participants will be already engaged in the discussion and the new participant will find herself de-contextualized
+having difficulty to follow what is being discussed and delaying her participation in the session. Sometimes, the
+debate dynamics is interrupted to contextualize the participant that just entered.
+  To avoid the de-contextualization problem, the session control mechanism was implemented in Mediated
+Chat 5.0. The mediator is the one responsible to start and finish a chat session. All messages sent during a
+session are archived by the chat server. All messages produced during the ongoing session are presented to the
+incoming participant, enabling her to find out the context of the ongoing discussion.
+
+                                                          
+4. CONCLUSION
+This paper addresses chat confusion. This phenomenon is investigated within the educational debates setting.
+Evidence comes in the form of: co-text loss, dynamics interruption, reading and writing interface features, and
+de-contextualization. Using a Groupware Engineering approach, a chat tool has being developed seeking to
+prevent this phenomenon. The newest Mediated Chat version derives from the systematic investigation of the
+influences  of communication,     coordination  and   cooperation aspects   of educational  debates  through    chat
+sessions. Although the experiment with this latest version has not been conducted yet, the results obtained with
+the use of intermediate versions indicate that debate sessions will be less confusing and more understandable.
+
+ACKNOWLEDGMENTS
+The AulaNet project is partially financed by the Fundação Padre Leonel Franca and by the Ministry of Science
+and Technology through its Program Multi-Agent Systems for Software Engineering Project (ESSMA) grant nº
+552068/2002-0. It is also financed by individual grants awarded by the National Research Council to: Carlos
+José Pereira   de  Lucena  nº  300031/92-0  and   Hugo   Fuks  nº 303055/02-2.     Mariano Pimentel  received   and
+individual grant from the Council for the Improvement of Higher Teaching of the Ministry of Education.
+
+REFERENCES
+Burkhalter,   B., Cadiz, J.J., Smith, M.  Conversation   Trees and    Threaded  Chats. In: CSCW'00    - Computer
+      Supported Cooperative Work Conference. Philadelphia, PA, 2000. p. 97-105.
+Chat Circles. http://chatcircles.media.mit.edu
+Fuks, H., Gerosa, M.A., Lucena, C.J.P. The Development and Application of Distance Learning on the Internet.
+      Open Learning - The Journal of Open and Distance Learning, v 17, n 1, 2002, pp. 23-38.
+Fuks, H., Raposo, A.B., Gerosa, M.A., Lucena, C.J.P. Applying the 3C Model to Groupware Engineering.
+      Technical Report MCC nº 01/04, Computer Science Department of the Catholic University of Rio de
+      Janeiro, Brazil, 2004.
+Hedestig,U.,   Kaptelinin, V.    Re-contextualization   of Teaching    and  Learning   in  Videoconference-based
+      Environments: An Empirical Study. CSCL2002. Boulder, Colorado USA, 2002.
+IRC. http://www.irc.org
+Oikarinen, J. Request for Comments: 1459, Network Working Group, D. Reed. May 1993.
+PalTalk. http://www.paltalk.com
+Pfister,H. Mühlpfordt,   M.    Supporting Discourse   in a  Synchronous    Learning   Environment:  The  Learning
+      Protocol Approach. CSCL2002. Boulder, Colorado USA, 2002.
+Pimentel,  M.G.,   Fuks,  H.,  Lucena,   C.J.P. Co-text  Loss  in Textual   Chat   Tools.  In: CONTEXT'03:       4th
+      International and Interdisciplinary Conference on Modeling and Using Context. Stanford, California,
+      EUA, 2003. p. 483-490.
+Pimentel, M.G., Fuks, H., Lucena, C.J.P. Mediated Chat 2.0: Embbeding Coordination into Chat Tools. In:
+      COOP'04 - 6th International Conference on the Design of Cooperative Systems. French Riviera, France,
+      2004.
+Thirunarayanan,    M.O.  Cutting  down   on chat confusion:  a proposal  for   managing   instructor-controlled chat
+      systems. In: Ubiquity, v. 1, issue 38, 2000.
+Viegas, F.B., Donath, J.S. Chat Circles. In: Conference on Human Factors in Computing Systems. Pittsburgh,
+      Pennsylvania, United States, 1999.
+Vronay,   D.,  Smith, M.,  Drucker,   S.  Alternative Interfaces  for Chat.    In: UIST'99  -  12th Annual ACM
+      Symposium on User Interface Software and Technology, 1999.
+
+                                                         
+

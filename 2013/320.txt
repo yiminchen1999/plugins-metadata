@@ -1,0 +1,482 @@
+CSCL 2013 Proceedings                                                            Volume 1: Full Papers & Symposia
+
+MTClassroom and MTDashboard: Supporting Analysis of Teacher
+           Attention in an Orchestrated Multi-tabletop Classroom
+         Roberto Martinez-Maldonado, Judy Kay, Kalina Yacef, School of Information Technologies,
+         Marie-Theresa Edbauer, Business School, The University of Sydney, NSW 2006, Australia.
+                         Yannis Dimitriadis, School of Telecommunications Engineering,
+                                  University of Valladolid, Paseo Belén 15, Spain.
+             {roberto,judy,kalina}@it.usyd.edu.au, medb1925@uni.sydney.edu.au, yannis@tel.uva.es
+
+        Abstract: In spite of the substantial progress in CSCL, there is still some distance between the
+        promise of    educational  technology   for  classroom   learning   and   what is   readily achieved.
+        Emerging tabletop devices can offer new means to enhance teachers' classroom control and
+        awareness. These technologies can help them orchestrate activities, and capture, analyse and
+        visualise    students'  collaborative   interactions.  This  paper   presents     MTClassroom     and
+        MTDashboard, that were designed, deployed and tested to support the teacher in orchestrating
+        collaborative learning activities at an authentic classroom. MTClassroom is an enriched multi-
+        tabletop environment that captures aspects of students' activity as they work in small groups.
+        MTDashboard       is an orchestration   tool displayed  at a handheld     device, giving the  teacher
+        control over classroom activities and providing `real-time' indicators of participation and task
+        progress of each group. We analysed teacher's attention by triangulating quantitative evidence
+        captured     by our  environment   with qualitative   observations  and   teacher's perceptions.  We
+        investigated the affordances of our environment and the impact of the information provided to
+        the teacher through the MTDashboard. The contribution of this paper is the novel approach
+        for providing teachers with key indicators of small-group collaboration in the classroom and
+        analysing their impact on teachers' attention to help them manage their time more effectively.
+
+Introduction and Related Work
+Research on     Computer-Supported       Collaborative  Learning   (CSCL)    has    demonstrated    that small   group
+collaboration can activate particular learning mechanisms and that educational technology resources can be used
+to mediate   and facilitate  such collaborative activities (Roschelle  et   al., 1995; Stahl, 2006).  In  spite of   this
+substantial progress in research and practice, there is still some distance between the promise of technology and
+what has actually been delivered in most classrooms. This issue is particularly important for CSCL due to over-
+generalisation from a small pilot study's findings and over-expectation of new technology (Dillenbourg et al.,
+2011a). Cuban et al. (2001) argued that the role of teachers is critical to determine the success of deploying
+technological innovations in the classroom. This points to the need to consider the potentially key role for
+creating new mechanisms that can help teachers design and orchestrate learning activities (Dillenbourg et al.,
+2010; Prieto et al., 2011), so that they can successfully  use emerging technologies   in the classroom.
+        An obstacle in using personal computers in the classroom is that these tend to make it more difficult to
+promote face-to-face collaboration due to their small display and single input (Morgan et al., 2009). By contrast,
+emerging shared devices, such as multi-touch tabletops, offer a large enriched interface that learners can use
+simultaneously   to  create  artefacts. They also offer access  to  digital content  while  students  collaborate    and
+negotiate understanding face-to-face with equal opportunities of participation (Dillenbourg et al., 2011a). Our
+work aims to tackle the issues described above by providing a suite of hardware and software tools for (i)
+enabling students to work in small groups and build virtual artefacts in the form of concept maps that represent
+their shared understanding (Figure 1, right), and (ii) enabling teachers to orchestrate the learning activities and
+teach curriculum content. We present MTClassroom (Figure 1, centre) and MTDashboard (Figure 1, left), which
+were both deployed and tested in authentic classroom sessions. MTClassroom is an enriched multi-tabletop
+classroom that captures aspects of students' learning and interaction processes as they work in small groups.
+MTDashboard on an orchestration tool displayed at a handheld device that allows a teacher to control classroom
+
+   Figure 1. MTDashboard  (Left),  MTClassroom  (Centre)  and  the  Concept  Mapping  application  (Right).
+
+© ISLS                                                                                                             320
+CSCL 2013 Proceedings                                                               Volume 1: Full Papers & Symposia
+
+activities and obtain live visual indicators of collaboration or progress of each group. The main contribution of
+this paper  is the  presentation of   an  approach  that provides   indicators   of small-groups'     performance    on   the
+teacher's dashboard, and our study of its impact on the teacher's decisions about the groups needing attention.
+         To date, full class sets of interactive tabletops have been studied in research contexts, rather than
+authentic learning environments. One important project that explored the use of tabletops in the classroom is
+SynergyNet (Mercier et al., 2012). This was a multi-tabletop environment used to investigate the quality of
+school   children's collaboration     and the   ways  teachers    can interact   with    their system.    Another   similar
+environment was presented by Do-Lenh (2012), which could track command cards for the teacher to orchestrate
+the  tables and  also   showed   task  progress   indicators at a  wall  display    that all   the class  could    see. Both
+environments    explored  ways   that  a  teacher can use    these devices for   classroom     orchestration,   in terms  of
+collaboration and usability, respectively. A third example was provided by a teacher's dashboard proposed by
+Martinez-Maldonado et al. (2012b), who evaluated a system that offered visual indicators of group work at each
+tabletop to help teachers decide which group needed more attention over the duration of a class. However, in all
+this previous work, the studies were not linked to authentic curricula; nor were they prepared by the teacher.
+         The work we present in this paper builds on principles of classroom orchestration (Dillenbourg et al.,
+2011b), specifically on the dimensions of regulation and awareness (Prieto et al., 2011). MTClassroom provides
+an   environment    that captures  live   information    about  each  learner    collaborating     at the  classroom     and
+MTDashboard is the interface that provides control functions and indicators enabling the teacher to be aware of
+each group's progress and activity. Our work goes beyond previous research by showing how the captured data
+can be used by the teacher in two ways: in class for light-weight indicators of students' progress; and after class,
+to analyse the ways they allocated their attention between the student groups.
+
+Design of our Educational Technology
+The main motivation for designing MTClassroom and MTDashboard is that, as the use of technology in and out
+the classroom is spreading, large amounts of learner data can be captured and summarised. These summaries of
+data can be exploited to show information that might otherwise not be easily available. This can be provided to
+teachers so that they can better decide which students may need timely interventions (Bull et al., 2012) or for
+later reflection on how their classroom attention was divided. Interactive tabletops are devices that have the
+potential to support knowledge co-construction in small teams (Dillenbourg et al., 2011a) and also to capture
+aspects  of  learners   collaborative  interactions (Martinez-Maldonado       et al., 2012c).      Next,  we   describe   the
+principles  of classroom   orchestration   and  awareness    that  drove  the  design    of  the   educational  technology
+presented in this paper and then, our learning environments. These principles are as follows:
+         a) To support the role of the teacher as the main actor in classroom orchestration. The design of the
+system should primarily focus on providing services to assist teachers' actions and awareness in the classroom
+(Dillenbourg et al., 2010).
+         b) To support coordination of planned learning activities. The tools should support the enactment of
+the activities designed by the teacher, so that the learning objectives can be achieved (Prieto et al., 2011).
+         c) To support classroom regulation and management. The system should provide the teacher with
+functions to manage and adapt, to some extent, the macro script of the classroom activity (Dillenbourg et al.,
+2011b). We also highlight the importance of after-class analysis of the data that can be captured during the
+learning activities for reflection and evaluation.
+         d)  To  provide   "light-weight"   indicators   about  learners'  progress.     The   system    should be  able  to
+automatically capture small-groups' interactions data and present this information to the teacher to enhance their
+awareness and direct their attention (Bull et al., 2012; Martinez-Maldonado et al., 2012a).
+
+MTClassroom: Multi-Interactive Tabletop Classroom
+The MTClassroom is composed of a number of interconnected multi-touch interactive tabletops (4 were used in
+our study). Each tabletop consists of a 26 inch PQlabs multi-touch layer placed over a high-definition display of
+the same size. Each tabletop is enriched with an over-head depth sensor that detects the student who is touching
+the interactive surface at any time (Figure 2, left). In this way, the host applications running at the tabletops
+recognise   and  log    differentiated  actions   performed   by   each  student.   From     the   teacher's    perspective,
+MTClassroom offers functionalities for orchestrating the tabletops through a controller dashboard that allows
+teachers to send commands to the host applications to trigger actions such as blocking the touch input or moving
+to  the next   learning  phase. A  full  description  of the  design  of  this tool   is provided     in the  next  section.
+Additionally, the system incorporates a connected wall projector that the teacher can use to display the artefact
+being created at a determined tabletop to lead reflection at classroom level (Figure 2, right).
+         MTClassroom can run different learning applications. In this study, the classroom activity consisted of
+the elaboration of concept maps. Concept mapping is an activity that encourages meaningful learning and, when
+maps are constructed in small groups, can foster externalisation and negotiation of diverse perspectives (Novak,
+1995;   Stahl, 2006).   This tabletop   concept   mapping    application (Martinez-Maldonado          et al., 2010)permits
+
+© ISLS                                                                                                                   321
+CSCL 2013 Proceedings                                                                  Volume 1: Full Papers & Symposia
+
+  Figure 2.  MTClassroom  in  action  (Left).  Reflection  driven  by  the  teacher  using  the  wall  display  (Right)  
+
+students to have access to a list of suggested concepts and linking words, or type their own words, in order to
+build a concept map that answers a question asked by the teacher. Prior to the classroom activity, the teacher
+uses a desktop concept mapping editor to create the list of suggested concepts and linking words, and generate a
+Master Concept Map with the crucial or relevant concepts and links that learners must include in their maps, as
+well as other relevant ones that might be expected.
+          From a  data capture       perspective,   the      system  automatically   differentiates                              students' actions  at the
+tabletop according to their seating position. The logging system of each tabletop records all actions to a central
+repository that can be accessed in real time to generate indicators of group activity to be presented to the
+teacher. Additionally, observation consoles can be directly connected to the repository to capture synchronised
+qualitative data. In  our study,     two different         observers submitted  standardised                              annotations   of  the teacher's
+attention and interventions. More details about these are described in the next sections.
+
+MTDashboard
+
+ Figure 3.  MTDashboard:  condition  1  (Left),  being  used  in  the  classroom  (Centre)  and  condition  2  (Right)
+The MTDashboard is a multi-platform teacher's tool that contains both controlling and awareness components
+(Figure 3, right). In this study, the dashboard was displayed at a handheld tablet device that the teacher carried
+while walking around the classroom to monitor student progress (Figure 3, centre). The design of this dashboard
+was driven by the requirements specified by the teacher. The design was also based on principles of classroom
+orchestration of regulation and awareness (Dillenbourg et al., 2010; Prieto et al., 2011) and inspired by similar
+technologies  applied in  related    work   (Do-Lenh,        2012;   Mercier et al., 2012). Figure                                4 shows   details of the
+MTDashboard    interface  that     includes the    following    components.     A) General  functions,                               commands    that  the
+teacher can use with any tabletop. These are, "Start" (Figure 4, A1) and "Finish" (A4) commands, to explicitly
+mark the boundaries of the activity; a "Send message" (A6) command, so the teacher can send text reminders to
+all the tables about, for example, the time left for the activity; "Block" (A2) to freeze the table when the teacher
+wants students' attention and "Unblock" (A3) commands for the teacher to get students' attention when needed:
+and a "Reset" (A5) command to clean up the tabletop interfaces and making them ready for students in next
+                 Control functions            A6
+
+       A1
+                                                                                     Condition 1  :
+       B1                                                                                            Size a  nd  distance  
+                                                                                                    to t  he  teacher's  map
+       A2                                                                                                                      D1
+                                            C-Awareness
+       A3                                   visualisations
+
+       A4                                                                             Condition 2  :
+                                                                                                   Amount  and  symmetry
+       A5                                                                                               of p  hysical  
+                          B2                                                                            participation          D2
+
+Figure 4.  User  interface  of  the  MTDashboard  (annotated  to  show  Control  functions  A1--6,  B1--2,  C,  D1--2).
+
+© ISLS                                                                                                                                                 322
+CSCL 2013 Proceedings                                                                  Volume 1: Full Papers & Symposia
+
+tutorial. B) Configurable functions, may be applicable in various activities but their meaning depends on the
+macro-script     definition. These    include     the "Jump    to  the next  phase"  (B1)     and "Send     to   the wall"  (B2)
+commands. Figure 3 (left) shows that in our case, this latter shows a concept map of one tabletop in the wall
+display. And finally, C) Awareness visualisations, which can show key information about each group progress,
+participation or other indicators that may be coupled to the domain (D1-2 are explained in detail below).
+
+Study Description
+Authentic classroom sessions. Two sets of tutorial sessions were taught in Semester 1 and 2, 2012, by the
+School of Business of the University of Sydney. In the first set of 14 classroom sessions, we investigated how a
+teacher can design and orchestrate small-group activities using an enriched classroom, and subsequently analyse
+the data to assess that design (Martinez-Maldonado et al., 2012a). The technology used in this preliminary study
+did not have any awareness or control functions available to the teacher. The study informed design of the tools
+needed to orchestrate a classroom, for the second iteration. This paper focuses on that second set of classroom
+sessions.  It had   8  tutorials, run   in the 6th   week   of Semester   2, 2012,   for a course    titled "Management      and
+Organisational Ethics". In total, 140 students attended these tutorials. Each had 15 to 20 students. The teacher
+arbitrarily formed four groups, with 4 or 5 students at each table. All students knew each other. The teacher
+designed a case-resolution activity to cover the set topic as defined in the curriculum for that week.
+          Activity design. A macro-script was defined by the teacher for the tutorials as follows: 1) Introduction
+(10  minutes):    the   teacher   forms groups,      explains  the tutorial  objective,  teaches  students     how   to  use the
+minimalistic concept mapping application and explains the objectives of the first activity. 2) Activity 1 (10
+min.): the teacher uses the MTDashboard to ensure that all groups start at the same time. The four tabletops
+respond by clearing the interface and loading a small scaffolding concept map (5 concepts and 2 links set by the
+teacher). Students have to complete this map showing how the main actors of the case are linked. 3) Reflection 1
+(5 min.): the teacher blocks the tabletops and introduces Activity 2, explaining it and leading class discussion
+about possible solutions to the case. 4) Activity 2 (15 min.): for the teacher, this is "the most important activity
+of the tutorial from the learning perspective". The teacher unblocks the tabletops; and students discuss the task
+and  complete     their concept    map.    5) Group    sharing    and  final reflection  (10  min.):  the   teacher   blocks the
+tabletops again and then asks each group to share their solution with the class. The teacher uses the function
+send to   the    wall for each    table in    turns.  After each   group  has  explained   their  concept    map,    the teacher
+summarises the outcomes of the activity and finishes the session. The class time was fixed at 50 minutes.
+          Visualisations    presented   to    the teacher.  Two    different conditions   of  the MTDashboard         were  used
+across 8 sessions. For Condition 1, the dashboard (Figure 3, left, and Figure 4, lower right) included the Group
+Map Visualisation that represented the size and distance of each map to the teacher's map. This information was
+explicitly requested by the teacher because she wanted this concept map quality measure that is not normally
+available during the limited classroom time (Figure 4, D1). The second version of the dashboard (Figure 3,
+right) presented the visualisation Radar of Physical Participation that shows the number of touches on the
+tabletop  per    student  and   the equality   among     group    member     touches (Figure   4,  D2).   The    design  of  this
+visualisation was suggested by the teacher in previous tutorials (Semester 1) who expressed that "quantitative
+information   about     students'  actions    would   be  useful   for identifying participation".   This    visualisation   was
+inspired by previous work on group chat communication and physical activity (Martinez-Maldonado et al.,
+2011).  A  larger     range  of   visualisations     (some  more   elaborated)  were     offered  to the    teacher   (Martinez-
+Maldonado et al., 2012b), but not selected for this study.
+          Research      questions.  When      teachers   orchestrate   multiple groups     in the  classroom,     one    of their
+challenges    is to identify  the   group  that   most  needs   immediate    attention  (Dillenbourg   et   al., 2011b)  whilst,
+concurrently, spending a relatively balanced amount of time with each group, to be fair to all students. This is
+where MTDashboard can provide awareness support for the teacher, enabling an informed decision about which
+group to attend next. For this, we sought to address the next questions: What is the impact of the information
+provided   to the   teacher  by   the MTDashboard        during    the classroom   sessions?   Is the teacher     attending  the
+"lower achieving" groups according to the information provided?
+          Data collection. We collected information from a number of sources to triangulate evidence. These
+sources included: automated capture of the MTClassroom, notes from an external observer focused on teacher's
+actions, notes from a second external observer focused on assessing each small-group work and notes from
+interviewing the teacher. The automatically captured data consisted of synchronised log of the host application
+at each tabletop (differentiated students' actions and partial states of the concept maps), logs of teacher's actions
+using the MTDashboard, and partial distances of group artefacts from the teacher map. The manually captured
+quantitative/qualitative data consisted of the observed time and duration of the moments when the teacher: i)
+attended or intervened a group, ii) looked at the MTDashboard, iii) spoke to the whole group, iv) walked around
+the  class or    did  not   look   at any     specific  group. These    observations    were   captured     through   a  console
+synchronised with the application logs. The second set of observations consisted of quantitative assessments of
+perceived qualitative collaboration per group based on an adapted rating scheme (Meier et al., 2007). Our
+
+© ISLS                                                                                                                       323
+CSCL 2013 Proceedings                                                        Volume 1: Full Papers & Symposia
+
+scheme has 4 dimensions of collaboration, quantified from -2 to 2, for each of (a) mutual understanding and
+dialogue management, (b) information pooling and consensus (c) task division, time management and technical
+coordination, and (d) reciprocity. The teacher also assessed groups at the end of each tutorial, using one of three
+possible values: low, medium or high achieving. Finally, we conducted semi-structured post-tutorial interviews
+with the teacher to obtain feedback on the functions and visualisations provided for classroom orchestration.
+         Data exploration. To analyse the teacher's attention distribution, we first define the terms attention and
+intervention. We consider that teachers pay attention to a group when their gaze is focused on or they interact
+with that group. Intervention is the subset of such attention that happens only when the teacher interacts with the
+group, therefore interrupting their work. We made this distinction based on a previous study in which teachers
+stated that for some outstanding groups they would "see what they are doing" but mostly leave them work by
+themselves (Martinez-Maldonado et al., 2012b). During the post-tutorial interviews the teacher commented that
+she "tried to provide equal attention to all groups", while "focusing on groups that needed more help". This
+means that the teacher dynamically chose the order in which she attended to each group. Having made this
+distinction, we   now  describe  an example  of  the teacher's actions  at the MTClassroom.     Figure  5  shows                        a
+transition diagram where the nodes represent the elements that were at the focus of teacher's attention. The
+nodes correspond to each group, the MTDashboard or the whole Class. The latter includes the times when the
+teacher was not attending to any particular group or gave a message to the whole class. The directed arrows
+between the nodes represent the transitions recorded by the external observer (45 transitions registered in this
+example).    In this group,  the teacher devoted most  time to    the red  group  (32%   of attention  and 29%                         of
+intervention time) compared with the others (20%, 26%, and 21%). In fact, the teacher assessed the red group as
+the only low achieving group in the class, therefore confirming that the attention in this class was not equally
+distributed. We also observed that the teacher never attended to the green group after looking at the dashboard.
+Coincidentally, the green group also received the fewest interventions. This motivated the analysis of the rest of
+the cases to find evidence that confirms the impact of the information delivered through the dashboard on
+teacher's attention. In other sessions, the accumulated attention was more egalitarian. An analysis of dispersion
+of attention and intervention among the sessions showed that the teacher paid attention to all groups largely
+equally (mean index of dispersion -Gini factor- for attention= 0.12 and intervention = 0.124, where zero means
+perfect equality).   The next section describes our  evaluation of  the impact    of the nature of the information
+displayed through the dashboard on teacher attention and intervention. The actions that the teacher took after
+looking at the MTDashboard are the focus of our evaluation (thicker transition lines in Figure 5).
+
+Analysis and Discussion
+This section is divided in three parts. The first two tackle our research questions and the last one explores the
+impact of teacher's feedback on students to complete our analysis of the orchestration loop at our environment.
+         Analysis, part 1. For the first question (What is the impact of the information we provided to the
+teacher in real-time during the classroom sessions?), we started by analysing whether there was any relation
+between the observed performance of each of the 32 groups during the tutorials with the accumulated amount of
+time that the teacher dedicated to attend or intervene each of them. We divided the groups according to the two
+conditions of the information that was provided to the teacher through the MTDashboard. The two conditions
+were: (i) distance to teacher's map and (ii) physical participation. We performed correlation analyses between
+attention/intervention   and group  performance  measured  in   different  levels and  from different  sources:                       the
+external observer that measured collaboration, the artefact that students built and the teacher assessment. Table
+1 shows the results of these analyses, where Attention time and Intervention time are the proportions of the time
+the teacher dedicated to inspect and interact, or just interact, with specific groups respectively. Regarding the
+columns of groups' performance, columns ob1, ob2, ob3 and ob4 correspond the 4 categories used by the
+external observer to assess group's collaboration according to the schema adapted from Meier et al. (2007).
+Column Obc corresponds to the correlations with the cumulative score of these 4.       Columns Size map and Dist
+correspond to the correlations with, respectively, the size and the distance of groups' map to the teacher's map.
+Finally, the column Tchr indicates the correlations with the quality of each group as assessed by the teacher.
+
+  Figure 5.     An  illustrative  transition  diagram  of  the  process  of  teacher's  attention  in  one  classroom  
+                                              session.  session.
+
+© ISLS                                                                                                                               324
+CSCL 2013 Proceedings                                                                                                                              Volume 1: Full Papers & Symposia
+
+           Results              showed          a difference                     between      the        two         conditions                for     the   correlation              between                 observed
+collaboration             and     attention/intervention                            time.    For        condition              (i)   distance             to teacher's                map,         we         found       a
+significant positive correlation between levels of collaboration and the attention and intervention provided by
+the teacher (columns ob2, ob3 and Obc, left). On the other hand, for condition (ii) physical participation, we
+found a negative moderate correlation (columns ob1, ob3, ob4 and Obc, right). From a teaching perspective, a
+negative correlation might appear desirable, since it would mean that the teacher provided more attention to the
+low groups. However, a perfect correlation is unrealistic, since the teacher cannot totally neglect high achieving
+students. To explain these findings, we triangulated this evidence with the teacher's statements during the post-
+tutorial interviews. The teacher found that the information provided in condition (i) was useful during the class
+and it was expressed as: "I looked at the number of relevant links because one group could have 21 links, but
+how many of them actually matched my map? For a group with 9 linkages with most of them matching my map,
+I would be satisfied". This means that information about the distance to teacher's map in condition (i) helped the
+teacher    recognise             the  groups               that        might      have       needed       more              help.    The        analysis           supports           this        since       the       only
+negative correlation of condition (i) was for column Dist (-0.3 and -0.16 for attention and intervention). The
+level of collaboration of groups does not determine the qualitative aspects of their artefacts, therefore there were
+no negative correlations for observed collaboration in condition (i).
+Table 1: Correlation analyses between Attention/Intervention and Groups' performance.
+                                                           i)  Distance  to  teacher's  map                                                           ii)  Physical  participation  
+     Groups'  performance                     Observed  collaboration                     Size                                           Observed  collaboration                          Size    
+                                     ob1       ob2        ob3          ob4      Obc      map      Dist        Tchr           ob1        ob2       ob3         ob4         Obc        map         Dist    Tchr  
+Attention  time  (%)            --0.20      0.33       0.34       --0.10     0.44     0.29     --0.30     --0.10          --0.26    --0.10    --0.33      --0.32      --0.30      --0.10     0.48     0.00  
+Intervention  time  (  %)      --0.10      0.37       0.34       0.02       0.45     0.34     --0.16     0.02            --0.20    0.05      --0.32      --0.38      --0.27      0.03       0.34     0.15  
+Correlation                                   med/       med/  low  --  low  +  low  +  no  +  p<=0.1  med/  low  +  low  --  no  low--  no  med/  low  --  med/  low  --  med  --  no  +  p<=0.1  no  
+           For condition (ii), the teacher expressed that the information provided by the Radars of participation
+was good but was not used much because "a lot of the times groups decided that one only person was going to
+do the links or I [the teacher] could tell by looking at the table that everyone was discussing but only two or
+three people were actually moving things around. Then, by looking at the diagrams only, I couldn't interpret
+[them] as the group was not working". Therefore, during these tutorials for the second condition, the teacher
+mostly used what she could observe and listen from each group work. We argue that this is the reason why the
+attention and intervention are more aligned to the observed level of collaboration (negative correlations for
+columns ob1, ob3, ob4, Obs in condition Physical participation). As the information about the size of the map
+and the distance to the teacher's map was not provided in this condition, we found no correlation or positive
+correlation respectively (columns Size map and Dist). Finally, the teacher's assessment seemed independent
+from her decisions to provide attention (values are close to zero in Tchr columns for both conditions). The
+teacher described that groups' assessment was primarily based on the explanations that each presented to the
+class towards the end of the tutorial, and also influenced by the students' conversations that she could overhear
+and    the groups'              indicators        of       distance              to teacher's           map         provided          in       condition           (i).  Therefore,                the        teacher's
+assessment was not connected to their evaluation of which groups needed the most help at some point. This
+suggests that, while the cumulative analysis (part 1) is informative in both conditions, we also need to conduct
+further analysis taking into account the moments when attention was provided to groups.
+           Analysis, part 2. As groups' needs for teacher attention vary in time, the teacher needs to continuously
+monitor groups' performance to try and keep the levels across groups as close as possible. Here is where our
+second     research             question          arises:              is the       teacher         attending                 the   `less       achieving'              groups         according                     to the
+information provided? To answer this, we analysed the decisions made by the teacher right after looking at the
+dashboard. There were 38 teacher's actions that were captured by the external observer and synchronised with
+the MTClassroom's logs (17 for distance to teacher's map and 21 for physical participation conditions).
+           Condition (i). For each moment when the teacher looked at the dashboard and for each group in the
+classroom, we calculated the quantitative indicators of size and distance of the map provided by the Group map
+visualisation        at         that exact        moment.                 Then,      the     groups       were                ranked        from        the  smallest                and         furthest      map       to
+teacher's map to the biggest and closest map at that point in time. There were 3 possible ranks: furthest behind
+group(s), the strongest group(s), and the groups in between. The strongest group at a determined moment was
+the one with more relevant links and less irrelevant links according to the teacher's map. Then, we identified the
+group that the teacher chose to attend next.                                              After this, we assessed the category of the group chosen by the
+teacher, for example, if the teacher chose a furthest behind group or a strong one. Table 2 shows the results of
+this analysis. Column A corresponds to the 17 cases of teacher's attention after inspecting the dashboard of the
+condition under analysis (i). Column B corresponds to the other cases where the second type of information was
+provided (ii). We found that when the map size and distance to the teacher's map information was provided
+(column A) the teacher only decided to attend the strongest group 18% of the times (3 out of 17 cases). On the
+contrary, when this information was not provided, the teacher attended the strongest group 43% of the times (9
+
+© ISLS                                                                                                                                                                                                                  325
+CSCL 2013 Proceedings                                                                                                                         Volume 1: Full Papers & Symposia
+
+out of 21). This confirms that showing information of each group's artefact in `real-time' had some impact on
+the teacher's decision as to which group to attend next. It also validates what the teacher expressed, that looking
+at the number of relevant links added by each group helped her have a better idea of groups' performance.
+Table 2: Analysis the groups that the teacher attended for condition (i) distance to teacher's map.
+     Condition:  distance  to  teacher's  map                 A)    Map  information  was  provided                              B) No  information  about  the  map  was  provided  
+                  Total                                                 17                       Proportion  %                                21                       Proportion    %  
+              Less  achieving                                          5                                29.41                                     4                       19.05  
+            Not  the  best  groups                                   9                                52.94                                     8                       38.10  
+              The  best  group                                        3                                17.65                                     9                       42.86  
+
+         Condition          (ii).          We   calculated               the         information                   provided        by        the visualisation          radar                  of physical
+participation for the 38 cases when the teacher looked at the dashboard. We had the same 3 possible ranks. In
+this case, the strongest group was the more equilibrated in terms of participation. We measured the rank using
+an index of dispersion, the Gini coefficient. This is a number between zero and 1, where zero means perfect
+equality of students' participation. We followed the same process as the previous condition. Results are shown
+in Table 3. These confirm that the participation radar, at least in the way in which we presented it, did not
+provide information to the teacher to take decisions about which group to attend next. The teacher decided to
+attend low or high achieving groups almost with no difference (33%, 38% and 28% of the times). The post-
+tutorials interview confirmed that the teacher did not use the information about physical participation, justifying
+this with the argument that "not everyone was touching the tabletop but they were speaking a lot and this is
+good from a learning perspective". The teacher also argued that this information "would be very helpful in a
+bigger class". The teacher described this as follows: "I cannot observe 80 people but I can observe 20 people, I
+could tell who was talking. It would be fantastic to check the participation information for a bigger group".
+Table 3: Analysis the groups that the teacher attended for condition (i) physical participation.
+      Condition:  physical  participation      A)   No  information  about  participation  was  provided                                B)        Participation    condition  
+                  Total                                           17                           Proportion  %                                21                       Proportion  %  
+              Less  achieving                                     4                                    23.53                                 7                           33.33  
+            Not  the  best  groups                              9                                    52.94                                 8                           38.09  
+             The  best  group                                    4                                    23.53                                 6                           28.57  
+
+         Analysis, part 3. Finally, we investigated whether the teacher's intervention actually had an impact on
+students' performance immediately after. We considered as indicator of performance the number of relevant
+links created by each group. The teacher intervened groups a total of 74 times in the 8 classroom sessions. For
+each intervention, each group was ranked at the moment the teacher started the intervention from 1 to 4 (from
+low to high group, according to the teacher's map distance of the four groups in the class). Then, we assessed if
+there was an improvement (or decrease) of the map 2, 3, 4 and 5 minutes later (interventions lasted up to 2
+minutes and each activity lasted from 8 to 10 minutes). For example, at minute 5:05 the teacher attends the
+Green group. At that exact moment, this group had the furthest map to the teacher map in the class, so their rank
+was 1. We divided the 74 interventions in two groups according to the 2 conditions of the information provided
+to the teacher. Results                    on the      analyses               of  correlations             between       the              rank   of        each    attended   group                and  the
+improvement of the teacher's map distance are shown in Table 4. For condition (i), Distance to teacher's map,
+we found significant negative correlations. This means that the groups that were lagging significantly improved
+their teacher's map distance after teacher's intervention. However no correlation was found in condition, (ii).
+We can therefore argue that the teacher's intervention had a significant impact on the groups' artefact when the
+information about          the            distance     to       the teacher's               map was                provided.       This       once         again    provides               evidence    that
+supports the benefits of showing information about the quality of students' work to the teacher in real time.
+Table 4: the Impact of teacher's interventions: correlation analysis between the rank of a group among the
+others in the classroom and the improvement of their artefact's distance to the teacher's map.
+          Condition                      #  interventions     after  2  min           after  3  min         after  4  min        after  5  min                              
+    Distance  to  teacher's  map           40              --0.4,  p<=0.01        --0.27,  p<=0.05       --0.32,  p<0.025       --0.27,  p<=0.05       Significant  correlations  
+       Physical  participation               34                      0.08                  --0.05                  --0.05                 --0.02                   No  correlation  
+
+         Our analysis completed the circle of teacher's orchestration that includes: awareness, intervention and
+students' action following this intervention. We found some trends by analysing the accumulated attention and
+intervention by the end of the tutorials. Then, we obtained stronger evidence confirming the importance of
+showing indicators of quality of student's work to drive teacher's decision. Finally, we found that informed
+interventions of the teacher can lead students to improve their solutions according to teacher's perspective.
+
+Conclusions and Future Work
+We   presented our         enriched            multi-tabletop                    classroom      that               afforded        the       unobtrusive           data capture                 that makes
+possible to present two sets of information to the teacher in real-time. The potential of MTClassroom can be
+wide, from offering simple classroom orchestration controls to awareness and reflection tools. We confirmed
+that the data  presented                   to the     teacher            in    the         classroom       can        drive        their      focus        of      attention especially               when
+
+© ISLS                                                                                                                                                                                                 326
+CSCL 2013 Proceedings                                                                Volume 1: Full Papers & Symposia
+
+information about the quality of students work is delivered. The teacher described this as follows: "I think the
+dashboard was really good, especially because it showed things about the quality of their work. If I haven't had
+this information about the relevant links then I had to look at the whole diagram so it would take longer to look
+at each map". Our study also confirms that the teacher would value indicators of group work and individual
+participation for post-hoc analysis. The teacher expressed: "I don't want to see a lot of information in the
+dashboard, this can be distracting. But more information can be provided after the tutorials for assessment
+wise, like who did what, when, and the quality of the work". Our work in progress includes a detailed analysis of
+the information     that should  be  delivered     to  the teacher  during  and   after the  classroom   sessions; and   the
+integration of other sources of information (e.g. verbal participation) and other analysis tools (e.g. data mining)
+to extract patterns of interaction that can provide more insightful indicators to the teachers in the classroom.
+
+Acknowledgments
+This research has been partially funded by Smart Services CRC, Australia. Roberto Martinez-Maldonado has
+been funded     by  CONACYT      and   Fundación      Pablo   García. Yannis  Dimitriadis   has been   partially funded  by
+Spanish projects (TIN2011-28308-C03-02 and PR2011-0137).
+
+References
+Bull, S., Wasson, B., Johnson, M. D., Petters, D., & Hansen, C. (2012). Helping Teachers Effectively Support
+         Group Learning. Presented at the Workshop on Intelligent Support for Learning in Groups, ITS'12.
+Cuban,  L.,  Kirkpatrick,   H.,  &  Peck,   C.     (2001). High    access and low   use  of  technologies  in   high school
+         classrooms: Explaining an apparent paradox. American Educational Research Journal, 38(4), 813-834.
+Dillenbourg, P., & Evans, M. (2011a). Interactive tabletops in education. International Journal of Computer-
+         Supported Collaborative Learning, 6(4), 491-514. doi: 10.1007/s11412-011-9127-7
+Dillenbourg, P., & Jermann, P. (2010). Technology for classroom orchestration. New science of learning, 525-
+         552.
+Dillenbourg,    P., Zufferey,   G., Alavi,   H.,   Jermann,    P.,  Do-Lenh,  S.,  &   Bonnard,    Q.  (2011b).  Classroom
+         orchestration:     The  third  circle  of    usability. Paper   presented  at  the International  Conference    on
+         Computer Supported Collaborative Learning 2011,              (pp. 510-517)
+Do-Lenh,    S.  (2012).  Supporting    Reflection     and  Classroom    Orchestration   with  Tangible   Tabletops.   École
+         Polytechnique Fédérale de Lausanne.
+Martinez-Maldonado, R., Dimitriadis, Y., Kay, J., Yacef, K., & Edbauer, M.-T. (2012a). Orchestrating a multi-
+         tabletop classroom: from activity design to enactment and reflection. Paper presented at the Conference
+         on Interactive Tabletops and Surfaces (ITS 2012) (pp. 119-128).
+Martinez-Maldonado, R., Kay, J., & Yacef, K. (2010). Collaborative concept mapping at the tabletop. Paper
+         presented at the Conference on Interactive Tabletops and Surfaces (ITS 2010) (pp. 207-210)..
+Martinez-Maldonado,       R., Kay,     J., &   Yacef,      K. (2011).    Visualisations  for  longitudinal  participation,
+         contribution and progress of a collaborative task at the tabletop. Paper presented at the Computer
+         supported collaborative learning,      (pp. 25-32)
+Martinez-Maldonado, R., Yacef, K., Kay, J., & Schwendimann, B. (2012b). An interactive teacher's dashboard
+         for   monitoring   multiple   groups      in a multi-tabletop   learning  environment.    Paper  presented  at  the
+         Conference on Intelligent Tutoring Systems,          (pp. 482-492)
+Martinez-Maldonado, R., Yacef, K., Kay, J., & Schwendimann, B. (2012c). Unpacking traces of collaboration
+         from   multimodal    data   of    collaborative   concept    mapping  at   a   tabletop.  Paper presented   at  the
+         International Conference of the Learning Sciences,           (pp. 241-245)
+Meier, A., Spada, H., & Rummel, N. (2007). A rating scheme for assessing the quality of computer-supported
+         collaboration processes. International Journal of Computer-Supported Collaborative Learning, 2(1),
+         63-86. doi: 10.1007/s11412-006-9005-x
+Mercier, E., Higgins, S., Burd, E., & Joyce-Gibbons, A. (2012). Multi-Touch Technology to Support Multiple
+         Levels of Collaborative Learning in the Classroom. Paper presented at the International Conference of
+         the Learning Sciences, (pp. 187-191).
+Morgan,   M.,   &   Butler,  M.  (2009).    Considering     multi-touch   display  technology     for collaboration  in  the
+         classroom. Paper presented at the EDMEDIA'09,              (pp. 674­683)
+Novak,   J. (1995).   Concept   mapping     to facilitate  teaching   and  learning.  [10.1007/BF02334286].      Prospects,
+         25(1), 79-86.
+Prieto, L.  P., Dlab,    M. H.,  Gutiérrez,    I., Abdulwahed,      M., &  Balid,  W.   (2011).   Orchestrating  technology
+         enhanced     learning:  a  literature     review   and   a conceptual    framework.    International    Journal of
+         Technology Enhanced Learning, 3(6), 583-598. doi: 10.1504/ijtel.2011.045449
+Roschelle,  J., &   Teasley,  S. D.  (1995).   The      Construction  of  Shared  Knowledge     in Collaborative   Problem
+         Solving.
+Stahl, G. (2006). Group Cognition: Computer Support for Building Collaborative Knowledge: MIT Press
+
+© ISLS                                                                                                                  327
+

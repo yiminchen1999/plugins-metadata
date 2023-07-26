@@ -1,0 +1,339 @@
+      NoRIS:       Supporting            Computational                Science         Activities         Through
+                                     Learner-Centered                      Design
+
+                                                       Chris Quintana
+                                                       Kasem Abotel
+                                                       Elliot Soloway
+
+                                     Center for Inquiry Leaming and Technology
+                                                 University of Michigan
+                                                       1101 Beal Ave.
+                                             Ann Arbor, MI      48109, USA
+                                                  quintana@urnich.edu
+
+               Abstract:      Computational  science    provides   scientists with  a   variety of tools and
+               methods    to help  them  investigate    scientific problems.     Computational     science is
+               becoming increasingly important, not just for scientists, but also for students who need to
+                gain expertise with similar investigations for their scientific careers.  However, because
+               students  lack  the expertise of  professional  researchers,   complexities   arise that  pose
+               obstacles  to   students trying   to use   computational     science   to conduct   scientific
+               investigations:  complexity in the number of diverse investigative tasks to perform, in
+               the lack of tools for supporting certain  activities, and in the variety of existing tools and
+               interfaces that students have to learn. In order to address these complexities, ..ye have used
+               learner-centered design to guide the implementation of NoRIS, a computational tool used
+               by nuclear  engineering  students investigating    particle distribution problems.  By using
+               different scaffolding strategies, we    found that  we were  able to build  a tool  that helps
+               support nuclear engineering students investigating problems from their domain.
+
+ 1.    Introduction:          Complexities       for    Learners      Using      Computational           Science
+
+ Computational science provides scientists with a myriad of computational tools and methods that allow the
+ simulation of physical processes [Defanti et al. 1990).      With the advent of more powerful computers, scientists
+ are increasingly employing computational science tools and methods to develop insight into natural phenomena.
+ As computational science becomes more important to scientific investigations in many domains, it is becoming
+ increasingly important for students to learn the computational science tools and methods that they will use in
+ their scientific careers [Cunningham et al. 1990).
+
+ For example, as part of their curriculum, nuclear engineering students study how shielding materials protect
+ against the spread of radiation by using different numerical methods to computationally model the distribution of
+ particles through different materials.    By observing how nuclear engineers go about solving such particle
+ distribution problems, we have identified areas of complexities that can pose difficulties to students trying to
+ engage in this practice:
+
+   0 Task Complexity:    Using computational science in an investigation requires the completion of many diverse
+     tasks. For example, nuclear engineers need to create data files, implement computer codes to represent
+     numerical methods, plot and compare output data, etc.        Students can be confused by the number of tasks that
+     make up an investigation, making it difficult to learn how to undertake an investigation.                Also, some
+     investigative tasks are lower-level tasks that can divert the student's attention away from investigation at
+     hand.  For example, it is the researcher's responsibility to manage the different artifacts that result during an
+     investigation, such as source codes, data files, graphs, etc.     However, there is no external support for the
+     management of these artifacts.  The responsibility for the organization and access of these artifacts is with the
+     researcher, and this "housekeeping" task can divert time, attention and energy away from the problem being
+     investigated [Knapp 1994).
+
+272
+· Tool Complexity:  A variety of tools are needed to support the different investigative tasks and to support the
+  different learning styles of students. However, there are few tools that provide comprehensive support for the
+  entire investigative process. For example, visualization packages are very powerful, but very specific for the
+  visualization subtask of an investigation.     Tools   such as Mathematica, Maple,       etc., are attempting to
+  integrate more functionality within a single package, but these packages can be difficult for students and do
+  not support all the investigative tasks [Springmeyer et al. 1992).
+
+· Interface Complexity:   Since a wide array of functionality is needed, students engaged in an investigation will
+   need to use a variety of different tools. Therefore, students will have to learn the different tool interfaces,
+  ranging from graphical to command-line; this can add an additional level of complexity.         Students need an
+  engaging interface that allows them to progress through a scientific investigation without the tools getting in
+   the way.
+
+In order to provide support (or scaffolding) to deal with complexities such as these, we would like to design
+computational tools that are aimed at non-expert learners who are learning a domain rather than expert users that
+simply need usable tools [Norman & Draper 1986). Learner-centered design (LCD) is an approach that can help
+guide the design of such tools. Expanded discussions on LCD can be found in [Soloway et al. 1996a, Soloway
+et al. 1996b]. In this paper, we will describe how we began incorporating learner-centered scaffolding to develop
+NoRIS (Notebook-based Research and Investigative process Support system), a computational environment for
+nuclear  engineering  students   using    computational  science tools  and methods       in particle distribution
+investigations.
+
+2.  NoRIS:         Addressing     Complexity         Through     Learner-Centered            Design
+NoRIS provides a platform that enables students to engage in computational science so that they can carry out a
+scientific investigation. By giving learners an environment th.at reduces many of the complexities found in
+using computational science, NoRIS aims to support students as they begin learning the tools and practices of
+the professional researcher [see Tab. 1).
+
+2.1    Task  Complexity
+
+Students with little expertise can be hindered by having to remember the variety of disjointed, lower-level tasks
+that make up an investigation,. NoRIS restructures the investigative tasks into a smaller number of higher-level
+tasks. By streamlining the different sub-tasks into two higher-level tasks, NoRIS allows the student to begin
+constructing an understanding of the investigative activities that researchers perform:
+
+· Notekeeping:   Students need to continually record problem objectives, hypotheses, important observations,
+  data, results, etc., throughout an investigation.
+
+· Building  cases: A case encompasses the     major tasks that require computational tools,   such as writing and
+  running num';!rical-method programs, visualizing data, etc.
+
+Aside from restructuring the variety of investigative tasks, NoRIS also reduces complexity by automatically
+supporting lower-level, managerial tasks, such as artifact management.      NoRIS automatically organizes the
+artifacts produced throughout an investigation (e.g., notes, sources code, and data files) so that the student can
+focus more on their investigation and less on mundane, bookkeeping tasks.
+
+2.2    Tool  Complexity
+
+In order to provide a single environment that students can use for scientific inquiry, NoRIS provides access to
+the variety of tools needed by beginning students to complete their tasks: computational tools (e.g., compilers
+and algebraic/mathematical      software), visualization tools, etc.  NoRIS  acts as     a type  of  software bus
+[Gallopoulos et al. 1994) that integrates existing software packages.   Thus the student interacts with NoRIS,
+and NoRIS issues commands to the different software tools.
+
+                                                                                                                273
+       Area    of Complexity   .·...:·.. ; .....  . $c. aff.o·· ld·J·.n· ·g . . . . Stra...t·e.·.·gy                    .     .· .   . . .. ·NoRi.s  linple111e11tation.  :
+    Task Complexity                              Restructure the task to reduce                                                           High-level tasks
+                                                 and manage complexity
+                                                                                                                                          Artifact management
+                                                 Automatic low-level task
+                                                 support
+
+    Tool Complexity                              Provide all necessary tools in                                                           Tools for writing computational
+                                                 one environment                                                                          routines
+                                                 Provide tools supporting                                                                 Notebook scheme to organize
+                                                 different learning styles and                                                            and easily access artifacts
+                                                 levels of expertise
+                                                                                                                                          Graphical and textual
+                                                                                                                                          visualization of output data
+
+    Interface Complexity                         Initiate engagement by                                                                   A simple, consistent front-end
+                                                 presenting an approachable                                                               to a variety of tools
+                                                 interface
+                                                                                                                                          Task diagrams on workspace
+                                                 S· uPsrtoavinideinnggavgiseumaleiznattbioyn: to                                          tool
+                                                 structure the task                                                                       Notepad button palettes
+                                                                                                                                          structure the investigation
+                                                 · Encouraging articulation
+                                                                                                                                          Notepad windows for filling in
+                                                                                                                                          notes and ideas
+
+                                  Table 1:           Learner Scaffolding in NoRIS
+
+ For tasks such as artifact management, there are no existing tools that the student can use.                                                          Therefore, NoRIS      is
+ designed as a computer notebook, which essentially acts as a "front-end" to the computer directory structure.
+ The notebook provides a way to easily view and access the different artifacts produced during an investigation.
+ Also, the notebook metaphor is a familiar metaphor that is easily understood by students.                                                             For example, NoRIS
+ include the Notebook Summary window [Fig.            1) that summarizes the different numerical-method programs that
+ the student has written.
+
+ 2.3   Interface    Complexity
+
+ One of the complexities of computational science is having to learn the different computer tools and tool
+ interfaces required for a single investigation.     Because NoRIS is a single environment that acts as a front-end to
+ a set of tools, we have designed a simple, consistent interface for NoRIS that provides button and menu-based
+ access to the diverse set of tools. Examples include:
+
+  e The Workspace Tool [Fig.   2) provides button and menu-based access to the tools needed by the student to
+    build and analyze numerical method cases.         The Workspace Tool consists of buttons representing the major
+    phases in the case-building process.         The different sub-tasks for each phase are encapsulated in menus that
+    pop-up from the different buttons in the workspace tool.                                                               The menus let students easily see and choose the
+    appropriate task options for each phase in the case-building process.
+
+ ·  The Multiplot Tool [Fig.  3) allows the researcher to easily plot data files in the same graph window fo r
+    analysis. The student can simply "check off' all of the files that they want to plot and then press the Plot
+    button. This eases one of the most important phases of a numerical method investigation:                                                                    comparing the
+    results of different numerical methods.
+
+274
+                                  Figure 1:  Notebook Summary window
+
+      [!:I NoRIS Subproblem 1==> Case 1   Window                                                    E!}
+
+                                       Figure 2: The Workspace Tool
+
+The NoRlS interface not only provides simplified access to the necessary functionality, it also provides some
+procedural support to help the student learn the tasks that make up an investigation. NoRlS provides visual
+cues in the interface so that the students can identify the differenttasks they must perform and the different types
+of information that they must record. Examples include:
+
+· The Workspace Tool [Fig. 2] contains a task diagram of the process used to construct a case for the numerical
+  method the student is investigating. As we stated earlier, each button represents a different phase in the case
+  building process, and each button presents the user with a menu identifying their options for that particular
+  phase. The diagram and menus help the student to begin understanding the different tasks involved in building
+  numerical method cases.
+
+                                                                                                           275
+ · Notepad windows [Fig.     4] contain button palettes that identify the different types of information that the
+   student should be thinking about and recording as they work on their problem.   Such information includes
+   problem objectives, descriptions of the numerical methods they are investigating, etc.        This structure
+   encourages students to reflect and keep important notes throughout their investigation.
+
+                  Notebook: Shielding Problem =>   Output Files
+
+           lfpgl.out
+           lipg2.out
+           pg3.out
+
+                                      Figure 3: The Multiplot Tool
+
+3.   Results
+
+NoRIS was initially tested in three two-week trials with two nuclear engineering students in each trial. For each
+trial, the students were given a particle-distribution problem to work on using NoRIS.     More recently, NoRIS
+was used in a nuclear engineering class by five senior-level undergraduate students who worked on week-long,
+project-based assignments to analyze numerical methods in particle distribution problems.       Our user testing
+included videotaping talk-aloud interviews of subjects as they used NoRIS, keeping activity logs of their
+actions, and post-test interviews. Using NoRIS, students were able to complete their particle-distribution
+assignments, verifying that NoRIS facilitates their investigative process. We saw that NoRIS gave students an
+environment that made computational science accessible and investigations manageable.
+
+3.1   Task     Complexity
+
+The task decomposition and automatic artifact management used in NoRIS helped reduce the complexity of an
+investigation. Students quickly caught on using the Workspace Tool to set up different cases for the different
+numerical method trials they needed to look at in their problem.  We also saw the benefits of the automatic
+artifact management. Since it was easy for students to find and re-use old artifacts in their notebook, students
+could quickly build new cases by modifying old cases. By looking at the activity logs of student actions, we
+saw that students would set up a base case for a given numerical method and then continually modify the base
+case using the functions built in the Workspace Tool. Since the time needed modify a case was small, the
+students began exploring different numerical methods even though their assignments did not necessarily indicate
+that they needed to do so.
+
+276
+In our post-test interviews of the test subjects, we also found that the automatic artifact management was also
+well liked by students because it eased the organizational tasks that can be distracting to them:
+
+       "I am usually disorganized and after a while, I spend a lot of time organizing things
+       setting up directories, putting codes and things in the right places. NoRIS takes care
+       of this; this really helps because it lets me concentrate on the problem."
+
+                                              Montee
+                             n this part, we use Monte Carlo method to obtain the exit current at
+                             he right side of the slab using surface crossing estimator. to follow
+                             he neutron from the point of emission "birth" to the point of exiting
+                           "death" for number of histories then we averaged the tallies using the
+                             he method specified in Numerical method description text.
+                             he objectives of this part is to study the effectiveness of Monte Carlo
+                           method in Shielding calculation and the number of histories required
+                             o solve these problems.
+                             n this case we are going to use analog Monte Carlo which means that
+                             e are going to follow the particle physics faithfully. we are looking
+                             or satndard deviation less than 5% which is comidered acceptable in
+                           · Nuclear Reactor calculation!
+
+                                       Figure 4: Notepad Window
+
+3.2   Tool    Complexity
+
+Students liked the fact that they had all of the necessary tools available to them in one application.     Since
+students are not experts in using computational science, they may not know what tools to use in various
+situations. By having all of the functionality available to them in one application, students did not have to be
+moving from application to application, which can be a distracting problem:
+
+       "[NoRIS] really provides an integrated package that beginning students can really
+       use...having all of the needed information 'at my fingertips' is an advantage so that I
+       do not have to bounce around different programs...this is good for students who are
+       inexperienced with [computers]"
+
+                                                                                                             277
+ Also, we began to see the utility of providing different types of functionality to match the different work styles
+ of students. For example, the Workspace Tool allows students to plot output data or view the raw data.          We
+ saw that the less experienced students would plot out output data.      However, some of     the more experienced
+ students preferred to look at the raw data.  Since the more experienced students had a better idea about what
+ certain numerical output should be, it was easier for them to look at the raw data. By providing both types of
+ functionality, NoRIS allows less experienced students to use the same tool now and in the future as they gain
+ experience and expertise.
+
+ 3.3    Interface      Complexity
+
+ Students liked the interface and felt that it was easy to use. The fact that they could use menus and buttons to
+ access the tools made it easy for the student to quickly get started with NoRIS.   Students also appreciated the
+ different visual cues of the interface. The organization of the different buttons and menus helped students begin
+ learning the tasks and terms of a particle distribution investigation. For example, one student commented on the
+ notepad button palette that identifies the important information to record.     The palette helped structure the
+ notekeeping task and encouraged the student to articulate his thoughts:
+
+         "[The button palette] helps lay out the thought process I should be following when I
+         start working on my problem...Seeing [the buttons] makes me pause and think about
+         the problem rather than just jumping in and starting to write programs, which is
+         what I might normally do."
+
+4.     Concluding Remarks and Future Research
+
+ We have described NoRIS, a system that supports nuclear engineering students as they perform computational
+ science activities to investigate particle distribution problems. In designing NoRIS, we have tried to address the
+ complexities that students face as they try to engage in and understand the investigative practices of expert
+ researchers in their field. NoRIS is a preliminary step in our investigation of learner-centered design, however,
+ our initial results have been encouraging.  NoRIS provided all the necessary computational functionality in a
+ single environment     that students were  able to use successfully   to complete their investigations.      NoRIS
+ provided a structure for the necessary activities that was easy for the students to understand. The simple interface
+ was not only found to be usable by the students, but it also provided useful prompts and cues to help illustrate
+ the range of activities that students needed to perform.  Students liked the automatic artifact management that
+ NoRIS provided through the notebook metaphor.      Artifact management allowed students to spend more time on
+ their investigation   and less time on organizational chores.  Also, because artifacts were easily accessed and
+ modified, students performed more trials than they normally might have.
+
+ Currently, we are looking to build more systems like NoRIS to try to discover more scaffolding methods and
+ design guidelines for learner-centered software.   Because the NoRIS project was aimed at more intermediate
+ levels of students, we now want to look at what kind of extra scaffolding would be necessary to support learners
+ with less domain knowledge than the subjects in our study.     We also want to look at building environments for
+ other domains to see how we can start generalizing some of the scaffolding strategies we have looked at in
+ projects like NoRIS.
+
+5.     References
+
+ [Cunningham et al. 1990]    Cunningham, S., Brown, J. R., & McGrath, M.  (1990). Visualization in Science and
+Engineering Education.   In G. M. Nielson & B. Shriver (Eds.) Visualization in Scientific Computing, Los Alamitos,
+ CA:   IEEE Computing Society Press, 48-57.
+
+ [Defanti et al. 1990] Defanti, T. A., Brown, M. D., & McCormick, B. H.  (1990). Visualization: Expanding Scientific
+ and Engineering Researcher Opportunities. In G. M. Nielson & B. Shriver (Eds.) Visualization in Scientific
+ Computing, Los Alamitos, CA:   IEEE Society Press, 32-47.
+
+278
+[Gallopoulos et al. 1994] Gallopoulos, E., Houstis, E., & Rice, J. R.  (1994). Computer as Thinker/Doer: Problem
+Solving Environments for Computational Science.    IEEE Computational Science & Engineering, Vol. 1, No. 2,
+Summer 1994, 11-23.
+
+[Knapp 1994] Knapp, L. K.   (1994).   A Task Analysis Approach to the Visualization of Geographic Data. Ph.D.
+Dissertation, University of Colorado at Boulder.
+
+[Norman &Draper 1986]     Norman,D., &Draper, S.   (1986). User Centered System Design, Hillsdale, NJ:  Lawrence
+Erlbaum & Associates.
+
+[Soloway et al. 1996a]  Soloway, E., Jackson, S. L., Klein, J., Quintana, C., Reed, J., Spitulnik, J., Stratford, S. J.,
+Studer, S., Eng, J., & Scala, N. (1996). Learning Theory in Practice: Case Studies of Learner-CenteredDesign. Human
+Factors in Computing Systems:     CHI '96 Conference Proceedings, 1996, Addison-Wesley, Vancouver, CA.    189-196.
+
+[Soloway et al. 1994b] Soloway, E., Guzdial, M., & Hay, K. E. (1994). Leamer-CenteredDesign: The Challenge for
+HCI in the 21st Century, Interactions, Vol. 1, No. 2, April, 36-48.
+[Springmeyer et al. 1992]  Springmeyer, R. R., Blattner, M. M., & Marx, N. L.  (1992). A Characterization of the
+ScientificData Analysis Process, Proceedings of IEEE Visualization '92, 235-242.
+
+Acknowledgments
+
+We would like to extend our appreciation to the other members of the Center for Learning Inquiry and Technology,Dr.
+William Martin,Dr. James Holloway, and the University of Michigan Nuclear EngineeringDepartment, for their
+feedback and support.
+
+This research has been supported by the National Science Foundation (IRI 9117084), the National Physical Science
+Consortium, and the University of Michigan.
+
+                                                                                                                         279
+

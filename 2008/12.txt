@@ -1,0 +1,109 @@
+      The Classroom as A Complex Adaptive System: An Agent-Based
+     Framework to Investigate Students' Emergent Collective Behaviors
+                    Paulo Blikstein, Northwestern University, 2120 Campus Drive, Evanston, IL, 60208 USA
+                             Dor Abrahamson, 4649 Tolman Hall, Berkeley, CA, 94720­1670 USA
+                    Uri Wilensky, Northwestern University, 2120 Campus Drive, Evanston, IL, 60208 USA
+                           Email: paulo@northwestern.edu, dor@berkeley.edu, uri@northwestern.edu
+
+                 Abstract: This study applies agent-based modeling methodology to investigate individual and
+                 social factors   underlying  inequitable    participation   patterns observed    in  a real classroom     in
+                 which   an experimental      collaborative   activity  was   implemented.     We    created   agent-based
+                 simulations   of simplified   collaborative    activities   and  qualitatively   compared   results    from
+                 running   the   model   with  the    classroom     data.   We    found   that  collaboration    pedagogy
+                 emphasizing group performance may forsake individual learning, due to preference for short-
+                 term group efficacy over individual long-term learning. The study may inform professional
+                 development and pedagogical policy.
+
+      Agent-Based Modeling and Team Work in Classrooms
+                 Agent-based     modeling   (ABM)     has  been  increasingly     used by    scientists to study   a  wide    range    of
+       phenomena such as species in an ecosystem or molecules in a chemical reaction (Bonabeau, 1999; Wilensky &
+       Reisman,  2006).    Such   phenomena,   in   which    the elements     within  the system   (molecules,     or  animals)   have
+       multiple behaviors and a large number of interaction patterns, have been termed complex and are collectively
+       studied in the interdisciplinary field called complex systems. In recent decades there has been a surge in social-
+       science studies employing ABM (Epstein & Axtell, 1996). Recently, ABM has been used to illustrate aspects of
+       cognitive development in social context (Abrahamson & Wilensky, 2005; Blikstein, Abrahamson & Wilensky,
+       2006).  We   argue   that  ABM   has   potential   to contribute    to the advancement      of theory    on group   work     and
+       collaboration in classrooms, particularly, the computational power of ABM enables researchers to mobilize an
+       otherwise static list of conjectured behaviors and witness emergent group-level patterns.
+                 A classroom engaged in collaborative group work can be seen as a complex adaptive system (Hurford,
+       2004)  in which   optimal   as well  as suboptimal     behavioral    patterns  may  emerge.    Despite   individual    students'
+       initially explorative behaviors, once a functioning coordination scheme evolves in a group and is evaluated as
+       well adapted  to  performing     the mandated    task, an    implicit  quietus  is set on  any   further exploration    or   task
+       rotation, and the group achieves dynamic stability. Such arrangement would be fitting for workplaces, but its
+       instantiation in  classrooms   may    present  teachers   with   the   dilemma  of  maximizing    group     production    at the
+       expense   of individual   learning,  especially  of   struggling  students who     are benignly   assigned  by   the   group    to
+       mathematically lesser tasks. ABM methodology may provide education researchers and practitioners tools for
+       understanding such classroom dynamics, so that they can identify points of leverage for working with students'
+       natural behavioral inclinations to achieve equitable participation.
+
+      Implementation of a Model in the Form of Agent-Based Procedures
+                 We  set out   to build  a  computational    model    that would    simulate  phenomena      we had     observed    in a
+       middle-school    mathematics     classroom   engaged      in group-based     problem-solving      activity  (Abrahamson         &
+       Wilensky, 2005). In that classroom, roles were spontaneously assigned by students within groups so that the
+       pedagogical   value  of    individual  students'   tasks  could    be  indexed     by  each   student's  prior   mathematical
+       achievement.   Such   inequitable    labor division   is  injurious,   because  it perpetuates   and  even    exacerbates    the
+       classroom achievement stratification. For our model, we chose a simpler numeric puzzle task (see Figure 1a).
+       This linear  puzzle  consists  of  set of  numbered    pieces   to  be  concatenated    in ascending    order  (1,  2, 3, 4...).
+       Necessary activities within this task are retrieving pieces (simplest task), verifying if pieces are already present
+       in the puzzle (intermediate demand), and connecting pieces (most demanding task). Initially, puzzle pieces are
+       scattered all over the classroom. Piece-retrievers wander around and, when they find a piece, grab it and go back
+       to their group's table, delivering it to the piece-verifier. The piece-verifier evaluates whether a copy of the piece
+       is already present (the puzzle cannot have repeated pieces). If so, the piece-verifier orders the piece-retriever to
+       discard the   piece  and   bring a  new   one.  If the   piece is  suitable,  the  piece-verifier delivers    it to the   piece-
+       connector, who will check if the piece fits the puzzle in its current state, and connect it to the puzzle. For each
+       successful micro-task, students receive positive feedback in the form of an increment in their skill (speed and/or
+       accuracy). Overall group performance is evaluated by the time-to-completion divided by the number of correct
+       pieces. Our   independent   variables   are:  (a)  pedagogical    style  (with  or  without   mandated     role  rotation);  (b)
+       students' initial skill level for each task and distribution of skill levels within students; (c) task difficulty.
+
+3-
+                               a.                                                                     b.
+Figure 1. Design rationale for the Stratified Learning Zone model, and results from multiple runs of the model.
+
+Initial Findings
+         In analyzing the model's output, one must adopt a skeptical stance, because in any act of modeling lies
+the inherent  possibility  that  some  critical  aspect of   a situation has  been   overlooked.   Yet,   this challenge   of
+modeling is certainly not unique to agent-based modeling but is typical of any scientific endeavor. That said,
+after many   sets  of experiments    over  a  large initial  parameters  set, we    were  able  to  plausibly  demonstrate
+relations between pedagogical practice and student learning, as follows: (i) The overall performance of groups
+with mandated role-rotation decreased by approximately 40%; (ii) When student­agents were reinforced for
+group  performance    rather  than individual   learning,   students  became  entrenched     within skills reflecting    their
+initial skill-level distribution; (iii) However, when role rotation was mandated, even though production slowed
+down, more learning occurred, per student. A careful analysis of the impact of each task on group performance
+is necessary    to build a causal  explanation   of  our  numerical     results. Increasing  a  low-level  task    skill (i.e.,
+increasing  the number     of puzzle  pieces  a  retriever­student   can bring   to the  group  per time   tick)   appears to
+decrease  the   correct/incorrect  puzzle-pieces  ratio (failure ratio)  linearly   (see red line  in Figure   1b,   bottom),
+whereas increasing the high-level task skill effects a non-linear trend (see blue line in Figure 1b, top).
+
+Conclusions
+         We have presented a computer-based methodology for conducting research into collaborative learning.
+To demonstrate the methodology, we described the design and implementation of an agent-based model that
+simulates   the emergence     of  inequitable participation    patterns  in a collaborative-inquiry      activity.  In future
+publications we will explain in details results from experiments with the model, the validation of the model
+using  real world    data,  and   limitations of  this  approach.    Hopefully,    by  harnessing   the   perspectives    and
+methodologies of complexity science, such as through building and experimenting with agent-based simulations
+of classroom interaction dynamics, we can create useful tools that inform theory building and equip practice.
+
+References
+Abrahamson, D., & Wilensky, U. (2005, April). The stratified learning zone: Examining collaborative-learning
+         design in demographically diverse mathematics classrooms. Paper presented at the annual meeting of
+         the American Educational Research Association, Montreal, Canada.
+Abrahamson,     D.,  &   Wilensky,  U. (2005,    June). Piaget?    Vygotsky?     I'm game!:     Agent-based    modeling    for
+         psychology research. Paper presented at the annual meeting of the Jean Piaget Society, Vancouver,
+         Canada.
+Blikstein, P., Abrahamson, D., & Wilensky, U. (2006, June). Minsky, mind, and models: Juxtaposing agent-based
+         computer     simulations  and  clinical-interview     data   as a   methodology     for  investigating    cognitive-
+         developmental theory. Paper presented at the annual meeting of the Jean Piaget Society, Baltimore, MD.
+Bonabeau,   E.,    Dorigo, M.,   Théraulaz,   G. (1999).    Swarm    intelligence:  From   natural  to   artificial  systems.
+         London: Oxford University Press.
+Epstein, J., & Axtell, R. (1996). Growing artificial societies: Social science from the bottom up. Washington:
+         Brookings Institution Press.
+Hurford,  A.  (2004,  April).  A   dynamical  systems   model   of  student  learning    and an  example   from    a HubNet
+         Participation Simulation. Paper presented at the annual meeting of the American Educational Research
+         Association, San Diego, CA.
+Wilensky,   U., &   Reisman,    K. (2006).  Thinking    like a  wolf, a  sheep   or  a firefly: Learning  biology    through
+         constructing    and  testing computational     theories--an     embodied      modeling  approach.     Cognition   &
+         Instruction, 24(2), 171-209.
+
+                                                                                                                                  3-3
+

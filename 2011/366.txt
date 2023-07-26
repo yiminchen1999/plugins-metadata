@@ -1,0 +1,445 @@
+CSCL 2011 Proceedings                                                                                       Volume I: Long Papers
+
+           Missing Something? Authority in Collaborative Learning
+ Iris Howley, Elijah Mayfield, Carolyn P. Rosé, Carnegie Mellon University, 5000 Forbes Ave. Pittsburgh, PA
+                       Email: ihowley@cs.cmu.edu, emayfiel@cs.cmu.edu, cprose@cs.cmu.edu
+
+           Abstract:   Past   research   in   individual learning settings  has  shown   that   student  dispositions
+           such as   self-efficacy     are  predictive   of learning  and  other   beneficial   outcomes,    but the
+           relationship   is  less   clear  in a  collaborative   learning   environment.    This   paper  explores
+           authoritativeness of stance within a conversation as a social factor influencing learning and
+           related  to self-efficacy    in  a computer-supported     collaborative   learning   setting. Our results
+           indicate that   this  authoritativeness    measure   predicts   learning, where    an individual's    self-
+           efficacy does not, and that student and partner authoritativeness predicts group self-efficacy.
+           Further  research     is required   to better    determine  the relationship   between    conversational
+           authoritativeness, individual dispositions, and learning.
+
+Introduction
+Research in individual learning settings connected with popular dispositional constructshas demonstrated that
+intrinsic motivation, mastery-learning oriented goals, and high self-efficacy are predictive of learning as well as
+positive traits such as persistence (Sheldon & Kasser, 1995; Harackiewicz et al, 2002; Coutinho & Newman,
+2008).    However, this leaves open the question of what happens when an additional student is added to the
+learning activity, and we then have a collaborative learning task. Will self-efficacy still predict learning and
+behavior in this collaborative setting? Or does the absence of considered social factors in these dispositional
+constructs dilute their predictive value in the face of social comparison, social identity, positioning, and other
+factors introduced by a collaborative setting?
+           At the same time that the introduction of a learning partner introduces complications that may interfere
+with   the predictive     value  of  motivational   assessments   largely  optimized    for  use within   individual   learning
+settings,  the  advantage     is that  the social interaction   makes  self-concepts    visible through   linguistic strategies
+speakers   employ      to position     themselves   within  their groups.    Thus,   as  an   important   part   of  our work
+investigating the applicability of constructs such as self-efficacy within a group learning setting, we develop a
+behavioral measure in the form of a categorical coding scheme through which we can quantify the relative level
+of authoritativeness of stance between the collaborative partners.          In this paper we apply this coding scheme to
+conversational data by hand, although in the long term, our hope is to be able to automate its application by
+means of machine learning technology as has been used in prior work on collaborative learning process analysis
+(Rosé et al., 2008; Mayfield & Rosé, 2011).            In this paper we explore the relationship between this proposed
+behavioral measure of authoritativeness and dispositional attributes such as self-efficacy. If behavioral measures
+of authoritativeness      (or some     other  automated   coding  scheme)    can be  used    to  predict student  learning   or
+persistence, and if these measures can be automated, then the Computer-Supported Learning (CSCL) research
+community      could   leverage     some   of the benefits   of individual  disposition  research,   automatically     assessed
+through    chat contributions,      in naturalistic   collaborative learning  environments.      For example,    if  we  could
+automatically measure self-efficacy through chat behavior, we may not need to use self-report questionnaires.
+Self-report questionnaires, while useful in a research atmosphere, are not as plausible in more natural CSCL
+environments where there may not be an experimenter, or even a permanent instructor.
+           In the remainder of this paper, we begin by outlining the prior research on assessment of dispositional
+attitudes.  Next, we introduce our operationalization of "authoritativeness" as a behavioral measure capturing
+one factor that may exist on the social dimension of collaborative learning. We use our measure of authority in
+knowledge along with self-efficacy to examine learning in a collaborative context as a reanalysis of a dataset
+from   an  earlier  computer      supported    collaborative  learning study  (Ai    et al., 2010).     We  conclude    with a
+discussion of our current directions and future work.
+
+Prior Work
+Much   prior   work    has examined     the   effects of dispositional attributes  on   learning  in individual  contexts.   In
+general,   measures    of  intrinsic   motivation have   been   associated with  a   variety of  positive  implications.  For
+example, studies have shown that students pursuing intrinsic goals are not only intrinsically motivated, but also
+portray behaviors enhancing their well-being (Sheldon & Kasser, 1995). Both the pursuit of intrinsic or extrinsic
+goals and the possession of autonomous or external motives have independent effects on well-being (Sheldon et
+al., 2004). Additional research based upon help seeking and achievement goal theory (Eccles & Wigfield, 2002;
+Dweck, 1986; Nicholls, 1984; Harackiewicz et al., 2002) shows that an intrinsic goal-orientation reduces help
+seeking avoidance and increases the likelihood of more optimal help seeking strategies (Newman, 1990; Ryan
+&  Pintrich,   1997).  Self-efficacy    is  a strong  predictor of  learning and   motivation    in individual environments
+
+© ISLS                                                                                                                      366
+CSCL 2011 Proceedings                                                                                     Volume I: Long Papers
+
+(Zimmerman, 1999), which strongly suggests it may have invaluable potential for collaborative environments.
+In this paper we will focus on Bandura's (1977) theory of self-efficacy in a thermodynamics collaborative task.
+Academic   self-efficacy    is a  student's  perceptions    of her   academic    capabilities, interpreted  from   previous
+mastery experience, vicarious experience, verbal and social persuasions, and emotional and physiological states.
+Self-efficacy beliefs contribute to the choices students make, as well as their persistence and effort expended.
+         Despite    this  substantial body   of  positive   results,   these   constructs  would  seem   logically to  have
+implications within collaborative learning settings as they have been demonstrated to have in individual learning
+settings, but little work has investigated how these traits influence behaviors within those social contexts. When
+these  dispositions   are examined    in collaborative   settings, the  picture  is  far  more complex.    These measures
+sometimes continue to predict learning, but often predict something else at the same time. For example, Darnon
+et  al (2006) shows    that differing    achievement   goal  orientations    result in different approaches    to mediating
+conflict through    epistemic   regulation   for mastery-oriented      students    and   through relational regulation  for
+performance-oriented      students.  However,   beyond   this, little  work    has  been  done to unite  self-efficacy with
+collaborative learning. One explanation for the murkiness of the relationship between individual dispositions
+and collaborative learning is that two students collaborating together is more than just two individuals with a
+common task. The same discussion that produces the cognitive conflict leading to learning (Piaget, 1985) adds a
+dynamic social dimension to the learning activity that may introduce other factors that interfere with the causal
+relationship between individual dispositions and learning.
+         For group situations, collective efficacy has been proposed as an alternative. According to Bandura
+(1997), collective efficacy is several individuals' combined perception of the group's capabilities to perform
+given  tasks. As    an example    of its application,  Wang    & Lin    (2007)  examine    self-efficacy in a  collaborative
+learning task, where they incorporate collective efficacy to determine how the self-efficacy configuration of
+three-person  groups     predicts collective efficacy    and usage     of high-level   cognitive  skills during   discussion.
+While Wang & Lin (2007)'s results suggest a relationship between homogenous collective efficacy, high-level
+cognitive skills, and group performance, the results are less clear for heterogeneous self-efficacy groups.
+         In this paper, we propose a conversational analysis framework for encapsulating the social positioning
+dimension of collaborative tasks, with the goal of eventually automating the process of identifying instances of
+social shift. We introduce an abbreviated framework for identifying authority in dialogue, which we later use to
+examine social positioning.
+
+The Authoritativeness Framework
+It is reasonable to believe that the social interactions that occur during a collaborative task influence learning
+and the effect that dispositional attributes have on learning. So, in addition to examining traditional dispositions
+(in this study,  self-efficacy)   via    self-report, we propose     a  framework    for  looking  at authoritativeness  of
+knowledge presentation.     In short, an authoritative presentation of knowledge is one that is presented without
+seeking external validation for the knowledge.
+         The   Authoritativeness     Framework    we    introduce    in   this paper   is rooted  in  Martin's  Negotiation
+Framework (Martin, 1992), from the systemic functional linguistics community. This work highlights the moves
+that are made in a dialogue as they reflect the authoritativeness with which those moves were made, and gives
+structure to exchanges back and forth between participants. Previous work has studied the complexity of, for
+instance, the difference between authority to alter the direction of a conversation and authority to contribute new
+information to a conversation (Martin, 2000). In its use within the systemic functional linguistics community, it
+has been used as a way to distinguish between classrooms where the reasoning of the teacher is at center stage
+from those where student reasoning is the focus (Veel, 1999).             It has also been used to investigate subtleties
+about distribution of power in juvenile trials (Martin et al., 2008), in keeping with the emphasis in the systemic
+functional linguistics community for using analysis of language to support social justice. We are interested in
+this framework because of its descriptiveness for social interactions, and how it boils down the intricacies of
+power management within an interaction to a few simple codes, making it easy to track shifts in positioning
+over time.
+         While the Negotiation framework as formulated by Martin is highly descriptive for sociolinguists, and
+has been widely used by Martin himself as well as by other sociolinguistics, it is difficult to replicate reliably
+from the previously published formulations, as this was not a methodological goal of the original researchers.
+This makes its immediate use for quantitative analysis difficult without introducing threats to internal validity.
+To  remedy    this, we    have worked    iteratively  on a  coding     manual   that incorporates  the   insights from that
+framework that are relevant to our task and makes them precise and concrete enough to be reproducible. Our
+inter-rater agreement for this coding has achieved a Cohen's Kappa of 0.78. A full treatment of the details of our
+development process is beyond the scope of this paper, but is discussed more in depth in Howley et al (2011).
+We would like to acknowledge that we developed this Authoritativeness Framework through consultation with
+experts from a variety of backgrounds (sociolinguists, computational linguistics, computer scientists, interaction
+analysts, learning scientists, sociocultural and education researchers, etc).
+
+© ISLS                                                                                                                   367
+CSCL 2011 Proceedings                                                                             Volume I: Long Papers
+
+         Our formulation of the Authoritativeness framework is comprised of two dimensions with six and three
+codes, respectively, and incorporates structural and pragmatic knowledge of language based on the Negotiation
+framework. To simplify our analysis for this paper, we will focus on two moves in particular. The first is K1, or
+'primary knower', and the second is K2, or 'secondary knower'. A 'primary knower' move includes a statement of
+fact, an opinion, or an answer to a factual question, such as 'yes' or 'no'. It only counts as `primary knower' if it
+is not presented in such a way as to elicit an evaluation from another participant in the discussion.  Conversely,
+a 'secondary knower' move includes statements where the speaker is not positioned as authoritative on the topic
+at hand, such as asking a question eliciting information, or presenting information in a context where evaluation
+is the expected response or formulated in such a way as to elicit feedback. A brief overview of the codes from
+our Authoritativeness framework is shown in Figure 1.
+
+          Code        Meaning                   Example
+          K1          Primary Knower            "This is the end."
+          K2          Secondary Knower          "Is this the end?" and "This is the end, right?"
+          A1          Primary Actor             "I'm going to the end."
+          A2          Secondary Actor           "Go to the end."
+          ch          Challenge                 "I don't have an end marked."
+          o           Other                     "So..."
+             Figure 1.    An Overview of the Codes Included in our Authoritativeness Framework.
+
+         There is no    strict form-function relationship between  these codes   and the text  being analyzed. The
+simplest example of this is a line such as 'yeah', which could be authoritative in response to a question or could
+be non-authoritative response to someone else's evaluation. Additionally, factual statements where the speaker
+is uncertain of their correctness and is looking for approval from a listener would be coded as a K2 move, even
+though it is structurally similar to most K1 moves. The roles that speakers take through these codes can shift
+rapidly within a  conversation,   and are dynamic,  being   heavily based on    the context of what  has happened
+leading up to an utterance, and how that utterance is responded to by other participants.
+
+  Figure 2. An Example Analysis Using Martin & Rose's (2003) Negotiation System, Labeled as Authority.
+
+         For example, looking at Figure 2, we will see that the roles of primary and secondary speakers is highly
+volatile and does not appear to carry any particular lasting significance with respect to status distribution within
+the conversation. Rather than signify any persistent difference in status distribution between the two students in
+Figure 2, this frequent shifting in speech roles serves to underscore the equal footing between the two students
+despite the fact that Student2 is clearly more knowledgeable. Furthermore, speech roles are meaningful even
+where transitory in that they signify which speakers are treated as the source and recipient respectively of the
+information or goods and services being exchanged.    Thus, it allows us to ask not only which speakers are cast
+as authoritative within an interaction, but authoritative with respect to what.
+
+© ISLS                                                                                                           368
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+         We   can  examine     the working  dynamics     of group  members    and  compare   what   group     behaviors  are
+visible in teams with different compositions of authoritativeness and learning gain. Groups where both students
+are highly authoritative share characteristics. Their exchanges largely consist of statements of fact or proposals
+for answers   to questions     from   the tutor. Both    students appear   to understand   the   concepts     that they  are
+discussing, and they often come to similar conclusions. Thus, there is little debate before coming to a consensus.
+         Figure 3 is an example of a group in which both students are highly authoritative. The only secondary
+knower   (K2) move,    line  2, is  a proposal   for an  answer   to the  tutor, albeit one  that is phrased    to  ask  for
+evaluation from the other student. The rest of the moves are assertions. While there is a disagreement between
+lines 1 and 2, the justification of each student's stance are given as factual statements (at lines 3 and 5), and the
+consensus is phrased by each student as if they are authorizing the final decision (lines 7 and 8).
+
+           Figure 3. A Sample of Discussion from Two Students with High Authoritativeness Ratios.
+
+         In other common situations, however, the authoritativeness of the two students is very distinct, with
+one student taking on an authoritative tone and the other being much more submissive. This usually comes in
+the form of one student asking `permission' when suggesting new ideas, and the other student making a habit of
+affirming those questions and giving new information as primary knower (K1) moves.
+
+         Figure 4. A Chat Example between Two Students with Unequal Amounts of Authoritativeness.
+
+         Above, in Figure 4, is an exchange with an unequal ratio of authority, a common pattern. Despite the
+fact that both students are proposing new ideas, one student repeatedly phrases them without authority (lines 2,
+6, and 10). In this case, since the more authoritative student disagrees with these proposals (lines 4 and 7), the
+tone of the student becomes less authoritative over time. Meanwhile, the more authoritative student has taken on
+a tutor-like role, confirming or rejecting suggestions from the less authoritative student as seen on line 11.
+         Figure  5    shows  a sample   discussion   from   two students  with   learning losses  (i.e., negative  learning
+outcomes). In this    chat  log there were  very    few  exchanges   of authoritative   statements,  and  this example      is
+exemplary  of the     other authoritative exchanges   through   the  rest of  the discussion. Notice     that many    of the
+contributions are responses submitted to be evaluated, often denoted by question marks and coded as secondary
+knower statements. The two primary knower statements on lines 5 and 8 are either uncertain evaluations of the
+other  student's authoritative   contribution,   or  are very brief. Similar   to Figure  4, we   also   see  here  a trend
+throughout the design activity where Student3 performed more primary knower statements than his partner. We
+performed  analyses    similar  to (and   including) the  examples   above in  order  to  explore authoritativeness      as a
+social factor affecting learning in collaborative settings.
+
+© ISLS                                                                                                                   369
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+         Figure 5. A Sample of Discussion between Two Students with Poor Learning Gains, Coded for
+                                                  Authoritativeness.
+
+Methods
+The data we analyze in this paper was collected as part of a research study in which alternative forms of support
+for online learning were contrasted in a mechanical engineering course.           106 undergraduate students from a
+thermodynamics     class at   Carnegie  Mellon  University participated in   the  study  by   attending one  of six  lab
+sessions, in which time was strictly controlled. Students were given software training and practice (60 minutes),
+a pre-questionnaire and pre-test (10 minutes), the experimental manipulation (40 minutes), and then the post-test
+and  post-questionnaire   (15  minutes). The  experimental  design   activity consisted   of  randomizing   students to
+pairs, and then assigning each partner to design either an eco-friendly power plant or a power- proficient power
+plant. Opposing goals were used to encourage discussion and negotiation amongst partners. In all conditions, a
+tutor agent participated with the students in the chat in order to offer support.    The entire lab session took place
+in a single computer     lab, in which  the researchers ensured  that partners   did  not sit next to  each other.  The
+experimental   manipulation    took  place  during an   online collaborative   design   discussion  and    consisted of
+modifying tutor behaviors only.      In all other respects, the student experience in all conditions was the same.
+Results of the experimental manipulation are not discussed in this paper as they have been published separately
+(Ai et al., 2010).
+
+Software
+Students used Cyclepad (Kumar et al, 2007), a computer software simulator that allows users to implement
+thermodynamics design ideas via a graphical interface. Specifically, students must consider trade-offs between
+power   output and    environmental  friendliness in designing a Rankine     cycle,  which   is a type  of heat engine.
+Essentially, students use Cyclepad to design simulated power plants.
+         Pairs of   students  used   ConcertChat  (Stahl, 2006), collaboration    software    enabling  communication
+through  a  chat window     (similar to instant messaging)  and  a whiteboard     for sharing   graphical  information.
+ConcertChat has its origins in explicit referencing research, as discussed in Muehlpfordt & Wessner (2005) and
+Pfister & Muehlpfordt (2002).
+
+Experimental Design
+The experimental manipulation was a 3X3 between-subjects design. Each student pair was randomly assigned to
+one of nine conditions. The first independent variable contrasted 3 social conditions (High, Low, and None)
+where tutoring agents presented differing amounts of social behavior within the chat environment. Our dialogue
+agent  exhibited   three different types  of socio-emotional   behavior   in  the chat  window:    showing   solidarity,
+tension release, and agreeing.    The frequency of social behavior in our socially capable tutors was determined
+by a percentage of tutor turns that can be social prompts; specifically, the threshold parameter was 15% in the
+Low social tutor condition and 30% in the High social tutor. There was no social behavior in the Non-social
+condition.  The task related behavior of the tutor was the same in all three of these conditions.       Only the social
+aspects of the tutor's behavior changed.
+         For the second three-level independent variable, we designed 3 conditions in which the dialogue agent
+showed   goal  alignment    either with  the  Green  goal  students,  the Power     goal  students,  or  neither.  This
+manipulation affected only the manner in which task related contributions were made in the conversation, but
+content was held constant.     In this way, students could be in one of three different conditions in relation to the
+tutor agent, namely: Match (where the student's goal orientation condition matched the alignment of the tutor),
+Mismatch (where the student's condition is the opposite of the goal alignment exhibited by the tutor), or Neutral
+(where the tutor showed no bias). In all cases, the tutor presented the same task information. The only difference
+between conditions was the bias exhibited.      For example, where the Green biased tutor might say "What is bad
+
+© ISLS                                                                                                               370
+CSCL 2011 Proceedings                                                                             Volume I: Long Papers
+
+about increasing the heat input to the cycle is that it increases the heat rejected to the environment," the neutral
+tutor would say "Increasing heat input to the cycle increases the heat rejected to the environment."
+
+Outcome Measures
+As outcome measures, we examined:
+     ·   Learning     gains between the   Pre- and Post-  test. 35 isomorphic  multiple   choice  and short answer
+         questions were used to test analytical and conceptual knowledge of Rankine cycles.
+     ·   The pre-questionnaire consisted of a brief scale for measuring mastery related beliefs (said to predict
+         self-efficacy), and an alternate version of a self-efficacy question as shown in Figure 6. We combined
+         the mean response of these four questions to form a self-efficacy scale.
+     ·   The post-questionnaire was a measure of students' perceptions of task success, and assessment of the
+         quality of the interaction with their partner and with the agent.
+     ·   We also analyzed conversational behavior in the chat logs, with respect to their green and power biased
+         statements.
+     ·   Conversational behavior was also analyzed with our Authoritativeness Framework.
+
+                Q10     I have always had a natural talent for engineering-related subjects.
+                Q11     I received good grades in my high school math classes.
+                Q12     I have always done well on science course assignments.
+                Q13     I am certain I will have completed the "Thermodynamics 1" course well.
+            Figure 6.   Sample Pre-questionnaire Items Measuring Self-efficacy and Mastery Beliefs.
+
+Results
+Main effects of data from this study were originally reported and discussed in depth in Ai et al (2010), so here
+we will discuss new findings related to the self-efficacy pre-questionnaire and authoritativeness analysis. The
+main   effects from   the original analysis can  be quickly summarized     as follows:   with the two  independent
+variables (i.e., social manipulation and tutor goal map), the objective section of the pretest as covariate, and lab
+session as a random variable, there was a significant effect of Social Manipulation (F(2,94) = 5.27, p < .01) on
+learning where the Low Social condition was significantly better than the other two, with an effect size of .83
+standard deviations in both cases. Other results related to post-questionnaire data and goal-biased conversational
+data are reported in Ai et al (2010).
+         Throughout this new analysis, "authoritative ratio" refers to the total number of primary knowing (i.e.,
+K1) statements, over the total number of authoritativeness statements (i.e., K1+K2). Additionally, our results
+related to authoritativeness did not show statistically significant differences between conditions, and as such, we
+are not including tutor behavior in our analysis.
+
+Learning Outcomes
+The first dimension of our analysis involves examining learning outcomes and how various factors affected
+student learning. Posttest scores were regressed on the pretest and self-efficacy, but the relationship between
+self-efficacy and posttest was not significant. In short, individual self-efficacy does not seem to predict learning
+in this experiment. We can combine authoritativeness ratio and partner-ratio to predict group self-efficacy (the
+mean of both partner's self-efficacy), and we find a marginal effect of group self-efficacy on learning (F(1, 103)
+= 3.29, p = 0.073*).
+         It is important to note that group self-efficacy can be an important factor to consider. Wang & Lin
+(2007) found that individual student self-efficacy predicted collective efficacy, and collective efficacy predicted
+use of high-level cognitive skills in discussion, as well as group performance. In this study we are not currently
+looking at the usage of high-level cognitive skills in discussion, but we are curious about what other outcomes
+group self-efficacy may predict.
+         Looking at our other factor of interest, a linear regression analysis finds that authoritativeness ratio has
+a significant effect on learning (F(1, 103) = 4.58 , p = .0347**), explaining 41% of the variance (R2 = .41) or
+3% of   the variance   beyond  what   is explained by the pretest. Where   self-efficacy does not predict learning,
+authoritativeness appears to do so.
+
+Self-Efficacy Beliefs and Authoritativeness
+Since authoritativeness predicted performance and self-efficacy unexpectedly did not, it is not surprising that
+individual self-efficacy is not correlated with authoritativeness by itself. However, when we look at group self-
+efficacy we find a significant relationship (F(1, 103) = 8.60, p = 0.0041**) which explains 12% of the variance.
+So, despite authoritativeness and individual self-efficacy not being related on an individual level, when both
+
+© ISLS                                                                                                           371
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+partners'  authoritativeness ratios are   included  in an analysis,  authoritativeness  can  predict  the group's   self-
+efficacy, which may be more important in a collaborative setting.
+
+Self-Efficacy Beliefs and Goal-Biased Conversation
+In  our originally  published   analysis, we  investigated  how   our experimental    manipulation    affected  the goal
+related bias displayed by students in their conversational behavior.       For this analysis, we measure the bias of a
+student utterance towards the "green goal" or the "power goal" by applying a topic discovery model on our
+dialogues (Paul & Girju, 2009). Latent Dirichlet Allocation (LDA) models have been widely used to discover
+topics on large collections of unannotated data by modeling the word distributions represented in the data (Blei
+et al, 2003).  We are using LDA models for the purpose of modeling how users are interacting with each other.
+For each utterance, we compute a score to represent to which degree the utterance displays a bias towards the
+green or power goals. When referring to the score for a student's bias towards his own goal, we will affix the
+word "self." So, if we want to know the average score towards the green goal, for a student who was assigned
+the green  (i.e., environmentally   friendly)  power   plant, then   we will   look at her  Self-Average    goal-biased
+conversation score.
+          Looking at partner's authoritativeness ratio along with one's own authoritativeness ratio, we find that
+partner's authoritativeness ratio predicts the Self-Average goal-bias, F(1, 103) = 4.47, p = 0.0369**, but it only
+accounts for 4% of the variance (R2 = .4), so this relationship is not particularly informative.      Nevertheless, it is
+interesting that we find evidence that suggests that speakers may respond to the authoritativeness with which
+their  partner is positioned by  exaggerating  the  distinction  between   his or her  goal affiliation and  his   or her
+partner's. Further supporting the interpretation that a student's positioning is sensitive to the positioning of her
+or  her partner,  we  find a negative   correlation between   the student's   authoritativeness ratio   and that   of the
+partner, R(106) = -.27, p = .0053**.
+
+Conclusion
+We have seen with this set of data that authoritativeness predicts student learning from a collaborative activity
+better than self-efficacy. Additionally, both partners' authoritativeness predicts their group self-efficacy (even
+though   individual   authoritativeness does  not   predict individual  self-efficacy). We   also   see a   relationship
+between partner authoritativeness and how a student presents him or herself, both in terms of the extent to which
+topic affiliation is emphasized as well as personal authoritativeness.     Whereas in studies of individual learning
+self-efficacy predicts learning, in this collaborative learning setting we find that there is a relationship between
+authoritativeness and self-efficacy, and authoritativeness and learning, but not self-efficacy and learning. These
+findings suggest that we cannot always rely on disposition research originating in individual settings to predict
+the same outcomes in collaborative learning settings. Other research on collaborative learning shows that these
+individual dispositions can predict other behaviors, such as method of conflict resolution, but our results suggest
+that authoritativeness may be a new disposition that is related to self-efficacy and that can predict learning in
+collaborative settings. While dispositions are typically considered to have personal causality, the authors believe
+authoritativeness to be influenced both by personal causes and situational causes to some extent.
+          This research reveals a considerable amount of potential for explaining collaborative learning through
+student dispositions and social behaviors. Future work will involve looking closer at the relationship between
+authoritativeness   and   other dispositions  used  to  predict  learning,  such  as   achievement    goal  orientation.
+Additionally, knowing what authoritative combinations of partners produces the best learning gains could also
+be beneficial for the research community. It would also be necessary to explore how generalizable the effect of
+authoritativeness is, and if it is applicable to other domains or even learning tasks that are not project-based.
+Further work is also necessary to automate the process of assessing authoritativeness. If authoritativeness can be
+measured   automatically   via  computer,  it will  have  additional  benefits beyond   dispositional   factors that  are
+measured through self-report.
+          In  conclusion,  this paper shows    that authoritativeness   is an  influential factor  in discussion-based
+collaborative learning tasks that predicts learning and is related to a group's self-efficacy. Further research is
+required   to  refine the  measurement    of  authoritativeness,  and explore   exactly    how  it is related   to  other
+dispositions. The end goal is to better understand the factors that influence learning in collaborative settings so
+that they may be automatically assessed in real world settings.
+
+References
+Ai, H., Kumar, R., Nagasunder, A., Rosé, C. P. (2010). Exploring the effectiveness of social capabilities and
+          goal alignment in computer supported collaborative learning, Intelligent Tutoring Systems conference
+          (ITS 2010).
+Bandura, A. (1977). Self-Efficacy: Toward a unifying theory of behavioral change, Psychological Review, 84,
+          191-215.
+Bandura, A. (1997). Self-efficacy: The exercise of control. New York: Freeman.
+
+© ISLS                                                                                                                372
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+Blei, D. Ng, A., and Jordan, M. (2003). Latent dirichlet allocation. Journal of Machine Learning Research, 3.
+Coutinho, S.A. & Neuman, G. (2008). A model of metacognition, achievement goal orientation, learning style
+          and self-efficacy,   Learning Environments Research, 11, 131-151.
+Darnon, C., Muller, D., Schrager, S. M., Pannuzzo, N., & Butera, F. (2006). Mastery and performance goals
+          predict epistemic and relational conflict regulation. Journal of Educational Psychology, 98, 766­776.
+Dweck, C.S. (1986). Motivational processes affecting learning, American Psychologist, 41,1040-1048.
+Eccles, J.S. & A. Wigfield, (2002). Motivational beliefs, values, and goals, Annual Review of Psychology, 53,
+          109-132.
+Harackiewicz, J.M., Pintrich, P.R., Barron, K.E. & A. J. Elliot (2002), Revision of achievement goal theory:
+          necessary and illuminating. Journal of Educational Psychology, 94, 638-645.
+Howley, I., Mayfield, E., & Rosé, C. (2011). Linguistic Analysis Methods for Studying Small Groups. Invited
+          Book Chapter to Appear in International Handbook of Collaborative Learning.
+Kumar,   R.,  Rosé,   C. P., Wang,   Y.   C., Joshi, M.,  and  Robinson,  A.  (2007).  Tutorial  Dialogue    as Adaptive
+          Collaborative Learning Support. Proceedings of Artificial Intelligence in Education.
+Martin, J. (1992). English Text: System and structure. Amsterdam: Benjamins.
+Martin,  J. (2000).   Factoring out  Exchange:   Types    of Structure.  M  Coulthard,  J Cotterill and  F   Rock   [Eds.]
+          Working with Dialogue. Tubingen: Niemeyer. 19-40.
+Martin, J. R., & Rose, D. (2003). Working with Discourse: Meaning Beyond the Clause. Continuum
+Martin, J.R., Zappavigna, M., & Dwyer, P. (2008). Negotiating Shame: exchange and genre structure in youth
+          justice conferencing. European Systemic Functional Linguistics Conference.
+Mayfield, E. & Rosé, C. P. (2011). Recognizing Authority in Dialogue with an Integer Linear Programming
+          Constrained    Model,   in Proceedings     of the  Annual  Meeting   of the  Association  for  Computational
+          Linguistics.
+Muehlpfordt, M., & Wessner, M. (2005). Explicit Referencing in Chat Supports              Collaborative Learning. In T.
+          Koschmann,     D.  D. Suthers,   and T.-W.    Chan,  editors, Computer   Supported     Collaborative  Learning
+          2005. The Next 10 Years! (CSCL 2005), Mahwah, NJ, 2005. Lawrence Erlbaum Associates.
+Newman, R. S. (1990). Children's help-seeking in the classroom: The role of motivational factors and attitudes.
+          Journal of Educational Psychology, 82(1), 71-80.
+Nicholls, J.G. (1984). Achievement motivation: Conceptions of ability, subjective experience, task choice, and
+          performance. Psychological Review, 91, 328-346.
+Paul,  M.,  and Girju,   R.  (2009). Cross-Cultural   Analysis  of  Blogs  and  Forums  with   Mixed-Collection     Topic
+          Models Export. In Proceedings of the 2009 Conference on Empirical Methods in Natural Language
+          Processing.
+Pfister, H.R., & Muehlpfordt, M. (2002). Supporting Discourse in a Synchronous Learning Environment: The
+          Learning Protocol Approach. In G. Stahl, editor, Proceedings of CSCL 2002, pp 581­589, Hillsdale,
+          2002. Erlbaum.
+Piaget, J.  (1985).   The equilibrium   of cognitive    structures: the central problem    of intellectual development,
+          Chicago University Press.
+Ryan,   A.  M., &    Pintrich, P. R.  (1997).  "Should   I  ask for  help?"  The  role of  motivation and    attitudes in
+          adolescents' help seeking in math class. Journal of Educational Psychology, 89(2), 329-341).
+Sheldon,   K. M.,   &  Kasser,  T.   (1995).  Coherence    and  congruence:  Two   aspects of    personality integration.
+          Journal of Personality and Social Psychology, 68(3), 531-543.
+Sheldon, K. M., Ryan, R. M., Deci, E. L., & Kasser, T. (2004). The independent effects of goal contents and
+          motives   on   well-being: It's both  what    you pursue  and  why   you pursue  it.   Personality and    Social
+          Psychology Bulletin, 30, 475-486.
+Stahl, G. (2006). Analyzing and designing the group cognitive experience. International Journal of Cooperative
+          Information Systems (IJCIS).
+Veel,  R.   (1999).   Language,   Knowledge,    and  Authority   in  School  Mathematics,     in Francis   Christie (Ed.)
+          Pedagogy and the Shaping of Consciousness: Linguistics and Social Processes, Continuum.
+Wang,   S.  &   Lin,  S. (2007).  The  effects  of   group  composition   of self-efficacy and   collective  efficacy  on
+          computer-supported collaborative learning, Computers in Human Behavior, 23(5), 2256-2268.
+Zimmerman, B. J. (1999). Self-efficacy: An essential motive to learn. Contemporary Educational Psychology,
+          25, 82-91.
+
+Acknowledgments
+This   work  was  supported    by the  Pittsburgh    Science of Learning    Center (#SBE   0836012)     and  a  Graduate
+Training Grant from the Department of Education (#R305B040063).
+
+© ISLS                                                                                                                 373
+

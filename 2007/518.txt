@@ -1,0 +1,495 @@
+                  The integration of synchronous communication
+                              across dual interaction spaces
+
+                Martin Mühlpfordt, Fraunhofer IPSI, Darmstadt, martin.muehlpfordt@ipsi.fraunhofer.de
+                       Gerry Stahl, Drexel University, Philadelphia, gerry.stahl@drexel.edu
+
+        Abstract: Dual interaction spaces--that combine text chat with a shared graphical work area--
+        have been developed in recent years as CSCL applications to support the synchronous construc-
+        tion and discussion of shared artifacts by distributed small groups of students. However, the sim-
+        ple juxtaposition of the two spaces raises numerous issues for users: How can objects in the shared
+        workspace be referenced from within the chat? How can users track and comprehend all the vari-
+        ous simultaneous activities? How can participants coordinate their multifaceted actions? We pre-
+        sent three steps toward integration of activities across separate interaction spaces: support for deic-
+        tic references, implementation of a history feature and display of social awareness information.
+
+Introduction
+        The construction, modification, annotation and arrangement of shared artifacts are key activities in many
+collaborative learning settings. Software systems now exist that permit synchronous coordinated manipulation of
+such shared artifacts even for geographically distributed users, by providing a shared graphical workspace. A shared
+workspace in a collaborative environment is an area of the software interface that allows a participant to construct
+and manipulate a graphical object so that the object and the effects of the manipulation appear in the corresponding
+area of the other participants' interfaces, essentially in real time. These shared workspaces may be used for creating
+and using external representations of knowledge (Whittaker, 2003), for collaboratively completing design tasks (Re-
+imann & Zumbach, 2001), for working together with simulations (Landsman & Alterman, 2003; Jermann, 2004), or
+for  solving math  problems  (Stahl, 2007). The  design   of  shared workspaces is  an  important topic in computer-
+supported collaborative learning (CSCL).
+
+        Learning at a distance requires a medium of communication. The medium can be auditory, audio-visual or
+text-based. For collaborative learning, textual synchronous communication with chat has two main advantages over
+audio and even face-to-face: For the chat poster, writing encourages a more careful planning of one's contribution; it
+fosters reflection on the discourse. For the recipient, the communication is persistent and available in symbolic form
+that "may    be searched, browsed,   replayed, annotated, visualized,  restructured and recontextualized"  (Erickson,
+1999).
+
+        The combination of a shared workspace with chat makes two regions for interaction available to a group in
+the form of a dual interaction space (Dillenbourg & Traum, 2006). The chat provides a medium of communication
+for the exchange of textual messages; the shared workspace allows for the collaborative construction and manipula-
+tion of shared artifacts that are relevant to the task at hand. In most groupware systems for synchronous distance
+learning, the chat and graphical workspace simply appear next to each other as two visually distinct areas of the ap-
+plication that are largely functionally independent of each other. This introduces a number of problems for the users
+(Suthers, Girardeau & Hundhausen, 2003; van Bruggen, 2003; Pata & Sarapuu, 2003). For instance, if a group of
+students want to create a concept map in the shared workspace consisting of arguments pro and con and their rela-
+tionships to each other, this raises the following questions:
+        1.    How can objects and relationships within the workspace be referenced from a posting in the chat area?
+        2.    How can the participants grasp and understand the relationships among each other of the activities and
+              messages that are part of a single collaborative interaction but are distributed across the two interaction
+              spaces? E.g., how can one establish that the message, "I agree," is a response to the introduction of a
+              particular new node in the argumentation graph?
+        3.    How can the participants coordinate their actions in the graphical workspace and in the chat with each
+              other? E.g., when and by whom should an argument introduced in the chat be added to the concept
+              map?
+
+                                                          518                                                 CSCL 2007
+       A better software integration of chat and workspace is needed to overcome such difficulties (Dimitracopou-
+lou, 2005; Suthers et al., 2003; McCarthy & Monk, 1994). But from the perspective of a software developer the
+question, which functionalities must be provided to support the collaboration in dual interaction spaces, is unan-
+swered; the claim for better integration is too general to guide the design of the learning environment. This became
+apparent in the workshop "Dual interaction spaces" at CSCL 2005 in Taipei organized by Pierre Dillenbourg and the
+CSCL SIG of Kaleidoscope.
+
+       In this paper we    propose integration measures    for  three relevant aspects of the connection of chat and
+shared workspace:
+·   deictic referencing,
+·   coordinating simultaneous activities, and
+·   understanding of past interactions.
+These problems are analyzed in the next section. In a third section we will describe the integration measures. Then
+in a section on experiences with ConcertChat, a collaboration environment that implements these measures will be
+presented, before we conclude with questions for future work.
+
+       For the sake of simplicity this papers describes our development of the integration measures as a linear
+process starting with problem analysis that leads to certain functionalities. As we know from CSCL research, this
+idealized development seldom holds. Our system was developed during the last 5 years. We started with assump-
+tions of what is needed by the users, developed first prototypes and used them in serious learning settings. The
+analysis of those real collaborations provided us insights into the complex nature of mediated collaborative meaning
+making in dual interaction spaces. Our focus gradually shifted from an individual point of view (what is needed by a
+user) to a group cognition (Stahl, 2006) perspective taking into account the creative, simultaneous, interwoven inter-
+actions among the team members.
+
+Problems in combined interaction spaces
+       A shared workspace can play at least two contrasting roles within a collaborative session. It can, for in-
+stance, provide the central location for the joint activity of the participants, with the chat playing a supportive role in
+discussing and disambiguating the activities that take place in the workspace. Conversely, the chat discourse can
+dominate, with the graphical workspace serving as a resource for clarification or for illustrating things that are hard
+to articulate in words. Which way communication is divided between the dual spaces depends upon the current task,
+the meta-communicative skills of the participants and the respective affordances of the two media (Pata & Sarapuu,
+2003; Dillenbourg & Traum, 2006). The activities in the chat and the shared workspace are typically intimately in-
+terrelated. To the extent that the technology supports it, participants may coordinate their use of the dual spaces in
+creative and subtle ways (see e.g., Stahl et al 2006).
+
+       A prominent characteristic of chat is the delay between the production of a message by its author and its
+presentation to others when it is complete. This has two main advantages: that the author can revise the message
+before sending it (Clark & Brennan, 1991) and that several people can be producing messages at the same time,
+unlike in spoken conversation. However, it also leads to the constant danger of sequential incoherence, which forces
+the participants to work additionally on explicitly coordinating the content and structure of their interactions. The
+problem is that, unlike in conversation, in chat the appearance of responses often do not immediately temporally
+follow the messages to which they are responding. The coherence of interaction is highly dependent upon the re-
+sponse structure between messages. But in the time it takes for someone to prepare and send a response to one note,
+a note from someone else can be posted, causing "interrupted turn adjacency" (Herring, 1999). A number of specific
+communication strategies may be evoked to deal with this (Fuks, Pimentel, & de Lucena, 2006; Lonchamp, 2006;
+Murray, 2000). In order to minimize the delay in responding, mistakes in syntax and wording are accepted and many
+abbreviations or acronyms are used (Garcia & Jacobs, 1999). Cohesive devices like explicitly naming the addressee
+of a contribution (Nash, 2005) are used to make references explicit.
+
+       The fact that several people can be producing messages at the same time means that the common conversa-
+tional rules of turn-taking do not apply (Sacks, Schegloff, & Jefferson, 1974). The resulting parallelism can scarcely
+be avoided, and must particularly be taken into account when multiple topics are discussed simultaneously (1). This
+problem is eased by the fact that the flow of chat is documented in the persistent transcript, which is visible--at least
+for the last several postings. The chat window serves not only as the location of communications, but also as a repre-
+
+                                                           519                                                CSCL 2007
+sentation of the temporal order of the messages. In contrast, the graphical workspace usually only shows the current
+state. All information about the actions and actors who brought about this state is ephemeral.
+
+       These problems resulting from the visual and functional juxtaposition of chat and workspace have the con-
+sequence that it is hard for users to track and specify relations of content and sequentiality between the textual con-
+tributions and the graphical activities. Specifically, there are three major problems:
+·   Deictic references. An important means of communicative expression during collaboration with shared work-
+    spaces is deixis (Barnard, May & Salber, 1996; Clark & Wilkes-Gibbs, 1986)--the referencing of objects, rela-
+    tions and actions in the shared visual environment. When chat is used as the communication medium, deictic
+    referencing is associated with high production costs and potentially also higher levels of ambiguity because ges-
+    tural pointing is not possible. Purely textual descriptions of the object or of its specific position are obvious so-
+    lutions, but there is no guarantee that such a description will be intelligible to others when they receive it be-
+    cause another user of the shared workspace may have moved or even deleted the object in the meantime.
+·   Decontextualization of actions and messages. When collaborating in a dual interaction space, participants inter-
+    act with each other through chat messages and modifications to artifacts in the workspace. Whereas the persis-
+    tent chat history represents the complete sequentiality of the discursive contributions, the same does not hold for
+    the workspace. Both the ordering and the intermediate results of actions in the shared workspace are fleeting.
+    This has two direct consequences. First, the necessary context for interpreting messages that reference artifacts
+    in the workspace can quickly disappear. This defeats the important advantage of the persistent discourse history,
+    which can support retrospective reflection. Second, the phenomenon of interrupted turn adjacency, described
+    above, is heightened. During the time it takes for one person to respond, others can not only insert new mes-
+    sages but also modify referenced graphical artifacts.
+·   The coordination of communication and interaction. In a dual interaction space, different participants can si-
+    multaneously be typing and posting chat messages or producing objects in the workspace. In collaboration,
+    these various activities are interrelated: a message can announce or comment upon an action in the shared work-
+    space and a workspace action can respond to or clarify a chat message. The awareness of the activities of the
+    other people is a prerequisite for the construction of common ground (Dillenbourg & Traum, 2006). In chat, the
+    chat history documents the sequence of discursive activities of the participants and the usual system messages
+    when someone enters of leaves the room provide basic information about who is present. A series of interface
+    features have been established to support coordination in shared workspaces (Gutwin & Greenberg, 2002), help-
+    ing with turn taking and the anticipation of actions by other participants. For instance, objects that were just se-
+    lected by users might be color-coded to indicate who is using them and the location of the user's mouse can be
+    indicated (Stefik, Bobrow, Foster, Lanning & Tatar, 1987). Similarly, many chat systems display a message
+    near the chat input area if someone is typing. However, if all these awareness techniques are combined in an
+    environment with dual interactions spaces, then they can overwhelm the limited attentional abilities of humans.
+    The fleeting awareness messages scattered across the interface require users to pay constant attention to their
+    whole screen.
+
+Support through integration
+       People collaborating in a dual interaction space are exposed to a series of problems that derive from the
+visually and functionally separated nature of the chat and workspace components. Three software mechanisms will
+now be presented that integrate these components with each other:
+       1.  An explicit referencing tool that makes possible deictic references from the chat to the workspace.
+       2.  An integrated history function that documents the on-going collaboration process consisting of the ac-
+           tivities in the chat and in the shared workspace, and lets users review it.
+       3.  A visually integrated social awareness display that supports the perception of the simultaneous activi-
+           ties of the multiple participants in both areas.
+
+       To illustrate these integration measures, a shared whiteboard will be described as a common workspace for
+the collaborative creation of drawings, concept graphs and mind maps. See Figure 1 for an example showing the
+most important interface elements.
+
+Mechanism 1: Explicit References
+       The concept of explicit references (2) addresses the difficulty of deictic referencing in the textual medium
+of chat. Pointing gestures are frequently used in face-to-face conversation (Bekker, Olson & Olson, 1995), for in-
+
+                                                          520                                                  CSCL 2007
+stance to identify objects and to clarify relationships among objects. Similarly, explicit references in chat allow one
+to associate a chat contribution with objects in the shared workspace and with other chat messages using graphical
+connectors. A graphical reference to a chat message can point to the whole message, a single word or some portion
+of the message. A reference can also point to an object or a region in the workspace. In the simplest case, one might
+want to point to a particular object, but in other situations to just a specific part of the object or else to a spatial con-
+stellation of several objects. So a number of different forms of referencing must be supported.
+
+                                                                              Notice of activity
+
+                                                                                                       Indicator of activi-
+                                                                                                       ty in the shared
+                                                                                                       whiteboard
+
+                                                                                                       Indicators of ex-
+                                                                                                       plicit references to
+                                                                                                       other messages or
+                                                                                                       to the whiteboard
+
+ Slider for exploring
+ the artifact history
+
+                                                                 Explicit graphi-                      Notices of activity
+                                                                 cal reference to
+                                                                 an object
+
+Figure 1. This screenshot shows the state of the ConcertChat interface after the posting of a message with an explicit
+reference to a textbox in the shared workspace. Rtoledosj is currently working on the large textbox while Euclid is
+typing a chat message. The interface features for showing explicit references, the workspace history and awareness
+messages have been annotated.
+
+        For summary statements in the chat--e.g., "These two arguments contradict each other"--multiple refer-
+ences can be made      to relevant messages and objects. Just   as  with gestural  pointing, the  effective meaning     of  a
+graphical reference is given only once both the gestural and verbal messages are given. Thus, a reference can be
+used to clarify a "response-to-that-message" relation as well as to indicate a "related-to-this-object" relation.
+
+        The usability of an explicit referencing tool depends upon its effect on the media-dependent costs of pro-
+duction and reception (Clark & Brennan, 1991). In order to keep these costs low, appropriate interaction possibilities
+must be available for the easy production of references and for the visualization of references.
+
+        In order to maintain the chronological order of the chat history--rather than threading it--with the associ-
+ated advantages for retroactive reflection, a reference is represented by a graphical arrow going from the referencing
+chat message to the referenced object or message. As soon as the referencing message is displayed, the accompany-
+ing reference arrow is also displayed, as illustrated in Figure 1.
+
+                                                            521                                                  CSCL 2007
+Mechanism 2: Artifact history
+       In collaboration in dual interaction spaces, the actions in the shared workspace and the messages in the chat
+are but two facets of a single activity. While the chat displays a persistent history of the collaborative discourse,
+there is no corresponding history display for the workspace, let alone an integrated history for the whole collabora-
+tion. In technical terms, an artifact history of the objects in the workspace is a chronological collection of the vari-
+ous different versions or circumstances of the workspace resulting from the manipulations of the participants. In a
+shared whiteboard, every creation, movement and editing of an object changes the state of the workspace (3). The
+provision of an artifact history has two goals: to preserve the workspace context at various times and to represent its
+evolutionary process. The context of the workspace at the time when a chat message was being produced is impor-
+tant to know in order to interpret the message­particularly if the message explicitly references artifacts in the work-
+space. The artifact history permits the reconstruction of that context and encodes that context in the software repre-
+sentation of the reference. As needed, the historical context corresponding to a message of interest can be recon-
+structed and displayed. The other goal is to allow the normally fleeting artifact history to be replayed. The chrono-
+logically ordered developmental steps can be played back like the frames of a film, making possible reflection on the
+whole collaborative construction. Reflection in the group discussion is facilitated by the combination of being able
+to review the past developmental stages of the shared workspace and being able to point to a particular stage with an
+explicit reference.
+
+Mechanism 3: Integrated activity awareness
+       The integration of activity displays has the goal of making it easier to be aware of the simultaneous activity
+of the other participants. Awareness of these activities is a prerequisite for constructing and maintaining a mutual
+understanding of the chat messages and the changes to the graphical artifacts--and therefore provides a necessary
+foundation for collaboration. In a chat environment, the chat history documents all the activities--both the individ-
+ual messages and information about participant presence. This chronological documentation of activity suggests that
+it could serve as a representation of all activity within a dual interaction space as well.
+
+       With chat, the process of producing a message is not directly perceivable by the other participants. The ex-
+tent to which a long lasting and cognitively strenuous activity in a shared workspace is observable for the other par-
+ticipants depends upon the nature of the workspace and the granularity of the operations that are displayed for eve-
+ryone. For instance, the editing of a textbox annotation in the shared workspace may only become visible for the
+others when the edit is completed. Activity awareness notifications have been established to support the coordina-
+tion of activities like joint editing, so someone knows not to try to edit an object that someone else is currently edit-
+ing. In a dual interaction space, however, it is necessary to visually integrate these notices that are associated with
+the locations of different individual activities. If one participant wants to post a chat message in response to a contri-
+bution from another (such as responding to an annotation in the shared workspace with: "I would say that differ-
+ently"), then she might hold off doing this if she is informed that he has just begun to make a change in the work-
+space that might very well serve to clarify his original contribution. Conversely, if he is informed that she is typing a
+chat message, he may delay his change in anticipation of a new objection. Both cases of course presume that the
+information about the activities is perceived. This can be supported by displaying the awareness information at the
+appropriate location (see Figure 1).
+
+Integrated dual interaction spaces in use
+       The described integration measures are implemented in a system called ConcertChat (4). It was developed
+during the last 5 years. Since 2004, the Virtual Math Teams Project (5) has been using a collaboration environment
+based on ConcertChat for the discussion and solution of mathematical problems by small groups of students. A de-
+tailed case study of how deictic referencing was conducted in this context using the ConcertChat functionality in the
+dual interaction space is presented by Stahl et al. (2006). Further studies of the use of ConcertChat's explicit refer-
+encing tool are reported by Mühlpfordt & Wessner (2005). These provide some evidence that the participants were
+able to employ effective communication strategies with the help of the explicit referencing.
+
+       For researchers, the persistence of all activities in a dual interaction space provides the possibility of con-
+ducting fine-grained analyses of group interaction, as illustrated by Stahl et al. (2006). To support this, a replay ver-
+sion of ConcertChat has been developed that allows all the activities to be repeatedly reviewed, with the chat and
+workspace histories precisely coordinated. As mentioned in the introduction, the in-depth analysis of collaborative
+
+                                                          522                                                   CSCL 2007
+meaning making of groups learning together in the ConcertChat environment provided us insights in how the func-
+tionalities are used. The next three examples illustrate that.
+
+       All examples are       taken from  Spring     Fest 2006     of the Virtual Math  Teams        (VMT)  service      at
+http://mathforum.org. The collaborative context was set by organizing a contest: members of the most collaborative
+teams would win prizes. Students were recruited globally through teachers who were involved in other Math Forum
+activities. The teams in the excerpts consisted of students from Singapore (example 1) and from the US (example 2
+and 3), as well as a facilitator from the Math Forum, who provided technical assistance. At the beginning of the first
+sessions the facilitators briefly explained the functionalities of the learning environment to the groups. Pedagogi-
+cally, the topic for discussion was an open-ended exploration of geometric patterns. An initial pattern of squares
+formed from sticks was given. The students were to figure out the formulae for the number of squares and the num-
+ber of sticks at stage N first, and then explore other patterns that they or other teams invented.
+
+                                                                                                           Question
+
+                                                                                                           Textual
+                                                                                                           reference
+
+                                                                                                           Translation
+                                                                                                           into explicit
+                                                                                                           reference
+
+Figure 2. Explicit referencing must be learned. Clarice2 "imitates" an explicit reference to a textbox ("<----"), and
+Amanda2 is actually doing it.
+
+       Example 1 illustrates how the referencing tool is established by the group to ease deictic references. Figure
+2 shows a screen shot of a VMT session with 4 participants, Amanda2, Clarice2, Wang, and Dshia. In that situation
+the group reflects on what aspects of the mathematical problem at hand they already solved. Wang asks "so how
+many formulas have we come up with huh?" and both Amanda2 and Clarice2 respond in the subsequent messages.
+Here the interesting response is from Clarice2: "<----". With that she textually simulates an explicit reference. In
+contrast to other group members Clarice2 has never used the referencing tool before, so it might be that she does not
+know how to create one. Wang's reply with two question marks ("??") indicates a lack of understanding. Also
+Amanda2, while providing an interpretation ("I think she meant look on the left at the text box?"), closes the mes-
+sage with a question mark. With her subsequent message ("in the text box") Clarice2 again tries to establish a refer-
+ence to the textbox on the shared whiteboard. Amanda2 finally translates this into a posting with an explicit refer-
+ence to the textbox with all the collected formulas.
+
+       While Clarice2 is a novice in using the referencing tool, Bwang8--in a second example--uses it creatively
+to incorporate a formula written on the shared whiteboard into his explanation of a derived formula (see Figure 3)
+for the number of white squares in the rectangular pattern on the left. In a first step he refers to an already found
+formula for the number of squares in one corner ("we can use the equation from session 1" and "n(n+1)/2"). Then in
+a second step he extends that to the number of squares in all four corners. This number must be subtracted from the
+number of all squares in the pattern. The group already found a formula for the latter number and documented that in
+a textbox on the whiteboard ("big square: (2n-1)/2"). Bwang8's posting of the final formula (number 4 in Figure 3)
+
+                                                          523                                                   CSCL 2007
+is linked to that box. In that case the referencing tool is used not merely for a deictic reference, but for incorporating
+an intermediate step in his formula derivation (6).
+
+                                                                                                               1. Number of
+                                                                                                                 squares in
+                                                                                                                 one corner
+
+                                                              3. Number ofall squares                          2. Number ofsquares in allfour corners
+
+                                                                                                               4. Number of
+                                                                                                                 all white
+                                                                                                                 squares
+
+                                                      Pattern
+
+Figure 3. Bwang8 uses an explicit reference to integrate an element of the whiteboard in his/her argumentation.
+
+         The third example is from the same group (see Table 1 for the excerpt of the chat log) and shows that for
+the groups it is sometimes not trivial to choose the appropriate interaction space. In line 1516 Aznx invites the others
+to "simplify their formula" (he is actually referring to a formula published by another group) and after Bwang8's
+request ("how did you simplify it", line 1525) he posts 5 chat messages describing the transformation of the formula.
+But  his team   members   Quicksilver and   Bwang8       seem   not  to understand   that ("im lost",  line 1533).  Aznx    now
+switches to the whiteboard ("I'll do it on the board", line 1536) and uses it for writing down the derivation. Figure 4
+shows a screen shot of his final drawings. It also shows that Aznx's drawings (each drawing step is indicated by a
+small square in the chat history on the right side) are interwoven with chat postings, even from himself (line 1542).
+The  interactions  of the group  are distributed      over both  interaction  spaces,  but highly interrelated.  In  line   1546
+("whyd u multiply by the two") we can see, how the referencing tool is used by Quicksilver for establishing referen-
+tial identity.
+
+Table 1: A seven minute excerpt of the chat log. Line numbers have been added.
+
+line  time       participant chat posting                            line   time     participant  chat posting
+1516  07.43.36   Aznx        simplify their formula                  1532   07.47.14 bwang8       quicksliver
+1517  07.43.51   Quicksilver k                                       1533   07.47.19 Quicksilver  im lost
+1518  07.43.55   bwang8      what do you mean                        1534   07.47.23 bwang8       did you get the same answer
+1519  07.44.30   Aznx        2(n^2+n^2-2n+1)+3n-2                    1535   07.47.30 Quicksilver  no
+1520  07.44.34   bwang8      i don't see how you can simplify it     1536   07.47.39 Aznx        i'll do it on the board
+1521  07.44.35   Aznx        simply the formula                                Aznx starts drawing on the whiteboard
+1522  07.44.40   Aznx        for the number of sticks                1537   07.47.44 Quicksilver yeah
+1523  07.44.45   Aznx        so that simplifies to...                1538   07.47.53 Quicksilver i got something totally difrent
+1524  07.45.45   Aznx        I stil get the same.                    1539   07.48.36 bwang8      so far i got $4*n^2+3*n$
+1525  07.46.20   bwang8      how did you simplify it                 1540   07.48.55 Quicksilver  indranil rite in the box
+1526  07.46.27   Aznx        um                                      1541   07.49.17 bwang8      i mean 4n^2-n
+1527  07.46.32   Aznx        square the n-1                          1542   07.49.26 Aznx        EXactly
+1528  07.46.39   Aznx        then multiply the whole thing by 2      1543   07.49.40 Quicksilver  yea that waht azn x got eralier
+1529  07.46.47   Aznx        then multiply the 3 and n               1544   07.50.00 bwang8       holy
+1530  07.46.51   Aznx        and add it with that                    1545   07.50.03 bwang8      moley
+1531  07.46.57   Aznx        and subtract by 2                       1546   07.50.05 Quicksilver  whyd u multiply by the two
+
+                                                                524                                                  CSCL 2007
+Figure 4. Screen shot of the ConcertChat environment after receiving message 1546 of table 1.
+
+Conclusions and future work
+        The design of dual interaction spaces for synchronous collaborative learning has to take into account the
+dynamic, tightly coupled and interwoven nature of the activities that are scattered across both media: the chat and
+the shared workspace. This demands a) support for deictic referencing, b) the as access to an integrated history and
+c) integrated activity awareness. We exemplified the advantages offered by such integration measures.
+
+        Software developers like to think in modules, but when combining a shared workspace with a chat into one
+collaboration environment we have to think holistically about using that workspace in the context of a chat conver-
+sation and chatting in the context of working together in the workspace.
+
+        The experiences with ConcertChat to date suggest a series of further research questions:
+1.  The storing of explicit references and the integrated representation of all activities make available additional
+    structural and temporal information about the collaborative artifacts in the two interaction spaces. To what ex-
+    tent is it possible to use this information to construct a retrospective indexing, documentation or summarization
+    of the collaboration that would facilitate future reflection or recall by the participants--for instance, when they
+    return to the room for a subsequent session?
+2.  An essential difference between a chat window and a shared whiteboard is the persistence of the artifacts (Dil-
+    lenbourg & Traum, 2006). While a textbox in a shared whiteboard remains visible indefinitely (unless it is ed-
+    ited or deleted by a participant), the same is not true for chat contributions; they scroll out of sight with the ap-
+    pearance of the following discourse. Interesting questions arise when the additional possibility of audio com-
+    munication offers a non-persistent medium. Can this supplementary mode of communication be substituted for
+    chat to the advantage of the participants or will it be used as a secondary addition? What different communica-
+    tion strategies would result?
+3.  How can the concepts of explicit referencing, integrated activity awareness, and artifact history be applied to
+    multiple interaction spaces, in which the collaboration environment provides even more than two primary work-
+    spaces?
+
+Endnotes
+(1)  Despite the fact that this documentation is characterized by sequential incoherence, participants can apparently read and
+     understand the chats amazingly well (Herring, 1999).
+(2)  The presentation of the concept of explicit referencing here is an expansion of the discussion by Pfister & Mühlpfordt
+     (2002).
+
+                                                              525                                               CSCL 2007
+(3)  The granularity of the operations depends of the kind of shared workspace. Imagine, for instance the use of a wiki page as a
+     shared material (Haake, Schümmer, Bourimi, Landgraf & Haake, 2004). Then the artifact history would be defined by the
+     various versions of the page.
+(4)  ConcertChat can be accessed online at: http://chat.ipsi.fraunhofer.de. The project is open source with a BSD-like license and
+     can be downloaded at: http://sourceforge.net/projects/concertchat/.
+(5)  The Virtual Math Teams project is available online at: http://mathforum.org/vmt.
+(6)  In that step Bwang8 also implicitly transforms the different usages of the variable "n": whereas the formula for the corners
+     started with level 0, the formula for the overall number of squares started with level 1.
+
+References
+Barnard, P., May, J. & Salber, D. (1996). Deixis and points of view in media spaces: An empirical gesture. Behav-
+        iour and Information Technology, 15(1):37­50.
+Bekker, M. M., Olson, J. S. & Olson, G. M. (1995). Analysis of gestures in face-to-face design teams provides guid-
+        ance for how to use groupware in design. In DIS '95: Proceedings of the conference on Designing interac-
+        tive systems, (pp. 157­166). New York, NY, USA: ACM Press.
+Clark, H. H. & Brennan, S. E. (1991). Grounding in communication. In L. B. Resnick, J. M. Levine & S. D. Teasley
+        (Hg.), Perspectives on socially shared cognition, (pp. 127­149). Washington: APA.
+Clark, H. H. & Wilkes-Gibbs, D. (1986). Referring as a collaborative process. Cognition, 22:1­39.
+Dillenbourg, P. & Traum, D. (2006). Sharing Solutions: Persistence and Grounding in Multimodal Collaborative
+        Problem Solving. Journal of the Learning Sciences, 15(1):121­151.
+Dimitracopoulou, A. (2005).        Designing   Collaborative Learning        Systems: Current       Trends &   Future Research
+        Agenda. In T. Koschmann, D. D. Suthers & T.-W. Chan (Hg.), Computer Supported Collaborative Learn-
+        ing 2005. The Next 10 Years! (CSCL 2005). Mahwah, NJ: Lawrence Erlbaum Associates.
+Erickson, T. (1999). Persistent conversation: An introduction. JCMC, 4(4).
+Fuks, H., Pimentel, M., & de Lucena, C. J. P. (2006). R-u-typing-2-me? Evolving a chat tool to increase understand-
+        ing in learning activities. International Journal of Computer-Supported Collaborative Learning (ijCSCL),
+        1 (1), 117-142. Retrieved from http://ijcscl.org/_preprints/volume1_issue1/fuks_pimentel_lucena.pdf.
+Garcia, A., &  Jacobs, J. B.       (1999). The eyes of  the beholder:     Understanding        the turn-taking system in  quasi-
+        synchronous computer-mediated communication. Research on Language and Social Interaction, 34 (4),
+        337-367.
+Gutwin, C. & Greenberg, S. (2002). A Descriptive Framework of Workspace Awareness for Real-Time Groupware.
+        Computer Supported Cooperative Work (CSCW), 11(3-4):411­446.
+Haake, J. M., Schümmer, T., Bourimi, M., Landgraf, B. & Haake, A. (2004). CURE ­ Eine Umgebung für selbstor-
+        ganisiertes Gruppenlernen. i-com Zeitschrift für interaktive und kooperative Medien, 3(2):20­26.
+Herring, S. C. (1999). Interactional coherence in CMC. In Proceedings of HICSS-32. IEEE Computer Society Press.
+Jermann, P. (2004). Computer Support for Interaction Regulation in Collaborative Problem-Solving. Dissertation,
+        University of Geneva, Geneva.
+Landsman, S. & Alterman, R. (2003). Building Groupware On THYME. Tech Report CS-03-234, Brandeis Univer-
+        sity, Waltham, MA.
+Lonchamp, J. (2006). Supporting synchronous collaborative learning: A generic, multi-dimensional model. Interna-
+        tional  Journal   of  Computer-Supported        Collaborative        Learning  (ijCSCL),      1  (2).   Retrieved  from
+        http://ijcscl.org/_preprints/volume1_issue2/lonchamp.pdf.
+McCarthy, J. C. & Monk, A. (1994). Channels, conversation, cooperation and relevance: All you wanted to know
+        about communication but were afraid to ask. Collaborative Computing, 1:35­60.
+Mühlpfordt, M.  &  Wessner,        M. (2005).  Explicit Referencing       in Chat Supports       Collaborative  Learning. In T.
+        Koschmann, D. D. Suthers & T.-W. Chan (Eds.), Computer Supported Collaborative Learning 2005. The
+        Next 10 Years! (CSCL 2005). Mahwah, NJ: Lawrence Erlbaum Associates.
+Murray, D. E. (2000). Protean Communication: The language of computer mediated communication. TESOL Quar-
+        terly, 34(3):397­421.
+Nash, C. M. (2005). Cohesion and Reference in English Chatroom Discourse. In Proceedings of HICSS '05 ­ Track
+        4, (S. 108.3). Washington, DC, USA: IEEE Computer Society.
+Pata, K. & Sarapuu, T. (2003). Meta-communicative regulation patterns of expressive modeling on whiteboard tool.
+        In Proceedings of World Conference on E-Learning in Corporate, Government, Healthcare, and Higher
+        Education 2003, (S. 1126­1129). Phoenix, Arizona, USA: AACE.
+Pfister, H.-R. & Mühlpfordt, M. (2002). Supporting Discourse in a Synchronous Learning Environment: The Lear-
+        ning Protocol Approach. In G. Stahl (Hg.), Proceedings of CSCL 2002, (S. 581­589). Hillsdale: Erlbaum.
+
+                                                             526                                                       CSCL 2007
+Reimann, P. & Zumbach, J. (2001). Design, Diskurs und Reflexion als zentrale Elemente virtueller Seminare. In F.
+       Hesse & F. Friedrich (Hg.), Partizipation und Interaktion im virtuellen Seminar, (pp. 135­163). München:
+       Waxmann.
+Sacks, H., Schegloff, E. A., & Jefferson, G. (1974). A simplest systematics for the organization of turn-taking for
+       conversation. Language, 50 (4), 696-735. Retrieved from www.jstor.org.
+Stahl, G. (2006). Group cognition: Computer support for building collaborative knowledge. Cambridge, MA: MIT
+       Press.
+Stahl, G. (2007). Meaning making in CSCL: Conditions and preconditions for cognitive processes by groups. Paper
+       presented at the international conference on Computer-Supported Collaborative Learning (CSCL '07), New
+       Brunswick, NJ.
+Stahl, G., Zemel, A., Sarmiento, J., Cakir, M., Weimar, S., Wessner, M., et al. (2006). Shared referencing of mathe-
+       matical objects in chat. Paper presented at the International Conference of the Learning Sciences (ICLS
+       2006), pp. 716-722. Retrieved from http://www.cis.drexel.edu/faculty/gerry/pub/icls2006.pdf.
+Stefik, M., Bobrow, D. G., Foster, G., Lanning, S. & Tatar, D. (1987). WYSIWIS revised: early experiences with
+       multiuser interfaces. ACM Transactions on Office Information Systems, 5(2):147-167.
+Suthers, D. D., Girardeau, L. & Hundhausen, C. D. (2003). Deictic Roles of External Representations in Face-to-
+       face and Online Collaboration. In B. Wasson, S. Ludvigsen & U. Hoppe (Hg.), Designing for Change in
+       Networked Learning Environments. (CSCL 2003), (pp. 173­182). Dordrecht: Kluwer Academic Publishers.
+van Bruggen, J. M. (2003). Explorations in graphical argumentation. The use of external representations of argu-
+       mentation in collaborative problem solving. Dissertation, Open Universiteit Nederland, Heerlen.
+Whittaker, S. (2003). Things to Talk About  When  Talking          About Things. Human-Computer      Interaction,
+       18(1&2):149-170.
+
+Acknowledgments
+ConcertChat was developed during the last 5 years in a collaborative project at the Fraunhofer Institute IPSI in
+Darmstadt, Germany. Involved in the development were among others Axel Guicking, Torsten Holmer, Friederike
+Jödick, Martin Mühlpfordt, Christian Stab, Martin Wessner, Bo Xiao. The Virtual Math Teams Project is a collabo-
+rative effort at Drexel University. The Principal Investigators are Gerry Stahl, Stephen Weimar and Wesley Shumar.
+A number of Math Forum staff work on the project, especially Annie Fetter and Ian Underwood. The graduate re-
+search assistants are Murat Cakir, Johann Sarmiento, Ramon Toledo and Nan Zhou. Alan Zemel was a post-doc.
+The following visiting researchers have spent 3 to 6 months on the project: Jan-Willem Strijbos (Netherlands), Fatos
+Xhafa (Spain), Stefan Trausan-Matu (Romania), Martin Wessner (Germany), Elizabeth Charles (Canada), Martin
+Mühlpfordt (Germany) and Weiqin Chen (Norway and China). The VMT project is supported by grants from the
+NSDL, IERI and SLC programs of the US National Science Foundation.
+
+                                                         527                                               CSCL 2007
+

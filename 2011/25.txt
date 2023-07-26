@@ -1,0 +1,469 @@
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+    Visualisations for Longitudinal Participation, Contribution and
+                 Progress of a Collaborative Task at the Tabletop
+Roberto Martinez, Judy Kay, Kalina Yacef, School of Information Technologies, University of Sydney, Sydney,
+                                                  NSW 2006, Australia
+                   Email: roberto@it.usyd.edu.au, judy@it.usyd.edu.au, kalina@it.usyd.edu.au
+
+         Abstract: One of the challenges for facilitators in collaborative work is that they typically see
+         only the final product of a groups' interactive work. This is a problem as it means that the role
+         of each individual may be hard to determine. This paper proposes a set of visualisations which
+         aim  to give     teachers  insights   into  longitudinal  participation  of  each  group  member,    an
+         indication of the extent of each learner's contribution and the building process of the group
+         product in terms of overall activity towards a good solution. We exploit the affordances of
+         tabletops    to capture the  data  in  order  to infer  these  visualisations. We   evaluate these   by
+         assessing    whether  facilitators  could   answer    key questions  about    aspects  of groups.   Key
+         contributions of the paper are the design of new visualisations, results of their evaluation and
+         the implementation of a tabletop concept mapping application which was carefully designed
+         to both support collaboration and capture of the history of the collaborative process.
+
+Introduction
+One of the challenges for teachers and facilitators in collaborative learning contexts is that they typically see
+only the final product of a group's interactive work (Race, 2001). This is a problem as it means that the group
+work itself and the relative contribution of each individual to the group product may be hard to determine. This
+problem  can  dissuade    teachers  from   using    group work.   Yet,  there is acknowledged      value  in collaborative
+knowledge creation in which learners create artefacts, such as tools, symbols, concepts, and texts; and make use
+of processes  like grounding     and  negotiation    (Paavola  &  Hakkarainen,   2005).  Such   artefacts can capture the
+common understanding of subject matter and innovative ideas of the group. One method to facilitate discussion
+of a content area is through the construction of concept maps (Suthers, 2008). We have chosen this well studied
+technique for our work as it has proven useful in education for externalising knowledge. Concept maps can be
+considered as external reflectors of internal learner's knowledge (Tergan, 2005).
+         Interactive tabletops provide a new way to support collaborative tasks because they permit face-to-face
+interactions between     individuals  and,  at the   same time,   present information   to  the group through    a  shared
+device.  However, they also introduce new challenges, both at the technical and social levels.               Our research
+explores the affordances and challenges of supporting groups to externalise their knowledge of a domain by
+providing a tabletop interface and making the mapping process visible to learners' teachers.
+         We present the design and evaluation of a set of visualisations that reflect the activity of a small group
+of users building an artefact, such as a concept map, using a multi-touch tabletop. These visualisations provide a
+mirror of the learners' actions (touch/verbal participation radar), an indication of the extent of each learner's
+contribution  (contribution    chart) and   the   evolution of  the artefact  through   its building process   (evolution
+diagram) in terms of complexity of the group product. We aim to determine the visualisation features that give
+useful information about the collaboration of the group at the tabletop. These visualisations aim to summarise
+and make visible the actions of the group members to help facilitators detect problems in group interactions.
+         We   evaluated    the visualisations   by   assessing  whether   teachers could    answer  key   questions about
+participation, contribution and the process of the collaborative activity of the group. Our key contributions are
+the design of these new visualisations, the implementation of a tabletop application for concept mapping and an
+evaluation which indicates that teachers can answer 4 of the 5 key questions related to longitudinal equity and
+quantity of participation, contribution of group members and collaboration.
+         The  remaining    of  this paper   is structured   as follows.  In  the next  section, we  present  our tabletop
+application for concept mapping and the design of our visualisations. Then, we describe the evaluation. We
+conclude with reflections on the visualisations and our research agenda.
+
+Related Work
+Several  researchers   have  explored  how     to exploit the  potential  of  digital tabletops in educational   contexts.
+Morgan and Butler (2009) proposed settings that encourage learning with high levels of collaboration at multi-
+touch displays, grounded in theories of Situated Cognition. They designed systems for storyboarding, group
+concept mapping and building phonemic awareness between dyads. Busine et. al. (2007) described the use of
+interactive tabletops to support group creativity through the construction of mind-maps. Additionally, Sugimoto
+et al. (2004) showed     how   tabletops,  used   in conjunction   with personal  devices,  can  support   discussion and
+negotiation in face-to-face collaboration with learners manipulating private and shared objects.
+
+© ISLS                                                                                                                  25
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+         Research     in  tangible  tabletops has    also explored   their affordances   for detecting   interference  in
+collaboration (Falcao & Price, 2009), analysing division of labour (Jermann et al., 2009)              and to aid mind-
+mapping (Oppl & Stary, 2009). However, a recent study failed to show significant learning benefits at a tabletop
+compared with working on a single desktop computer (Do-Lenh, Kaplan, & Dillenbourg, 2009). In this study,
+those  learners using    the multi-touch   tabletop  tended to work  in parallel  and   had difficulties drawing all  the
+pieces together at the end of the trial. This finding highlights the need for an effective support at the tabletops.
+         There has been considerable work exploring the importance of group visualisations to externalise the
+activity of groups and, in many cases, to reveal relationships between observable patterns and the quality of the
+group work. Erickson et al. (1999) created the social proxy, a visualisation of chat sessions of a group. This
+resulted in improved collaboration and better support for people to learn how to collaborate. In the same way,
+sociograms have been extensively used in the CSCL field to visualise learner interactions and they have also
+been applied for representing the lines of communication within social networks (Sundararajan, 2010). Donath
+(2002) went a step further, showing the nature of participation in a visualisation of group activities. In         (Kay,
+Maisonneuve, Yacef, & Reimann, 2006) a set of visual representations of long term activity of groups was
+designed, based on a model of small group teamwork. These present salient aspects of group activity, including
+the level  of participation,  interaction  between   members     and leadership.  The   Narcissus  project introduced  a
+visualisation of group    activity  which   enables  a user  to  navigate  through   to see  the detailed  evidence  that
+contributed to each part of the group work (Upton & Kay, 2009). In addition, Janssen et al. (2007) explored the
+effects of visualisation of participation in groups of learners. They found that visual representations of activity
+mirrored to the group can be useful for encouraging coordination and regulation of the members.
+
+The Collaborative Learning Environment
+We  now   describe    the context  of our  work   to design and   then evaluate  visualisations  of group  activity in a
+collaborative concept mapping system. We used the tabletop system called Cmate (Martinez, Kay, & Yacef,
+2010). This was designed to be used in two stages: first, an individual stage, where each group member creates
+their  own concept    map;   and  a group   stage,  where   they come  together   to create  a collaborative map.   This
+approach was also used by Engelmann & Hesse (2010) with the difference that we provided a shared tabletop
+for the group phase. For the individual stage, participants used CmapTools (Novak & Cañas, 2008), a desktop-
+based concept mapping application. These individual concept maps are used to extract the personal vocabulary
+of concepts and links, and make them available to the learners in the group stage at the tabletop. Importantly,
+this stage enables each individual to focus on the cognitively demanding task of externalising their knowledge,
+by  drawing   their individual  maps    in private.  Then,  they come  to  the tabletop  to  compare   and discuss  their
+different perspectives of the subject matter and create a collaborative concept map (left of Figure 1). In this
+stage, participants can use the concepts and links they previously included in their individual artefacts and relate
+them with other participants' pieces of map to build a new mutually accepted map.
+         We designed Cmate to maintain the collaboratively created group map as well as one layer per user,
+showing their individual map contributions. The basic actions that learners can perform are: create a concept,
+drawing a circular outline with the finger; create directed link, drawing a line in between two nodes; move
+concept/link, touching the node and dragging it with the finger; delete a node, moving the node to off-screen;
+and edit a node word, double tapping a node and modifying the word through a virtual keyboard.
+         The   tabletop   used  in  the   studies had  a  46-inch LCD      touch screen  with  a  display  resolution  of
+1920x1080 pixels, offering enough space for up to four participants. The tabletop hardware can detect multiple
+touches at a time, but cannot recognise which user is providing an input.            For our study, every touch on the
+tabletop  was  logged    and  the  entire sessions  were  videotaped   using a   fixed  camera   above the tabletop  and
+another camera at one side. Sound was recorded with individual headphones worn by each participant.
+         In order to aid facilitators, it is crucial to know who is doing what and what has been done on the
+tabletop. Morgan and Butler (2009) proposed four approaches to track the contribution made by each person at
+
+Figure 1. Tabletop concept mapping. Cmate in action with 4 people, 2 at each long edge of the table (left).
+                 Personal spaces for tracking individual participation on the tabletop (right).
+
+© ISLS                                                                                                                 26
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+the tabletop: by defining fixed workspaces where each person should work; by claiming "ownership" on the
+objects; establishing a production line, in which each object is sent to a task bar of each person at least once to
+work on it; or by defining roles, in which each person is allowed to do just some specific actions. We created a
+different approach    to  track individual participation. We  provided  a moveable  circular personal      area  on the
+tabletop for each participant. Users can initiate all actions just inbounds of these areas. To perform actions on
+the concept map, participants move their personal area above the target element and then perform the actions.
+This technique increases the load of touches on the tabletop but gives personalised concept/linking word lists for
+creating nodes, orients the elements towards the user and also supports tracking of all the touches that each
+participant does (right of Figure 1). For the position of   learners around the tabletop, it has been shown that this
+has an   effect on    the  division of  labour   spontaneously  adopted by  the learners (Jermann,      et al.,  2009).
+Consequently, we had participants in pairs along both long sides of the rectangular tabletop. This gave each
+participant equal opportunity to participate, access the resources, and perform the full range of actions. Where
+the group had three participants, we had to settle for a slightly less ideal spatial disposition.
+          We ran the study with 10 participants in 3 groups, each of 3 or 4 participants. All groups were asked to
+build concept maps individually at a desktop and then a group map at the tabletop, on the topic: how does the
+water cycle work? First, participants were introduced on the concept mapping technique. Then they read a two
+page text on the water cycle and were asked to draw an individual concept map. Participants could use any
+terms, any number of concepts in their maps and were not restricted to follow any hierarchical arrangement of
+concepts.  However,      we provided   a   list of suggested words,  extracted  from the instructional     text.   After
+completing their concept maps the learners were asked to generate a group solution concept map at the tabletop.
+
+Design of Visualisations
+We  now    describe    the  four  visualisations   we designed: the  Touch/verbal   Participation   Radar,   the   Map
+Contribution Chart and the Map Evolution Diagram.
+
+Touch/Verbal Participation Radar
+This first visualisation was strongly influenced by the circular social proxies of Erickson (1999). We also drew
+on  previous  work    in  collaborative  learning,  with  a focus on  the  learning impact   of    the equity   of  oral
+participation and  decision     making (Bachour,    Kaplan, &  Dillenbourg, 2010).  In addition,    grounding   on  the
+procedure to study levels of participation at the tabletop proposed by Harris et. al. (2009), we chose to focus on
+two dimensions: the physical events on the tabletop, measured in terms of the quantity of touches; and time of
+verbal participation, measured in seconds.
+
+                                                                                                       Minutes
+
+                                                                                                           2.5 min
+
+Verbal
+
+                                                                                                           250 touches
+Touch
+
+    Figure 2. Participation radar. (left) First five minutes. (center) Between minute 10 and 15 (right) Between
+                                                   minute 20 and 25.
+
+          As a result, we designed a pair of radars: the radar of verbal participation (top of Figure 2, blue shaded
+radars) and the radar of touch participation (bottom of Figure 2, red shaded radars).The time window for each
+visualisation covers the previous 5 minutes of activity. So for example at time 15, the radars show the number of
+events between minutes 10 and 15. Each coloured round marker corresponds to one learner at their circular
+personal space: orange, yellow, green and purple for participants 1, 2, 3 and 4 respectively. The position of these
+
+© ISLS                                                                                                               27
+  CSCL 2011 Proceedings                                                                                     Volume I: Long Papers
+
+ markers indicates the level of participation; the closer the marker is to the centre, the less active they were in the
+ last five minutes.
+             The  shape  of  the  radars depicts  the  symmetry      of activity,    an  important aspect   of  collaboration
+ (Dillenbourg, 1998). For example if there are 4 learners, a perfect symmetric square indicates that the number of
+ touches or the talking time are the same for each learner. In the radars shown at the right of Figure 2 (at time
+ 25), we can observe that the participant corresponding to the yellow marker (at 3 o'clock) did not touch the
+ tabletop at all but did most of the talking. This could possibly be a clue that the participant was influencing the
+ actions of others by talking but, without further information, it could equally means that he/she was engaged in
+ a conversation that had nothing to do with the task.
+
+ Contribution Chart
+ Concept mapping has the potential to drive collaboration because it provides an externalisation of each learner's
+ different   perspective  (Tergan,  2005).   For  this reason,   we  propose    the  contribution  chart,   which  shows   the
+ proportion of actions from each team member that resulted in a change in the collaborative artefact. The actions
+ which    add   substantial  knowledge    to the  map   are the   creation,    editing   and  deletion  of  nodes.  The  map
+ contribution    chart  gives an  overview   visualisation  of   the proportion      of these  actions that  each  participant
+ performed. Figure 3 shows three of these charts for the same group, at minutes 5, 10 and 20, and also shows the
+ total number of concepts and links created in the group artefact. The design of this visualisation aims to show if
+ any of   the  participant's  perspectives is leading  the  construction   of  the   concept   map or   if they are equitably
+ contributing to it. This visualisation complements the radar of participation by indicating the amount of activity
+ that has indeed made a substantial impact on the group artefact. For instance, the first chart in Figure 3 (at
+ minute 5) shows that one person (in pink at the top) contributed about half the concept map's elements, two
+ people (green and yellow) contributed a quarter, and one (red, at the right) much less than the others. At time
+ 10, however, we can observe that the other three participants increased their contribution greatly (especially
+ yellow and red), and later on (at time 20), the same participant (pink) contributed the most to the artefact again.
+ The relative dimension of the contribution between two given moments is indicated by the overall number of
+ links and concepts and also symbolised through the relative size of the charts.
+
+Links: 3                                 Links: 7                                    Links: 14
+Concepts: 12                             Concepts: 10                                Concepts: 15
+
+  Figure 3. Map contribution chart. (left) After 5 minutes. (centre) After 10 minutes. (right) At after 20 minutes.
+
+ Evolution Diagram
+ The third visualisation is the Evolution Diagram (Figure 4). This shows the key temporal events in the group
+ concept     map. The   vertical axis shows   the number    of propositions    added    to the group   concept  map   and  the
+ horizontal    axis represents   time measured    in minutes.    The graph     has two   sparklines: i) the  upper  blue  line
+ includes coloured circles indicating addition of each proposition by a given participant; ii) the lower red line
+ shows the number of propositions that match those in the master concept map (created by the teacher). So, the
+ upper line shows the total number of propositions and the lower line shows how many of these propositions
+ match    the  expert   map.  To calculate   the distance between    the   group     map  and  the master   map,  we   use an
+ automatic    open-ended    concept   map  scoring   technique   based  on Pathfinder    associative   networks  (Taricani &
+ Clariana, 2006).
+Propositions                                                      Propositions                          Collaboration
+
+     Collaborative group
+                                                                               Split
+                                                                               work
+
+                                                  Time (minutes)                                                  Time (minutes)
+          Figure 4. Map evolution diagram. (left) A group of four learners working collaboratively most of time.
+                     (right) A group of three learners who divided the work during the first 20 minutes.
+
+  © ISLS                                                                                                                    28
+CSCL 2011 Proceedings                                                                                       Volume I: Long Papers
+
+          In the upper line, the coloured markers represent the user who added the proposition(s). In Figure 4
+(left), the  visualisation  shows   that    the group    has worked    for more   than thirty minutes    and has   created  16
+propositions. Observing the purple markers (User 4) we see that this user created more propositions that were
+present in the master map, as the purple markers coincide with signs of progress of the group map towards the
+master map. In contrast, the map evolution diagram on the right shows that, up to Minute 20, this group added
+many links to the map but these actions did not result in any matching with the expert map, suggesting that users
+were working independently. Note that, in this visualisation, the similarity with a master concept map is not
+used to score the group map but just as an indicator of the quantity of the group's propositions that match those
+in the teacher's perspective.
+
+Evaluation
+The aim of the evaluation is to ask a number of facilitators to give             answer to a set of questions regarding the
+equity   of  participation,  quantity      of participation,  collaboration,  equity   of  intellectual  contribution  of   the
+members of the group (Dillenbourg, 1998; Stahl, 2006) and the process of the concept map construction. We
+expect   that the support    offered   by   our   visualisations should    make   visible some  facets   of the  collaborative
+process   to  facilitators and   hence  lead   to improve    the feedback    they can  offer to the group.   Specifically,  we
+aimed to evaluate five hypotheses: The set of visualisations provide useful information about:
+    ·     (H1) the equity in the roles and participation of group members;
+    ·     (H2) the amount of participation of the group members;
+    ·     (H3) the group in terms of collaboration;
+    ·     (H4) the equity of intellectual contribution of group members;
+    ·     (H5) the creation process of the map in terms of the relative contributions of group members and the
+          effectiveness of the group work.
+           To  assess  these   hypotheses,     we  ran   evaluation sessions  with   five different skilled  facilitators with
+experience    in working    with   groups.    We  provided    them  with   a set  of the  visualisations generated  from    the
+tabletop  sessions    of   two   groups:    A   and  B.  These   visualisations   included:   snapshots   of   the Radars   of
+Participation and Contribution Chart corresponding to minutes 5, 10, 15, 20, 25 and 30, the Evolution Diagram
+and the final group concept map. We also provided the final maps, from both the individual and collaborative
+stages.   Then,  we invited    the  facilitators  to respond  a  set of  questions   regarding  the equity   of  participation,
+quantity of participation, the collaboration, the equity of intellectual contribution of the group members and the
+usefulness of the visualisations to depict the creation map process in terms of contribution and group work.
+Each question corresponded to one of the hypotheses posed above, and they were answered on a 7-point Likert
+scale in which 1 represents strong disagreement and 7 strong agreement. We allowed them to mark a question as
+"unanswered" if the visualisations did not give enough support for taking a decision. We asked the facilitators to
+justify their responses and state which visualisations they used.
+
+Inspection of the Session Videos
+As a basis to compare the information inferred by the facilitators from the visualisations, we inspected the video
+recordings of each group's session grounding on the theories of collaborative learning of Dillenbourg (1998).
+Next, we describe the results of these observations.
+          Group   A   was    highly    collaborative     from the   beginning.    They   immediately    focused  on  working
+collaboratively and they built the concept map as a group. They never divided the task. All members of the
+group discussed every single part and action each group member performed. They worked in parallel for brief
+periods   but never   loosing    awareness     of others'  actions.  They    added   key  concepts  and  links,  and  tried to
+eliminate redundant concepts by "generalising" them to come up with a clearer map. It is really important to
+point out that before finishing the trial they realised that the concept map shape should be a circle, given that the
+water cycle is indeed one. Notably, in the individual maps, none of the participants drew a cyclic map.
+          Group B worked independently from the beginning and then started collaborating at the second half of
+the session. At the beginning, they added many concepts and links to the tabletop, explaining and giving brief
+comments to the others about their actions, which concepts they considered important and asking if they had
+already added specific concepts that they may use. The concept map at the tabletop, as shown at left of Figure 5,
+is itself a  visual aid  because    it highlights    the different propositions   added   by each   participant. This  feature
+proved to be really useful for this group. They divided the task and worked in parallel without collaborating
+until minute 20. At minute 21 one member of the group expressed: "your area has more green colour, mine is
+purple   and  yours   more   yellow    ... we  really came    up with  three  distinct parts. There  should    be  more   links
+between   them".  They     tried to collaborate    after  minute   20. The   evolution   diagram shows    this  change in   the
+group's behaviour (right of Figure 4). Then they worked together to decide which links could best connect the
+different three main areas of the concept map. However, they ran out of time and the final map was complex and
+was a poor response to the task.
+
+© ISLS                                                                                                                       29
+CSCL 2011 Proceedings                                                                                       Volume I: Long Papers
+
+Figure 5. (left) The coloured links of the map as a visual indicator of contribution itself. (right) Overview of the
+ results of the questions related to: equity of participation (Q1A for group A and Q1B for group B), quantity of
+                             participation (Q2A, Q2B) and collaboration (Q3A, Q3B).
+
+Results
+All the facilitators  were  able to   easily understand      the  visualisations  and  complete     the questionnaire   without
+difficulty. Participants were highly engaged in the inspection of the visualisations, and expressed their thoughts
+verbally, permitting   the  experimenter     to take  note     of  which visualisations   influenced     their comments      and
+answers about the groups of learners.
+          The facilitators neither watched the videos nor had access to any summary of what happened during the
+group sessions. They inspected the visualisations carefully before giving an answer to each posed question for
+both groups, A and B. To look for an explanation of the acceptance or rejection of each hypothesis, we validated
+the responses to the questions at two levels. Firstly, we refute a hypothesis if its respective question could not be
+answered by two or more facilitators. This filter refutes a hypothesis if the facilitators could not find evidence
+from the visualisations to give an answer. Then, the next step was to ascertain whether their answers matched
+the observations of video recordings of the group sessions. Table 1 summarises the questionnaire responses.
+Columns   Q1,  Q2     and Q3 were     used to   generate    the  graph of   Figure  5  (right). Table   2 summarises     which
+visualisations the facilitators used to give an answer to each question.
+          (H1) These visualisations provide useful information about the equity in the roles and participation of
+the group members. The focus of this hypothesis is to assess whether the visualisations portray the symmetry of
+participation of the group members (Dillenbourg, 1998). All facilitators used both the radars of voice and touch
+together with the contribution charts to answer this question (see Table 2). For group A, the participation was
+somewhat   equitable   but  one  participant    slightly    dominated   most    of  the verbal   participation.    This  can be
+observed in Figure 2. In Figure 5 (right, Q1A) we notice that in general the responses of the facilitators did not
+confirm that the group was neither symmetric nor asymmetric.             In general, the facilitators judged group B to be
+symmetric (right of Figure 5, Q1B). In fact, the video recordings showed that group B members worked in
+parallel and did not influence each other. Thus, we accept the usefulness of the radars of physical and audible
+participation based on the direct observations of the facilitators who remarked that the coloured shaded radars
+and the concentric circles were useful to quickly detect if the participation of a group was symmetric or not.
+
+Table 1: Summary of the questionnaire responses. Columns: questions asked to the evaluators. Rows: AVG:
+Average of 7-point Likert scale answers. STD: Standard deviation. * Not all facilitators answered Q4.
+            Group A              Q1                  Q2                 Q3                 Q4                 Q5
+                               Equity              Quantity         Collaboration      Contribution         Process
+              AVG                4                   3.8                5.8                6                 6.25
+              STD               1.95                 1.8                0.45               *                  0.5
+             Lickert           neutral             neutral             agree              agree              agree
+            Group B
+              AVG                5.4                 6.2                4.5                6                 6.25
+              STD               1.95                 0.8                1.2                *                  0.5
+             Lickert            agree               agree          somewhat agree         agree              agree
+
+          (H2) These    visualisations  provide    useful    information  about    quantity  of  participation    of the group
+members.   The   focus  of this  hypothesis     is to assess    if the visualisations   depict  the  quantity   and  equity  of
+participation of the   group members;      therefore,    it is also related  to   H1. However,   in  this case,   three  of five
+facilitators used the Contribution Chart in addition to the radars of Participation and the Map Evolution Diagram
+to answer this question. Group A was reluctant to do physical actions compared with Group B. They focused
+more on the discussion and negotiation of each proposition to be created and each element to be deleted. By
+
+© ISLS                                                                                                                        30
+CSCL 2011 Proceedings                                                                                          Volume I: Long Papers
+
+contrast, Group B divided the task and added a large number of propositions. Indeed, the facilitators strongly
+agreed that in general group B members highly participated in an equitable way. For group A they noticed that
+the members did not perform many actions and some evaluators expressed that they were talking too much and
+physically working very slowly (see right of Figure 5, Q2A and Q2B). Therefore, we accept the usefulness of
+the map Contribution Chart in conjunction with the Radars of Participation and the Evolution Diagram because
+they gave insights to facilitators to size the quantity of participations of the group of learners.
+          (H3) These visualisations provide useful information about the group in terms of collaboration. The
+focus of this hypothesis is to assess if the visualisations can offer hints to the facilitators to indicate whether the
+group was collaborative or not. To answer the question related to this hypothesis, the facilitators used all the
+visualisations  including    the final  product   map.    All   evaluators  agreed     that group A    was   collaborative,  even
+though their final product was a small concept map. Moreover, the facilitators considered that in this group the
+participants interacted with others based on the high levels of talking observed in the verbal radars and the
+sparse add link events shown in the Evolution Diagram (left of Figure 4). In the case of Group B three of five
+facilitators concluded that the group divided the work most of the time given the low levels of talking and the
+creation of many links in a short time window (right of Figure 4). Moreover, the facilitators agreed that the
+group tried to collaborate in some way before the end of their activity (see right of Figure 5, Q3B). We can
+conclude that the visualisations aid in the perception of various forms of collaboration; however, these results
+should be confirmed with more case studies.
+          (H4) These visualisations provide useful information about the equity of intellectual contribution of
+the group members. The purpose of this hypothesis is to assess if the facilitator considers that the content of the
+concept map reflects intellectual contribution of each member of the group. We refute this hypothesis given the
+fact that just one of the five facilitators responded to the question related to it (see Table 2). All of them tried to
+infer  intellectual contribution    based    on  the Contribution      Chart    and the  Radar    of  Voice     participation,  but
+afterwards, they concluded that it is difficult to infer the intellectual contribution without knowing the content of
+the utterances. Indeed, new knowledge is created through the content of the discourse of the group (Stahl, 2006).
+          (H5) These visualisations provide useful information about the creation process of the map in terms of
+the relative contributions     of  group     members    and     the effectiveness   of  the  group   work.    We  validated     this
+hypothesis  by  the   direct  answers     to the corresponding      question.   All facilitators  somewhat      agreed    with  the
+usefulness of the visualisations because they provide information about the process of map creation in terms of
+the physical and verbal actions.
+          Ultimately, the facilitators could answer four of five questions. These give insights into the usefulness
+of  such  tools for   monitoring    the   collaborative    situation   at the  tabletop  even   when    the   facilitator   has the
+opportunity  to  observe     the actions     of the  group  in   situ. Thus,    the visualisations    aim    to complement      the
+qualitative function of facilitators by providing quantitative insights about the group. Even when the results
+match well with the qualitative observations on equity, quantity, and the most important, the presence of real
+collaboration,  the   goal of the  visualisations    is to aid   the qualitative  assessment,    not   to take  its place   (Stahl,
+2006).
+
+Table 2: Visualisations that were used for the facilitators to answer each question.
+
+                                                                    Evaluators
+Questions                  1                          2                       3                    4                      5
+    1               Radars - Chart               Radars ­ Chart         Radars - Chart        Radars - Chart      Radar (t) - Chart
+    2               Radars - Chart               Radars ­ Chart            Radars             Evolution map        Radars - Chart
+    3       Final product - Evolution map        Radars ­ Chart            Radars             Final product           Radars
+    4                   none                        Chart                   none                  none                 none
+    5         Radar (v) - Evolution map             Radars                  none                  All                 Radars
+
+Conclusion
+We have presented a set of visualisations that externalise the activity of groups working together at the tabletop
+to build a group artefact. The Participation Radars provide a mirror of learners' actions both verbal and physical.
+The Contribution Chart gives an indication of the extent of each learner's contributions to the group artefact.
+The Evolution Diagram depicts the building process of the artefact relating this to a master artefact and with
+each participant's contribution. These visualisations trace different aspects of a group, and the combination of
+the three visualisations with the final group artefact can help the facilitator better understand the nature of the
+collaboration in order to make improved decisions regarding the guidance of the group of learners.
+          The ultimate goal of this line of research is placed in the context of fostering co-located collaborative
+knowledge building tackled through the study of the digital footprints of the learners. Future research will focus
+on evaluating these visualisations outside the laboratory, in real learning contexts. We also will explore ways to
+identify the significant patterns of interactions. Given the complexity of group interactions, we believe that it is
+
+© ISLS                                                                                                                            31
+CSCL 2011 Proceedings                                                                              Volume I: Long Papers
+
+really important to link the quantitative indicators with other forms of empirical assessment of collaborative
+accomplishments.
+
+References
+Bachour, K., Kaplan, F., & Dillenbourg, P. (2010). An Interactive Table for Supporting Participation Balance in
+          Face-to-Face Collaborative Learning. IEEE Transactions on Learning Technologies, 3(3), 203-213
+Buisine, S., Besacier, G., Najm, M., AmézianeAoussat, & Vernier, F. (2007). Computer-supported creativity:
+          evaluation of a tabletop mind-map application. In Proceedings of EPCE 2007, (pp. 22-31).
+Dillenbourg, P. (1998). What do you mean by 'collaborative learning'? Collaborative Learning: Cognitive and
+          Computational Approaches. Advances in Learning and Instruction Series. (pp. 1-19): Elsevier Science.
+Do-Lenh,  S.,  Kaplan,    F., &  Dillenbourg, P. (2009).   Paper-based  concept map:  the effects  of tabletop on  an
+          expressive collaborative learning task. In Proceedings of BCS-HCI 2009, (pp. 149-158)
+Donath,   J. (2002).  A   semantic approach   to visualizing   online conversations. Communications    of the  ACM,
+          45(4), 45-49
+Engelmann,    T., &    Hesse,  F.  (2010). How   digital   concept maps  about  the  collaborators'   knowledge   and
+          information influence computer-supported collaborative problem solving. IJCSCL, 5(3), 299-319
+Erickson, T., Smith, D., Kellogg, W., Laff, M., Richards, J., & Bradner, E. (1999). Socially translucent systems:
+          social proxies, persistent conversation, and the design of "babble". In Proceedings of SIGCHI 1999,
+          (pp. 72-79).
+Falcao, T. P., & Price, S. (2009). What have you done! the role of 'interference' in tangible environments for
+          supporting collaborative learning. In Proceedings of CSCL 2009, (pp. 325-334)
+Harris, A., Rick, J., Bonnett, V., Yuill, N., Fleck, R., Marshall, P., & Rogers, Y. (2009). Around the table: are
+          multiple-touch   surfaces  better    than  single-touch   for  children's  collaborative  interactions?  In
+          Proceedings of CSCL 2009, (pp. 335-344)
+Janssen, J., Erkens, G., Kanselaar, G., & Jaspers, J. (2007). Visualization of participation: Does it contribute to
+          successful computer-supported collaborative learning? Computers & Education, 49(4), 1037-1065.
+Jermann, P., Zufferey, G., Schneider, B., Lucci, A., Lepine, S., & Dillenbourg, P. (2009). Physical space and
+          division of labor around a tabletop tangible simulation. In Proceedings of CSCL 2009, (pp. 345-349)
+Kay, J., Maisonneuve, N., Yacef, K., & Reimann, P. (2006). The Big Five and Visualisations of a Team Work
+          Activity. In Proceedings ITS 2006, (pp. 197-206) .
+Martinez, R., Kay, J., & Yacef, K. ( 2010). Collaborative concept mapping at the tabletop. In Proceedings of
+          Interactive Tabletops and Surfaces 2010, (pp. 207-210).
+Morgan,   M.,   &  Butler,    M.  (2009).  Considering  multi-touch   display technology  for collaboration    in the
+          classroom. In Proceedings EDMEDIA 2009, (pp. 674­683)
+Novak, J., & Cañas, A. (2008). The Theory Underlying Concept Maps and How to Construct and Use Them. In
+          TRIC 2006-01 (Ed.): Florida Institute for Human and Machine Cognition.
+Oppl, S., & Stary, C. (2009). Tabletop concept mapping. In Proceedings of TEI 2009. (pp. 275-282)
+Paavola, S., & Hakkarainen, K. (2005). The Knowledge Creation Metaphor ­ An Emergent Epistemological
+          Approach to Learning. Science &amp; Education, 14(6), 535-557.
+Race, P. (2001). A briefing on self, peer & group assessment. Assessment Series N. 9. Learning and Teaching
+          Support Network.
+Stahl, G. (2006). Group Cognition: Computer Support for Building Collaborative Knowledge: MIT Press
+Sugimoto, M., Hosoi, K., & Hashizume, H. (2004). Caretta: a system for supporting face-to-face collaboration
+          by integrating personal and shared spaces. In Proceedings SIGCHI. (pp. 41-48)
+Sundararajan, B. (2010). Emergence of the Most Knowledgeable Other (MKO): Social Network Analysis of
+          Chat and Bulletin Board Conversations in a CSCL System. Journal of e-Learning 8(2), 191-208.
+Suthers,  D.,  Vatrapu,   R.,   Medina,   R., Joseph,   S. &    Dwyer,  N. (2008).   "Beyond  threaded    discussion:
+          Representational    guidance  in asynchronous    collaborative  learning  environments."  Computers     and
+          Education. 50(4), 1103-1127.
+Taricani, E.,  &  Clariana,   R.  (2006).  A  Technique    for Automatically  Scoring Open-Ended      Concept  Maps.
+          Educational Technology Research and Development, 54(1), 65-82.
+Tergan,   S.-O. (2005).   Digital  Concept    Maps  for  Managing   Knowledge   and   Information.  Knowledge     and
+          Information Visualization. pp. 185-204
+Upton,  K.,  &  Kay,   J. (2009).  Narcissus:  Group  and   Individual  Models  to  Support Small   Group Work,    In
+          Proceedings of UMAP 2009 (pp. 54-65).
+
+Acknowledgments
+This research was funded by the Smart Services Cooperative Research Centre, Australia. We thank Professor
+Peter Reimann for his suggestions and the experiment participants for their time.
+
+© ISLS                                                                                                              32
+

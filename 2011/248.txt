@@ -1,0 +1,477 @@
+CSCL 2011 Proceedings                                                                                     Volume I: Long Papers
+
+ Technology for Supporting Learners in Out-of-School Learning
+                                                  Environments
+  Tamara L. Clegg, University of Maryland, College Park, 2117A Hornbake, South Wing, College Park, MD
+                                                  20742, tclegg@umd.edu
+Christina M. Gardner, School of Interactive Computing, Georgia Institute of Technology, 85 Fifth Street, NW,
+                                   Atlanta, GA 30308, Christina.Gardner@gatech.edu
+  Janet L. Kolodner, School of Interactive Computing, Georgia Institute of Technology, 85 Fifth Street, NW
+                                          Atlanta, GA 30308, jlk@cc.gatech.edu
+
+          Abstract: In this paper, we present an evaluation of the role that software played in promoting
+          collaborative scientific participation in a learning community driven by learners' interests and
+          goals. In our analysis of an out-of-school learning environment we designed and implemented
+          to promote scientific engagement, we found that the software was not always at the forefront
+          in the learning environment.      However, it played an essential role in providing an organized
+          repository   of   the  community's     experiences   and placed   this   information   at learners'  and
+          facilitators' fingertips.
+
+Introduction
+We aim to help learners see the value of science in their everyday lives and come to see themselves as scientists.
+But many learners are turned off by science, finding it boring and irrelevant (Chinn & Malhotra, 2001).              Many
+learners  also   face difficulties engaging    in scientific inquiry.  For  example,     learners often  end  investigations
+prematurely, forget the purpose of experimentation, and fail to recognize the importance of scientific situations
+(Gleason & Schauble, 1999; Quintana et al., 2004). To help learners overcome these difficulties and become
+interested and engaged in science, education researchers suggest we engage learners in the type of scientific
+participation scientists engage in.    This type of scientific participation involves addressing real world problems
+that are  interesting  to   learners  and collaboratively  explored   with  others  who   share   their interests (Chinn  &
+Malhotra, 2001; Crowley & Jacobs, 2002).
+          Our approach to addressing these needs has been to move outside of school and engage learners in
+science in contexts that are motivating and relevant to their lives.     We have started with the context of cooking.
+We   created     a learning environment    where   participants  engage  in    scientific practice  by  designing   cooking
+experiments to learn about scientific phenomena underlying the dishes they make (e.g., what role do eggs play
+in brownies?).     They then use their understanding of how these phenomena work in their dishes to perfect more
+complex dishes to suit their tastes.       In this out-of-school context, we aim to promote the development of a
+community     of   learners that engages   in science  in  contexts  relevant   to their lives. This   community   does  not
+simply consist of learners, but also mentors or facilitators, older adults who share a love for cooking and value
+for scientific investigation with learners.
+          While cooking is a rich context for scientific exploration, there are many challenges to helping learners
+engage scientifically in contexts where learners are participating in order to pursue personal interests. It is often
+difficult  to be   prepared  to  help  learners   pursue  their own   interests  and  goals (Clegg     & Kolodner,   2007).
+Furthermore, cooking activities are physically demanding. In the midst of busy, messy, and exciting projects,
+learners need help focusing on the relevant scientific aspects of their experiences (Gardner, Clegg, Williams, &
+Kolodner, 2006). We therefore designed software to scaffold learners' collaborative cooking experimentation in
+hopes  that   it would  promote    scientific engagement     as they  pursued   their cooking   goals.   In  this paper, we
+present an evaluation of the role that software actually played in promoting collaborative scientific participation
+in an active learning community driven by learners' interests and goals.
+
+Background
+The    aspects   of  scientific practice  that   learners can   best  learn through   cooking     activities are  design  of
+investigations, interpretation of data, use of data as evidence, and explanation. Such practice includes, but is not
+limited   to  generating  research    questions,  designing  experiments    to  answer   questions,  making   observations,
+taking measurements, developing theories, and studying others' research (Chinn & Malhotra, 2001; Osborne,
+Collins, Ratcliffe, Millar, & Duschl, 2003). While these actions may be encouraged in traditional classrooms,
+they   are   typically  enacted    in experimentation     that  is   simple  and   fixed   which    is  different from   the
+experimentation of scientists. In contrast, authentic scientific practice that scientists engage in involves doing
+science (1) in the context of real-world problems, (2) where the full range of variables can be tested and the full
+range  of  outcomes    may   be  unknown,   and   (3) where   procedures    for answering   questions   are  chosen at least
+partially by participants (Chinn & Malhotra, 2001; Gleason & Schauble, 1999).
+
+© ISLS                                                                                                                   248
+CSCL 2011 Proceedings                                                                                   Volume I: Long Papers
+
+          Engaging learners in such scientific practice and facilitating the development of a learning community
+involves many challenges.      The   difficulties learners face   engaging   in scientific practice    must be addressed,
+learners' exploration   must  be  in  the context  of their  interests, and  collaboration    must  be  promoted   for the
+development of the learning community.        Technology can help learners and facilitators overcome some of the
+challenges   by supporting    learners'   scientific practice  and   the collaboration     of the   learning community.
+Technology can help learners overcome difficulties engaging in scientific practice by scaffolding the processes
+of inquiry.   Specifically,   learners need   help   articulating the important   parts of    their experiences,   making
+quantitative observations, and making plans for experiments (Clegg & Kolodner, 2007). Quintana et. al., (2004)
+point out several software systems that have been successful at this type of scaffolding.         However, in designing
+this help for out-of-school environments, the challenge becomes presenting it as an opportunity in the context of
+helping learners achieve their goals.
+          Technology support can also promote the development of a learning community in several ways. First,
+it can help learners build a shared history in their community by allowing them to contribute to the community's
+repository of shared history in different ways (Scardamalia & Bereiter, 1996). Second, technology support can
+help learners structure their work, share their ideas, and get feedback from others. This is especially important in
+a context where learners choose projects to work on and may choose projects that they need help with. Our
+experiences with promoting learning with this type of software show that we need to give learners both free-
+form and scientifically-structured means of sharing their ideas and asking for help from the community (Clegg
+& Kolodner, 2007). Software can also serve to help learners reify their expertise in the community, providing
+them a platform for pointing out and highlighting their accomplishments and contributions.
+          While the literature points out ways technology can promote science learning and the development of a
+learning community, we still need to understand what roles technology can play in a context where learners'
+motivation determines their participation.    We therefore ask in the context of out-of-school environments:
+          (1) How can technology promote collaborative scientific participation?
+          (2) What roles can technology play in supporting collaborative scientific participation?
+
+Design of Environment
+We have studied these questions in the context of Kitchen Science Investigators (KSI), an out-of-school learning
+environment we designed for middle-school kids to learn science in the context of cooking. In order to create an
+environment   where    participants could  learn  to use  scientific practices  and pursue    ideas that were  personally
+interesting to them, we designed two activity sequences. In early sessions KSI participants engage in a semi-
+structured activity sequence to familiarize and scaffold them in engaging in the scientific practices of asking
+questions, designing experiments, making observations, measuring, sharing results, and drawing conclusions.
+Once they have become somewhat proficient at carrying out scientific reasoning, participants engage in more
+flexible exploratory activity sequences where they can use the science they learned during the semi-structured
+activities to iteratively perfect recipes of their choosing.
+          The goal of the semi-structured activity sequence is to engage participants in conducting cooking and
+science experiments that are focused on understanding what makes foods rise or thicken. Together, learners and
+facilitators design experiments that highlight the effects of varying amounts or types of ingredients in a recipe.
+The  cooking    experiments   highlight   the effects  of  ingredients   (e.g., increased  height,   volume,   density  or
+thickness) in the context of the recipe they are preparing. For example, participants make pudding with different
+types of starch thickeners and the facilitator helps them to make observations and compare the different textures
+and thicknesses of the puddings. These experiments are designed as a whole group. In small groups, learners
+carry out each variation and then share their results, taste their dishes, and draw conclusions as a whole group.
+          After several semi-structured sessions, learners are given the opportunity to use what they have learned
+about particular ingredients to prepare recipes of their choice and make them come out with their preferred taste
+and texture. During these sessions, called choice days, learners ask new questions and practice using results and
+conclusions drawn from the semi-structured experiments to design experiments that answer their questions. At
+this point, they are not yet fully proficient at asking questions, using results, drawing conclusions, or designing
+experiments, but they do know that these are activities they need to engage in to design their own recipes.
+          We designed the software in KSI to prompt several aspects of scientific reasoning. We wanted learners
+working   in small    groups  to fluently   use  the  software  during   the choice    days   to record   questions, plan
+experiments, enter data, and draw conclusions. We therefore needed to design it in such a way that it not only
+supports those activities but it supports them similarly across the contexts of semi-structured and choice days.
+          During semi-structured days, the software supports: experiment design as learners engage in a large
+group to design experiments, data collection as they work in small groups, compilation of data collected across
+groups,  and interpretation   of that  data and   question  answering    by  the large group     after experimentation  is
+complete. It also supports each of those functions during choice days. However, choice days are more flexible
+than   semi-structured  days.  The    software  therefore  also   needs  to support  learners    in sharing  their diverse
+experiences scientifically.
+
+© ISLS                                                                                                                 249
+CSCL 2011 Proceedings                                                                              Volume I: Long Papers
+
+         We designed the software such that it provides the same support across semi-structured and choice day
+sequences.   However, the software offers affordances particularly suited for each type of activity.     The software
+provides support for designing a controlled experiment for each recipe in the system.         It prompts learners to
+formulate   questions  they  want  to answer   with  the experiment,  to select one ingredient  to vary,  to identify
+dependent   variables  to  measure,   and  to identify variables they will  control to answer   their question.  The
+software then guides learners in carrying out the procedures for each variation of the recipe, encouraging them
+with prompts at each step to make observations. During semi-structured experiments each group carries out one
+variation of the recipe.   During choice days one group may carry out all of the variations of an experiment, or
+they   may  only try  one  variation  of a recipe.  Once  learners  have completed  their  variation(s), the software
+prompts them with questions about their results that they can enter into the software.     These questions are pre-
+determined by facilitators, and are the questions learners will be able to answer with the particular experiment
+they designed.
+         To support learners' scientific understanding of underlying mechanisms (e.g., starch molecule structure
+and function) in their dishes, we used paper-based scaffolds to provide visualizations and information. We also
+used   paper-based goals   charts to  help learners describe specific characteristics they wanted  their  choice day
+recipes to have.   We wanted learners to think of their new, complex dishes in the same terms they described
+previous experiment results so that they could draw upon their previous experiments more naturally.          We used
+paper-based scaffolding for these aspects of learners' scientific engagement because we created these scaffolds
+week-to-week specifically based on learners interests and understanding.
+         Learners could also create and edit stories of their experience and explanatoids (short "Did You Know"
+facts  they  discovered   or were    introduced  to while  creating their recipes).   Stories and  explanatoids   are
+particularly useful   for enabling   learners to share their diverse  experiences on   choice days.   They   can then
+navigate to the experiment results page (Figure 1) where they can view results from all of the variations run in
+the experiment.
+
+                                   Figure 1. Experiment Results Page in the KSI Software.
+
+         This page displays a chart that allows learners to compare results across variations, with respect to the
+questions they asked.   Learners' explanatoids and stories from the experiment are listed and can be viewed from
+this page.  As they look across results, they can enter in conclusions they have drawn from their results.
+
+Methods
+Recall that the questions we seek to answer in this paper are: (1) How can technology promote collaborative
+scientific  participation?   and  (2) What    roles can  technology   play  in  supporting  collaborative    scientific
+participation?
+         The cases presented in this paper were taken from data collected in an enactment of the KSI program,
+run throughout the 2007-2008 school year. We offered the program afterschool one day a week as part of a
+larger afterschool initiative by a local YWCA to engage teen girls in science and technology related activities.
+Participants in the study were from the same suburban middle school where the population was 99% African
+American. Thus, all participants were African American girls. Participation varied over the 9-month period, but
+we had 15-20 consistent participants (7-9 6th graders, 7-10 8th graders, one 7th grader). A team of 3 facilitators,
+the authors of this paper, led the KSI sessions. In every session, video recordings of each group were collected
+and transcribed. In addition, after each session, facilitators recorded post-observation field notes that captured
+the significant learning events that occurred during the session.
+
+© ISLS                                                                                                             250
+CSCL 2011 Proceedings                                                                                   Volume I: Long Papers
+
+          Data used in this analysis was collected as part of a larger study focusing on which aspects of the
+learning environment influenced participants' development of scientific reasoning identities.           This investigation
+involved    the selection  of four   focal learners in KSI:   Amber,  Malaysia,    Candyce,    and  Sharonda. All    of the
+learners were 6th graders, with the exception of Amber, who was an 8th grader. These learners were purposefully
+selected to represent a range of participation styles and interests.
+          The first author did a sequence of three in-depth semi-structured interviews with the focal learners.
+The interviews were structured similar to Seidman's (1991) phenomenological approach. They, however, were
+spaced out over the second half of the program ­ to capture learners' change in scientific participation and
+identity throughout their participation in KSI. Conducting three interviews with each participant allowed us to
+attain reliability (Seidman, 1991) and to monitor changes in learners' goals over time and the meaning they were
+making   of  their   experiences  in KSI.  In order  to  triangulate the  data   gathered   from  the interviews with   the
+learners, we used video observation from their participation in the program, interviews with their parents, and
+interviews with their science teachers. We conducted initial and ending interviews with focal learners' parents
+and science teachers to measure the change they saw in the learner. Interviews with parents were focused on
+learners'   scientific participation at  home    (especially when cooking).      Interviews  with  science teachers   were
+focused on learners' interests, skills, and participation in science class.
+          Our analysis began with the identification of scientifically meaningful experiences learners had in KSI.
+Facilitator field notes and learner interviews were coded (and triangulated with parent and teacher interviews) to
+pinpoint specific scientific experiences in KSI that were meaningful for learners as evidenced by their reporting
+of them   or   their reports  of  extending   particular KSI   experiences in    meaningful    ways.  Learners'  scientific
+practice was identified by coding data using Chinn & Malhotra's (2001) framework for scientific reasoning.
+Their  framework     particularly illustrates what  scientific participation looks     like as it progresses from    simple
+science   typically   done in   the  classroom   to authentic  scientific participation     as practiced  by professional
+scientists.  The     framework    breaks   down  many    of  the inquiry   processes    involved    in authentic  science
+investigation (e.g., selecting and controlling variables, planning measures, planning procedures).
+          Next,  we    analyzed  the set of scientifically   meaningful  experiences   that  involved  technology    use to
+understand the role the technology played in supporting learners' experiences.           Within those experiences there
+were three themes that emerged: the technology-supported scientifically-meaningful experiences by (1) collating
+and indexing experiment results, (2) enabling learners and facilitators to make free-form contributions, and (3)
+serving  as  a  resource  for further information.   These   themes  were  observed    multiple   times   (typically across
+multiple  groups)    and  had later  impact   on learners'   experiences  (e.g., their reporting   of the meaning    of the
+resulting experience in interviews, their later expansion of the activity).      We then selected illustrative examples
+of each of these aspects of technology support.      We analyzed each example to understand the context of the use
+of the technology and the role of the technology in supporting the experience.           Validity was established in the
+discussion of the selected episodes with the second and third authors and by their subsequent review of each
+episode.
+
+Findings
+Eighteen scientifically meaningful experiences were identified across the four focal learners (5 experiences for
+Amber and Sharonda, 4 experiences for Candyce and Malaysia). Next, we present three cases ­ one for each
+aspect of the technology that supported learners' scientifically meaningful experiences. For each case we point
+out the context of the technology use and the role of the technology in supporting the experience.
+
+Collating and Indexing Experiment Results
+The KSI software prompts learners to make observations of their dish once they finish preparing their variation.
+It then collates the observations of each variation into a chart. Facilitators were able to refer learners to these
+charts on later days as they made decisions about how to prepare more complex recipes to meet their specific
+cooking goals.   This theme was observed in multiple scientifically meaningful experiences for Candyce.
+
+Context
+Day 16 was a choice day where the goal was to create a complex dish using what learners knew about different
+starch thickeners to make the texture of the dish come out the way they wanted it to. Malaysia and Candyce, two
+sixth graders, chose to make fruit tarts with Janet (a KSI facilitator). Before they began cooking, they wrote out
+their goals for their fruit tart on a paper-based goals chart. They wanted their fruit tart to be soft, creamy, moist,
+and smooth with a sweet and "fruitiliscious" taste.      Janet then asked them what thickener they wanted to use in
+their tart filling. She prompted them to refer back to Day 12's pudding experiment results chart in the software.
+The chart (Figure 1) presented the results of a pudding experiment they had done as part of the semi-structured
+activity
+          They then used the pudding results chart to select the thickeners that produced the pudding that best
+matched their goals for their fruit tart filling. They decided to use arrowroot because they wanted the taste to be
+
+© ISLS                                                                                                                  251
+CSCL 2011 Proceedings                                                                                               Volume I: Long Papers
+
+sweet and creamy and white rice flour because they wanted a creamy texture. They were very pleased with their
+fruit tart's texture and taste, and they were especially excited to take mini tarts home to their families.
+         In the next session (Day 17), when they re-prepared the fruit tarts using the same thickeners and recipe,
+their custard became "rubbery."              Candyce used her memory of the results from the chart to reason about their
+unexpected results.    She described her reasoning in a later interview, "Um, because when we were reading about
+the different puddings we saw that arrowroot kind of made it creamy and thick but not too thick.                       So, I think we
+added too much of that because of the description." She also later used her memory of this chart as she worked
+in different groups on Days 18 and 20 to make decisions about what thickener to use in new recipes she made.
+She based  her     decisions  on her         goals for    the new  recipe  and    her memory   of     the results  for each  thickener
+variation of pudding.
+
+Role of the Technology
+The experiment results chart provided an index of learners' previous experiences. Most often the facilitators
+pointed participants to those charts at times when they needed to make decisions, but sometimes participants
+remembered what they had seen in the charts when they had looked at them previously, and sometimes they
+accessed the charts themselves. Whichever was their way of accessing the data in the charts, use of the data led
+them to make their decisions based on evidence.                Although facilitators pointed other learners and groups back to
+previous experiment results pages, Candyce's case was particularly meaningful because of the extent to which
+her group used the results to inform their decision and because of the extent to which she referred back to the
+results later.
+
+Making Free-form Contributions ­ Stories and Explanatoids
+Facilitators often had to prompt learners to write stories and explanatoids.                  They also needed to ask learners
+specific questions about their experiences and type learners' dictation in order to create stories. However, three
+groups created 7 explanatoids, or simple explanations, and 10 stories were created by 8 groups.                           Stories and
+explanatoids were created over 11 sessions of the program and in 4 of the experiences identified as scientifically
+meaningful.      The following example was representative of the way stories were written and used in the learning
+environment.
+
+Context
+On  Day  20,     Malaysia   worked    with      a  larger  group   of  all 8th graders  (Amber,       Patience,  Soleil,  and Angela)
+making fettuccine alfredo (with pasta made from scratch). This was the last day of the program, and after their
+cooking  activity,   learners'  parents        were  invited    to eat the  food    learners prepared     and   to listen to  learners'
+presentations of what they did and learned in KSI.
+         The group made several observations as they were preparing their pasta.                          For example, they noticed
+their pasta became much larger when boiled and that there was white residue in their boiling water after the
+pasta was removed.         The facilitator working with them, Christina, took the opportunity to discuss the science
+behind some of the things they were observing.                  She explained that pasta is made of starches (i.e., flour) and
+how the starches work in making pasta.               She used paper-based explanation cards to provide visualizations of
+different types of starches and how they absorb water.                She then connected the changes they were observing in
+their pasta to the explanations. In preparation for their presentation, Christina helped them create an explanatoid
+of what they learned as they made their pasta by asking questions about what they had discussed earlier and
+typing learners' responses (Figure 2).
+
+                                                     The Science Behind Pasta
+Q. What is pasta made of?                                           Q. What is the white sticky stuff in the the pasta pot after you boil
+Pasta is made of flour, water, oil, and salt                        pasta?
+                                                                    The white residue is starch. Specifically, it is amylose that doesn't
+Q. What is flour made of?                                           absorb water.
+Starch granules and gluten
+                                                                    Q. How does the starch get there?
+Q. What are starch granules made of?                                The amylose starches in the pasta came out because they don't absorb
+Amylose and Amylopectin                                             water.
+
+Q. How does Amylose work?                                           Q. What happens when you boil the pasta in water? The pasta expands
+Is a starch molecule in starch that doesn't absorb water.           in the water.
+
+Q. How does Amylopectin work?                                       Q. Why does the pasta expand?
+Is a starch molecule in starch that doesn't absorb water.           The Amylopectin starch molecules they absorb water and swell.
+Amylopectin is shaped like a branch and the branch structure
+traps the water.                                                    Q. What happen when you over boil pasta?
+                                                                    It will stick and clump up and get gooey.
+          Figure 2. Part of an explanatoid created on Day 20 about what the group learned as they made pasta.
+    Although this was created in the software as one explanatoid, it actually represents several explanatoids.
+
+© ISLS                                                                                                                                      252
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+         Several of the group members left before the presentations began.          However, Malaysia, Patience, and
+Amber stayed to present their experience and dish to their parents.         The group began their presentation of the
+fettuccine alfredo by reading the explanatoid they created to talk about the science behind pasta.         Patience asked
+the questions in their explanatoid while Malaysia and Amber took turns answering them.                 Their explanatoid
+(Figure 2) addressed amylose and amylopectin, their differences in absorption of water, and their impacts on
+pasta.
+         While   the  group   mainly  read their explanatoid,   their  impromptu    corrections and  answers   to  others'
+questions showed their understanding and familiarity with the scientific concepts they discussed. For example,
+Malaysia corrected Amber's pronunciation of a science word in the explanatoid ­ residue. She also knew that
+gluten is found in flour when Christina asked. During their presentation of their fettuccine alfredo, Tammy (the
+first  author and  KSI  facilitator)  asked, "Well  do   you  think    you could  make   whole   grain [pasta]?"   Amber
+affirmed that they could, "it would just be a different flour." Mentioning a different type of flour prompted
+Malaysia to ask, "Is whole grain that little wheat stuff?"      When Amber affirmed Malaysia's question, Malaysia
+made a connection to branch-shaped amylopectin stating, "It looks like amylopectin, or amylose."
+
+Role of the Technology
+The   technology   combined    the  voices of  the facilitators and    learners.  The facilitator helped   learners share
+relevant aspects of their experiences in the explanatoid.     She also prompted learners to use scientific vocabulary
+(e.g., amylose,   amylopectin).     But because    she documented      the learners'  responses   to her   prompts, their
+explanatoid   (and    stories in other  cases) were  reflective  of    learners'  and facilitators'  perspectives  of  the
+experience. The learners were then able to use the software to present scientifically relevant aspects of their
+experiences to the group.
+
+General-Purpose Technology as Resource for Further Information
+Another category of technology use emerged that we did not anticipate.              Learners and facilitators also used
+general-purpose technology (e.g., digital cameras, the internet) for their collaborative scientific participation.
+This was observed in five of the experiences identified as scientifically meaningful.           The following example
+details one particularly compelling case of general technology use to support collaborative scientific inquiry.
+
+Context
+On Day 11, Sharonda, Esha, Treeva, Rachel, and Christina (the facilitator) worked together making biscuits
+from   scratch and    gravy   using store-bought gravy   packets.   They   simply  needed  to  add   liquid to the  gravy
+package contents and stir over heat.     All participants were sixth graders, except for Rachel, an eighth grader.
+The groups were transitioning from exploring leaveners (used in biscuits) to thickeners (used in gravy).
+         Sharonda began preparing the gravy with Christina as her group finished the biscuits. Christina and
+Sharonda made the gravy and explored the question posed earlier in the whole group discussion: What makes
+gravy thick? As they stirred the gravy packet contents and water on the stove, Christina encouraged Sharonda to
+look at the ingredients list on the gravy packet and guess which ingredients thickened the gravy.              Sharonda
+initially thought it was the baking soda in the gravy that made it thick.          However, she continued to read the
+ingredients list on the packet and ask Christina about them.        When Christina did not know what one ingredient
+was, she suggested an online search. When Christina was called away, she told Sharonda where to look online
+for the definition and left.     Once  Sharonda    found  the first word,   she  called  out, "Ms.  Christina, I found  a
+definition!"
+         When Christina returned, they read the definition and Christina asked, "So do you think this is gonna
+thicken it?"  Sharonda replied, "no" and they continued to search for the ingredients on the online dictionary. As
+Sharonda read the definitions, she came across some complex words and definitions (e.g., folic acid).           Christina
+helped her to interpret the meaning of each and keep track of which ingredients they had looked up that could
+possibly serve to thicken the gravy.       When Sharonda's science teacher (who was present) asked them about
+what   they were   doing,   Christina explained,   "We're trying    to figure out  what  made   our  gravy  thick,  in the
+packet."  Sharonda added, "And we're having fun."        Later, Sharonda discussed how the experience was useful to
+her:
+         Um, it really...it told us about the words. It helped us um ... know what the words mean so
+         when we go home --if our parents ask us about a word we just looked up, we would know
+         what it means.
+
+Role of the Technology
+In this case,  the Internet   supported a  one-on-one    search  between    the  learner and  facilitator. The facilitator
+needed to be there to help the learner with the difficult language and concepts and to help her think through the
+function of each of the ingredients. The technology provided information Christina, the facilitator, did not know,
+
+© ISLS                                                                                                                 253
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+and it enabled her to model the process of searching for answers to questions to the learner.       The technology also
+helped Christina multitask between the investigation and her responsibilities with other groups.          When she had
+to step away from the investigation, Sharonda carried out more searches while she was gone, then discussed
+each   term and  definition  she  found with   Christina  when   she    returned. The technology    also  helped position
+Sharonda as an expert.
+
+Discussion
+We found that the software never became as central a part of the environment as we expected.              Throughout the
+semi-structured sequence and exploratory activities, the cooking activities remained the focal point of learners'
+activity. However,    even   though the software    remained  in    the background    of the learning  environment    and
+activities, it still played an essential role in promoting collaborative scientific participation.     We now return to
+our research questions:
+          How   does   technology   promote    collaborative  scientific  participation?   We   found  that  because  the
+technology acted as a repository of learners' experiences, it scaffolded having and sharing scientific experiences
+while cooking.   We designed the scaffolding to be used directly by learners.          We're guessing that if KSI had
+progressed, learners would have eventually taken initiative to use the resources themselves. In the meantime,
+however, having that function there allowed the facilitator an easy time helping learners draw on their scientific
+experiences to make decisions for new recipes, create scientific artifacts of their cooking experiences that they
+could share with others, and find scientific answers to their own questions about the recipes they made.
+          The technology     also  facilitated collaboration  between    the facilitators  and  learners.   It did so by
+supporting the roles of both learners and facilitators.     The structured software support helped facilitators help
+learners match their cooking goals with previous experiment results.         It also helped facilitators by providing an
+easily accessible tool to point learners to in helping them cook scientifically.    Creating explanatoids (and stories)
+helped facilitators help learners highlight scientific aspects of their experiences. The presence of the function in
+the software, even though it was the facilitator who did the typing, allowed learners to present their experiences
+to others.  Finally, general-purpose technology use supported learners and facilitators in answering their own
+questions.
+          What roles can technology play in supporting collaborative science participation?           The technology in
+KSI played two essential roles in the learning environment.         First, it helped connect science to the context of
+cooking.    The  experiment   results page     compiled  each group's    cooking   variation into   a chart that allowed
+learners to compare across variations.     This chart then helped learners to compare their later cooking goals to
+their experimental results. Creating stories and explanatoids helped learners to share their cooking experiences
+scientifically with others ­ using scientific terminology and presenting relevant aspects of their experiences.
+Use of the Internet enabled learners and facilitators to explore scientific aspects of the dishes they were creating.
+          The second role the technology played in the learning environment was documenter, or recorder of
+experiences.  Although it never played a central role in the learning environment, the software kept track of
+learners experiment results as well as the scientific discussions learners had during their cooking experiences.
+Its presence allowed facilitators to easily point back to those artifacts for use of the data to make decisions in
+new recipes and for sharing scientific experiences and understanding with others.
+          Although the software was not always at the forefront in the learning environment, its presence enabled
+it to  play essential  roles in  facilitating  learners' scientific participation  as well   as their collaboration with
+facilitators. In other CSCL work, the software plays a central role in the learning environments they are situated
+within. Learners use the technology to communicate and it drives the activity (e.g., Hickey et. al., 2003; Reiser
+et al., 2001) or the   software  functions drive   conceptual engagement     as   learners use  it together (Dasgupta  &
+Kolodner, 2009; Scardamalia & Bereiter, 1996).           Our work makes a contribution to the CSCL community in
+showing that technology does not have to play a central role in the learning environment to be important and
+effective for scaffolding learners and supporting collaboration. Specifically, we have shown that when software
+is used to prompt science connections and to record experiences and understanding, it can promote collaborative
+engagement in science talk and scientific reasoning by learners and promote productive interactions between
+facilitators and learners.
+          On the other hand, the sequencing of learning activities and facilitation support were central aspects of
+the learning environment.    Analysis of the role of the facilitators and activities in KSI is beyond the scope of this
+paper. Yet, it is important to acknowledge in considering the role of technology in environments supporting
+scientific collaboration in the context of learners' interests and goals.    Learning activities sequenced from more
+to less structured all in the context of learners' goals were important for sustaining motivation and promoting
+scientific participation. Facilitators then played critical roles in helping learners focus on scientific aspects of
+their experiences, understanding relevant scientific phenomena, and engaging in scientific practice.            At times,
+their interactions with learners resembled that of teachers in traditional classrooms.       However, unlike teachers,
+facilitators were not bound to a set curriculum, they were bound to learners' interests, curiosities, and questions.
+Technology    therefore needs   to support    such collaboration between    facilitators and learners  by   providing the
+
+© ISLS                                                                                                                 254
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+structure needed   to   scaffold  science  learning and   the  freedom   needed  to document,    share,  and  learn from
+diverse, dynamic experiences.
+          Our  work    is limited   in  that it  presents data    from a  small  sample   of   learners in one    learning
+environment.   The technology we presented does not provide any new types of computer support, and some of
+the support was quite simple (e.g., providing space to write stories).       We did not have to implement any fancy
+functions to effectively support participants' and facilitators' collaborative engagement in scientific practices.
+The key   was  integrating   use  of the software   into  the complex   physical environment     (Roschelle, 2003).   The
+facilitators had to play a critical role in getting the kids to use the software.  However, once used, it provided an
+organized repository of the community's experiences and put information at learners' and facilitators' fingertips
+(via the Internet) that simple paper and posters could not have easily provided.
+
+References
+Chinn, C. A., & Malhotra, B. A. (2001). Epistemologically authentic scientific reasoning. In K. Crowley, C. D.
+          Schuunn     & T.   Okada   (Eds.), Designing    for science:   Implications from     everyday  classroom,   and
+          professional settings (pp. 351-392). Mahwah, NJ: Lawrence Erlbaum Associates, Inc.
+Clegg, T., & Kolodner, J. (2007). Bricoleurs and planners engaging in scientific reasoning: A tale of two groups
+          in one learning community. Research and Practice in Technology Enhanced Learning, 2(3), 239-266.
+Crowley, K., & Jacobs, M. (2002). Building islands of expertise in everyday family activity. In G. Leinhardt, K.
+          Crowley & K. Knutson (Eds.), Learning conversations in museums. Mahway, NJ: Lawrence Erlbaum
+          Associates.
+Dasgupta, C., & Kolodner, J. L. (2009). Designing case libraries to encourage creative design. Paper presented
+          at the Creativity and Cognition, Berkeley, CA.
+Gardner, C. M., Clegg, T. L., Williams, O. L., & Kolodner, J. L. (2006). Messy learning environments: Busy
+          hands  and    less engaged    minds.   Paper presented    at the  Seventh   International  Conference    of  the
+          Learning Sciences Bloomington, IN.
+Gleason, M. E., & Schauble, L. (1999). Parents' assistance of their children's scientific reasoning. Cognition and
+          Instruction, 17(4), 343 - 378.
+Osborne, J., Collins, S., Ratcliffe, M., Millar, R., & Duschl, R. (2003). What "ideas-about-science" should be
+          taught in   school science?   A  delphi  study  of  the expert community.   Journal    of Research   in Science
+          Teaching, 40(7), 692-720. doi: 10.1002/tea.10105
+Quintana,  C., Reiser,    B. J., Davis,  E.  A., Krajcik, J., Fretz, E.,  Duncan,  R. G., .  . . Soloway,  E.  (2004). A
+          scaffolding   design   framework    for software    to  support  science  inquiry.   Journal  of the Learning
+          Sciences, 13(3), 337-386.
+Roschelle, J.  (2003).    Keynote   paper:   Unlocking   the  learning value of  wireless mobile    devices.  Journal  of
+          Computer Assisted Learning, 19(3), 260.
+Scardamalia,   M.,    &   Bereiter,  C. (1996).   Computer    support   for knowledge-building      communities.    In T.
+          Koschmann (Ed.), Cscl: Theory and practice of an emerging paradigm (pp. 249-268). Mahwah, NJ:
+          Lawrence Erlbaum Associates.
+Seidman, I. E. (1991). Interviewing as qualitative research: A guide for researchers in education and the social
+          sciences. New York, NY: Teachers College Press.
+
+© ISLS                                                                                                                 255
+

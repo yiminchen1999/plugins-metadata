@@ -1,0 +1,349 @@
+ Interactive Cooperative Learning System Based on Virtual
+                                 Shared Space: HyCLASS
+  Katsumi Hosoya1, Akihisa Kawanobe1, Susumu Kakuta1 and Munish Sharma2
+                                   1Nippon Telegraph and Telephone Corporation
+                    2University of Toronto, Department of Electrical and Computer Engineering
+
+                    Abstract                                   observing a object from various viewpoints [1].
+A collaborative educational system has been designed           This 3D-CG technology enables the building of a
+that enables several students in distant locations to          virtual world that cannot be built in the real world,
+share a virtual three-dimensional space.  It can be            and to describe complicated structures.
+used to perform virtual experiments and carry out                  Recent works have described educational
+creative tasks. Students can dynamically create a              materials by using the virtual reality modeling
+new object and modify its properties.  The system              language (VRML) [2].   Using VRML, modeling data
+maintains a consistent status of the virtual space as          can be downloaded from a server in a remote location
+seen by each student present in a room. An efficient           through networks, enabling several users to access the
+communication method to maintain this consistency              same virtual world. However, a user cannot recognize
+is proposed. Within the virtual space, the three-              other simultaneous users and cannot cooperatively
+dimensional materials are based on OMG-CORBA, a                manipulate a virtual object with those users.
+distributed object modeling architecture. Furthermore              We have been developing an environment where
+a method to create a new object and modify its                 users can perceive and respond to the actions of other
+properties is also introduced.  Lastly, after                  users and manipulate the objects cooperatively [3].
+developing and implementing the prototype system,              In this paper, we propose a collaborative learning
+we evaluate the various issues centering on the                environment    that runs on computer networks and
+proposed methods.                                              discuss the requirements for managing a multi-user
+                                                               virtual space. We then explain how we    place the
+Keywords--CSCL, virtual reality, shared space,                 educational objects in distributed locations, and
+CORBA, multicast                                               synchronize communication between them.       Finally,
+                                                               we evaluate our proposed methods based on their
+1 Introduction                                                 performance in a prototype system.
+Recent studies on intelligent Computer Assisted
+Instruction (CAI) have suggested that interactive            2 Collaborative learning environment
+learning, in which students actively interact with the       using a virtual space
+educational material, and collaborative learning, in
+which students talk with others in a group, play               2.1 Features
+significant roles in the process of acquiring new              Our learning environment has the following features:
+knowledge.   Additionally, people are becoming more
+interested in education supported by computers,                (1) virtual shared space (room)
+especially "Computer Supported Cooperative                         An ordinary school contains several units of
+Learning (CSCL)".    In CSCL, various technologies             space, each classified as a classroom. Students inside
+are used, such as electronic mail/news, chatting,              a given room work on the same educational material.
+voice/video conferencing, and "white boards".                  A student can exist in one room at a time, but can
+   With recent improvements in computer                        freely move from one room to another.
+technology, three-dimensional computer graphics
+(3D-CG) is being applied in various fields, including          (2) view of three-dimensional educational materials
+education. By using educational materials presented                and walk-through
+using 3D-CG, students can more intuitively                         Students in the same room see the same three-
+understand three-dimensional knowledge, and actively           dimensional objects. If a property of an object
+study, for example, moving around the space and                changes, then all students see it changing at the same
+time.  Each student can walk inside the room and               Science (SICS) and it features a distributed
+observe the objects from various viewpoints.                   architecture without a server.
+                                                                   Most of these systems include features (1), (2),
+(3) avatars                                                    and (3) described in the previous section. For feature
+    To enable a student to recognize other students            (4), they integrate various things like chatting, and
+collaboratively working in the same room, the                  voice/video conferencing, depending upon the
+"avatars" are shown on the student's PC screen,                bandwidth of their networks.    Very few systems
+showing where the other students are in the room and           provide feature (5), entirely because the main
+in which directions they are looking.                          objectives of these systems are such fields as games,
+                                                               chatting, and electronic shopping.   For these fields, it
+(4) real-time conversation                                     is not always necessary to strictly maintain the
+    To enable students to communicate (discuss,                consistency of the shared space.
+ask/answer questions, etc.), students can use text                 For education, some of the reported systems can
+chatting or voice/video conferencing.  This results in         be applied to learning foreign languages. However, in
+effective collaborative learning.                              situations where close interaction with objects is
+                                                               needed, such as physical experiments and creative
+(5) cooperative operation of virtual educational               work, the mechanisms provided are not sufficient. In
+    materials                                                  these situations, it is very important for the system
+    Students can actively interact with the virtual            to strictly manage the consistency of the dynamic
+materials in a room.  For example, they can move               status of the shared virtual space. For changes in
+and rotate an object, transform its shape, change its          object status to be observed by all students
+color, and attach a new part to it. They can also              consistently, the following issues must be addressed:
+activate one of its pre-defined behaviors, for example
+a ball can be forced to fall downwards, as it would fall       � how to keep the current status of the shared space
+under the influence of gravity in real life. Each                  and to manage its dynamic changes?
+student observes the changes caused by many types of
+attached behaviors at the same time.                           � what is an appropriate object model of educational
+                                                                   materials?
+
+                                                               � what is the best interface for creating/destroying
+                                                                   objects and modifying their properties?
+
+                                                               � how can communication be established between
+                                                                   distributed objects ?
+
+                                                               In many existing distributed systems, many
+                                                               algorithms have been developed,     including message
+                                                               based system[7] and distributed memory [8].
+                                                               However requirements that a shared virtual space
+                                                               impose on data consistency differ from those in
+                                                               traditional distributed systems. In traditional
+                                                               algorithms data consistency is always maintained
+                                                               even though the algorithms are designed to relax strict
+                                                               serial consistency. On the other hand, applications
+                                                               using a shared virtual space are more concerned with a
+                                                               virtual notation of consistency, where perceptual
+        FIGURE 1. Concept of HyCLASS                           consistency is more important than logical
+                                                               consistency [9]. Usually there are only a small
+2.2 Related work                                               number of cases where strict consistency is required.
+Presently some other studies allow multiple users toshare a virtual space through networks, which includeDIVE [4], World Chat [5] and Community place [6].3 Management of data in a virtualshared space
+Most of them are designed in a server-client model,
+consisting of a server that monitors the status of the         3.1 Distributed management of educational
+shared space and manages its consistency, and several          objects
+clients which are used by the individual students.             In such educational systems as described in the
+DIVE is an exception, which uses a unique protocol             previous section, it is important for students to be
+developed at the Swedish Institute of Computer                 able to create new objects and change their properties.
+Therefore, the system must store the static status of
+the educational materials and manage their dynamic
+status. To speed up the graphical drawing process,
+each client should have a copy of the dynamic graphic
+data.   For a new client to acquire the current status of
+the shared space, there are two alternatives: get it
+from a server, or get it from an existing client. In the
+latter case, if all clients exit the room, the current
+status disappears.  To keep the current status in this
+situation, we added one special client into the system,
+which is called a "pseudo-client", as shown in Fig. 2.
+It may be implemented on the same computer as the
+server or on a separate one. As shown in Fig. 2, the
+educational material data is created and stored in the
+material database.    When the pseudo-client starts, it
+loads the material from the database and makes its                FIGURE 3. Structure of each educational object
+replica locally. When Client A and B join the room,
+the replica data on the pseudo-client is copied on toeach client. The change of status is informed to all4 Synchronization between objects
+the clients and the pseudo-client, and then all the
+replicas are updated.                                            4.1 Classification of cooperative
+                                                                 operations and communication methods
+                                                                 For several clients to share the current status of the
+                                                                 virtual space, they must exchange messages with each
+                                                                 other and update their local status whenever the room
+                                                                 status changes. Messages must be exchanged very
+                                                                 frequently to ensure that the status in each client is
+                                                                 correctly synchronized. However this requires high-
+                                                                 speed networks with short delays, and this is
+                                                                 constrained due to a higher cost. For practical use,
+                                                                 the messages should be categorized and the most
+                                                                 suitable communication method should be identified
+                                                                 for each category. We categorized operations for three-
+                                                                 dimensional objects in the shared virtual space as
+                                                                 follows and identified a suitable communication
+                                                                 method for each of the category as shown in Fig. 4.
+
+      FIGURE 2. Management of material data                      Type 1: operations that do not affect other clients
+                                                                    (e.g. reading the status of an object). For these
+                                                                    operations, a requesting client directly sends the
+3.2 Structure of an educational object                              request to the destination objects.
+based on CORBA
+We define a distributed object based on the common               Type 2: operations that require strict synchronization
+object request broker architecture (CORBA) model                    among all clients (e.g., turning on a light).   For
+[10]. The basis of CORBA is the object request                      these operations, a requesting client first sends
+broker (ORB) and the interface definition language                  the request to the room server, which verifies its
+(IDL).  Each interface specification is defined by IDL,             acceptability and its status in the room, and then
+and the distributed objects communicate with each                   forwards the request to the destination. The room
+other through the ORB.    Thus, each object can be                  server also broadcasts a callback message to all
+accessed through ORB without knowing its                            clients advising them to update their proxy
+geographical locations by using the simple interface                objects.
+defined by IDL.    Figure 3 shows the structure of each
+educational object in the virtual space. All resources           Type 3:operations that require a quick response (e.g.,
+in each educational object are managed by a single                  moving an object or one's own viewpoint).       For
+CORBA object "equipment". It manages scene                          these operations, a requesting client sends a
+objects units, behaviors and other resources.  A scene              request to all clients by IP multicasting, not
+object unit has graphic nodes and a behavior may                    using the ORB. Requests of this type are
+have sound objects.                                                 usually followed by Type 2 requests.    For
+   example, while an object is being moved, its                 operation "turn off" is invalid. To check such
+   position data is broadcasted by IP multicast.                restrictions, a local checking function at each client is
+   When movement stops, every client adjusts the                not sufficient, instead a global mechanism managing
+   status of its proxy object by a Type 2 request.              the status of entire room is needed.
+
+In our system, these three synchronization                      4.3 Consistency management using
+mechanisms are automatically selected in a proxy                sequence numbers
+object in each client to hide the selection process and         The room server should control the sequence of
+to make the application interface simple.                       messages so that messages causing change in the
+                                                                status arrive at all clients in the same order. In our
+                                                                system, the server serializes arriving messages and
+                                                                then sends them on to the  clients.  However, the
+                                                                message order may change during transmission
+                                                                through the networks. A sequence number attached to
+                                                                each message by the server would enable each client
+                                                                to determine the correct message order.
+                                                                    We designed the message management
+                                                                mechanism in our system to use sequence numbers,
+                                                                as shown in Fig. 5. The server and each client has a
+                                                                table that stores the latest sequence number, S n,
+                                                                corresponding to each object.    In a stationary
+                                                                situation, the server and all clients have the same
+                                                                sequence number corresponding to a certain object.
+                                                                When an event occurs at one client, it sends a
+    FIGURE 4. Synchronization mechanism                         message with the sequence number S n+1 to the server,
+                                                                and the server forwards it to the other clients. The
+4.2 Levels of consistencyIn Type 2 messages, the room server verifies theserver and the other clients update the sequencenumber toS n+1 when they process this message.The
+acceptability of messages sent from each client to              server accepts messages with later sequence numbers
+maintain the consistency of the status in the room.             than those stored in its table. When two clients send
+To keep strict consistency, the simplest way would              messages corresponding to the same object at the
+be to provide a "lock mechanism", enabling only one             almost the same time, the earlier message is accepted
+user to operate on an object at a time. However this            and the later one is rejected because its sequence
+would make it difficult for users to get the feeling of         number is not the latest. In this way, the status of
+actually operating an object collaboratively with               the room and of its objects are always consistent,
+others, defeating our objective of providing a                  even when several clients send requests randomly.
+collaborative learning environment.
+   For several students to manipulate the same
+object, several messages affecting that object must be
+sent simultaneously. For such messages changing
+the object's status, the message must be kept in the
+correct order. For example, suppose several users
+want to change the color of a traffic signal having
+three colors (red, blue and yellow). If the order of the
+messages arriving at each client varies, the final color
+of the signal may not be the same among all clients.
+   On the other hand, messages affecting separate
+objects or independent properties may not need strict
+management of the order. For example, even if a
+message causing the change of color and a message
+causing the change of shape arrive in different orders,
+then the final state will be the same as other clients.
+   In addition, for some messages, whether they are
+valid or not depends on the current status of the
+object. The server must therefore have a mechanism
+that rejects a request message if it is no longer valid.
+For example, for a light switch, when the light is
+"off", the operation "turn on" is valid but the
+                                                               5.2 System architecture
+                                                               As shown in Figure 6, the system consists of a server
+                                                               that manages the educational material data in the
+                                                               room, several clients operated by students, and
+                                                               networks connecting the server and the clients. The
+                                                               server and clients run on a Windows NT- or Windows
+                                                               95-based PC.    The rendering software used for three-
+                                                               dimensional graphics is Open Inventor (Template
+                                                               Graphics Systems Inc.). An Open GL accelerator
+                                                               board is used to achieve sufficient rendering
+                                                               performance.    For the CORBA software, we use
+                                                               Orbix (IONA Inc.).   The system consists of several
+                                                               blocks:
+
+                                                               (1) server side
+
+                                                               Material database: stores educational materials and
+                                                                   graphical data. It can be accessed using HTTP
+                                                                   protocol.   Each client downloads the required
+                                                                   material data from it.
+
+                                                               Room server: receives a message from a client,
+     FIGURE 5. Message sequence number                             verifies its acceptability, and forwards it to other
+                                                                   clients when the corresponding operation occurs
+5 Prototype system                                                 on the client.
+                                                               Pseudo client: maintains the static status of the
+5.1 Features                                                       room.  A client joining the room gets the latest
+We have developed an experimental system providing                 status of the room from it. The rest of the
+a collaborative learning environment based on the                  functions are almost the same as those of a
+above considerations. This "HyCLASS" system was                    standard client.
+designed so that several students can work together in
+a three-dimensional environment, to learn in active            (2) client side
+and collaborative manner. Its main features are
+allowing students to "walk around" in the learning             Communication control block: controls
+space, to change their viewpoints, to see avatars                  sending and receiving of messages between the
+representing other students, and to talk with the                  room server and clients, and downloading them
+students in real. To achieve this interactive and                  from the material database.
+collaborative leaning, it enables students
+                                                               User interface control block: controls the
+� to activate behaviors attached to objects,                       interface to change viewpoints and to manipulate
+                                                                   objects.
+� to create new objects and modify their properties,
+                                                               Graphic control block: displays three-
+� to attach new behaviors to objects,                              dimensional space.
+
+� to define a group object that includes several child
+   objects.
+Audio control block: controls sound effects and           5.3 Sample materials
+   real-time conversation between students.               To evaluate the system, we developed materials for
+                                                          providing an astronomy lesson,   as shown in Fig. 7.
+                                                          In this "virtual room" there is the sun, the earth, and
+                                                          the moon. A student can change their positions and
+                                                          create a new planet. Several students can enter this
+                                                          room at the same time, walk in it, step on top of the
+                                                          earth which is rotating and revolving,  and finally
+                                                          observe the sky from various points.
+                                                          Figure 8 shows an example of studying the structure
+                                                          of the human skeleton.  A student can study a single
+                                                          bone by grasping it and bringing it closer. In this
+                                                          way the student gain an intuitive understanding of the
+                                                          three-dimensional structure of the skeleton. A teacher
+                                                          may give a group of students the task of finding the
+                                                          correct position of each bone. Scince each bone has a
+       FIGURE 6. System architecture                      behavior bringing it to a pre-defined home position,the students can get help by activating the behavior.
+
+                               FIGURE 7. Example 1 (astronomy)
+                                     FIGURE 8. Example 2 (skeletal system)
+                                                                performance in this situation, we measured the delay
+6 Discussion                                                    time between a student requesting the rotation of the
+                                                                earth to stop and then it actually stopping. We
+6.1 Creation of materials and definition of                     focused on the delay between the time the student
+a new object                                                    makes the request to the time when the graphic
+In HyCLASS, because each material is constructed                control block in another client was activated. The
+based on the object-oriented model, a new material              server and clients were connected through a single-
+can be created using components of existing                     segment network of 10BaseT.   The number of clients
+materials. We could therefore develop the materials             at a time was changed from one up to three, and 100
+mentioned above very quickly (about three days for              trials were run for each case to get the mean and
+each one). In our prototype, the function allowing an           variation.  As shown in Table 1, the delay did not
+end user to define a new object was a little confusing          increase when the number of clients was increased to
+to some users because only fixed list of a few objects          three. A collaborative task can be smoothly carried
+was provides. We are enhancing the system so that a             within the given range of delay, based on the
+user can modify the object list; this will enable users         participants' responses.
+to carry out more creative tasks.                               TABLE 1. Response time
+6.2 Response time of user operations                             Number of clients    1       2      3
+It has been reported that a delay in the "action-result"         mean (m sec)         20.0    22.7   21.2
+cycle of more than 250msec will deter users from                 std. div. (m sec)    3.6     6.4    3.9
+using the system [11]. In our system, transmission
+overhead is the highest when the message must be
+verified in the room server. To evaluate the
+                                                                [4] O. Hagsand, "Interactive multiuser VEs in the
+6.3 Advantages of CORBA                                              DIVE system,"    ACM MultiMedia, Vol.3, No.1,
+In this system, because each educational object is                   1996.
+defined based on the CORBA model, any object can                [5] "Worlds," published on http://www.worlds.net/.
+be placed on any node and transparently accessed on             [6] "Community Place," published on
+the network. Moreover CORBA is a substantial                         http://vs.sony.co.jp/.
+standard and we will be able to utilize various                 [7] L. Lamport, "Clocks and the ordering of events
+CORBA services which are currently being developed,                  in a Distributed System," Comms. of the ACM
+such as naming service, event service, and life cycle                21 (7), pp.558-565, 1978.
+service.                                                        [8] K. Li and P. Hudak, "Memory coherence in shared
+                                                                     virtual memory systems," ACM transaction on
+7 Conclusion                                                         Computer Systems, pp.321-359, 1989.
+Our proposed collaborative educational system allows            [9] D. Snowdon and A. West, "AVIARY: Design
+several students in distant locations to share a virtual             issues for future large scale virtual
+three-dimensional space. The system maintains a                      environments," Presence, Vol. 3, No. 4, 1994,
+consistent status between objects located on                         pp. 288-308, MIT press.
+distributed nodes in the network by using an efficient          [10] "CORBA/IIOP," published on
+communication method.    Each constituent object of                  http://www.omg.org/corba/corbaiiop.htm .
+the virtual three-dimensional materials is defined as a         [11] K. Arthur, K. Booth and C. Ware, "Evaluating
+derived sub-class of a distributed object based on the               3D task performance for fish tank virtual
+OMG-CORBA model. A new object can be created                         worlds," ACM trans. on distributed systems, 11
+and its properties can be modified by a student.                     (3), pp. 239-265, 1993.
+Evaluation of our prototype system showed that this
+system has a promising performance level, while it                           Author's Address
+maintains the consistent status in a virtual room. We           Katsumi Hosoya, Akihisa Kawanobe and Susumu
+are planning to develop a more user-friendly interface          Kakuta: NTT Information and Communication
+and an efficient authoring tool for materials. We will          Systems Laboratories, Nippon Telegraph and
+then apply it in more practical educational situations.         Telephone Corporation, 3-9-11, Midori-cho,
+                                                                Musashino-shi, Tokyo 180 Japan.
+                                                                katsumi@isl.ntt.co.jp, nobe@isl.ntt.co.jp,
+                References                                      kakuta@isl.ntt.co.jp.
+[1] J. Rickel and W. Johnson, "Intelligent Tutoring             Munish   Sharma:   Department      of      Electrical  and
+   in Virtual Reality: A preliminary Report,"                   Computer   Engineering,     10 King's  College    Road,
+   AIED97, pp.294-301, 1997.                                    Toronto, Ontario M5S-3G4 Canada.
+[2] M. Pesce "VRML: Browsing & Building                         sharmam@ecf.utoronto.ca.
+   Cyberspace," New Riders Publishing, 1995.
+[3] Y. Kato, A. Kawanobe, S. Kakuta, K. Hosoya
+   and Y. Fukuhara, "Advanced collaborative
+   educational environment  using virtual shared
+   space," ED-MEDIA'96, pp.348-353, Boston,
+   July, 1996.
+

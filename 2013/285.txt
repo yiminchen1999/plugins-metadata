@@ -1,0 +1,109 @@
+CSCL 2013 Proceedings                     Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+      INKA-SUITE: An Integrated Test-Environment for Analyzing
+                                         Chat Communication
+     Prof. Dr. Andrea Kienle, Christian Schlösser, Philipp Schlieker-Steens, University of Applied Sciences
+                           Dortmund, Emil-Figge-Str. 42, 44227 Dortmund (Germany),
+                  Email: andrea.kienle@fh-dortmund.de, christian.schloesser@fh-dortmund.de,
+                                     philipp.schlieker-steens@fh-dortmund.de
+
+        Abstract: This poster is related to the field of chat evaluation. First eye-tracking and its
+        limitations   in  the case  of   constantly changing   graphical user   interface (like in chats) are
+        presented.    Then    the INKA-SUITE     that   enables  eye-tracking   of  changing graphical    user
+        interfaces is introduced.
+
+Introduction
+To evaluate the usability of an application, studies and field tests are conducted. Such usability studies are often
+based on eye-tracking, which records the eye movements of a test person, who usually is viewing exhibits,
+projection screens  or   displays  (Duchowski,   2007).  The    eye  movements   provide  information   about  what  is
+viewed  in what    order  for how   long.  Eye-tracking    is widely  used  for the evaluation  of  user  interfaces of
+stationary single-user systems (Shneiderman & Plaisant, 2006), web applications (Nielsen & Loranger, 2006)
+and in some cases also in CSCL studies (Nüssli et al., 2009).
+        Existing eye-tracking systems are usually limited to static content like pictures (e.g., advertisements),
+websites or programs. Those static contents are at the same position for all participants so that they can be easily
+compared with each other. For this scenario the corresponding eye-tracking applications provide a large scale of
+different displaying options to document the results.
+        However, if this area of interest is not static, but changes its size, shape or position, the evaluation
+becomes much more complex and requires a certain amount of manual analysis. This is especially the case in
+cooperative applications such as chats. In particular, the difficulty is, that you can't predict the time of change,
+because it is permanently caused by user input (e.g., new chat message, scrolling). So the dynamics of the area
+of interest (AOI) in such applications cannot be foretold. Existing eye-tracking software is therefore not suitable
+in this situation. They are typically limited to a subsequent definition of those dynamic AOIs, which can be a
+huge and fault-prone manual effort.
+        At   this  point, the  own   work    of the   research   program   "Informationsgestaltung   in   kooperativen
+Anwendungen    (INKA)"     (Design   of   Information   in cooperative   Systems,   http://www.inka.fh -dortmund.de)
+starts. Further on, this poster presents the INKA-SUITE as an approach for the eye-tracking of dynamic AOIs
+(for further information   see (Schlieker-Steens    &   Schlösser,  2012)). This   software represents  a solution   for
+tracking dynamic applications, e.g. chats in fields of the CSCL as widely known from the work of the virtual
+math team (VMT) project (Stahl, 2011). Especially in the field of linguistics and usability questions about chat
+communications could be answered.
+
+INKA-SUITE
+The base for the INKA-SUITE is the connectivity to the Tobii eye-trackers established with the Tobii SDK (see
+http://www/tobii.com). With a direct connection between the eye-tracker gaze data stream and GUI (C# WPF),
+the INKA-SUITE identifies AOIs at runtime, regardless of size, shape and position. In fact, every gaze data
+record is complemented by the underlying GUI element, identified by names, ID's and/or references to other
+database tables such as chat messages or users. A subsequent manual work is eliminated and the evaluation can
+be started immediately.   This    direct identification of AOIs   is providing  further opportunities,  which  will  be
+discussed  briefly in the  outlook.  This   profound    cross-linking between   analyses  related  functions   and user
+software cannot be adapted by existing eye-tracking analysis software.
+
+The INKA-SUITE is based on a three-part application:
+        A server to control and manage clients
+        A client application for user interaction, which is connected to an eye-tracker
+        An analysis component for managing projects and analyzing the collected data
+
+        To get a customizable interface, the client does not contain a chat interface. The interface is provided
+by the server. This procedure is generally called as templating and offers the possibility of a simple way to
+perform A/B testing with different user interfaces. To control and monitor the clients, a server component is
+used. At that point, the templates are chosen and assignable and the status of eye-tracking for each participant
+can be supervised.
+
+© ISLS                                                                                                             285
+CSCL 2013 Proceedings                  Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+         The analysis application processes the recorded data and is divided into three parts: Statistic, Replay
+and Timeline.  In the Statistic tool, general information about the chat session  and also about    each  user is
+presented. For example these are duration of chat, keystrokes per minute, time to first message and messages
+per minute.
+         Within the Timeline tool the entire chat session is presented on a timeline for each user (see Figure 1,
+left). This ensures the comparability   between  users (e.g., Stellmach  et al., 2010). Each      users shortcuts,
+keystrokes, chat messages and fixations are listed separately. Using annotations, important areas can be marked.
+The displayed output is fully dynamic and can be adapted to the current problem.
+
+                        Figure 1. INKA-SUITE Timeline and Replay (Analysis tools).
+
+         For replaying the chat from the user's point of view, the so called Replay was developed (see Figure 1,
+right). This tool is chronology replaying the chat, similar to a screen recording, but with options to select and
+deselect the data that is output at runtime, also showing fixations and saccades as a scanpath. Because fixations
+are represented by GUI elements, further information, such as fixation length and underlying AOI, can be
+retrieved through tooltips. Both applications, Timeline and Replay, provide the opportunity to play back the
+video of the user cam. Within the Replay a "Retrospective Think Aloud" can be recorded. Timeline and Replay
+are linked together to jump into each instance to the same position as the active tool. From the Timeline,
+multiple Replay instances can be started and played in sync to compare several subjects directly.
+
+Outlook
+The INKA-SUITE outlined above is a basis for a number of planned extensions. These include an enhanced
+fixation filter, contextualized communication, extension of simultaneous chats and the internal project called
+Chat++, which is feasible through the realtime AOI identification and could therefore support features like
+reading awareness, eye-tracking-based referencing and activity and context-awareness.
+
+References
+Stellmach, Sophie; Nacke, Lennart; Dachselt, Raimund: Advanced gaze visualizations for three-dimensional
+         virtual environments. In: Proceedings of the 2010 Symposium on Eye-Tracking Research &
+         Applications. Austin, Texas, 2010 (ETRA), pp. 109­112.
+Duchowski, Andrew T. (2007): Eye Tracking Methodology: Theories and Practice, 2nd Edition. Berlin:
+         Springer Verlag.
+Nielsen, Jakob; Loranger Hoa (2006): Prioritizing Web Usability. New Riders.
+Nüssli, Marc-Antoine; Jermann, Patrick; Sangin, Mirweis; Dillenbourg, Pierre (2009): Collaboration and
+         abstract representations: towards predictive models based on raw speech and eye-tracking data. In:
+         Proceedings of CSCL, 2009.
+Shneiderman, Ben; Plaisant, Catherine (2009): Designing the User Interface: Strategies for Effective Human-
+         Computer Interaction, 5th Edition. Amsterdam: Addison-Wesley.
+Schlieker-Steens, Philipp; Schlösser, Christian (2012): INKA-SUITE: An integrated test-environment for
+         analyzing chat communication. FH Dortmund: Bachelor Thesis (In German).
+Stahl, Gerry (2011): How a virtual math team structured its problem solving. In: Proceedings of CSCL 2011, pp.
+         256-263.
+
+© ISLS                                                                                                       286
+

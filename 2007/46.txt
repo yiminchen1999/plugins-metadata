@@ -1,0 +1,467 @@
+         Classroom Model, Model Classroom: Computer-Supported
+       Methodology for Investigating Collaborative-Learning Pedagogy
+        Dor Abrahamson, University of California ­ Berkeley, 4649 Tolman Hall, Berkeley, CA, 94720-1670.
+                                                    dor@berkeley.edu
+        Paulo Blikstein & Uri Wilensky, Northwestern University, 2120 Campus Drive, Evanston, IL, 60208.
+                                            {paulo, uri}@northwestern.edu
+
+         Abstract: We have been exploring the potential of agent-based modeling methodology for social-
+         science research and, specifically, for illuminating theoretical complementarities of cognitive and
+         socio-constructivist conceptualizations    of learning (e.g., Abrahamson    &   Wilensky,  2005a).     The
+         current  study advances   our research   by   applying our  methodology     to  pedagogy   research:   we
+         investigate individual  and  social   factors underlying   outcomes   of  implementing    collaborative-
+         inquiry classroom practice. Using bifocal modeling (Blikstein & Wilensky, 2006a), we juxtapose
+         agent-based  simulations  of  collaborative   problem  solving  with  real-classroom  data  of students'
+         collaboration in a demographically diverse middle-school mathematics classroom (Abrahamson &
+         Wilensky,   2005b).  We   validate the  computer  model    by comparing    outcomes   from  running    the
+         simulation  with  outcomes   of the   real intervention.   Findings   are that  collaboration  pedagogy
+         emphasizing group performance may forsake individual learning, because stable division-of-labor
+         patterns  emerge  due  to utilitarian preference of   short-term  production   over  long-term learning
+         (Axelrod,  1997). The   study may   inform    professional development    and   pedagogical policy     (see
+         interactive applet: http://ccl.northwestern.edu/research/conferences/CSCL2007/CSCL2007.html).
+
+Background and Objective
+         We  present  a new   methodology    for developing    and  critiquing education  theory,  agent-based    modeling.
+Agent-based  modeling    (hence  ABM)   has    been increasingly  used  by natural  scientists to study    a wide    range of
+phenomena such as the interactions of species in an ecosystem, the interactions of molecules in a chemical reaction,
+the percolation of oil through a substrate, and the food-gathering behavior of insects (e.g., Bonabeau, Dorigo, &
+Théraulaz. 1999; Wilensky & Reisman, 1998, 2006). Such phenomena, in which the elements within the system
+(molecules, or ants) have multiple behaviors and a large number of interaction patterns, have been termed complex
+and are collectively studied in a relatively young interdisciplinary field called complex systems or complexity studies
+(e.g., Holland,  1995). Typical  of  complex    phenomena   is  that they  lend    themselves  to two   or   more   layers of
+description--e.g., collisions of particles  in a gas   chamber  are  the "micro"   events, and    pressure   is the  "macro"
+event-- and the cumulative (`aggregate') patterns or behaviors at the macro level are not premeditated or directly
+actuated by any of the "lower-level" micro elements. For example, flocking birds do not intend to construct an
+arrow-shaped structure. Rather, each element ("agent") follows its "local" rules, and the overall pattern arises as
+epiphenomenal to these multiple local behaviors--the overall pattern emerges.
+
+         Specialized  computer-based     environments    (Collier   &  Sallach,    2001; Langton    &   Burkhardt,     1997;
+Wilensky, 1999) have been developed as research tools for investigating complex phenomena (North et al., 2002;
+Wilensky, 2001; Wilensky & Reisman, 2006). The agents can be instantiated in the form of a computer program that
+specifies their rule-based behaviors. ABM is thus particularly powerful for studying complex phenomena, because
+once the modeler assigns agents their local rules, the modeler can set these virtual agents into motion and watch for
+any overall patterns that arise from the agents' interactions. E.g., the modeler might assign a group of virtual birds a
+set of rules and then watch their interactions to see whether typical flock structures emerge (Reynolds, 1987).
+
+         Whereas initially complex-systems methods and perspectives arose from the natural sciences, complexity,
+emergence, and micro- and macro levels of description of phenomena are all highly relevant to research in the social
+sciences. Indeed, the recent decades have seen a surge in social-science studies employing ABM (Axelrod, 1997;
+Diermeier, 2000; Epstein & Axtell, 1996). Learning, too, we argue, can be construed as a complex phenomenon,
+and thus ABM is a potentially powerful research tool conducive to the investigation of patterns, including structures
+and rules, underlying the emergence of learning. Specifically, we are proposing to use ABM in investigating the
+social dynamics underlying participation patterns observed when students interact around collaborative classroom
+assignments, such    as construction  projects.  Thus,  whereas    our  paper  deals  squarely  with   `mice,    minds, and
+
+                                                            46                                                      CSCL 2007
+societies'--the  theme  of  the  CSCL    2007   conference--we     are  not  so much    dealing   with  computer-supported
+collaborative learning as such, as much as with computer-supported inquiry into collaborative learning (CSiiCL).
+Nevertheless, we hope to lay out agenda and methodology to facilitate synergies between the CSCL and complexity-
+studies communities--synergies that increase understanding, within education research, of mechanisms and practice
+pertaining to individual learning within social contexts. Thus, armed with computers as methodological tools for
+ultimately improving collaborative learning, this paper is about computer-supported collaborative learning.
+
+          We   have   been  working    with the   NetLogo     (Wilensky,    1999)  multi-agent    modeling-and-simulation
+environment. A vision of the NetLogo development effort is that building simulations will become common practice
+of  natural/social-sciences  scholars   investigating    complex    phenomena:     the   scholars    themselves--not     hired
+programmers--build, run, and interpret the simulations (Tisue & Wilensky, 2004; Wilensky, 2003). The new lenses
+of ABM, we believe, will enable education researchers to explore, articulate, develop, and share an intuition we
+have  struggled  to  study rigorously  and  express   coherently:   the intuition  that individuals   and   communities   are
+interdependent through myriad dynamic reciprocities (Cole & Wertsch, 1996; Greeno, 1998).
+
+          In the remaining  sections  of this  paper,  we:  (1) introduce   the case  study--a    collaborative construction
+project in   a demographically   diverse    middle-school   mathematics      classroom   studying    combinatorial   analysis
+(Abrahamson, Janusz, & Wilensky, 2006; Abrahamson & Wilensky, 2005b); (2) discuss the rationale, design, and
+implementation of a complexity-based analysis of the case-study's participation patterns, i.e., an agent-based model
+that purports to simulate this phenomenon; (3) introduce `bifocal modeling' (Blikstein, Abrahamson, & Wilensky,
+2006),  a computer-assisted    research  technique   for juxtaposing    real and   simulated  data   toward  calibrating  the
+simulation such that it emulates the real data--we demonstrate this juxtaposition by aligning participation patterns in
+our classroom    data with simulated   patterns emerging   in the  ABM;    (4)  report  findings; and  (5)  offer concluding
+remarks on the implications of this study and the limitations of ABM and suggest directions for further research.
+
+Case Study: Emergence of a Stratified Learning Zone in a Collaborative Project in
+a Demographically Diverse Mathematics Classroom
+          Complexity-studies methodology is particularly suitable for understanding student learning in pedagogical
+frameworks that support individual agency. When such classrooms engage in collaborative construction projects,
+participation patterns emerge, some that may be undesirable, from the educator's perspective. As we explain, below,
+these patterns  emerge  through  iterative  student-to-student  negotiation  of   roles vis-à-vis students'  skills and  their
+interpretation of the  overall classroom   objectives. When     these  objectives are   taken to  be production   rather than
+learning, inequitable  participation  patterns  may  emerge,    because students   are  rewarded  for  their contribution    to
+production rather than for their learning. The interactions of these two reward systems (the first, indexing students'
+contribution   toward successful completion    of a  group  project;  the  second, indexing   students' own    learning)  is a
+complex   system--ABM      enables us   to study  the  nature   of students' iterative  negotiations   that give  rise to the
+inequitable  participation patterns.  Thus, simulating   participation  patterns   could  provide    designers  and  teachers
+valuable  tools  for  running  equitable   classrooms.   In particular,    understanding   the   emergence   of   inequitable
+participation may help educators formulate responses that temper production to the benefit of learning. We now
+explain the case study that we investigated using ABM.
+
+The Combinations tower: A Combinatorial-Analysis Collaborative Project
+          The  current  investigation  uses data  from   a  design-based     research   study  of middle-school     students'
+mathematical cognition pertaining to the topic of combinatorial analysis (Abrahamson, Janusz, &             Wilensky, 2006;
+Abrahamson     &  Wilensky,    2005a).  Central   to the study     was  an implementation     of  a  challenging    classroom
+collaborative project--the construction of the combinations tower, the exhaustive sample space of a 3-by-3 grid of
+nine squares that can each be either green or blue (for a total of 512 distinct "9-blocks"). The classroom, working in
+groups, created all the 9-blocks and assembled them into a very tall "histogram." This histogram consisted of 10
+columns running from "no-green" through "9-green" (the columns' heights were, respectively, 1, 9, 36, 84, 126,
+126, 84, 36, 9, 1--coefficients in the binomial function [a + b]9).
+
+The Stratified Learning Zone: Group Dynamics From an Emergence Perspective
+          Data analysis revealed unanticipated participation patterns. Namely, individual students operating within
+groups assumed by-and-large restricted roles that we named: (a) "number crunchers"; (b) designers; (c) producers;
+(d) implementers; (e) checkers; and (f) assemblers; and in addition, some students operated between groups as (g)
+
+                                                             47                                                     CSCL 2007
+ambassadors. We demonstrated the descending mathematical challenge of the a-through-f roles, e.g., the designers
+initiate combinatorial-analysis strategies, the implementers carry out these strategies, and the assemblers glue the 9-
+blocks onto a  poster.  We    demonstrated  that    students' individual roles   were  related   both to their  mathematical
+achievement, as reported by the teacher, and their demographics. We argued that these roles were emergent and that
+they affected the students' learning opportunities and self image and that therefore it is important to understand how
+some students landed up on the lower rungs of the production line--how a stratified learning zone emerged.
+
+        A stratified learning zone is a design-engendered hierarchy of students' potential learning trajectories along
+problem-solving   skill sets, each  delimited   in  its conceptual    scope, and   all simultaneously    occurring   within a
+classroom. In comparison, the term continuous learning zone depicts a space wherein students can each embark
+from a core  problem,   sustain engagement      in  working   on  this  problem, and   build   a set of  skills wherein   each
+accomplishment suggests, contextualizes, and supports the exploration and learning of the successive skill, so that a
+solution path is learned as a meaningful continuum.
+
+Validation Through Feedback From the Students and Teacher
+        Based   on  interviews   with   the    teacher  and   the students,  we    formulated    the  following    agent-based
+explanation of the emergence of student task distribution. Students' roles emerged as a function of individual student
+interactions: Within a group, once a student realized that he had reached his limit in terms of mathematical problem
+solving as compared to another student within that group, the first student would often capitulate to his group-mate
+the task of pursuing that mathematical problem, and then she would take over, relegating to him a necessary task
+that was within his zone of achievement, thus freeing herself to focus on the problem he had abandoned. A network
+of symbiotic relationships crystallized as the more advanced students assumed leadership of their groups and as the
+emergent task specifications were articulated in terms of student roles and student-to-student and group-to-group
+negotiated partnerships.  The  likelihood   of an   individual student  dominating     another was   affected   by personality
+traits: of the mathematically advanced students, those who were less socially fluent preferred to work individually,
+whereas "bossier" students were more likely to assign tasks to other group members.
+
+Exploration Vs. Exploitation: A Perennial Tradeoff of Collaborative Inquiry?
+        When    a classroom    that is engaged  in  collaborative  project-based    activity progresses  towards    successful
+completion of the project, could there be any justification to tamper with this progress? And yet, is a facilitator
+ethically permitted to sacrifice individual students' learning so as ensure the completion of the project? To address
+this design-and-facilitation dilemma, we will now turn to a complexity-studies perspective on organizations. One
+could arguably model the study classroom as an organization, a collective of individuals with some shared objective
+and a modus operandi for working towards this objective. There are no monetary stakes involved, but certain roles
+enable some students to gain knowledge capital, whereas other roles do not. Our motivation to model the classroom
+as an organization is that construction projects may tacitly import to the learning space ethics, ethos, and praxis of
+working spaces that may not be entirely beneficial for all students.
+
+        Axelrod and M. D. Cohen (1999) discuss exploration versus exploitation, a tradeoff inherent in complex
+adaptive systems, such as organizations. For instance, in allocating resources, an organization must determine which
+strategy will maximize its benefits--"mutating" to check for better fits with the changing environment or stagnating
+and cashing in  on a    proven model    of success.  Typically,   "the  testing of new   types   comes  at some    expense  to
+realizing benefits of those already available" (Axelrod & M. D. Cohen, 1999, p. 44). We submit that a classroom can
+be seen as a complex adaptive system (Hurford, 2004), at least in terms of students' within-group free-range agency
+in problem solving and the interactions that shape these agencies. Initially, all students are explorative. Yet, once a
+functioning coordination scheme has evolved that is apparently well adapted to the environment, i.e. the classroom-
+as-a-whole  is apparently  progressing   along    a trajectory towards   successfully   completing    a prescribed   task and
+positive sanctioning is received from the forces that be (the facilitators), an implicit quietus is set on any further
+exploration, and the group achieves dynamic stability. From that point on, the individual cogs in the production
+mechanism hone their skills and produce (see Durkheim, 1947, for a social critique of the division of labor).
+
+Finding: Some Answers, New Questions
+        When    students  are   given   the freedom     to  explore   a problem    collaboratively,   both  remarkable    and
+undesirable group behaviors may emerge. It is not a zero-sum game--these "pros and woes" need not cancel each
+other out. An experienced and able teacher who anticipates this emergence and is sensitive to unforeseen behavior
+can steer this sensitive dependence     so  as to  optimize   student  sharing  and learning   opportunities.   The proposed
+
+                                                              48                                                     CSCL 2007
+methodology     introduced  in  this paper  may  provide   education    researchers,  designers,  and   practitioners  tools for
+understanding classroom dynamics such that they can identify points of leverage for working with students' natural
+behavioral inclinations to achieve equitable participation. The next section explores this possibility.
+
+Implementing a Theoretical Model of the Case-Study Emergent Classroom
+Participation Pattern in the Form of "Runnable" Agent-Based Procedures
+         In this section, we demonstrate the applicability of ABM methodology for the investigation of pedagogical
+practice by explaining our design rationale for simulating the emergence of a stratified learning zone in a virtual
+classroom.   Also,   we  demonstrate    the  iterative nature   of   this  methodology     by  describing   some    of  our  key
+understandings, along the modeling process, that informed the improvement of the model. Whereas this paper is
+primarily methodological--we use particular research content so as to demonstrate an investigation technique--the
+reader  may  disagree   with our   theoretical model   of  the causes   of stratification. We  welcome     such  disagreement,
+because we regard it as manifesting a strength of the ABM methodology: scholars from across the disciplines, who
+may not share literature, constructs, or methodologies, can nevertheless critique each other's work pointedly--ABM
+is an interdisciplinary lingua franca (Abrahamson & Wilensky, 2005a). In fact, readers are welcome to download
+the model file and modify or replace the procedures so as to express their own hypotheses.
+
+Rationale of the Stratified Learning Zone model: Selection of Key Parameters,
+Hypothesizing Behavior Rules, and Authoring the Rules Within the NetLogo Environment
+         Any model, regardless of the medium in which it is expressed, e.g., text, diagram, or agent-based model, is
+per force an attenuation of the "objective" reality. Initially, the modeler must use circumspection in answering the
+question, "What is the nature of the phenomenon we are attempting to model?" For example, we asked ourselves
+whether we are modeling: (a) a specific activity, i.e., "students collaborating on constructing the sample space of the
+binomial stochastic generator that has 9 variables each with the values "green" and "blue" that are glued onto purple
+construction paper"; or (b) "students collaborating on a task that demands a variety of roles that range by the content
+knowledge they foster." We chose the latter option. Next, in building an agent-based model, one defines the agents
+(e.g., students, teacher)   and any  other  objects at play   (e.g., portable artifacts),  and assigns    the agents   properties
+evaluated as relevant to the phenomenon under investigation, including constants (e.g., gender) and variables (e.g.,
+role in collaborative   activity). The  modeler's   selection  of  these  agents   and properties   is informed     by a general
+rationale of the model, which the modeler articulates, e.g.:
+
+     ·   Classroom objectives are mandated by a curriculum
+     ·   A total of n individual students cluster in m groups of variable size; whom they group with is a mixture of
+         student and teacher choice (teachers may opt to create either homogeneous or heterogeneous groups)
+     ·   Individuals    are reinforced  by   their  group-mates    for  contributing   toward   a   group's   objective,   where
+         `contribution' is measured vis-à-vis the project specifications
+
+         For the stratified learning zone (SLZ) model, we chose a puzzle task (see Figure 1, below). This linear
+puzzle consists of set of pieces that need to be concatenated according to a logical sequence. Necessary activities
+within  this task   are retrieving   pieces (simplest  task),  connecting   pieces  (most   demanding     task), and   verifying
+(intermediate demand). Thus, the roles that students might specialize in are piece-retrievers, piece-connectors, and
+puzzle-verifiers. Puzzle pieces are scattered all over the classroom. Retrievers wander around and, when they find a
+piece that they evaluate as useful (it may in fact be incorrect), they go back to their group's table, deliver the piece to
+the connector and then return to retrieve more puzzle pieces. Upon receiving a piece, the piece-connector evaluates
+its fit to the puzzle in its current state. If the piece is not suitable, the piece-connector orders the piece-retriever to
+drop the piece somewhere else and bring a new one. If the piece is suitable, the piece-connector takes it and tries to
+add it to the puzzle. Once the puzzle is completed, the puzzle-verifiers check it. If one piece is out of place, the
+group   has  to re-assemble   parts  of the  puzzle.   For each   task,   students  increase  their skill (faster   and/or more
+accurate). Overall group performance is evaluated by the correctness of the puzzles and time-to-completion. Our
+independent variables are: (a) pedagogical style (with or without mandated role rotation); (b) students' initial skill
+level for each task and distribution of skill levels within student; and (c) task difficulty. Note: As a measure of
+achieving   initial "reliability"--evaluating   whether    the  model     rationale indeed    expresses   what   it purports  to
+express--the modelers first worked individually and only then shared notes. We could thus partially validate our
+conjectures through inter-modeler triangulation.
+
+                                                               49                                                      CSCL 2007
+                  Figure 1. Design rationale for the Stratified Learning Zone agent-based model.
+
+       Once   the  model   rationale has been   articulated, as above, the modeler couches  the         agents' rules of
+interacting with each other and the environment in IF­THEN couplets and packages each topical set of rules in a
+procedure. These  procedures  express  the researcher's conceptual  model. For example, the following        procedure
+(simplified for rhetorical clarity) is for the retriever­connector interaction, and delineates the agent's commands--
+retrievers gather pieces, connectors receive and evaluate pieces, and retrievers drop unfitting pieces.
+
+to retrieve    pieces
+        ask  retrievers
+           [
+            find-piece-around
+            create-link-with      chosen-piece
+            go-back-to-group
+
+            if  any?  connectors      around   me
+                 [
+                   if (chosen-piece        fits puzzle)
+                           [
+                           unlink-piece-from-retriever
+                           deliver-piece-to-connector
+                           update-skill-retriever
+                           update-skill-connector
+                         ]
+                  if  (chosen-piece      does-not-fit     puzzle)
+                         [
+                           go-far-and-drop-piece
+                           update-skill-retriever
+                           update-skill-connector
+                         ]
+        ]]
+end
+
+       See http://ccl.northwestern.edu/research/conferences/CSCL2007/CSCL2007.html for an interactive applet
+of the NetLogo simulation.
+
+                                                         50                                                     CSCL 2007
+Bifocal Modeling: Juxtaposing Real and Simulated Data as a Research
+Methodology for Iteratively Improving and Evaluating a Conceptual Model
+          In creating the SLZ  model,  we   worked with    videotaped data from  the original  study. To  facilitate the
+modeling and to iteratively evaluate its "curve fit" to the classroom data, we employed bifocal modeling. We now
+introduce this methodology and then demonstrate its application to our case study.
+
+Introduction of bifocal modeling
+
+ Figure 2. Bifocal modeling: A `linked' (hybrid) system for real-time physical/virtual investigating of heat transfer.
+
+          Bifocal modeling (Blikstein & Wilensky, 2006a; Blikstein, Abrahamson, & Wilensky, 2006) combines two
+ostensibly disparate research practices that are in fact methodologically complementary: agent-based modeling and
+enhanced visualization. Side by side on a split computer screen (see Figure 2, above, on the right) run the real and
+the virtual: (a) a movie or graphical representation of a phenomenon under inquiry (whether directly captured by
+cameras/sensors or enhanced through micro/macro or slow/fast-motion treatment), e.g., crystallization, heat transfer,
+or clinical interviews with preschoolers engaged in mathematical inquiry (see Figure 2, the physical model on the
+left, with sensor connecting into the computer and visualized in the `Real-World' image); and (b) a multi-agent
+model simulating the same phenomenon in the form of a procedurally expressed and "runnable" scientific model,
+e.g., myriad interacting avatars representing elements in the conjectured process of annealing or cognitive elements
+of students' conceptual construction in classroom argumentation. Because the computer models have been carefully
+constructed to imitate the phenomenon's visual language, the bifocal methodology minimizes interpretive challenges
+typical of multi-media  research.  That is, the seen   and the hypothesized are displayed  such  that their perceptual
+differences are backgrounded and, therefore, their procedural differences are more likely to be revealed. By thus
+utilizing the power of computation and representation, bifocal modeling constitutes a multi-disciplinary research
+tool that  offloads aspects of both   the interpretive and  menial burden   of scientific practice, freeing cognitive,
+discursive, and material resources that can thus be allocated toward validation of the hypotheses. The adaptable
+quality of the NetLogo    multi-agent modeling-and-simulation   environment    enables users to keep  calibrating their
+proceduralized hypotheses until their visualization reaches compelling micro/macro similarity to the real-data, such
+that there are grounds to assume that the proceduralized model indeed emulates this phenomenon.
+
+A Bifocal Model of Emergent Collaboration Practices in a Mathematics Classroom
+          Figure 3, below, shows three examples of real-data (on the right) and simulated data (on the left). Note that
+our choice to model a generic collaborative activity, rather than modeling the precise activity, makes for surface
+differences  between  the real and the  simulated  data. The   comparison  is thus analogical:  the real sample   space
+corresponds with the linear puzzle, and eight roles in the original data have been simplified to three. In introducing
+such simplification, one must adopt a skeptical stance, because in any act of modeling lies the inherent possibility
+that some critical aspect of a situation has been overlooked. And yet, this challenge of modeling is certainly not
+unique to agent-based modeling but is typical of any scientific endeavor in which a researcher seeks to articulate
+patterns and mechanisms underlying phenomena under inquiry.
+
+                                                           51                                                CSCL 2007
+                  Onset of group work: before the assignment of individual roles emerge.
+
+              Student (standing) whose role is to help other groups improve on a specific skill.
+
+              Students whose emergent role involves conducting a mathematically trivial skill
+   Figure 3. Bifocal modeling of collaborative learning: Three samples of paired states in student collaborative
+                     practice--computer simulation (left) and classroom data (right).
+
+Findings From the Agent-Based Inquiry Into the SLZ Participation Pattern
+       We succeeded in simulating the emergence of a stratified learning zone. Furthermore, the model plausibly
+demonstrates relations between pedagogical practice and student learning, as follows:
+
+       a) When student­agents are reinforced for group production rather than individual learning, students
+        become entrenched within skills reflecting their initial within-student skill-level distribution and increase
+        their personal level in those skills.
+       b) However, when role rotation is mandated, production slows down yet more learning occurs, per student,
+        in both levels (high- and low-level skills).
+       c) A careful analysis of the impact of each task performance on group performance is necessary to build a
+        causal explanation of our numerical results. Indeed, different tasks have diverse impact on overall group
+        performance. Increasing a low-level task skill (i.e., increasing the number of puzzle pieces a retriever­
+        student can bring to the group per time tick) appears to improve group performance linearly (see red line
+        in Figure 4, next page). On the other hand, increasing the high-level task skill (i.e., increasing the
+        probability of the connector­student choosing a correct piece for the puzzle) effects a non-linear trend
+        (see the blue line, in Figure 4).
+
+                                                         52                                                CSCL 2007
+   Figure 4. Comparison between initial skill levels for retrievers and connectors. Each data point represents the
+                        average of 20 runs of the model with the same initial parameters.
+
+       Interaction between different effects of low- and high-level tasks might indicate that the multidimensional
+combinatorial space of all possible skills levels and types is not a linear n-dimensional surface, but might contain
+discontinuities and multiple local minima and maxima. Specialized functionality of the agent-based environment
+(BehaviorSpace, Tisue & Wilensky, 2004), combined with the bifocaling technique, enable researchers to sketch the
+topography of this territory, locate minima and maxima, and connect them to real classroom scenarios. For example,
+the non-linear behavior of connector skills, concurrent with the linear behavior of retriever skills, describe a "hilly"
+3-D surface (see Figure 5, below). In some region, slight improvement in connecting skills may significantly impact
+group performance. Within the same region, improvement in low-level skills renders negligible impact on group
+performance. This could correspond to a classroom scenario in which one heterogeneous group of students suddenly
+improves its performance, while other groups, perhaps more homogeneous, still struggle to solve the task at hand.
+The gain in performance could be attributed to a single student who advanced on a high-level task. Group mates
+may not have learned the new skill at all, but the group performance, as observed by the teacher, would have
+improved greatly.
+
+Figure 5. A multivariable experiment, in which both connecting and retrieving skills varied from 1 to 10 (10 runs per
+  data point, for a total of 1000 runs). While still in exploratory stages, this kind of visualization can reveal local
+   minima and maxima, as well as different patterns of performance gains for the combinatorial space of skills.
+
+                                                         53                                                CSCL 2007
+         We are improving the model so as to further examine relations between pedagogy and equity. We are
+particularly interested to simulate pedagogical practices (e.g., Aaronson, Blaney, Srephan, Sikes, & Snapp, 1978; E.
+G. Cohen, 1986) so as to understand their underlying mechanisms and gauge their potential.
+
+Conclusions
+         We have presented a computer-based methodology for conducting research into collaborative learning. To
+demonstrate the methodology, we described the design and implementation of an agent-based model for studying
+the emergence of inequitable participation patterns observed in a middle-school implementation of a collaborative-
+inquiry activity. Based on the functional resemblance of the simulated and real behaviors, on interviews with the
+teacher  and students,  and  on inter-modeler   reliability, we   conclude   that  the  model constitutes   a viable, if not
+complete, explanation for the emergence of the observed patterns. We submit that our case study is sufficiently
+generic so as to shed light on behavior patterns observed in a range of classroom interactions around collaborative
+projects. We end this paper with remarks on the applicability and limitations of ABM methodology.
+
+Applicability of Agent-Based Modeling to Educational Research
+         The current study extends our previous modeling-based inquiry into the dynamics of individual learning in
+social contexts. The inquiry encompasses different "levels" of learning: individual cognition is viewed as arising
+from distributed dynamics of cognitive elements, and group learning is viewed as arising from distributed dynamics
+of human elements. An ambitious goal of this work is to combine these two levels of modeling. Such cognitive­
+social modeling would advance the cause of an integrated learning-sciences theory (Cole & Wertsch, 1996).
+
+Strengths and Limitations
+         Papert (1980) has demonstrated the intrinsic power of modeling--by virtue of creating a procedure-based
+model of a phenomenon under inquiry, one has occasion to hone and critique one's own conceptual model of the
+phenomenon.    The  application of agent-based    modeling   to  research  in  the social sciences is still young,  and  the
+specific application of this mode of inquiry in the learning sciences is only nascent. Yet we believe in the potential
+of this methodology. The caveat of proceduralization that agent-based methodology imposes on the researcher can
+be a humbling experience, because it imperviously demands such clarity and precision as are quite uncommon to the
+social sciences. Yet once the model appears to plausibly simulate a complex system, it enables powerful exploration.
+In particular for the social science, where human-subjects issues naturally limit the scope of research, agent-based
+modeling   provides opportunities  to  investigate the `what     ifs' that are key   to fostering change.   This   study has
+illuminated  for us regions  of potentiality that are exciting   in their  prospects.  Of course, in order  to validate  our
+findings from  the  virtual medium,  we  will  have   eventually  to  return  to the  source  phenomenon,     where we   will
+evaluate whether the classroom model indeed helps us create a model classroom.
+
+         Regardless of the medium in which it is implemented, any model is still just a model--it is an embodiment
+of a system of conjectures held together through theoretical plausibility, sensed coherence, and empirical support.
+One must   be especially  wary  in the case  of models  embodied      in  dynamic   visual media,  because    the superficial
+features might   divert the researcher from  attending to    the deep  mechanisms     (`seduction of sim,'  Starr, 1994). It
+might look and smell like a duck but still be a rabbit. Also, our source study was not designed with a focus on
+participation patterns within groups, so our video data do not track any one particular group over the entire duration
+of the implementation, but rather sample from the groups. We can only conjecture as to the group dynamics that
+transpired in that classroom during the data gaps. In future studies, we will work with data that cover the entire
+evolution of group dynamics. Finally, student interactions are vastly richer than we have portrayed in our case-study
+model.   A possibly provocative   statement  is that  any theoretical    lacuna  detected  in the current   model  could  be
+covered by further procedures, such that one could plausibly build agent-based models that capture, if not exhaust,
+the wealth of learning-sciences theory.
+
+References
+Aaronson, E., Blaney, N., Srephan, C., Sikes, J., & Snapp, M. (1978). The jigsaw classroom. Beverly Hills, CA:
+         Sage.
+Abrahamson, D., Janusz, R., & Wilensky, U. (2006). There once was a 9-block...--A middle-school design for
+         probability and statistics [Electronic Version]. Journal of Statistics Education, 14(1) from
+         http://www.amstat.org/publications/jse/v14n1/abrahamson.html.
+
+                                                             54                                                    CSCL 2007
+Abrahamson, D., & Wilensky, U. (2005a). Piaget? Vygotsky? I'm game!: Agent-based modeling for psychology
+       research. Paper presented at the annual meeting of the Jean Piaget Society, Vancouver, Canada.
+Abrahamson, D., & Wilensky, U. (2005b). The stratified learning zone: Examining collaborative-learning design in
+       demographically-diverse mathematics classrooms. Paper presented at the annual meeting of the American
+       Educational Research Association, Montreal, Canada.
+Axelrod, R. M. (1997). The complexity of cooperation: Agent-based models of competition and collaboration.
+       Princeton, NJ: Princeton University Press.
+Axelrod, R. M., & Cohen, M. D. (1999). Harnessing complexity: Organization implications of a scientific frontier.
+       New York: Free Press.
+Blikstein, P., & Wilensky, U. (2006a). The missing link: A case study of sensing-and-modeling toolkits for
+       constructionist scientific investigation. In Proceedings of the 6th IEEE International Conference on
+       Advanced Learning Technologies (ICALT 2006), Kerkrade, The Netherlands, 980-982.
+Blikstein, P., Abrahamson, D., & Wilensky, U. (2006b). Minsky, mind, and models: Juxtaposing agent-based
+       computer simulations and clinical-interview data as a methodology for investigating cognitive-
+       developmental theory. Paper presented at the annual meeting of the Jean Piaget Society, Baltimore, MD.
+Blikstein, P., & Wilensky, U. (2006). Learning about learning: Using multi-agent computer simulation to
+       investigate human cognition. Paper presented at the International Conference of Complex Science, Boston.
+Bonabeau, E., Dorigo, M., Théraulaz, G. (1999). Swarm intelligence: From natural to artificial systems. London:
+       Oxford University Press.
+Cohen, E. G. (1986). Designing groupwork: Strategies for the heterogeneous classroom. New York: Teachers
+       College Press.
+Cole, M., & Wertsch, J. V. (1996). Beyond the individual-social antinomy in discussions of Piaget and Vygotsky.
+       Human Development, 39(5), 250-256.
+Collier, N., & Sallach, D. (2001). Repast. Chicago: University of Chicago. http://repast.sourceforge.net
+Diermeier, D. w. A. M. (2000). Government turnover in parliamentary democracies. Journal of Economic Theory,
+       94, 46-79.
+Durkheim, E. (1947). The division of labor in society (G. Simpson, Trans.). New York: The Free Press. (Original
+       work published 1893).
+Epstein, J., & Axtell, R. (1996). Growing artificial societies: Social science from the bottom up. Washington:
+       Brookings Institution Press.
+Greeno, J. G. (1998). The situativity of knowing, learning, and research. American Psychologist, 53(1), 5-26.
+Holland, J. H. (1995). Hidden order: How adaptation builds complexity. Reading, MA: Helix Books.
+Hurford, A. (2004 ). A dynamical systems model of student learning and an example from a HubNet Participation
+       Simulation. Paper presented at the annual meeting of the American Educational Research Association, San
+       Diego, CA.
+Langton, C., & Burkhardt, G. (1997). Swarm. Santa Fe: Santa Fe Institute. http://www.swarm.org/release.html.
+North, M., Macal, C., Cirillo, R., Conzelman, G., Koritarov, V., Thimmapuram, P., et al. (2002). Modeling of
+       electricity markets. Paper presented at the Agents 2002, Chicago, IL.
+Papert, S. (1980). Mindstorms: Children, computers, and powerful ideas. NY: Basic Books.
+Reynolds, C. W. (1987) Flocks, herds, and schools: A distributed behavioral model. Computer Graphics, 21(4)
+       (SIGGRAPH '87 Conference Proceedings), 25-34
+Starr, P. (1994). Seductions of Sim. The American Prospect, 17, 19-29.
+Tisue, S., & Wilensky, U. (2004). NetLogo: Design and implementation of a multi-agent modeling environment. .
+       Paper presented at the Agent 2004, Chicago.
+Wilensky, U. (1999). NetLogo. Northwestern University, Evanston, IL: The Center for Connected Learning and
+       Computer-Based Modeling http://ccl.northwestern.edu/netlogo/.
+Wilensky, U. (2001). Modeling nature's emergent phenomena with multi-agent modeling languages. In Proceedings
+       of EuroLogo 2001. Linz, Austria.
+Wilensky, U. (2003). Statistical mechanics for secondary school: The GasLab modeling toolkit. International
+       Journal of Computers for Mathematical Learning, 8(1, special issue on agent-based modeling), 1-41.
+Wilensky, U., & Reisman, K. (1998). Learning biology through constructing and testing computational theories -
+       An embodied modeling approach. Paper presented at the Second International Conference on Complex
+       Systems, Nashua, NH.
+Wilensky, U., & Reisman, K. (2006). Thinking like a wolf, a sheep or a firefly: Learning biology through
+       constructing and testing computational theories--an embodied modeling approach. Cognition &
+       Instruction, 24(2), 171-209.
+
+                                                         55                                                 CSCL 2007
+

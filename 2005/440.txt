@@ -1,0 +1,573 @@
+     Promotion of Self-Assessment for Learners in
+Online Discussion Using the Visualization Software
+
+                                          Toshio MOCHIZUKI
+                 Information Science and Technology Center, Kobe University
+                                             tmochi@kobe-u.ac.jp
+                 Hiroshi KATO                                         Shin-ichi HISAMATSU
+ National Institute of Multimedia Education                Graduate School of Media and Governance
+                hkato@nime.ac.jp                                             Keio University
+                                                                            bm@sfc.wide.ad.jp
+             Kazaru YAEGASHI                                              Satoru FUJITANI
+     Graduate School of Interdisciplinary                        Faculty of Business Administration
+Information Studies, the University of Tokyo                                Mejiro University
+             kazaru@interlink.or.jp                                       fujitani@mejiro.ac.jp
+                Tomoko NAGATA                                               Jun NAKAHARA
+  Hyogo University of Teacher Education                    National Institute of Multimedia Education
+         tnagata@life.hyogo-u.ac.jp                                       jun@nakahara-lab.net
+            Toshihisa NISHIMORI                                             Mariko SUZUKI
+ National Institute of Multimedia Education                  Faculty of Education, Shiga University
+             nisimori@nime.ac.jp                                     mariko@sue.shiga-u.ac.jp
+
+      Abstract.  This study   describes  a   method   of  self-assessment for  learners in a collaborative
+      discussion. The authors propose a method of self-assessment in an online discussion and examine
+      its effectiveness through the development and evaluation of a software program to visualize the
+      discussion on a Bulletin     Board System.  The    software, referred to as  "i-Bee" (Bulletin board
+      Enrollee  Envisioner), can    visually display  the co-occurrence   relation between  keywords   and
+      learners. Thus, the i-Bee can display the content-wise contribution made by each learner to the
+      discussion. In addition, the i-Bee can display the recent level of participation of each learner and
+      the frequency of each keyword used by the learners. The i-Bee enables students to assess and
+      reflect over their discussion, to understand the condition, and to reorganize their commitment in a
+      discussion reflecting their learning activity.
+
+      Keywords: Visualization, Self-assessment, Reflection, Online Discussion
+
+INTRODUCTION
+The study of Computer Supported Collaborative Learning (CSCL) is a challenge with regard to producing an
+environment conducive to mutual learning among learners using computers. Recent researches in e-learning
+have highlighted the significance of building an online learning community, which plays a role in the sustenance
+of a fruitful online learning experience (Palloff and Pratt, 1999). The significance of promoting communication
+among learners via the Computer-mediated communication (CMC) is rapidly increasing at present.
+ However, there are some difficulties faced by learners in mutually recognizing the status of a learning activity
+in the CSCL environment, which constitutes the most important research issue (Gutwin et al., 1995; Kato et al.,
+2004). Japanese communication researchers, Kimura and Tsuzuki (1998), pointed out that group communication
+in the CMC tends to be disorganized and to lack cohesion due to decreased interpersonal pressure, given the
+nature of the CMC. Briefly, learners are sometimes confused about what they should and should not discuss.
+This raises the question of  how    CSCL   environments   assist learners in  recognizing  their commitment  and
+reorganizing their discussion in a content-wise manner?--if not, it may lead to a failure in the organization of a
+fruitful discussion for learning.
+  In order to address this issue, the authors propose a method to self-assess the online discussions in electronic
+forums or Bulletin Board System (BBS). Self-assessment is very effective for learners seeking to improve their
+knowledge and learning strategy (Shaklee et al., 1997), particularly in a collaborative learning setting. Learners
+
+                                                         
+are required to monitor the actual condition of their discussion, the learning process, and interpersonal relations
+in order to improve their learning community, and to plan the course of their education, which will enable them
+to make learning a significant experience.
+  Messages exchanged in the electronic forums are useful in the assessment of collaborative learning given the
+fact that they are visualized resources of interaction among learners in a collaborative learning setting. In other
+words, the messages exchanged in a discussion are reflective of the learner's ability in the context of the activity
+(in situ) (Pea, 1993; Palincsar, 1998)--according to the social constructivism perspective, the learner's ability in
+a collaborative learning setting emerges socially; therefore, the ability should be assessed on the basis of a
+visualized interaction among learners and the circumstances including artifacts and social factors. However, a
+manual assessment of these messages by the learners is not practical given the tremendous effort that is required
+of them.
+ In this study, the proposed method of content-wise visualization of the communication produces a mapping of
+coordinates, which indicates how strongly each learner relates to each keyword in his/her messages. Mapping
+reveals the whole structure of communication in the learning community--the manner in which each learner
+participates in the communication and the organization of group communication.
+ In order to examine the validity and usefulness of the proposed method, the authors developed a software
+referred  to as "i-Bee," (Bulletin  board   Enrollee Envisioner),  which  can  visualize the   relationship between
+learners and keywords in online messages in real time. This software also provides snapshots of past discussions
+and animations, which show the trajectory of change from a given period. Thus, the i-Bee aims to encourage
+learners to perceive their discussion as a whole and to encourage them to assess their discussion.
+ The purpose of this study is to examine the effectiveness of self-assessment of online discussions through the
+development    and evaluation of   the   i-Bee based   on  the  proposed  method.  With  regard   to learners'  self-
+assessment, this study primarily focuses on and discusses the experience of learners to recognize and improve a
+discussion using the i-Bee.
+
+VISUALIZING ONLINE CONVERSATION
+Several recent studies in CSCL have focused on visualization of learner activities in CSCL in order to create
+awareness among learners. For example, Nakahara et al. (in printing) developed a software, which visualized the
+status of interaction and   activeness   of electronic forums   on a  mobile  phone  screen,   in order to  promote
+participation awareness and encourage learners to participate in the discussion at any time. Other researchers
+have attempted to visualize social networks in the community (e.g. Martínez et al., 2003) by confirming the
+status of communities    in CSCL.     However,   to  date, very  few  precedent  researches  have   focused  on   the
+visualization of contents of the discussion among learners. Puntambekar and Luckin (2003) have indicated that
+it must be worthwhile to allow learners to view the contents of the discussion and learn through reflecting over
+the process.
+  In this study, the authors propose a visualization method using a text-mining technique to assess conversation
+among learners on the BBS.
+
+Application of Text-mining Technique
+Researches in the field of text-mining have progressed in recent years. Numerous methods have been developed
+for extracting  applicable  keywords     from  the  text  data. Additionally,  multivariate analyses    such as   the
+multivariable dimension scale (MDS) and Correspondence Analysis (CA) are generally used to visualize the
+relationship of individual keywords to the whole (Greenacre, 1984).
+  CA   is a  graphically descriptive  method   that facilitates an intuitive understanding  of this  relationship by
+presenting two or more discrete variables in a complex data matrix. For instance, when the matrix is based on
+the frequency of each keyword written for each person or group, frequently co-occurring variables are placed in
+close  proximity  to each   other. It is considered  to   be suitable for learners to recognize    the  content-wise
+contribution made by each learner to the discussion as clusters (of keywords and persons) that are related
+elements in the text data (Li and Yamanishi, 1999). In addition, rather than Latent Semantic Analysis (Landauer,
+et al., 2004) which is suited for analyzing large amounts of data, CA is a more appropriate method to analyze
+small statistical data like messages on the BBS in a small group activity, since CA is independent from statistical
+assumptions.
+
+Visualizing Discussion Using CA
+In the method proposed in this study, if n learners discuss a relevant number of m keywords, which totals up to n
+× m for a cross-tab of N, then CA yields a mapping of a row vector F and a column vector G. In other words,
+the generalized singular value decomposition of the matrix P, which is the relative frequency matrix of N,
+
+                                                         
+         P = A Dµ BT
+
+yields a left generalized singular vector A and a right generalized singular vector B. The use of these two
+vectors,
+
+         F = DR-1 A Dµ
+
+         and
+
+         G = DC-1 B Dµ,
+
+results in the standardized principal coordinates F, G, which construct a mapping (Greenacre, 1984).
+  In this mapping, Dµ is the diagonal matrix leading to the generalized singular value diagonal vector, DR is the
+diagonal matrix that makes matrix P the diagonal vector, and DC is the diagonal matrix of the sum of the
+columns  of   matrix P. Additionally,   F and G    correspond with  the coordinates    of learners   and keywords,
+respectively.
+
+The Significance of Mapping Generated by the Analysis
+Generally, when a CA is conducted using the relative frequency matrix P, F and G are distributed in proximity
+to each other if a coordinate of F and that of G have a strong co-occurrence relation. In contrast, if a coordinate
+of F and that of G do not have a co-occurrence relation, they are distributed far away from each other. In
+addition, a relatively high value in the matrix N represents a coordinate located closer to the original point and a
+relatively low value represents a coordinate located far from the original point.
+  Thus, it is believed that (1) the distribution of coordinates indicates the co-occurrence relation between each
+learner  and  each  keyword  in  his/her messages   and (2) the total data of     (1) represents the  topics in  the
+discussions. Hence, CA can display the status of an overall discussion in the BBS as well as each learner's
+involvement in that discussion. Although other aspects of discussion, such as meaning and context, does not
+taken into consideration in the analysis, CA is simple and applicable to incomplete and fragmental sentences as
+seen in BBS messages.
+  The authors have already conducted a pilot study to examine the appropriateness of CA in order to visualize
+the discussion and to examine the effectiveness of mapping for the learner's self-assessment. The result is
+indicative of  the  possibility of learners focusing  more  on  certain topics    of  participation, planning their
+participation in topics of lesser interest, and following up on members with the inability to fully participate in
+discussions (Mochizuki et al., 2003).
+
+DEVELOPMENT OF THE I-BEE
+Based on the method proposed above, the authors developed a CSCL software, referred to as i-Bee (Bulletin
+board Enrollee Envisioner), to visualize small-group (mainly asynchronous) discussions on BBS in real time.
+The i-Bee is a plug-in tool that works with discussion forums of exCampus and its databases, which is an e-
+learning module developed and distributed free of charge by the National Institute of Multimedia Education in
+Japan (Nakahara and Nishimori, 2003). It covers numerous functions necessary to build an e-learning site in a
+university--course management, learning management, interface for video streaming, discussion forums, etc.
+  The   features of  i-Bee have    been  discussed in the following section. The      i-Bee has  four  features: (1)
+visualization of the relationship among keywords and learners in real time, (2) visualization of a time-series
+trajectory and snapshots at certain past periods, (3) visualization of recent levels of participation of learners and
+of recent frequency of keywords, and (4) location of messages containing corresponding keywords clicked as
+flowers by a learner on the i-Bee.
+
+                                                        
+                                                                                                                                 A learner
+    lo                                                                                                                           (Japanese)
+
+                                                                                                                                 Topic 1
+                                       intervention                                                                              (considered         on      the
+                                                                                                                                 basis of the distance)
+                       index
+                                                                                               questionnaire
+   frequenc
+                        interactiv
+                                                 understand                                      exam                               Topic 2
+
+                                     feedback
+
+                                                                                                                                 A keyword
+                                            goa
+                                                                 comparison
+                                                                                                                                 Play, forward, and
+                                                                                                                                 reverse      buttons     to
+                                                                                                                                 reflect        previous
+                                                                                                                                 status
+                                                      Fig.1 i-Bee Outline
+  (Arrows, circles, and English translations are not included in the original--only for explanatory purposes)
+
+Real-time Visualization of Content-Wise Discussion
+When a learner logs onto the BBS on exCampus, the i-Bee pops up as an additional window (Fig. 1). The i-Bee
+displays participating learners (bees) and keywords (flowers) selected by teachers. The distribution of the bees
+and flowers is based on the result of the CA conducted at that time. Each bee and flower is drawn with its name,
+which represents what is being described. The i-Bee refreshes the status not only when the learner logs in but
+also when the learner accesses every article; therefore, the i-Bee can display as new a status as possible.
+  While visualizing the coordinates, the i-Bee displays each bee turned toward the flowers as an indication of
+the number of times a learner uses the corresponding words. The angles of the bees are calculated based on the
+frequency and location of the flowers (see Table 1).
+  The i-Bee was developed for learners to recognize their status in the forums. Furthermore, it aimed at having
+learners reflect over their attitude in a discussion in a content-wise manner. In order for learners to appropriately
+assess their discussion, it is necessary to design a visualized image for them to easily recognize the overall
+image and their involvement in the discussion.
+  In   order  to       address this issue, the  authors adopted   the "bees                                        and flowers"     metaphor      to explain     the co-
+occurrence    relation    between    the learners   and keywords   in the                                         discussion.  Based    on  the   algorithm      of  CA,
+strongly related elements should be located as coordinates in close proximity to each other. A comparison of the
+algorithm with the metaphor exhibits quite a resemblance--bees get drawn toward attractive flowers in order to
+
+                Table 1. Expressed Information and its Indexes, Targets, and Facial Expressions
+Information                                   Index                                                                   Target             Facial Expression
+                                                                                                                     Distance     The  more  a learner  uses   a certain
+ What eachlearner talks            Coordinates calculated by CA                                                      between      keyword,  the   shorter the  distancebees andbetweenthelearnerandthe
+                                                                                                                     flowers      keyword.
+                                                                                                                                  The more frequently a learner uses
+Recent trendof keywordsused by eachlearnerWeighted coordinate value of keywords calculated withthe number of times each learner used the correspondingkeywords recentlyHeaddirectionof beesacertainkeyword,themorethecorresponding bee turns toward thecorrespondingkeyword(however,thedisplayislimitedtoanglesof
+                                                                                                                                  45, 135, 180, 225, and 315 degrees)
+Activeness of     i      number _ of _ the _ learner' s _ articles _ at _ a _ certain _ periodeach learneraverage_ number _ of _ the _ learner' s _ articles _ per _ a _ periodi  1: active beeBee1> i threshold: normal flying beethreshold > i: sleeping bee
+Activeness of                                                                                                                     i  1: full bloom
+ each topic(keyword) i    frequency _ of _ the _ keyword _ used _ by _ all _ learners _ at _ a _ certain _ periodaverage _ frequency _ of _ the _ keywords _ used _ by _ all _ learners _ per _ a _ periodFlower1>ithreshold: flowering periodthreshold > i: bud of flower
+
+                                                                
+suck their nectar, while flowers require the bees to distribute their pollen. Thus, the learners can view the
+content and status of their discussion in the forum.
+
+Visualization of the Discussion Process
+A previous research indicated that learners can effectively reflect over their learning experience when a learning
+support system provides trajectories or snapshots of their learning at several points (Collins and Brown, 1988).
+Therefore, in order to promote an increased level of reflection by learners over their discussion, the authors
+developed i-Bee in order to allow learners to view their previous status and the process of change during the
+discussion.
+   When a learner accesses the i-Bee, it displays a trajectory of the learner's coordinates from the unit time t-1 to
+t before providing a snapshot at that time t (t is the number of unit time, which is calculated from the beginning
+until a certain point of time). Using the configuration tool, moderators such as teachers or teaching assistants are
+required to appropriately configure the unit of time in accordance with the learning activity. For example, if the
+course is conducted once a week, the teacher may set the unit time as one week.
+   Furthermore, learners can also view their previous status at every unit of time. In other words, learners can
+view their status of discussion as snapshots for one week before, one unit of time before, one unit of time after,
+or one week after by clicking on the operation buttons provided within the window of the i-Bee.
+   While displaying the animation and snapshots, the i-Bee fixes the coordinates of flowers (keywords) and
+mobilizes those of bees (learners) to naturally indicate the trajectory of how each learner (bee) has related with
+the keywords (flowers) and other learners (bees).
+
+Visualization of Activeness
+Learners and moderators face difficulties in understanding the status of discussion on the basis of the simple
+coordinates of bees and flowers produced by the CA since it does not display the recent amount of learner's
+participation and that of the appearance of the keywords in the discussion.
+   In order to visualize their activeness at certain points, the i-Bee displays bees and flowers at three levels (refer
+to Table  1):  "sleeping  bee," "normal   flying  bee," and "active flying   bee"     represent the possible facial
+expressions of the learner's recent level of participation. "Bud of flower," "flowering period," and "full bloom"
+represent the recent appearance of keywords indicating their frequency. The i-Bee calculates each learner's
+activeness as the proportion of his/her messages within the recent unit time to its average per unit of time. In the
+case of certain keywords, the i-Bee calculates their activeness as the proportion of frequency of the keywords
+used by all learners within the recent unit time to its average per unit of time.
+
+Cooperation with exCampus Discussion Forums
+   The authors developed the i-Bee to cooperate with the discussion forums of exCampus. Learners can launch a
+search for messages containing certain keywords illustrated as flowers on the i-Bee. Hence, learners can easily
+locate interesting messages while viewing the i-Bee by clicking on the corresponding flower. Thus, i-Bee assists
+learners in locating interesting or surprising articles from large amount of messages.
+
+Implementation
+Figure 2 shows the workflow of the i-Bee. It requires a morpheme analysis system, e.g., "ChaSen" for Japanese
+text (Matsumoto et al., 2000), to calculate the frequency of each word from the text of the discussion.
+   In order to use the i-Bee in a course, moderators are required to set keywords using the configuration tool
+because the automatic keyword selection, which is based on a statistical analysis, cannot choose the appropriate
+words     representing     a    discussion.    The
+configuration tool allows only the moderators to
+modify    settings  (unit  of   time  to  organize
+frequency   matrix,   users   whose   articles  are
+analyzed, users who use i-Bee, keyword selection,
+etc). These keywords are stored in the condition
+database.
+   In the keyword     database, the  frequency   of
+keywords    is stored  along  with   the indexical
+information in the discussion, reflecting over the
+condition   database.  A    database  records   the
+appearance of each keyword, using the following
+information:
+                                                                    Fig.2. Workflow of the i-Bee
+
+                                                        
+         z            Speaker/Author of the message in a certain period
+         z            Total frequency of each keyword used in the messages by each speaker/author until a certain
+                      period
+   CA uses these data to construct a graphical display of the discussion profiles using Ox. Ox is a formula
+processing    environment,              which is an      object-oriented       matrix  programming    language   with a   comprehensive
+mathematical and statistical function library (Doomik, 2001).
+   The i-Bee procedure is as follows: Firstly, the learners or the moderators open the visualizer (Fig. 1), which
+was  developed            using       Macromedia  Flash     MX,    and      the calculator orders    the morpheme   analysis  system   to
+calculate the appearance frequency of each keyword used by each learner until a given period of time. Upon
+receiving the result, the keyword database stores the frequency matrix. In order to display the status at a certain
+period or the previous status, CA calculates a matrix that conjugates one at the time t and another at the previous
+period t-1, as mentioned earlier. In other words, when n (l, t, w) is the accumulated frequency that the learner l
+uses the keyword w until the unit time t, Nt is organized as below:
+
+                       ª n(1,t  1,1)        n(1,t  1, k)        n(1,t  1,W ) º
+                       ««                                                   »»
+                       « n(l,t  1,1)        n(i,t  1, w)        n(i,t  1,W ) »
+                       ««                                                   »»
+           Nt  2 L uW  «n(L,t  1,1)««n(1, t ,1)n(L,t  1, w)n(1,t, w)n(L,t  1,W )»», whereln(1,t,W )»1,, L,t1,T , w1,,W
+                       ««                                                   »»
+                       «   n(l, t ,1)         n(i,t, w)          n(i, j,W ) »
+                       ««                                                   »»
+                       «¬ n( L, t ,1)        n(L,t, w)           n(L,t,W )  »¼
+
+The calculator orders the Ox to analyze the data using CA. However, if a learner does not use any keywords or
+if a keyword does not appear at all, the operation is conducted with a matrix that omits the corresponding row or
+line from Nt since the operation cannot be completed due to the zero-line or the zero-row. The analysis results
+in some  value         of  the axis,     and coordinates    F    and G      are elected as the first and  second axis of  the result. The
+calculator transforms the value of the coordinates to an XML format, and the visualizer receives the data from
+the calculator.
+   The graphical display produced by CA shows the co-occurrence relation among participants and keywords.
+Learners can reflect over not only their condition in the group but also the flow of the discussion.
+
+EVALUATION
+
+Method of Evaluation
+As described above, the authors developed the i-Bee to promote understanding in learners of their current
+condition and to reflect over the overall discussion. Majority of us agree that it is extremely difficult to grasp
+human higher-order thinking such as reflection or meta-cognition. Protocol analysis is one of the means by
+which to reveal the human internal condition; for example, what the subject recognizes and how the subject feels
+under a  certain          circumstance       (Ericsson    and    Simon,     1993).  Some   researches    in collaborative learning    used
+protocol analysis          through       constructive    interaction  among       their subjects to  reveal  how  they  recognized    and
+reflected (Roschelle, 1992; Miyake, 1986; Shirouzu et al., 2003). According to these researches, the authors
+gave weight to ideas spoken by the subjects to understand how their cognition worked while the subjects used
+the i-Bee.
+
+Course Outline
+The class studied for an evaluation of the i-Bee was referred to as "Preservice Training 7," a winter term
+prerequisite course of 10 lectures in an undergraduate course for interns in elementary or junior high school in
+Japan. Nine seniors participated in the course. They underwent internship during the summer semester. The
+ultimate goal          of  the  course     was   to     reflect over their     internship  by preparing   their teaching  portfolios  and
+discussing their experience on the BBS. The teacher, who placed emphasis on online discussions, requested the
+students to reflect their own opinion in their portfolios what they thought of during the discussion.
+   Discussion on the BBS was conducted for about 15 to 30 minutes at the beginning and the end of seven out of
+the 10 classes. In the first four out of the seven discussions, the students discussed their experience during the
+
+                                                                            
+internship; in the next three discussions, they exchanged comments on each other's portfolios. Each topic was
+discussed in different forums and was independently analyzed by the i-Bee.
+
+Data Collection
+  The authors observed a couple of students, Alice and Betty
+(fictitious names),    using   video  cameras.   They    were  both
+preparing their portfolios based on their internship in a junior
+high school, while they were engaged in both elementary and
+junior high   schools. In the  class, they usually   sat adjacent  to
+each other,   as shown   in Fig.  3. Their computer    screens were
+also recorded using video cameras.
+  Even      though     the     BBS      supported     asynchronous
+communication     (i.e.,threaded  discussion  board),  the  students            Fig. 3. A scene from the case
+used the BBS synchronously during class hours. The reason is                     (Left: Alice; Right: Betty)
+to collect their verbal data in a natural situation, in which they
+sat close together and verbally shared comments about what they saw on each of their i-Bee. However, the
+communication mode was partly asynchronous because the discussion was conducted across the lectures.
+  The first author participated in the course as a teaching assistant and recorded the data in five out of the ten
+classes. In the first class, the author sought the students' permission for data collection only for the purpose of
+the evaluation of i-Bee; they agreed.
+  The keywords for analysis with the i-Bee were selected on the basis of a consensus drawn between the teacher
+and the first author. They selected the keywords from messages with respect to the educational purpose, the
+learning context, and meaning of the keywords depending on the context of use. They altered the keywords
+based on the progress of the discussion. The selection process was conducted not only during class hours, but
+also mainly   in intervals  between   the  lectures. The  thresholds   for measuring the activeness of learners  and
+keywords were 0.4 and 0.6, respectively.
+
+RESULTS and DISCUSSION--HOW DID LEARNERS ASSESS WITH THE I-BEE?
+The authors analyzed the videos and prepared transcripts based on them, including each utterance made by the
+students.   A comparison    of  the  screens with  the   utterance allowed  the authors to study Alice and    Betty's
+experience to recognize the representation of the i-Bee and the manner in which their recognition led to the
+progress of their discussion.
+  The results showed that (1) i-Bee can be a cognitive resource for learners to assess the conditions and (2) it
+can encourage learners to reflect and reorganize their learning activity by comparing their present status with
+their past status on the i-Bee.
+  In this study, the authors present two cases that prove the findings summarized above. For reasons of privacy,
+fictitious names have been assigned to the subjects used in the transcripts and figures. In the transcripts, the
+codes  ":,"   "h,"   and  empty     double   parentheses   represent   prolonged   sounds,  exhausted  sounds,   and
+unrecognizable utterances, respectively. Words enclosed in brackets indicate nonlinguistic action.
+
+Providing Opportunities for Assessment of the Status of their Commitment in the Discussion
+  In  this  section, the  authors   describe the  experience   of  the subjects to understand their commitment    in
+comparison to that of other students. In this case, Alice found commonality with another student, as described
+below; it assisted her in communicating with a student she had not previously interacted with.
+ [Fragment       1]
+ [2006]     Alice:    Ah,   here  it   is!
+ [2006]     Betty:    ((             )) same    place    as everyone     else.
+ [2007]     Alice:    Yeah,    I am   near   by  David
+ [2009]     Betty:    You're    right.    ((                 ))
+ [2011]     Alice:    Cathy    is blurring      again...hh...why   is  that?   Why  is  it blurring?
+ [2017]     Cathy:    It's   really    sucking     a lot   of  honey.
+ [2018]     Alice:    huhu   hh:  h
+ [2020]     Alice:    Might    be poisoned!
+ [2021]     Cathy:    What   should    I  do... it   has  a full    stomach.
+ [2024]     Alice:    Hhhhh,    this   isn't    good.    (0.5)  Eliza    is   still  asleep.
+ [2029]     Cathy:    Ha  hhhhh
+ [2030]     Alice:    And   Flora    is too.    Wake   up,  wake    up!
+ [2032]     ? :       ((              ))
+ [2033]     Alice:    Ahahahahaha
+ [2034]     Alice:    Really?
+
+                                                           
+                                preparation                                   preparation
+                               Davi           experience
+                                                                         Davi     writing on            personality
+                                      Alice                                       the blackboard      Helen
+                                                   easy to talktalk                    responseresignationCathy     cute
+    resignation         elementary school                                                       Eliza                 junior high school
+                                                                                   teacher            exam
+            GeorgiaintentionIvapresentationBettyjunior high studentsCathysamecutewishexplanationFlorapersonalityGeorgiaBettyFlorapresentationwishelementary schoolIva
+                                    road    Helen                        Alice
+                                                          interest          experience
+                                                Eliza
+
+                                                                                                                                            
+      Fig. 4. Status of i-Bee at the time of Fragment 1                    Fig. 5. Status of i-Bee at the time of Fragment 2
+                (Japanese words are original expressions. English translation is attached to each element)
+ [2038]      Alice:    "Preparing"           and   "experience"          are     there
+ [2043]      Alice:    It's    friends          with   David
+              [Alice     changes      screen       to     check     David's      remarks     and    reads    his    messages]
+  Figure 4 shows a representation of the i-Bee during the above-mentioned online discussion. In this fragment,
+Alice observed that her bee's location was closer to David's on the i-Bee, which is expressed by her statement,
+"Yeah, I am near by David" [2007]. She then began reading David's messages, which is expressed by her
+statement, "Its friends with David" [2043], although she did not pay much attention to his messages.
+  At this point, we must draw attention to one of Alice's statements, "`preparing' and `experience' are there,"
+[2038] before reading David's messages. Alice shifted her attention to "preparation" and "experience" although
+one observes the use of other phrases such as "easy to talk," "talk," etc. It appears reasonable to assume that she
+recognized commonality with David based on those two keywords at that time. In other words, the reason she
+began reading his messages was because she recognized commonality with him.
+  Stating that such an activity is a type of assessment of the discussion is not an exaggeration. Other similar
+fragments were observed in our research. Viewed in this light, the i-Bee can be regarded as a cognitive resource
+for learners    to  recognize   their      level   of  commitments,      which     encourages       them    to conduct     assessments,
+particularly where they are less attentive.
+
+Providing Opportunities for Reflection on the Discussion by Comparison with Past Status
+The following fragment describes Alice and Betty's experience to reflect over their statements in a content-wise
+manner by understanding the change in their position on the i-Bee. Figure 5 shows the status of the i-Bee at that
+time.
+ [Fragment       2]
+ [4355]      Betty:    It's  interesting.
+ [4356]      Betty:    I'm  starting            here.    [clicking       an   icon     on    i-Bee    with   mouse]
+ [4363]      Alice:    Where   am     I?     Oh,   my    bee    is   here.
+ [4366]      Alice:    It's    here,        but...I   can't        say I'm    happy     with      where     it is.       (1.5) I'm       in
+                      a  slightly          awkward     location...
+ [4373]      Alice:    Aww...My     bee    has    become        further   away    from       the  others.      I'm    so   lonely.
+ [4377]      Alice:    Hey,  don't         you    think    my      bee  is lonely       and     distant     from    the    others?
+ [4378]      Betty:    Where?
+ [4380]      Betty:    I can't       find       you?
+ [4384]      Betty:    Oh,  here      you       are,   I  see.
+ [4385]      Alice:    Yeah.
+ [4386]      Betty:     I`m  here.          As   I    predicted,        I'm    still      at    the   "elementary         school."        I
+                      have  to      move     on   to   "junior       high   school."
+ [4390]      Alice:    My location           changed      from      the  last    time.       It's   near    "experience"        now
+ [4394]      Betty:    Oh,  you're         right,      you're       near  "experience".           h,   h,   hh
+ [4396]      Alice:    ...but, the        flower      is  wilted.
+ [4397]      Betty:    Big  trouble          for   you!
+
+                                                       -- syncopation         --
+
+ [4444]      Betty:    [She  began         to   write     a     message   titled       "about     junior     high     school
+                       students"]
+  As shown in Fig. 5, Alice's bee was located at a distance from the others, at a periclinal part of the mapping.
+
+                                                                     
+Alice stated, "I can't say I'm happy with where it is," "I'm in a slightly awkward location" [4366], and "I'm so
+lonely" [4373], moving her mouse cursor between her bee and others very quickly, immediately after finding
+her location [4366].
+  At this point, we should notice that Alice stated "my bee has become further away from the others" [4373]
+and "my location changed from the last time" [4390] in the transcript. These words "become further away" and
+"change" contain significance regarding the speaker's recognition of the change in status. Briefly, it would not
+be possible for her to make such a statement without comparing her present status of the i-Bee with her past
+status.
+  Therefore, it is clear that Alice used negative phrases such as "a slightly awkward location," "lonely and
+distant from the others," [4377] etc. due to her recognition of the change in her status. These phrases are
+considered as her assessment for her bee that was located in a relatively undesirable position than before; this
+showed that she did not commit well to the discussion
+  Betty also assessed her location on the i-Bee in this fragment of conversation. It is noteworthy that she
+attempted to improve her condition expressed on the i-Bee on her own. At that time, as shown in Fig. 5, her
+location was closer to the "elementary school" and somewhat further away from "junior high school."
+  She confirmed her location and stated, "As I predicted, I'm still at the `elementary school.' I have to move on
+to `junior high school.'" [4386] She then began writing a message titled "about junior high school students,"
+which included her impression of the junior high school internship [4444].
+  In this case, similar to Alice's, it may be stated beyond doubt that Betty remembered the previous location of
+her bee as being closer to the "elementary school." She then "predicted" that the location scarcely differed from
+the previous one and confirmed as the above-mentioned scene. She then engaged herself in writing messages
+regarding "junior high school."
+  Why did Betty state "I have to move on to `junior high school'"? At this point, we may recall their learning
+context, i.e., they prepared their portfolios based on their internship in junior high schools. Her position on the i-
+Bee expressed a lack of association between her commitment in the discussion and her practice in this course.
+Consequently, she became aware of this disjunction and changed her statement thereafter. It can be stated that
+such an activity on Betty's part indicates self-assessment and improvement of her statement in the discussion.
+  All these statements clarify that the i-Bee can be a cognitive resource for learners to recognize a time-series
+change of state, which encourages them to assess their level of commitment to the topics or the whole of the
+discussion. Such recognition and assessment encourage learners to consider their level of participation at the
+meta-level.
+
+CONCLUSION and FUTURE ISSUES
+This study deals with self-assessment during a discussion, wherein learners can view the discussion, reflect in a
+content-wise manner, and reorganize their attitude in the discussion. The authors propose a method by which to
+visualize  learners' commitments  to the content of   a discussion  and develop the  software, i-Bee, which      is
+implemented in the algorithm to encourage learners to assess their discussion. The evaluation elucidates that
+visualization of the discussion based on its contents should be a cognitive resource for learners to assess their
+learning through discussion along with observation of the difference between the status at that time and in the
+past.
+  Thus,    the authors conclude that providing opportunities for   such assessments and reflection encourages
+learners to improve their learning by comparing their learning context even in a collaborative learning setting.
+  Our final points should be covered in keeping with the future issues. The first issue is more precise analysis of
+the effect of the i-Bee, especially in the asynchronous situation, in order to reveal more concrete results which
+indicate how the i-Bee supports students. The second issue is with regard to selection of keywords. In order to
+assist even moderators such as teachers or assistants, a new method should be developed. This method should be
+able to satisfactorily select keywords for learners and teachers based on the learning context and from the
+viewpoint of social constructivism, which constitutes the basis of the collaborative learning theory. The third
+issue is with regard to the information provided by CSCL environments like the i-Bee. It can be said that
+providing awareness with regard to not only the discussion but also other social activities holds the possibility of
+encouraging learners to assess and improve their activities in the CSCL. However, this is only conjecture at this
+stage; we would like to empirically discuss in our future works.
+
+ACKNOWLEDGMENTS
+A part of this research has received the assistance of Grant-in-Aid for JSPS Fellows for Toshio Mochizuki, Grant-in-
+Aid   for Exploratory  Research (No.  15650171,  Representative:   Hiroshi  Kato), Grant-in-Aid  for  Scientific
+Research (B) (No. 16300280, Representative: Hiroshi Kato), Grant-in-Aid for Specific Field (No. 15020103,
+
+                                                         
+Representative:   Mariko  Suzuki),     and Grant-in-Aid  for  Young   Studies  (B)  (No. 16700560,  Representative:
+Tomoko Nagata) from the Japanese Ministry of Education, Culture, Sports, Science and Technology.
+
+REFERENCES
+Collins, A. and Brown, J. S. (1988). The Computer as a Tool for Learning Through Reflection. In Mandi, H. and
+      Lesgold, A. (Eds.) Learning Issues for Intelligent Tutoring Systems, Springer-Verlag, New York, pp.1­
+      18.
+Doomik,    J. A.  (2001). Ox:      An Object-Oriented  Matrix  Language   (4th Ed.). Timberlake   Consultants Press,
+      London.
+Ericsson, K. and Simon, H. (1993). Protocol analysis--Verbal reports as data. The MIT Press, Cambridge, MA.
+Greenacre, M. J. (1984). Theory and Applications of Correspondence Analysis. Academic Press, London.
+Gutwin, C., Stark, G., and Greenberg, S. (1995). Support for workspace awareness in educational groupware.
+      Proceedings of CSCL'95 (Bloomington, IN, October 1995), LEA, 147­156.
+Kato, H., Mochizuki, T., Funaoi, H., and Suzuki, H. (2004). A Principle for CSCL Design: Emergent Division
+      of Labor. Proceedings of ED-MEDIA 2004 (Lugano, Switzerland, June 2004), AACE, 2652­2659.
+Kimura, Y. and Tsuzuki, T. (1998). Group Decision Making and Communication Mode: An Experimental
+      Social Psychological Examination of the Differences between the Computer-mediated Communication
+      and     the Face-to-face     Communication   (in Japanese).  The   Japanese  Journal   of Experimental  Social
+      Psychology, 38, 2, 183­192.
+Landauer, T., K., Laham, D. and Derr, M.(2004). From Paragraph to Graph: Latent Semantic Analysis for
+      Information Visualization. Proceedings of the National Academy Sciences, 101, Suppl. 1, 5214-5219.
+Li, H. and Yamanishi, K. (2001). Mining from Open Answers in Questionnaire Data. Proceedings of the 7th
+      ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (San Francisco,
+      CA, August 2001), ACM Press, 443­449.
+Martínez,  A.,    Dimitriadis, Y.,  Rubia, B., Gómez,   E.,  and  de  la Fuente, P.  (2003). Combining   Qualitative
+      Evaluation and Social Network Analysis for the Study of Classroom Social Interactions. Computers &
+      Education, 41, 4, 353­368.
+Matsumoto, Y., Kitauchi, A., Yamashita, T., Hirano, Y., Matsuda, H., Takaoka, K., and Asahara, M. (2000).
+      Japanese Morphological Analysis System ChaSen version 2.2.1.
+      [http://chasen.aist-nara.ac.jp/chasen/doc/chasen-2.2.1.pdf, available on Nov. 1st, 2004].
+Miyake, N. (1986) Constructive Interaction and the Iterative Process of Understanding. Cognitive Science, 10,
+      151-177
+Mochizuki, T., Fujitani, S., Isshiki, Y., Yamauchi, Y., Kato, H. (2003). Assessment of Collaborative Learning
+      for Students: Making the State of Discussion Visible for their Reflection by Text Mining of Electronic
+      Forums. Proceedings of E-Learn 2003 (Phoenix, AZ, November 2003), AACE, 285­288.
+Nakahara, J. and Nishimori, T. (Eds.) (2003) e-Learning: New Challenges of the Japanese universities (in
+      Japanese). Ohmu Publishing Co., Tokyo.
+Nakahara,  J.,  Hisamatsu,     S., Yaegashi, Y.,  and  Yamauchi,   Y. (in  printing) iTree: Does  the mobile  phone
+      encourage learners to be more involved in collaborative learning? Proceedings of Computer Supported
+      Collaborative Learning 2005 (Taipei, Taiwan, May and June 2005), ISLS.
+Palincsar, A.   S. (1998). Social     Constructivist Perspectives  on  Teaching  and   Learning.  Annual Review  of
+      Psychology, 49, 345­375.
+Palloff, R. and Pratt, K. (1999). Building Learning Communities in Cyberspace: Effective Strategies for the
+      Online Classroom. Jossey-Bass, Inc. Pub.
+Pea, R. D.    (1993). Practices    of Distributed Intelligence and Designs   for Education.  In  Salomon, G.  (Ed.).
+      Distributed cognitions, Cambridge University Press, New York, NY, pp. 47­87.
+Puntambekara, S. and Luckin, R. (2003). Documenting Collaborative Learning: What Should be Measured and
+      How? Computers & Education, 41, 4, 309­311.
+Roschelle, J. (1992). Learning by Collaborating: Convergent Conceptual Change. The Journal of the Learning
+      Sciences, 2(3), 235­276.
+Shaklee, B. D., Barbour, N. E., Ambrose, R., and Hansford, S. J. (1997). Designing and Using Portfolio. Allyn
+      and Bacon, Boston, MA.
+Shirouzu, H., Miyake, N., and Masukawa, H. (2002). Cognitively Active Externalization for Situated Reflection,
+      Cognitive Science, 26, 4, 469­501.
+
+                                                           
+

@@ -1,0 +1,473 @@
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+                       Supporting Active Wiki-based Collaboration
+           Adam Eck, Leen-Kiat Soh, and Chad Brassil, University of Nebraska-Lincoln, Lincoln, NE
+                          Email: aeck@cse.unl.edu, lksoh@cse.unl.edu, cbrassil@unl.edu
+
+          Abstract: Prior research has established that active participation and collaboration by students
+          results in multiple benefits during wiki-based CSCL activities.  However, achieving such be-
+          havior can be a challenge without external motivation. To increase active participation and
+          collaboration by users, we developed an enhanced wiki called the Written Agora.      Using pop-
+          ular Web 2.0 features, our wiki provides additional means of participation and aims to encour-
+          age   direct communication  and  collaboration between users.    Additionally, using intelligent
+          features, we enable the wiki system itself to also participate during collaboration. In this pa-
+          per, we analyze the results of a study using the Written Agora in a classroom for two semes-
+          ters. We discover that simply including such features is not necessarily enough to cause their
+          use or improve collaboration.   However, encouraging the use of these features resulted in not
+          only greater than expected use, but more diverse and higher quality collaboration by users.
+
+Introduction
+Within recent years, one popular tool for computer supported, collaborative learning (CSCL) has been wiki
+software. Wikis have been used for a wide-variety of CSCL activities, including hosting supplementary material
+to classroom lectures (Cole, 2009), building glossaries of important terms (Peterson, 2009), group essay writing
+(Khandaker & Soh, 2009), and contributing to a publically shared knowledge-base (Lampe et. al, 2012).
+          The use of wikis for CSCL has resulted in several positive, documented results. For example, Wheeler
+et. al (2008) found that students wanted to create high quality content given the possibility and excitement of
+broad information dissemination, as well as a self-reported increase in student writing and critical thinking
+skills. Cress and Kimmerle (2008) developed a model of student interactions with a wiki, focusing on assimila-
+tion (addition of new knowledge) and accommodation (reconstruction of existing knowledge) both internally
+within students and externally in the wiki between a group of collaborating users.   Based on this model, Mos-
+kaliuk, Kimmerle, and Cress (2008; 2012) verified that features of wiki content (e.g., levels of incongruity, re-
+dundancy and polarity with student prior knowledge) can encourage student learning.      Lampe et. al (2012) ob-
+served   that some     students were motivated   to continue  contributing to wiki  systems    such     as Wikipedia
+(http://www.wikipedia.org) after producing content as part of classroom activities. Thus, using a wiki for CSCL
+can benefit students both during classroom activities, as well as beyond the classroom.
+          However, one common concern has been revealed from the use of wikis in CSCL.         Specifically, sever-
+al studies (e.g., Ebner et. al, 2008; Cole, 2009) report that students tend not to participate in wiki activities with-
+out proper external motivation (e.g., requiring participation by assigning points towards grades).       This lack of
+participation   is troublesome   because without contributing during wiki-based  activities,   students    will fail to
+achieve the aforementioned benefits of using a wiki for CSCL.    Furthermore, research outside of CSCL has also
+documented the benefits of and concerns over active participation during wiki activities.      For example, users
+who are more active while first exploring the wiki system are much more likely to continue participating in the
+community in the future (e.g., Panciera et. al, 2009; Antin et. al, 2012). Thus, initial buy-in is very important.
+Furthermore, Kittur and Kraut (2008) and Arazy and Nov (2010) found that articles on Wikipedia that contained
+more active collaboration by users (e.g., high levels of activity on the corresponding "discussion" page where
+users can leave comments for other users) achieved a higher subjective quality (e.g., content accuracy and com-
+pleteness).   Therefore, active participation by users is paramount to achieving the benefits of wiki-based activi-
+ties both for individual users (e.g., student learning) and the system (e.g., better quality content).
+          In order to improve the use of wikis as a tool for CSCL, we propose an advanced, intelligent wiki sys-
+tem called the Written Agora. Within the Written Agora, we augment the traditional wiki framework with ad-
+ditional features designed to offer more modes of collaboration to encourage greater participation by users.         To
+achieve this goal, we leverage popular features common to other collaborative Web 2.0 applications (e.g., Ama-
+zon, http://www.amazon.com; Facebook, http://www.facebook.com; Reddit, http://www.reddit.com) with which
+users are likely already familiar, such as page ratings, keyword tagging, and threaded discussions.        These addi-
+tional features enable users to participate in different ways than they would in a traditional wiki (e.g., just by
+viewing and editing pages), hopefully endearing or empowering users and subsequently increasing participation.
+That is, users who might not have been comfortable or well equipped to participate in traditional wiki-based
+activities now have additional ways to contribute to the collaboration process, such as providing feedback or
+summarizing the key content of pages.      These software features also provide additional means for external as-
+similation and accommodation (Cress & Kimmerle, 2008) through adding additional information to wiki pages
+(e.g., ratings) and coordinating transformations of knowledge (e.g., threaded discussions), which could boost
+student learning similar to features in wiki content (Moskaliuk, Kimmerle & Cress, 2008; 2012).
+
+� ISLS                                                                                                            176
+CSCL 2013 Proceedings                                                          Volume 1: Full Papers & Symposia
+
+        Furthermore, we also add intelligent features to enable the wiki itself to be a proactive participant in
+collaboration while supporting users with their tasks. For instance, as a user browses pages in the Written Ago-
+ra, we provide automated recommendations of similar pages the user might be interested in viewing based on
+the content of those pages. This improves the end-user experience by both helping the user navigate through the
+broad expanse of topics present in a collaborative wiki to target topics of interest in greater depth, as well as
+improving user knowledge by encouraging increased usage of the wiki.          Moreover, it potentially decreases the
+burden of initial system usage, which could result in more active and sustained participation by users.    Similar
+intelligent features have been demonstrated to be beneficial to wiki participation both (1) within a CSCL setting,
+such as intelligently forming groups which increases participation (Khandaker & Soh, 2009), and (2) outside of
+CSCL, such as recommending pages to edit or content to include in order to increase page quality and coverage
+(Cosley et. al, 2007; Kong et. al, 2010).
+        In this paper, we evaluate an experimental study conducted to investigate the impact of including addi-
+tional Web 2.0 and intelligent features within the Written Agora to increase active participation by students.  We
+consider the results of deploying our wiki system over the course of two semesters in an undergraduate class-
+room setting. Consistent with prior results of general wiki usage (e.g., Ebner et. al, 2008; Cole, 2009), we find
+that simply including such features is not necessarily enough to result in their use or improve collaboration.
+However, encouraging the use of these features resulted in greater than expected use and more diverse and high-
+er quality collaboration by users. Therefore, their inclusion does result in a net benefit for students, but does not
+necessarily address the active participation concern.  Based on our results, we hypothesize several possible ave-
+nues to tackle this important problem without requiring external motivation (e.g., graded participation).
+
+The Written Agora
+The features of the Written Agora can be categorized into three primary categories: (1) traditional features
+commonly found in other existing wiki systems, (2) additional Web 2.0 features, used to offer further modes of
+participation and to enhance communication between students, and (3) intelligent features, enabling the system
+itself to actively participate in collaboration and support user activities. Table 1 summarizes these features.    In
+the following, we elaborate on the additional Web 2.0 and intelligent features studied in this paper.
+Table 1: Features of the Written Agora
+  Category                     Purpose                                             Features
+ Traditional   Provide support for common wiki-           � Create, view, edit, and delete pages with rich text  
+               based activities.                          � View and compare page revision history  
+                                                          � Control viewing and editing access to pages  
+                                                          � Add, view, and delete multimedia attachments  
+                                                          � Browse and search for pages  
+ Web 2.0       Enable more modes of participation         � Rate pages  
+               and advanced user collaboration be-        � Tag pages using keywords  
+               havior.                                    � Converse in threaded discussions  
+ Intelligent   Enable the system to proactively par-      � Track user behavior during activities  
+               ticipate during collaboration and sup-     � Extract important keywords from pages  
+               port users' activities.                    � Recommend pages based on keyword similarity  
+
+Web 2.0 Features
+Beyond traditional wikis, the Written Agora includes additional Web 2.0 features common to many other types
+of contemporary collaboration systems on the web (e.g., social networking sites).     These features provide addi-
+tional means of participation for users, and also enable advanced collaboration and enhanced communication
+between users  to promote   improved   collaborative work and higher  quality    pages.  Additionally, the features
+enable the wiki system to store not only the end product of collaboration (e.g., shared knowledge), but also by-
+products (e.g., ratings, consensus) and serve as a self-contained process for collaboration without the need for
+coupling with external tools (e.g., email, instant messaging), which could be inconvenient for users.
+Page Ratings: Users can rate pages based on their quality using a scale from 1 (bad) to 5 (great) stars.  Ratings
+from multiple users are scored using a cumulative average to define an overall user-supplied quality metric on
+pages. The overall and current user's ratings are displayed on each page, as well as when browsing for pages, to
+assist users in quickly evaluating whether a page might be worth reading to increase their own knowledge, or
+whether or not a page is a good candidate for their editing to improve the overall knowledge within the system.
+Prior work has shown that visualizing information about pages can improve trust in the information stored in
+wiki systems (Kittur et. al, 2008), which we believe might also be achieved through community ratings.
+Keyword Tagging: Users can also tag pages with important keywords, useful for both (1) summarizing the im-
+portant concepts within a page, as well as (2) organizing pages around similar topics.      Moreover, tag clouds
+
+� ISLS                                                                                                         177
+CSCL 2013 Proceedings                                                        Volume 1: Full Papers & Symposia
+
+displaying the most popular keywords based on their frequency of use allows users to observe a current snap-
+shot of the current knowledge within the wiki system.    Keywords also assist with page navigation towards top-
+ics of interest--clicking on a keyword either on a page or in the tag cloud searches for all pages either tagged
+with that word or containing the word in its content.
+Threaded Discussions: Each page supports collaborative discussions between users through threaded comments,
+allowing users to start new topics of discussion and respond to one another's comments.       For example, users
+might organize their edits for the page, mediate conflicts, or propose new ideas and suggestions to improve the
+quality of the page.  They can also ask questions of one another and receive direct responses to promote en-
+hanced understanding of the page's content.    These discussions provide organized, topic-based communication,
+in contrast with a more free-form and less organized style of discussion, as in discussion pages on Wikipedia.
+
+Intelligent Features
+Another novel aspect of the Written Agora is the inclusion of intelligent features, common to other applications
+with intelligent user interfaces. These features enable the system to provide its own active support to individual
+and group user activities. For example, the system can assist users when searching for desired information by
+leveraging its own knowledge of the system's contents, and it can organize its content and link related pages
+based on shared topics.  Our intelligent features are powered by a multiagent system adhering to the Adaptive
+Knowledge Assistants framework (Eck & Soh, 2012), where individual and system agents are used to provide
+tailored support to user activities within the Written Agora.
+Keyword Extraction: Similar to keyword tagging by users, the Written Agora also automatically analyzes every
+page and extracts the most important keywords, which assists users in (1) finding relevant topics within pages,
+as well as (2) organizing pages containing similar concepts and ideas.
+Page Recommendations: Moreover, using the keyword content found by automated extraction and tagged by
+users, the system also recommends similar pages to the one the user is currently viewing.    These recommenda-
+tions are presented in an unobtrusive side panel to help the user navigate through the wide expanse of the sys-
+tem's content without distracting the user from her current activities. Such recommendations are useful for as-
+sisting the user improve her knowledge through both the breadth of related concepts to the current page in the
+wiki, as well as the depth of understanding of the current topic by targeting pages describing the topic in more
+detail. Of note, this feature differs from prior recommendations in wikis (e.g., Cosley et. al, 2007; Kong et. al,
+2010) in that our recommendations are intended to grow each individual's internal knowledge through exploring
+existing pages, rather than intending to grow the community's external knowledge through expanding the shared
+information in the system.  In the future, we plan to explore both types of recommendations.
+User Tracking: The Written Agora monitors and records all user activity within the wiki, including which page
+revisions are viewed by users, which keywords are tagged or removed from pages, and what recommended pag-
+es are viewed. For each activity, the system tracks: (1) who performed the activity, (2) what activity was per-
+formed, (3) when the activity occurred, (4) what page the user was viewing, and (5) any object corresponding to
+the activity (e.g., rating, comment). Using this tracked information allows us to evaluate the collaborative be-
+havior of users and provides information to know how best to support users during their collaboration.
+
+Study and Methods
+As described previously, the primary purpose of the design of the Written Agora was to create an advanced wiki
+system that (1) encourages opportunities for participation between users, and (2) actively participates with users
+in the collaboration process. We conducted    a user-based study evaluating the impact  of support provided by the
+Written Agora on user activity and collaboration through both additional Web 2.0 and intelligent features.      In
+the following, we outline (1) the research questions guiding our study, (2) our proposed hypotheses answering
+these questions, (3) the data set used for our analysis, and (4) the methods used to evaluate our hypotheses.
+
+Research Questions
+Guiding our research in CSCL through the use of the Written Agora are two primary research questions, each
+corresponding to different types of support for active participation and collaboration:
+Q1: How does the inclusion of Web 2.0 features intended to encourage more opportunities for participation, as
+well as active communication and collaboration between users, affect the activities and performance of users?
+Q2: How does the inclusion of intelligent features intended to enable the system to become an active participant
+during collaboration through interactions with users affect the activities and performance of users?
+         With respect to Q1, we aim in this study to assess the impact of including (1) page ratings, (2) keyword
+tagging, and (3) threaded discussions in the wiki system in order to potentially increase active participation and
+
+� ISLS                                                                                                        178
+CSCL 2013 Proceedings                                                        Volume 1: Full Papers & Symposia
+
+collaboration amongst users. With respect to Q2, we aim to assess the impact of including (1) automated key-
+word parsing, and (2) related page recommendations on the overall collaboration activities of users.
+
+Hypotheses
+Based on these two research questions, we propose several hypotheses stating our expectations about the impact
+of Web 2.0 and intelligent features on user participation and collaboration:
+H1: The inclusion of additional Web 2.0 features will increase the amount of user activity and collaboration.
+H2: The inclusion of additional Web 2.0 features will provide more opportunities for participation and collabo-
+ration, spreading out activity from only a few users (e.g., Panciera et. al, 2009; Antin et. al, 2012) to most users.
+H3: The inclusion of intelligent features will result in more page views (through searches for related pages with
+similar extracted keywords and followed recommendations).
+H4: The inclusion of Web 2.0 and intelligent features will boost the quality of collaboration through more ac-
+tive collaboration amongst users and with the system.
+         While these hypotheses are intuitive responses to the research questions posed above, they are not
+guaranteed to hold true in practice. For example, we might observe that collaboration fundamentally follows a
+power law distribution (Antin et. al, 2012) where only a few users perform nearly all activities, regardless of the
+type of activity (e.g., editing, rating, commenting) while other users perform few if any activities. If so, the ad-
+ditional features might not result in any increase in total participation as the few active users are already near a
+maximal amount of activity without these features.   Furthermore, the inclusion of intelligent features could have
+no impact on user behavior as users might not trust or simply ignore the system's active participation.
+
+Data Sets
+For this study, we consider two semesters of deployment (Fall 2011 and Spring 2012) of the Written Agora
+branded as the Duckweed Paper Exchange (DPE, http://duckweed.unl.edu), a component of the Duckweed Pro-
+ject (http://www.unl.edu/cbrassil/duckweed-project-0) within the School of Biological Sciences at the Universi-
+ty of Nebraska-Lincoln.   In this project, students conduct group-based lab experiments studying the growth of
+Spirodela polyrhiza in  different  treatment  conditions.  Based on these experiments, students write their own
+individual reports about their group's activities, and then the entire group collaboratively forms a final group
+report detailing their experiment. Within the Duckweed Project, the DPE serves as a tool and repository for the
+creation and  archival of  these  group reports.   Moreover,   the reports within the DPE  constitute     a student-
+produced journal, where students consider past reports in the design of their own experiments and reference
+prior work by other students in their own reports. Using   the DPE, students practice scientific writing.
+         Prior to our study, the DPE was prepopulated with one previous semester's group reports (written
+without the DPE) as an initial seeding of content, as well as one semester's initial usage of the DPE as a pilot
+study to evaluate the feasibility of the DPE. Thus, between two and three semesters worth of prior reports were
+available during our study for students to view, rate, and discuss in order to guide their experiments and writing.
+In both semesters, students were only required to create their final group report using the DPE.      Alternatively,
+they were also allowed to create their own individual drafts within the system before forming a group report,
+although this step could also be performed outside of the DPE.      In the Fall 2011 semester, Web 2.0 features
+were offered for use but students were not required to use these features.    Later, in the Spring 2012 semester,
+students were required to perform a minimum level of collaborative activities to encourage further collaboration
+amongst students. These requirements included rating 3 pages, tagging 2 keywords, and offering 5 comments.
+Moreover, for this later semester, we added the intelligent features considered in our study (automated keyword
+parsing and related page recommendations).     Overall, 47 and 41 users from the Fall 2011 and Spring 2012 se-
+mesters agreed to participate in our study, respectively.  Of these users, 36 and 28, respectively, agreed also to
+allow us to consider their earned grades in our study.     Thus, our data sets consist of all of the activities per-
+formed by these 88 users, including the use of the Web 2.0 and intelligent features in the DPE, as well as the
+grades earned by 64 users. We would like to note that  the  grading of student reports was performed by impartial
+graduate teaching assistants assigned to the course who were not part of our research project. They were made
+aware that a study was ongoing, but were not given information about what the study measured or our analysis
+approach. Thus, there was no bias in the grading to impact our results.
+
+Evaluation Methods
+To evaluate our hypotheses, we propose the following methods.      First, we consider the level of participation and
+collaboration by users cumulatively in each semester, measured by counting the number of times users per-
+formed each type of action: ratings, keywords added, comments, recommendations followed, edits, and views.
+These values are compared against one another both (1) within each semester to assess how users collaborated
+as a collective whole and how the use of one type of activity affected the other types of activities performed by
+
+� ISLS                                                                                                         179
+CSCL 2013 Proceedings                                                          Volume 1: Full Papers & Symposia
+
+users, and (2) across semesters to determine how the requirement of using Web 2.0 features affected user col-
+laboration behaviors.  Second, we also look at the relationships between feature usage (measured using correla-
+tions) to learn more about how individual users who exploited or ignored the Web 2.0 and intelligent features
+behaved in general.  Our goal is to better understand the relationship between these activities and user behavior,
+including whether or not users adopted specific collaborative roles through the use of     these features. Finally, we
+also evaluate the quality of collaboration by comparing the grades received for the groups' reports.         Here, we
+aim to understand what relationship exists between the level and type of participation and collaboration per-
+formed by users and the quality of the end product of collaboration.
+
+Results
+
+Use of Additional Web 2.0 Features and their Effect on Collaboration
+First, we analyze the use of the additional Web 2.0 features during the users' wiki-based activities while writing
+their reports in wiki pages. To evaluate how often these features were exploited during collaboration, we pre-
+sent the number of actions performed per user, ranked in decreasing order, in terms of (a) ratings made, (b)
+keywords tagged, and (c) comments posted from both the Fall 2011 and Spring 2012 semesters in Figs. 1a-c.
+         From these figures, we observe that in the Fall 2011 semester when usage was not required, very few
+students used  these features during their wiki-based activities. In fact, of the 47 users participating in our study,
+only 3, 7, and 9 users rated pages, tagged keywords, or posted    comments,  respectively.  Moreover,    the few users
+who did exploit these features used them very infrequently.   Thus, simply including additional types and modes
+of collaboration did not necessarily increase the level of participation by students. This matches the results from
+previous studies of wiki-based activities for CSCL where few users participated without external motivations
+(e.g., graded requirements) (Ebner et. al, 2008; Cole, 2009). However, we observe a dramatic change of behav-
+ior in the Spring 2012 semester when minimum levels of activity were required.         Here, a larger percentage of
+users not only used these features to meet the minimum requirements (represented by horizontal black lines in
+Figs. 1a-c), but most users went above and beyond what was necessary.        This implies that once users were en-
+couraged to use the features, they perceived a greater value in their use through experience and made greater use
+of these features than necessary.   We hypothesize that the use of Web 2.0 features in wiki-based collaboration
+requires reaching a (albeit small) "critical mass" where enough users make use of the features for their benefits
+to be perceived and their use sustained by the community.     In the future, we plan to further investigate how to
+achieve and sustain such a crowd-based effect without requiring external motivations.
+         Second, we analyze the effect of the use of Web 2.0 features encouraging more active collaboration
+amongst users on both the (1) behavior and (2) quality of collaboration.     We begin by presenting the number of
+pages edited per user in decreasing order in Fig. 1e. We observe that the use of Web 2.0 features appear to have
+had a significant effect on the editing behavior of users. On the one hand, in the Fall 2011 semester when users
+made little use of the Web 2.0 features, users generally performed similar numbers of edits.       We believe this
+was due to users focusing on only one type of collaborative action (editing), and each user tried to contribute
+equally to the group project, so users each had to perform similar numbers of edits.       On the other hand, in the
+Spring 2012 semester when users exploited the Web 2.0 features, we observe that editing behavior shifted to
+where only a few users made the majority of the edits to the groups' reports, whereas other users contributed
+instead through the additional Web 2.0 features.  Thus, it appears that the use of Web 2.0 features caused role
+diversification within the groups, where users contributed in different ways.      For example, some users tagged
+keywords to summarize the report and organize it within the context of the other pages in the wiki, some users
+actively discussed page content through comments, and others carried out designated edits.         Moreover, other
+users contributed more to the class in general by rating many pages within the wiki, rather than contributing to
+their group's page.  Therefore, adding additional Web 2.0 features achieved our goal of increasing opportunities
+for participation by different users, which led to greater overall participation by users.
+         Furthermore, the increased diversification of collaboration in the Spring 2012 semester also resulted in
+higher quality collaboration than the less diverse Fall 2011 semester. Table 2 shows that the grades earned for
+the group reports were much higher in Spring 2012 than in Fall 2011.        Additionally, the standard deviation in
+student grades was also much smaller in Spring 2012, indicating that the quality of reports was consistently bet-
+ter in Spring 2012.  Therefore, the increased use of the Web 2.0   features resulted in not only more active  collab-
+orative activity amongst users, but also higher quality collaboration, thus benefiting the wiki system and users.
+
+Use and Effect of Intelligent Features
+Next, we analyze the use of intelligent features by users only during the Spring 2012 semester (since these fea-
+tures were not available during Fall 2011).  These features encourage the user to explore the other pages within
+the wiki by either directly recommending such pages or indirectly helping the user find related pages by organ-
+izing pages with similar keywords.    To evaluate the impact of these effects, we present per user the number of
+such recommendations followed and the number of pages viewed in Figs. 1d and 1f.
+
+� ISLS                                                                                                           180
+CSCL 2013 Proceedings                                                     Volume 1: Full Papers & Symposia
+
+                       (a)                                                             (b)
+
+                       (c)                                                             (d)
+
+                       (e)                                                             (f)
+Figure 1. Ranked Ordering of Activity Counts for (a) Ratings Made (b) Keywords Tagged (c) Comments Posted
+             (d) Related Page Recommendations Followed (e) Pages Edited (f) Pages Viewed
+      Note: the horizontal black lines in (a)-(c) represent the number of activities required for Spring 2012
+Table 2: Grades Earned for Group Reports
+         Fall 2011    Spring 2012
+ Mean    87.6944%          96%
+ Max      100%             100%
+ Min       72%             92%
+  SD     7.7527%        2.7756%
+        First, usage of this intelligent feature did not follow quite the same trend as the Web 2.0 features in Fall
+2011. Specifically, despite the fact that in both cases the use of these features was not required, we observe that
+a larger number of users exploited the recommendations made by the system in Spring 2012 than used the Web
+2.0 features in Fall 2011, and users did so more frequently as well.  This result indicates that impactful, sus-
+tained use might be easier to achieve for intelligent rather than Web 2.0 features. Furthermore, such use could
+be enhanced through increased awareness of these features.     Particularly, recommendations were made in an
+unobtrusive side panel located near the bottom of a page; with better visibility, this feature could become more
+useful to more users, similar to the effect we observed for required Web 2.0 feature usage.
+        Additionally, we observe that the inclusion of intelligent features positively affected the total viewing
+behavior of users. Most importantly, we note that the least active users (in the tails of the viewing distributions)
+viewed a higher number of page views in the Spring 2012 semester that included the intelligent features.      This
+implies that including intelligent features encouraged users to more actively participate in the wiki-based activi-
+ties by viewing more pages.  This result could be due to the system making it easier for users to explore the  col-
+laborative knowledge stored within the wiki system, thereby lowering the costs of entry by the least active users.
+
+Relationships Between Features
+Finally, we analyze the relationships between the use of the different types of features and with the quality of
+collaboration. We consider the correlations between activity counts from each feature type and the correlation
+
+� ISLS                                                                                                         181
+CSCL 2013 Proceedings                                                        Volume 1: Full Papers & Symposia
+
+between activity counts and grades. These results are presented in Tables 3 (Fall 2011) and 4 (Spring 2012).
+We highlight the results found to be statistically significant at the 0.01 and 0.05 significance levels.
+         In Table 3 describing the Fall 2011 semester where few students made use of the Web 2.0 features, we
+observe that a significant, positive correlation existed between the keyword tagging and page view and edit ac-
+tions. Thus, the few students who used the advanced keyword tagging feature were active users within the wiki,
+indicating that including this feature didn't boost participation by inactive users, but was instead an additional
+way for active participants to collaborate. On the other hand, students who rated pages were also significantly
+likely to leave comments, indicating that a second type of participants emerged:  students who offered feedback
+on pages, but didn't contribute additional content to wiki pages. Unexpectedly, the students' grades were not
+significantly correlated to any of the particular actions, indicating that even students who performed many ac-
+tions (especially viewing and editing) did not necessarily achieve high grades for their reports, so the quantity
+and quality of wiki-based activity were unrelated.  All other activities were not significantly correlated.
+         In contrast, in Table 4 we observe additional significant, positive correlations for the Spring 2012 se-
+mester.  First, usage of all of the Web 2.0 features was highly correlated. Thus, using some features might have
+helped influence the use of others, which could be beneficial with assisting the system to reach "critical mass"
+of their usage and boost overall participation. Second, usage of the Web 2.0 and intelligent features was also
+highly correlated. That is, users were more likely to use any of the advanced features once they used one of
+them.  Finally, we also observe several significant, positive correlations between user actions and their grades.
+This indicates that, unlike in the Fall 2011 semester, users who performed larger quantities of collaboration
+were also likely to achieve higher quality collaboration. Therefore, we have more evidence that increased par-
+ticipation through the inclusion of Web 2.0 and intelligent features led to better collaboration between users.
+Table 3: Correlations between Activity Counts and Grades for Fall 2011          Note: ** = p < 0.01, * = p < 0.05
+                View          Edit          Comment       Keyword      Rating
+  Edit         0.7250**
+Comment         0.1745       0.1144
+Keyword        0.3474*      0.3413*          0.2753
+ Rating         0.0964       0.2505          0.2888*       0.0893
+ Grade          0.0964       0.0141          -0.1411       0.3268      -0.3224
+Table 4: Correlations between Activity Counts and Grades for Spring 2012        Note: ** = p < 0.01, * = p < 0.05
+                View         Edit      Comment          Keyword        Rating        Rec.
+  Edit         0.7531**
+Comment        0.5514**    0.3870*
+Keyword        0.6061**    0.4764**    0.5726**
+ Rating         0.1798     -0.0344          0.3829*       0.3336*
+  Rec.         0.3714*      0.1391     0.4867**           0.5322**    0.3819*
+ Grade         0.4724*     0.4268*          0.1650        0.1906       -0.1137      0.2050
+
+Discussion
+Based on these results, we finally evaluate our proposed hypotheses for our research study and begin to answer
+our research questions. First, we found support for hypothesis H3 because we observed that the inclusion of
+intelligent features led to an increase in the number of pages viewed by both the most and least active users in
+the system. Thus, recommending  related pages and    organizing pages by extracted keywords from the       page con-
+tent led users to explore the shared collaborative knowledge stored within the wiki, (1) boosting participation by
+less active users, and (2) potentially improving the individual knowledge of users after reading those pages.
+         Second, we found evidence both in favor of and opposing hypotheses H1, H2, and H4.              We observed
+that simply including Web 2.0 features did not result in their usage (in Fall 2011), and thereby did not affect
+collaboration. However, once usage was encouraged through minimum requirements (in Spring 2012), not only
+were the features used more frequently, but their usage often exceeded the requirements.        This led to (1) in-
+creased amounts of collaboration between users, supporting H1, (2) a diversification of roles in the collaboration
+process, supporting H2, and (3) increased quality of collaboration through higher grades earned, supporting H4.
+   Overall, with respect to studying wiki-based CSCL, we draw the following primary conclusion:
+         Including advanced (e.g., Web 2.0 and intelligent) features to support and promote active
+         participation and collaboration amongst student users of wiki-based systems is valuable
+         and can lead to higher quality collaboration, but must be appropriately encouraged.
+Specifically, such encouragement does not simply mean imposing minimum requirements for collaboration as
+in our study and considered elsewhere in the literature (e.g., Ebner et. al, 2008). Instead, such encouragement
+could possibly arise through improved interface design, such as better highlighting the existence and benefit of
+
+� ISLS                                                                                                          182
+CSCL 2013 Proceedings                                                         Volume 1: Full Papers & Symposia
+
+such features. Moreover, increased education of the use of the interface could also encourage more advanced
+feature usage. Our users were simply assigned their projects with little to no education in the usage of the wiki
+tool or more than a brief introductory text explaining its features. Finally, periodic pop-ups or other encour-
+agement from the system itself could also lead to increased usage of advanced features and the resulting benefits
+of more active collaboration. This last approach has been effective in other collaborative systems to encourage
+users to participate (Wash & Lampe, 2012).   In the future, we plan to study these potential methods of encour-
+aging users to participate in order to promote more active and effective collaboration amongst users and reach a
+"critical mass" where sustained active collaboration benefits both the system and its users. We also intend to
+add surveys and possibly interviews to our data collection (1) to better understand the interplay between student
+knowledge, technology experience, and motivation with our advanced software features and (2) more precisely
+measure increases in student learning (e.g., assimilation and accommodation, Cress and Kimmerle, 2008).
+
+References
+Antin, J., Cheshire, C., & Nov, O. (2012). Technology-mediated contributions: editing behaviors among new
+       Wikipedians. Proceedings of the 2012 ACM conference on Computer-supported cooperative work,
+       373-382.
+Arazy, O., & Nov, O. (2010). Determinants of Wikipedia quality: the roles of global and local contribution ine-
+       quality. Proceedings of the 2010 ACM conference on Computer-supported cooperative work, 233-236.
+Cole, M. (2009). Using wiki technology to support student engagement: Lessons from the trenches. Computers
+       & Education, 52, 141-156.
+Cosley, D., Frankowski, D., Terveen, L, & Riedl, J. (2007). SuggestBot: using intelligent task routing to help
+       people find work in Wikipedia. Proceedings of the 2007 international conference on Intelligent user
+       interfaces , 32-41.
+Cress, U., & Kimmerle, J. (2008). A systematic and cognitive view on collaborative knowledge building with
+       wikis. Computer-Supported Collaborative Learning, 3, 105-122.
+Ebner, M., Kickmeier-Rust, M., & Holzinger, A. (2008). Utilizing wiki-systems in higher education classes: a
+       chance for universal access? Universal Access in the Information Society, 7(4), 199-207.
+Eck, A., & Soh, L.-K. (2012). Adaptive knowledge assistants. Proceedings of the 2012 international workshop
+       on Human-agent interaction design and models, 107-114.
+Khandaker, N., & Soh, L.-K. (2009). ClassroomWiki: a collaborative wiki for instructional use with multiagent
+       group formation. IEEE Transactions on Learning Technologies, 3(3), 190-202.
+Kittur, A., & Kraut, R.E. (2008). Harnessing the wisdom of crowds in Wikipedia: quality through coordination.
+       Proceedings of the 2008 ACM conference on Computer-supported cooperative work, 37-46.
+Kittur, A., Suh, B., & Chi, E.H. (2008). Can you ever trust a wiki? Impacting perceived trustworthiness in Wik-
+       ipedia. Proceedings of the 2008 ACM conference on Computer-supported cooperative work, 477-480.
+Kong, N., Hanrahan, B., Weksteen, T., Convertino, G., & Chi, E.H. (2010). VisualWikiCurator: human and
+       machine intelligence for organizing wiki content. Proceedings of the 2010 international conference on
+       Intelligent user interfaces, 367-370.
+Lampe, C., Obar, J., Ozkaya, E., Zube, P., & Velasquez, A. (2012). Classroom Wikipedia participation effects
+       on future intentions to contribute. Proceedings of the 2012 ACM conference on Computer-supported
+       cooperative work, 403-406.
+Moskaliuk, J., & Kimmerle, J., & Cress, U. (2008). Learning and knowledge building with wikis: The impact of
+       incongruity between people's knowledge and a wiki's information. Proceedings of the 2008 interna-
+       tional conference for the learning sciences, 2, 99-106.
+Moskaliuk, J., Kimmerle, J., & Cress, U. (2012). Collaborative knowledge building with wikis: The impact of
+       redundancy and polarity. Computers & Education, 58, 1049-1057.
+Panciera, K., Halfaker, A., & Terveen, L. (2009). Wikipedians are born, not made: a study of power editors on
+       Wikipedia. Proceedings of the 2009 GROUP conference, 51-60.
+Peterson, E. (2009). Using a wiki to enhance cooperative learning in a real analysis course. PRIMUS, 19(1), 18-
+       28.
+Wash, R., & Lampe, C. (2012). The power of ask in social media. Proceedings of the 2012 ACM conference on
+       Computer-supported cooperative work, 1187-1190.
+Wheeler, S.,   Yeomans, P., and  Wheeler, D.  (2008). The good,      the bad, and the wiki: Evaluating student-
+       generated content for collaborative learning. British Journal of Educational Technology, 39(6), 987-
+       995.
+
+Acknowledgments
+This research was supported by grants from the Dept. of Education (P200A040150), the NSF (DBI-0743783,
+DEB-0953766), and an NSF Graduate Research Fellowship (DGE-054850).             We thank the developers of the
+Biofinity Project (from which the Written Agora was created), and the TAs assisting with the DPE classes.
+
+� ISLS                                                                                                    183
+

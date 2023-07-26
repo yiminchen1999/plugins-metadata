@@ -1,0 +1,525 @@
+      Building Bridges within Learning Communities
+           through Ontologies and "Thematic Objects"
+       Ulrich Hoppe, Niels Pinkwart,                              Felisa Verdejo, Beatriz Barros,
+           Maria Oelinger, Sam Zeini                                      Jose Ignacio Mayorga
+           University of Duisburg-Essen                                  Spanish Open University
+ {hoppe,pinkwart,oelinger,zeini}@collide.info                   {felisa,bbarros,nmayorga}@lsi.uned.es
+
+       Abstract. Communication through artefacts, in the sense of objects (co-)constructed by learners,
+       is a well known mechanism in synchronous shared workspace environments. In this article, we
+       explore the potential of extending this principle to heterogeneous, anonymous and asynchronous
+       learner communities by drawing on existing work, e.g. in the areas of "social navigation" and
+       recommender systems. A new ingredient is the description and provision of "thematic objects"
+       embedded in a task/activity context. Design principles and available technologies are discussed
+       and  an example    implementation   in a   European   project  is presented  from  the perspective  of
+       technology design and development.
+
+       Keywords: Artefact-centred community support, social navigation, content-awareness
+
+INTRODUCTION
+Shared workspaces     with  visual objects  enrich   human-human     communication     by opening  a   new  channel:
+communication through the artefact. When jointly creating and manipulating artefacts, the co-learners' language
+based interaction is complemented by an external medium providing inherent constraints. Whereas language
+utterances rely on individual interpretation "in the head", actions on the object level have directly observable
+results and consequences that may constraint future actions. Communication through the artefact is a basic
+principle used in a variety of shared workspace environments in CSCW and CSCL. The typical activities are
+editing, brainstorming, (co-)construction and (co-)design. Several authors such as Hoppe and Plötzner (1999) or
+Suthers and Hundhausen (2003) have characterised communicative and cognitive functions of interactively co-
+constructing and using shared representations. The latter distinguish the following three functions: initiating
+negotiations of meaning, serving as a representational proxy for purposes of gestural deixis and providing a
+foundation for implicitly shared awareness (group memory).
+    A shared workspace environment may support domain unspecific representations such as concept maps
+and/or hand written notes, but it may also support more specific, semantically enriched representations such as
+system dynamics or Petri Nets. Our experience is based on a multi-representational tool called Cool Modes
+(Pinkwart, 2003) in which a whole spectrum of representations is supported. In spite of the common outsiders'
+view of CSCL technology being essentially used in remote learning scenarios, shared workspace environments
+are often   used  in  face-to-face settings as    an additional communication       channel   together with   natural
+communication    and, of  course,  as a structured   medium  with external   memory    function. The   typical usage
+scenarios involve smaller groups of 2-5 participants over a time span ranging from some minutes to two hours.
+Both limitations in group size and in time are inherently linked to the relatively tight coupling of activities
+between group members. It is usually assumed that there is a high degree of continuous awareness between the
+session participants and the cooperative activity would not allow for much parallel work in other completely
+unrelated activity threads (i.e., even "private" activities are usually related to the co-constructive group task). A
+balanced ratio between one's own active contributions as compared to the activity overhead that stems from
+continuous awareness (perception) is one of the main factors that limit group size, whereas time is limited by the
+ability to continuously concentrate on a coherent task without being able to accommodate for individual breaks
+or timeouts. In the following we will constructively explore possibilities to relax these constraints in time and
+group  size  while still maintaining    essential features, hopefully    benefits, of "communication    through  the
+artefact".
+    What   cannot be  expected to  be  transferred  from the  tightly coupled  situation  is the support for   deictic
+references  in (real  time)  communication.   Yet,   the external    memory   function   can  be  redefined  from  ­
+metaphorically   speaking  ­ short  term to   long  term memory   support.   In    classroom usage of  collaborative
+modelling environments such as Cool Modes, we have experienced situations in which the sharing mechanism
+has been used to transfer information from small groups to the whole class, e.g. to display and discuss group
+results in the public. Yet, in this public situation, input is usually restricted to the moderator or teacher and the
+responsible group. Also, this is typically not "late re-use" but "immediate re-use". In a recent study, Katrin
+
+                                                         
+Gassner compared a number collaborative discussion and argumentation environments, among other features,
+with respect  to  their support for later re-use and     found a  clear deficit in  this respect.  This brought   us to
+considering (and implementing) combinations of synchronous co-constructive environments with indexing and
+retrieval mechanisms (Hoppe & Gassner, 2002). Although this implied a relaxation of time constraints, it was
+not explicitly related to differences in group scale.
+  With respect to group size, there is a qualitative difference between groups in which members know (of)
+each other and share context in terms of location, curricular content and institutional features (staff, teachers)
+and anonymous groups which may share an interest on the content level without sharing much context. Direct or
+indirect (i.e. mediated) content orientated social relationships have been supported and studied with anonymous
+groups under the notion of "social navigation" (Höök, Munro & Benyon, 2002; Dourish & Chalmers, 1994).
+Our intention to support the interoperability between different group scales can also be seen as an attempt to
+bridge the gap between direct and indirect social navigation. For CSCL purposes, we propose a specific version
+of social navigation that relies on the notion of "thematic objects". Thematic objects are understood as learning
+objects  enriched with   metadata which    classify   the object both   within  an ontology   and  in terms  of  social
+relations.
+  This approach of social navigation based on thematic objects or thematic social navigation is focused on the
+following point: It is a basic purpose of social navigation to support users in finding other users with whom to
+interact in some  beneficial  way.  We    assume    that  thematically  classified learning objects   can be used    as
+indicators for "shared interests". In a learning community, such shared interests are an essential condition for
+mutually   enriching interactions between   learners.     The learners  could  even  interact indirectly  through    the
+inspection  and   re-use   of  objects  of  shared    interest   without  necessarily    having    a  person-to-person
+communication. A comparable approach for assessing shared interests in scientific communities has recently
+been presented   by  Francq   & Delchambre   (2005)    using  document   indexing   and  retrieval   techniques. In our
+approach, both the ontological classification of objects as well as the association of metadata from the activity
+context (user, tools) allows us to extend the search to classes of similar learning objects. This kind of content
+awareness functionality is built into a collaborative learning environment. This environment combines access to
+a repository for asynchronous sharing with synchronous shared workspace functionality.
+
+                           Figure 1    Social navigation through thematic objects
+
+BASIC CONCEPTS AND SUPPORTING TECHNOLOGIES
+This section intends to identify the key concepts and to put them in relation to the social navigation and artefact
+based communication principles that were outlined in the introduction.
+  Dealing with documents and document handling, the notion of metadata (i.e., data describing data) is of
+obvious importance. Related problems are the often needed manual generation, which users may conceive as an
+annoying task they tend to avoid (Wickens, 1992). Other critical aspects are related to standardisation and
+interoperability. A frequently chosen technique to overcome the interoperability concerns are ontologies. In the
+sense of Gruber (1993), an ontology is an "explicit specification of a conceptualisation". Other definitions are
+more operational and conceive an ontology as a conceptualisation of a domain into a human-understandable, but
+machine-readable format consisting of entities, attributes, relationships, and axioms (Guarino & Giaretta, 1995).
+One benefit of ontologies, as compared to other less structured and formal approaches, is their suitability for
+
+                                                           
+classical AI and knowledge representation techniques (Uschold & Grüninger, 1996). Another advantage of
+ontologies is that they allow for adding a new abstraction level upon the metadata layer. This draws out links
+between   entities  that  were  apparently  unrelated, thus   extending    the  querying    vocabulary   for   the users.
+Furthermore, the ontology can be used for guiding the users by sorting out this larger amount of possible queries
+and  by   providing mechanisms     for  deriving new  knowledge.   Finally,    an  ontology  may  facilitate navigation
+through repositories by taking profit from the available context information.
+  Apart from the more descriptive approaches of ontologies and related taxonomy based techniques, there is a
+variety of technologies that deal with the usage and processing of data and metadata. These range from classical
+search approaches with Boolean logics up to complex information retrieval methods, which are able to deal with
+vagueness    of queries   and uncertainty about  data (e.g., Fuhr, 2001).     For  our aims, the field   of information
+retrieval thus  offers  important  inputs through  the algorithms     it provides.  Yet, classic information    retrieval
+methods do not consider user specific and task related information and can therefore not serve as a basis for our
+implementation.
+  Research on recommender systems is probably the most closely related and therefore most relevant area for
+our approach. Similar to information retrieval, recommender systems aim at providing users with relevant
+documents. Yet, the principal approach differs in that recommender systems rely on (user provided) ratings of
+documents, which are either used directly for recommendation of the rated document, or indirectly to infer
+ratings for  similar   documents    (Resnick &    Varian, 1997).   A     frequently applied  method    in   the field  of
+recommender systems is collaborative filtering (see Konstan & Riedl, 2002). This algorithm essentially follows
+three steps:
+    1.    search for users with a profile similar to the current user
+    2.    search documents that these users rated positively
+    3.    order these found documents using relevance criteria of the current user
+  Obviously, this algorithm is closely related to the ideas of social navigation through thematic objects as
+expressed in the introduction ­ in a sense, it is orthogonal, as our approach first searches for documents and
+then, in a second step, finds users. The collaborative filtering method has proven to be effective, but has several
+inherent problems. These include the cold start problem ("how to give recommendations for newly introduced
+items?") and the early-rater problem which describes the problems arising from new documents (Sarwar et al.,
+1998). Several mechanisms to overcome the cold start problem have been proposed. Some of these are based on
+the idea of community membership (Glance, Arregui & Dardenne, 1998). Here, new users assign themselves to
+communities, and the system takes other members of that community as reference. The general consideration of
+community    aspects   in recommender     systems was  also  used  to    take into  account the  fact that  people  in a
+community potentially share topics of interest ­ accepting that people may be members of several communities
+with different shared topics. Another approach to overcome the cold start problem of recommender systems has
+been proposed    by  Middleton   et al. (2002).  They  investigate the    synergies evolving  from    an  integration  of
+recommender systems with ontologies, the latter being used to determine initial user profiles. However, their
+approach still relies on explicit and manual user assessment of documents.
+  The driving ideas for this paper differ from all the listed concepts in that they do require neither explicit nor
+implicit document assessment but instead make use of automatically available activity context for indexing and
+retrieval. One of the case studies contained in this paper presents how functions can even be embedded in the
+tool that provides the task context. Technical aspects of this solution are explained in Pinkwart et al. (2004).
+  In our approach, the activity context links interest-related aspects to object-bound features and can thus be
+conceived    as a  connection   of  user- and    document-related  metadata.      The  aims  are similar    to  those  of
+recommender systems, and in particular to the idea of collaborative filtering. Yet, we are able to exploit a richer
+source of information due to the additional context dimension. The context of a user activity is characterised by
+the types objects worked on as well as by the types of activities performed. The repository we suggest provides
+an adequate framework for storing, retrieving and re-using groups' results and by-products, and the portal we
+propose supplies new ways of finding context information. Finally, as an added-value, the portal makes it easier
+for users to access the community, their results and a number of helpful facilities such as semantic navigation or
+enhanced searching. The next sections of this paper show how this information can be used to enhance re-use
+options of documents in a community, and support the exchange of communities through documents. The latter
+aspect illustrates the idea of the seeding of new collaboration options through social navigation by thematic
+objects in the sense as motivated in the introduction.
+
+SUPPORTING A COMMUNITY OF SCIENCE LEARNERS
+The example application scenarios used in this paper are all related to the ongoing European project COLDEX
+("Collaborative Learning and Distributed Experimentation"). COLDEX takes up issues and current challenges
+in the area of technology support for collaborative learning in science and technology with a special focus on
+learning based on both local and remote experimentation. Within this project, learning experiences and results
+
+                                                          
+based on local experimentation in personalised local communities are considered to be a subject of exchange in
+a broader community, including long-distance communication. In this sense, the aim is to provide and explore
+exchange mechanisms between local communities in Europe. Here, direct communication channels, e.g., by e-
+mailing between learners, are not the primary and original goal. As motivated, we focus on artefact based
+exchange mechanisms ­ not excluding their potential function as triggers for direct communication, however.
+The central medium for exchange is the "Learning Object Repository" (LOR) which is described in the next
+section of this paper. It provides both group and community navigation tools as well as mechanisms to detect
+similarities of interests in terms of the produced objects or artefacts. This is a special case of the general ideas
+related to "social navigation and community support" introduced above.
+  One of the tools used in COLDEX is Cool Modes (Pinkwart, 2003), a multi-representational framework to
+enable collaborative modelling. The Cool Modes tool supports synchronous cooperation in a shared workspace
+environment with coupled objects. Specific types of objects and relations can be defined as domain-dependent
+plug-ins. Most  of these plug-ins  offer graph-based   representations,  but  also handwriting  annotations           are
+provided.
+  Users of the LOR system can take multiple different roles which represent the different group scale they
+work in: local group members belong to the same (local) face-to-face learning group; Cool Modes users create
+models  within the tool environment  and   upload them    to the repository.  Community   members   of a certain
+scientific domain may be interested in Cool Modes models. Individual learners can be members of these groups,
+but also external visitors interested in the contents of the repository because of its relation to scientific topics.
+
+Groupware support for challenge-based learning
+The COLDEX project aims at supporting learning and experimentation with open-ended challenges for which
+no ready-made solutions can be found in a textbook. The themes are mostly inspired by "exploring space" and
+include examples such as lunar cartography, the programming of robot vehicles, or growing plants in space. Our
+idea of   challenge-based learning (or henceforth ChBL) is thus a special form of problem-based learning (cf.
+e.g., Barrows & Tamblyn, 1980; Koschmann et al., 2001) characterised by targeting non-standard, typically
+extracurricular, problems in a research orientated learning mode. It aims at familiarising students with adopting
+a scientific attitude and approach. Here, the advantage of a centralised learning object is the potentially highly
+contextualised and  diverging background   of the thematic   learning  objects. This complexity  is a  necessary
+ingredient for a meaningful and rich collection of data and metadata.
+  Research and practice in CSCL shares a basic experience with other groupware applications in that using
+group orientated software tools puts additional demands on the users. I.e., the use of group or community
+orientated tools comes with an additional cost (in terms of additional coordination and interaction efforts). Thus,
+from a motivational point of view, there should be a clear benefit in using these tools. For example, if the
+explanation of an experiment is standard content of textbooks, it is quite unlikely that learners would engage in
+time consuming communications with people around the world to understand the experiment. On the other hand,
+if the problems dealt with are non-standard and of really open-ended and exploratory nature, there is an obvious
+incentive to engage in  such  an exchange. This   is the  basic argument  for concentrating  on challenge-based
+learning as an educational approach. So, the specific pedagogical approach of "building bridges within learning
+communities" (not only within the COLDEX project) can be characterised by the three basic elements:
+        x    extending "communication through artefacts" from local to global learning communities,
+        x    contextualising community information bases with thematic and task-orientated parameters, and
+        x    using challenge-based learning as an overall educational design principle.
+  These themes have an innovative potential, both from a scientific point of view (in CSCL and Community
+Information Systems) as well as for educational practice.
+
+Examples challenges and thematic exploration
+One of the COLDEX learning scenarios is "robot in a maze" (Jansen et al., 2004). It has two characteristic
+activity modes: (1) the construction of a new maze as a challenge to other learning groups, and (2) the definition
+of a robot strategy to escape from (hopefully any) maze in the form of situation-action rules. For example, a rule
+for the given situation "free in front and on the left, but blocked on the right side" could be: "go forward". One
+of the most obvious strategies for guiding a robot out of a maze is "wall following" which can be challenges by
+putting islands in the maze. The Cool Modes system supports both maze construction and the definition of rule
+sets. The corresponding learning objects (of type maze or rule set) can be put in the LOR. A rule set can
+additionally be executed with a Lego robot in a physical maze.
+  The two different aspects of the described scenario foster a special kind of competition between the maze
+constructors and the students that program their robots. The users can categorize different classes of mazes (with
+or without islands, single or multiple exits, exits at the edge or within a maze), and other users can find different
+
+                                                       
+strategies to solve arbitrary mazes of these classes. This allows for a mixture of competitive and collaborative
+group work patterns. Using this scenario, the role of the repository is evident, as users can retrieve more classes
+of rule sets or mazes which they then try to compete with there own mazes or strategies. Further usages of the
+repository  (beyond  simple  searches for mazes    and rule sets, or  analysis    of the  contained  data) arise  if
+descriptions and keywords are considered. For example, a user can add the information about his maze class, or
+can state that his rule set is "the best" and succeeded in all tested mazes.
+
+                    Figure 2   Maze scenario: simulation in the modelling environment
+  Another example of a scenario is "lunar cartography" (Hoeksema et al., 2004). Here, the activity flow spans
+from taking  pictures of the moon  to  calculating measures  such  as diameters      or crater heights by  using an
+interactive tool  embedded  in Cool   Modes. Using   the LOR,   users  can      exchange  different (annotated and
+contextualised) moon pictures to cover different phases of the moon, in order to compare the same crater shown
+in different views taken at various sites. The repository can also serve as a platform to extend and enhance a
+collection of moon objects with measurements.
+
+Costs and benefits
+The costs of using the repository for retrieval issues are the following: just on their own, users have to elaborate
+solutions in a potentially complex and highly demanding way, there are no ready made solutions available. In
+contrast, the user can collaborate, search the repository for helpful examples, share partial solutions with the
+community and thus compose one possible solution for the problem at hand. The additional time effort, of
+course a cost aspect, faces the benefit to minimise manual indexing. Similar trade-off situations have been
+discussed for information pooling scenarios with database tasks (Cress & Hesse, 2004).
+  Again, a big problem concerning repositories is again the "cold start problem": There will be no benefit in
+spite of the required efforts before a critical mass of reasonable retrievable thematic objects is reached. Of
+course students should be informed about the future benefit to motivate their efforts. Often, it is also possible to
+provide an initial set of learning objects from previous experiences or even constructed by a teacher. A similar
+problem occurs with user profiles in a growing group of users/learners. Therefore the initialising of user groups
+and thus an initial set of user information (partly provided through tedious manual input) should be facilitated as
+fast as possible.
+  Non-standard challenge-based learning activities require higher "investment" of creativity and involve a
+higher risk of failure. They typically come with less context information and scaffolding than, for example, in
+common practice scenarios in schools or undergraduate academic settings. On the other hand, they are highly
+
+                                                        
+rewarding in   case of success and   they   can  strongly   benefit from exchange   in large learner  communities,
+including asynchronous settings and initially anonymous groups.
+
+                      Cost                                     Benefit
+Finding resources     Time effort                              Information pool
+Creating              Additional time and work effort          Learning by doing
+documents
+Contextualisation     (Automatic generation: system cost)      User benefits from context information
+Indexing              (Automatic indexing: implementation      Large range of possible queries to serve different
+                      cost)                                    information needs
+Session               Start server, join session               Collaboration (+ log data, i.e. more context
+preparation                                                    information)
+Storing documents     Additional time effort: uploading and    Information pool
+in a repository       manual input of additional metadata
+Re-use of             Retrieval and adaptation                 Learning from other users' experiences,
+documents                                                      getting different views of the same challenge
+                                                               (ideally: understand other users' approaches)
+Extracurricular       More time effort to research, to find    Learning not only facts, but also acquiring scientific
+nature of             interesting thematic objects             working mode
+repository usage
+Challenge-based       Potentially highly complex tasks         High user motivation due to the non-standard nature
+learning                                                       of topics, opportunity to learn from experience rather
+                                                               than from textbooks
+Learning              Not knowing everybody personally         Connection of peers with similar interests
+community
+                                  Table 1      Costs and benefits for ChBL
+
+THE LOR
+  In order to describe, integrate, and retrieve information created by a learning community with a variety of
+resources, our approach is to define a learning object repository (LOR) with an explicit conceptual model, an
+ontology, capturing community work processes and resources (Verdejo et al., 2003). The ontology we employ
+consists of the following top level concepts:
+      x     Learning Objects (LOs), the core data entities stored in the LOR. Their structure includes references
+            to  associated  resources, tools,    learning design    parameters  and other contextual   educational
+            information, and (in some cases) information about input and output formats.
+      x     Actions, which allow the classification of user actions according to several categories (e.g., Activity
+            Theory or models of scientific experimentation activities).
+      x     Goals, which specify the purpose of certain actions.
+      x     Complementary metadata information, encapsulating domain or scenario parameters.
+  The expressive power of a learning object management system is a function of its vocabulary, but also of        its
+description format and the abstraction levels enabled by its definition. In our case, this vocabulary includes
+standard (IMS-LOM) as well as non-standard metadata slots, as learning communities may often want to define
+their own descriptions to suit their needs.
+  The LOR integrates data and artefacts created from heterogeneous resources. Artefacts, in this sense, are the
+products created by the learners using certain tools. It is possible to upload results in arbitrary file format, such
+as images (e.g., from telescopes) or multimedia documents created with commercial tools. These objects are
+uploaded through a web interface. As for content keywords, such objects have to be indexed manually whereas
+user and group information can be added by the web environment. Using specific COLDEX tools such as the
+Cool Modes system the upload is directly embedded in the tool environment and allows for generating more
+metadata automatically. These "metadata generated from tool context" include not only user information (from
+the login and an internal user profile) but also information about the course context (represented as metadata in
+hand-outs and   working  instructions) and    information   about object types  and operations known      in the tool
+environment. E.g., in the maze application it is possible to distinguish a maze design from a rule set by the
+object types. A maze document can be easily distinguished from a lunar cartography calculation by the different
+plug-ins (and by the different object types).
+  There is general mechanism for interfacing between the LOR and single tools, which is essentially enabled
+by mapping schemes between the LOR ontology and the tool dependent information. The LOR also includes a
+mechanism to create object descriptions from contextual community information derived from the conceptual
+model, to further enrich an object description with social data in a transparent way. A by-product of this is the
+
+                                                         
+ability to support personalisation for specific sub-communities, as these define different application contexts.
+Once a new LO type is defined, the LOR will be able to store it, providing adequate metadata values taken from
+the community portal or the tool context.
+  The LOR is a service to store LOs and enable their retrieval. Users can define new object types, and add or
+delete objects of any of the types available. The mechanism to define a new object type consists of declaring the
+list of metadata to be added to this LO type (apart from the standard set, which is automatically added to every
+type). This operation is performed once to make the system aware of the new LO type existence. Once we have
+a set of object types, any user can add or delete objects, either through a web portal, which provides to the user a
+direct access to the LOs, organised in workspaces (Verdejo et al., 2004), or directly through specially enhanced
+tools in the original task environment (Pinkwart et al., 2004).
+  To this point, we have described the mechanism for storing and indexing results of learning activities. Next
+we have to define corresponding mechanisms for navigation, retrieval, re-use and information sharing. The
+following subsections will explain principles of navigation support based on group context, semantic navigation,
+and navigation and exchange through thematic objects. A common point in these subsections is the notion of
+contextualisation. The central idea discussed in this paper is the use of learning objects as a means for initiating
+asynchronous artefact-centred communication. Here, contexts are used in two different aspects: first, learning
+object contexts serve as (meta-)data resources upon which explicit retrieval functions and navigation strategies
+operate. Second, task and tool contexts are exploited in implicit, similarity based retrieval operations: without
+leaving the current activity context and tool environment, users can, e.g., ask for similar documents or objects
+(i.e., similar to those they are working on) and can retrieve peers with supposedly similar interest, namely the
+authors of these documents. The found "similar" documents can, again, be directly accessed and manipulated
+within the tool context.
+
+Semantic Navigation
+Semantic navigation is enabled by the ontology, which establishes a new abstraction level upon that provided by
+raw metadata. A benefit of this higher level of abstraction is bringing out links between entities that were
+apparently unrelated. For instance, a particular tool could be discovered to be related to a given project or to
+another tool by means of the ontology. Thus, two different groups could be found to be related by the fact that
+they work on projects which share a common challenge or because they have participated in activities which
+required using common tools.
+  The importance of this new level does not rely only on permitting new or more elaborated queries but also
+on adding the concepts represented by these queries to the user's working vocabulary. For example, a user can
+discover an association between two learning objects which were linked because they have one of their authors
+in common. These queries allow users to think in terms of different similarity variants: document based, person
+based, and task based.
+  The ontology consists of entities and relationships, but it also has inference rules. Rules allow for deriving
+new information from existing knowledge. Thus, for instance, a rule could state that every project needs a
+challenge, that whenever a new Learning Object is created, it is linked to the service which was used to make it
+or that users belonging to a group are considered to be developing the group's current project. New connections
+open new ways of walking through the LOR. The ontology makes it possible to navigate them by viewing these
+links at a higher abstraction level, that is, rather like relations   between   concepts than metadata annotating
+objects.
+  Finally, the portal brings forth context information, which enables new knowledge to be derived, such as the
+current activity being carried out within the project a group is developing or the tool they have selected for
+solving a particular task. Rules, again, apply to this knowledge to derive meaningful relations or facts, like
+offering that group this particular tool whenever a similar task is to be done.
+
+Navigation support based on context and thematic objects
+  Users can either access the LOR through the web interface or through one of the available tools. In the first
+case, the web interface would present the metadata for a user-selected learning object together with the possible
+search categories, with values automatically filled according to the selected LO and its context. This object
+description is then taken as a query, allowing the user to edit or include fields (thus, adding constraints) or delete
+them (i.e., relaxing existing constraints). The results of these specifications define the kind of object the user
+wants to search. Then, the LOR searching mechanism will be triggered, and the results will be presented. If
+necessary, the user would be able to iteratively refine this search.
+
+                                                        
+               Figure 3  Searching LOs from a tool (Cool Modes) using query patterns
+   Figure 3 illustrates how thematic learning objects can serve as a source for finding "similar" documents that
+resemble the user's current task context: from within the modelling environment Cool Modes (here, used with a
+maze plug-in again), the user can initiate (without further parameter specification!) a LOR query for "related
+objects", whose implementation is based on the context of the current learning object and the ontology structure.
+The results of this query (i.e., the list of candidate objects) is mirrored back to the user, who can then either
+refine his search, or access one of the proposed documents directly from within his current environment.
+   This lookup mechanism for objects is "associative" in the sense that it enables the use of prototypical objects
+as a starting point for query generation. The user does not have to learn any query language in order to make use
+of the LOR.  Based on this core functionality, we  have    implemented       a number  of search and     retrieval
+mechanisms that work on the archive. The advanced mechanisms exploit the context of the current task of the
+user: together with the content of an object, the metadata about the tool, the user(s), and the current task (which
+may be associated to documents that have a history and, e.g., originate from the repository) constitutes thematic
+objects in the sense as described in the introduction of this paper.
+   Technically, the implementation relies on query patterns, which can be conceived as query masks generating
+concrete queries through filtering processes. There are two ways to define these, either using the ontology
+querying language or (in a more simple manner) through a combination of metadata. The latter is mainly offered
+through web services and permits establishing a link between the LOR and a number of previously known
+external tools. It would be initiated on demand of an external tool. A tool can define a query pattern library
+(Pinkwart et al., 2004), which allows the specification of particular search strategies for target objects. Some
+pieces of information needed for searches can be taken from the task context and thus be automatically provided
+by the tool itself at the moment an instance of the query is generated. For the example case of Cool Modes, the
+generated metadata currently includes, e.g., the employed modelling language, the user and his collaborators,
+and inferred educational parameters as well as relations to previous document versions - further slots are under
+development. This process is illustrated in figure 3 with an example using Cool Modes and goes as follows:
+first, the user would ask for LOs similar to his current one (step 1 in figure 3). An appropriate query pattern
+would be extracted from the library, and serve the purpose of generating a concrete query based on the user's
+current context and the strategy encapsulated in the pattern (step 2 in figure 3). Then, a "search object" (labelled
+
+                                                       
+3 in the figure) would be built to trigger the search process (step 4 in figure 3). The rest of the procedure can
+either follow the steps already explained for portal-initiated search, or lead back directly to the tool and allow
+direct access to the LO (steps 5a/b and 6a/b).
+    With this document navigation based on thematic objects and their similarity, even more advanced usage
+scenarios are possible: based on a simple relation between users and the documents they have used, an extension
+of the similarity measure between documents to the associated users enables finding peers or groups of similar
+interest and, iterating this process, to realise social navigation based on the documents contained in the archive.
+For the user, this process breaks down to the simple question of "is there someone who is doing similar things to
+what I am working on?" The possibility of a system-side answer to this question is indeed a valuable point if one
+aims at fostering learning communities and their exchange.
+    Both ways, from the portal or by the tool, meet at a common point before triggering the actual search: an
+intermediate "search object" is generated, which includes the sought after properties for the target LO as well as
+relevant context values. The search object's content is either directly gathered from the portal context, as in the
+first case, or supplied by the tools, through a data exchange process, which, in turn, can be completed with
+contextual information. Once the search object has been built, the searching can be run, which would produce a
+result set. The process can be iterated and the user can participate in refining its results by changing values or
+adding constraints.
+
+CONCLUSIONS AND OUTLOOK
+     So far we have explored and developed mechanisms to use learning objects in context as mediators for
+community interactions. These mechanisms are designed to support the sharing of ideas in open-ended and ill-
+defined problem domains. I.e., the expected benefit lies in improved problem solving performance facing the
+given challenge. The COLDEX environment is fully implemented and demonstrates the feasibility of the general
+approach, and particularly the Cool Modes system exemplifies the possibility of using tool information for
+contextualised   indexing and  retrieval. This,  as  such,  is an  added  value  regarding    community   support
+functionality. As one of the reviewers has correctly pointed out: this is a logical value added, not necessarily a
+psychological one. Indeed, the psychological validity of the described mechanisms has still to be studied beyond
+functional test of our system implementation.
+     The initial  motivation  for (re-)using objects in the community     database can   also be viewed   from   a
+sustainability perspective: what would long term effects look like? We assume that, under certain conditions, the
+development of social relations might gain a dynamics of its own beyond the sharing of thematic objects. This
+could in turn have an impact on the content level: the stimulation of social relations might foster certain types of
+innovation and even the definition of new challenges in the learning community! The investigation of this effect
+within the community will be one issue for the future research. Another open research issue is the following:
+Similar to "feedthrough mechanisms" in synchronous collaboration with direct manipulation, the artefacts that
+mediate the communication in our approach may be used as message containers through embedded annotations
+which "let the object speak" like a message in a bottle (e.g., a handwritten comment "whoever re-uses this
+model, may contact me for a further exchange"). This is possible and it would add a direct communication
+channel to the asynchronous exchange.
+     We believe that it is worth investigating the aspects of the enabling mechanism and the sustainability effects
+on an empirical level. Research on sustainability effects will typically require statistical types of analysis. Such
+types of long term analyses need data about a community using systems of the types we presented in this paper.
+For  these purposes, we   are currently developing   (and  using continuously in   all our university lectures) an
+integrated web based learning support system (Pinkwart et al., 2005) that allows for a variety of evaluation
+methods, including "mixed mode social network analyses" (Wasserman & Faust 1994). On the evaluation level,
+we are also discussing pathways to analyse "hybrid networks" (ontology terms and persons), both in context of
+the LOR and the accompanying web portal. Applying this concept as a real time social network analysis for
+group reflection may also have interesting effects on the enabling mechanism.
+
+ACKNOWLEDGMENTS
+Parts of this work have been supported in the context of the EU project IST-2001-32327 (COLDEX). We thank
+all our partners, especially  Marcelo Milrad   (Växjö,  Sweden)   for the original definition of challenge-based
+learning and Kay Hoeksema (Duisburg, Germany) for the orchestration of scenarios.
+
+REFERENCES
+Barrows, H.S., & Tamblyn, R.M. (1980). Problem-based learning: An approach to medical education. New York: Springer.
+
+                                                        
+Cress, U., &   Hesse,  F.W.   (2004).  Knowledge   sharing   in groups: Experimental   findings of how  to   overcome a social
+        dilemma. In Proceedings of ICLS 2004. Los Angeles: UCLA (June 2004), 150-157.
+Dourish, P.  &   Chalmers,   M.  (1994). Running   out of space:   models of information navigation.   Proceedings of HCI'94.
+        Glasgow (UK), 1994.
+Francq, P., & Delchambre, A. (2005). Using document assessments to build communities of interest. In W. Cellary & H.
+        Esaki (Eds.): Proceedings of the 2005 International Symposium on Applications and the Internet         (SAINT 2005).
+        Trento, Italy, January 2005 (IEEE Press).
+Fuhr, N. (2001). Models in Information Retrieval. In M. Agosti, F. Crestani and G. Pasi (Eds.), Lectures in Information
+        Retrieval. Heidelberg, Germany: Springer, 21-50.
+Glance,  N., Arregui,  D.,  and  Dardenne,    M. (1998).  Knowledge   pump:   Supporting the  flow  and  use of  knowledge   in
+        networked organizations. In U. Borghoff & R. Pareschi (Eds.): Information Technology for Knowledge Management.
+        Berlin: Springer.
+Gruber, T. R. (1993). A translation approach to portable ontologies. Knowledge Acquisition, 5(2), 199-220.
+Guarino, N., & Giaretta, P. (1995). Ontologies and Knowledge Bases: towards a terminological clarification. In N. J. I. Mars
+        (Ed.), Towards     very  large knowledge   bases:  knowledge    building  and  knowledge    sharing. Amsterdam,     The
+        Netherlands: IOS Press.
+Hoeksema,    K.,   Jansen, and  Hoppe,   H.U. (2004).  Interactive processing of  astronomical  observations  in a cooperative
+        modelling   environment.   In: Kinshuk,  C.K.  Looi, E.  Sutinen  (Eds.): Proceedings   of the 4th IEEE   International
+        Conference on Advanced Learning Technologie. ICALT 2004, Joensuu (Finland), 888-889.
+Höök, K., Munro, A., and Benyon, D. (Eds.) (2002). Designing Information Spaces: The Social Navigation Approach.
+        Berlin: Springer.
+Hoppe, H.U., & Plötzner, R. (1999). Can analytic models support learning in groups? In Dillenbourg, P. (Ed.): Collaborative
+        Learning ­ Cognitive and Computational Approaches. Amsterdam: Elsevier, 147-168.
+Hoppe, H. U., & Gassner, K. (2002). Integrating Collaborative Concept Mapping Tools with Group Memory and Retrieval
+        Functions. In G. Stahl (Ed.): Proceedings of the International Conference on Computer Supported Collaborative
+        Learning. New Jersey, Lawrence Erlbaum Associates, 716-725.
+Jansen, M., Oelinger, M., Hoeksema, K., and Hoppe, H.U. (2004). An interactive maze scenario with physical robots and
+        other smart devices. In: J. Rochelle, T.-W. Chan, Kinshuk, S. J. H. Yang (Eds.): Proceedings of the 2nd IEEE Inter-
+        national Workshop on Wireless and Mobile Technologies in Education. Los Alamitos (USA): IEEE Press, 83-90.
+Konstan, J. A., & Riedl, J. (2002). Collaborative Filtering: Supporting social navigation in large, crowded infospaces. In
+        Höök, K., Munro, A., and Benyon, D. (2002), 43-81.
+Koschmann, T., Kelson, A. C., Feltovich, P. J., & Barrows, H. S. (2001). Computer-Supported Problem-Based Learning: A
+        Principled Approach to the Use of Computers in Collaborative Learning. In Koschmann, T. (Ed.), CSCL: Theory and
+        Practice of an Emerging Paradigm. Mahwah, NJ (USA): Lawrence Erlbaum, 83-124.
+Middleton, S. E., Alani, H., & De Roure, D. C. (2002). Exploiting Synergy between Ontologies and Recommender Systems.
+        In Proceedings of the Semantic Web Workshop at the 11th International WWW Conference. Honolulu, HI (USA).
+Pinkwart, N. (2003). A plug-in architecture for graph based collaborative modeling systems. In H.U. Hoppe, F. Verdejo & J.
+        Kay (Eds.): Proceedings of the 11th International Conference on Artificial Intelligence in Education Amsterdam: IOS
+        Press, 535-536.
+Pinkwart, N., Jansen, M., Oelinger, M., Korchounova, L., and Hoppe, H.U. (2004). Partial generation of contextualized
+        metadata in a collaborative modeling environment. In L. Aroyo and C. Tasso (Eds.), Workshop Proceedings of the
+        3rd International Conf. on Adaptive Hypermedia. Technical Univ. Eindhoven (NL), 372-376.
+Pinkwart, N., Harrer, A., Lohmann, S., and Vetter, S. (2005). Integrating Portal Based Support Tools to Foster Learning
+        Communities in University Courses. In Proceedings of 4th International Conference on Web-Based Education (WBE
+        2005). Anaheim, CA (USA): ACTA Press, 201-206.
+Resnick, P., & Varian, H. R. (1997). Recommender Systems. Communications of the ACM, 40(3), 56-58.
+Sarwar, B., Konstan, J., Borchers, A., Herlocker, J., Miller, B., & Riedl, J. (1998). Using Filtering Agents to Improve
+        Prediction Quality in the Grouplens Research Collaborative Filtering System. In S. Poltrock & J. Gudrin (Eds.),
+        Proceedings of the International Conference on Computer Supported Cooperative Work. New York: ACM Press,
+        345-354.
+Suthers, D., & Hundhausen, C. (2003). An experimental study on the effects of representational guidance on collaborative
+        learning processes. Journal of the Learning Sciences, 12(2), 183-218.
+Uschold, M., & Grüninger, M. (1996). Ontologies: Principles, Methods, and Applications. Knowledge Engineering Review
+        11(2), 93-155.
+Wassermann, S., & Faust, K. (1994), Social Network Analysis: Methods and Application. Cambridge University Press.
+Wickens, C. D. (1992). Engineering Psychology and Human Performance. New York, NY (USA): Harper Collins.
+Verdejo, M. F., Barros, B., Mayorga, J. I., and Read, T. (2003). Including collaborative learning designs in a Learning
+        Object Repository. In H.U. Hoppe, F. Verdejo & J. Kay (Eds.): Proceedings of the 11th International Conference on
+        Artificial Intelligence in Education. Amsterdam: IOS Press, 509-511.
+Verdejo, M.    F., Barros,  B., Mayorga,  J.I., & Read,   T. (2004). Designing    a semantic portal for collaborative learning
+        communities. In R. Conejo et. al. (Eds.): Lecture Notes in Artificial Intelligence 3040. Berlin: Springer, 251-259.
+
+                                                                
+

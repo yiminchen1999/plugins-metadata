@@ -1,0 +1,168 @@
+        Sharing Visual Context to Facilitate Late Overhearer's
+        Understanding of the Handheld-Based Learning Activity
+                             Kibum Kim, Deborah Tatar, Steve Harrison
+                                Center for Human Computer Interaction
+                                   Department of Computer Science
+                                                 Virginia Tech
+                          kikim@vt.edu, tatar@vt.edu, sharrison@vt.edu
+
+         Abstract:   Peripheral    participation  is  fundamental     to   collaborative  learning.  In  the
+         classroom, we see two situations in which peripheral participation is essential: formative
+         assessment, during which a teacher attempts to assess the utility of an ongoing activity
+         and   intervenes if necessary;   and  peer-monitoring,     during  which   a   student attempts  to
+         learn what  other   students  are doing.  When     augmenting     the  classroom   with handheld,
+         wireless computing     devices,  handling   peripheral    participation becomes    more  difficult.
+         The proposed new handheld network service, Look, allows a late overhearer, who has not
+         witnessed  the   creation of  common     ground,   to   monitor   the interaction  between    group
+         members    already    engaged  in  a  collaborative     situated  learning  without    interrupting.
+         Laboratory  experiences    with   our  prototypes    indicate   that  Look  balances   lightweight
+         implementation,     ease  of use,  and    utility in    a way    that could    enhance  classroom
+         communication and learning.
+
+Introduction
+         In discourse, people frequently switch their roles between central participation (such as speakers
+or addressees) and peripheral participation (such as overhearers or bystanders). Many computer-supported
+collaborative learning (CSCL) or computer-supported cooperative work (CSCW) tools focus on supporting
+central participants  in  a    communication;     however,    none    that we    know    of focuses    on     peripheral
+participants--that is, those who are attending to the conversation overtly or covertly but are not current
+addressees  or  responders.  Considerable   evidence   exists    that such  participants   have  different    access  to
+information  and  different  cognitive burdens    than do   central   participants. However,    very   little is known
+about  how  to support   their needs,  especially  in light-weight    interactions. In   classroom  group     activities,
+active  changes  of social   roles occur   often.  When    we    introduce handheld     technology,  we   change     the
+affordances available to peripheral participants. In the context of task-oriented discourse processes with
+handheld computers, in this paper we focus on one type of peripheral participant: an overhearer. We (1)
+analyze the challenges faced by overhearers, (2) suggest a possible solution to overcome the challenges of
+overhearers  within  the  constraints  of  our vision  of  classroom     use,  and  (3)  report experimental     results
+showing the proof-of-concept of our solution in an abstracted form.
+
+Restrictions Faced by Overhearers
+         The problem of overhearer sufficiency occurs when two people engage in a primary task involving
+face-to-face focused interaction using handhelds as well as speech, while a third person, the overhearer,
+must monitor or join the interaction. In the classroom, this problem takes two forms: formative assessment,
+during which a teacher attempts to determine whether the activity happens in an appropriate and sufficient
+manner   and   intervenes if it does  not, and    peer-monitoring,    wherein    a  peer attempts   to learn     what is
+happening and join the activity. At its most general, the problem can arise whenever one or more people
+focus on information that cannot be seen by a latecomer, making it difficult for the latter participant to
+gauge interruption and thus raising the effort involved in attaining sufficient common ground for informed
+participation.
+
+         According   to   Schober  and   Clark   (1989),   in actively    collaborating  to reach   common       ground
+discourse participants possess an advantage over an overhearer because they have understood each other's
+intentions. Simply  put,  discourse   participants engage     in a process  of  gathering   the moment-by-moment
+evidence necessary to ensure that what is said is understood. For example, periodically a speaker might
+
+                                                        364                                                        CSCL 2007
+check an addressee's    understanding    before  proceeding  in  the conversation    and an addressee    might  also
+respond to   a speaker  to  clarify  points  of confusion.  This  paradigm    presents the  collaborative view   of
+language usage.
+
+        In such a collaborative situation, overhearers face several disadvantages in understanding what is
+said. First, an overhearer has limited resources in grounding the mutual beliefs, knowledge and assumptions
+required for current purpose of understanding conversation. (Grounding refers to the interactive exchange
+of evidence by discourse participants regarding what is understood.) Overhearers cannot join the process of
+coordinating   between  a   speaker  and  an  addressee. Instead,   they  receive only   what is  given  by central
+participants (i.e., speaker and addressee). Second, overhearers cannot control the pace of the conversation,
+and once they lose track of the content, their misunderstandings can accumulate easily. Overhearers must
+contend with each speaker's next utterance while trying to complete understanding of the last one. They do
+not have    an opportunity   to  keep    the speaker   informed   of  the state   of their  confusion   and clarify
+misunderstandings.   Third,  although    an  addressee can  determine    what a speaker    means   from  conclusive
+evidence of their common ground, an overhearer, on the other hand, can only conjecture about what the
+speaker means using inconclusive evidence. This problem intensifies if overhearers were not present to
+witness the    buildup of   common    ground    between  conversational   participants.  Without   knowing     what
+constitutes  the speaker's  and  addressee's    common   ground,  the overhearer   finds it difficult to determine
+exactly what the speaker means. In most, if not all cases, the overhearer's only recourse is to conjecture
+based on his own assumption of common ground between a speaker and an addressee.
+
+Handheld Devices
+        Since we are supporting both monitoring and the potential for joining the conversation adeptly, we
+are concerned    with  device    mobility.   Handhelds   have a   relatively  restricted bandwidth    for wireless
+communication.    Furthermore, we need utmost simplicity in usage. Therefore, we must ask about the utility
+of minimal representations that enable peripheral participation.     Full monitoring is not an option.
+
+        To meet these concerns, we designed a new handheld network service called Look, which provides
+overhears with the ability to engage in real-time capture of activities and focal artifacts from other handheld
+screens by   infrared  (IR)   beaming    or  radio frequency    (RF)  communication.     Look    allows  peripheral
+participants to  get a snap     shot of  another person's   screen.  This synchronized     visual  co-presence  can
+establish that the items or concepts indexed are within the joint range of attention and enable participants to
+focus on the topic rather than on the technology.
+
+Experiment
+        We studied the utility of Look in a laboratory setting that abstracted and intensified the need for
+shared visual understanding compared its natural occurrence in the classroom. The experiment contrasted
+two different settings. In one, the overhearers had Look implemented with Bluetooth technology. In the
+other, they did not. The main participants engaged in a game that involved rearranging Korean characters
+(KCs) on the screen to put them in a specified order. Our hypothesis was that, compared to No-Look, Look
+improves how an overhearer understands a conversation.
+
+        Forty-four groups of three were recruited from the psychology subject pool at Virginia Tech and
+randomly assigned to condition. Participants in the main task were trained in the names of KCs and asked
+to use them in accomplishing the task. The principle test of the benefits provided by Look was based on
+accuracy--in   this  case,  the  percentage  of KCs  placed   correctly.  According   to our  hypothesis,   the late
+overhearers  whose   handhelds    were   equipped  with  the  Look   functionality   should better understand   the
+conversation   and  be better   able  to rearrange the  figures   correctly. This  was   precisely what   occurred.
+Through  all three  trials, late overhearers  in the group   that had access   to Look   experienced  significantly
+fewer errors than did those who were not supported with Look. When the late overhearer first entered the
+discourse, in trial 3, those who had access to Look were able to place 90% (SD: 17.6%) correctly, compared
+69% (SD: 24.2) of those without Look (F (1, 41) = 11.15, p < .002). As the task was repeated from trials 3
+to 5, correct placement increased in both the groups with Look and without Look. However, statistically
+significant differences remained through trial 5 between groups with and without Look (F (1, 43) = 9.97, p
+
+                                                        365                                                    CSCL 2007
+< .003 on trial 4; F (1, 40) = 9.87, p < .004 on trial 5). These differences suggest that the Look handheld
+network   service, which   provides  a  visual context   for  focal  artifacts, greatly  influences  an  overhearer's
+understanding of the conversation. A second test was used to gauge, in a limited way, learning. After each
+trial, participants were asked to choose a name for each KC. Over all three trials, the percentage of correct
+naming of the KCs was higher for the groups who had access to Look, though the effect was in some cases
+small. Specifically, on trial 4, an analysis of variance yielded a significant advantage, with F (1, 44) = 4.15,
+p < .05. The result showed also marginal improvements on trial 3 and 5 (F (1, 44) = 3.22, p < .08 on trial 3;
+F (1, 43) = 2.44, p < .125 on trial 5).
+
+Discussion
+        Active participation in conversation is not the only means by which learning can occur. Because it
+is fundamentally a social process that dwells in contextualized settings, learning also takes place through
+the observation of others (Stenning et al., 1999). Technologically, such an understanding demands that we
+shift the way we approach collaborative learning. New technology paradigms broaden the scope and style
+of interaction beyond the desktop into the real world, where users encounter increasingly rich contexts. For
+example, the mobile nature of handheld devices like a $100 Laptop, Tablet PC, Pocket PC, and Smartphone
+offers students new opportunities for increasing interaction and facilitating collaborative learning. Devising
+a solution that within any particular situation satisfies both varying human needs and capabilities and the
+affordances of mobile computing presents unique design challenges. In this project, we worked through the
+particular set of design problems, how to use handhelds to promote the rapid acquisition of common ground
+and shared meaning for peripheral participants.
+
+        To support overhearers, we implemented special and even idiosyncratic handheld network features
+and tested under   experimental   settings   that closely  approximate    the   range of  situations that we  find in
+classroom  learning  aided  by  ubiquitous   and   pervasive   computing   devices.   The  proposed   new   handheld
+network   service, Look,   allows a minimal    but   moderately   up-to-date  view   of  the task state. It maintains
+awareness,  and    enables improved     understanding    based  on   that awareness.     User experiences   with our
+prototype provide preliminary indications that Look could enhance classroom communication and learning.
+Two outcome measures were used to assess the benefits of a peripheral participant having the prototype
+versus not having it, placement correctness and naming KCs. Based upon our initial findings, we expect
+that our studies will contribute in important ways to the ongoing discussion among educational researchers
+and  computer  scientists  in   designing  mobile     computing   systems   that    will enhance  future    ubiquitous
+classroom.
+
+        The project reported in this paper is part of our continuing study investigating the influence of
+shared visual context on the learning for many different types of peripheral participants, including side-
+assistants and side-participants (Kim & Tatar, 2005; Kim et al., 2006). In this study, we showed a clear
+advantage to overhearers from access to the Look feature. In real classroom settings, we argue that the need
+for Look may not arise often, but is important when it does. Therefore, to avoid misunderstanding and to
+allow flexible entry into conversations, it is worth the difficulty and expenses of implementing what may
+appear to be "extra" functionality. Further, we have shown that such functionality can be useful without
+increasing the computational cost of continuous monitoring.
+
+References
+Kim, K.   &   Tatar, D.  (2005)   Weak   Guidance     with  "Look"   Functionality    in Handheld-based     Classroom
+        Activities.   Proceedings    of  the 2005    Conference   on Computer-Supported       Collaborative  Learning
+        (CSCL '05), Taipei, Taiwan,      296-300.
+Kim, K, Tatar, D. & Harrison, S. (2006) Handheld-Mediated Communication to Support the Effective Sharing of
+        Meaning in Joint Activity. Proceedings of the 4th IEEE International Workshop on Wireless, Mobile
+        and Ubiquitous Techniques in Education, Athens, Greece, 82-89.
+Schober, M. & Clark, H.(1989). Understanding by Addressees and Overhearers, Cognitive Psychology, 21, 211-
+        232.
+Stenning, K., McKendree,    J., Lee, J., Cox,  R.,    Dineen, F., &  Mayes,     T., (1999) Vicarious  Learning  from
+        Educational   Dialogue,   Proceedings     of the 1999  Conference   on   Computer-Supported      Collaborative
+        Learning (CSCL '99), Stanford, CA, USA.
+
+                                                          366                                                    CSCL 2007
+

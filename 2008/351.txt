@@ -1,0 +1,465 @@
+        Integrating synchronous and asynchronous support for group
+                        cognition in online collaborative learning
+                        Gerry Stahl & Murat Perit Çakir, Drexel University, Philadelphia, USA
+                                  Email: Gerry.Stahl@drexel.edu, MPC48@drexel.edu
+
+         Abstract:    The  Virtual   Math    Teams    (VMT)   environment     has  recently  integrated    a  wiki
+         component    into  its text chat  and shared    whiteboard   system.  The  wiki   component      serves  a
+         number of purposes, such as summarizing synchronous small-group interactions and sharing
+         the results  among     groups  in  an asynchronous     knowledge-building     community.        The  VMT
+         project is part of an effort to investigate group cognition--the accomplishment of problem-
+         solving   and  knowledge-building     tasks   by small   groups, particularly    in online,     distributed
+         contexts.  This  paper  is  an  experience   report  on the  use of   the VMT     system   with  middle-
+         school, high-school and junior college math students, with masters-level information science
+         students and with research teams. It synthesizes findings from the analysis in many published
+         case studies of VMT system usage and describes recent extensions to the system, integrating a
+         social-networking     portal, a knowledge-building      wiki,  a group-cognition     chat  room     and  a
+         shared whiteboard with history, awareness and referencing tools.
+
+Designing for Groups and Group Cognition
+         This paper is about how to design software to support group cognition, i.e., to open a communication
+space or medium for groups of people to solve problems together and to build shared knowledge. To reflect on
+the software design process, we build on the approach of human-computer interaction (HCI). HCI as a field has
+historically been oriented largely toward the relationship between the individual computer user and the interface
+of computer software. Classic HCI studies investigated the effects of different designs of desktop software upon
+individuals  using  the software.    The   theory  of  HCI   was,  accordingly,    closely  aligned   with   the  science  of
+individual  psychology.   For   reasons   to be    discussed  in this  paper,  we   propose   to  look    at  human-human
+interaction that is mediated by computer software and by the networking of computers. The software is here
+seen largely as a technological communication medium which both supports and constrains interaction among
+groups  of  users. More   precisely,   our  concern   is with  the small-group     interaction   itself, that is, the  group
+processes, rather than the interaction of one individual as such with other individuals in the group. Conceptually
+and  methodologically,    this  involves  a  shift from   the psychology    of  mental  processes,    representations     and
+conceptual change of individuals to the largely linguistic interactions of small groups.
+         The  proposed    change  entails  a shift from   the education   of  individual   minds  to  knowledge      building
+within groups. The issue changes from tracing effects on students of the transfer of factual knowledge from
+authorized sources (teachers, textbooks, drill software) to understanding how groups build and share knowledge.
+This new    focus  is  sometimes     termed  collaborative    learning,   which    includes  both   how    groups    increase
+knowledge    and   how  the individuals    within   the  groups  learn  concomitantly.     We    actually  prefer    the term
+knowledge    building  to  either   "education"    or  "learning". Our    preference   is   partially    because  the    terms
+"education"  and   "learning"   tend to  be  closely  associated  with  traditional institutions  of  schooling    and   with
+psychological  theories  of individual    minds.   It is also due  to the fact  that one    can  observe     the building  of
+knowledge in products of group work, such as discourse, theory statements and documents; knowledge building
+can more easily be operationalized and studied.
+
+Approaches to Instructional Technology
+The History of Computer Support for Learning
+         Starting even before personal computers were developed and long before they were networked across
+the Web, a variety of educational applications of computers were proposed and to a lesser extent disseminated.
+In a review of instructional technology, Koschmann (1996) identified four broad approaches for incorporating
+computers in educational practices, namely Computer Aided Instruction (CAI) starting in the 1960s, Intelligent
+Tutoring Systems (ITS) in the 1970s, Constructive Learning Environments (Logo-as-Latin) in the 1980s, and
+Computer-Supported Collaborative Learning (CSCL) from 1995 on.
+         These four design paradigms were largely motivated by technological possibilities. Even in the 1960s,
+mainframe   timesharing   computers     with many     terminals  were  able  to present    texts to  people   sitting  at the
+terminals, pose  multiple-choice     questions  and   respond   based  on the   choice entered    at  their   terminal.  CAI
+applications were designed to take advantage of this automation mode. Later, tutoring systems took this a step
+further with a more    sophisticated   back-end    using an  AI  approach   to model   both  the  domain     structure   (e.g.,
+typical solution paths for a well-defined math problem) and a mental model of the student's domain knowledge
+
+                                                                                                                                   2-
+         (i.e., how  the student  was  approaching    the  problem    solution).  More    exploratory   learning   environments    took
+         advantage    of subsequent  2-D    graphics  support    and  personal   computer    facilities for  end-user   programming.
+         Finally, CSCL responded to the networking of personal computers and the spread of the Web. Each approach
+         raised  new  HCI   issues--or   suffered   from a  lack  of  HCI   analysis.  The   four approaches    have  all had   limited
+         successes and are still active in the instructional technology marketplace.
+                   Each of the four approaches has simultaneously offered tools for classroom education and threatened
+         the institutions  of schooling.  They  all  allow  people    to learn   outside  of school.   Some   have   been particularly
+         popular for home schooling and for after-school programs, as well as for industrial training workshops.
+                   In  terms  of the focus   of this  paper,  it is  important   to distinguish   CAI,    tutoring  and constructivist
+         environments (on the one hand) as software for individual usage versus CSCL (on the other hand) as inherently
+         for small-group usage. While the first CSCL system--CSILE (Scardamalia & Bereiter, 1996), aka Knowledge
+         Forum--has been used in classrooms around the world for a decade, most other CSCL systems are still in the
+         research prototype stage.
+
+        The New Perspective of the Learning Sciences
+                   Leading, or at least paralleling, the changing paradigms for learning technologies was the evolution of
+         theories  in the  learning  sciences (Sawyer,    2006).    Moving     away  from  the   traditional educational   theories  of
+         Thorndike    (1914),  they  recreated   many    of  the  ideas     of Dewey     (1938/1991),    supporting   them    with  the
+         developmental and social psychology theories of Piaget (1990) and Vygotsky (1930/1978). In particular, they
+         increasingly recognized the socio-cultural situatedness of learning in communities-of-practice (Lave & Wenger,
+         1991). In this, they followed much the same path as the situated-cognition critique within AI and computer
+         science (Winograd & Flores, 1986).
+                   Perhaps the most important influence on the learning sciences for the focus of this paper was the reception
+         of Vygotsky's theory of social mediation, in particular his principle of internalization. This says that most higher
+         functions  of human     thought are  first learned socially,  as   part of interactions  among     people;  they can later  be
+         internalized  and transformed   into individual    mental   skills (Vygotsky,    1930/1978,    pp.  52-57). This  principle is
+         associated   with his concept   of the zone   of  proximal   development,     in which   a  learner  can  engage   socially in
+         collaborative work on a task that they would not yet have been able to accomplish on their own internally.
+                   In our perspective, Vygotsky's theories--although not fully worked out in his brief career--emphasize
+         the importance    of  small-group   interaction  for the    construction   of meaning,    representations,   tools, symbolic
+         artifacts and knowledge resources, both for the culture and for the individual. The implications of this theory
+         have yet to be taken into account by the aims, procedures and institutions of contemporary schooling.
+
+        Computer-Supported Collaborative Learning
+                   The primary problem with how schools have adopted computers is their technology-driven view of the
+         social role of computers. Under pressure to do something to improve schooling and to make it seem more up-to-
+         date, politicians, administrators and parents have pushed to equip schools with computer hardware and Internet
+         access.  Of  course,  these are  necessary,   but  not  at  all sufficient.   The major    problem    is a  lack of  adequate
+         educational software.
+                   It is popular to write essays and books on the negative effects of computerization on learning. An
+         influential critical essay in Science (Noam, 1995) made a number of important points about problems involving
+         how    computers   have  been   introduced   into  schooling.      Primarily  though,   the   author, Noam,    conceived    of
+         educational software as something to be used by isolated individuals. He then saw that an education based on
+         interaction  with a   computer  would   be   missing    the socializing  aspects    of, e.g., an undergraduate    on-campus
+         experience. However, he never considered that software can also be used to promote social contact, as can be
+         seen not only in educational applications that incorporate discussion forums, chat, IM, wikis, websites, etc., but
+         even more in the recent phenomena of social-networking software. Social networking, interestingly enough, is
+         particularly popular among college undergrads. In response to Noam, one might inquire how social networking
+         could be integrated into educational technology so that online learning would be a social experience, rather than
+         an isolating, alienating one.
+                   This is, of course, where CSCL steps in. The research field of CSCL--with its conferences, journal,
+         book series, workshops, projects and labs--is devoted to developing ways to harness computer technology to
+         support the rich social dimension of learning through collaboration.
+                   The   computational   power  of   computers   has  the   potential  to provide   many     kinds of tools  to extend
+         human capabilities and to transform routine or complex intellectual tasks into tasks that are more interesting or
+         feasible. With its graphic capabilities, the computer can run simulations of scientific or mathematical models
+         and allow groups of students to explore them. With global networking, computers can put students in touch with
+         their peers around the world, to learn each other's language and culture or to work and socialize together. The
+         ability of  computers   to  interact based   on  programmed        instructions  allows  them    to guide   students through
+         arbitrarily intricate and adaptable sequences (or scripts) of group and individual activities.
+
+2-2
+         CSCL     takes  many   approaches    to  mixing   these  potential  benefits  of   computerization.   The  CSILE
+software was designed to allow a classroom full of students to collaboratively build scientific knowledge and
+theories asynchronously over periods of several weeks (Scardamalia & Bereiter, 1991). The WebGuide software
+developed  at  the University   of   Colorado  also  provided    an asynchronous    medium--threaded       discussion  with
+personal   and  group    perspectives--to     support  collaborative    knowledge     building    (Stahl, 2006a,   Ch.  6).
+Argumentation     software   typically  helps  dyads  of   students  to reflect  on the  structure  of  their  debates and
+organize the logic of their thinking and persuasion (Andriessen, Baker, & Suthers, 2003). The VMT software
+that we will present in this paper is designed for groups of 2 to 10 students to discuss mathematics in real time.
+         Whatever    the    techniques,  media   and  domain,    CSCL    software   is intended    to foster   collaborative
+learning and   knowledge      building   by  a group.    Individuals    may  learn   by participating,    and  perhaps  by
+internalizing the experience, as Vygotsky suggested.
+
+Social Networking and Web 2.0
+         Software    for collaborative   learning--like    that for workplace    learning   and   community    learning--is
+associated with significant HCI issues, that exceed the difficulties of single-user desktop-interface and web-page
+design. They call for new theories, assessment tools and principles. They must centrally take into account the
+interactions among group participants as mediated by the software medium, and not just the interaction of an
+individual user   to an  interface.  The   number  of possible   combinations    of views   of  the software   by  different
+participants at any given time and the variety of interactions possible explodes, making HCI analysis techniques
+from the 1980s inadequate. Many technical problems and many potential uses of the software are unpredictable
+and have to emerge from actual usage by groups of people under naturalistic conditions. This limits the utility of
+scenarios, mockups, walkthroughs, prototypes and lab studies as assessment tools--as essential as they may still
+be to specific phases of the design process (Preece, Rogers, & Sharp, 2007).
+         Despite   the  difficulties facing   the development    of    effective collaborative  learning   technology,  the
+potential benefits loom larger than ever. The recent increase in Internet usage, particularly by high school and
+college students, bodes well for the adoption of new educational technologies. In particular, the popularity of a
+range of social   networking    sites  and  of so-called   Web   2.0   interactive technologies    has already    instilled a
+familiarity with computer-supported collaboration, its handiness and its benefits.
+         The   following    sections of this  paper  will  discuss  studies that   we  have  undertaken   recently  to take
+advantage  of  the   social networking   phenomenon    to  promote     collaborative  learning  of  domain   knowledge      in
+high-school math classes and university HCI courses.
+
+Designing for Virtual Learning Communities
+The Virtual Math Teams Project
+         The VMT project is a collaboration of the College of Information Science and Technology and the
+Math Forum digital library at Drexel University, funded by NSF from 2003-2009. Its primary goal is to catalyze
+and support a community of math discourse, particularly for middle-school and high-school students.
+         We began by building on a successful service at the Math Forum called Problem-of-the-Week. In the
+original service, an interesting challenge problem in pre-algebra, algebra or geometry was posted on the Web
+weekly and students worked on it at home, in school or during math club. Students could submit their solutions
+and their analyses to get feedback. The best solution statements were posted in the Web archives. Presumably,
+most of the math problem solving was done individually. We set out to make that a collaborative process.
+         We   also   took   advantage   of the huge   popularity    of text chat.  We   initially adopted  AOL's    Instant
+Messaging tool, which was already quite familiar and accessible to students. Students who came to our site were
+placed into small groups in an AIM chat room and given a math problem to explore. If they wanted to exchange
+a drawing, they could email it to us and we would post it where the group could view it.
+
+Use-Centered Research
+         By starting with software and procedures that were already proven in use and were familiar to the
+students, we finessed the design start-up issues that can bog down groupware development efforts. We were
+able to quickly observe students "in the wild" doing math collaboratively. By starting simply, we could allow
+our development process to be driven by observation of actual usage.
+         We had previously tried to do a face-to-face trial in a Philadelphia public school to get a feel for how
+collaborative  math   works   in that   kind  of  setting. Although     informative,   that effort  showed     how unusual
+collaboration  in  school   math is  and   how   complex   it is to analyze.  By   contrast, our   chat   logs immediately
+revealed that  students   could  quickly   adapt  to online   collaborative math    problem  solving   and   that we could
+observe much of interest about how they accomplished that (Stahl, 2006c).
+
+A Design-Based Research Process
+
+                                                                                                                                 2-
+                  We adopted the kind of design-based research process (Design-Based Research Collective, 2003) which
+         has been broadly adopted in the learning sciences. This is an iterative inquiry process in which we modify the
+         software environment, the kinds of math problems and the pedagogical script a couple of times a year. We invite
+         students to participate in online groups in the new environments. Then we analyze the logs of their interactions to
+         determine what was good in the service design and where improvement is needed. We thereby gradually build an
+         understanding and theory of chat-mediated interaction and online collaborative math problem solving.
+                  In  terms of the   technology, we   tried a   number of   commercial    and      open-source  environments,
+         combining chat with a shared-whiteboard drawing space for geometric figures. Eventually, we contracted with a
+         research lab in Germany (Fraunhofer-IPSI) to modify their ConcertChat software for our needs. We also began
+         to develop a portal front-end to support social networking (Stahl, 2006d).
+                  The kinds of math problems evolved considerably. From well-defined challenge problems, we moved
+         toward mathematical mini-worlds for exploration and encouraged groups to define their own math questions to
+         investigate. Over the years, we have gathered a corpus of 1,000 student-hours of interaction logs. We developed
+         a replay tool that allows us to recreate the full interaction and review it in detail.
+                  Perhaps the most important development was at the theoretical and methodological level. We gradually
+         developed a theory of group cognition and a methodology of chat interaction analysis, as discussed toward the
+         end of this paper. This resulted in about 100 publications reporting findings of the VMT project and analyzing
+         its logs (see http://mathforum.org/wiki/VMT?ProjectPapers    for references and links to the publications).
+
+        Creating Joint Problem Spaces
+                  It became  increasingly clear  from our   analyses and from    the related     CSCL   literature that for our
+         students "collaboration  is a coordinated,  synchronous   activity that is  the result    of a continued   attempt  to
+         construct and maintain a shared conception of a problem" (Roschelle & Teasley, 1995, p. 70).
+                  Different technologies can provide different kinds of support for the construction and maintenance of
+         shared conceptions. For instance, chat, whiteboard and wiki have different forms of persistence for inscriptions.
+         Student groups are very sensitive to these differences and exploit them in subtle and inventive ways. Designers
+         cannot predict many ways that these spaces will be used without observing actual groups of interacting students
+         trying to work out their tasks situated within specific environments.
+                  A  major  issue for  groups working   in  environments with   multiple  workspaces     (e.g., a  chat  stream
+         combined with a shared whiteboard) is how to coordinate communications across the spaces and how to shift group
+         attention from one space to the other. Special tools can help with this. When we adopted ConcertChat, it included a
+         referencing tool that could point from the chat to the whiteboard. We observed the power of this tool for supporting
+         the equivalent of pointing gestures and deictic references in the disembodied online context (Stahl, 2006b).We
+         recently added wiki spaces   and multiple tabs to  the whiteboard, facilitating collaborative   Web    browsing,   wiki
+         editing, help access and viewing of the math task. Combining these spaces with the social-navigation portal and its
+         various tools, the VMT environment has come a long way from its AOL IM starting point.
+                  In order to orient students to the current, complex environment, we have had to develop training and
+         help facilities as well as sometimes involving the students' teachers in providing basic training. We have also
+         found that it is effective to engage the same groups of students across multiple sessions, making planning more
+         complicated and fragile. Having sequences of multiple sessions brings enormous learning benefits. Not only do
+         the students become more familiar with the affordances of the environment, but they are able to explore the
+         mathematics more deeply and reflectively. We are able to script the sessions to gradually build understanding
+         (Dillenbourg  & Jermann,    2006). We   can also  take advantage   of the  intervals    between sessions   to  provide
+         feedback and suggestions without interfering with the delicate group interactions.
+
+       A Design for Collaborative Math Learning: Virtual Math Teams
+                  As the software design and pedagogical scripting become more complex, it is important to maintain
+         integration. The graphical referencing tool in ConcertChat along with history and social awareness functions
+         help to integrate the main workspaces for students: the chat and the whiteboard (Mühlpfordt & Stahl, 2007). In
+         order to support a global community of student users, we gradually sandwiched the synchronous chat-room-
+         with-whiteboard between a portal and a wiki. The portal was designed to support social networking within the
+         community so that students can find peers to collaborate with and then find a chat room to meet in. The wiki
+         was designed to gather the results of the small-group chats and make them available in an organized way to the
+         whole community. One way to think about this is that the portal or "VMT Lobby" support individuals to find
+         their way around and to define their identity; the VMT Chat rooms support the collaborative activities of small
+         groups; and the wiki shares the work of the entire community. The integration of the individual, group and
+         community levels of activity require software integration of the various components.
+
+2-
+                                            Figure 1. A VMT chat room.
+
+          The VMT social networking portal includes tools for defining and viewing personal profiles--in general,
+students in a VMT group have no knowledge about each other except for what is publicly posted in these profiles
+or revealed in the chat interaction. There is also support for messaging, defining buddies, listing favorite chat
+rooms, etc. The main feature of the Lobby is an interface for searching and browsing available chat rooms. All
+available information is, by default, filtered based on one's "project" or sub-community. Most students are only
+interested in interacting with other students engaged in the same broad project, such as a VMT contest series.
+          Figure 1 shows a typical chat room, consisting of the text chat interface on the right and the shared
+whiteboard on the left. Note that the user is currently pointing to a previous chat posting that she has scrolled
+back  to, and that the referenced chat message    was pointing to a translucent rectangle selecting       part  of the
+whiteboard. As seen here, the whiteboard supports a wide range of uses, such as displaying the problem text,
+affording the construction of simple diagrams and posting solution proposals in ways that are persistently visible
+and easily editable. The history of the whiteboard state can be scrolled through, much like that of the chat, but
+unlike the chat it retains inscriptions in the visible board until participants decide to delete them.
+          Once we had the portal and the chat rooms working effectively to support small groups, we wanted to
+have the groups share their findings. Of course, students could visit chat rooms of other groups and read through
+their lengthy chat deliberations, but this rarely occurred. We  wanted a  way   for groups to summarize          their
+findings--at least at the end of a session and potentially at other points scripted for this in the topic description.
+We decided to set up a wiki that could be structured and edited by us as administrators, by the system through
+automated features and by the students who would post the actual content and read or respond to what other
+students had posted.
+          Of course, including a wiki meant that students would have to learn to navigate between the portal, the
+chat  rooms and  the wiki  and would  have  to learn  how to post textual and graphical contents         in the portal
+profiles, the chat stream, the whiteboard   and   now the wiki pages. We   had  to  supply some         supports   and
+integration to make this manageable. First, we extended the whiteboard to a tabbed interface with the original
+whiteboard for group work, a second whiteboard for the group to maintain a summary of their work, an easily
+accessible description of the topic for the room (the task description for the group), a special shared browser
+pointing to a wiki page associated with the chat room, a regular web browser (lacking the history and graphical
+referencing features) and a help manual.
+          To integrate the wiki with the chat environment, we automatically create a new wiki page every time a
+chat room was created; the two are associated with each other. We are giving the new summary tab in the chat
+room the ability to automatically post its summary text to the associated wiki page. We added a link to the wiki
+in the portal as well as the chat room tab displaying the associated wiki page. That way, users in the chat room
+can easily read and even edit the wiki page without leaving the room. Because it became harder to keep track of
+where group members were with the multiple tabs, we are adding social awareness signs to show what tab each
+
+                                                                                                                          2-
+         person is  currently in as  well as  what   tab   a graphical  reference  is pointing   to. In  order to keep  the wiki
+         organized, we use the "category" function of MediaWiki: when a chat room is created, the associated wiki page
+         is categorized with the room name, the topic name and the math subject name. Using these categories allows
+         one to easily find all the wiki pages summarizing work on a given topic, for instance. We also create some
+         introductory wiki pages for each VMT project or community, like the VMT Spring Fest contest on probability
+         problems.  This overview   points   to wiki pages    that summarize    student  work   on a  number   of different math
+         problems using a number of different problem-solving strategies.
+                   We have just begun to use the expanded VMT system with the wiki integration. The VMT project
+         provides a rich case study of how important HCI analysis is for the design of new technology, but also for how
+         limited traditional HCI methods are for understanding the computer-mediated human-human interactions. Our
+         methodology of chat interaction analysis and our underlying theory of group cognition--discussed below--try
+         to address these needs.
+                   While the VMT environment has been tuned to the needs of high-school math students, it has proven
+         effective for  other  collaborative    activities   as well. The    specifically  math-oriented    functions--like  our
+         implementation of MathML for displaying equations and the whiteboard's stock of Euclidean shapes--play a
+         relatively small role. The tools for integrating the multiple work spaces--like the graphical referencing from
+         chat, the creation of wiki pages corresponding to each chat room and the automatic posting of summary text to
+         the proper wiki page--are more important and are applicable to all knowledge domains.
+                   Our collaborators  at other  locations    (Newark,  Pittsburgh, Wisconsin,    Hawaii,    Montreal, Singapore,
+         Brazil, Romania, Germany) and we use the VMT environment for coordination of our design work on VMT, for
+         collaboratively critiquing each other's research papers, for holding virtual committee meetings, for pre-teacher
+         training and for student collaborations in other domains like physics or argumentation. Each of these different
+         uses can work effectively in our current environment, but each also suggests new features tuned to the new
+         application. We now turn from considering HCI issues in the design of the VMT environment for supporting
+         interaction of math students to the use of the same system for teaching design to HCI students.
+
+       A Design for HCI Education: Designing Social Networking
+                   In Spring  Quarter 2007,  while   we    were  completing  our  latest major  software  upgrade  to  VMT,  we
+         decided to try basing an online HCI masters-level course on the VMT system. This gave us a chance to try out
+         what we    had  learned from    the VMT     project.   We    also used   the opportunity    to try out   the new   VMT
+         chat/whiteboard/wiki environment in a context where we could define the course ourselves and guide the students
+         first-hand. We found it surprisingly easy to set up the entire course in a wiki, with clear instructions for the students
+         and a clean organization of resources. Each week, the students held several online meetings with their workgroups
+         in VMT chat rooms, where they discussed the readings and their design project assignments. They summarized
+         their discussions in their shared whiteboards and then posted their summaries to the course wiki. We provided
+         general feedback and guidance in the wiki as well. The wiki and the chat rooms with whiteboards are persistent and
+         serve as permanent documentation of the course and all its interactions and details.
+                   The students read the whole of a newly-revised and comprehensive HCI textbook (Preece et al., 2007)
+         as well as 18 research papers about CSCL and VMT. The textbook provided a thorough overview of the field
+         and related  background   information.  The   papers    served in  place of  lectures. Students  maintained   individual
+         journals on the textbook chapters and reflected collaboratively on the papers. Each group posted its critiques of
+         the papers in the wiki, where the other groups could read them and we could comment on them.
+                   The heart of the course was a group project, spanning most of the quarter, with weekly milestones
+         requiring postings to the wiki by each group. The groups met several times a week at their convenience in VMT
+         chat rooms to work on their group project and to discuss the readings for the week. As they discussed, they
+         summarized their ideas on the whiteboard for posting to the wiki. That way, the whole group could draft the
+         postings and if anyone missed a meeting they could catch up quickly without reading through a long chat log.
+                   The group project was to design an extension to the VMT software that they were using. The extension
+         was supposed to support social networking, so that potential users of the VMT system could find others with
+         similar skills, interests and availabilities to form groups.
+                   The ten-week hands-on project was divided into weekly assignments, which paralleled the stages of the
+         textbook's design model and matched the chapters and papers read the previous week:
+             1.    An  ice-breaker  design   project to    help  the  students get   used  to   working  together  in  the  VMT
+                   environment.
+             2.    Literature search on social networking and Web 2.0.
+             3.    Analysis and statement of problems in social networking.
+             4.    Establish requirements with use cases and scenarios.
+             5.    Conceptual design (this was done as an individual paper).
+             6.    Interactive prototype and scenario.
+             7.    Heuristic evaluation of another team's prototype.
+
+2-
+    8.   Cognitive walkthrough of one's own team's prototype following a scenario.
+    9.   Final, revised design for a new social network function in VMT.
+    10.  In  the final week, individual   students submit    their textbook journals  and  a reflection paper  on  their
+         experience learning about HCI in the course.
+         Class learning is contextualized within a global horizon by situating the knowledge built by the small
+groups  within   current HCI  research   issues. These   are explicitly discussed  as the  student groups   design  and
+prototype solutions that apply the HCI concepts in the readings. The issues emerge mainly in the collaborative
+chat interactions: practice and group discussion inform each other.
+         The idea of collaborative peer learning through hands-on practice--which is fundamental to the course
+approach--is presented to the students through the syllabus document and some of the readings. The grading
+system stated in the syllabus reflects that collaborative learning is a combination of efforts at the individual,
+small-group and classroom level: the grade is based on a combination of these. The assignments mix individual
+and small-group efforts, and the results are mostly shared and assessed at the class level.
+         By having the students work in the environment that they are designing for, they acquire first-person
+experience from a user perspective. Comprehensive histories of the interactions within the system are persistently
+available, so the students as designers can study their own usage of the system reflectively and analytically. It is
+thereby natural for the students to compare their subjective and objective analyses of the user experience. The
+collaborative structure of the course stimulates, encourages and supports discussion of issues of HCI and education.
+         The collaborative learning approach of the course is in many ways at odds with the culture at Drexel,
+which is traditionally an engineering school, based on didactic lectures rather than small-group learning. Yet, as
+evidenced by the reflection papers, the students learned to appreciate the many aspects of collaborative learning
+in  the course.  Perhaps   because they   were   mature  students   who  knew   that  the work-world    is increasingly
+organized into collaborative teams, they could understand the advantages better than undergraduates. Maybe
+because  they  were accustomed     to taking online  courses   in  which  there is  no social  contact, these  students
+enjoyed the interaction with their peers.
+         Having successfully completed the online HCI course last quarter using the VMT support for group
+cognition and collaborative knowledge building, we are currently trying to teach the same course in a face-to-
+face version. We are again using the VMT environment for small-group discussions and posting assignments,
+course material and student work. Sharing at the class level takes place mainly face-to-face. However, we are
+emphasizing the wiki as a place to organize class findings about designing for social networking to make them
+available to future course students and to the public generally.
+
+Theory and Methodology of Group Cognition
+         The challenge is that current software support for online collaborative learning is primitive at best. There
+is a tremendous need for HCI work to help develop effective collaborative learning software. The help is needed at
+a deep level, not just superficial changes to the look-and-feel of the interface. The nature of computer-mediated
+human-human interaction must be understood and new media and functionality must be designed to support it.
+         To investigate the design of software to support online collaborative learning in the domain of school
+math,   the VMT   project  adopted  a design-based   research   approach.   This  involves   gradually  developing   the
+software in response to frequent cycles of user trials in naturalistic settings. This approach calls for analysis of
+the effectiveness  of  the  software  in achieving   its goals  at  each cycle   of  testing (Design-Based    Research
+Collective,  2003). However,    the   design-based  approach    as  such  does   not  specify a method     of  analysis.
+Somehow, the support for human-to-human interaction and collaborative knowledge building must be analyzed.
+         The VMT project and our previous research have contributed to a theory of group cognition (Stahl,
+2006a).  This  theory  conceptualizes  collaborative   knowledge    building as  fundamentally   consisting   of group
+processes, largely linguistic in nature. The theory points to the field of conversation analysis as an example of
+insightful findings about linguistic group processes, such as the structure of turn taking in social conversation
+(Sacks, Schegloff, & Jefferson, 1974).
+         For researching the nature of group cognition, the VMT project has developed a methodology of chat
+interaction  analysis. This  supplies  the missing   analysis   method   for design-based    research   in the  area of
+computer    support    for  collaborative  learning.    Like   conversation   analysis,    we   wanted     to  take  an
+ethnomethodological approach (Garfinkel, 1967) to understanding the methods that people use to collaborate
+online, rather than imposing theoretical categories on our data.
+         We could not simply adopt conversation analysis for two major reasons:
+    1.   Conversation analysis is concerned with a very different context, one in which people are physically
+         present to each other and are speaking and gesturing. In the VMT media, disembodied interaction takes
+         place through text and other inscriptions.
+    2.   Conversation analysis is methodologically driven by how the participants themselves understand what
+         is going on. Investigating effects of design decisions imposes an external analytic perspective, which is
+         anathema to pure conversation analysis.
+
+                                                                                                                           2-
+                  The development of our theory of group cognition and our methodology of chat interaction analysis in
+         response   to these  issues   are by  no   means   complete. They   are only  meant   to  point out some of   the major
+         methodological and theoretical issues facing fields like CSCL and HCI. If HCI is to respond to the needs of
+         education today--including education of HCI students--then it needs to address the issues that this paper has
+         tried to raise. As I tried to detail in the three parts of my book (Stahl, 2006a), the attempt to (i) design effective
+         modalities for computer interaction with people engaged in online, computer mediated collaborative learning
+         and knowledge building opens up (ii) methodological issues of analysis of text-based disembodied interaction
+         and (iii) theoretical issues of group cognition.
+
+       References
+         Andriessen, J., Baker, M., & Suthers, D. (Eds.). (2003). Arguing to learn: Confronting cognitions in computer-
+                  supported collaborative learning environments. Dordrecht, Netherlands: Kluwer Academic Publishers.
+                  Computer-supported collaborative learning book series, vol 1.
+         Design-Based      Research  Collective.    (2003). Design-based   research:  An   emerging   paradigm  for  educational
+                  inquiry. Educational Researcher, 32 (1), 5-8.
+         Dewey, J. (1938/1991). Logic: The theory of inquiry. In J. A. Boydston (Ed.), John Dewey: The later works,
+                  1925-1953 (Vol. 12, pp. 1-5). Carbondale, IL: Southern Illinois University Press.
+         Dillenbourg, P., & Jermann, P. (2006). Designing integrative scripts. In F. Fischer, H. Mandl, J. Haake & I.
+                  Kollar    (Eds.), Scripting  computer-supported     collaborative   learning:   Cognitive, computational   and
+                  educational perspectives (pp. 275-301). Dodrecht, Netherlands: Kluwer-Springer Verlag.
+         Garfinkel, H. (1967). Studies in ethnomethodology. Englewood Cliffs, NJ: Prentice-Hall.
+         Koschmann, T. (1996). Paradigm shifts and instructional technology. In T. Koschmann (Ed.), CSCL: Theory
+                  and practice of an emerging paradigm (pp. 1-23). Mahwah, NJ: Lawrence Erlbaum.
+         Lave,  J., &   Wenger,     E. (1991).   Situated   learning: Legitimate  peripheral   participation.  Cambridge,   UK:
+                  Cambridge University Press.
+         Mühlpfordt, M., & Stahl, G. (2007). The integration of synchronous communication across dual interaction
+                  spaces.    Paper  presented    at the international  conference     on Computer    Support  for Collaborative
+                  Learning          (CSCL           2007),       New         Brunswick,         NJ.        Retrieved        from
+                  http://www.cis.drexel.edu/faculty/gerry/vmtwiki/martin.pdf.
+         Noam, E. (1995). Electronics and the dim future of the university. Science, 270, 247-249.
+         Piaget, J. (1990). The child's conception of the world. New York, NY: Littlefield Adams.
+         Preece, J., Rogers, Y., & Sharp, H. (2007). Interaction design: Beyond human-computer interaction (2nd ed.).
+                  New York, NY: John Wiley & Sons.
+         Roschelle, J., & Teasley, S. (1995). The construction of shared knowledge in collaborative problem solving. In
+                  C. O'Malley (Ed.), Computer-supported collaborative learning (pp. 69-197). Springer Verlag.
+         Sacks, H., Schegloff, E. A., & Jefferson, G. (1974). A simplest systematics for the organization of turn-taking
+                  for conversation. Language, 50 (4), 696-735. Retrieved from www.jstor.org.
+         Sawyer,    R. K.   (Ed.).  (2006).  Cambridge    handbook    of the learning    sciences. Cambridge,  UK:   Cambridge
+                  University Press.
+         Scardamalia, M., & Bereiter, C. (1991). Higher levels of agency in knowledge building: A challenge for the
+                  design of new knowledge media. Journal of the Learning Sciences, 1, 37-68.
+         Scardamalia,   M.,   &    Bereiter, C.   (1996).   Computer   support   for  knowledge-building     communities.  In T.
+                  Koschmann (Ed.), CSCL: Theory and practice of an emerging paradigm (pp. 249-268). Hillsdale, NJ:
+                  Lawrence Erlbaum Associates.
+         Stahl, G. (2006a). Group cognition: Computer support for building collaborative knowledge. Cambridge, MA:
+                  MIT Press. Retrieved from http://www.cis.drexel.edu/faculty/gerry/mit/.
+         Stahl, G. (2006b). Supporting group cognition in an online math community: A cognitive tool for small-group
+                  referencing   in   text  chat. Journal    of Educational   Computing    Research    (JECR)   special issue  on
+                  Cognitive     tools      for   collaborative    communities,       35   (2),     103-122.   Retrieved     from
+                  http://www.cis.drexel.edu/faculty/gerry/pub/jecr.pdf.
+         Stahl, G. (2006c). Sustaining group cognition in a math chat environment. Research and Practice in Technology
+                  Enhanced           Learning         (RPTEL),           1       (2),      85-113.         Retrieved        from
+                  http://www.cis.drexel.edu/faculty/gerry/pub/rptel.pdf.
+         Stahl,   G.    (2006d).     Virtual     math   teams     project:   An      overview     of  VMT.     Retrieved    from
+                  http://www.mathforum.org/vmt/TheVMTProject.pdf.
+         Thorndike, E. L. (1914). Educational psychology (Vol. I-III). New York, NY: Teachers College.
+         Vygotsky, L. (1930/1978). Mind in society. Cambridge, MA: Harvard University Press.
+         Winograd,     T., & Flores,   F.  (1986).  Understanding  computers     and  cognition:   A new  foundation   of design.
+                  Reading, MA: Addison-Wesley.
+
+2-
+

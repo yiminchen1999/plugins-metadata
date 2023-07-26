@@ -1,0 +1,451 @@
+CSCL 2011 Proceedings                                                                                         Volume I: Long Papers
+
+                       Training in Virtual Training Environments:
+                                   Connecting Theory to Practice
+        Johannes Moskaliuk, University of Tuebingen, Germany, johannes.moskaliuk@uni-tuebingen.de
+     Johanna Bertram, Knowledge Media Research Center, Tuebingen, Germany, j.bertram@iwm-kmrc.de
+         Ulrike Cress, Knowledge Media Research Center, Tuebingen, Germany, u.cress@iwm-kmrc.de
+
+          Abstract:    Many  institutions,    such  as  the  police,  use   virtual  environments     as part  of   their
+          training and education programs. Typical scenarios that are being trained virtually are of high
+          complexity, require intensive communication between team members, consist of situations in
+          which individual human beings are in danger, and are not trainable in real-life situations. In
+          this paper   we   describe     the  virtual  training   environment      VirtualPolice.    Its theory-based
+          development process is explicated to show how theory was connected to practice. We present
+          which   specific  needs   were   evaluated    in order   to  define   training  goals.  We     introduce  our
+          theoretical base and argue why such virtual training environments can support the acquisition
+          of knowledge-in-use,      the  ability  of  team   members     to  take   the  perspective   of   others, and
+          reflection of team performance. This makes it possible to identify those features of virtual
+          training environments     that   enable  successful     training, and   to  point  out  how    these may   be
+          implemented.
+
+Introduction
+Members    of  institutions such    as the police  force,    fire department    or  rescue   teams are   often  confronted     with
+scenarios in the course of their work which could not be trained before because of the high costs, the danger,
+time or effort that such training would have required. Nevertheless, these members of such teams have to react
+adequately to their daily challenges. They have to act as real teams, solve complex problems, ensure their own
+safety and   avoid  dangerous   incidences.    They    need   adequate   preparation     for this type   of teamwork      that will
+ensure that they can handle their jobs efficiently, flexibly and safely. Many institutions have recognized the
+potential of   virtual worlds   and    serious games    as   tools to train  their   teams   for  challenges   which   could   not
+possibly  be   trained in  reality. This   has resulted    in various    virtual  training   environments    (VTEs)    that    were
+developed for different training purposes, and which are often integrated into vocational education and training
+programs (Rose, Attree, Brooks, Parslow, & Penn, 2000). In the health care sector, for example, the use of
+virtual realities for training purposes is on the increase (Riva, 2002). VTEs have also been developed to train
+fire fighters (Julien & Shaw, 2003).
+          A Virtual Training Environment (VTE) allows people to experience difficult situations without taking
+any physical risks, and without the need of going to the limits of their physical strength. Any errors made during
+this training  will   not  lead to  negative   consequences,       and   trainers  have   the   flexibility to  define    different
+scenarios.   Such  typical  scenarios    that may    be  trained   virtually are   of high   complexity     and  have  no   single
+"correct" solution. They are based on a specialization of tasks within a team, require intensive communication
+between   team  members,    consist    of  situations  in  which   individual   human    beings   are  in   danger, and   are  not
+trainable in real life situations.
+          From the point of view of computer-supported collaborative learning, both theory and practice, these
+complex training scenarios and virtual training environments are very interesting. The focus here is not only on
+knowledge, but also on the members' experiences with complex situation that will influence the performance of
+the entire team. So the aim of a VTE is to combine the different knowledge and skills of the individual team
+member    to a high-performing      team.    This leads   to the   three key    aspects, which    are  the  base of  our  goal  to
+connect theory to practice:
+(1)       Knowledge-in-use: Team members need knowledge-in-use to handle complex scenarios. Knowledge-
+in-use is a  combination    of  different  types  of  knowledge     that  are   necessary    to perform  a  given   task, solve  a
+problem, or handle a complex situation.
+(2)       Perspective Taking: Team members have to learn to take the perspective of the others in a complex
+situation. They have to know about their own skills as well as the skills of other team members, and have to
+build a shared mental representation of knowledge that exists within in the team in order to respond adequately.
+(3)       Team  Reflection:    Performance     of a   team   depends   on   its ability  to  integrate diverse   knowledge     and
+construct a shared understanding of complex situations. Teams need to reflect about own strategies, behaviour
+and  performance.     This requires    a permanent    exchange     of one's   own    experience   and  the  shared   experiences
+within the team.
+          We argue that VTEs can support the acquisition of knowledge-in-use, the ability of team members to
+take the  perspective   of  others, and    a  reflection  of  individual  knowledge      and    team  performance.   This   paper
+explicates the theory-based development process of a VTE, as part of our design-based research program. It
+
+© ISLS                                                                                                                          192
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+starts with a description of the specific needs of our target group, a federal state police department in Germany.
+We introduce our theoretical base and argue why such virtual training environments can support what we call
+the three key aspects: knowledge-in-use, perspective taking, and team reflection. We introduce the co-evolution
+model (Cress and Kimmerle, 2008; Cress, Kimmerle, & Held, 2010), which focuses explicitly on the interplay
+between   individual   and  team    learning,  and   use  this  model  as   a  framework    to   integrate  our  theoretical
+assumptions. The paper concludes with some features of a successful VTE, connecting theory to practice, and
+presents the VTE Virtual Police, which was developed as part of our work.
+
+Field: Virtual Training for Police Officers
+Police officers are confronted with a variety of problems every day. To be prepared for difficult and dangerous
+situations, they need permanent and constantly updated training, regardless of their level of tenure, education
+and experience. So the police of the German state of Baden-Wuerttemberg has adopted a broad training and
+education  concept.   It is based  on  an   education and   knowledge     management      system that  is  run by the state
+Ministry of the Interior, a system which integrates and coordinates different educational provisions, ensuring a
+continuous   improvement     of the  skills of police    officers in  the state. This  knowledge-management       platform
+combines   conventional     education  with training  sessions    and e-learning,  and  the virtual  training  environment
+VirtualPolice is, so to speak, an extension of this platform.
+         VirtualPolice    makes  it possible   to  train operations,  which   were   previously  untrainable,   such as the
+interaction between officers on the ground with a helicopter crew. Due to the specific requirements of using
+helicopters (for example, availability, organizational effort, keeping down costs and noise), such operations can
+only be trained restrictively. So far, only so-called Special Forces have been trained intensively for such cases.
+But all  police  officers  (22,000  in the  state) might   be  confronted   with   a  helicopter call, so  such  training is
+relevant to all of them.
+         The   development    of VirtualPolice    is part of  a design-based     research program,   and   based on  strong
+cooperation between partners with different backgrounds. The technical development of VirtualPolice is carried
+out by TriCat, a software company specialized on programming complex virtual environments. Police trainers
+from   a local  training  and competence     center  and   the  helicopter  crew   are involved   in   the development    of
+VirtualPolice as domain experts. Our part within the project is to accompany the development of VirtualPolice
+as researchers and connect theory to practice.
+         The first step of our development process and goal to integrate theory and practice was to become
+acquainted with the specific training needs of our field partners, the police force of Baden-Wuerttemberg. Due
+to the high complexity of the tasks that were to be trained and in the absence of tested and standardized work
+routines, we decided to use non-standardized interviews and expert workshops to identify current problems and
+training  goals. Officers,   police   trainers and   members      of  helicopter  crews   were   interviewed    about their
+experiences, and corresponding operations were staged and analyzed. Subsequently, specific training needs were
+identified, based on the outcome of the analysis, which we had conducted. These training goals may be assigned
+to the three key aspects, which are listed below.
+         Knowledge-in-use: Specific courses of action, which are required in dangerous operations, need to be
+trained. Police officers have to react adequately and fast in every situation. A sense of danger should evolve and
+be retained in every situation. At the same time, the presence of the helicopter leads to greater stress, due to the
+noise produced by the helicopter, to which the police officers are not adapted. Their teams have to decide under
+enormous pressure, even if the available information is sparse.
+         Perspective Taking: Many problems resulting from interaction between officers on the ground with a
+helicopter crew are due to a lack of knowledge of what a helicopter and its crew are really able to do. Police
+officers may, for example, misjudge what the helicopter crew can see from above. In addition, both the team on
+the ground and the helicopter crew need to adjust their communication style to the situation. The helicopter crew
+will, for example, need to be informed about intended actions on the ground.
+         Team Reflection: One central need is to make individual experiences available to other team members.
+If team  members      have  finished  an  operation,  it  should   be ensured    that problems   that  occurred   and their
+successful solution are communicated to the other members. This should lead to individual learning and, at the
+same   time, a  higher   performance   of the  whole  team.    The   same  is true of  the integration  of  experiences   of
+helicopter crews into the training of ground forces. Integrating such different experiences makes it possible that
+the entire team is able to reflect on their knowledge and team performance.          As helicopter crews, so far, have not
+been trained together with officers operating on the ground, the opportunity of training together will improve
+learning at an organizational level.
+         The next step of our design-based research program is to find theories that provide insights in how
+these training goals may be achieved.
+
+© ISLS                                                                                                                  193
+CSCL 2011 Proceedings                                                                                       Volume I: Long Papers
+
+Theory: Knowledge-in-use, Perspective-taking, Team Reflection
+Current constructivist approaches assume that active construction of knowledge required active collaboration,
+using real or digital objects as epistemic artifacts. This has led to a plethora of theories that deal with situations
+in which    groups  use  some    shared  digital artifact to construct    knowledge.   The    knowledge      building concept
+(Scardamalia   &   Bereiter, 1994)   addresses   how  a   community     of learners  will  manage   to   develop    knowledge
+jointly. This approach focuses, to a large extent, on using computer technologies to form a knowledge building
+community. A knowledge building community acts like a scientific community, with the aim of constructing
+new  knowledge     and  developing   some    theory to  understand    the  environment.    The   knowledge     creation  spiral
+(Nonaka,    1994;  Nonaka    &   Toyama,   2003)   mainly  focuses    on  the building    and transfer   of   tacit knowledge
+(Polanyi, 1966).   Most    knowledge    is contained  in  the  experience   of   individuals, and  can    only  be   expressed
+verbally and transferred to others with some difficulty. The authors describe four processes, which dynamically
+build on each other: socialization, externalization, combination, and internalization. The knowledge building
+model of Stahl (2000) describes how social knowledge building and personal understanding take places and
+influence   each  other.  It also  highlights  how   cultural  artifacts   that are used   in activity    influence   personal
+comprehension and learning. The knowledge creation metaphor (Paavola & Hakkarainen, 2005) focuses on a
+mediated process of knowledge creation, where shared objects of activity are developed jointly. The mutual
+creation  of   new  material  and   conceptual   artifacts leads   to an   advancement     of  knowledge,      discovery    and
+innovation. The idea of knowledge maturing (Schoefegger, Weber, Lindstaedt, & Ley, 2009) describes how
+knowledge matures in the course of time from expressing individual ideas, collaboration on shared artifacts,
+standardization in documents, to a creation of learning objects and standardized training programs. During this
+process, knowledge will develop, be more and more integrated in an organization, and shared between all its
+members
+          These   theories,  which  were   outlined  here  very  briefly,  all  share  the idea   that   the  development    of
+knowledge takes place within communities and that epistemic objects (digital or real world objects) will support
+this development of shared understanding and community knowledge. These theories are also a good base to
+understand how training in a virtual environment leads to a connection of different knowledge and skills of
+single team member to achieve a high-performing team. To connect theory to practice in our present context, we
+focus on the three key aspects knowledge-in-use, perspective taking, and team reflection. These are the basis of
+the features of the VTE, which we developed.
+
+Knowledge-in-use
+Theoretical assumptions: To solve complex situations and difficult tasks, the team as whole and its individual
+members need a great deal of experience from similar situations. This experience results from practice and well-
+tested sequences    of action    during team  members'     work. Knowledge       of the  type that is    meant  here  may    be
+described   as knowledge-in-use     (De  Jong    &  Ferguson-Hessler,     1996). Knowledge-in-use        is a combination    of
+different types of knowledge that are necessary to perform a given task, solve a problem, or handle a complex
+situation. Knowledge-in-use may be defined as knowledge about activities or tasks that are performed frequently
+and  therefore    well established  in   the action routine   of a  person.     Knowledge-in-use      is embedded     in daily
+challenges and in most cases implicit, because it is based on experienced work routines, which are often carried
+out unconsciously (Smith, 2001). Knowledge-in-use is highly situated (Greeno, 1998), as it is tied to specific
+contexts, situations   or  circumstances.    Individuals  build  situational    knowledge,  that  is, a  relation   between   a
+situation that requires certain knowledge and the knowledge itself, about "situations as they typically appear in a
+particular domain" (De Jong & Ferguson-Hessler, 1996). This relation helps to identify relevant features of a
+current  problem,   to build  an  adequate   representation   of the  problem,   and   to retrieve additional    (declarative,
+conceptual or procedural) knowledge to solve a problem. In contrast to declarative or conceptual knowledge, it
+is not  easy   to transfer knowledge-in-use      from one    person  to  another.   The   larger part  of   knowledge-in-use
+consists of implicit knowledge about sequences of action (Polanyi, 1966). Members of an organization have to
+be  aware   of their   individual work   routines   and   experiences.  They    have  to  draw   general    conclusions     from
+situated knowledge-in-use, which can then be presented as abstract knowledge and transferred to other situations
+and contexts. Others than have to internalize this transferred knowledge and integrate with own experience in
+order to make it adaptive.
+          Adoption to VTE: VTEs are a good means to support the development of knowledge-in-use. The VTE
+is a tool to simulate real situations. This should help a trainee to draw the relation between a specific situation
+and the  relevant  knowledge-in-use,     which   is necessary   to respond    adequately.  This   will   not  only  lead to  an
+appropriate  reaction   in   the trained situation, but   also allow    a  transfer of  knowledge-in-use      to    similar real
+situations.  The observation of what other members of a team are doing will also lead to a form of learning
+through socialization (Nonaka, 1994). Experiences are shared and tacit knowledge can be communicated from
+one person to another only through direct experience. So experiences can be transferred through observation and
+imitation, and, as a result of this transfer, the observer acquires knowledge, but this will also remain tacit.
+
+© ISLS                                                                                                                       194
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+         A VTE provides opportunities, close to real experience, to acquire new knowledge-in-use by observing
+other users. Team members can observe strategies and actions of other members and learn from their success or
+failure. Even if trainees are not part of a current scenario themselves, they will benefit from their position as
+outside observers. They can adopt the observed strategies as part of their own knowledge, and give feedback to
+others  from  a  third-party  position. It   should be   emphasized    here   that learning is a  socio-cognitive    process.
+Different strategies of team members to handle a specific situation or to solve a problem may conflict with each
+other. To  become     a well  functioning    team,  they have  to find   a  common   understanding    of the   situation   and
+develop adequate strategies. A VTE can serve as a cognitive tool to highlight different strategies and provide
+possible alternative solutions to conflicts, which may occur by training together. In this way, a learning team
+will be  formed  in   which   all  members     with different  backgrounds    and   experiences   can  bring   in their  own
+knowledge to the benefit of all.
+         Summary: Knowledge-in-use is an essential outcome of this form of training. Team members have to
+acquire  knowledge-in-use     to   integrate different types  of  knowledge     and  solve  a  given  task. A    VTE   should
+support this acquisition of knowledge-in-use.
+
+Perspective Taking
+Theoretical assumptions: The concept of perspective-taking describes the "process of imagining the world from
+another's vantage point or imagining oneself in another's shoes" (p.110) (Galinsky, Ku, & Wang, 2005). From a
+social psychology point of view, perspective-taking results in an overlap of a mental representations of the self
+and  the other   and    leads to   a decreasing  of  stereotype   expression    and  in-group   favouritism    (Galinsky    &
+Moskowitz, 2000). What is relevant in the context of knowledge-in-use acquisition is that perspective-taking
+will also influence interaction and coordination within a team. Perspective-taking leads to higher similarity of
+the  group members'     behavioural   strategies   and fosters the    coordination  of social  behaviour  (Galinsky    et  al.,
+2005).  A  team  member    has    to build   a mental  representation    of his or  her own    perceptions,   strategies   and
+competences and those of the others. The team as whole will then develop a shared understanding of complex
+situations and strategies to act as a team. This shared understanding does only include knowledge about the
+others' expertise (cf. the concept of a transactive memory system (Wegner, 1986)) but also knowledge about
+how to act together and handle a complex situation. This team knowledge is an important part of knowledge-in-
+use that is required to solve a complex task. Taking the perspective of other team members will also help to
+prevent  communication     failures.  Members    who   know    about  different    vantage points within    a team   (e.g. the
+different perspectives of helicopter and ground crews members) are able to improve their interaction strategies
+in an adequate way. They adapt their communication to the perceived knowledge of the other members (Krauss
+& Fussell, 1991). This supports the common ground (Clark, 1996) within a team and is an important condition
+of success even in hazardous situations.
+         Adoption to VTE: We argue that a VTE can support perspective-taking within a team by simulating the
+perspective of other members. A team member is in a position here to experience the virtual world from the
+perspective of another member who has different tasks and commissions. The VTE enables the team easily to
+swap positions, equipment or viewpoints in order to build an understanding of the others' perspectives and of
+the whole situation. As a result, the team will build a shared mental representation, which can be used in similar
+situations in real-world settings. Moreover, VTEs provide the opportunity to review finished virtual training
+sessions several times from different perspectives. One team member can experience the training session from
+the vantage point of another member. Then a trainee builds a mental representation of the whole situation and
+integrates the different perspectives and tasks of single team members into his or her own knowledge-in-use.
+         Summary: The ability to take the perspective of others is an essential outcome of successful training.
+Team   members    have   built   a   shared  mental representation    to   perform  as  a  team.  A   VTE     should   support
+perspective-taking by providing the opportunity to switch between different perspectives.
+
+Team Reflection
+Theoretical   assumptions:     There   are   two   relevant   outcomes     of training:    Individual learning    and   team
+performance. Both outcomes influence each other because integration of different experiences leads to reflection
+on one's own knowledge, and enables a development of the whole team. The VTE acts as an epistemic artifact
+that can visualize the actions of the team members and support reflection processes. This mutual evolution of
+the individual and the team is described by the co-evolution model, as proposed by Cress & Kimmerle (2008).
+This model refers to the work of Scardamalia and Bereiter (2003, 2006), but points out, at the same time, that
+individual learning and collective knowledge building are two parallel and equally important processes, which
+support each other. Individual learning describes the internal processes that take place during collaboration and
+lead to better understanding of the environment and greater conceptual knowledge. Knowledge building, on the
+other  hand,  as a  collective   creation   of public  knowledge,     is regarded   as an   improvement     of   ideas or  the
+development of new ideas, not as a search for a perfect or true solution. It is as a discourse-oriented process in
+the  sense of joint   problem  solving.   Shared    digital artifacts can  support  knowledge    building,    as they  enable
+
+© ISLS                                                                                                                     195
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+participants   to contribute  their own    theories,  models,  examples,  visualizations,   notes,  and other    epistemic
+artifacts. The    shared  digital artifact  initiates a dynamic     and self-organized   process,   in which     ideas  are
+formulated, discussed, revised, or rejected. The co-evolution model regards the exchange of knowledge as an
+interplay between individuals and a community.
+           Adoption to VTE: The co-evolution model offers a framework to describe the mutual development of
+individual knowledge and team performance during virtual training. The co-evolution model does not explicitly
+focus on knowledge-in-use, but knowledge building will, of course, also take place if learners handle authentic
+real-life  problems   that require  knowledge-in-use.      A  VTE   can support    this co-evolution   of  the members'
+individual  knowledge    and  team  performance      by providing   a platform for   mutual   action. This form   of  joint
+training within a VTE leads to a permanent exchange of individual and shared experiences within a team. This
+leads  to  an integration  of diverse  knowledge,     and  constructs a shared    understanding  of   complex  situations.
+Unlike real-life training, it is possible in a VTE to record a complete training scenario and replay it later from
+different  perspectives.   Team   members   can review     and observe   their own   behavior  and    identify failures or
+potential for improvement. The VTE provides a form of objective feedback on one's own reactions and strategy,
+for example,      by  measuring   reaction   times,   replaying  communication       behavior  or  visualizing   strategic
+components. This supports and validates the subjective feedback of trainers or other team members, and will
+certainly improve individual development. The team performance will also be developed further through such
+mutual training and the possibility to review training scenarios. This can help to detect communication failures,
+misconceptions     or conflicts   during the  collaboration.   Deficits  can   be  identified  and  different  viewpoints
+integrated  into  shared   team   knowledge. This     also leads to learning   at an organizational   level,  because   the
+different experiences that were made during virtual training scenarios can be stored and retrieved later. Thus,
+experiences made by other teams are available to others, who can review their own behavior and connect it to
+their own knowledge-in-use. This facilitates the integration of different experiences and the collective creation
+of knowledge-in-use at the organizational level.
+           Summary:   The  mutual   development   of    individual  knowledge  and   team  performance    is  an essential
+outcome of training. Team members reflect about their own behaviour and develop individual knowledge, at the
+same time team performance will evolve during the virtual training. A VTE should support this co-evolution by
+providing the opportunity to switch between different perspectives, record and replay finished scenarios.
+
+Connecting Theory to Practice
+Coming back to the specific needs of our partner from the field, we can connect theory to practice and formulate
+those features of a VTE, which provide ideal conditions for training complex and dangerous scenarios. We use
+the three key aspects to structure these features, bearing in mind most of them are relevant to more than one key
+aspect.
+           Knowledge-in-use: A VTE supports the acquisition of knowledge-in-use by providing a flexible and
+reviewable training space.
+    (1)    Training is possible even if training in reality would be too dangerous or too expensive.
+    (2)    Specific  courses  of  action demanded     by   typical operations  may   be  trained  many  times    and   with
+           different team configurations, in order to acquire some routine and flexible reactions.
+    (3)    The difficulty  of a   task may  be  modified,    for example,  by  starting  with  a   reduced   scenario  and
+           increasing its complexity.
+    (4)    The VTE can provide additional scaffolds to support trainees at an early stage of training, and this
+           support can be faded out later.
+    (5)    Training may pause at any time, to reflect on the current status, define possible problems and re-adapt a
+           strategy.
+           Perspective Taking: A VTE supports perspective taking within a team by simulating the perspective of
+other members.
+    (1)    A VTE can simulate the vantage point from which other team members view the situation.
+    (2)    Team Members can see their own behavior from the perspective of others, e.g. by seeing the helicopter
+           crew's view of the ground.
+    (3)    Team   members    can  take  the position    of an outside   observer,  looking  at scenarios   from  a wider
+           perspective. This supports the acquisition of strategic knowledge.
+           Team reflection: A VTE supports team reflection, which will enhance individual learning and team
+performance.
+    (1)    Completed training scenarios are stored and can be retrieved later.
+    (2)    Team members can learn from others' experiences by reviewing them later.
+    (3)    Recorded communication, e.g. between helicopter crews and ground forces, may be analyzed to detect
+           communication failures.
+    (4)    Data on the performance of team members can be aggregated to visualize, for example, navigation
+           routes and resulting dangerous situations.
+
+© ISLS                                                                                                                  196
+CSCL 2011 Proceedings                                                                            Volume I: Long Papers
+
+The VTE VirtualPolice
+The virtual training environment VirtualPolice was constructed to train both ground forces and helicopter crews,
+although the integration of fire fighters, emergency medical services or other emergency services in a police
+operation can also    be implemented, making this VTE      highly adaptable. VirtualPolice simulates 150       square
+kilometres of accessible terrain, with villages and towns characterized by individual townscapes (see figure 1).
+Some building structures are accessible, and open areas in the countryside and woodlands exist as well. Day and
+nighttime in the simulation can be influenced and weather conditions be set, so that training scenarios can be
+adjusted to specific training needs. The trainees are represented by avatars, dressed either like police officers or
+suspects. Each participant perceives what is going on visually and with sounds through his or her own ego
+perspective, and can move freely through the VTE. Furthermore, the scenario can be populated by autonomous
+agents, guided by artificial intelligence. In addition, police patrol cars and normal vehicles are available.
+
+                                      Figure 1. Screenshot of VirtualPolice.
+
+         The available helicopter is represented with realistic pictures and sounds, as seen by the participating
+ground forces, and can be navigated either by trainers or helicopter pilots. A helicopter pilot in the simulation
+can choose between natural day/night view, use image-intensifying glasses at night and an infrared camera in
+order to provide a heat image of the scenario (figure 2).
+
+              Figure 2. Helicopter Perspective within VirtualPolice Using the Infrared Camera.
+
+         The training participants use headsets to communicate through spoken language. Trainees, trainer and
+helicopter pilots can use a simulated two-way-radio, and when they are close enough to each other in the VTE,
+they can hear each other without the need to use this transmission. This simulates real-world conditions in which
+the ground force team talk to each other face-to-face, but have to communicate by radio with crews further way
+or with the helicopter pilot. The trainer's monitor can show any position in the scenario and switch between
+different trainees' views and the helicopter view. He or she can communicate with the simulated police officers,
+with the suspects, or with all of the participants at the same time. This allows the trainer to give additional
+support, providing scaffolds or interrupt the training. The trainer can re-arrange the training scenario by placing
+any participant, the helicopter or the suspect into any position within the VTE and re-start the training.
+
+© ISLS                                                                                                             197
+CSCL 2011 Proceedings                                                                            Volume I: Long Papers
+
+         VirtualPolice is designed to train up to 12 participants simultaneously, and the system requirements of
+the software are low, so it will run on standard computers with no need for further equipment - only a keyboard,
+mouse and headsets are required. The VTE is part of the organizational network of the state police and can be
+used online. The trainees can remain in their local police stations or departments, but train together with other
+teams. Virtual Police provides the option to record the entire training scenario and replay it later from different
+perspectives. The trainer can set markers and written comments during the training in order to highlight relevant
+situations, for example, communication failures or dangerous behavior of the trainees. These markers can used
+to provide a structured feedback after the virtual training.
+
+Application of the Training
+The training concept of VirtualPolice consists of a preparatory stage with theoretical information, a practical
+stage using the VTE, and a feedback phase, which also integratesthe VTE. During preparation, the trainer first
+explains to the participants the content and the importance of this training. To underline this point, videos of real
+operations with dangerous    developments are introduced       and discussed. Then, information on appropriate
+behavior during such operations is provided and discussed. Finally, the training goals are defined explicitly,
+pointing out the focus of the practical stage. In this stage the participants are first instructed how they have to to
+use the VTE and how to navigate within it, and are given some time to acquaint themselves with the VTE.
+Subsequently, the prepared training scenarios are executed. The trainees are seated in single cabins in front of a
+24-inch monitor and wear a headset with integrated microphone, as an attempt to isolate them as widely as
+possible from environmental influences (figure 3).
+
+                              Figure 3. Police Officer Trains Using VirtualPolice.
+
+         After each scenario, a feedback phase is conducted. The scenario is discussed and every action can be
+replayed from different perspectives, allowing all participants to take the others' perspectives and to see their
+own actions from others vantage points. After the practical stage the participants receive feedback from their
+trainer depending on their performance and progress during the training. Newly acquired skills and knowledge-
+in-use can be discussed and real-world applications can be illustrated.
+
+Summary
+This paper explains our theory-driven approach to the development of a VTE for police officers, focussing on
+knowledge-in-use, perspective taking and team reflection. We consider these as key factors for efficient virtual
+training, and try to highlight the importance of sound theoretical foundations and assessments when applying
+VTEs. But the theoretical basics should not only be kept in mind when designing and developing a training
+environment. There should also exist, at least in the early stage of implementation, a feedback loop between
+trainers, trainees, psychologists and software developers. In our example VirtualPolice, we conducted after each
+newly released version of the VTE a training stage to test and explore the training environment, and we also
+arrange regular workshops involving police trainers, helicopter crew members, ground forces, psychologists and
+software developers, to discuss future improvements of the VTE. During our training and workshop sessions we
+discovered, for example, the necessity to have personalized avatars and identifiable streets and city areas. With
+such feedback loops, we intend so secure a high standard of training, permanently refresh our assessment of
+training needs, encourage communication between trainers, ground forces and helicopter crews, and connect
+theory to practice.
+
+© ISLS                                                                                                          198
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+References
+Clark, H.H. (1996). Using language. Cambridge: Cambridge University Press.
+Cress, U., & Kimmerle, J. (2008). A systemic and cognitive view on collaborative knowledge building with
+         wikis. International Journal of Computer-Supported Collaborative Learning, 3(2), 105-122.
+Cress,  U., Kimmerle,    J., &    Held, C. (2010).   The interplay   between   individual  and   collective knowledge:
+         Technologies for organisational learning and knowledge building. Knowledge Management Research
+         & Practice, 8, 33-44.
+De Jong, T., & Ferguson-Hessler, M.G.M. (1996). Types and qualities of knowledge. Educational psychologist,
+         31(2), 105-113.
+Galinsky, A.D., & Moskowitz, G.B. (2000). Perspective-taking: Decreasing stereotype expression, stereotype
+         accessibility, and in-group favoritism. Journal of Personality and Social Psychology, 78(4), 708-724.
+Galinsky, A., Ku, G., & Wang, C.S. (2005). Perspective-taking and self-other overlap: Fostering social bonds
+         and facilitating social coordination. Group Processes & Intergroup Relations, 8(2), 109-124.
+Greeno, J.G. (1998). The situativity of knowing, learning, and research. American Psychologist, 53(1), 5-26.
+Julien, T. U. S., & Shaw, C. D. (2003). Firefighter command training virtual environment. In Proceedings of the
+         2003 conference on Diversity in computing (pp. 30-33). Atlanta, Georgia, USA: ACM.
+Krauss,  R.M.,  &     Fussell, S.R.    (1991). Perspective-taking   in  communication:     Representations   of  others'
+         knowledge in reference. Social Cognition, 9(1), 2-24.
+Nonaka, I. (1994). A dynamic theory of organizational knowledge creation. Organization science, 5(1), 14-37.
+Nonaka,   I., &  Toyama,       R. (2003).  The   knowledge-creating     theory  revisited: knowledge    creation  as a
+         synthesizing process. Knowledge Management Research & Practice, 1(1), 2-10.
+Paavola, S., & Hakkarainen, K. (2005). The Knowledge Creation Metaphor ­ An Emergent Epistemological
+         Approach to Learning. Science & Education, 14(6), 535-557.
+Polanyi, M. (1966). The Tacit Dimension. Garden City, NY: Doubleday.
+Riva, G. (2002). Virtual reality for health care: the status of research. Cyberpsychology & Behavior: The Impact
+         Of The Internet, Multimedia And Virtual Reality On Behavior And Society, 5(3), 219-225.
+Rose, F.D., Attree, E.A., Brooks, B.M., Parslow, D.M., & Penn, P.R. (2000). Training in virtual environments:
+         transfer to real world tasks and equivalence to real task training. Ergonomics, 43(4), 494-511.
+Scardamalia, M., & Bereiter, C. (1994). Computer support for knowledge-building communities. The Journal of
+         the Learning Sciences, 3(3), 265-283.
+Scardamalia, M., & Bereiter, C. (2003). Knowledge Building. In Encyclopedia of education (pp. 1370-1373).
+         New York: Macimillan Reference.
+Scardamalia, M., & Bereiter, C. (2006). Knowledge building: Theory, pedagogy, and technology. In K. Sawyer
+         (Ed.), The    Cambridge     handbook    of the  learning   sciences  (pp.  97-115).  New   York:   Cambridge
+         University Press.
+Schoefegger,   K., Weber,    N.,  Lindstaedt,  S.,  & Ley,   T. (2009). Knowledge       Maturing Services:  Supporting
+         Knowledge      Maturing    in  Organisational  Environments.   In   D.  Karagiannis,  &  Z. Jinpeng,    (Eds.),
+         Knowledge Science, Engineering and Management: Third International Conference, KSEM 2009 (pp.
+         370-381). Berlin: Springer.
+Smith,  E.A.   (2001).  The    role of  tacit  and  explicit knowledge   in  the   workplace.  Journal  of  Knowledge
+         Management, 5(4), 311-321.
+Stahl, G. (2000). A model of collaborative knowledge-building. In Proceedings of ICLS 2000 (pp. 70-77). Ann
+         Arbor, Michigan, USA: University of Michigan.
+Wegner,  D.   (1986).  Transactive   memory:    A  contemporary    analysis of  the group  mind. In  B. Mullen,   &  G.
+         Goethals (Eds.), Theories of group behavior (pp. 185-208). New York: Springer.
+
+Acknowledgments
+The research presented here is part of a cooperation project of the Knowledge Media Research Center and the
+University Tuebingen together with the Polizei Baden-Wuerttemberg (federal state police department of Baden-
+Wuerttemberg),   the   MFG     Baden-Wuerttemberg     (centre   of excellence  for  IT, media, and  film),  the TriCAT
+GmbH and T-Systems.
+
+© ISLS                                                                                                               199
+

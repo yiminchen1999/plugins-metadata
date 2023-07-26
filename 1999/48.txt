@@ -1,0 +1,544 @@
+Revealing Common Ground: Augmentation on the
+Edges of Interpretive Communities
+Rick Borovoy, Fred Martin, Mitchel Resnick
+
+MIT Media Laboratory
+
+      Abstract: At the center of an intellectual community, members draw upon
+      their knowledge of shared assumptions to have nuanced discussions about
+      complex ideas. Newcomers to the conversation, who are on the edge of
+      this "interpretive community," do not partake in the common ground
+      necessary to join these discussions and can find themselves in a trapped
+      state. We are designing a new kind of computationally-generated
+      augmentation that jumpstarts the search for meaningful common ground ñ
+      both for people trying to join an established interpretive community, and
+      for people trying to form a new one. This paper discusses the application
+      of this type of augmentation, called the µ -cue, to both face-to-face and
+      on-line communities.
+
+      Keywords: community settings, groupware, handheld devices, shared
+      knowledge
+
+Introduction
+
+We have designed, built, and done proof-of-concept testing on two types of
+computationally-augmented name tags ñ called "GroupWear" ñ that provide
+augmentation on the edges of co-present interpretive communities, such as academic
+conferences. We were drawn to the idea of supporting the search for common ground in
+conference settings for three reasons: first, anyone who has ever attended a conference
+knows the need is acute; second, we found it paradoxical that researchers like ourselves
+spend a lot of time working in such collaborative settings, but not much time working on
+them; and third, one of the main goals of our own laboratory is ñ in addition to building
+new types of technology ñ to create new communities of sponsors and researchers. We
+were intrigued with bridging these goals, and creating a new technology that could help
+build community in face-to-face settings.
+
+Although various aspects of the design and testing of the GroupWear technologies have
+been written about elsewhere (e.g., Borovoy et al., 1996, 1998), this paper introduces a
+new organizing concept for a particular kind of augmentation that establishes mutual
+knowledge ñ the "µ -cue" (where the Greek letter mu sounds like the first syllable in
+"mutual", and mutual knowledge is synonymous with common ground). It then
+repositions these technologies, as well as a host of pre-existing examples, as µ -cue
+instances. This paper also introduces some initial work on applying µ -cues to on-line
+communities.
+For each of the three technologies we present, the µ -cue becomes the basis for
+articulating our design rational for both past and future work. Although defining the µ -
+cue this late in the design process might sound more like a design rationalization, we
+believe the it nicely distills a large number of previously articulated design goals into a
+single, parsimonious concept.
+
+The µ -cue
+
+When two cars pull up to an intersection posted with "4 Way" stop signs (see Figure 1),
+their drivers immediately share a set of assumptions that that allow them to make
+appropriate sense of each otherís actions. For example, from Driver Aís perspective:
+
+   ·  Driver A knows Driver B has a stop sign. Therefore, if Driver B drives through
+      the intersection without stopping, Driver A can confidently interpret this as an
+      unlawful act, and respond appropriately (e.g. by honking, gesturing, etc.).
+   ·  Driver A knows Driver B knows Driver A has a stop sign. Therefore, if Driver A
+      is inclined to ignore her stop sign, she can be confident Driver B will interpret it
+      as an unlawful act, and she will be able to interpret his response accordingly.
+
+                                Figure 1. 4 Way Stop Sign
+
+In the above example, the two drivers have formed an ad-hoc "interpretive community" ñ
+the literary theorist Stanley Fishís term for a community that shares enough of the same
+knowledge, beliefs, and practices to be able to negotiate the meaning of a particular text
+(Fish, 1980). In the Cultural Studies tradition, a text can be a novel, a film, an utterance,
+or, in this case, a street intersection and the activity within it. Ordinarily, interpretive
+communities are thought to grow slowly and incrementally over long periods of time.
+However, the small "4 Way" sign-within-a-sign plays an important role in creating a
+"quantum leap" toward an interpretive community: by establishing the fact that "everyone
+has a stop sign" as common ground for the drivers, much of the meaning of intersection
+activity can then be shared.
+
+We are very interested in how a small cue like a "4 Way" sign can help jumpstart an
+interpretive community. The "4 Way" sign works by transforming an existing pattern of
+common knowledge into mutual knowledge, where common knowledge is knowledge
+that is shared, but not known to be shared (our definition), and mutual knowledge is
+"knowledge that is shared, and known to be shared" (Krauss & Fussell, 1990).
+Specifically, the "4 Way" sign transforms a situation where everyone at an intersection
+knows he or she must stop ñ a pattern of common knowledge ñ to a situation where
+everyone knows everyone must stop, and everyone knows everyone knows everyone
+must stop ñ mutual knowledge. This last clause, while sounding ridiculous, is crucial. If
+we stop at "everyone knows everyone must stop", then each person might still think that
+while he or she knows that everyone has to stop, the other people do not know it (for
+more of this type of analysis, see Clark and Carlson, 1982).
+
+We define a µ -cue as an artifact that augments the edges of an interpretive community
+by transforming an existing pattern of common knowledge into mutual knowledge. Edges
+of interpretive communities occur both when a newly forming community struggles to
+establish some common ground (such as when four drivers pull up to an intersection),
+and when a newcomer attempts to acquire enough of the mutual knowledge of an
+established community to begin to make appropriate sense of its discourse. We define µ -
+cues in terms of community edges because in the center of these communities, members
+have already established a large body of mutual knowledge; it is on the outskirts that
+initiates need help in their search for common ground.
+
+The importance of µ -cues can be gauged by their many instantiations in everyday life. In
+addition to "4 Way" stop signs, consider:
+
+   ·  Laughter: A member of a group makes an obscure reference to an old Monty
+      Python (a now-defunct English comedy troupe) skit, and several people laugh.
+      These people simultaneously discover that knowledge they may have thought was
+      idiosyncratic is shared by some of the other group members, giving them a
+      pleasant feeling of community.
+   ·  Dry Cleaning Tags: "Weíre sorry, but after repeated attempts, we were unable to
+      remove this stainÖ" These embedded notes establish the presence and status of a
+      clothing stain as mutual knowledge. Without them, the customer would not know
+      whether to interpret the lingering stain as evidence of an oversight, a lack of
+      effort, or of an indelible mark.
+   ·  Email Headers: The "To:" and "Cc:" fields at the top of an email message
+      establish its contents as mutual knowledge among its recipients. Users take these
+      µ -cues for granted, but they are a very powerful feature: one can imagine early
+      designers of email systems seeing no need to provide such information. These
+      cues are powerful because they establish shared knowledge that users can draw on
+      to craft their own messages and to interpret the messages of others (Brown &
+      Duguid, 1996).
+
+In the following sections, we explore the design of three technologies for augmenting
+community dialogue in terms of the three critical features of a µ -cue: that it operates on
+the edge of an interpretive community, that it uncovers a meaningful pattern of common
+knowledge, and that it establishes this pattern as mutual knowledge.
+The Thinking Tag as µ -cue object
+
+We built two hundred "Thinking Tag" computationally-augmented name tags (see Figure
+2b) for the Tenth Anniversary celebration of the MIT Media Lab in 1995 (for more
+details about this experiment, see Borovoy et al., 1996). Like a normal Media Lab
+gathering, guests were given name tags when they entered. With the Thinking Tag, guests
+could then "program" their name tags with their answers to five multiple-choice opinion
+questions, such as "How would you like to spend your fifteen minutes of fame?", with
+answers "a) Story on front page of New York Times", "b) Appearance on Oprah", or "c)
+Home page linked to main page of Yahoo." Participants programmed their tags by
+interacting with five different "bucket kiosks," one for each question (see Figure 2a).
+Each kiosk was comprised of a placard that displayed the question and three buckets,
+each of which was labeled with one possible answer. Participants chose their desired
+answer by dunking their tag in the corresponding bucket. Now, when two guests met up,
+their Thinking Tags flashed differently depending on how much they had in common.
+The tags flashed one green light for every question the two people answered the same
+way, and one red light for every question they disagreed on.
+
+               Figure 2a and 2b. Bucket Kiosk and Thinking Tags
+
+Operates on the edge of an interpretive community
+
+Communities have two kinds of edges: the temporal edge at which a community is just
+starting to form, and the "spatial" edge where someone on the outside of an established
+community is trying to get in. Our first attempt at a µ -cue producing tool focused on the
+temporal edge that two strangers stand on when they meet face-to-face in a conference-
+type setting. We reasoned that ñ like strangers intersecting at a "4 Way" stop ñ two
+strangers intersecting at a large conference might also benefit from µ -cues to help them
+transform common knowledge into mutual knowledge.
+Uncovers a meaningful pattern of common knowledge
+
+We focused on membersí answers to opinion-type questions as the basis for extracting
+patterns of common knowledge. Fish is very specific about the role of shared belief in
+creating interpretive communities (1980), suggesting that revealing relevant common
+beliefs between two people might help them better understand each other. The questions
+in the Media Lab Thinking Tag event were chosen very carefully after considerable
+debate and community involvement to insure not only their relevance but also their
+evocativeness. If the guests did not have strong feelings about any of the questions, then
+the tags would not really be uncovering patterns of preexisting beliefs, and the µ -cues
+would lack meaning.
+
+Thinking Tags are capable of not only displaying knowledge about the individuals in a
+conversation, but also knowledge about their relationship (Borovoy et al., 1998b). The
+reason this is more powerful is similar to why Tom Erickson explains that the World
+Wide Web is powerful: it enables someone to get important information about someone
+else without having to "accrue a social debt to them" (Erickson, 1996). Ordinarily, there
+is a substantial cost in terms of time and effort to establishing some meaningful common
+ground with someone through traditional approaches, such as awkward "Where are you
+from? Do you knowÖ" conversations. This cost reflects the "chicken and egg" nature of
+the "Mutual Knowledge Problem" (Krauss & Fussell, 1990) ñ it is hard to find it when
+you donít have some already, and you donít have any unless you find it. By reducing this
+cost, we hoped the tags might help people have more meaningful conversations, both in
+terms of quantity and quality.
+
+Establishes mutual knowledge
+
+There is a potential problem with computationally augmented name tags supporting
+mutual knowledge. Ordinary name tags establish mutual knowledge because the wearer
+knows what is on his or her own tag, and knows that the viewer will also know it. When
+the content of the tag is being generated dynamically, however, the wearer no longer
+knows exactly what information he or she is displaying. This could result in the
+uncomfortable situation where a viewer reacts to the contents of a wearerís tag, and the
+wearer does not know how to make sense of the reaction. For the Thinking Tags, we
+solved this problem by designing an augmentation scheme that could show the same
+contents on both guestsí tags. That way, two guests conversing could look at each othersí
+tags, and immediately know the contents of their own.
+
+We observed that guests wanted to test to make sure their tags were displaying the same
+content as their conversation partners, especially early on in the event. Fortunately, it was
+easy for them to peer down on their own flashing Thinking Tag and verify that it matched
+their friendís. In this way, the Thinking Tag type of wearable computer is well suited to
+building mutual knowledge. This is much less true for the style of wearable computer
+with a "private" display that just the wearer can see (e.g., Starner et al, 1996). Anyone
+who has ever held a conversation with someone wearing this type of computer knows
+how difficult it is to establish a sense of common ground without knowing what
+information the other person is viewing. While these wearables have many powerful uses,
+helping community members establish mutual knowledge is not one of them.
+
+One might ask whether we really needed technology to do this activity. Could the same
+mutual knowledge be created if people simply wrote their answers to their opinion
+questions on their name tags and then looked at the tags of others to discover what they
+had in common? The problem is that a guest would have no way of immediately knowing
+whether his or her conversation partner had done the comparison, even if the guest
+witnessed the partner looking at the guestís tag. While "physical copresence" can
+establish the contents of a name tag as mutual knowledge (Krauss and Fussell, 1990), it
+can not similarly establish the result of an analysis of the contents. In order to make this
+mutual knowledge, the analysis must be part of the contents.
+
+Meme Tags and Community Mirrors as µ -cue objects
+
+In 1997, two years after the debut of the Thinking Tags, we introduced the Meme Tags at
+another Media Lab conference (for more detailed explication of the Meme Tags, see
+Borovoy et al., 1998a). A meme (rhymes with team) is a culturally transmitted gene ñ an
+idea that survives and replicates if it is useful and dies out if it is not (Dawkins, 1989).
+We built four hundred Meme Tags for the members of the Things That Think and Digital
+Life consortia, two groups of about fifty companies each that were meeting
+simultaneously. Guest were able to add memes ñ short pieces of text (sixty-four
+characters) expressing their opinions, predictions, favorite aphorisms and witticisms ñ
+into their tags. Examples of memes were: "If brute force isnít working, youíre not using
+enough of it" or "Microsoft should be broken up." When two people met, their tags
+communicated, and each tag offered its viewer a meme that the owner subscribed to and
+that the viewer had not yet seen (see Figure 3a). If the viewer liked the meme, she could
+hit her tagís green button, and the meme would be copied to her tag.
+
+             Figures 3a and 3b. Meme Tags and a Community Mirror
+
+Centrally located in the public spaces were the Community Mirrors: large-screen
+projection monitors that displayed real-time visualizations of memetic dynamics within
+the community (see Figure 3b). For example, one visualization showed the top ten
+memes for a particular sub-group, such as students, faculty, sponsors, or staff. Another
+visualization showed the members of the community with the most "influence," in terms
+of number of times people accepted a meme from them in conversation.
+Each guest on average authored two memes, and accepted five memes from their peers.
+Several sponsors made impassioned pleas to keep their Meme Tags for use as a prop to
+explain the activity to their colleagues back home.
+
+Operates on the edge of an interpretive community
+
+We designed the Meme Tags and Community Mirrors to support an interpretive
+community with a few hundred copresent members, in contrast to the Thinking Tagsí
+"community of two." The launching of Digital Life ñ a new consortium of researchers
+and sponsors interested in "the interconnection between bits, people and things in an
+online world," ñ created a temporal edge. These people needed help with the hard work
+of building an interpretive community around an evolving research agenda.
+Simultaneously, Things That Think, an established consortium, was welcoming several
+new members that needed help getting up to speed on this community's mutual
+knowledge. This created a spatial edge.
+
+Uncovers meaningful patterns of common knowledge
+
+As with the Thinking Tags, we focused on transforming patterns of common opinion into
+mutual knowledge, with two important differences. As mentioned previously, we wanted
+the patterns revealed in the Meme Tag activity to be about the entirety of the community.
+Also, we hoped that people would have a larger commitment to the opinions that
+constituted these patterns if they could author the ideas being exchanged themselves.
+
+Informal observation suggested that the Community Mirrors were meaningful. Many
+participants were seen lingering in front of them, discussing the contents among
+themselves. One faculty member reported a conversation between himself and a sponsor,
+where the sponsor kept looking over at the Community Mirror out of the corner of his
+eye. Suddenly, when the faculty member was in the middle of a sentence, the sponsor
+whirled around and took a picture of the display. He then explained that a meme he had
+created was on "the top ten most popular memes" list, and that he wanted to document
+this. Having now run the activity once, we have a much better sense of what
+visualizations could support the formation of an interpretive community. These are
+detailed in the following paragraphs.
+
+The activity data shows that different sub-groups at the event had different memetic
+"taste". For example, members of Digital Life were more likely to subscribe to memes
+that emphasized humanism over technology (e.g. "People createÖ not computers" and
+"The future will be decided by what we do, not what we make") than their Things That
+Think counterparts. Using a Community Mirror to establish the widely shared nature of
+these beliefs as mutual knowledge could help members create an interpretive community.
+For example, Digital Life members would know that in their nascent community, they
+could discuss potentially troublesome social implications of particular technologies
+without being heard as technophobic. A new Things That Think member who wanted to
+express the same concerns to his established community would know to phrase them
+more carefully.
+We noticed an interesting pattern of group behavior in one of the Community Mirrors
+used at the meme tag even that suggested a whole different type of µ -cue. The
+visualization showed a directed graph of how a meme spread through the community,
+where the nodes represented "carriers" and were color coded by affiliation (e.g. faculty,
+student, sponsor, staff). In many of these graphs, one could observe long streaks where a
+meme stayed within one affiliation (e.g. a sponsor passed to another sponsor who passed
+it to another sponsor, etc.) Further analysis after the event presented clear evidence of
+insularity by affiliation. For example, students were found to be almost twice as likely to
+talk to another student as they would have been if they mixed randomly (see Figure 4).
+While each of these students may have been aware of their own somewhat insular
+behavior, they may not have been aware that it was part of a larger trend. Therefore, a µ -
+cue that transformed this pattern of common knowledge about peopleís behavior into
+mutual knowledge in real time could have a powerful impact on behavior: students would
+now be able to interpret their own behavior in terms of this larger trend, and would know
+that others could do the same.
+
+                             Figure 4. Insularity by Affiliation
+
+A word about privacy: In order to address privacy concerns, it is crucial that tools like
+Meme Tags and Community Mirrors only be used in communities that are have a strong
+desire to have patterns regarding their personal tastes and behaviors transformed into
+mutual knowledge. Although we purposefully kept unaggregated personal data off of the
+Community Mirrors, there is no question that visualizations of such things as sub-group
+insularity are a kind of surveillance. We believe this is both acceptable and desirable, as
+long as the surveilant is the community itself. Therefore, the real-time, mutually-known
+nature of the Community Mirrors is crucial, to avoid any hint of the Foucauldean gaze
+where one group maintains power over another by knowing things about them they do
+not know about themselves (1977).
+
+Establishes mutual knowledge
+
+The Meme Tags violated a design principle that we felt was very important for the
+Thinking Tags: each tag in an exchange should show the same content, so each person
+would immediately know what the other person was looking at. For the Meme Tags
+activity, it was important for each person in an exchange to be able to offer a meme that
+was new to the other person, making it impossible to have symmetrical content. Of
+course, in the Meme Tag activity, the mutual knowledge-producing µ -cues had moved
+off of the tags and onto the large-screen Community Mirrors. Therefore, the content
+symmetry issue was less significant. Also, participants could still flip their own tag up to
+read (upside down) what meme was being displayed. In the next generation Meme Tag,
+we plan to put in a sensor that will automatically invert the text when the tag is flipped up
+to be read by its wearer.
+
+We used the principle of physical copresence to establish the contents of the Community
+Mirrors as mutual knowledge, articulated by Krauss and Fussell: "If you and your friend
+were physically copresent at some event (and mutually know this), you could assume that
+the salient aspects of that event were also part of your common ground" (1990).
+Therefore, the challenge became to insure the Community Mirrorsí salience. We did this
+by making the displays large (about ten feet diagonal), by centrally locating them in the
+main common spaces, and by making them call some attention to themselves via fast-
+changing, brightly colored visualizations.
+
+µ -Cues in an on-line community
+
+In an effort to push the application of µ -cues beyond face-to-face gatherings, we have
+begun to explore their effectiveness in augmenting on-line communities. Our first
+experiments involved the Foresight Exchange (www.ideosphere.com): an established
+community of several hundred people who place bets on the outcomes of various
+member-proposed predictions (e.g. "George W. Bush wins 2000 election" and "Cancer
+Cured by 2010"). Because this community requires its members to be explicit and
+systematic about their opinions (in the form of bets made on a standardized set of
+predictions), it is an ideal test-bed for the computation and deployment of µ -cues. (For
+more details about this play-money futures market, see Hanson, 1990)
+
+Operates on the edge of an interpretive community
+
+From the outside looking in, an on-line community can seem especially impenetrable. As
+a newcomer, one must try to make sense of scores of plain-text messages without the aid
+of many of the social cues that make face-to-face gatherings "readable." (Donath, 1998) µ
+-Cues have the potential to soften that hard edge and help outsiders break in to the
+community of interpretation. With them, a new member can quickly discover the
+common ground that connects her to the group, and the group to itself.
+
+Uncovers meaningful patterns of common knowledge
+
+There is opportunity in the on-line world to tap into rich, pre-existing databases to
+compute useful and stimulating µ -cues. Using the Foresight Exchange (FX) data, we
+have explored three different patterns of common opinion.
+Measure of common interest
+
+Newcomers to FX can display a an archive of messages posted to one of several relevant
+email discussion lists. However, when one doesn't know any of the authors, this list can
+seem very flat and uninformative. Therefore, we have "colorized" the authors' names on
+this list: the brighter the shade of green that the author's name is written in, the more
+predictions on which the viewer and the author both have a bet. It is our experience that
+this simple augmentation gives one a sense of affinity with particular authors as one scans
+down this list, similar to the sense of affinity one has with wearers of the original
+Thinking Tags whose lights are flashing green.
+
+Shared minority beliefs
+
+Information Theory suggests that not all shared opinions have the same importance
+(Shannon, 1948). The significance of two community members sharing an opinion varies
+depending on the percentage of the entire community that shares this opinion. For
+example, two strangers who discover they both believe the earth is flat will feel they have
+more in common than two who discover they both believe the earth is round. Therefore,
+when a user of our software reads a message on an FX discussion list, he automatically
+finds out about the opinion that he and the author share that is shared by the fewest
+number of other community members (of course, they may not share any opinions). We
+hope this can help new users experience the strong sense of common ground we have all
+felt upon meeting someone else who shares our disdain for a movie or book that everyone
+else has raved about.
+
+Surprising and predictable beliefs
+
+Applying Information Theory in another way, we have searched out opinions that are
+predictive of other opinions in the FX community. For example, on FX, one's belief that
+"alien abductions will be proven true" is a pretty good predictor of one's belief that
+"existence of UFOs will be verified". If a member is then discussing her opinion on the
+existence of UFOs in a message, this belief can then be flagged as "surprising" or
+"predictable", depending on her opinion on whether alien abductions will be proven true.
+[Implementation note: when FX users discuss a particular prediction, they usually use its
+official code word, which is easily recognizable by our parser]. This augmentation is
+designed to help viewers assess an author's credibility by using the common sense
+intuition "the more predictable an opinion is, the less credible it is". It is this same
+intuition that led Americans to pay little attention to Vice President Gore when he
+opposed President Clinton's impeachment, but great attention to Bob Dole, a prominent
+member of the opposition party, when he also opposed it.
+
+Prior research
+
+While others have done work on computationally-augmented badges, these badges have
+typically been used to communicate with a personís environment ñ to help track peopleís
+whereabouts in a building, or to automatically forward phone calls to a userís location,
+for example (e.g., Want et al., 1992). Surprisingly, no one else has used this technology
+in a name-tag-like fashion to augment face-to-face interaction. Perhaps this is because
+name tags, though ubiquitous, are taken for granted: one can find "dog tag" in Websterís
+Collegiate Dictionary, but not "name tag" or "nametag" (1979).
+
+There has been research on the traditional mechanisms that people use to establish mutual
+knowledge (Krauss & Fussell, 1990), such as: mutual copresence at an event, inference
+by category membership (e.g. "all plumbers know how to use a plunger"), and
+"interactional dynamics" including verbal exchanges as well as non-verbal vocalizations
+and head nods. The first two of these are of limited use in starting a meaningful
+conversation, since they can not easily produce mutual knowledge that is specific to a
+pair of individuals. The third requires significant interaction to establish mutual
+knowledge, whereas the function of µ -cues is to establish some meaningful mutual
+knowledge in advance of a sustained interaction.
+
+Another well-known method for establishing mutual knowledge is to ensure the same
+knowledge is taught to everyone in a community. This is the approach that E. D. Hirsh
+advocates in his campaign for "Cultural Literacy" (1988). Many nascent communities
+create such activities to give their participants a "shared experience" in an effort to create
+common ground (e.g., the keynote address). However, we believe people will have
+deeper connections to the knowledge and beliefs that they brought ñ and that brought
+them ñ to the community. Therefore, the µ -cueís focus on existing common knowledge
+will likely establish more meaningful mutual knowledge.
+
+In the CSCL community, there has been extensive research on how children construct
+shared meanings through conversation (e.g., Pea, 1996; Roschelle, 1996), and how
+communities of children can participate in knowledge-building discourse (e.g.,
+Scardamalia & Bereiter, 1996). Much of this collaborative work takes place toward the
+center of an interpretive community, however, where a structured setting has already
+established a lot of common ground. At a minimum, the community members probably
+know each other, know a lot of about what each other knows, and have a shared sense of
+purpose. To the extent this is not true, we believe the learning tools used in this research
+could benefit from the addition of µ -cue-type augmentation.
+
+Finally, research on collaborative filtering focuses on algorithms to predict people's
+preferences by extrapolating from the preferences of similar people in their on-line
+community (e.g. Shardanand & Maes, 1995). Our on-line work on µ -cues is not about
+making predictions, however. Instead, we use similar algorithms to report on the
+predictability of community members' opinions, in an effort to provide an interpretive
+context for those opinions.
+
+Conclusion and future directions
+
+Based on the success of our "proof of concept" work on µ -cue technology, we are
+pushing ahead on two fronts. We are currently seeking out a small, academic conference
+where we can do a more formal Meme Tag experiment. To do this, we would like to team
+up with researchers with the appropriate sociological and anthropological backgrounds
+necessary to undertake such a study. Our goal is to tightly weave the tags into the
+conference's intellectual program, in an effort to improve on one of the major weaknesses
+of the first trial: namely, that people demonstrated very little connection to the memes in
+their tags. We are also aiming to do more user testing of the on-line µ -cue work, both
+with the Foresight Exchange community, and with other communities that have similarly
+accessible opinion data (e.g. political discussion sites with polling data).
+
+Bibliography
+
+Borovoy, R., Martin, F., Vemuri, S., Resnick, M., Silverman, B., & Hancock, C. (1998a).
+Meme tags and community mirrors: Moving from conferences to collaboration. In
+Proceedings of the ACM 1998 Conference on Computer Supported Cooperative Work (p.
+159). New York: Association for Computing Machinery.
+
+Borovoy, R., Martin, F., Resnick, M., and Silverman, B. (1998b). GroupWear: Nametags
+that tell about relationships. In Proceedings of the CHI 98 summary conference: Human
+factors in computing systems (p. 329). New York: Association for Computing Machinery.
+
+Borovoy, R., McDonald, M., Martin, F., & Resnick, M. (1996) Things that blink:
+Computationally augmented name tags. IBM Systems Journal, 35, 3 & 4.
+
+Brown, J. S. & P. Duguid (1996). The social life of documents. First Monday, 1(1).
+
+Clark, H. H. & Carlson, T. B. (1982). Speech acts and hearersí beliefs. In N.V. Smith
+(Ed.), Mutual knowledge (pp. 1-36). London: Academic Press.
+
+Dawkins, R. (1989). The selfish gene, New Edition, Oxford: Oxford University Press.
+
+Donath, J. (1998). Identity and deception in the virtual community. In M. Smith and P.
+Kollock (Eds.), Communities in Cyberspace. London: Routledge.
+
+Fish, S. (1980). Is there a text in this class?: The authority of interpretive communities.
+Cambridge, MA: Harvard University Press.
+
+Foucault, M. (1977). Discipline and punish. New York: Penguin.
+
+Erickson, T. (1996). The world wide web as social hypertext. In "Viewpoints,"
+Communications of the ACM, 39, 1.
+
+Hanson, R. (1990). Could gambling save science: Encouraging an honest consensus.
+Eighth International Conference on Risk and Gambling, London.
+
+Hirsch, E.D. (1988). Cultural Literacy: What Every American Needs to Know. New
+York: Vintage Books.
+
+Krauss, R. & Fussell, S. (1990). Mutual knowledge and communicative effectiveness. In
+J. Galegher, R. E. Kraut, & C. Egido (Eds.), Intellectual teamwork: Social and
+technological foundations for cooperative work (pp. 111-145). Mahwah, NJ: Lawrence
+Erlbaum Associates.
+
+Pea, R. D. (1996). Seeing what we build together: Distributed multimedia learning
+environments for transformative communications. In Koschmann, T. (Ed.), CSCL:
+Theory and practice of an emerging paradigm (pp. 171-186). Mahwah, NJ: Lawrence
+Erlbaum Associates.
+
+Roschelle, J. (1996). Learning by collaborating: convergent conceptual change. In
+Koschmann, T. (Ed.), CSCL: Theory and practice of an emerging paradigm (pp. 209-
+248). Mahwah, NJ: Lawrence Erlbaum Associates.
+
+Scardamalia, M. & Bereiter, C. (1996). Computer support for knowledge-building
+communities. In Koschmann, T. (Ed.), CSCL: Theory and practice of an emerging
+paradigm (pp. 249-268). Mahwah, NJ: Lawrence Erlbaum Associates.
+
+Shannon, C. (1948). A mathematical theory of communication. Bell System Technical
+Journal, 27, 379-423 and 623-656.
+
+Shardanand, U. & Maes, P. (1995). Social information filtering: Algorithms for
+automating "word of mouth." In Conference Proceedings on Human Factors in
+Computing Systems (p. 210). New York: Association for Computing Machinery.
+
+Starner, T., Mann, S., Rhodes, B., Levine, J., Healey, J., Kirsch, D., Picard, R., and
+Pentland, A., (1996). Augmented reality through wearable computing. Presence,
+Teleoperators and Virtual Environment, 6, 4, 386-398.
+
+Want, R., Hopper, A., Falcao, V., & Gibbons, J. (1992). The active badge location
+system. ACM Transactions on Information Systems, 10, 1, 91-102.
+
+Websterís new collegiate dictionary. (1979). Springfield, MA: G. & C. Merriam
+Company.
+
+Authorsí addresses
+
+Richard Borovoy (borovoy@media.mit.edu)
+MIT Media Laboratory; 20 Ames Street; Room E15-120B; Cambridge, MA 02139. Tel.
+(617) 253-4191
+Fred Martin (fredm@media.mit.edu)
+MIT Media Laboratory; 20 Ames Street; Room E15-020F; Cambridge, MA 02139. Tel.
+(617) 253-5108
+Mitchel Resnick (mres@media.mit.edu)
+MIT Media Laboratory; 20 Ames Street; Room E15-020A; Cambridge, MA 02139. Tel.
+(617) 253-9783
+

@@ -1,0 +1,394 @@
+   Mathematical           Manipulatives           as    Designed       Artifacts:      the        Cognitive,
+                      Affective,        and     Technological           Dimensions
+
+                                                Michael Eisenberg
+                      Department of Computer Science, Institute of Cognitive Science, and
+                                     Center for LifeLong Learning and Design
+                            University of Colorado, Boulder CO USA 80309-0430
+                                              duck@cs.colorado.edu
+
+                                                  Julie DiBiase
+                       Department of Computer Science and Institute of Cognitive Science
+                            University of Colorado, Boulder CO USA 80309-0430
+                                              jules@cs.colorado.edu
+
+               Abstract.  Mathematical    manipulatives-tangible     objects  with a pedagogical
+               purpose-have become popular tools in mathematics education. But typically, the
+               notion of a "manipulative" carries with it a number of additional assumptions: that
+               these objects are designed for elementary (as opposed to advanced) mathematics
+               instruction; that they have little in the way of emotional meaning for their users; and
+               that they are relatively simple, "low-tech" objects. In this paper we challenge these
+               assumptions. Drawing on our experiences in two related projects in educational
+               computing,  we   suggest  that   manipulatives   may  be  designed  for advanced
+               mathematical topics; that they may offer creative (and thus affectively important)
+               opportunities for students; and that they may be designed in ways that accompany or
+               incorporate computational media.
+
+1. Introduction:        Mathematical      Manipulatives          as Objects   of   Design
+ Mathematical manipulatives-broadly speaking, tangible objects with an explicit pedagogical purpose-have a
+ venerable presence in American elementary education. Early examples, such as the blocks used by Maria
+ Montessori [Montessori 1912] and the well-known Cuisenaire rods [Pl], have over time been succeeded by a
+ still larger set of beautiful objects: Geoboards      [P2], Polydrons [P3], and so  forth.   Undeniably,   many
+ mathematics teachers express positive views of such manipulatives (for instance, the NCTM Standards
+ document recommends their use in K-4 classrooms ([NCTM 1989], p. 17)). Still, as [Resnick & Omanson
+1987]    have  observed in arithmetic   classrooms,    children do not always  succeed in     linking  the use of
+ manipulatives t o the mathematical concepts or operations that these objects are supposed t o illuminate; while
+ [Ball 1992], describing the popularity of manipulatives in mathematics education, writes that they "have become
+part of educational dogma: Using them helps students; not using them hinders students. There is little open,
+principled debate about the purposes of using manipulatives and their appropriate role in helping students learn."
+
+This paper is intended to contribute to the discussion whose absence is noted by Ball. The continuing popularity
+of manipulatives suggests that mathematics teachers do find value in them; but the occasional cautionary voices
+suggest in turn that the use of manipulatives is hardly a guarantee of educational success. Creating high-quality
+mathematical manipulatives is, in fact, a design task worthy of study in its own right. This paper will explore
+several usually unheralded aspects of this design task, with a view toward articulating what we feel are important
+themes and principles in the construction of mathematical manipulatives. Our discussion will focus on several
+interrelated "dimensions" of manipulative design:
+
+          · The cognitive dimension (i.e., what types of learning or reflection the manipulatives
+          are intended to promote);
+          · The technological dimension (i.e., how--or whether-the advent of new technologies
+          may open up intriguing new directions in manipulative design);
+          · The social/affective dimension (i.e., how manipulatives function in the social or
+          personal lives of both children and adults).
+
+44
+In exploring these ideas, we hope not only to inform (and share our own experiences with) the creators of novel
+manipulatives, but also to suggest new avenues of assessment and observation-new ways of interpreting the
+uses of manipulatives in both school and home settings.
+
+The observations in this paper derive primarily from two related research efforts that we have pursued at the
+University of Colorado. The following (second) section outlines these two projects and describes the types of
+manipulatives employed: briefly, the first project centered on the use of manipulatives to illustrate important
+concepts in higher mathematics and functional programming, while the second has focused on allowing students
+to design and create customized polyhedral models through the use of a computer program. The third section
+the heart of this paper-will enumerate issues regarding the creation and use of manipulatives that have come to
+light in our own experiences within these two projects. Some issues are more closely associated with the first
+project, and some with the second; but in total, they frame a coherent perspective regarding the pedagogical
+value of mathematical manipulatives. In the fourth section, we summarize this perspective and outline what we
+feel are promising directions for future research in the design and use of manipulatives.
+
+2.  Two    Research     Projects    Involving    the    Use       of Manipulatives:            A Summary
+2.1   Understanding     Higher-Order   Functions
+The first project [DiBiase 1995a, DiBiase 1995b, DiBiase & Eisenberg 1995] was geared towards studying
+students' abilities to master higher-orderfunctions [Abelson et al. 1985, Eisenberg et al. 1987]-a notoriously
+difficult concept   whose explicit treatment is typically     first presented   in college algebra   ( or functional
+programming) courses.    Eighteen students, ranging from 10-21 years of age, volunteered for the project.    During
+the course of the 10 week (average) curriculum, students used a computer application named SchemePaint
+[Eisenberg 1995] to write graphics programs employing higher-order functions.           At the same time, concrete
+manipulatives-literally, small felt pillows-representing data objects in the programming language were
+available as illustrations of this somewhat abstract concept. Pillows of distinct colors (representing distinct data
+types) and associated textual contents were used to represent data objects such as numbers and procedures. The
+basic idea behind the construction of these manipulatives was to respond to the specific difficulties and
+misconceptions that students tend to exhibit in dealing with the notion of functional data objects; that is, the
+physical representation needed to embody valid characteristics of functional data while at the same time
+contradicting the most commonly-encountered misconceptions.
+
+2.2   HyperGami
+The second project involves the use of a program named HyperGami[Eisenberg & Nishioka in press] to
+introduce students to the domain of solid geometry. The central notion behind HyperGami is that it permits
+students to create solid (polyhedral) shapes, viewing them in three-dimensional form on the computer screen;
+these shapes may then be "unfolded" by the system to produce two-dimensional patterns (or folding nets) which
+in turn may be decorated by a variety of means; and finally, the newly-decorated folding nets may be sent as
+output to a color printer, after which they may be cut out and folded into paper polyhedral models.
+
+Several   features of HyperGami deserve special  emphasis      in   this brief outline. First, the system-like     the
+aforementioned SchemePaint-is a programmable application, combining elements of direct manipulation
+interfaces (e.g., for choosing colors and viewing solids) with a "domain-enriched" version of the MacScheme
+programming language [P4]. Second, the system does not limit users to a pre-defined set of polyhedral models,
+but rather allows users to create new, customized polyhedra (often employing "classical" shapes as starting
+points). [Fig. 1] shows an example of this notion: here, a tetrahedron is truncated at each of its (four) vertices,
+then "stretched" along the z-axis to produce a new polyhedron; this shape is then unfolded to produce a net,
+which is decorated with solid colors and patterns; the resulting two-dimensional may now be printed out and
+folded into a model. As a final point it should be noted that, in practice, HyperGami is used not merely to create
+abstract mathematical models, but as a tool for creating more elaborate paper sculptures. [Fig. 2] illustrates the
+idea: here, a paper turtle has been created from several polyhedral "building blocks": e.g., the turtle's shell is a
+portion of a truncated dodecahedron, his eyes are icosahedra, his tail is a stretched tetrahedron, and so forth.
+
+                                                                                                                    45
+    Figure 1: (Top   row)     A tetrahedron is truncated,  then stretched. (Bottom row) A folding  net  is
+    produced for the new shape; this net is then decorated with solid colors, patterns, and turtle graphics.
+    The decorated shape may now be printed and folded into the desired solid.
+
+               Figure 2: A polyhedral turtle created using HyperGami's customized shapes.
+HyperGami has been employed on a long-term tutorial basis with sixteen (volunteer) elementary- and middle
+school students during the past three semesters; these students have typically worked with us for approximately
+one semester at a time on a weekly or biweekly basis, either in individual tutorials or in pairs. In the course of
+this work, children have created a wide variety of polyhedral models and sculptures with the software, including
+(e.g.) stellated forms, a personalized polyhedral "die", a paper brontosaurus, Christmas ornaments, polyhedral
+chocolate candies (using the HyperGami forms as molds), and many others. (See [Eisenberg & Nishioka in
+press] for more description of students' work with the system.)
+
+3. Issues in the Creation and Use of Mathematical Manipulatives
+The previous section outlined    two projects  that have,  for  us, served as springboards for thinking about
+mathematical manipulatives as designed artifacts. In fact neither of these projects originated as an explicit
+investigation into manipulative design; but within both projects, a number of interesting (and often unexpected)
+issues have emerged that have caused us to rethink our received notions on this subject. In this section we
+describe the most important of these issues, focusing in turn on the cognitive, affective, and technological
+"dimensions" defined earlier.
+
+46
+3.1   Cognitive     Issues
+
+Self-constructed      manipulatives
+Typically, mathematical manipulatives are designed and marketed as fully-formed objects-number blocks,
+balancing scales, wooden solids-that are pre-assembled and ready for students to use. In slightly less pre
+digested form, one sometimes finds manipulative "kits" (e.g., plastic pieces with which to assemble certain
+types of polyhedra); while these involve some measure of creative participation on the part of the student, the
+set of "constructible" objects is still relatively constrained. In contrast, our experiences with HyperGami have
+suggested that-rather than presenting students with fully-formed objects, or kits of pieces-there may be
+special value in providing students with tools for constructing their own personalized manipulatives. Thus,
+rather than presenting students with a geometric construction kit, the HyperGami software allows students to
+create a (potentially infinite) set of never-before-seen polyhedra, and to decorate those polyhedra in ways that are
+mathematically revealing (e.g., by using geometric patterns to highlight certain symmetry operations) or simply
+aesthetically appealing.
+
+There are several potentially beneficial consequences to this notion of providing students with "manipulative
+creation tools" rather than with manipulatives themselves. One of these consequences-the fact that the created
+objects have status as artistic creations, and thus may be invested with pride and affection by their creators-will
+be discussed shortly, as a reflection of the "social dimension" of manipulative design. Another possible benefit
+arises from allowing the student to participate not merely in the use of manipulatives but in their creation, and
+thus to have the opportunity to reflect upon the creative act of designing mathematical objects. Indeed, the
+writings of mathematicians such as [Fomenko 1994] and [Hadamard 1949] imply that for some mathematicians,
+it is the ability to create or tailor personalized visual representations of abstract concepts (rather than simply the
+ability to recall the representations of others) that proves crucial to mathematical understanding. (See also the
+quote from Sfard later in this paper.) If this is true, then students should arguably have practice in crafting-and
+not merely employing-manipulatives.       More  broadly,      this suggestion  reflects the general   outlook of
+"constructionism" as advocated by Papert and his colleagues [Papert 1991]-an educational philosophy that
+stresses the value of allowing learners to participate in the creation of mathematically rich objects and
+representations.
+
+Of course, not all manipulatives need be created by students; and there are undeniable benefits to the use of
+traditional "pre-assembled" manipulatives. Such pre-assembled objects may be especially convenient or labor
+saving for teachers; or perhaps the construction of these objects by students might involve such a high level of
+skill, or tolerance for drudgery, as to render the entire enterprise counterproductive. Nonetheless-as with all the
+issues described in this paper-our purpose in discussing this particular issue is not to advocate that all
+mathematical manipulatives    must  be  student-constructed,    but rather to advocate   that this is one of  the
+possibilities that designers ought to routinely consider.
+
+Manipulatives     for Higher    Mathematics
+Traditionally, mathematical manipulatives are regarded as "children's objects", rather like stuffed animals; indeed,
+virtually every commercially available manipulative is explicitly targeted at elementary school students. This
+fact ought to be surprising: since manipulatives are so popular with elementary school teachers, one might ask
+why the "culture" of manipulative use has not spread to high schools and universities. Indeed, the question is
+particularly vexing in the light of the difficulties that students of higher mathematics reportedly encounter: why
+are there no manipulatives designed for students of calculus, or non-Euclidean geometry, or field theory, or
+Fourier transforms?
+
+The answer may lie, partially, in the "technological dimension" to be discussed shortly: that is, it may be the
+case that constructing adequate manipulatives for some of these advanced topics requires technological
+sophistication that is only now beginning to emerge. Or one might argue that the answer lies in the "social
+dimension": since manipulatives are associated with children's work, older students are reluctant to employ
+them. Notwithstanding     the circular element in this     last argument,  it is our belief   that mathematical
+manipulatives may in fact be especially valuable in presenting advanced mathematical topics. This conviction is
+largely a result of our experience in the "higher-order functions" project: for some students, even the presence of
+a simple tangible "function object" apparently assisted in understanding the use of (e.g.) functions as arguments
+to other functions [DiBiase 1995a]. [Sfard 1992], in a discussion of students' difficulties with the concept of
+function, writes:
+
+                                                                                                               47
+       The   Ideal mathematician,  according     to Davis    and Hersh (1983,  p. 35), studies  objects whose
+       existence is unsuspected by all except a handful of his fellows.     Even the strangest abstract entities,
+       while scrutinized and manipulated, seem to the mathematician as unquestionably real as the pen with
+       which he or she writes papers...     Shortly after being introduced to [the notion of function, the
+       student] is expected to analyze and manipulate the new entity with a confidence which can only be
+       achieved by those who can treat it as if it were a real thing. Many of our students, however, seem to
+       be lacking this ability. [Italics in the original.]
+
+ Sfard's observations, together with our own experiences, suggest that this ability to "reify" the notion of a
+ function may be supported by the growth of a "culture of manipulatives" for these concepts. Plausibly, the same
+ argument applies to other abstract mathematical concepts-transforms, groups, and so forth.
+
+ 3.2  Social/Affective    Issues
+
+ Manipulatives     as  "social currency"
+ In the previous discussion, we alluded to the value of permitting students not merely to use manipulatives, but
+ to create them.   One of the  themes     that emerges     from this notion is that student-created mathematical
+ manipulatives-such    as HyperGami       polyhedra-may      take on   far richer social roles than do  traditional
+ manipulatives. Repeatedly we have seen students employing their HyperGami constructions as elements in their
+ social lives: one 13-year old girl placed her newly-created polyhedron on display at home; a 13-year-old boy gave
+ one of his more elaborate constructions as a gift to an adult; a 10-year-old girl made a polyhedron as a wrapper
+ for a Christmas treat for her father; an 11-year-old girl gave a nickname to one of her polyhedral creations.
+ (Indeed, we ourselves have used HyperGami sculptures as gifts and displays in much the same way; and if truth
+ be told, several of our own constructions have nicknames as well!)
+
+ Such tales are of course "anecdotal evidence"-and their sheer profusion and variation defy easy statistical
+ summary-but in our experience there is a noticeable consistency to the way in which HyperGami constructions
+ have attained what we have called "social currency" in the lives of our students and ourselves. Constructions are
+ exhibited, played with, donated, photographed, anthropomorphized. It is important to point out, in this context,
+ that very little in the mathematical experience of students ever attains this status: one cannot (e.g.) give a
+ completed workbook page or number-block construction as a gift. It is thus precisely because student
+ constructed manipulatives have a personalized, unique, and aesthetic side that they are capable of acting as much
+ more than "mere" mathematical illustrations.    And there is still another side to this discussion: because some
+ HyperGami constructions have been created by teams or groups of students (e.g., one pair of girls created, in
+ partnership, a mutually-decorated great stellated dodecahedron), the resulting objects take on still another sort of
+ "social currency"-joint ownership. Such objects become symbols, for each contributor, of the participation and
+ personalities of his or her colleagues.
+
+ Our observations   of  the uses of      HyperGami  constructions     echo  in part the  discussion  provided     by
+ [Csikszentmihalyi 1993] in his study of the manner in which people invest physical objects with personal
+ importance:
+
+      "Artifacts help objectify the self... [they] reveal the continuity of the self through time, by providing
+      foci of involvement in the present, mementos and souvenirs of the past, and signposts to future
+      goals. ... [they] give concrete evidence of one's place in a social network as symbols (literally, the
+      joining together) of valued relationships. In these... ways things stabilize our sense of who we are;
+      they give a permanent shape to our views of ourselves that otherwise would quickly dissolve in the
+      flux of consciousness." (p. 23)
+
+For designers of mathematical manipulatives, the crucial message here is that manipulatives are, first and
+foremost, physical objects; and as such, they ought to be (though rarely are) capable of taking on the roles that
+Csikszentmihalyi describes.
+
+Age-  and    gender-related    aspects    of manipulative       design
+As noted earlier in this paper, mathematical manipulatives are generally associated with use by younger children;
+thus the problem of creating manipulatives that may be used by students of widely varying ages rarely arises in
+this traditional context. However, our recommendation for introducing manipulatives into higher mathematics
+
+48
+implies, in turn, that we must begin to examine the ways in which manipulatives are used not only by
+elementary school students, but also by teenagers and adults.
+
+These reflections have arisen, in large part, from our observations of students in the higher-order-function
+project-in particular, how students of different ages responded to the tangible "function objects" created for that
+project. Broadly speaking, students below the age of 12 enjoyed using the function manipulatives (one turned
+manipulative use into his own game). Students above the age of 16 acknowledged the role of the manipulatives
+in learning the concept of higher order functions, but were generally uninterested in extended use of the objects.
+Between these demarcation points-between the ages of 12 and 16-we observed that students were extremely
+resistant to the use of manipulatives, particularly when their work was likely to be observed by peers. In one
+scenario, for instance, three tenth-graders worked with our curriculum as a group; but a noticeably higher level
+of effort was exhibited when one or two students were absent. In another scenario, a tenth-grade (male) student
+responded to the manipulatives with the exclamation, "Oh, not the puffy objects. I hate the puffy objects."
+
+HyperGami constructions have met with a similar pattern of response in our experience: elementary and middle
+school students (up to about the age of 13) and adults (beyond the age of about 18) have responded positively to
+the constructions; but high school students-especially boys-have been noticeably less interested.
+
+Again, these are anecdotal observations; and they have emerged gradually, over time spent working within our
+two projects. These experiences have sensitized us, however, to the issue of designing manipulatives with an
+eye toward students' sense of dignity (for lack of a better term). It is a common observation (cf. [Eckert 1989],
+[Csikszentmihalyi et al. 1993]) that students of high school age in particular are acutely sensitive to how they
+are perceived by their peers; designing educational objects for students at this age is thus not simply a matter of
+tailoring the manipulatives' content to higher-level subjects, but of tailoring their style and appearance so as not
+to appear embarrassingly childlike. Similarly, the distinct "cultures" of male and female students at this age may
+result in certain styles of manipulative design being perceived (whether rightly or not) as inappropriate (the male
+tenth-grader's aversion to "puffy" felt objects may be illustrative here); designers of manipulatives for older
+students may discover that it is important to create "male-appropriate" and "female-appropriate" versions of
+manipulatives (or t o make special efforts t o create "gender-neutral" manipulatives)-an issue that does not come
+up with objects made for younger children. Clearly these are topics that merit much longer discussion; for now,
+our point is again that mathematical manipulatives are not merely physical    and educational but also social
+objects-objects that reflect the social identities of their users-and must be designed with a perspective that
+goes beyond their role as cognitive aids.
+
+3.3  Technological  Issues
+
+Traditionally, mathematical manipulatives in the classroom are envisioned as relatively "low-tech" objects
+e.g., wooden blocks, or plastic tiles. (It is interesting to note, for instance, that the authors of the NCTM
+standards, while advocating the use of calculators and computers in mathematics education, do not to our
+knowledge ever describe these instruments as "manipulatives". As an illustration, see the discussion in [NCTM
+89], pp. 67-8: here, manipulatives, calculators, and computers are all recommended as classroom materials, but
+are classified as separate bulleted items.) Our experience in both projects suggests the value of a more catholic
+view of manipulatives, in which "high-" and "low-tech" qualities are combined. In the case of the higher-order
+functions project, tangible manipulatives were used to represent computational objects; and computational
+processes enacted with the manipulatives were then compared with running programs. In HyperGami, the
+structure of students' activity is one in which abstract computational work-the design of new polyhedra-is
+followed by periods of patient craftwork-the assembling of models. The very same abstract "object", then, is
+experienced both in its computational and tangible form in the course of a single project. It is precisely this sort
+of varied activity, moving between representations, that may prove an important element of manipulative design
+generally; embedding manipulatives within (partly) technological environments may serve to alleviate the sorts
+of difficulties in integrating mathematical representations noted earlier in the realm of arithmetic by Resnick and
+Omanson. Similarly, our advocacy       of  student-designed   manipulatives reflects a belief in the value    of
+computational tools such as HyperGami; the advent of more (and more powerful) tools of this nature should,
+over time, render manipulative design into something more closely approaching a craft for children and adults,
+rather than an educational industry.
+
+                                                                                                              49
+ 4. Summary;         Future   Directions
+ In this paper, we have conveniently labelled our observations as corresponding to the cognitive, social/affective,
+ and technological "dimensions" of manipulative design. Life is, of course, not so easily compartmentalized; and
+ in fact, the themes discussed in this paper are deeply interrelated. A move toward incorporating technology into
+ mathematics education leads naturally toward providing computational "construction kits" such as HyperGami;
+ it likewise leads toward the notion of designing manipulatives for computational topics such as higher-order
+ functions. In turn, our first efforts in these directions alert us both to unexpected roles that manipulatives can
+ play-as sculptures, gifts, or souvenirs-and to unexpected problems in designing manipulatives-e.g., that
+ they may embarrass their older users. And we are led still further, into considering what it may mean to design
+ manipulatives for topics in higher mathematics.
+
+ Over time, a richer definition of "manipulative" may be in order in mathematics education. If the role of a
+ "manipulative" is to embody a mathematical idea, visibly and interactively, within a tangible object, then such
+ objects may well be designed through computation, or reflect mathematical ideas derived from computation.
+ Indeed,  as in  the case of Resnick's programmable  LEGO/Logo     "creatures"   [Resnick 1993], mathematical
+ manipulatives may themselves include computational elements built within them. Treating manipulative design
+ as a technologically-enriched craft leads to still other directions of work-for instance, we have recently used
+ HyperGami polyhedra as molds for materials such as wax and plaster, and have incorporated them into home
+ made mobiles, science-kit objects (e.g., a kaleidoscope and balancing toy), and paper machines. Going still
+ further, the placement of manipulative design tools into new social settings afforded by technology (most
+ notably the World Wide Web) could have major consequences for the "affective dimension" of manipulative
+ design; for instance, if a student can publish her own design for a mathematical object to a wide community, she
+ may be more inclined to think of that object as an artistic performance (and at the same time, she may be more
+ likely to find a supportive peer group for her work). And finally, the notion of "mathematical manipulative", in
+ this view, may come to reflect a wider perspective than one that focuses on designing pre-assembled products for
+ teaching individual concepts to young children. Rather, we may see manipulatives as objects that embody both
+ abstract and concrete notions, and both "adult" and "children's" mathematics-and ultimately, perhaps, objects
+ that combine the cognitive benefits of a scientific demonstration with the emotional resonance of a birthday
+ present.
+
+Acknowledgments
+ This work owes much to the influence of Hal Abelson and Gerald Jay Sussman. The HyperGami program was
+ developed with the collaboration of Ann Nishioka and the assistance of Zach Nies and Jay Smith. We would
+ also like to thank Gerhard Fischer and the members of the Center for LifeLong Learning and Design at the
+ University of Colorado for wonderful conversations. This work is supported in part by NSF grants RED-
+ 9253425, by a Young Investigator award IRI-9258684, and by NSF and the Advanced Research Projects Agency
+ under Cooperative Agreement No. CDA-940860. Finally, we would like to thank Apple Computer, Inc. for
+ donating the machines with which this research was conducted.
+
+References
+ [Abelson et al. 1985] Abelson, H. and Sussman, G. with Sussman, J. (1985). Structure and Interpretation of
+    Computer Progarams. Cambridge, MA: MIT Press.
+ [Ball 1992] Ball, D.L. (1992). Magical hopes: manipulatives and the reform of math education. American
+    Educator(Summer), 15-18;46-47.
+ [Csikszentmihalyi 1993] Csikszentmihalyi, M. (1993). Why we need things. In S. Lubar and W. D. Kingery
+    (eds.), History from Things. Washington, DC: Smithsonian Institution Press.
+ [Csikszentmihalyi et al. 1993] Csikszentmihalyi, M.; Rathunde, K.; and Whalen, S. (1993). Talented
+    Teenagers. Cambridge, UK: Cambridge University Press.
+ [DiBiase1995a] DiBiase, J. (1995). Building Curricula to Shape Cognitive Models: A Case Study ofFunctions
+    as Data Objects. Doctoral dissertation, University of Colorado, Boulder.
+ [DiBiase 1995b]   DiBiase, J. (1995). Examining the Difficulty with Thinking of Functions as Data Objects:
+    Misconceptions ofHigher-Order Functions.     Report No. CSCI-791-95, University of Colorado, Boulder.
+
+50
+[DiBiase & Eisenberg 1995] DiBiase, J. and Eisenberg, M. (1995). Mental imagery in the teaching of functions.
+    Proceedings of the National Educational Computing Conference (NECC), Baltimore, MD, June 1995.
+[Eckert 1989] Eckert, P. (1989). Jocks and Burnouts. New York: Teachers College Press.
+[Eisenberg et al. 1987] Eisenberg, M., Resnick, M., & Turbak, F. (1987). Understanding procedures as objects.
+    In G. M. Olson, S. Sheppard, & E. Soloway (eds.), Empirical Studies of Programmers: Second Workshop.
+    Norwood, NJ: Ablex, pp. 14-32.
+[Eisenberg & Nishioka in press] Eisenberg, M. & Nishioka, A. (In press). Creating polyhedral models by
+    computer. Journal of Computers in Mathematics and Science Teaching.
+[Eisenberg 1995] Eisenberg, M. (1995). Programmable applications: interpreter meets interface. SIGCH/
+    Bulletin, 27:2, 1995, pp. 68-83.
+[Fomenko 1994] Fomenko, A. (1994). Visual Geometry and Topology. Berlin: Springer-Verlag.
+[Hadamard 1949] Hadamard, J. (1949). The Psychology of Invention in the Mathematical Field. New York:
+    Dover.
+[Montessori 1912] Montessori, M. (1912). The Montessori Method. New York: Schocken Books (1964
+    edition).
+[NCTM 1989] National Council of Teachers of Mathematics (1989). Curriculum and evaluation standards for
+    school mathematics. Reston, VA: Author.
+[Papert 1991] Papert, S. (1991). Situating constructionism. In Harel, I., & Papert, S. (eds.)Constructionism:
+    Research Reports and Essays. Norwood, N.J.: Ablex.
+[Resnick 1993] Resnick, M. (1993). Behavior construction kits. Communications of the ACM, 36:7, pp. 64-
+71.
+[Resnick & Omanson 1987] Resnick, L.B. and Omanson, S.F. (1987).     Learning to understand arithmetic.  In
+    R. Glaser (Ed.), Advances in instructional psychology (Vol. 3, pp. 41-96). Hillsdale, NJ: Erlbaum.
+[Sfard 1992] Sfard, A. (1992). Operational origins of mathematical objects and the quandary of reification-the
+    case of function. In G. Harel and E. Dubinsky (eds.), The Concept of Function. Washington, DC:
+    Mathematical Association of America.
+
+Products
+[Pl ] Cuisenaire Co. of America. Cuisenaire rods. White Plains, NY.
+(P2] Cuisenaire Co. of America. Geoboards.White Plains, NY.
+[P3] Cuisenaire Co. of America. Polydrons. White Plains, NY.
+[P4] LightShip Software. MacScheme. Palo Alto, CA.
+
+                                                                                                               51
+

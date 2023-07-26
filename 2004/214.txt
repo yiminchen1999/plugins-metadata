@@ -1,0 +1,438 @@
+                   Using Educational Robotics to Engage
+                      Inner-City Students with Technology
+                                         Rachel Goldman1, Amy Eguchi2 & Elizabeth Sklar3
+               1,3Dept of Computer Science, Columbia University, New York, NY 10027 USA
+                 2School of Education, University of Cambridge, Cambridge CB2 1QA, UK
+                                           3Tel: +1 212 939 7021, Fax: +1 212 666 0140
+              Email: rg2020@ columbia.edu, eae24@hermes.cam.ac.uk, sklar@cs.columbia.edu
+
+        Abstract: This paper presents a pilot project using an educational robotics curriculum that was
+        developed to enhance teaching of standard physics and math topics to middle and early high
+        school students in inner-city schools in New York City. The lessons are centered around the
+        LEGO Mindstorms robotics kit and the RoboLab graphical programming environment. The
+        pilot project, testing the curriculum in two summer programs for early high school students,
+        was conducted in 2003 at two locations in Harlem, New York City, USA.
+
+Introduction
+         In summer 2003, we were given an opportunity to conduct a pilot project integrating a hands-on
+robotics component into two summer programs for inner-city high school students: the Science and Technology
+Entry Program  (STEP)              (1) and Playing2Win    (P2W)  (2). Overall,  approximately 50 high school  students
+participated. Our goal was to enhance the science and math educational opportunities offered at each program
+through the development and implementation of curriculum and materials using the LEGO Mindstorms Robotics
+Invention System(3) (LEGO robot hereafter). The target population for this project was not the typical upper-
+middle-class suburban population that frequently gets the chance to interface with robotics. On the contrary, this
+project addresses students from the Central Harlem neighborhood of Manhattan where at least 51% of all
+residents are from low and moderate income households (New York City Department of City Planning, 2003)
+and 67% of residents are of African-American descent and 20% are Hispanic (New York City Department of
+Health and Mental Hygiene, 2003). As an evaluation of the project, we conducted a pilot study examining the
+learning experience of the students, in an attempt to see how their interest in technology changed during the
+course of the summer and if any improvement in their problem-solving skills was evident.
+
+        This paper describes the curriculum and resources developed, our implementation experiences and
+lessons learned. We begin by outlining some background followed by detailed description of the project design.
+Then we discuss lessons learned through the process of implementation as well as our pilot study aiming to
+examine how students' interest and perceived ability in technology changed during the course of the summer and
+if any improvement in their problem-solving skills was evident. We highlight some issues particular to the inner-
+city population and conclude with future directions.
+
+Project Background
+        The main purpose               of  the project was to enhance   science and math learning experiences through
+educational robotics for students who have not had this type of opportunity in their regular school setting. The
+project had multiple goals to support its main purpose. The primary goals were to develop and test curriculum,
+curriculum materials and supplemental resources using the LEGO robot, geared toward an inner-city public
+school population. A secondary goal was to examine the use of practical applications for the technology within a
+non-traditional educational environment in order to anticipate technical difficulties in our implementation plan.
+
+        The project was composed of four stages: (I) Curriculum Development, (II) First Implementation, (III)
+Innovation and Modification, and (IV) Second Implementation. Before discussing the details of each stage, we
+describe the project participants and introduce the theoretical framework employed for the project design and
+curriculum development. We also describe the robot kits and programming environment used.
+
+                                                             214
+Participants
+         The participants in the project were inner-city high school students who attended one of two programs
+during  Summer   2003 (see Figure    1). The first  program  was   STEP, hosted  at Barnard   College, Columbia
+University, located adjacent to Central Harlem. STEP is a 5-week summer program available to New York City
+public high school students where they attend classes in mathematics and science. The purpose of this program is
+"to increase the number of historically underrepresented and disadvantaged students prepared to enter college,
+and improve their participation rate in mathematics, science, technology, health related fields and the licensed
+professions(1)." We offered our robotics curriculum to two classes each with about 12 students, ages 14-16. Each
+class met two times per week for 90 minute sessions. The gender balance was 25% male and 75% female.
+
+                                             Figure 1. Participants.
+
+         The second program was held at P2W, a community center located in Central Harlem that offers year-
+round educational programs for the community for all ages (including adults). In the summer, they offer special
+programs for kids. As part of a 6-week technology program, we offered our robotics curriculum to two classes of
+students, ages 14-16. Each class met two times per week, for 2 hours each meeting. There were approximately 20
+students in each of two classes. The gender balance was 50% male and 50% female.
+
+         Two undergraduates worked with us to develop the curriculum(4), and they implemented and tested it in
+both programs, with help of three additional undergraduates. The team was comprised of two male and three
+female students, two juniors and three seniors, all majoring in Computer Science. In both programs, adult
+teaching staff (supervisors, hereafter) were present to help the undergraduates by providing extra pairs of hands
+and to intervene if and when discipline problems might occur. The students in both programs were self-selected ­
+i.e., participation was voluntary, though we observed some incidents that suggested that parental pressure might
+have been exerted on the students to attend. The vast majority of participants in both groups were minorities and
+more than 50% in the combined population were female ­ i.e., the participants were mostly from groups typically
+disenfranchised from engineering subjects.
+
+Theoretical Framework
+         We employed four pedagogical approaches for the program, especially for curriculum development:
+Constructivism, Constructionism, Learning by Design and Cooperative Inquiry. These theories were revisited
+again and again during the project.
+
+         The theory that provided the primary influence was Piaget's Constructivism (Piaget, 1972, 1973, 1977).
+His theory states that learning takes place as the result of mental construction by the learner. Emphasis is placed
+on  the learner, not  on  the instructor.  The   learner interacts with  objects and events   and thereby    gains
+understanding of the features held by such objects and events. In this way, the learner constructs his/her own
+conceptualizations  and  solutions   to  problems.  Through  this  methodology,   autonomy    and  initiative are
+encouraged. Educational applications of constructivism lie in creating curricula that simultaneously match and
+challenge students' understanding while fostering growth and development of the mind.
+
+         The second approach, Constructionism (Papert, 1992), is a natural extension of constructivism and
+emphasizes  the  hands-on aspect.   The  learner in a constructionist environment   builds things on   their own,
+preferably a tangible object that they can both touch and find meaningful. The goal of constructionism is "giving
+children good things to do so that they can learn by doing much better than they could before (Papert, 1980s)."
+The LEGO    robot, an outgrowth     of  Papert's LOGO     programming   language  created  in the 1960's  (Logo
+Foundation, 2000), partners technology with constructionist ideas. The goal is to find ways in which technology
+
+                                                    215
+enables children to actively use knowledge they have acquired. This approach, along with Constructivism, was
+especially important when we developed the curriculum that provides multiple-task challenges to foster students'
+learning and encourage them to use their acquired knowledge.
+
+          The third approach, Learning by Design (Kolodner, Crismond, Gray, Holbrook, & Puntambekar, 1998),
+is a methodology in which students learn as a result of collaboratively engaging in design activities and reflecting
+appropriately on their experiences. They learn science concepts better through hands-on experience and real-
+world applications. Learning by Design has been shown to enhance problem-solving, decision making and
+collaboration       skills     (Nagel      &      Kolodner,         1999; Puntambekar           &  Kolodner, 1998).                       Our decisions on how to
+organize student groups as well as how to enhance collaborative work among the students was especially
+influenced by this research.
+
+          Cooperative            Inquiry          (Druin,      1999)    involves           a three step process. First,                     the        teacher        engages in
+Contextual Inquiry, observing how students interact with the technologies that are currently available. Second,
+the students engage in Participatory Design, sketching ideas by building. Last comes Technology Immersion, in
+which students are exposed to technology that they might not encounter otherwise. This approach provided us
+with ideas about how to effectively use the robotics kit and programming environment which are new to our
+students.
+
+LEGO Robot
+          Using the LEGO robot, we modified a "tankbot" created by the CMU Robotics Academy(5). With our
+model, the students first build a "go-cart" (a vehicle without a microprocessor or motors) and then add pieces
+including motors and the LEGO RCX(6) (the microprocessor) to convert it into a robot. Additionally, we created
+both a touch sensor and a light sensor add-on to be used with the corresponding parts of the curriculum.
+
+Programming Environment
+          We used the RoboLab programming environment developed at the Tufts School of Education and the
+Tufts School of Engineering(7). RoboLab has a simple graphical interface for writing programs. Entities such as
+motors and sensors are represented as rectangular icons on the screen, and users drag them to create "code". The
+icons must be linked together using "wires" to complete a program. The environment is highly visual and
+provides a good first experience with procedural programming concepts.
+
+Project Description
+I. Curriculum Development
+          Throughout the development process, we asked a set of questions (described in Figure 2). We attempted
+to divide the students' learning process into three broad phases: (1) Construction, (2) Programming and (3)
+Application, engaging them through a series of Challenges. In the Construction phase, students first learn about
+design and then how to build and improve their designs. Through this hands-on experience, they gain exposure to
+and begin to acquire understanding of engineering and design principles. During the Programming phase, the
+students first learn the basics of the RoboLab programming environment and then how to apply that knowledge.
+In the third phase, students are exposed to problems in physics and mathematics that the robotics can help
+illustrate. At the end, students make presentations to share their solutions with each other. By sharing, students
+are able to reflect on the entire learning process.
+
+               How    can   we   integrate    technology       into
+               the   educational     system ?
+                                                                           Concept Definition
+
+               What features/functionality/support
+               would    the   teachers     need ?                       Technical Requirement
+
+               How can we create a flexible                                                                                      How do we better satisfy
+               and   adaptable      curriculum?                        Curriculum Development                                    student needs        and   teacher
+                                                                                                                                 needs     based    on  what    we've
+                                                                                                                                 learned?
+               How can this be implemented in                                        Trialvariousenvironments ?                            Curriculum
+                                                                                                                                          Modification
+                                                                                 Feedback
+               Are   students     and   teachers     satisfied
+               with the curriculum? Any problems?
+
+                                                               Figure 2. The Development Process
+
+                                                                            216
+Phase 1: Construction
+         In the Construction phase, students design and build two structures: a go-cart and a robot (see Figure 3).
+The main purpose of making students build both is to illustrate the differences between manually-operated and
+machine-controlled objects. First they build a simple go-cart, a four-wheeled vehicle without motors, sensors or
+an RCX. This also helps students become familiar with the specialized pieces of the LEGO building set and learn
+how  the pieces were   designed    to reinforce each  other. The  curricular content    here centers on mechanical
+engineering design principles. The go-cart is used to help students learn about the concepts of forces and motion.
+First, they build a ramp and let their go-cart roll down the ramp. Second, they calculate how far it will travel
+when they let go of the cart at the top of the ramp. Then they measure how far it actually goes. This also provides
+lessons in scientific method ­ hypothesis, prediction and measurement. Students learn about statistical analysis
+using multiple trials and errors.
+
+                                       Figure 3. Go-cart, on left, and Robot, on right.
+
+Phase 2: Programming
+         For several reasons, including classroom management and maintaining topic focus, it is beneficial for
+all students to use the same robot design when first learning programming. This assures that the same program
+will make  every students'  robot     move in   the same   way. This is extremely     useful  when   trying to teach
+fundamental programming to a large number of students. The key programming concepts covered include:
+sequential execution, ordering, logic, conditional statements, repetition, nesting and debugging. Many of these
+key concepts are illustrated in every RoboLab program (see Figure 4).
+
+  Figure 4. A sample RoboLab program: The figure executes a program that will read input from a touch sensor
+ connected to port 2. If the touch sensor is released, then sound #1 will play; or else if the touch sensor is pressed,
+                                  then sound #2 will play. This will repeat 10 times.
+
+         The programming phase is composed of three sections: basic programming, touch sensor programming
+and light sensor programming. To ensure that students understand the material, handouts with challenges are
+given to students during each class. For example, a challenge in the Light Sensor lesson reads: "If the robot
+begins on a black area, move forward; but if the robot begins in a white area, go backwards. The robot shouldn't
+go forwards or backwards forever." Students are given multi-step challenges so that those who catch on quickly
+will have a more difficult task to work through while others finish the early challenges. Students complete the
+challenges in groups, allowing them to cooperatively develop and test their solutions. With each lesson, at least
+one of the challenges uses the sound card in the LEGO robot to play "music". This engages students with broader
+interests and is also useful for teaching debugging. It was observed that this aspect was especially intriguing for
+the female students.
+
+         Topics covered in each programming section include: Basics - Begin/End, Motors, Wait For Time,
+Stops, Music; Touch Sensor - Wait For Event, Jumps, If/Else, Loops; Light Sensor - Wait For Event, Jumps, If /
+
+                                                      217
+Else, Loops. Since each lesson is built upon the previous one, students who miss the beginning classes lack the
+background   necessary to   implement  more advanced    challenges.      Absenteeism   is a significant factor in our
+population; and in our future work, we need to develop methodologies for coping with this aspect.
+
+Phase 3: Application
+       The third phase of the curriculum focuses on pulling together all of the previous lessons in order to
+solve more complex challenges. In the "Cup Challenge", a set of paper cups are grouped on a white floor in an
+area encircled by a black line. Students need to devise an algorithm and program the robot to push all the cups
+outside of the bounded area. The only condition is that the robot is not allowed to leave the bounded area marked
+by a black line. Groups record the time to complete the task and try to make improvements to lower their time. In
+addition to using acquired programming skills, we observed that many students used creativity and design skills
+to develop extensions such as bumpers. Advanced programming topics covered in the application section include
+Nested Structure, Multi-tasking, parallelism, event-handling and the use of both light and touch sensors.
+
+II. First Implementation
+       The STEP program began two weeks earlier than P2W, which gave us the opportunity to implement
+lessons at STEP first and then modify them for P2W, if necessary.        In the first two lessons (Basic Construction
+and Basic Programming), we decided to give students sample programs to copy. They seemed to have an easier
+time learning by example, starting with working code, testing its limitations, modifying it and testing again.
+
+       We tried to cater to the various needs of our students. Sometimes this meant presenting the material in
+numerous    ways. For  example, some   students were   having       difficulty understanding  when to   use different
+programming structures like conditional statements and for loops. First, we discussed the power each structure
+adds to a program. Then we created a mapping of English words to the various structures ­ words like forever,
+continuously, repeatedly or for X number of times signal the use of a jumps and loops.
+
+       The students were divided into groups. Each group used one robot kit. There were 3-4 students per
+group at STEP; however, only 1-2 students per group at P2W due to behavioral issues in the P2W population.
+Although we feel that 3 students per group is optimal, forcing the students into larger groups would not be
+beneficial to the teachers and the students. Some of the students in P2W absolutely refused to work with other
+students, and others only wanted to work with certain people. Despite these issues, we were told by the staff at
+P2W that students responded better in the robotics class than in other classes. This demonstrates that educational
+robotics has the potential to attract this population of students and to provide an effective and motivating learning
+experience.
+
+       We also found that disinterested students could be enticed to participate with challenges they found
+"cool". This encouraged us to develop more "cool" challenges to attract these potential learners.
+
+III. Innovations and Modifications
+       The First Implementation stage provided us with valuable experiences that helped us modify and create
+more  useful  and effective curriculum materials(8), which       we then used   in the Second  Implementation   stage
+(described below). These include additional lessons as well as supplementary materials to accompany all lessons.
+
+       Although time permitted us to teach only as far as the Advanced Programming lesson in both STEP and
+P2W, we have developed further lessons that demonstrate high school math and physics concepts using the
+robots. For example: Discrete versus Continuous Systems; Angles, Torque, Friction and Robot Body Design;
+Circumference versus Speed; Importance of Wheel-Size and Distance, Velocity and Algebraic Manipulations.
+These lessons  allow  students to explore the  scope   of the     physical robots   while  experimenting  with  basic
+principles.
+
+       We     observed in both  programs  that students   would      have benefited  from   additional  resources that
+provide guidance with RoboLab. As a result, we developed a workbook and a design journal. The workbook
+contains Tips and Tricks and a Cheat Sheet on RoboLab. In both STEP and P2W, we found that at times students
+became frustrated because they could not find a specific RoboLab icon. The Cheat Sheet contains a concise
+representation of the most common icons. Similarly, Tips and Tricks is aimed at helping students avoid and
+troubleshoot problems. The design journal presents ways for students to reflect on how they solved challenges as
+well as to identify their personal contributions to their group.
+
+                                                     218
+          A major difficulty with teaching RoboLab in a classroom environment is that often teachers do not have
+access to a data projector in their classroom to show programs to the students. To solve this, we created a set of
+enlarged, magnetic   RoboLab    icons to enable   teachers  to demonstrate   RoboLab   programming    without  such
+technology. Subsequently, we discovered that a similar product is available commercially(9) on a smaller scale for
+use as table-top manipulatives (as opposed to the large, display aids we made).
+
+IV. Second Implementation
+          The modified curriculum and new resources were presented at a teacher workshop held at the end of the
+summer at Columbia University. By the time of the workshop, a website with supplemental online resources had
+been  developed(10). This workshop    provided  us  with an opportunity   to test the additional  materials with the
+teachers.
+
+Lessons Learned
+          This project provided us with valuable learning experiences in a number of different areas. First we
+discuss the lessons learned by the undergraduate mentors. Then we examine the student experiences.
+
+Undergraduate Mentors
+          At the conclusion    of the summer,    we  interviewed  all of  the undergraduate   mentors   about  their
+experiences focusing on their teaching interests and abilities and on their personal impressions of the project
+(Sklar & Eguchi, 2004). Two of the mentors stated that they had had previous teaching experience working with
+students of their own age; however, none of them had experience teaching high school students. Additionally
+none  of  them   received  any    instruction on teaching   prior to  the program.    Statements   from all   of the
+undergraduates indicated that they learned various pedagogical strategies including: methods for building rapport
+and establishing sound relationships with students, balancing their authority with friendly relationships with
+students, helping students become engaged in their activities and providing useful support to enhance the
+students' learning experience.
+
+          The mentors found broad diversity in students' knowledge and skill levels. Additionally, attendance rate
+for students was not constant. However, the undergraduates came up with their own strategies to cope with these
+issues and to keep the students focused. For example, they placed all the students who were not grasping certain
+concepts in one group. Furthermore, they provided extra personal attention to the students who needed additional
+help.
+
+          The undergraduates all agreed that the ratio of mentors to students was crucial for successful lessons.
+They explained that if there were too many students per mentor, the students became unruly and the lesson fell
+apart. But if there were too few students per mentor, the students used the mentor as a crutch and did not learn to
+do things for themselves. Especially with the P2W participants, it was observed that some students performed
+better when they had mentors' constant attention with step-by-step instructions.
+
+          Initially, most of the undergraduates had difficulty solving technical problems when they were not
+familiar enough with the lesson plans, the technologies and/or the materials prior to teaching. It was agreed that
+mentors need to learn all the components well enough to troubleshoot problems they encounter while teaching.
+Although   each  of  the undergraduates  who    were  previously  inexperienced   with the LEGO      robots received
+briefings prior to the summer programs, they suggested that we offer a more comprehensive workshop on how to
+use the technology and materials at the beginning of the summer.
+
+Surveys
+          Our intention was to evaluate the effects of the project using the classic method of administering pre
+and post tests. In both STEP and P2W, we gave pre and post surveys that we developed with the intension of
+measuring    students' problem-solving   abilities, cognitive  processes  and levels  of interest in math,  science,
+technology and robotics. The post survey included a section providing us with direct feedback about each
+program.
+
+          We found this aspect to be probably the most difficult of the entire project, although we have had
+experience at evaluating educational robotics in the past (Sklar, Eguchi, & Johnson, 2002). To begin with, we
+had a hard time collecting consent forms from parents before the programs started; as a result, only thirteen
+
+                                                      219
+students (five from STEP, eight from P2W) completed both the pre and post tests. The cause seems to be a
+mixture of students who kept forgetting to get the forms signed and parents who were resistant to the idea of their
+children being involved in a research project. As a consequence, our samples were too small to generalize from
+the survey data.
+
+         Another   issue concerns  separating  the robotics  program     from  other learning experiences   that the
+students had during the period of implementation. Because the robotics program was one of several classes that
+all the students were taking in both summer programs, their responses to the assessment tests might have been
+influenced by their experiences in other programs. For future development of the assessment tools, we need to
+consider how to separate influences from other learning experiences as well as how to establish triangulation
+between multiple experiences.
+
+         Even though the sample size is too small to project any conclusions to a general population, there
+appears   to be   evidence   of a correlation  between    students'     prior computer  usage  (for   entertainment,
+communication, information gathering and homework) and their level of interest and ability in computer-related
+subjects (math, science, computers, robotics and computer programming). Students who showed higher levels of
+interest and  ability in these  subjects  tended   to use computers      more  frequently. Similarly, students  who
+demonstrated lower levels of interest and ability tended to use computers less often. No causation can be
+determined. Additionally, it appears that the students tended to score their interests and personal abilities higher
+in the direct feedback questions than in the less direct pre and post test questions. This is an issue with our survey
+methodology, which we need to examine in future work.
+
+         Although systematic observation was not conducted during the implementation stages, observations by
+the undergraduate mentors can be used to highlight possible influences of the project. In both programs, there
+were students who lacked the self-confidence to propose solutions to the challenges; however, once these
+students were engaged by the mentors, they exhibited more confidence. By the end of the program, many of
+these students felt comfortable sharing their ideas with others. One student in particular came to class initially
+with the attitude that she could not do robotics. With the support of a dedicated mentor, she slowly became
+engaged in the subject matter and overcame her anxieties. When she solved her first advanced challenge, the
+smile that beamed across her face said enough. By the end of the program, she was very involved and even
+contributed suggestions to the final challenge. This example suggests that self-confidence develops through
+accomplishing tasks that students initially think are too hard and overcoming initial hesitations allows students to
+engage in areas they might avoid otherwise. This is particularly important in the population addressed here,
+which is traditionally disengaged from computer and engineering topics.
+
+Conclusions and Future Work
+         The  mentor-student     ratio is  crucial for  successful      implementation  of  robotics   lessons.  The
+undergraduates suggested that one mentor per two groups of students was ideal. The number of students in a
+group can vary; however, we feel that three students per group works best. To accomplish this, there is an issue
+of how to secure the appropriate number of mentors. Recruiting more undergraduate mentors is an obvious
+solution. Training the adult supervisors is another solution, which would also provide added benefits as outlined
+in the next paragraph. An additional suggestion is to involve pre-service teachers. This has the further benefit of
+expanding    the base of teachers  trained in  educational  robotics    and giving them  the  tools, experience  and
+confidence to integrate robotics into their curricula in the future.
+
+         The  attitudes  of the adult  supervisors made   a significant   difference in students' attitudes towards
+learning. For example, a supervisor in one of the STEP classes provided a strong positive influence for his
+students during the robotics lessons. Although he did not have much knowledge about robotics, he showed
+interest in students' activities and cheered their accomplishments. His positive attitude and interest motivated
+some students to succeed in the challenges in order to show him what they had done. On the other hand, the
+supervisors in the other STEP class did not pay any attention to the robotics program. They came to class with
+their students, but spent most of their time surfing the internet. This negative attitude did, indeed, lower the
+students' motivation in comparison with the other class. The undergraduates suggested that we should include
+the supervisors in future mentor workshops to familiarize them with the robot kits and RoboLab in order to
+provide help and create a positive atmosphere.
+
+                                                      220
+          Another factor that provides positive influence on students' motivation is an opportunity for them to
+show their work to their parents. STEP had an Open House at the end of the program where the students could
+show off their achievements to their parents. It was observed, toward the end of the program, that some of the
+students were racing to complete the most difficult challenges. When they were done, they were thrilled to be
+able to show their work to their parents at the Open House. This indicates that robotics is something "cool" for
+students to proudly show their parents, even in the age group here (14-16 years old).
+
+          Versions of our educational robotics materials have been tested in numerous New York City public
+schools   through  Columbia's        Technology        Integration   Partnership(10).  With    continued      iteration,   we    expect   to
+improve our lessons, materials and resources in order to satisfy the needs of teachers in a wide range of settings.
+We are continuing development of a comprehensive and teacher-friendly website to provide useful resources as
+well as a forum for sharing experiences. Additionally, we are currently working on developing a valid and
+reliable  survey,   working       in cooperation       with   researchers     in  psychology   and     education       in order  to  create
+measurement tools to accurately assess the influences of educational robotics, including students' self-motivation
+in math, science and technology related subjects. The summer project provided us with significant learning
+experiences along the road to accomplishing our goals.
+
+Endnotes
+(1)  http://www.highered.nysed.gov/kiap/step/step.htm
+(2)  http://www.playing2win.org
+(3)  http://www.legomindstorms.com
+(4)  The lead developer is the first author here.
+(5)  http://www.rec.ri.cmu.edu/education/teachertraining/tankbotbldginstr.pdf
+(6)  RCX stands for Robotics Command Explore. It is the component that contains a microprocessor housed in a LEGO brick.
+(7)  http://www.ceeo.tufts.edu
+(8)  The developed curriculum and materials can be found at: http://satchmo.cs.columbia.edu/er/curriculum
+     Additional robotic resources can be found at: http://satchmo.cs.columbia.edu/er
+(9)  http://www.pldstore.com/pld/catalog.cfm?dest=itempg&itemid=8298&secid=9&linkon=subsection&linkid=45
+(10) http://tip.columbia.edu/
+
+References
+Druin, A. (1999). Cooperative Inquiry: Developing New Technologies for Children with Children. Paper presented at the CHI '99.
+Kolodner, J. L., Crismond,    D., Gray, J., Holbrook,  J., & Puntambekar,  S. (1998). Learning by Design   from   Theory   to Practice. Paper
+          presented at the ICLS 98, Atlanta, GA.
+Logo Foundation. (2000). What is LOGO?
+Nagel, K., & Kolodner, J. L. (1999). SMILE: Supportive Multi-User Interactive Learning Environment. Paper presented at the CSCL '99,
+          Palo Alto, CA.
+New York City Department of City Planning. (2003). 2000 Census Tract Community Development Block Grant Eligibility Maps.
+New York City Department of Health and Mental Hygiene. (2003). New York City Neighborhood Health Profiles: Manhattan, 2000.
+Papert, S. (1980). Constructionism vs. Instructionism.
+Papert, S. (1992). The Children's Machine. New York: Basic Books.
+Piaget, J. (1972). Development and learning. In C. S. Lavatelli & F. Stendler (Eds.), Readings in child behavior and development. New York:
+          Hartcourt Brace Janovich.
+Piaget, J. (1973). To understand is to invent: the future of education (G. Roberts, Trans.). NY: Grossman Publishers.
+Piaget, J. (1977). The child and reality: problems of genetic psychology (A. Rosin, Trans.). NY: Penguin Books.
+Puntambekar, S., & Kolodner, J. L. (1998). The Design Diary: A Tool to Support Students in Learning Science by Design. Paper presented at
+          the ICLS 98, Atlanta, GA.
+Sklar, E., & Eguchi, A. (2004). Learning while Teaching Robotics. To appear at the 2004 AAAI Spring Symposium on Accessible, Hands-on
+          AI and Robotics Education, Stanford, CA.
+Sklar, E., Eguchi, A., & Johnson, J. (2002). RoboCupJunior: learning with educational robotics. Paper presented at the RoboCup-2002:
+          Robot Soccer World Cup VI, Fukuoka, Japan.
+
+Acknowledgments
+We  acknowledge   the tremendous    contributions  of  Kami  Vaniea, the visiting student who assisted in the   development   of the robotics
+curriculum. Thanks to Florence Sullivan for constructive input during the summer program. This work was made possible with support from
+STEP and Playing2Win, as well as crucial funding from the CRA-W Distributed Mentorship Program and from NSF #DGE-00-86390.
+
+                                                                221
+

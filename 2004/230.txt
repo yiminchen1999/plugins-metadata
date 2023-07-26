@@ -1,0 +1,446 @@
+     Authoring Branching Storylines for Training Applications
+
+                                              Andrew S. Gordon
+                       University of Southern California, Institute for Creative Technologies
+                                13274 Fiji Way, Marina del Rey, CA 90292 USA
+                                     Tel: 310-574-5700, Fax: 310-574-5725
+                                           Email: gordon@ict.usc.edu
+
+       Abstract: Progress in the area of interactive training applications has led to the formulation of
+       methodologies     that  have been successfully   transitioned  out of research labs    and into the
+       practices   of   commercial   developers.    This   paper reviews   the  academic   origins    of  a
+       methodology      for developing training  applications  that incorporate branching     storylines to
+       engage users in a first-person learn-by-doing experience, originally referred to as Outcome-
+       Driven Simulations.     Innovations and modifications to this methodology from the commercial
+       sector are then reviewed, and the steps in this methodology are described, as implemented in
+       current best practices.   Finally, new research efforts based on this methodology are examined,
+       including    the introduction  of natural language   processing    technology  to enable   human-
+       computer conversations and the integration of branching storylines into real-time virtual reality
+       environments.     A  prototype  application to  support leadership  development   within   the U.S.
+       Army that includes these advances is described.
+
+Outcome-Driven Simulations
+       The Outcome-Driven Simulation is a design for interactive training software applications that has
+transitioned successfully from educational technology research labs to the world of commercial development.
+The term Outcome-Driven Simulation, coined by Christopher Riesbeck at Northwestern University in September
+of 1994, refers to a class of applications where users adopt a role in a fictional scenario, and where the decisions
+and action that the user takes moves the scenario forward in time to new situations that are relevant to the
+pedagogical objectives. Outcome-Driven Simulations were originally viewed as a type of Goal-Based Scenario
+(Schank et al., 1993) and as an alternative to learn-by-doing environments based on constructive simulations
+(e.g. Lockheed Martin Corporation, 1998). Whereas situations in constructive simulations are calculated by
+propagating the effects of user actions in a simulated world based on a predictive model, Outcome-Driven
+Simulations are constructed such that the users' decisions would lead to educationally interesting experiences
+regardless of   what   actions they  took. Computationally,    Outcome-Driven     Simulations     can  be    trivially
+implemented as branching storylines, not unlike those in the classic Choose Your Own Adventure book series
+published by Bantum Books (Packard, 1979). Accordingly, the emphasis in the development of Outcome-Driven
+Simulations   has been  on  the methodology   that  is used to   author these  branching  storylines   for   training
+applications.
+
+       The rise in demand of e-learning applications in the late 1990s and the relative simplicity of deploying
+Outcome-Driven Simulations led many commercial entities to develop a competency for authoring them, both
+for internal training purposes and in order to offer e-learning development services. Startup companies such as
+Cognitive Arts and Experience Builders focused on building Outcome-Driven Simulations as a development
+service, while large corporations such as Andersen Consulting (now Accenture) and IBM concentrated initially
+on developing them for training their own workforce. Although Outcome-Driven Simulations may be applicable
+to a wide variety of training needs, the most typical skills that are targeted are those associated with personnel
+management,    project  management,  customer   relations, and  sales engagements.    Typically   Outcome-Driven
+Simulation were deployed as static websites or lightweight web applications, and a typical user experience would
+involve watching a fictional back-story, adopting a role as a character in the fictional scenario, and selecting
+choices of action in response to situations presented to the user as part of a coherent narrative structure. An after-
+action review and/or a just-in-time coaching functionality is generally provided, and the user's experience (often
+30 to 90 minutes duration) generally ends with some indication of the quality of the decisions that they made and
+a customized set of stories and other written materials for them to read to support the training experience.
+
+                                                    230
+         The educational approach that underlies the design of Outcome-Driven Simulations is grounded in the
+theoretical tradition of Case-Based Reasoning, although the relationship is more evident when considering the
+authoring methodology than the resulting application. Schank (1982) expanded on views held by Bartlett (1932)
+and observed that many features of human episodic memory can be explained if we view memories as organized
+by mental models and schemas that define our expectations of the world. Schank argued that people remember
+events when they are counter to their expectations, and used these expectation violations as a basis for revising
+their mental models to more accurately reflect reality. Schank and Abelson (1995) later argued that natural
+human storytelling supported these learning processes, enabling groups of people to collectively learn from the
+surprising experiences of others. Early developers of Goal-Based Scenarios saw the opportunity to capitalize on
+these natural human storytelling practices in order to identify expectation violations that differentiated between
+novices  and  expert  practitioners  of a skill. By interviewing  expert practitioners in a  manner    that elicited
+anecdotes from their own past experiences, developers could identify specific knowledge objectives that would
+support learning within the domain of the skill (Ferguson et al., 1992; Johnson et al., 2000). The process of
+constructing  an Outcome-Driven      Simulation   involves recasting the points in these  anecdote    collections as
+decisions that hinge on the expectations of users, and weaving these decision formulations into a coherent
+branching narrative structure. In making decisions in this context based on their mental models, users with
+misconceptions can be immediately presented with decision outcomes that question the justifications for those
+actions.
+
+         Although    well grounded   in  educational theory, Outcome-Driven     Simulations  have     not been well
+described  or evaluated   within   the  academic   Learning  Sciences  community.   Few,  if any,     peer-reviewed
+publications describe deployed Outcome-Driven Simulations or the methodologies that are used to author them.
+The reasons for this are numerous, and include the relative speed in which these methodologies (and the people
+who developed them) transitioned out of the academic community and into commercial production efforts. The
+lack of academic discussion in this area is particularly problematic for researchers who wish to reference
+Outcome-Driven Simulations and the authoring methodology in new publications that describe enhancements,
+theories, applications, and evaluations based upon these ideas. Accordingly, the purpose of this paper is twofold.
+First, we provide a description of the methodology that is used to construct the branching storylines in Outcome-
+Driven Simulations. The methodology presented here is adapted from that which was used at Northwestern
+University's Institute for the Learning Sciences during the 1990s and refined through the process of training
+teams of developers to execute this methodology in corporate environments. Second, we describe a new research
+effort at the University of Southern California's Institute for Creative Technologies aimed at enhancing the
+effectiveness and quality of the user experience in Outcome-Driven Simulations. For both purposes we use a
+specific example of an Outcome-Driven Simulation authored by our group to ground this discussion, which is
+aimed at developing leadership skills in junior US Army officers.
+
+Authoring Methodology
+         The  central  difficulty in creating an  Outcome-Driven     Simulation is the authoring  of   a  branching
+storyline that organizes the set of possible user experiences. This section presents a seven-step methodology that
+we have formulated by adapting the original practices of graduate students at Northwestern University's Institute
+for the Learning Sciences in the 1990s to facilitate commercial development. We have trained two teams of
+commercial developers to execute this methodology, once for a corporation wanting to expand their e-learning
+development services offerings and once for a corporation interested in developing new media technologies. The
+ideal development team would consist of four or five members with broad liberal arts background, where at least
+one member of the team has some expertise in information technology. In practice, the seven steps of this
+methodology each require roughly two weeks of labor and analysis to complete, for a minimum of fourteen
+weeks in the authoring cycle. Depending on the choice of deployment options and level of production quality,
+additional time and support is required from information technology personnel, photographers, dramatic actors,
+and graphic artists.
+
+         This methodology is described with reference to a specific example of its application in building an
+Outcome-Driven Simulation to support leadership development for junior US Army officers. The branching
+storyline that is described was one developed as part of the ICT Leaders project at the University of Southern
+California's Institute for Creative Technologies in a creative collaboration with Paramount Pictures.
+
+                                                     231
+Step 1. Anecdote Collection
+        A typical authoring cycle will begin some time after an organization has identified a particular training
+need and has identified Outcome-Driven Simulations as an appropriate technology to apply. Although it is
+common for the management of an organization to suggest specific content for the training objectives of the
+application, the authoring process begins by identifying a group of people (typically within the organization) that
+the management believes has already internalized these objectives and is using them in their daily practices. The
+authoring team then arranges to conduct directed interviews with approximately ten members of this expert
+group with the specific intention of listening to the stories and anecdotes related to the execution of their skills.
+Two or more members of the authoring team conduct these interviews, ideally with people in the expert group,
+two at a time, for durations of one to two hours per session. An experienced interviewer can collect 50 to 75
+anecdotes with this amount of time, which is the approximate number of anecdotes that will be necessary for the
+remainder of the authoring process. The audio of these interviews is recorded, and the experts are asked to grant
+permission to the authoring group to retell their stories within the application context. Ideally, these interviews
+are conduct in person in a very informal manner in a location where people are naturally expected to tell stories,
+e.g. lunch cafeterias. The team member leading the interview can set the appropriate tone of the discussion by
+telling an anecdote of his or her own at the start of the conversation. It is generally fruitful if the interviewer
+organizes his or her questions around an outline of the major tasks of the experts' job, prompting for cases where
+there were problems that they have encountered in the past. The interviewer must counter the tendency of
+subjects to give maxims and abstractions instead of first-person experiences, and should continue to press the
+subject for specific cases until the expert gives details of specific experiences that they've had, indicated by an
+abundance of past tense and pronoun words.
+
+        For the ICT Leaders project, our team interviewed ten (five pairs) of US Army captains that had just
+finished roles as company commanders across a broad range of unit types. Recordings of these interviews were
+edited so that they only contained first-person anecdotes, and then transcribed and edited so that our authoring
+team could further analyze them. A total of 63 anecdotes were collected during these interviews concerning
+leadership issues for company commanders across a broad range of topics, including deployments, managing
+superior and subordinate relationships, ethics, and the personal issues of the soldiers in the unit.
+
+Step 2. Point Analysis
+        A   central tenet of the Dynamic   Memory   theory  of story-based       memory     (Schank,    1982)   was that
+experiences  are memorable   when   they are counter to the mental         models   that people hold,   and that  these
+expectation violations support a natural case-based learning process. The corpus of anecdotes collected from
+subject matter experts can therefore be viewed both as support for the mental models that these experts hold of
+their task domain as well as indicators for the expectations that novices would have. The next step in the
+authoring process, therefore, is to identify each of these two components for each of the anecdotes in the
+collection. To aid in this analysis, a simple form is used, where members of the author team paraphrase the point
+of each anecdote as a sentence, "If you didn't know better, you might expect that X, but in reality Y", where X
+and Y are references to the expectation and the expectation violation of the anecdote, respectively. Each member
+of the authoring  team attempts  to individually complete  this    analysis     for each   anecdote  in the collection,
+followed by group discussion/debate and reformulation of these points into some final set. Two examples of the
+expectations and expectation violations formulated for the ICT Leaders project from the set of 63 anecdotes are
+as follows:
+
+a.      Expectation: Commanders will want to be honest about their capabilities when communicating
+        to their superiors for the safety of the soldiers in their units
+        Expectation   violation: Commanders    will sometimes   overestimate         their capabilities when
+        communicating to their superiors to inflate their standing and reputation
+
+b.      Expectation: Commanders should always choose the plan of action they believe will be the
+        most successful in the end, regardless of who had the idea
+        Expectation   violation: Commanders   must  weigh  the quality       of the plan   against the  benefit
+        gained when the concept of the plan was the idea of the people who will be executing the plan
+
+                                                  232
+Step 3. Decision Formulation
+        Prominent theories of skill acquisition have argued that the tacit knowledge necessary for successfully
+performing a skill must be learned       within the context  of its use (Brown et al., 1989).   Outcome-Driven
+Simulations attempt to create a realistic (but fictional) context to support the training experience, with the design
+constraint that all of the user interactions in the environment take the form of forced-choice decisions. In
+practice, this constraint is easy to live with, as nearly any identifiable difference between the knowledge of
+novice and expert practitioners of a skill can be cast as a decision to be made given a particular situation. Step 3
+of the authoring process is to formulate a decision from each of the points identified in the previous step, where
+the choice between two options is based on whether or not you believe the expectation in the point or its
+violation. For each point in the collection, the authoring team writes a new sentence of the form "If you were in a
+situation X and you believed the point of the anecdote, then you would choose to do Y, and otherwise you would
+choose to do Z," where Y and Z are choices based on the expectation violation and the expectation, respectively,
+and X was an abstract description of a fictional situation that could arise in the context of executing the skill to
+be trained. This labor is perhaps the most difficult of the authoring process, requiring creativity and a sensitivity
+to the danger of formulating decisions where there is an obvious right answer. A balanced decision formulation is
+one where the decision to be made hinges only on the one belief that has been identified in the point analysis.
+Two examples of decision formulations authored in the ICT Leaders project (based on the point analyses
+presented earlier) are as follows:
+
+a.      Situation: You have taken over a new unit and are asked to present a quick report on its
+        readiness. The report from their previous commander tells you that the unit is at full readiness,
+        totally competent in all areas
+        Expert choice: Ask for a complete review of the unit yourself to make sure that the previous
+        report is accurate. Then write your own report
+        Novice choice: Use the previous report as a basis for your new report on the unit's readiness to
+        avoid going through all of the details a second time
+
+b.      Situation: You are given a mission, and your subordinate officers come up with a mission plan
+        that they think is best. Later, you are talking with a much more experienced person outside of
+        your command, and he suggests that a different plan of action would be slightly better
+        Expert choice: Stick with the plan as developed by your subordinates
+        Novice choice: Accept the plan of the more experienced person, and tell the subordinates that
+        this is what they should do
+
+Step 4. Chapter Sorting
+        In any branching tree structure the number of leaf nodes of the tree exponentially grows as the number
+of levels increases. In branching narratives, where each of the branch and leaf nodes of needs to be hand crafted,
+the size of the resulting tree is limited by the authoring resources available. These authoring limitations have a
+significant impact on the user experience, as the number of decisions that a user will make during the course of
+any Outcome-Driven Simulations is equal to the depth of the tree. In true branching tree structures, the amount of
+authoring work grows exponentially larger for each additional decision that is to be offered, severely limiting the
+duration of the user experience.
+
+        To overcome this problem, Outcome-Driven Simulations employ a chapter-based approach. Instead of
+constructing the branching narrative as a monolithic tree structure, it is authored as a set of smaller tree structures
+that are to be experienced by the user in series as a multi-chapter narrative. Typically five or six chapters are
+assembled. Each chapter is a branching storyline on its own with a single starting point, but each of the outcomes
+of a chapter always leads to the single start node of the next chapter, regardless of the decision that the user
+makes. Using this technique, the duration of the user experience can be much greater given limited authoring
+resources, although users will find that some story states occur in the experience every time they use the
+application, regardless of what they do.
+
+        To enable the use of a chapter-based technique, the full set of decision formulations need to be sorted
+into groups of roughly equal size, ideally with a dozen or more in each set. Typically, the temporal structure of
+the performance of the skill to be trained is used as the basis for these groups. For example, a training system for
+sales representatives might sort the decisions based on the subtasks of identifying an opportunity, making an
+initial sales call, assembling a proposal and project team, closing the sale, and managing the continuing client
+
+                                                     233
+relationship. For the ICT Leaders project, the 63 decision formulations were sorted equally into five components
+of the execution of a mission, namely establishing a relationship with subordinate leaders, mission preparation,
+dealing with threats, coordinating with superior officers, and successfully executing the mission.
+
+Step 5. Graph Assembly
+         Branching storylines for individual chapters in Outcome-Driven Simulations have been constructed as
+directed acyclic graphs with a wide variety of different topologies, with three main determiners of overall shape.
+First is the average branching factor of nodes in the graph, the number of other nodes that can be reached from
+any given node in the graph. This number is typically two, four, or six, reflecting the fact that nodes are created
+out of a single    decision formulation or clusters  of decision  formulations that share very     similar  situation
+descriptions. That is, for each node, each arc transition out of the node represents an instantiation of either the
+expert or novice choice from one of a set of decision formulations that are clustered together. The second
+determiner of graph topology is whether dead-end states are included in the graph, where a user reaching these
+states in the storyline would be forced to retract their last action and select another to continue the story. Dead-
+end states in Outcome-Driven Simulations have been used to provide immediate feedback to users that the choice
+they have selected runs counter to the anecdotal evidence of expert practitioners, and often the original anecdote
+that was used to construct the choice is provided to the user for consideration before they return to the previous
+decision node. Outcome-Driven Simulations without dead-end states typically rely on an after-action review
+stage where these anecdotes are made available based on the decisions that the user made throughout the
+interaction. The third determiner of graph topology is the use of shared outcomes, where there are separate nodes
+in the graph that have arc transitions that lead to common nodes, aside from those at the end of chapters. Shared
+outcomes enable more user choices within a chapter, at the expense of replayability. In the ICT Leaders project,
+we opted to use a branching factor of only two, to have no dead-end nodes in the graph, and to minimize the use
+of shared outcomes, yielding an average of four decisions to be made by the user for each of the five chapters in
+the application.
+
+         In assembling a graph from decision formulations that have been sorted into a common chapter, the
+creative challenge is to incrementally pair the choices in one node with outcomes that are the situations in other
+nodes, within the context of a fictional situation with a coherent narrative structure. For each node, the authoring
+team begins to ground the abstract situation description with details of a scenario, imagining a concise set of
+narrative events that can bridge the gap between the user's choice and the next decision that is to be made.
+During  the authoring   of  the ICT  Leaders branching   storyline, we grounded  the  situations    for each of the
+decisions into the context of a mission where a company is providing security for a food distribution operation in
+Afghanistan. This context was chosen because it was the same as that used in the Critical Leadership Analysis
+System project at the USC Institute for Creative Technologies (Hill et al., 2003), allowing us to reuse some
+previous work.
+
+Step 6. Narrative Scripting
+         With the structural aspects of the branching storyline in place, the details of the dramatic experience can
+be worked out. As a convention, many Outcome-Driven Simulations structure the dramatic experience around a
+set of conversations with characters. In this style, each node in the graph can be presented as one side of a
+dialogue, where the user must respond to the statements of the character they are talking to by selecting one of a
+set of statements that correspond to the decision formulation choices for the node. In this step of the authoring
+process specific dialogue lines are written (along with any supporting narration) for the fictional characters in
+each of the nodes of each of the chapter graphs, along with the text of the user choices (usually dialogue lines as
+well). Care must be given to ensuring that user choices are well balanced, and that each of them is presented as a
+reasonable choice to make given the context. For the ICT Leaders project, this step of narrative scripting was
+completed   by   a professional film and  television writer, and  done so according  to a number      of additional
+constraints to support new research directions, which are described in a later section of this paper. A more
+traditional example of the sort of scripting that must be completed in this step is given in the following example,
+a node from an Outcome-Driven Simulation designed for training client sales representatives.
+
+         Narrative:
+         In this scene you talk with another client representative about how to prepare for calls on
+         business   executives. She  says to you, "Did   you  see that Penchant  Brokers  is folding    its
+         independent online bank back under its Web site? That bank was a great reference for us, too.
+
+                                                     234
+        We got it designed and launched in under four months. Now the whole project looks like a big
+        waste of time and money."
+        User choices:
+        (1) You say, "The strategy was good. Penchant Brokers needed to differentiate itself from its
+        competitors."
+        (2) You say, "The company probably got a lot of new customers to sell brokerage products to."
+        (3) You say, "Offering online banking made sense, though. Penchant Brokers had existing
+        clients with money."
+        (4) You say, "A brokerage sponsoring a bank seemed pretty illogical anyway."
+
+Step 7. Production
+        There a wide variety of delivery options available once the branching storyline has been authored,
+including websites where each node in the graph is represented as a single page with user choices as hyperlinks
+to additional pages, interactive video systems where nodes are presented as short video segments ending in an
+interactive menu of user choices, and printed booklets like the original Choose Your Own Adventure series
+(Packard, 1979). When Outcome-Driven Simulations are professionally authored as a development service, the
+most common delivery format is as a set of web pages. Here each decision in the branching storyline is encoded
+as a single web page, typically with a photograph depicting the current state of the story, a textual description,
+and a set of hyperlinks for user actions that will take them to subsequent states of the story. When dead-end
+nodes follow an action that is not in accordance with the expectation violation of a training point, the hyperlink
+representing this action leads to a dead-end node that explains the user failure, presents them with the original
+story that motivated the decision point, and gives them the opportunity to retract the choice and select a different
+option to move the story forward. Figure 1 presents the most common layout for decision and dead-end web
+pages used in past Outcome-Driven Simulations. These web pages are always embedded in a larger training
+website, preceded by a fictional back-story to engage users in the simulation task and links to more traditional
+training aids and documents. The ICT Leaders project did not follow this production step, as described in the
+next section.
+
+                  A
+                                                                       In this area, developers should place some text that
+                                                                       describes the current state of the world, as depicted
+                                                                       by the photograph that appears on the left. Many
+                                                                       times, it is useful to put a picture of a person on theleft, looking straight at the camera, and use this spaceto write out one side of a conversation, where theBWeb page for decision node
+                                                                       user's response to this conversation must be selectedfrom a multiple choice list that appears below.A. Photograph of current story situation
+                                                                                                                                          B. Narrative description of the current story situation
+                           1. This is where the user choices should go. They are simply represented as hyperlinks to
+                             other web pages that are other states of the story.
+      C                    2. They text of the choice can describe some action that the user takes in response to thesituation as it is presented above.C. Multiple choices for user action
+                           3. Other times, the choice can simply be a line of dialogue that the user is to say in response
+                             to the thing that was just said to them in the current state of the story.4. The hard part is to come up with text that isn't so obviously wrong or right ­ you'llD. Indication of number of chapters to be completed
+                             definitely need to balance out the language you use so that expertise is the best predictor
+                             of which choice the user will make.
+
+                                                                                 D
+
+                  E
+                                                                        In this area, developers should place some text that
+                                                                        describes the current state of the world, as depictedby the photograph that appears on the left. In a dead-Web page for dead-end node
+                                                                        end node, this situation doesn't necessarily have to
+                                                                        be a catastrophic failure, but should generally givethe user some sense that things have gone badly.FE. Photograph of dead-end story situation
+                                                                                                                                          F. Narrative description of dead-end story situation
+      G                    Just below the situation on a dead-end node, there should be some text that lets the userknow exactly what they did wrong on the previous page that led them to this dead-end.G. Reasons that the user choice was incorrect
+                           If they are used, dead-end nodes are always occur when the choice the user took was
+                           indicative of a mental model of the world that is more like the "if you didn't know
+                           better" part of the original point of the anecdote that motivated the previous decision.               I       H. Original motivating anecdote from domain expert
+      H                    The last thing on this web page should be the full text of the original anecdote that wasused to justify the choice the user last made as a poor choice. Depending on theI. Button for retracting the last user action
+                           agreement you have with the original subject matter experts, you may have to edit this
+                           material so that it is anonymous and it doesn't say anything that would be
+                           uncomfortable to client organization.
+
+                                                                                                        Figure 1. Design of Web-based Outcome Driven Simulations
+
+Research Advancements
+        The ICT Leaders project has been exploring new technologies for enhancing the user experience in
+Outcome-Driven Simulations. Our aim has been to enhance their ability to develop skills within the training
+domain by improving the richness of the scenario context that is presented and the realism of the mode of
+human-computer interaction. In pursuing this aim, we have followed the authoring methodology presented in this
+paper for the development of a training application for US Army leadership development, but we greatly
+
+                                                                                                                                            235
+modified the last two steps of this process to support two research advancements, namely natural language
+interaction and virtual cinematography.
+
+Natural Language Interaction
+        The forced-choice style of user interaction allows for easy deployment of Outcome-Driven Simulations,
+but has the potential to undermine the training experience for users by presenting them with choices that they
+would have otherwise been unable to come up with on their own. A more effective interaction would force users
+to come up with their own solutions to situations where some decision must be made, and formulate these
+solutions as input to the application. The ICT Leaders project supports this style of user interaction by prompting
+users to type free text statements in response to problems that are presented to them in the form of dialogue with
+the fictional characters of the scenario at each node in the branching storyline. User text input is then routed to
+one of a fixed number of response categories using machine-learning text classification techniques, the same as
+those used in a previous project for leadership development that we created (Hill et al., 2003). Each node in the
+branching storyline is supported by a single classifier, with two classes of the classifier devoted to novice and
+expert choices as informed by the original decision formulation used to create the node. Additional classes are
+used in each   classifier to enable storyline characters to  appropriately       respond   to the wide   range of other
+statements that users may wish to make at any given point in the storyline. User statements classified into these
+additional classes do not cause the system to move the story forward to one of the next nodes, but instead trigger
+one of a fixed set of storyline characters written to encourage the user to make a choice in their next input
+statement.
+
+Virtual Cinematography
+        The common convention of deploying Outcome-Driven Simulations as web pages with a photograph
+and text has been cost effective, but suffers from a the inability to immerse the user into the fictional narrative
+context. Professionally produced video allows for a rich context, but at costs that are much too exorbitant for
+most applications. Virtual reality technologies, such as those used in current computer game environments, offer
+the potential to create rich cinematic experiences at costs that are much less than those for video. To pursue this
+approach,  the ICT Leaders     project has embedded  the  branching           storyline authored  into a virtual reality
+environment, where fictional characters are represented as animations that are rendered in a three dimensional
+graphical world. For this application, we created a modification to the commercial game Unreal Tournament
+2003 published by Epic Games, complete with new character models, animations, props, and terrain necessary to
+create a context of a food distribution security operation in Afghanistan. Although Unreal Tournament 2003 was
+originally conceived as a violent first-person shooting game, our modification transforms the experience into an
+interactive drama where all of the user interaction takes place in the context of conversations with virtual
+characters, as seen in Figure 2. The functionality of this software environment allows us to mix scripted camera
+and main character behavior (including audio clips of character dialogue) with autonomous background character
+action, creating a blended experience that has qualities of both real-time simulation environments and the turn-
+based interaction of traditional Outcome-Driven Simulations.
+
+                                            Figure 2. The ICT Leaders Project
+
+                                                   236
+Discussion
+        Although Outcome-Driven Simulations have proven to be a financial success for the development
+companies that produce them for their clients, their greatest failing is the absence of academic scrutiny. The lack
+of publications describing   the authoring process   and design     philosophy      has prevented   Learning  Science
+researchers from debating their merit as a training technology. Even more troubling is the lack of comparative
+evaluations of  the effectiveness of Outcome-Driven    Simulations       for training   the skills for which  they are
+designed. The aim of this paper was to address the former of these problems in hope that this description will
+enable further research to address the latter. In addition, we have described current work on new technologies for
+Outcome-Driven Simulations to demonstrate that there remain interesting challenges within this area of research.
+
+        By advancing work on the use of branching storylines in immersive virtual environments, the ICT
+Leaders project begins to resemble (visually) the sorts of virtual reality systems that have traditionally been more
+closely associated with constructive simulations rather than Outcome-Driven Simulations. However, this project
+demonstrates that training experiences in virtual reality environments need not be constrained by the modeling
+limitations of current constructive simulations, and that by focusing on specific decision situations we can design
+immersive training environments that are tightly structured around training goals. The high degree of structure in
+the branching storyline of Outcome-Driven Simulations enables the use of statistical natural language processing
+techniques, where user statements and questions are robustly classified and used to support realistic human-
+computer   conversations with virtual characters. This approach      is  a   viable alternative  to fully  autonomous
+characters in virtual reality training systems, and is a framework for future research where educational design is
+at least as important as issues of immersion and believability.
+
+References
+
+Brown,  J. S., Collins, A., Deguid,  P.  (1989) Situated cognition       and the culture    of  learning. Educational
+        Researcher 18(1), 32-42.
+Ferguson, W., Bareiss, R., Birnbaum, L., and Osgood, R. (1992) ASK systems: an approach to the realization of
+        story-based teachers. Journal of the Learning Sciences 1, 95-134.
+Hill, R., Douglas, J., Gordon, A., Pighin, F., & van Velsen, M. (2003) Guided Conversations about Leadership:
+        Mentoring    with   Movies   and Interactive Characters.      Proceedings       of  the Fifteenth   Innovative
+        Applications of Artificial Intelligence Conference (IAAI-03) Menlo Park, CA: AAAI Press.
+Johnson, C., Birnbaum, L., Bareiss, R., and Hinrichs, T. (2000) War stories: harnessing organizational memories
+        to support task performance. Intelligence 11(1), 16-31. New York: ACM Press.
+Lockheed   Martin   Corporation  (1998)  OneSAF   testbed       baseline assessment.    Document     ADST-II-CDRL-
+        ONESAF-9800101, May 8, 1998. Available at http://www.onesaf.org/publicotbdocs.html
+Packard, E. (1979) The cave of time. New York: Bantam Books.
+Schank, R. (1982) Dynamic memory: a theory of reminding and learning in computers and people. Cambridge:
+        Cambridge University Press.
+Schank, R.  and Abelson,  R. (1995)  Knowledge   and Memory:       The   Real  Story.   In R.  Wyer  (ed) Advances  in
+        Social Cognition, Volume VIII. Mahwah, NJ: Lawrence Erlbaum Associates. pp. 1-86.
+Schank, R., A. Fano, B. Bell, and M. Jona. 1993. The Design of Goal-Based Scenarios. Journal of the Learning
+        Sciences 3:4. 305-345
+
+Acknowledgments
+The author would like to acknowledge the help of Eileen Kopczak (IBM) and Nicholas Iuppa (Paramount
+Pictures) for their help in refining the methodology described in this paper. This paper was developed with funds
+of the Department of the Army under contract number DAAD 19-99-D-0046. Any opinions, findings and
+conclusions or recommendations expressed in this paper are those of the authors and do not necessarily reflect
+the views of the Department of the Army.
+
+                                                   237
+

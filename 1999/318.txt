@@ -1,0 +1,360 @@
+An Analysis of Growth Patterns in Computer
+Conferencing Threads
+Jim Hewitt, Chris Teplovs
+
+Ontario Institute for Studies in Education / University of Toronto
+
+      Abstract: Threads in a computer conferencing systems develop in
+      seemingly unpredictable ways. Each time someone starts a new discussion
+      or extends an existing line of thought, there is a subtle shift in the
+      intellectual spotlight ñ a shift that influences the contribution patterns of
+      subsequent users. Active threads may unexpectedly fade to the
+      background, and older, inactive threads may regain centre stage. Yet
+      within this complex ebb and flow, there are certain indicators that help
+      predict a thread's future. An analysis of the 1571 threads in 7 distance
+      education conferences reveals patterns of development that can be used to
+      statistically assign growth probabilities to individual threads. Possible
+      applications of these findings are discussed.
+
+      Keywords: computer-mediated communication, discussion forum
+
+Introduction
+
+Almost all conferencing forums make use of a process called threading to organize
+online discourse. A thread is a hierarchical arrangement of linked notes in which each
+successive contribution is written as a response to an earlier note in the discussion. Such
+structures have become an essential part of most email systems, web-based newsgroups,
+and computer conferencing packages. For educational purposes, threaded discourse offers
+an attractive, low-bandwidth means of delivering courses over the internet. Indeed,
+thousands of institutions currently rely on this technology, and its popularity is growing.
+
+In this paper, we begin an analysis of the growth patterns of computer conferencing
+threads. Particular attention is paid to the problem of differentiating between active
+threads (i.e., threads that are in a state of growth) and threads that appear to have reached
+the end of their life span. At any one time in a computer conference there may be dozens
+of different threads at various stages of maturity. Some of the threads will be new, others
+will be in mid-development, and still others will have stopped growing. The first two of
+these stages are highly visible. The birth of a thread is marked by the addition of a new
+note to the conference. The development stage occurs when a chain of responses appears.
+However, the final stage of a thread's life span is difficult to discern. For example,
+suppose a thread has remained inactive for four consecutive days. Can it be assumed that
+the thread is dead? Or will it eventually grow even larger? At what point can it be
+claimed that an online discussion has ended?
+Through this investigation, we hope to develop a deeper understanding of how threads
+evolve over time. We begin by constructing a day-by-day record of thread development.
+Using that data, we seek to establish a relationship between thread length, time, and the
+probability of future growth. The paper then explores the possibility of building new
+supports into computer conferencing packages that help learners more easily distinguish
+between active threads and those that are unlikely to produce further discourse.
+
+The Data
+
+This study examines seven graduate-level distance education courses containing a total of
+4086 notes across 1521 distinct threads (Table 1). All courses were delivered using Web
+Knowledge Forum (WebKF), an asynchronous threaded discussion environment. The
+mean thread length across the courses was 2.69 (SD 3.01). The largest mean thread size
+was 4.20 and the smallest was 1.88. The variability in the means is likely due to
+differences in instructor experience, course requirements, and student practices.
+
+      Table 1: Thread count and mean size in seven distance education courses.
+
+The overall mean thread length of 2.69 is close to the value of 2.8 obtained by Guzdial
+(1997) in an earlier study. Guzdial's analysis reported a larger standard deviation (6.5),
+but his research examined threads from two different conferencing environments:
+CaMILE and internet newsgroups. The classes that used CaMILE had significantly
+longer discussions (p<.001, two-tailed test) than the newsgroup classes, and these
+differences undoubtedly amplified the variance.
+
+The collective distribution of thread sizes in the seven courses (Figure 1) reveals a high
+proportion of small threads. Although the overall mean thread size is 2.69, the
+distribution is heavily skewed and both the median and the mode of the distribution are
+1.0. Over 80% of the online discussions contain 4 notes or less. Thus, most of the threads
+are short and contain, at most, a few exchanges. In fact, over 50% of the threads (the
+threads of size 1) are not even discussions in the conventional sense, since they only
+consist of a single entry.
+
+                            Figure 1: Frequency of thread sizes.
+
+Patterns of responses to individual notes
+
+Attempts to predict whether a particular thread will grow, or stop growing, can be
+informed by an analysis of online interaction patterns. At a fundamental level, thread
+growth occurs when someone responds to one of the thread's notes, thereby extending the
+discussion. What are the odds that someone will reply to a particular note? And how do
+these odds change over time?
+
+In the seven graduate distance education courses examined, only 42% of the 4083 notes
+received a response. Figure 2 shows that 63% of the replies occurred on the first day (i.e.,
+within 24 hours), 16% on the second day, 8% on the third day and 4% on the fourth. The
+cumulative sum of the probabilities for the remaining days (i.e., five, six, and so forth) is
+approximately 9%. Therefore, if a note fails to attract attention in the first few days, it is
+unlikely to receive any responses at all. These results are similar to those reported by
+Guzdial (1997) and Brett et. al. (1999) in their studies of online interaction.
+             Figure 2: Probability that a note will receive a response.
+
+The rapidly decreasing probabilities in Figure 2 suggest that the growth potential of a
+thread may depend, to some degree, on the age of its notes. For example, if all the notes
+within a thread are six or seven days old, then the opportunities for growth are limited.
+However, if all the notes were produced in the past 24 hours, the probability of further
+growth would be more promising.
+
+Patterns of thread development
+
+At first glance, it is tempting to use the results from Figure 2 to mathematically generate
+thread growth probabilities. For example, one could try to estimate the probability of a
+thread's growth by summing the probabilities of its constituent notes. Unfortunately, this
+approach is statistically problematic and can produce nonsensical results with large
+threads (e.g., probabilities that exceed 100%). How, then, can the Figure 2 findings be
+applied to entire threads rather than individual notes?
+
+This paper calculates thread growth probabilities by analyzing the day-by-day evolution
+of online discourse. By understanding how threads develop over time, it becomes
+possible to create a probability table that takes into account the following information:
+
+1. The time that has elapsed since the last note was added to the thread:
+
+Figure 2 suggests that the odds of note receiving a response decrease over time. It is
+reasonable to assume that the probability of thread growth also decreases if the thread
+fails to grow over a period of several days.
+
+2. The current size of the thread:
+It is hypothesized that larger threads are more likely to inspire responses than small
+threads. For example, a thread of size 10 contains 9 more opportunities for writing a
+response than a thread of size 1.
+
+The probability table is generated using a Bayesian analysis. The first step involves
+mapping out the history of each thread's development. This is accomplished by creating
+an array for each thread in which the array elements correspond to the number of notes
+saved on a given day. For example, Table 2 illustrates the day-to-day growth of Thread
+17, a thread that ultimately reaches a size of 5 notes:
+
+                        Table 2: The growth pattern of thread 17.
+
+The first element of this array represents the number of notes that were written on the day
+that the thread was established. In this case, 1 note was saved on the first day. The second
+element indicates that another note was saved on the second day. No notes appeared on
+the third day, but a single note was added on the fourth day, followed by two more notes
+on the fifth. At that point, the thread stopped growing and there was no further activity
+for the remainder of the course.
+
+Using hundreds of such arrays, and Bayesian analysis techniques, it becomes possible to
+answer questions like,
+
+      "What are the odds that a thread of size 2 is dead if two consecutive days
+      go by in which the thread fails to develop?"
+
+To answer this question, we identify all arrays that match the pattern:
+
+      "thread size of two followed immediately by two consecutive zeroes"
+
+For demonstration purposes we consider the small set of four arrays displayed in Table 3.
+Thread 14 matches the criteria on day 3. So does thread 15 on day 7 and thread 16 on day
+6. Thread 17 does not match the criteria and so it is not considered in the calculation.
+
+                Table 3: The growth pattern of threads 14 to 17.
+The data from threads 14, 15, and 16 suggest that on one occasion (thread 14) there was
+growth after a pair of zeroes was encountered. In the other two cases, the threads did not
+develop further. From this limited data set, we can fashion a crude estimate of the
+probability of future growth for a two-note thread after two consecutive days of
+inactivity:
+
+P(future growth) = (# of matching threads that continue to grow) divided by (# of
+matching threads)
+
+=1/3
+
+= 33%.
+
+Applying this technique across 1521 threads in seven computer conferences yields the
+data presented in Table 4. The first value in each cell represents the number of times that
+a thread of a particular size continued to grow after experiencing the given period of
+inactivity. The second value represents the number of times that a thread failed to grow
+under the same conditions.
+
+        Table 4: Frequency values used for used for thread growth predictions.
+
+For example (see boldface in Table 4), on 985 occasions, there was at least one day of
+inactivity after a single note thread was formed. On 182 of those occasions, the thread
+subsequently developed. On the other 803 occasions, the thread died.
+The table also provides statistics for those occasions in which the number of inactive days
+was zero (i.e., the last growth spurt in the thread occurred within the past 24 hours).
+
+Using the Table 4 information, the probability of future growth can be calculated by
+dividing the first value by the sum of the two values in each cell. The results are shown in
+Table 5.
+
+  Table 5: Probability of future thread growth given the thread size and the number of
+                        consecutive days without activity.
+
+The threads with the highest potential for future growth are those that were recently
+active (i.e., threads with zero days of inactivity). Multi-note threads that match this
+pattern have probabilities that exceed 0.5. After one day of inactivity, the odds that a
+single note thread will survive are 18.48%. After two days, this figure drops to 12.24%,
+and after 3 days to 8.54%. Notice that larger threads are more likely to endure periods of
+inactivity. After a single inactive day, a two-note thread will survive 29.83% of the time,
+and a three-note thread will survive 38.89% of the time. This finding is not surprising;
+larger threads contain more notes, and therefore offer participants more opportunities to
+write responses. However, the relationship between thread-size and probabilities is not
+linear (i.e., a twofold increase in a thread's size will improve, but does not necessarily
+double, the thread's chances of future growth). Also, the trend toward higher probabilities
+is limited. Once a thread contains more than five notes, the probabilities level off and
+then decrease. Figure 3 displays the Table 5 probabilities for threads containing 5 notes
+or fewer.
+
+      Figure 3: Probability of future thread growth for threads, size 1 through 5
+
+To a certain degree, thread growth follows a "rich get richer" pattern. That is, threads of
+size 4 and 5 are more likely to grow than the smaller threads. However, the probabilities
+seem to level out, and then decrease, after threads reach a size of five (see Table 5). The
+reasons for this are unclear, but the following two hypotheses are offered:
+
+Hypothesis 1: It is possible that people only reply to the three or four most recent notes in
+a thread. By the time a thread contains six or more notes, the first few notes in the thread
+are usually several days old. According to the Figure 2 distribution, the probability that
+such notes will inspire a response is extremely low. Therefore, the contribution made by
+old notes to the probability that the thread will grow is negligible. If this hypothesis is
+correct, then once a thread reaches a certain size, the probability of growth will not
+change substantially. All subsequent development would emerge out of responses to the
+three or four most recent arrivals.
+
+The relationship between the length of a thread and its life span is illustrated in Figure 4.
+For the purposes of this paper, a thread's life span is defined as the time elapsed between
+the saving of the first note and the final note in the thread. Notice that the single-note
+threads have a life span of zero, since these threads start and end at the same time. In two-
+note threads, the mean time separating the first and last note is less than two days. As
+might be expected, larger threads tend to have longer life spans. These observations
+support the Hypothesis 1 assumption that the initial notes of larger threads will be several
+days old.
+
+   Figure 4: The relationship between the size of a thread and time of development.
+
+Hypothesis 2: The leveling and gradual reduction of future growth probabilities (Table 5)
+may be partially an artifact of certain instructional practices. In some courses, students
+only explore a particular topic for a single week. At the end of that time, a new topic is
+introduced and a new conferencing area is created. Thus, each week, the class begins
+work in an empty conference, and the threads created previously are largely (but not
+completely) ignored. This practice imposes an artificial limit on the maximum size of a
+thread. Since larger threads may take a week or more to develop (see Figure 4), a nine-
+note thread that has experienced two days of inactivity is more likely to die than a five-
+note thread in a similar situation.
+
+Additional research should be able to determine the degree to which weekly transitions
+limit thread development and decrease the growth probabilities for large threads.
+Hypothesis 1 may explain a tendency for probabilities to even out as the thread sizes
+increase. However, Hypothesis 2 better explains the slight decreases associated with large
+threads.
+
+Future possibilities: Making growth probabilities available to learners
+
+Growth probabilities, like the ones calculated in Table 5, could potentially be used to help
+online learners better distinguish between active and inactive threads. A number of
+different applications can be imagined:
+
+1. Computer conferencing software could associate a growth probability with each thread
+and then display this information in some fashion. One simple approach is to show the
+growth probabilities on the screen beside each thread. Alternatively, threads could be
+sequenced according to their probabilities (i.e., the most active threads are displayed at
+the top of the screen followed by less active threads).
+
+2. Computer conferencing software could automatically archive, or otherwise remove
+from view, those threads that have low growth probabilities. Such threads could be still
+be accessed, but they would be located in a holding area that is separate from the active,
+ongoing discussions.
+
+3. Using email, computer conferencing programs could automatically notify the creator
+of a thread if the thread's probability of growth drops below a certain threshold. This
+would provide users with the opportunity to rescue important discussions that are at risk
+of dying.
+
+Each of the above interventions could change the way that online discussions develop
+over time. For example, the idea of ordering threads by their growth probabilities would
+presumably rank active 3-note threads ahead of active 1-note threads (because according
+to Table 5, the probabilities of growth are greater). Therefore, larger threads would
+appear at the top of the screen, while smaller threads may require scrolling to access.
+Presumably, this would reinforce the rich-get-richer phenomenon, resulting in even larger
+threads. At the same time, small 1-note threads would be less visible, and would have
+more difficulty becoming established. The educational ramifications of such a design are
+unclear.
+
+One practical impediment to the implementation of the aforementioned strategies
+concerns the computation of the growth probabilities. The values displayed in Table 5
+were calculated using 7 graduate distance education conferences. While these values may
+serve as a reasonable starting point for some applications, they are inadequate in two
+respects:
+
+1. The shape of the probability curves will be affected by the number of course
+participants, the course requirements, and the resulting activity level. A course containing
+100 people who participate daily will require different probability curves than a course
+containing 4 people who participate once a week.
+
+2. Making users aware of the growth probabilities may give rise to new behaviors that
+make the posted probabilities inaccurate. For example, people may start ignoring threads
+that have low scores. Such behavior would further reduce the odds of these threads
+surviving. In general, the display of probabilities may change student practices, resulting
+in the reduction or amplification of the actual probabilities.
+
+Solving the above problems requires the development of dynamic, adaptive algorithms
+that continually tailor the growth probabilities to the conditions of the course and the
+behavior of the participants. We have not yet developed such an algorithm, but we are
+investigating the possibility of using participant reading and writing patterns to
+progressively fine-tune probabilities.
+Conclusions
+
+The lifecycle of a thread is only partially evident to users of computer conferencing
+environments. The birth of a thread is an obvious event, but it is impossible to determine
+if a thread has died until after the conference draws to a close. At that point, one can look
+back and identify the date that the thread stopped growing (i.e., the date of the last
+contribution to the thread). However, while the conference is still in progress, the status
+of all threads is uncertain. A particular discussion may already be as large as it is destined
+to become, or it may develop further in the coming days and weeks. Consequently, there
+is always ambiguity concerning the fate of any particular thread.
+
+In this paper, we examine the day-by-day evolution of 1521 threads in seven distance
+education courses. The following observations were made:
+
+1. Most of the threads are small. Over 80% of the threads contain four notes or fewer.
+
+2. Notes acquire most of their responses in the first few days after they are initially posted
+to the conference. The odds of a response drops dramatically with time.
+
+3. The longer that a thread has been inactive, the greater the chances that the thread will
+remain inactive until the end of the conference.
+
+4. The probability of a thread's growth is related to the thread's size. Probabilities
+increase with thread size until the thread contains five notes. Subsequent growth yields
+slightly reduced probabilities.
+
+Using the above findings, it may be feasible to develop algorithms that dynamically
+compute growth probabilities and make them available to online learners. Such supports
+would allow conference participants to more easily determine whether a particular
+discussion is likely to develop further, or whether it has already run its course. Such
+systems could alert authors when important threads appear to be dying. These kinds of
+interventions would likely result in new learner behaviors ñ behaviors that will change
+the probabilities that underlie the interventions. Therefore, it may be necessary to develop
+algorithms that continually adapt to match the changing patterns of communal discourse.
+
+Acknowledgements:
+
+Our thanks to Marlene Scardamalia and Carl Bereiter of the CSILE project. We'd also
+like to recognize both Jud Burtis and Clare Brett for their assistance with this study.
+Research support was provided by the TeleLearning Network of Centres of Excellence
+and the Imperial Oil Centre for Science, Mathematics and Technology Education.
+Bibliography
+
+Brett, C., Woodruff, E., and Nason, R. (1999). Online community: What can reading and
+writing patterns tell us about participation? Paper presented at the annual meeting of the
+American Educational Research Association, Montreal Canada.
+
+Guzdial, M. (1997). Information ecology of collaborations in educational settings:
+Influences of tool. In the proceedings of the Computer Support for Collaborative
+Learning conference, CSCL'97, Toronto Canada, 83-90.
+
+Authors' addresses
+
+Jim Hewitt (mailto:jhewitt@oise.utoronto.ca)
+Ontario Institute for Studies in Education / University of Toronto; 252 Bloor Street West;
+Toronto, Canada M5S 1V6. Tel. (416) 923-6641 x2483. Fax (416) 926-4725.
+Chris Teplovs (mailto:chris.teplovs@utoronto.ca)
+Ontario Institute for Studies in Education / University of Toronto; 252 Bloor Street West;
+Toronto, Canada M5S 1V6. Tel. (416) 923-6641 x2731. Fax (416) 926-4713.
+

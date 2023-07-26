@@ -1,0 +1,467 @@
+                New challenges in CSCL: Towards adaptive script support
+                         Nikol Rummel, University Freiburg, Institute of Psychology, Engelbergerstr. 41,
+                                  79085 Freiburg, Germany, rummel@psychologie.uni-freiburg.de
+             Armin Weinberger, Ludwig-Maximilians-Universität (LMU) München, Department of Psychology,
+                         Leopoldstrasse 13, 80802 München, Germany, armin.weinberger@psy.lmu.de
+
+                Abstract: Scaffolding learners, i.e. helping learners to attain tasks they could not accomplish
+                without   support,  entails  the notion  of  fading,  i.e. reducing   the  scaffolding for learners  to
+                become more and more self-regulated. Fading implies to tailor support for collaboration, such
+                as  collaboration   scripts, to  the  particular needs  of  the  specific  collaborators. In  computer
+                supported collaborative learning (CSCL) settings, support can be designed in a very restrictive
+                and inflexible fashion; at the same time computerized settings open new possibilities for the
+                realization    of  adaptive   support  as   they    enable automation     of  analysis   and  feedback
+                mechanisms.     In  this symposium    we    present new   technical  approaches  and   latest empirical
+                research on possibilities and limitations of adaptive support for learners in CSCL settings.
+
+                Much research has demonstrated the potential effectiveness of collaboration for improving students'
+        problem solving and learning (e.g., Slavin, 1996). Collaborative learners have the possibility to receive help
+        from their partner, and can engage in elaborated discussions (Teasley, 1995). Unfortunately, research has also
+        shown that effective collaboration does not happen spontaneously (e.g. Dillenbourg, Baker, Blaye, & O'Malley,
+        1995; Rummel & Spada, 2005) Collaborative learners often do not engage in productive interactions and thus
+        miss collaborative  learning  opportunities.   Hence,    in order  to ensure  that students  can  benefit  from learning
+        collaboratively, it is  important  that  collaborative   partners  learn  how  to  work together   in productive  ways.
+        Particularly at the beginning, some degree of other-regulation, e.g., through guidance, instruction, and training,
+        is required before learners are enabled to engage in self-regulated effective processes of collaborative learning
+        (Kollar & Fischer, 2007; Slavin, 1996). One approach that has shown its effectiveness in a variety of contexts is
+        guiding students' interaction by a collaboration script (e.g. Kollar, Fischer & Hesse, 2006; O'Donnell, 1999). To
+        improve  students'  interaction,  scripts  prompt    students  to  engage   in cognitive,  meta-cognitive,   and  social
+        processes that might otherwise not occur. However, concern has been expressed that there may be a danger in
+        "overscripting"  collaborative   interaction, i.e., providing  too  much   structure  and  support   for  collaboration ­
+        especially for advanced    students  who   are capable   of  self-regulating   their learning  activities (Cohen, 1994;
+        Dillenbourg,  2002).   This reproach    is particularly  true for  script approaches    that  have been   developed  for
+        computer-mediated collaboration (e.g., Pfister & Mühlpfordt, 2002). Scripting collaboration inflexibly might
+        prevent the   independent,   exploratory    thinking  required    for generative   learning   or  problem-solving,   and
+        consequently decrease students' motivation. Moreover, following script prescriptions may impose considerable
+        cognitive load upon learners and thus hamper problem-solving and learning. Taken together, there is reason to
+        believe that it might be best to scaffold collaboration in an adaptive fashion, providing and fading structured
+        support for collaboration based on the particular needs of the specific collaborators. Further evidence for the
+        assumption that adaptive support of collaboration will be most effective for learning comes from research on
+        cognitive tutors (e.g. Anderson, Corbett, Koedinger, & Pelletier, 1995). A key strength of cognitive tutors is that
+        they provide just-in-time support, tailored to the needs of the individual student in a particular moment. As soon
+        as the student makes an error, he or she receives feedback from the system and usually is given some advice
+        about how to overcome the impasse.
+                In the long run, this is what an adaptive collaboration approach aims at: a collaboration tutor. However,
+        this is obviously a highly ambitious goal to achieve. Defining all possible interaction patterns and decisions
+        collaborative  learners could    make ahead   of time    and  defining  a "best path"   or "buggy    paths"  through the
+        collaboration space seems to be difficult and perhaps impossible. So far, it is only possible to define positive and
+        negative collaborative behaviors in general terms. The challenge is to find ways to monitor those behaviors
+        based on real-time data collected during student collaboration and have the system respond to the collaborating
+        partners accordingly. While interest in adaptive collaborative learning systems is on the rise in the computer-
+        supported collaborative learning (CSCL) community (Soller, Jermann, Muehlenbrock, & Martinez, 2005), little
+        progress has yet been made on the implementation of adaptive support. In this symposium we present latest
+        results from projects concerned with developing adaptive support for CSCL environments. Wecker and Fischer
+        have taken a first step towards adaptiveness by comparing traditional script support to faded scripting in a CSCL
+        setting under the condition of distributed monitoring. Meier and colleagues conducted a study in which they
+        compared   the effects  of  adaptive  feedback   vs.  generic  feedback    vs. no    feedback  on  students' subsequent
+        collaboration. Walker, Rummel & Koedinger tackled the challenge of providing intelligent domain support to
+        the peer tutor in a computer-mediated peer tutoring setting. Against the background of a number of empirical
+
+3-33
+studies with varying degrees of automation, Rose, Kumar, Gweon, Wang, and Joshi discuss the possibilities of
+providing  adaptive    support  on the  basis  of automated   analysis  of conversational    data.  The former   three
+contributions present   experimental   studies  and exemplify   the  challenges, but  also  the gains,  of conducting
+empirical research on adaptive support. Then the contribution by Rose et al. takes a broader view and opens up
+the stage for a discussion of the possibilities and limitations of achieving adaptive collaboration support.
+
+Fading of collaboration scripts: Does it foster the acquisition of application-
+oriented knowledge?
+
+    Christof Wecker & Frank Fischer, Department of Psychology, Ludwig-Maximilians-Universität (LMU)
+                                                 München, Germany
+
+          To foster the acquisition of knowledge that learners can apply easily to solve problems of fields of
+practice, learners  are  often  required   to discuss authentic   problems   in  problem-oriented   environments    for
+computer-supported collaborative learning. For example, students of education are asked to analyze cases in
+which  learners   face motivational  problems   by  means  of psychological   theories  such as  Weiner's  attribution
+theory. This application of theories to solve practical problems requires knowledge of heuristics for applying
+theories to cases. For example, learners need to derive diagnoses of problematic traits of behaviour on the basis
+of case information and relevant definitions of theoretical concepts. They also need to derive consequences such
+as predictions of future developments or suggestions for interventions from these diagnoses based on general re-
+gularities. One approach to foster this kind of reasoning during problem-based learning is collaborative argu-
+mentation. However, the quality of argumentation in these contexts is typically low (Stegmann et al., 2007). The
+instructional approach   of collaboration  scripts  (Kollar, Fischer  & Hesse,   2006)  was  developed  as  a  kind of
+socio-cognitive   scaffolding  to overcome    these problems  and   has proven   rather  successful in  increasing  the
+quality of argumentation (e. g. Stegmann et al., 2007). The fading of these scaffolds has been suggested as an
+important means to enable learners to internalize the information contained in them (e. g. Pea, 2004). It could be
+demonstrated that distributed monitoring of a learner's steps by a learning partner can increase the effectiveness
+of fading with respect to the internalization of the target skill (here: argumentation; Wecker & Fischer, 2007). It
+is still an open question, however, how the fading of such scripts affects the acquisition of more domain-specific
+application-oriented   knowledge    and  whether    distributed monitoring    interferes with   these  effects. These
+questions were investigated in the present study.
+
+Methods
+          The participants were 143 students of education in two designs: One was a group design with "no
+script", "script" and   "script with  fading"  conditions.   Furthermore,  a  2x2-factorial  design with   the  factors
+"fading"  (no/yes)  and  "distributed  monitoring"   (no/yes) was   implemented.   In   discussion  boards for  dyads,
+learners wrote counterarguments to case analyses based on attribution theory. Beforehand, they read texts on the
+theory and on argumentation. The script was implemented in the user interface of the discussion board as text
+boxes, instructions and explanatory examples. Distributed monitoring was implemented by prompting one of the
+two learners to provide feedback to his or her learning partner's steps in formulating each counterargument. Per
+dyad one person who had not provided feedback was included in the analysis. Fading was implemented mainly
+by gradually replacing the specific instructions in the script with unspecific ones. First the learners filled in
+questionnaires and read the texts on attribution theory and argumentation. Then they collaborated for 80 minutes
+in the   learning environment.    Finally, they   completed   the post-tests. Application-oriented    knowledge    was
+measured   based  on   the learners'  own  case   analyses   from the post-test, operationalized   as  the number   of
+segments containing components necessary for complete case analyses (i. e. proportion of correct diagnoses and
+number consequences drawn per diagnosis).
+
+Results
+          Effects of script and fading on knowledge on application-oriented knowledge. The null hypothesis of
+identical means could not be rejected with respect to the proportion of correct diagnoses (F(2; 35) = 2.18; p =
+.13; K2 = .11), with a lower mean in the script condition. Yet a significant difference was found with respect to
+the number of consequences drawn per diagnosis, with the highest levels in the script and fading condition,
+followed by the script condition (F(2; 35) = 3.56; p < .05; K2 = .17).
+          Effects of fading and distributed monitoring on application-oriented knowledge. For the proportion of
+correct diagnoses, a significant main effect fading was found for fading (F(1; 57) = 8.66; p < .01; K2 = .13), with
+higher numbers of consequences in the fading conditions. No main effect for distributed monitoring (F(1; 57) =
+1.10; n. s.; K2 = .02) and no interaction effect (F(1; 57) < 1; n. s.; K2 = .01) could be detected. No effect
+whatsoever was found for the number of consequences drawn per diagnosis (all F(1; 57) < 1; n. s.; K2 = .01).
+
+                                                                                                                          3-33
+        Discussion
+                  These results indicate that the effects of a script targeted at a specific skill such as argumentation on ap-
+         plication-oriented knowledge can be increased by the fading of the script: In the faded script condition, the
+         balance of diagnoses and consequences in case analyses was more even, thereby yielding more systematic case
+         analyses. Distributed monitoring does not appear to interfere with the positive effects of fading. This finding
+         might be explained by the increased availability of cognitive resources for schema induction through the fading
+         of scripts (cf. Renkl & Atkinson, 2003). Therefore, the fading of scripts in collaborative problem-based learning
+         seems to be an appropriate means to foster multiple instructional goals related to the acquisition of application-
+         oriented knowledge.
+
+       Teaching students how to improve their collaboration: Assessing
+       collaboration quality and providing adaptive feedback in a CSCL setting
+
+                              Anne Meier, Institute of Psychology, University of Freiburg, Germany
+             Eleni Voyiatzaki, George Kahrimanis, HCI Group, Electrical and Computer Engineering Department.
+                                                   University of Patras, Greece
+                      Nikol Rummel, Hans Spada, Institute of Psychology, University of Freiburg, Germany
+          Nikolaos Avouris, HCI Group, Electrical and Computer Engineering Department. University of Patras, Greece
+
+                  In the present study, we explored the possibility of giving adaptive feedback to students based on an
+         offline assessment of their collaboration on   a joint CSCL    task with the help of a multi-dimensional  rating
+         scheme. The rating scheme is based on the one proposed by Meier, Rummel, & Spada (2007). One goal of our
+         experiment was to test whether the theoretical model underlying our assessment tool would be able to capture
+         the relevant aspects of students' collaboration in a CSCL setting that differs strongly from the one in which the
+         rating scheme had originally been developed (communication channel: chat vs. videoconferencing; task domain:
+         programming vs. medical decision making; group composition: dyads with homogenous prior knowledge vs.
+         interdisciplinary dyads). Most importantly, however, we wanted to use this theoretical model to teach students
+         how to improve their collaboration. This was done by integrating an innovative instructional unit in a regular
+         computer-science class at the University of Patras, Greece. The core of this instructional unit was an adaptive
+         feedback component in a sequence of CSCL activities: Students collaborated on two subsequent tasks in the
+         domain  of  programming.  In between,  they received   adaptive feedback  about their  collaboration on the first,
+         based on a feedback scheme that corresponds to the assessment tool's dimensions. Effects of two different kinds
+         of feedback, either generic or adaptive, were assessed in students' collaboration on the second task in a between-
+         subjects design. We expected that giving feedback that is adapted to an assessment of students' collaboration
+         quality would help students to focus on those aspects of their collaboration that need the most attention, and thus
+         would be more effective than information about what constitutes successful collaboration in general. Thus, even
+         though giving adaptive feedback requires instructors to invest more time and effort, we hope to show that it will
+         also lead to better teaching results. Data analysis in this experiment is still under way, but the first observations
+         made during its implementation are promising.
+
+        Method
+                  46 first-year computer science students of the University of Patras, Greece, participated on a voluntary
+         basis. 23 homogenous dyads were formed based on the prior knowledge. The same student dyads collaborated
+         on two tasks, in two consecutive weeks, as part of an introductory programming course. All students interacted
+         through Synergo (Avouris, Margaritis, Komis, 2004), a network-based, synchronous, collaborative drawing tool
+         including a shared whiteboard for building the algorithm flow-chart, and a chat for exchanging short messages.
+         Synergo includes a playback tool which allows a reliable reproduction of the activity using sequential event
+         logfiles. In that way, evaluators can review the whole activity, navigate through different episodes, and assess
+         the quality of students' collaboration. The experiment lasted four weekly lab sessions; the two CSCL tasks were
+         given   two students in the  second   and third  week,   respectively. In both  tasks, students were    asked to
+         collaboratively build a diagrammatic representation (flow-chart) of an algorithm in Synergo, based on a written
+         description of its properties and behavior. The first task introduced the loop structure as a new concept. The
+         second task used the same algorithmic structures, but was more difficult to implement.
+                  The quality of students' collaboration on the first CSCL task was assessed on the six dimensions of the
+         adapted rating scheme: collaboration flow (i.e. the degree to which students actions and/or utterances build upon
+         each other), sustaining mutual understanding (i.e. working towards "common ground"), giving explanations
+         (i.e. self- and other-directed explanations), argumentation (i.e. engaging in a critical discussion), structuring the
+         problem   solving process   (i.e. coordination of  activities, including  time  management),  and    cooperative
+         orientation (e.g., constructive handling of disagreements). These dimensions were similar in their purpose and
+
+3-30
+scope to a subset of the original nine dimensions of the rating scheme by Meier et al. (2007), but had been
+defined and illustrated with examples to fit the new CSCL setting.
+         The corresponding feedback scheme contained a generic description, a positive feedback module and a
+negative  feedback   module   for  each of  the   six   dimensions.  For   example,  the  generic   module   for "giving
+explanation" read: "It is important for you to learn from your partner's knowledge, and let him learn from you.
+Therefore, ask for explanation if you have not completely understood what your partner is doing, and be sure
+that you  explain   understandably    your  own      actions and   reasoning."  The  positive  feedback  for  the   same
+dimension was: "Your activities show that you are putting effort into explaining to each other what you are
+doing. Keep up with this good practice!"; and the negative feedback was: "Your activities show that you need to
+give more explanations of what you are doing in order to improve the quality of your collaboration and your
+joint solution." Prior to their collaboration on the second task, students received domain specific feedback on
+typical mistakes, and feedback on their collaboration according to experimental condition: Dyads in the generic
+feedback condition received only the generic feedback for each dimension, in the form of a short instructional
+text. They were told that this was general advice on how to collaborate well. Dyads in the adaptive feedback
+condition received adaptive feedback in addition to the generic feedback. Adaptive feedback was selected by
+determining   the   two dimensions    with the highest   ratings   and   the two  dimensions   with the lowest   ratings.
+Ambiguities were resolved by a set of rules and a hierarchy of dimensions. The positive feedback modules were
+added to the generic feedback for the two "best" dimensions and the negative feedback modules were added to
+the generic feedback for the two "worst" dimensions. Dyads in the control condition received no feedback on
+their collaboration, only task-specific feedback. However, they were encouraged to discuss their collaboration
+on the first task with each other. Students in all conditions were informed that the feedback was based on careful
+observation of their collaboration on the first task. Dyads in all conditions were given 20 minutes to read the
+feedback and to discuss what they could do to improve their collaboration in the upcoming task.
+
+First Results and Outlook
+         Data   analysis in this experiment    is still under  way,  so  only  some  preliminary  observations   can  be
+reported. First of all, the adaptation of the rating scheme to the new CSCL setting was successful: The two raters
+involved in assessing students' collaboration on the first task report that the dimensions were able to capture the
+most important aspects of students' collaboration, and that it was helpful in selecting the adaptive feedback.
+Measures of inter-rater reliability for the rating scheme are currently being obtained in a sample of logfiles from
+both tasks and all three conditions. Students accepted the adaptive feedback given to them based on these ratings
+as genuine, and discussed it actively. On the other hand, students in the remaining conditions, in particular the
+control  condition,  reported that they found     it difficult to  think of  ways in which   they might  improve    their
+collaboration on the second task. Therefore, we are optimistic that our analysis of students' collaboration on the
+second task will confirm our expectations that feedback, in particular of the adaptive kind, was effective in
+helping students to collaborate better. We will look in detail into the effects of generic versus adaptive feedback
+on students' discussion of their past and upcoming collaboration, and their actual interaction during the second
+task. We see further potential use of our rating and feedback schemes in teaching students how to improve their
+collaboration as part of their general curriculum, but also in training teachers to provide adaptive feedback on
+students' collaboration.
+
+Adaptive Domain Support for Computer-Mediated Peer Tutoring
+
+     Erin Walker, Human Computer Interaction Institute, Carnegie Mellon University, Pittsburgh, PA, USA
+                     Nikol Rummel, Institute of Psychology, University of Freiburg, Germany
+ Kenneth R. Koedinger, Human Computer Interaction Institute, Carnegie Mellon University, Pittsburgh, PA,
+                                                          USA
+
+         Reciprocal peer tutoring, where two students of similar abilities take turns tutoring each other, has been
+shown to promote the domain learning of students involved (Fantuzzo, Riggio, Connelly & Dimeff, 1989). For
+tutoring  to be effective,  the  peer tutor must     provide   conceptual,   elaborated help (Fuchs  et al., 1997)   that
+addresses tutee misconceptions (VanLehn, Siler, Murray, Yamauchi, & Bagget, 2003) and ultimately guides the
+tutee to a correct solution. Previous efforts at assisting peer tutoring have focused on training peer tutors or
+structuring the tutoring process; for example, King, Staffieri, and Adelgais (1998) found that having students
+ask  each other   a series of questions at  different   levels  of depth  had  a significantly positive effect   on tutor
+learning. Adaptive support for the peer tutor may be an improvement over these fixed approaches, as it would
+provide help tailored to individual peer tutors at the moments when it is most needed. We have been taking steps
+in this direction by augmenting the Cognitive Tutor Algebra (Koedinger, Anderson, Hadley, & Mark, 1997), a
+successful intelligent tutoring system, with peer tutoring activities. The domain models of the tutoring system,
+
+                                                                                                                            3-3
+         which typically provide algebraic help, can then be leveraged in order to provide adaptive domain support to the
+         student collaboration. The following paragraphs describe the design and effects of this adaptive domain support.
+
+        Design of Adaptive Domain Support
+                   During typical   classroom   use  of the Cognitive    Tutor   Algebra,  students  can ask  for a   hint from the
+         intelligent tutoring system at any time, and receive immediate feedback on errors as they solve problems. In the
+         design of domain support for collaboration, we balanced two competing concerns: students should have similar
+         access to domain help as in individual use of the intelligent tutor, but the interaction between collaborators
+         should be encouraged by the tutoring system, not constrained or disrupted. Therefore, just like in individual use,
+         domain hints are available on demand. However, unlike individual use of the tutor, hints are requested by and
+         given to the peer tutor, and the person solving the problem (the peer tutee) must interact with the peer tutor via
+         chat in order to receive the help. In the process of communicating the hint to the peer tutee, the peer tutor could
+         learn  by interpreting the   hint  and explaining  it  in a way    that addresses the  peer  tutee's impasse.   Similarly,
+         system  feedback   is given   based   on  peer  tutor  responses   rather than   tutee problem-solving     actions, and is
+         displayed only to the peer tutor (e.g., when a peer tutor marks a step correct when it is wrong, as in Figure 1).
+         Both   hints and error    feedback  consist of  a  prompt   for students   to  interact, followed   by   the domain    help
+         individual   learners would   ordinarily   receive.   This  collaborative     feedback   was  implemented    through   the
+         development of a separate collaborative tutor module to augment the cognitive tutor module. Every time that
+         the peer tutee takes an action in the interface, the response by the cognitive tutor is stored in the collaborative
+         tutor, rather than  presented   as feedback  to  the  peer  tutee. Then,  when   the   peer tutor  takes an  action in the
+         interface by  marking   a  step right  or wrong,   the collaborative    tutor compares   the peer  tutor's action   on that
+         particular widget to the stored cognitive tutor's response for the widget. If the two actions fail to match, then the
+         collaborative tutor sends the peer tutor the feedback shown in Figure 1. Similarly, the collaborative tutor module
+         stores the hint that the cognitive tutor would have sent for each step, and presents it to the peer tutor on demand,
+         along with a prompt to collaborate.
+
+                Figure 1. Equation solver subsection of peer tutor interface. Full interface also contains chat window.
+
+        Method
+                   We   conducted   a classroom    study in five   second-year   algebra  classes  in which   we  compared    three
+         conditions: In the adaptive condition students tutored each other with adaptive support and problem answers
+         available  (17 participants),   In the non-adaptive    condition   students   tutored  each  other simply    with problem
+         answers available (14 participants), and in the individual condition students used the cognitive tutor individually
+         (20 participants). To evaluate the effects of the adaptive domain support, we examined how student learning and
+         progression through the intervention problems was affected by student collaboration and type of support. We
+         hypothesized that collaborating students would solve fewer problems successfully than students working alone,
+         potentially  due to   the increased  interaction  between   the  peer   tutor and the  tutee. However,     the number   of
+         attempts made per problem should be similar for collaborating students given adaptive support and individual
+         learners, as both conditions would have access to the same cognitive tutor help. Attempts per problem should be
+         greater for collaborating students without adaptive support, as those students would not have as much access to
+         help.  The   adaptive condition    should have  a  greater  effect on   learning than  the  non-adaptive   and individual
+         conditions because it provides the advantages of both collaboration and of domain feedback.
+
+3-3
+Results and Discussion
+          In line  with   our hypotheses, our    analyses   indicate   that number  of  problems    solved per hour  in   the
+individual condition was greater than the number of problems solved per hour by dyads in the non-adaptive
+support condition and adaptive support condition (Ms = 47.04, 13.33, 17.65; SDs = 30.24, 7.71, 5.69; F(2,34) =
+8.64; p < .01), but surprisingly, the total number of incorrect attempts per problem made by each student over
+the intervention was not significantly different between conditions when pretest was considered as a covariate
+(Ms = 1.46, 1.81, 2.46; SDs = 1.26, 1.04, 1.87; F(2, 47) = 2.480; p = .1). Although all students learned from
+pretest to posttest, there were no significant differences in learning gains between conditions.
+          The  results  indicate that   students progressed    similarly    through the  problems   in all conditions,  and
+therefore that the domain support given to peer tutors was sufficient for facilitating the tutoring interaction.
+However,    it is surprising  that  the attempts    per  problem    in the  non-adaptive    and adaptive   conditions were
+equivalent.  Further   analysis  is necessary to    look  both at  problem-solving   behaviors   at  different intervention
+phases, and at how students used the help that was provided. In summary, we have leveraged existing domain
+models to develop a collaborative tutor that provides adaptive domain support for peer tutoring. This technology
+will serve as a promising basis for the development of more sophisticated adaptive scripting.
+
+Open Problems in Dynamic Collaborative Learning Support
+
+             Carolyn Penstein Rosé, Rohit Kumar, Gahgene Gweon, Yi-Chia Wang, & Mahesh Joshi
+     Language Technologies Institute / Human Computer Interaction Institute, Carnegie Mellon University,
+                                                    Pittsburgh, PA, USA
+
+          State-of-the-art forms of collaboration support play a role similar to training wheels on bicycles. As is
+well known, however, training wheels must eventually come off. And typically, they are removed by a watchful
+parent, who may decide after watching their child fall a few times, to put them back on for a time until the child
+has developed further in their own coordination and balance. In a similar vein, the learning sciences literature
+tells us that scaffolding should be faded over time (Collins, Brown, & Newman, 1989), and that over-scripting
+or unnecessary support may be detrimental to collaboration or demotivating (Dillenbourg, 2002).
+          This model of a watchful parent requires that the collaborative learning environment is able to track
+what  is happening     in the collaboration between       students. Thus,   a  major goal   of  our research  is to support
+collaboration in a way that is responsive to what is happening in the collaboration rather than behaving in a "one
+size fits all" fashion. For example, rather than providing prompts to elicit reflection from students whether or not
+they have already shown evidence of doing so spontaneously, we aim to monitor the behavior of students, and
+prompt positive behaviors that are lacking or discourage negative behaviors we detect. To this end, we have
+made substantial progress towards automatically replicating multi-dimensional process analyses of collaborative
+learning discussions (Wang, Joshi, & Rosé, 2007; Rosé et al., in press), towards tracking topics discussed in
+collaborative discussions (Wang & Rosé, 2007; Kumar, Rosé, Wang, Joshi, & Robinson, 2007), and estimating
+level of learning during conversations (Joshi & Rosé, 2007). A running theme through this work has been the
+development of a methodology for creatively encoding the raw conversational data in such a way that enables
+state-of-the-art  machine   learning  technology    to  identify consistent   and generalizable   patterns  in the  data. In
+addition  to developing    basic technology   to    support our  own   work,   we   have also   worked towards   providing
+resources to other researchers interested in the problem of dynamic collaborative learning support by developing
+the publicly available TagHelper tool set (http://www.cs.cmu.edu/~cprose/TagHelper.html) as well as a distance
+course called Machine Learning in Practice (http://www.cs.cmu.edu/~cprose/MachineLearningInPractice.html).
+          With this technology in hand, we have begun to move past the traditional one-size-fits-all non-adaptive
+approaches     to collaboration  support. As     part  of our  experimental    approach,    we  have   typically contrasted
+individuals and pairs, with and without support, where students communicated with each other and with the
+interactive support within a typed chat interface. Our purpose for doing so was to separate the direct effect of the
+support on learning from the indirect effect it has on learning by improving collaboration. We have conducted a
+series of studies in which we experimentally investigated foundational issues related to the design of dynamic
+support for on-line collaborative learning (Gweon, Rosé, Zaiss, & Carey, 2006). One question we started with
+was whether the context sensitive support, because it would be offered much less frequently than "one-size-fits-
+all" support   that is administered   whether    it is needed   or  not, would   result  in any  significant effect  on   the
+learners'   experience    whatsoever.   Fortunately,    these  initial   investigations  demonstrated    that  explanation
+elicitation  prompts   delivered strategically,  on    an as   needed   basis, were  effective   for eliciting explanation
+attempts as well as increasing learning in a collaborative learning setting. Moving beyond simple prompts to
+interactive instructional agents that can engage students in reflective dialogues, we have also run two successful
+pilot studies in which we used these dialogue agents to deliver interactive support to collaborative learners when
+triggered by an automatic analysis of the collaborative learning discussions as they unfolded (Wang & Rosé,
+
+                                                                                                                                 3-33
+         2007; Kumar et al., 2007). In both of these successful studies, the fully automatic interactive support lead to
+         significant increases in learning in comparison to a control condition where students worked individually and
+         did not  have   the interactive support, in one  case   achieving an  increase in learning   gains of 1.24 standard
+         deviations above that of the control condition.
+                  While our results with dynamic collaborative learning support to date have been encouraging, close
+         inspection of the conversational data from our recent investigations with that technology indicate that we have
+         far to  go to reach  our  ultimate goal. For  example,  although  in  one study we   determined  that  students with
+         dynamic support were more likely to engage in transactive forms of conversation (Wang & Rosé, 2007), in
+         another study (Kumar et al., 2007) we noticed that although the degree to which students engaged in transactive
+         patterns of discussion correlated with their learning, the condition where students received the dynamic support
+         for collaborative learning showed marginally lower levels of transactive discussion although the students in that
+         condition  learned  significantly more   than in the control condition. Furthermore,   although  the  conversational
+         agents that delivered the support were effective for increasing reflection and learning with students whether or
+         not they were working collaboratively, students who worked individually appeared to engage more deeply in
+         their interaction with the agents, whereas students who worked in pairs tended to "talk around" the agents rather
+         than treating them as participants in the conversation the way the individual students did, although positive
+         effects of  the agents on  learning  demonstrate   that the  students are not  ignoring  the content  of the agent's
+         utterances. Thus, we see that the three way interaction between pairs of students and the collaborative support
+         agents is not as effective as it could be. Overall, students benefit most from working together with the support of
+         the agents, although the agents somewhat degrade the quality of the interaction between students in some cases,
+         and  similarly  the collaboration  sometimes   interferes with the interaction the students  have  with  the agents.
+         Furthermore, evidence from questionnaire data and informal discussions with students indicate that students
+         perceive the conversational support agents as an interruption. We suspect that the fact that the support we are
+         offering is seen as an active part of the interaction rather than a passive part of the environment in which the
+         interaction takes   place changes  the way  it affects  the conversational  behavior  of the students. While  much
+         valuable work investigating the design space for static forms of support for collaborative learning provides a
+         valuable starting place for our investigation, a continued effort is needed. Thus, a major focus of our current
+         work is on investigating the design space for interactive agents for supporting collaborative learning processes,
+         and more recent results offer evidence that agents with richer conversational behaviors are more effective for
+         engaging student attention in a collaborative learning context.
+
+       References
+         Anderson, J. R., Corbett, A. T., Koedinger, K. R., & Pelletier, R. (1995). Cognitive tutors: Lessons learned.
+                  Journal of the Learning Sciences, 4(2), 167-207.
+         Avouris N., Margaritis M., & Komis V. (2004). Modelling interaction during small-group synchronous problem
+                  solving activities: The Synergo approach. 2nd International Workshop on Designing Computational
+                  Models of Collaborative Learning Interaction, ITS 2004, Brazil.
+         Cohen,   E. G.   (1994).  Restructuring  the   classroom:   Conditions  for productive   small  groups.   Review  of
+                  Educational Research, 64, 1-35.
+         Collins, A., Brown, J. S. & Newman, S. E. (1989). Cognitive apprenticeship: Teaching the crafts of reading,
+                  writing, and mathematics. In L. B. Resnick (Hrsg.), Knowing, learning, and instruction (S. 453-494).
+                  Hillsdale, NJ: Erlbaum.
+         Dillenbourg, P. (2002). Over-scripting CSCL: The risks of blending collaborative learning with instructional
+                  design. In P. A. Kirschner (Ed.), Three worlds of CSCL. Can we support CSCL (pp. 61-91). Heerlen:
+                  Open Universiteit Nederland.
+         Dillenbourg,   P., Baker,  M.,  Blaye, A., &   O'Malley,  C.  (1995). The   evolution of research  on  collaborative
+                  learning.  In P.  Reimann     & H.   Spada  (Eds.),  Learning  in  humans    and  machines:   Towards    an
+                  interdisciplinary learning science (pp. 189-211). Oxford: Elsevier/Pergamon.
+         Fantuzzo, J. W., Riggio, R. E., Connelly, S., & Dimeff, L. A. (1989). Effects of reciprocal peer tutoring on
+                  academic achievement and psychological adjustment: A component analysis. Journal of Educational
+                  Psychology. 81(2), 173-177.
+         Fuchs, L., Fuchs, D., Hamlett, C., Phillips, N., Karns, K., & Dutka, S. (1997). Enhancing students' helping
+                  behavior during peer-mediated instruction with conceptual mathematical explanations. The Elementary
+                  School Journal, 97(3), 223-249.
+         Gweon, G., Rosé, C. P., Zaiss, Z., & Carey, R. (2006). Providing support for adaptive scripting in an on-line
+                  collaborative learning   environment.   Proceedings   of CHI  06:  ACM   conference  on   human  factors in
+                  computer systems. New York: ACM Press.
+         Joshi, M. & Rosé, C. P. (2007). Using transactivity in conversation summarization in educational dialog. To
+                  appear in the Proceedings of the SLaTE Workshop on Speech and Language Technology in Education.
+
+3-3
+King, A., Staffieri, A., & Adelgais, A. (1998). Mutual peer tutoring: Effects of structuring tutorial interaction to
+           scaffold peer learning. Journal of Educational Psychology, 90, 134-152.
+Koedinger, K. R., Anderson, J. R., Hadley, W. H., & Mark, M. A. (1997). Intelligent tutoring goes to school in
+           the big city. International Journal of Artificial Intelligence in Education, 8, 30-43.
+Kollar,  I.  &   Fischer,    F.  (2007). Supporting   self-regulated learners  for  a  while  and what   computers    can
+           contribute. Journal of Educational Computing Research, 35(4), 425-435.
+Kollar,  I., Fischer,    F., &   Hesse,  F. W.   (2006).   Collaboration scripts -  a conceptual  analysis. Educational
+           Psychology Review, 18 (2), 159-185.
+Kumar,     R.,   Rosé,   C.  P., Wang,    Y.  C., Joshi,   M., Robinson,    A. (2007).  Tutorial  dialogue   as adaptive
+           collaborative     learning support.    Proceedings   of  the  13th  International  Conference    on  Artificial
+           Intelligence in Education (AI-ED 2007), Amsterdam: IOSPress.
+Meier, A., Spada, H., & Rummel, N. (2007). A rating scheme for assessing the quality of computer-supported
+           collaboration processes. International Journal of Computer-Supported Collaborative Learning, 2 (1),
+           63-86.
+O'Donnell, A. M. (1999). Structuring dyadic interaction through scripted cooperation. In A. M. O'Donnell & A.
+           King (Eds.), Cognitive perspectives on peer learning (pp. 179-196). Mahwah, NJ: Lawrence Erlbaum
+           Associates.
+Pea, R. D. (2004). The social and technological dimensions of scaffolding and related theoretical concepts for
+           learning, education, and human activity. Journal of the Learning Sciences, 13(3), 423-451.
+Pfister, H.-R.,   & Mühlpfordt,     M.   (2002).  Supporting   discourse in a  synchronous   learning environment:   The
+           learning protocol approach. In G. Stahl (Ed.), Proceedings of the Computer Support for Collaborative
+           Learning (CSCL) 2002 Conference (pp. 581-589). Hillsdale, NJ: Lawrence Erlbaum Associates.
+Renkl,   A.  &   Atkinson,    R. K.   (2003). Structuring  the transition from   example   study  to problem   solving  in
+           cognitive skill acquisition: A cognitive load perspective. Educational Psychologist, 38(1), 15-22.
+Rosé,  C.    P., Wang,   Y.C.,   Cui,  Y.,  Arguello,  J., Fischer, F.,  Weinberger,   A., &  Stegmann,   K.   (in press).
+           Analyzing collaborative learning processes automatically: Exploiting the advances of computational
+           linguistics   in  computer-supported   collaborative  learning.  Submitted   to the International   Journal  of
+           Computer Supported Collaborative Learning.
+Slavin, R. E. (1996). Research on Cooperative Learning and Achievement: What we know, what we need to
+           know. Contemporary Educational Psychology, 21(1), 43-69.
+Soller, A., Jermann, P., Muehlenbrock, M. & Martinez, A. (2005). From Mirroring to Guiding: A Review of
+           State of the Art Technology for Supporting Collaborative Learning. International Journal of Artificial
+           Intelligence in Education, 15(4), 261-290.
+Stegmann, K., Wecker, C., Weinberger, A. & Fischer, F. (2007). Collaborative argumentation and cognitive
+           processing ­ An empirical study in a computer-supported collaborative learning environment. In C. A.
+           Chinn, G. Erkens & S. Puntambekar (Eds.), Mice, minds and sociecty. Proceedings of the Computer
+           Supported     Collaborative    Learning   (CSCL)    Conference     2007,   Vol. 8,  Part   2 (pp.   661­670).
+           International Society of the Learning Sciences.
+Teasley, S. D. (1995). The role of talk in children's peer collaborations. Developmental Psychology, 31(2), 207-
+           220.
+VanLehn,     K.,  Siler, S., Murray,   C.,  Yamauchi,  T.,  &  Baggett,  W.   (2003). Why   do only  some   events  cause
+           learning during human tutoring? Cognition and Instruction, 21(3), 209-249.
+Wang, Y. C., Joshi, M., & Rosé, C. P. (2007). A feature based approach for leveraging context for classifying
+           newsgroup style discussion segments. Proceedings of the Association for Computational Linguistics
+Wang, H. C. & Rosé, C. P. (2007). Supporting collaborative idea generation: A closer look using statistical
+           process analysis techniques. Proceedings of Artificial Intelligence in Education
+Wecker,    C.  &  Fischer,   F.  (2007).  Fading  scripts  in computer-supported    collaborative learning:  The   role of
+           distributed monitoring. In C. A. Chinn, G. Erkens & S. Puntambekar (Eds.), Mice, minds and sociecty.
+           Proceedings of the Computer Supported Collaborative Learning (CSCL) Conference 2007, Vol. 8, Part
+           2 (pp. 763­771). International Society of the Learning Sciences.
+
+Acknowledgments
+Meier   et  al.: This  research   project   was partly funded   by  the  Kaleidoscope   Network   of  Excellence   project
+Cavicola (Computer-based Analysis and Visualization of Collaborative Learning Activities).
+Wecker & Fischer: This research project was funded by Deutsche Forschungsgemeinschaft (DFG).
+
+                                                                                                                             3-3
+

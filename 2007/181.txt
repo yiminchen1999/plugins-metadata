@@ -1,0 +1,175 @@
+From socially-mediated to technology-mediated coordination: A study
+                            of design tensions using Group Scribbles
+                         1                                    1                                1                       2                 2
+Yannis Dimitriadis , Juan Ignacio Asensio-Pérez , Davinia Hernández-Leo , Jeremy Roschelle , John Brecht , Deb-
+                                            3                        4                    2                        2
+                             orah Tatar , S. Raj Chaudhury , Chris DiGiano , Charles M. Patton
+  1
+    GSIC/EMIC Group, Department of Signal Theory, Com. and Telematics Engineering, University of Valladolid,
+              Camino del Cementerio, s/n, 47011, Valladolid, Spain, {yannis, juaase, davher@tel.uva.es}
+2
+  Center for Technology in Learning, SRI International, 333 Ravenswood Ave., Menlo Park, CA 94025, USA, {jer-
+                              emy.roschelle, john.brecht, chris.digiano, charles.patton@sri.com}
+    3
+      Department of Computer Science, Virginia Tech, 2202 Kraft Dr., Blacksburg, VA 24061, USA, tatar@vt.edu
+    4
+      Department of Physics, Christopher Newport University, Newport News, VA 23606, USA, raj@pcs.cnu.edu
+
+         Abstract. It is well known that scripts based on good practices can enhance the collaboration ef-
+         fectiveness and efficiency in CSCL environments. Yet, to achieve rich, interactive, and creative
+         collaborative learning settings CSCL tools need new flexible, dynamic and lightweight metaphors.
+         This design tension between social and technology-mediated coordination is difficult to resolve
+         and worthy of close analysis. In this paper, we study such a tension through the use of the Group
+         Scribbles (GS) CSCL tool, developed at SRI International, a GUI-based approach that enables the
+         creation and enactment of lightweight CSCL scenarios. The potential of GS, as well as its limita-
+         tions  and  possible    extensions      are studied      in   relation to design     scripts based    on    Collaborative
+         Learning    Flow     Patterns. Preliminary    experiences         in an authentic       environment   illustrate   several
+         facets of the design tension, such as the participants' workload and awareness, or the adaptation to
+         emergent situations.     On the other hand, this study points out the need for a new flexible architec-
+         ture that complements Group Scribbles.
+
+Introduction to the coordination design tension in CSCL scripts
+        CSCL, with its emphasis on both the disciplines of engineering and education, is about balancing competing
+forces, a familiar challenge to any emerging multi-disciplinary paradigm. On the one hand researchers advocate
+open, flexible, technology-mediated environments that support situated learning. On the other hand, student experi-
+ences are often measured against rigid learning goals. Furthermore, designers of a CSCL tool must often compro-
+mise   their notions for     an ideal learning     environment         in light of limited       resources for designing,    implementing,
+evaluating the tool. Thus, practitioners face the task of resolving many design tensions (Tatar, 2007) as they make
+decisions about appropriate technology and learning situations. These design tensions underlie and motivate design
+patterns in the field of technology-enhanced learning. While the CSCL literature is replete with descriptions of the
+final configurations of technology and learning situations, there is a paucity of reflective writing on how designers
+converged on their approach through an analysis of tradeoffs. The field needs more case studies of design to exem-
+plify known tensions and identify new ones, so as to inform future CSCL projects. A particularly vexing design
+tension both in the field of CSCL and CSCW comes from the desire to use technology to structure group coordina-
+tion, but at the same time support unanticipated, emergent coordinated activity.
+
+        Design tensions conceptualize design not as problem solving, but as goal balancing. They draw ex-
+        plicit attention to conflicts in system design that cannot be solved, but only handled via compromise
+        (Tatar, 2007, p. 3).
+
+        Based on this principle, a design tension helps us to identify relations between "what ought to be" and "what
+is", and therefore to search the few crucial emergent configurations that may make or break a system. In the case of
+activity-level coordination in CSCL scripts, one can observe several design tensions. These include scripted action
+vs. bricolage, script intrinsic vs. extrinsic constraints, and the balance between technology use driven by data cap-
+ture and monitoring and technology use driven by activity-specific support. "Scripted action vs. bricolage" is in-
+deed a major tension that has been studied in several contexts of fixed or mobile learning devices (Dillenbourg,
+2002; Tatar, 2007). Balance has to be found in the compromise between active / discovery learning and a proper use
+of existing knowledge on good practices that increase the chances of effective learning. In the latter case, collabora-
+
+                                                                       181                                                         CSCL 2007
+tive learning flow patterns (CLFP), i.e. computational representations of scripts such as jigsaw, pyramid, etc. have
+been shown to be significantly useful in several CSCL scenarios (Hernández, Asensio & Dimitriadis, 2006). On the
+other hand, the balance of the real-time improvisational demands as compared with authoring effort must also be
+considered. A  lightly scripted scenario  may  require  a lot  of creativity and  improvisation  by the students, while
+highly planned scripts involve a resource-consuming authoring process for the teacher. In addition, dependence on
+external programmers / developers increases to the extent that technology is involved in the scripts.
+
+      This paper focuses on activity-level coordination and awareness in face-to-face activity, and examines the
+tradeoffs between socially-mediated and technology-mediated coordination. It aims to provide an initial exploration
+of such a tension in the context of the use of a significant CSCL tool in an authentic situation. The ultimate aim of
+this approach is to provide valuable information on the intertwining variables of real settings, point to the conflicts
+and the associated compromises, and even to configurations that might provide design solutions. In this case, we
+have opted to employ Group Scribbles (GS) (SRI International, 2007) in a case study consisting of face-to-face
+tutoring sessions of a project-based course on Computer Architecture.
+
+      Group Scribbles is based on a simple, research-based set of GUI elements, which help the user create and
+move easily between lightweight public and private arrangements of information.      Among other capacities, it allows
+the teacher (or other user) to design, present and edit representations of processes.  Since GS supports lightweight,
+flexible social coordination, it serves as a good candidate for the study of the aforementioned design tension. The
+Group Scribbles design stakes out a specific, and less well-explored, balance among the poles of the design tensions
+considered here. In particular, the support for colorful organizing backgrounds and the lack of support for canned
+scripts positions it much closer to the bricolage pole than the scripted-action pole of intended use. Similarly, its
+inclusion of few, but very firm, internal constraints (including the firm separation of public and private action, hu-
+man- rather than machine-interpretable data, and uniqueness of objects) helps set the expectation that many, but not
+all, of the constraints must be supplied externally. Finally, in the current implementation, only such data capture as
+is a natural outcome of the underlying architecture is supported.
+
+Discussion and conclusions based on the case study
+      The case study took place at the University of Valladolid, Spain in Fall, 2006. The context was a series of tu-
+toring sessions in a collaborative and project-based course on Computer Architecture at the Telecommunications
+Engineering School. The specific topic of the tutoring sessions reported on here is "search and selection of reliable
+information sources" related to issues of benchmarking computer systems. The scenario integrated a combination of
+the Jigsaw and Pyramid collaborative learning flow patterns and it was enacted in two sessions of two hours, each
+involving two sets of different students (5 and 8 volunteers, respectively). The first session, Experience1, is entirely
+based on social coordination and involves both the use of paper (for collaborative activities on diagrams and conclu-
+sions) and general purpose software for Internet access, document viewing, etc., while the second session, Experi-
+ence2, is supported by the GS tool. In other words, in this session, we used the tool to provide a low level of tech-
+nology-mediated coordination. GS was initially set up with specific background images and sets of boards tailored
+for the activities. These two experiences cover an important but small range of solutions for the design tension un-
+der study. To reinforce our contrast, we are going to speculate on the expected results of a third experience, Experi-
+ence3 that uses strong technology mediation, since it can serve as a contrast point for our study. Although Experi-
+ence3 has not yet taken place expected features can be reasonably based on several previous experiences held out by
+the GSIC/EMIC group in similar contexts, as e.g. in (Hernández, Asensio & Dimitriadis, 2006). In Experience3,
+coordination will be   accomplished through   a highly  prescriptive computational   script, generated  by the Collage
+editor of learning designs in IMS-LD and enacted within Gridcole, a tailorable service-oriented environment.
+
+      The data based on a simplified mixed evaluation method allowed us to analyze various aspects of the afore-
+mentioned design tension and provide evidence-based conjectures. The specific data suggest that the case study can
+be considered authentic, because it employs non-trivial activity flows, integrated in a meaningful way into a com-
+plex project-based and collaborative course.    It also suggests that GS, as a CSCL tool, provides affordances that
+support and enhance activity-level coordination, as compared to the purely socially coordinated experience. It can
+be argued that GS' lightweight character, together with the powerful underlying metaphor and the Tuple Spaces
+coordination language, enabled and strengthened embodied coordination through the awareness stickers, flexibility
+and adaptation to emergent    situations, and less need   for  guidance by   the teacher. Social coordination was  also
+shown to be highly effective. Its benefits include utilizing very few resources, with the notable exception of teacher
+
+                                                           182                                                 CSCL 2007
+creativity and improvisational ability. Additionally, we have confirmed the potential of using collaborative learning
+flow patterns (CLFP) i.e. good practices or formalized effective scripts, which contributed to the perception of a
+non-complex activity flow.
+                                            Logger                             Interaction
+                                                                Event Log      Análisis Tool
+
+                                                                                                                            Flexibility
+                                                                                                                           (adaptation to
+                                                    Callbacks                         CoordinationStatus                    unexpected
+                                                                                          Updates                           condicions)
+
+                                        GroupScribbles          Coordination(TupleSpaces)commandsCoordination                                      Teacherworkload
+                                              +                                  Engine                                             Social       (guidance and
+                                                                                                                                Activity-level    awareness)
+                                                                                                                                coordination
+                                                                                Coordination                                                        Students
+                                                                                   script                                                          cognitive
+                                                                                                                         Participants are          workload
+                                                                                                                          aware of the
+                                                                                                                            process
+
+                                                                                                                                Fixed and fully-
+                                                                                                                              automated activity-
+                                                                                                                               level coordination
+     Experience1        Experience2     Experience3
+
+                     Figure 1: The envisioned architecture (left) and its relation to the design tension (right)
+     However, in both cases, that of GS and that of social-coordination, the role of the teacher is crucial. As an-
+ticipated in the design philosophy of GS, "the only limit is educator's creativity" (SRI International, 2007). There-
+fore, demands on the teacher are high in all phases of the activity: design, enactment and evaluation phases. The
+teacher had to design from scratch the activity flow, improvise, supervise, react, and finally monitor and analyze the
+experience based on "ephemeral" data. Improvisation, creativity and experience cannot be easily found among prac-
+titioners, and in any case they may pose a burden for an extensive use of lightweight CSCL tools, such as GS. On
+the other hand, the hope is that with time, just as with HyperCard, familiar patterns of use will emerge that will put
+less of a burden on the teacher.                All these elements point out to the expected benefits from strong technology media-
+tion, as the one envisioned in the third experience. Tools for design, enactment and evaluation may increase effi-
+ciency according to the engineering worldview. Based on the analysis of the design tension (see Figure 1 ­ right),
+we can point out to a new flexible architecture that encapsulates affordances of GS as a lightweight coordination
+technology support, and provides the possibility of using additional computer mediation. In this case, a designer or
+practitioner as a person involved in action / research may choose to use one or more of all the additional modules
+presented in Figure 1 (left).
+
+References
+Dillenbourg, P. (2002). Over-scripting CSCL: the risks of blending collaborative learning with instructional design.
+    In P.A. Kirschner (ed.), Three worlds of CSCL. Can we support CSCL (pp. 61-91), Heerlen:Open Universiteit.
+Hernández, D., Asensio, J.I. & Dimitriadis, Y. (2006). Collaborative learning strategies and scenario-based activi-
+    ties for understanding network protocols. In Proceedings of the Frontiers in Education conference, San Diego,
+    CA.
+SRI International (2007). Group Scribbles. http://groupscribbles.sri.com (last visit March 2007).
+Tatar, D. (2007). The design tensions framework, International Journal of Computer-Human Interaction (in press).
+
+Acknowledgments
+     The authors would also like the members of GSIC/EMIC Group and the GS development group. The work at
+University       of Valladolid        has       been           partially       funded              by projects FP6-2002-IST-507838,          TSI2005-08225-C07-04,
+VA009A05.         The  Tuple          Spaces           project               was supported             by  the US  National Science          Foundation        under grant
+#0427783.
+
+                                                                                                     183                                                         CSCL 2007
+

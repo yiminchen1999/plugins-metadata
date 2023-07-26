@@ -1,0 +1,392 @@
+Page 11                                    Computer Support for Collaborative Learning 1999
+
+Anchoring Discussions in Lecture: An Approach to
+Collaboratively Extending Classroom Digital Media
+Gregory Abowd
+College of Computing & GVU Center, Georgia Institute of Technology, USA
+Maria da Graça Pimentel
+ICMC, Universidade de São Paulo, Brazil
+Bolot Kerimbaev
+College of Computing & GVU Center, Georgia Institute of Technology, USA
+Yoshihide Ishiguro
+Human Media Research Laboratories, NEC Corp., Japan
+Mark Guzdial
+College of Computing & GVU Center, Georgia Institute of Technology, USA
+   Abstract: Collaborative environments typically provide a medium for realizing or capturing discussion. While
+   valuable, the discussion is often decontextualized from the situation in which it makes sense. Anchored
+   collaboration environments provide a mechanism for connecting collaboration to digital media content, such
+   as Web-based syllabi and assignment descriptions. The most significant learning context in most classes is
+   still the face-to-face whole class lecture or discussion. The Classroom 2000 project at Georgia Tech is
+   capturing classroom experiences in multiple media: audio, video, presenter's slides, presenter's whiteboard
+   markings, and students' notes. By connecting the Classroom 2000 captured lectures to a persistent
+   collaboration space, we provide (a) a mechanism for asynchronous collaboration that is anchored in class
+   contexts and (b) a means for treating class activity as persistent learning medium for later comment and
+   collaborative extension. This paper describes a pilot study to create a collaborative discussion space anchored
+   in captured classroom lectures.
+
+   Keywords: situated learning, discussion forum, computer-mediated communication
+
+Introduction: Integrating collaboration with classroom activity
+Many computer-supported collaborative learning (CSCL) environments provide collaboration support in
+terms of a medium for discussion. Threaded discussion spaces (such as MFK-Speakeasy (Hsi & Hoadley,
+1997)) provide a mechanism for asynchronous discussion where the structure of the discussion is reflected
+in the interface. In chat systems, MUDs, or MOOs (Bruckman, 1994; Bruckman & Resnick, 1995), the
+collaborative environment is a medium for synchronous collaboration. However, in a classroom context,
+there is a danger that the discussion forums may be decontextualized from the students' activity.
+In some classroom contexts, there are on-line (usually Web-based) resources that can serve as anchor
+points for discussions. Many higher-education classroom contexts today have syllabi or assignment
+descriptions available on the Web, which can be used in a structure we call anchored collaboration where
+the discussion is linked directly to an artifact of interest to students (Guzdial et al., 1997; Guzdial & Turns,
+1999; Hmelo, Guzdial & Turns, 1998). By anchoring the collaboration to material useful to the students
+(e.g., a midterm exam review, a problem statement, a report to review), the discussion becomes more
+relevant to the students' activities. In particular, anchored discussions tend to be more sustained than less-
+connected discussion spaces, such as newsgroups (Guzdial, 1997). Several CSCL tools being used in higher
+education can be used for anchored discussions (e.g., CoNote (Davis & Huttenlocher, 1995)). In lower
+grades where significant resources are available on-line, such as in the Virtual High School (Hsi, 1999),
+anchored collaboration can be also used.
+However, in many (if not most) courses, the primary learning context is the classroom. Whether the
+classroom is used for lecture, discussion, or even face-to-face collaborative activity, the experiences in the
+classroom are often the central activities that we want students to reflect upon and learn from. We can only
+Page 12                                   Computer Support for Collaborative Learning 1999
+
+use these activities as anchors for reflective, out-of-class discussion if we can make the classroom activity
+available as digital media.
+We can view the classroom itself as a rich multimedia environment where dense audio-visual information
+is combined with miscellaneous annotating activities that support the teaching and learning experience. To
+capture this rich experience for later reflection, typical students develop note-taking skills. However, the
+student cannot possibly keep up with this barrage of information streams, especially not with traditional
+paper and pen. Nor is it clear that we would want to encourage the students to hone stenographer-like skills
+in lieu of understanding and synthesizing the relevance of the lecture and putting it in their own words.
+Further, the students' personal notes, in isolation, are still hard to use as anchors for class-wide discussion
+of classroom activities.
+In an attempt to ease the task of capturing the classroom activities and, at the same time, the burden of
+creating Web-based digital media, we have created an instrumented space that turns the traditional
+classroom into a multimedia authoring system. In the Classroom 2000 project (Abowd et al., 1998;
+Brotherton, Bhalodia & Abowd, 1998; Abowd, 1999), we use ubiquitous computing technology --
+electronic whiteboards, large projected displays, networked computers, and streaming digital audio/video--
+to create a room that automatically captures much of the rich detail of a lecture experience and provides
+effective Web-based interfaces for both students and teachers to review the lecture. The result is twofold:
+we are freeing the student to take on a different, more enriching role in the classroom and, at the same time,
+providing the instructor with a tool to generate Web-based material with very little additional cost.
+By transforming the classroom experience into digital media, we create the opportunity to extend the
+conventional lecture into a collaborative learning experience. What we present in this paper is an attempt to
+weave the captured lecture into a long-term collaborative repository of learner-generated dialogue. The
+classroom experience then can become an anchor for discussions and other forms of collaborative activity
+between students and instructor.
+We are finding that when the discussion forum is persistent (e.g., all notes are available at all times, even
+beyond the scope of the course), the combination of recorded classroom activity and dynamic discussion
+space leads to the creation of a new kind of learning medium. Any classroom activity can be analyzed,
+discussed, indexed and extended indefinitely.
+In this paper we present our vision for exploiting classroom activity as collaboratively extensible learning
+media and discuss results from preliminary experience and evaluation. We first present the infrastructure
+we used to implement our proposal. We then present our experience and a pilot evaluation experiment. We
+conclude with a discussion of how these kinds of forums promote a collaborative learning space that
+crosses course and classroom boundaries.
+Classroom 2000: capturing classroom activity
+For the past four years at Georgia Tech, we have been exploring a particular way in which the Web can be
+used in support of education. We are interested in developing automated techniques to capture the rich
+details of synchronous, collocated lectures and make the record of those experiences available for people
+afterwards. In the Classroom 2000 project, we have gained the experience of instrumenting an environment
+to ease the capture of a lecture and producing a digitized and extensible artifact that represents what went
+on in the classroom.
+Figure 1 presents the actual classroom with the capturing functionality (left), and a sample interface for
+reviewing the material on the Web (right). For accessing purposes, the lecture itself is divided into discrete
+slides, that typically represent one screen's worth of information generated on the electronic whiteboard. A
+timeline on the left frame in the interface for reviewing the material depicts relevant activity as it happened
+during the lecture: either a new slide being created on the whiteboard or a Web page being visited on a
+separate display. In this timeline, visits to the slides and Web pages are marked with their title, when that
+information is known. Moreover, selecting the link corresponding to a visit to a Web page in the timeline,
+causes the page to be presented in a separate window; selecting the link corresponding to a visit to a slide
+causes the frame on the right to focus on that slide. The ink on the slides is sensitive, meaning that clicking
+on the instructor's handwriting will launch an audio or video player at the point in the lecture when the
+instructor wrote that annotation. This integration between the handwritten ink and the audio or video is
+itself an interesting challenge, and has been addressed in (Abowd et al., 1998). This last feature is
+particularly important, since an instructor can spend a long time presenting a single slide, and the timeline
+Page 13                                     Computer Support for Collaborative Learning 1999
+
+and slide transition landmarks do not offer adequate granularity for indexing in that timeframe. Moreover,
+the marking itself is likely to provide a good index for the audio and video captured when it was produced.
+
+Figure 1: (left) The Classroom 2000 environment with the capturing whiteboard, projectors, cameras and
+microphones. (right) Web browsers are used for reviewing the captured notes that link presented material
+from the electronic whiteboard and Web pages visited during the lecture with the associated streaming
+digital audio/video recorded live in the classroom.
+Automated support to the capture of audio and video of the live sessions in order to have the presentation
+available for later review is also the aim of the ADEPT Project at Stanford (Harris & DiPaolo, 1996) and of
+the AutoAuditorium Project (Bianchi, 1998). These two implementations, however, do not support
+integration of additional material used during the presentation. The Cornell Lecture Browser1 captures,
+besides the audio and video streams, images of electronic slides presented during the session and
+automatically generates table of contents that provides synchronized indexing into the slides and the video
+information. The Classroom 2000 infrastructure is more comprehensive both in terms of automated support
+to a course as whole (many lectures in several styles) and a more detailed record of each experience
+(capture of whiteboard information and Web activity).
+Classroom Activity as Collaboratively Extensible Learning Media
+Our vision is for captured classroom activity to serve as one kind of learning media that is available to
+students outside of the classroom. We want classroom experiences to be segmentable material that can be:
+   ÷   Discussed and extended later,
+   ÷   Persistent over time so that great experiences (like a particularly nice explanation) can be revisited
+       and even reinterpreted,
+   ÷   Indexed via discussion spaces,
+   ÷   Searched for relevant pieces that can be linked to a new discussion or topic, even in new courses
+       and contexts.
+To provide such functionality, we integrated the Classroom 2000 environment with a tool that would allow
+Web-based anchored collaboration: the CoWeb (Guzdial, 1999a; Guzdial, 1999b). The CoWeb allows any
+user to edit any page in the website (Figure 2); new pages can be created (and linked) by entering "*New
+page name*" into a page's text, and old pages can be linked by entering "*Old page name*" into a page.
+HTML can be entered into the page as desired, or text can just be entered as if the page were an email note.
+This simple structure has supported a wide variety of collaborative activities, from group writing to
+telementoring.
+A feature especially powerful in this context is that the CoWeb is persistent. Pages exist over time. A
+"Recent Changes" page lists when each page has been changed in reverse chronological order, so that new
+additions or edits can be easily identified. CoWebs have been used in the same course across multiple
+instances of the course, or in related courses to create cross-classroom integration and transfer. When these
+
+1 http://www4.cornell.edu/LectureBrowser
+Page 14                                 Computer Support for Collaborative Learning 1999
+
+pages link into external media (such as captured classroom activity), the pages serve as a persistent index
+into the external media, where continued analysis and discussion can take place.How captured lectures link
+to collaborative discussions
+In order to integrate the CoWeb and Classroom 2000 environments, we have integrated their underlying
+servers. Without going into much of the implementation details, we will describe this integration in terms
+of the student's experience.
+Figure 2: CoWeb page (left) and its "Edit Page" view (right).
+
+Creating a CoWeb entry from the Classroom 2000 captured notes
+When a student visits the notes from a captured lecture, links to new or ongoing discussion pages in the
+CoWeb can be created via a simple form interface, as shown in Figure 3. When the CoWeb server receives
+the link request, it either creates a new discussion page (in the case of a new discussion topic) or appends to
+the already existing discussion page, adding a thumbnail image of the lecture slide that provides an anchor
+back to the captured lecture. For the example in Figure 3, a new CoWeb discussion page is created (shown
+in Figure 4). In any case, the new link established from the captured lecture notes is immediately indicated
+by adding the corresponding anchor (the title of the CoWeb page) to the list of topics associated to the
+slide, so that a student can jump right to the discussion space, if desired.
+
+Figure 3: A view of the captured lecture notes. Links to the CoWeb discussion space are shown
+directly under a slide. A new link can be created after any slide by filling in the simple form
+beneath that slide. In the example shown here, the student enters "How is this related to the
+Page 15                                   Computer Support for Collaborative Learning 1999
+
+waterfall model?" to create a new discussion page in the CoWeb that will be automatically linked
+to this point of the captured lecture.
+Viewing a CoWeb entry from the Classroom 2000 captured notes
+When a student is viewing captured lecture notes, all links to the CoWeb discussion space are shown under
+the slide to which they are associated: Figure 3 presents a slide with one link to the CoWeb space. If the
+student selects a link to a discussion page, that CoWeb page is shown in a new browser window. The
+CoWeb page will include a thumbnail image of the slide that links back to the captured lecture, as shown in
+Figure 4.
+
+Figure 4: A view of a CoWeb page. This particular page corresponds to the entry created from the
+captured lecture notes shown in Figure 3. The thumbnail image is a link back to the captured lecture and
+was automatically created when the link request was made.
+Preliminary evaluation results
+We experimented with the integration between the CoWeb discussion space and the captured lecture notes
+provided by Classroom 2000 in two computer science graduate courses in the Spring of 1999. We used a
+survey to collect information from how students perceived the integration of the discussion space and the
+captured notes. A total of 35 students filled out the survey. The survey was taken at a fairly early stage
+(week five of a ten-week course), so the data can only be used to indicate trends and opinions.
+The two courses differ markedly in what happened in the classroom and how the integration was used:
+÷  Course C1 (2 instructors and 31 students) uses a combination of both traditional "presentation" style
+   lectures as well as discussion-oriented lectures. Lecture sessions are 90 minutes long, resulting in an
+   average of 19 annotated slides. Course assessment is based on documents (reading summaries,
+   research essays and group projects) that are posted in the CoWeb by students. Therefore, an intense use
+   of the CoWeb is expected, and after 18 hours of captured lectures, 173 pages were created in the
+   CoWeb space. In this course, the instructor explicitly created many links between the lecture and the
+   discussion, to facilitate the discussion and demonstrate this capability to the students. Once
+   demonstrated, the responsibility for linking between lectures and the CoWeb was made a requirement
+   of students when they prepared summaries of readings discussed during lecture.
+÷  Course C2 (one instructor and 15 students) is entirely discussion-oriented. Lecture sessions are 60
+   minutes long and generate an average of 2.7 annotated slides. Course assessment is based on reports,
+   papers and projects but those are not necessarily posted in the CoWeb. After 14 hours of captured
+   lectures, 52 pages were created in the CoWeb space. In this course, few links were created between the
+   captured classroom activity and the discussion area, and most of those were created bythe instructor.
+In general, the students make more use of the collaborative discussion space than the Classroom 2000
+captured notes. 51.4% state that they visit the captured lecture notes at least once a week, while 85.7% visit
+the CoWeb discussion space at least once a week. The access in the courses is different. In Course C1,
+71.4% of the students visit the captured lecture notes at least once a week and 95.2% visit the CoWeb
+discussion space at least once a week. In Course C2, the numbers are 21.4% visiting the captured lecture
+Page 16                                        Computer Support for Collaborative Learning 1999
+
+notes at least once a week and 71.4% visiting the CoWeb discussion space at least once a week. These
+differences are explained by the facts that (a) Course C2 uses discussion-oriented lectures while Course C1
+uses presentation-oriented discussion lectures and (b) Course C1 uses the CoWeb as the media for its
+deliverables.
+Table 1 presents a summary of the scaled questions in the survey.
+Table 1: Summary of subjective evaluation
+                 Question                        Course C1+C2                Course C1               Course C2
+                                               Agree  neutral disagree agree  neutral disagree agree  neutral disagree
+
+I find it useful to be able to access the      51.4    48.6              57.1  42.9             42.9   57.1
+CoWeb discussion space from the
+captured lecture notes.
+I find it useful to be able to access the      45.7    51.4       2.9    52.4  42.9       4.8   35.7   64.3
+captured lecture notes from the CoWeb
+discussion space.
+It is useful to be able to create a link to    65.7    34.3              76.2  23.8             50.0   50.0
+the CoWeb discussion space from the
+captured lecture space.
+It is useful to be able to create a link to    60.0    34.3       5.7    71.4  23.8       4.8   42.9     50       7.1
+the captured lecture notes from the
+CoWeb discussion space.
+I understand material in this class better     74.3    17.1       8.6    85.7   9.5       4.8   57.1   28.6      14.3
+through use of the CoWeb discussion
+space.
+I understand material in this class better     40.0    48.6      11.4    57.1  38.1       4.8   14.3   64.3      21.4
+through use of the captured lecture
+notes.
+I understand material in this class better     48.6    42.9       8.6    66.7  28.6       4.8   21.4   64.3      14.3
+through coordinated use of both the
+CoWeb discussion space and the
+captured lecture notes
+
+Across both courses, students reported that they believe that they have a better understanding of the
+material in the course with the use of the CoWeb space (74.3% agree, 17.1% neutral, 8.6% disagree) than
+through the captured lecture notes (40% agree, 48.6% neutral, 14.3% disagree). This is expected since that
+the captured lecture contents are directly related to the activities within the classroom, while the CoWeb
+space has material that underlies the discussions held before, during and after the classroom experience.
+About half of the students (48.6%) perceived that they have a better understanding of the material in the
+course through coordinated use of both Classroom 2000 notes and CoWeb discussion space (40.0%
+neutral, 11.4% disagree). Course C1 has a more favorable result (66.7% agree, 28.6% neutral, 4.98%
+disagree) than Course C2 (21.4% agree, 64.3% neutral, 14.3% disagree). This clearly indicates that, in
+particular for a course of the format of Course C1, the integration of the access to the material, as provided,
+gives further supported for the learning tasks from the user's perspective.
+Students did believe that the integration was useful, even though, by that time, the students had not created
+many of the integration links themselves. We believe that the students and teachers were still trying to
+understand how to use this integration. Five weeks was a short time to learn to use a new tool and
+understand its value in an educational setting. That said, we were interested by the kinds of integration that
+we did see:
+Student notes for presentations (with links, references, and other material) linked to the recording of the
+student's actual presentation.
+Link from the first lecture introductions of students to the CoWeb "Who's Who" page listing all the
+students' home pages.
+Lecture points extended by linking to discussion spaces where issues could be questioned and elaborated.
+Conclusion and Future Vision
+Use of such a flexible collaboration space as the CoWeb does create the possibility of mistaken postings or
+even destructive behavior by students. Student authors in the CoWeb do report some concern about others
+Page 17                                   Computer Support for Collaborative Learning 1999
+
+damaging their pages (see Guzdial et al., this volume). However, in the last two years of use, with literally
+dozens of classes and well over a thousand students using the CoWeb, we have seen very little malicious
+behavior in the CoWeb. There are several security mechanisms built into the CoWeb, such as infinite
+backup of page versions. Further, the same interface simplicity that allows anyone to create or edit pages
+also allows any user to be an editor to repair damage. The issue of mistaken or malicious postings is
+lessened in the use of the CoWeb with Classroom 2000. The lecture material is available as an authoritative
+source, and the lectures themselves are not editable by students. The CoWeb serves as augmentation, where
+the distributed editorship across entire classes of students can help to police mistaken or malicious postings.
+An interesting future study might explore just how often mistaken postings appear, and how the community
+deals with them.
+While the pilot study results are not overwhelming, they do suggest that students find the integration
+interesting and potentially valuable. This is also suggested by the information produced by the end of the
+quarter for Course C1, where the asynchronous collaboration using the Classroom 2000 and CoWeb
+infrastructure was required:
+÷  By the end of the quarter, as far as the use of the Classroom 2000 capture infrastructure is concerned,
+   Course C1 generated 27 hours of audio and video information, associated to 307 slides and 486
+   references to visits to Web pages.
+÷  For this same course, since the use of the CoWeb was required from students, a lot of information was
+   created in that discussion space, totaling 303 independent pages created by students and instructors.
+÷  The two spaces were explicitly anchored by 66 links established between the captured lectures and the
+   CoWeb: an average of 3.6 links per lecture, a high value in our opinion for such a novel service.
+For both courses, the examples of linkages that we did see point to some exciting possible uses for
+collaborative extension of in-classroom activities.
+A point yet to be exploited is the integration of students' personal notes, associated to the Classroom 2000
+captured material, generated during the classroom experience (Truong & Abowd, 1999; Truong, Abowd &
+Brotherton, 1999). This scenario offers an opportunity to include a student's personal contribution created
+during a lecture into the collaboratively created CoWeb space.
+We are most excited by the potential for this kind of integration provides over time. The next time that both
+of these graduate courses are offered these CoWebs and captured classroom activity will still be available.
+Previous discussions can be revisited and even extended. All of the material becomes a rich, searchable
+resource. The collaborative discussions can become another meaningful index into the many hours of
+recorded material, which might otherwise not be revisited due to their length.
+There is also potential for this kind of integration between courses. An undergraduate lecture in a course
+might use the discussion and capture space from a graduate course as a living resource for research
+projects. It's a benefit that the captured material is not canned video from a studio, but recordings of fellow
+students and teachers whom one might see in the hallway. The discussions are not closed, but are available
+for undergraduates to search, read, and even extend. We see a potential for using this kind of integration to
+create a learning community that crosses course and age boundaries.
+We also see the potential for using the same CoWeb to index multiple captured courses and other media as
+well. The discussion space can become an extensible and collaborative index and archive to valuable
+learning resources. The CoWeb and Classroom 2000, in this way, can be seen as a way of gaining
+collaboration among teachers across and off campus, to pool resources to create the best possible learning
+opportunities.
+Acknowledgments
+Gregory Abowd's work on Classroom 2000 is supported by grants from the National Science Foundation
+(IRI-9703384, EIA-9806822 and CISE-9818305) and from equipment grants from Sun Microsystems and
+Hewlett-Packard.. Maria da Graça Pimentel is supported by FAPESP-Brazil, grant PD-98/05984-7. Mark
+Guzdial's work on the CoWeb is supported by the National Science Foundation grant REC-9814770. Bolot
+Kerimbaev is supported by the Al West Technology Fund at Georgia Tech. Yoshihide Ishiguro is funded
+by NEC Corporation.
+References
+Abowd, G.D. Classroom 2000: An experiment with the instrumentation of a living educational
+environment. IBM Systems Journal. Volume 38, October 1999. To appear.
+Page 18                                  Computer Support for Collaborative Learning 1999
+
+Abowd, G.D., Atkeson, C.G., Brotherton, J.A., Enqvist, T., Gully, P.A., & Lemon, J. Investigating the
+capture, integration and access problem of ubiquitous computing in an educational setting. Proceedings of
+CHI'98, ACM, New York, p. 440­447, April 1998.
+Brotherton, J.A, Bhalodia, J. & Abowd, G.D. Automated Capture, Integration, and Visualization of
+Multiple Media Streams. Proceedings of IEEE Multimedia '98, p. 54­63, July 1998.
+Bianchi, M.H. AutoAuditorium: A Fully Automatic, Multi-Camera System to Televise Auditorium
+Presentations. 1998 Joint DARPA/NIST Smart Spaces Technology Workshop, 30-31 July 1998, National
+Institute of Standards and Technology, Gaithersburg, MD.
+http://www.autoauditorium.com/nist/autoaud.html.
+Bruckman, A. Programming for Fun: MUDs as a Context for Collaborative Learning, Proceedings of the
+National Educational Computing Conference (NECC'94) . Eugene, OR: International Society for
+Technology in Education (ISTE), 1994.
+Bruckman, A., & Resnick, M. The MediaMOO Project: Constructionism and Professional Community.
+Convergence, 1(1), p. 94-109, 1995.
+Davis, J. R., & Huttenlocher, D. P. Shared Annotation for Cooperative Learning. In J. L. Schnase & E. L.
+Cunnius (Eds.), CSCL'95 Proceedings Bloomington, IN: Lawrence Erlbaum and Associates, p. 84-88,
+1995.
+Guzdial, M. Information ecology of collaborations in educational settings: Influence of tool. In R. Hall, N.
+Miyake, & N. Enyedy (Eds.), Proceedings of Computer-Supported Collaborative Learning'97. Toronto,
+Ontario, Canada, p. 83-90, 1997.
+Guzdial, M. (a). Supporting Learners as Users. The Journal of Computer Documentation, 23(2), p.3-13,
+1999.
+Guzdial, M. (b). Teacher and Student Authoring on the Web for Shifting Agency : Presented at the Annual
+Meeting of the American Educational Research Association as part of the session "How can CSCL
+(Computer Supported Collaborative Learning) change classroom culture and patterns of interaction among
+participants?", 1999.
+Guzdial, M., Realff, M., Ludovice, P., Morley, T., Kerce, C., Lyons, E., & Sukel, K. Using a CSCL-driven
+shift in agency to undertake educational reform, Proceedings of CSCL'99 . Palo Alto, CA, 1999.
+Guzdial, M., Hmelo, C., Hübscher, R., Nagel, K., Newstetter, W., Puntembakar, S., Shabo, A., Turns, J., &
+Kolodner, J. L. Integrating and Guiding Collaboration: Lessons learned in computer-supported
+collaboration learning research at Georgia Tech. In R. Hall, N. Miyake, & N. Enyedy (Eds.), Proceedings
+of Computer-Supported Collaborative Learning'97. Toronto, Ontario, CANADA, p. 91-100, 1997.
+Guzdial, M., & Turns, J. Supporting sustained discussion in computer-supported collaborative learning:
+The role of anchored collaboration. Journal of the Learning Sciences, 1999. Submitted.
+Harris, D& DiPaolo, A. Advancing Asynchronous Distance Education. IEEE Transactions on Education.
+August,1996.
+Hmelo, C. E., Guzdial, M., & Turns, J. Computer-support for collaborative learning: Learning to Support
+Student Engagement. Journal of Interactive Learning Research, 9(2),p.107-130, 1998.
+Hsi, S. Fostering effective instruction in a virtual high school: A netcourse for teachers. Paper presented at
+the 1999 Annual Meeting of the American Educational Research Association, in session 27.01 "The Virual
+High School in Action." 1999.
+Hsi, S., & Hoadley, C. M. Productive discussion in science: Gender equity through electronic discourse.
+Journal of Science Education and Technology, 6(1), 23-36, 1997.
+Truong, K.N. & Abowd, G.D. StuPad: Integrating Student Notes with Class Lectures. Proceedings of
+CHI'99, ACM, Pittsburgh, USA, p. 208-209, May 1999.
+Truong, K.N.; Abowd, G.D. & Brotherton. Personalizing the capture of public experiences. Proceedings of
+the Symposium on User Interface Software and Techonolpgy - UIST'99, November 1999. To appear.
+Authors' addresses
+
+Gregory D. Abowd (abowd@cc.gatech.edu)
+College of Computing & GVU Center, Georgia Tech; 801 Atlantic Drive, Atlanta, GA 30332-0280; USA. Tel. +1(404)
+894-7512. Fax +1(404) 894-2970.
+Page 19                                        Computer Support for Collaborative Learning 1999
+
+Maria da Graça Pimentel (mgp@icmc.sc.usp.br)
+Instituto de Ciências Matemáticas e de Computação, Universidade de São Paulo; Caixa Postal 668; São Carlos, SP;
+13560-0960; Brazil. Tel +55 (16) 273-9657. Fax +55 (16) 273-9751.
+
+Yoshihide Ishiguro (ishiguro@hml.cl.nec.co.jp)
+Human Media Research Laboratories, NEC Corporation; 8916-47, Takayama-cho; Ikoma, Nara 630-0101; Japan. Tel.
++81 (743) 72-3864. Fax +81 (743) 72-3549.
+
+Bolot Kerimbaev (bolot@cc.gatech.edu)
+College of Computing & GVU Center, Georgia Tech; 801 Atlantic Drive, Atlanta, GA 30332-0280; USA. Tel. +1(404)
+894-7512. Fax +1(404) 894-2970.
+
+Mark Guzdial (guzdial@cc.gatech.edu)
+College of Computing & GVU Center, Georgia Tech; 801 Atlantic Drive, Atlanta, GA 30332-0280; USA. Tel. +1(404)
+894-7512. Fax +1(404) 894-2970.
+

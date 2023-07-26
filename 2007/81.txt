@@ -1,0 +1,153 @@
+        Just a cog in the machine: participatory robotics as a tool for
+          understanding collaborative learning and decision-making
+
+Paulo Blikstein, William Rand, Uri Wilensky, Northwestern University, 2120 Campus Drive, Evanston, IL, 60208.
+                                     Email: {paulo, wrand, uri}@northwestern.edu
+
+         Abstract: We will demonstrate the integration of a software-based multi-agent modeling platform
+         with a participatory simulation environment and a real-time control system for a physical robotic
+         agent. Both real and virtual participants will be able to act collaboratively in a simulation that will
+         control a physical agent. The backbone of this demonstration is a widely used, freely available,
+         mature modeling platform (NetLogo). We posit that this technological platform can be of use for
+         researchers interested in investigating collaborative learning and decision-making, as well as to
+         design collaborative learning activities. We will present preliminary findings from pilot studies
+         with the tool.
+
+Introduction
+         Agent-based modeling has been increasingly used by scientists to study a wide range of phenomena such as
+the interactions of species  in  an  ecosystem,  the  collisions of molecules  in a   chemical reaction, and   the food-
+gathering behavior  of   insects (Bonabeau,   1999;   Wilensky   &  Reisman,  2006).  Such  phenomena,    in which     the
+elements  within the  system  (e.g., predators,  molecules,   or ants) have  multiple behaviors  and a   large   range of
+interaction patterns, have been termed complex and are collectively studied in a relatively young interdisciplinary
+field called complex systems (Holland, 1995). Typical of complex phenomena is that the cumulative (aggregate)
+patterns or behaviors at the macro level are not premeditated or directly actuated by any of the lower-level, micro-
+elements. For example, flocking birds do not intend to construct an arrow-shaped structure (Figure 1), or molecules
+in a gas are not aware of the Maxwell-Boltzmann distribution. Rather, each element (agent) follows its "local" rules,
+and the overall pattern arises as epiphenomenal to these multiple local behaviors i.e., the overall pattern emerges. In
+the late eighties and early-nineties, Wilensky & Resnick (1993, 1995) realized that agent-based modeling could have
+a significant impact on learning. They adapted languages and techniques heretofore used only with supercomputers
+and brought them to classrooms. Powerful ideas such as emergence, self-organization, and randomness were put in
+the hands (and minds) of children. To study the behavior of a chemical reaction, the student would observe and
+articulate only the behavior of individual molecules -- the chemical reaction emerges from the interactions of these
+molecular agents. Once the modeler assigns agents their local, micro-rules, the system can be set them into motion
+and modelers can watch the overall patterns that emerge.
+
+                              Figure 1. An agent-based model of the flocking behavior of birds.
+
+         Participatory  simulations  are similar to  multi-agent simulation  except that students  play  the role  of  the
+virtual agents,  sometimes  in   combination    with the virtual  agents (Wilensky    &  Stroup, 2002a).  In   a  typical
+participatory simulation, a server runs a computer model, and students connect to the server through a networked
+computer or calculator. The behavior of the whole system is not defined ahead of time but instead emerges from the
+participation of various   individuals   in the simulation.  This   emergent  behavior  can then  be displayed     to  the
+participants  through  a central server  with   the results usually projected at  the front of the room.  Each     of  the
+participants will be assigned one agent on the screen, and would control its behavior. For example, in the traffic
+"Gridlock" (Wilensky & Stroup, 2002b) participatory simulation activity (PSA, Figure 2), each student controls a
+
+                                                            81                                                 CSCL 2007
+traffic light in a busy city. In the "Disease Spread" PSA (Wilensky & Stroup, 2002b), each student will be assigned
+different roles (doctors or patients).
+         We have also recently started to incorporate physical devices in agent-based models, using sensors and
+probes to gather data about   the real-world    phenomena     under  scrutiny.                      The presence         of physical        sensors       enables
+students to ground their models in empirical data and further refine the models. This approach, bifocal modeling,
+permits a deeper understanding of the physical world than pure virtual modeling (Blikstein & Wilensky, 2006).                                                This
+is particularly true within educational robotics, where research has shown that designing and controlling devices in
+the physical  world introduces    new   challenges  such    as understanding                         error, noise,       mechanical         advantage,        and
+mechanical failure, which cannot be explored in purely virtual environments (Martin, 1996).
+
+          Figure 2. A classroom ready for a participatory simulation (left), and students during the activity (right)
+
+Rationale and technological design
+         The three aforementioned areas (agent-based modeling, participatory simulations, and bifocal modeling)
+are concerned with the creation, manipulation, and development of agents in one form or another. Thus combining
+these three systems in to one unified platform would be useful, since it would facilitate a synthesis of their main
+affordances: understanding of the role of locality and emergence (agent-based modeling), mapping human action to
+emergent, collective behaviors (participatory simulation), and controlling physical objects in noisy environments.
+We  will  demonstrate a  novel  technological     based   on  the NetLogo/HubNet                            (Wilensky,       1999)          architecture      that
+supports  simulated agents,   participatory  agents     and   physical  agents.                       We    have       developed          a methodological
+framework to help us understand this system, the "Human, Embedded, Virtual agents via Mediation (HEV-M)"
+framework (Rand, Blikstein, & Wilensky, 2006). Within this framework and the accompanying platform, designers
+can create participatory simulations in which each participant controls one element within a physical system (a car, a
+mini-factory, a robotic arm   with multiple     joints, etc). In the conference,                       we   will       show one         instantiation      of the
+platform (see Figure 3). It consists of a robot-car with four motors. Each motor is connected to a serial interface
+board (the GoGo Board), which communicates to the server. Each of the four users is assigned a motor to control,
+and turning the car is achieved by reversing the correct pair of wheels on each side of the car.
+
+                                                                                        Participant       Participant       Participant      Participant
+
+                                                                                                             Server and
+                                                                                                              Projector
+
+                                                                                     Robot
+
+                                                                                                                               Obstacle
+
+                                                                                                               Screen
+
+          Figure 3. The system's components (left), and the schematic setup of the demonstration (right)
+
+Preliminary User Studies
+         We have run three preliminary studies, two of them at professional conferences for computer scientists, and
+one at a  research university with     doctoral students  and  faculty. The                   setup     was   identical      in         every situation.      The
+apparatus was setup on the floor (see Figure 3), and there were four notebook computers placed in front of the robot
+car. Each of the four participants could turn the motor on and off, reverse direction, and change the motor power
+level. They were given the simple task of moving the robot forward while avoiding an obstacle along the way. As
+
+                                                              82                                                                                         CSCL 2007
+these were    proof-of-concept  studies, our evidence  is based  on   observations   of the activity.  At   this stage of the
+development of our platform, the studies were exploratory, both to provide initial insight into participants' reactions
+and to improve our design. Nonetheless, the results were intriguing. Before the start of the activity, participants were
+very confident that they could accomplish the task with ease. However, as soon as the first turn of the robot was
+necessary, participants would start talking back and forth, asking who had control over which wheel, and which state
+(forward,  backward,  high  power,   low   power)  each   wheel  was   in. At  this  point, participants    started to report
+increasing frustration with their ability to solve the problem, and started complaining that the other participants were
+not helping them. In two of the groups, we observed some emergent strategies for optimizing the process, such as
+delegating leadership to one participant, or the formation of two groups each with two participants, which would
+then act fairly independently. In the end, the three groups were able to reach their goal, but often it took much longer
+than  they expected,  and  several   of  them got  stuck  for long  periods  of  time   right around    the obstacle.  These
+preliminary   runs of the  platform  seem  to indicate   that there were   two   levels of  learning  taking  place.   At the
+individual level, participants were trying to learn how to better control their own wheel. At the group level we saw
+evidence   of strategy-generation, especially  as  participants appeared   to  learn  that  individual  actions   and  groups
+actions are fundamentally different. For example, at the onset of the activity, they were unaware that an error from
+any of the participants would ruin the group's goal, no matter how well the other participants were doing. From our
+observations and interviews, it was noticeable that the "hands-on" experience in the participatory task challenged the
+initial strategies, and many participants claimed that they would use a different strategy if attempting the task again.
+
+Conclusion
+         We have built a technological platform for investigating collaborative learning and decision making. Our
+platform  seamlessly  integrates  three  technologies: agent-based    modeling,  educational   robotics,  and    participatory
+simulations.  We   believe that this tool has significant   potential for  three main   reasons (1)  it enables   logging  of
+participant's actions, as to identify patterns and match them to observations, (2) it offers researchers in the field of
+computer-supported collaborative learning an easy to-use tool to design engaging collaborative learning activities
+and, (3) it foregrounds the role of individual actions within the accomplishment of a collective goal, highlighting the
+connections between simple individual actions and the resultant macroscopic behaviors of the system.
+
+References
+Blikstein, P., & Wilensky, U. (2006). The Missing Link: A Case Study of Sensing-and-Modeling Toolkits for
+         Constructionist Scientific Investigation. In Proceedings of the 6th IEEE International Conference on
+         Advanced Learning Technologies (ICALT 2006), Kerkrade, The Netherlands, 980-982.
+Bonabeau, E., Dorigo, M., Théraulaz, G. (1999). Swarm intelligence: From natural to artificial systems. London:
+         Oxford University Press.
+Holland, J. (1995). Hidden order: How adaptation builds complexity. Reading, MA: Helix Books/ Addison­Wesley.
+Martin, F. (1996). Ideal and Real Systems: A study of notions of control in undergraduates who design robots. In Y.
+         Kafai & M. Resnick (Eds.), Constructionism in Practice (pp. 297-332). Mahwah, NJ: Lawrence Erlbaum
+         Associates Inc.
+Rand, W., Blikstein, P., & Wilensky, U. (2006). Widgets, Planets, and Demons: the Case for the Integration of
+         Human, Embedded, and Virtual Agents via Mediation. Paper presented at the Swarmfest 2006.
+Resnick, M., & Wilensky, U. (1993). Beyond the Deterministic, Centralized Mindsets: A New Thinking for New
+         Science. Paper presented at the American Educational Research Association conference, Atlanta, GA.
+Wilensky,  U.  (1999). NetLogo.    Evanston,   IL: Center   for Connected    Learning   and   Computer-Based        Modeling.
+         http://ccl.northwestern.edu/netlogo.
+Wilensky,  U.,  &   Reisman,   K.  (2006).   Thinking  like a  wolf,  a  sheep   or a firefly: Learning     biology   through
+         constructing  and   testing  computational    theories --    an  embodied    modeling   approach.    Cognition    &
+         Instruction, 24(2), 171-209.
+Wilensky, U., & Resnick, M. (1995). New Thinking for New Sciences: Constructionist Approaches for Exploring
+         Complexity. Presented at the American Educational Research Association conference, San Francisco, CA.
+Wilensky, U., & Stroup, W. (2002). Participatory Simulations: Envisioning the networked classroom as a way to
+         support systems learning for all. Paper presented at the Presented at the Annual meeting of the American
+         Research Education Association, New Orleans, LA, April 2002.
+Wilensky, U., & Stroup, W. (2002). NetLogo HubNet Gridlock and Disease models.
+         http://ccl.northwestern.edu/netlogo/models/HubNetGridlock and /HubNetDisease. Center for Connected
+         Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.
+
+                                                            83                                                      CSCL 2007
+

@@ -1,0 +1,230 @@
+ Animal Companions as Motivators for Teammates
+                             Helping Each Other Learn
+
+                        Zhi-Hong Chen                                  Yi-Chan Deng
+          Department of Computer Science &                 Department of Computer Science &
+            Information Engineering, National               Information Engineering, National
+                 Central University, Taiwan                     Central University, Taiwan
+                       hon@lst.ncu.edu.tw                        ycdeng@lst.ncu.edu.tw
+                       Chih-Yueh Chou                                 Tak-Wai Chan
+          Department of Computer Science and               Center for Science and Technology of
+               Engineering, Yuan Ze University,                 Learning, National Central
+                             Taiwan                                 University, Taiwan
+                 cychou@saturn.yzu.edu.tw                          chan@cl.ncu.edu.tw
+
+     Abstract. This paper describes and discusses the design rationales of a system called My-Pet-Our-
+     Pet    that intends  to realize an approach to   using simulated animal companions  to encourage
+     students to help each other learn. A class of students is divided into several teams. Every student
+     keeps her own individual animal companion, called My-Pet. An important component of animal
+     companion is the student model of its master that supports self-reflection in different perspectives.
+     Also, every team has a team animal companion, called Our-Pet, being kept by all the members of
+     the team collaboratively. Our-Pet has a collective student model composed by all the student
+     models of the team members. The design of Our-Pet help set a team goal through participating a
+     competition game among Our-Pets of different teams, support collective reflections among team
+     members, and shed light for the team how to help each other. We are currently conducting an
+     experimental trail of the system in an elementary school where every student in the class has a
+     Tablet PC.
+
+     Keywords: Learning companion, team animal companion, student model, active student model,
+     open student model
+
+BACKGROUND
+With the development and advance in computer and information technology, computer supported collaborative
+learning (CSCL) environments bring more opportunities to foster communication and interactions in the social
+learning settings. Two kinds of approaches to realizing the CSCL environment: computers simulate intelligent
+agents to interact with learners, and computers provide smart tools or environments to foster social interactions
+among learners. A typical example of the former approach is the learning companion system in which the
+computer simulates two agents, a learning companion and a teacher, so that the user student can collaborate with
+the learning companion under the supervision of the teacher (Chan & Baskin, 1988, 1990). Chan (1996) also
+suggested that the student model can be used in different ways, other than hiding behind the student as an
+internal component inside the ITS. An example for this is the four animal companions that play different roles
+collaborator, troublemaker, peer tutor, and tutee ­ based on the variations of student models interacting with
+learners to    benefit learning (Chang  et al.,1999). One   way to use student model is to  make it open      or
+"inspectable" to the student for provoking self-reflection (Self, 1988; Kay, 1997; Bull, 1998; Bull, 2004) and
+later some researchers have been working on this direction. PHelpS system is an example that provides smart
+tools and environments to enhance social interactions among peer learners based on their student models (Greer
+el al., 1998).
+  Animal companions are simulated pets to be taken care by students who have to learn in order to earn the pet
+food. In our previous study of a simpler version of animal companion, My-Pet, (Chen et al., 2001, Chen et al.,
+2002; Chen et al., 2003) which was implemented in EduCities (Chan et al., 2001; Chang et al., 2003), we found
+that students demonstrated compassion and affection towards their pets, like Tamagochi (Webster, 1998; Pesce,
+2000). For example, they expressed numerous feelings by emotional words on a discussion forum to show their
+care and concern about their pets. Because of these affective factors, students showed strong willingness of
+
+                                                          
+learning in the process of taking care of the pets (Chen et al., 2004). By the same reason, some students kept
+their My-Pets for a long time, about 5 percent of them for more than a year. After that study, in addition to
+improving My-Pet, we add Our-Pet in the system in order to promote positive interactions and helpful behaviors
+among teammates.
+
+My-Pet
+A student participates in learning activities to get resources such as foods and tools, so that the student can feed
+her My-Pet and play with My-Pet in many mini-games. My-Pet includes an important component, its master's
+student   model, which   is externally represented to  the student   by the attributes   of My-Pet.  Currently,   the
+representation of this student model is a simple one. However, it includes cognitive, social, and emotional
+domains   and  there are a  few attributes representing   each domain.  While  the    student is  aware  of  her low
+academic performance on the cognitive domain by viewing the domain representation of her My-Pet, the student
+then participates more in learning activities. Similarly, when the student perceives her poor social performance,
+the student, to demonstrate her positive social behavior, may assist her teammates in learning to demonstrate her
+positive social behaviors. Figure 1 shows a student viewing the internal representation of multiple domains in
+My-Pet to reflect.
+  My-Pet plays three roles: a motivator, a reflector, and a sustainer. First, based on the human attachments to
+real pets (Melson, 2001), the strategy of learning by taking care of an animal companion triggers a student's
+emotional  engagement    and  involvement  in  learning activities. The good  will   for My-Pet   is the  cause  and
+learning is the effect. Although this initial motivation for learning is not for the purpose of learning itself,
+however, if the student later finds that the required learning is an intriguing and rewarding experience, this
+initial motivation may   change  qualitatively to motivation   in learning  itself. Second,  self-reflection through
+viewing the domain representation of My-Pet, which is essentially the student model of the student herself in
+different domain, can help the student look at herself from different perspectives, and hence understand herself
+better or enhance her self-awareness. Third, pet keeping is a regular and long-term activity. With appropriate
+reinforcement, the system may be able to sustain some desired student behaviors and then to become a habit.
+  Our current version of the student model is a simple one but the framework offers flexibility for future
+extension and sophistication. The attributes of the cognitive domain include "what have learned", which is a
+record of what topics the student supposes to have learned, "degree of understanding" of concepts involved in a
+topic, "mastery level" of a topic, "overall performance", and so on. The attributes of emotional domain currently
+include "confidence" and "interest". Confidence is evaluated by the rate of successes in answering questions
+correctly or solving problems of a topic and that "interest" is determined by the frequency the student involved
+in learning activities of a topic after class or even if the student is not asked to do so. The attributes of social
+domain consist of "reminding" and "helping", which represent the student's collaborativeness. We use honor
+system, that is, the student reports to My-Pet how many times each time she "reminds" or "helps" her teammates
+to learn.
+
+                                  Figure 1. Student viewing My-Pet to reflect
+
+Our-Pet
+A class of students is divided into 4-children teams and each team takes care a team animal companion, called
+Our-Pet. As illustrated in Figure 2, a team's Our-Pet will interact with other teams' Our-Pets. An important
+component of Our-Pet that largely governs the behaviors of Our-Pet is a collective student model, with attribute
+values   based on  those in  student   models  of all the  team   members.  As this    collective student   model  is
+"inspectable" by all members, it thus serves as a vehicle for promoting solidarity and collaborative behaviors of
+the team. In cognitive domain, there are four kinds of attribute values in that domain for each topic, namely,
+
+                                                         
+"minimum", "maximum", "average", and "variance" of all team members' attribute values of cognitive domain
+in the same topic. For example, "mastery level" of a certain topic is an attribute in the cognitive domain. Our-
+Pet's mastery value if adopts minimum, that means its mastery value is represented by the value of weakest team
+member. As all team members can view this value, other members will then naturally be urged to "help" or
+"remind" the weakest member to do more remedial work. If it adopts maximum, Our-Pet's mastery value will
+then be   the strongest team member's value, and it then   encourages   the strongest   member  to   do more for
+enrichment and strive for excellence, but then it will increase their "variance" value. With similar reasoning,
+"average" calls for more effort by all members and "variance" asks the stronger members to help the weaker
+members so that they can minimize their differences and hence the "variance". The mechanisms of emotional
+and social domains are similar to that of the cognitive domain.
+  Besides, all Our-Pets involve in a competition game as a motivator for members of a team to take actions to
+help each other learn. The rules of the game are designed so that winning and losing of a game depends on
+attribute values of two competing Our-Pets as well as luck. The competing game may use either attribute values
+in somewhat random way and thus the chance Our-Pet wins the game depends on all these attribute values and
+thus it demands efforts of all team members to improve all these attribute values. Each game has four rounds of
+competitions, and the game result is calculated by accumulating the results of four rounds. Each student stands
+for the team in one round by rotating three turntables to determine which domain, which attribute, and which
+kind of attribute value of Our-Pet to compete with the other team.
+  In sum, there are two roles of Our-Pet sub-system. The first is that the competing game will serve as a
+motivator for students to collaborate in order to win the game. The second is that the collective student model is
+an indicator that indicates how the teammates should help each other.
+
+                          Figure 2. Intra-team collaboration for inter-team competition
+
+IMPLEMENTATION
+Figure 3 (a) shows that the My-Pet is eating food while being fed, and the student can inspect into domain
+attribute values of My-Pet.   The subject domain of  our   current   My-Pet-Our-Pet     is idiomatic phrases for
+elementary students and can be easily transformed into other subject domains. For keeping My-Pet, a student
+has to earn a living for it ­ learning to get the resources such as foods and tools. In the current case, the student
+needs to participate in a series of activities for learning idiomatic phrase, including reading the historical story to
+understand the original meaning, identifying the key words, and practicing the applications of idiomatic phrases
+used in different contexts in our daily lives. If she can pass an assessment test, then she earns the required
+resources. Figure 3 (b) illustrates a four-children team where each team member has a My-Pet, taking care an
+Our-Pet. Every teammate can inspect the all other members' attribute values, in addition to Our-Pet's.
+  Different from our previous version of My-Pet used on Internet, My-Pet-Our-Pet, an extension of My-Pet, is
+used in the classroom where every student has a Tablet PC. My-Pet-Our-Pet now is being trial tested for future
+improvement of the system in an elementary classroom with 31 fifth-grade students. The students use the system
+fifteen minutes each time, and three times per week from November 2004 to January 2005. The results show
+that most students not only paid efforts in individual learning to improve the My-Pet's attributes, but also
+encouraged each other to study hard for Our-Pet's attributes. Some students also gave other teammaters hints on
+how to do well in reading, or helped others solve problems in learning idiomatic phrases. But the interaction and
+collaboration among teammates in learning activities still have many spaces to improve.
+
+                                                        
+                                                                                                         Our-Pet
+My-Pet
+                                                                                                         A team has
+Different                                                                                                four My-Pets
+learning
+domains
+          (a) Student inspects attribute values of My-Pet      (b) Four-children team with Our-Pet
+                                   Figure 3. Snapshots of My-Pet-Our-Pet
+
+SUMMARY
+My-Pet-Our-Pet provides an ingenious way of adopting the metaphor of animal companion, underlying which is
+a student model, in a collaborative learning environment. My-Pet is essentially an active student model; yet, it is
+open to the student in an inspectable form. Harnessing affection and compassion brought by children's keeping
+pet hobbit, it provides a driving force for students to learn since their emotional engagement can direct to
+participation of some designed learning activities. Of course, we hope those learning activities can arouse their
+intrinsic motivation in the subject to learn itself. Also, representing student model in multiple domains offers the
+student a mirror  to  understand herself better    about her   own learning status  from   different perspectives.
+Furthermore, allowing students to view other team members' animal companions, they know what others have
+not learned, what have mastered, who need help, who can help, and so forth. Our-Pet, help establish the team
+goals that impel the teammates holding together to endeavor to realize their team goals. Besides it sheds light on
+directions how teammates help each other learn, hence positive social interactions among peers.
+
+FUTURE WORK
+As more and more researchers envision that one-on-one (1:1) educational computing, that is, every student has a
+computing device with wireless capability used as indispensable as a pencil, in a future not too long, will lead
+deep and far reaching changes in education (see www.g1on1.org), My-Pet-Our-Pet is being pilot tested in such a
+1:1 classroom. In such an environment, our research team will develop a series of synchronous small group
+activities in class, including reciprocal tutoring, learning by asking questions, competitive learning games, and
+so forth. Also, we shall extend the content to some cardinal subject such as language and mathematics learning.
+As the  subject matter and learning  activities  are getting more  sophisticated, both individual  and  collective
+student models   will be more complicate   and     thus  these animal companion    behavior   will   become more
+sophisticate. Thus My-Pet-Our-Pet is essentially a framework of incorporating all these efforts. Besides using in
+1:1 classrooms, My-Pet-Our-Pet is also appropriate to be used via Internet after class to support individual or
+group learning or used in a large learning community such as EduCities where there are 1.3 million students
+using it (Chan et al., 2001; Chang et al., 2003)
+
+REFERENCES
+Bull, S. (1998). 'Do It Yourself' Student Models for Collaborative Student Modelling and Peer Interaction, in
+       B.P. Goettl, H.M. Halff, C.L. Redfield & V.J. Shute (eds), Proceedings of International Conference on
+       Intelligent Tutoring Systems, Springer-Verlag, Berlin Heidelberg, 176-185.
+Bull, S. (2004). Supporting Learning with Open Learner Models, Proceedings of 4th Hellenic Conference with
+       International Participation: Information and Communication Technologies in Education, Athens, Greece.
+       Keynote.
+Chan, T.W. (1996). Learning Companion Systems, Social Learning Systems, and the Global Social Learning
+       Club. International Journal of Artificial Intelligence in Education, 7(2), 125-159.
+Chan, T.W. & Baskin, A.B. (1990). Learning companion systems. In C. Frasson & G. Gauthier (Eds.) Intelligent
+       Tutoring Systems: At the Crossroads of Artificial Intelligence and Education, Chapter 1, New Jersey:
+       Ablex Publishing Corporation.
+Chan,  T.W., Hue,  C.W.,   Chou, C.Y.,   & Tzeng,    O.J.L.  (2001). Four spaces   of  network  learning models.
+       Computers & Education, 37, 141-161.
+
+                                                         
+Chang, L. J., Wang, J. C., Hsu, B. Y., & Chan, T. W. (1999). Four applications of student modelingmy animal
+       companions, Proceedings of The Third Global Chinese Conference on Computers in Education, Macau,
+       336-370.
+Chang, L. J., Yang, J. C., Deng, Y. C., Chan, T. W. (2003) EduXs: Multilayer educational services platforms.
+       Computers and Education 41(1), 1-18.
+Chen, Z. H., Deng, Y. C., Chang, L. J., & Chan, T. W. (2001). An motivating learning platform for children
+       through the pet-raising mechanism. National Computer Symposium, Taipei, 203-210.
+Chen, Z. H., Deng, Y. C., Chang, L. J., & Chan, T. W. (2002). An approach to cultivating reading habits for
+       children with pet-raising games. the 6th Global Chinese Conference on Computers in Education, Beijing,
+       213-216.
+Chen, Z. H., Yang, J. C., Deng, Y. C., & Chan, T. W. (2003). Environment design through coupling pet-raising
+       games with domain-independent learning activities. the 7th Global Chinese Conference on Computers in
+       Education, Nanjing, 755-759.
+Chen, Z. H., Yang, J. C., Deng, Y. C., & Chan, T. W. (2004). Motivation-Enhanced Learning Environment for
+       Children  through   Coupling  Pet-Raising   Games     with  Domain-Independent Learning     Activities.
+       Innovations in Education and Teaching International (submitted)
+Greer, J., McCalla, G., Collins, J., Kumar, V., Meagher, P. & Vassileva, J. (1998). Supporting peer help and
+       collaboration in distributed workplace environment. International Journal of Artificial Intelligence in
+       Education, 9, 159-177.
+Kay, J. (1997). Learner Know Thyself: Student Models to Give Learner Control and Responsibility, in Z. Halim,
+       T. Ottomann & Z. Razak (eds), Proceedings of International Conference on Computers in Education,
+       Association for the Advancement of Computing in Education (AACE), 17-24.
+Melson, G. F. (2001). Why the wild things are: Animals in the lives of children. Cambridge, MA: Harvard
+       University Press.
+Pesce, M. (2000). The playful world: how technology is transforming our imagination. New York, Ballantine
+       books: Random House.
+Self, J. A. (1988). Bypassing   the intractable problem   of student   modeling. International Conference of
+       Intelligent Tutoring Systems (ITS'88), Montreal, Canada, 18-24.
+Webster, N. C. (1998), Tamagotchi, Advertising Age, 69(26), 43.
+
+                                                        
+

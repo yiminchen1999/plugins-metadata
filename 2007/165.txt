@@ -1,0 +1,162 @@
+Computer Supported Moderation of E-Discussions: the ARGUNAUT
+                                                   Approach
+  Reuma De Groot, Raul Drachman, Rakheli (Rachel) Hever, Baruch B. Schwarz, The Hebrew University of
+                                            Jerusalem, Jerusalem, Israel,
+ Email: msruma@mscc.huji.ac.il, drachil@netvision.net.il, mt.scopus@gmail.com, msschwar@mscc.huji.ac.il
+               Ulrich Hoppe, Andreas Harrer, University of Duisburg-Essen, Duisburg, Germany,
+                                 Email: hoppe@collide.info, harrer@collide.info
+                           Maarten De Laat, Rupert Wegerif, University of Exeter, UK,
+                           Email: M.F.DeLaat@exeter.ac.uk, R.B.Wegerif@exeter.ac.uk
+    Bruce M. McLaren, Deutsches Forschungszentrum fur Künstliche Intelligenz, Saarbrücken, Germany,
+                                                bmclaren@dfki.de
+                       Benoit Baurens, Silogic, Toulouse, France, benoit.baurens@silogic.fr
+
+         Abstract: Despite their potential value for learning purposes, e-discussions do not necessarily
+         lead to desirable results, even when moderated. The study of the moderator's role, especially
+         in synchronous, graphical e-discussions, and the development of appropriate tools to assist
+         moderators    are the  objectives of  the ARGUNAUT          project. This  project   aims  at unifying
+         awareness and feedback mechanisms in e-discussion environments, presently implemented on
+         two   existing platforms.   This   system  is primarily     directed  to   a human    moderator    and
+         facilitating moderation, but might also help the students monitor their own interactions. At the
+         heart of system are the inter-relations between an off-line AI analysis mechanism and an on-
+         line monitoring module. This is done through a collaboration of technological and pedagogical
+         teams, showing promising preliminary results.
+
+Introduction
+         One of the important trends in Computer-Supported Collaborative Learning/Working (CSCL/W) is the
+proliferation of tools to support e-discussion so as to reach learning objectives. Discussions, however, do not
+necessarily lead to desirable results but often turn out to be ineffective or chaotic when no moderator/tutor is
+present. The ARGUNAUT project's (IST-2005027728 - Partially funded by the EC under the 6th Framework
+Program,   http://www.argunaut.org)    goal is to  provide  moderators   with     a computerized    tool to support  and
+increase their effectiveness    and thereby the quality    of the monitored    e-discussions.     ARGUNAUT      aims  at
+delivering a unified   mechanism    of awareness   and  feedback   to support     moderators   in  multiple e-discussion
+environments.  The  tools  that are  being  developed  within    the project  not   only  help the  moderator   visualize
+information about relevant aspects of the discussions taking place ("awareness"), but also pinpoint possible
+problematic issues, give "advice" to the moderator in real time, and support his/her intervention. In addition, the
+tools provide the moderator with options for post-discussion reflection and awareness. ARGUNUT supports two
+existing collaborative learning environments; Digalo (developed on the DUNES project ­ IST-2001-34153 -
+http://www.dunes.gr/), and Cool Modes (http://www.UDE.info/).
+
+         Since feedback and advice to the moderator regarding the current e-discussion are among the main
+goals of ARGUNAUT, a primary need was to define criteria for the quality of discussions. Observations of the
+argumentative  practices   that developed   in classes  led   to the  elaboration     of criteria such  as  participation,
+responsiveness, and Toulminian criteria for the quality of the arguments (see also Schwarz & Glassner, in
+press). Walton (1989) types of dialogue and Baker's approach (2003) to the use of argumentation in online
+dialogue helped us to elaborate criteria for quality.  Since the criteria are about dialogical models of reason, at
+least two levels of analysis were required: an account of intersubjective orientations and an account of ground
+rules fulfilled during interaction (see Wegerif & Mercer 1997 for the description of ground rules in classroom
+dialogues). Such criteria inspired us to come up with analysis schemes for e-discussions in the ARGUNAUT
+context. We    present  here the ARGUNAUT          system, developed   in     the hope   that it  will contribute to the
+moderators in their goal of facilitating good quality e-discussions.
+
+The ARGUNAUT Approach
+         During the conference, we plan to present the ARGUNAUT approach of supporting moderation, as
+well as the initial prototype (partial functionality) of the ARGUNAUT system. Various features that have been
+developed so far will be demonstrated in the context of the pedagogical scenarios.
+
+                                                         165                                                         CSCL 2007
+ARGUNAUT Scenario, Main Components and Architecture
+          The        ARGUNAUT             platform
+incorporates two modules, the "deep loop" and
+the "shallow loop".     The "shallow loop" is a
+module    for  monitoring    ongoing   discussion.
+This   module   collects    data about  awareness
+variables or   "indicators"   (e.g.,  participation,
+social interaction). If a possibly problematic or
+significant  situation  (pre-defined   as such)   is
+detected,    a  dialogue    appears,   giving     the
+moderator      the  relevant     information,  plus
+advice   and    "remote     control"  intervention
+options when applicable. The "deep loop" is
+an  off-line   analysis     mechanism   based     on
+machine-learning     techniques.     This  module
+takes  human-annotated       examples  of  past   e-
+discussions (situations, or aspects thereof) and
+attempts  to   learn   the  examples'  underlying
+pattern,  or   classifiers. These  classifiers can
+then  be  used   to  detect  similar  situations  in
+future discussions.    A    schematic overview    of
+the architecture is shown in Figure 1.                              Figure 1. Planned System Architecture
+
+The 'Indicators for Deep and Shallow Loop Classification' Approach
+          The offline analysis module ­ the deep loop- is designed to derive situation indicators. The underlying
+approach used by the deep loop is classification learning, i.e. induction of classifiers from labeled examples,
+which can later be used to classify new and previously unseen examples.           According to this approach, (a) our
+experts and researchers pre-define a typology for classification according to specific concepts (e.g., 'critical
+reasoning', a central concept for e-discussions in education); (b) discussions then are annotated according to
+these typologies or schemes, and these annotations are analyzed offline; (c) the output of the offline analysis is a
+set of situation classifiers, which may then be incorporated as indicators into the visualization and awareness
+components of ARGUNAUT. These modules are planned to also enable induction of relations between the
+indicators and generation of feedback for the moderator (and the learners), explaining the situation and offering
+advice. These possibilities will rely on "post-processing" of indicators produced automatically by the system,
+and increase the usefulness of the indicators for participants in the electronic discussions.
+
+          The  on-the-fly    analysis and visualization   module   ­ the   "shallow  loop"- provides methods   that  are
+"lighter" with respect to computability and complexity and thus can be utilized on-the-fly.            These methods
+provide the moderator with awareness feedback: information about specific characteristics of the monitored e-
+discussions. This information can be categorized into three types of awareness: a) process awareness: related to
+temporal traits of the discussion, such as phases, key events; b) content awareness: content-related properties,
+such   as    foci   of  interest   within     the  discussion,   relations  between   contributions,   etc.);  and   c)
+communication/social awareness: related to the social interrelations between the participants of a discussion,
+such  as typical   patterns  of  interaction  between   specific participants. Each  time   an "interpreter" component
+produces new information based on activities within the learning support system(s), the data is sent to the
+corresponding view(s) and integrated into the user interface that is available for the moderator, using elaborated
+visualization features.
+
+          The shallow and deep loops together enhance the capabilities of the moderator by explicitly marking
+situations of interest. The moderator may also further annotate discussions on the fly (or after the discussion),
+relying (among other things, on the indicators produced by the offline analysis. The moderator's annotations
+may in turn be used for further refinement of these indicators.
+
+Steps towards Implementation: First Results
+
+Cross-System Interoperability and the Moderator's Interface
+          The ARGUNAUT system is designed to achieve interoperability, that is to say, serve more than one e-
+discussion   end   user environment    (EUE).     Since actions, objects and   users are  logged  differently across e-
+
+                                                            166                                                     CSCL 2007
+discussion tools, there was a need for a "common format", a unified representation schema for action logs from
+both EUEs handled by the project.   This was achieved via the use of transformational approaches converting the
+action logging of the EUEs to common format XML logs. The ARGUNAUT 'Moderator's Interface' includes a
+unified graphical representation and a cross-system replay system based on this common format, which allows
+the moderators to monitor the discussion in progress, regardless of the concrete EUE the students are using. It
+also includes the ability to make content keyword queries, annotate discussions, and intervene in the students'
+EUEs via remote control capabilities (see Figure 2).
+
+  Figure 2. ARGUNAUT's Moderator Interface            Figure 3. The Integration of the Deep and Shallow Loops
+
+Offline Analysis and Annotation of E-Discussions
+         At this stage, we have not determined absolute criteria for quality of e-discussions. Rather, we have
+focused on identifying and annotating phenomena relevant to the analysis and evaluation of such discussions.
+Our initial experiences would suggest that actions, objects and attributes in the discussion log files, can be
+successfully used to  capture these  more   meaningful  theoretical   phenomena.     This  can be achieved by    the
+combination of structural and process-oriented elements (e.g., ontologies of shapes, types of connectors, logged
+actions) with content  elements (the   text of the discussion   itself). One direction for  this is the training of
+machine-learning classifiers to classify discussion units (shapes and paired-shapes) into pre-defined theoretical
+categories, using structural and process-oriented attributes. The classifiers are trained with examples categorized
+by humans, based on content and some contextual cues. At this point we already have a few classifiers for
+phenomena such as 'critical reasoning' and 'question and answer', showing high overall accuracy (86-95%). A
+second direction is the use of a PROLOG-based pattern matching tool (Harrer, Vetter, Thür, & Brauckmann,
+2005) in conjunction with e-discussion XML log files to generate "rules" in order to look for "patterns" that
+combine user actions (e.g., create shape, delete link) and structural elements with content key words.
+
+Integration of Deep Loop Classifiers with the Online Shallow Loop
+         As  described above,  the  AI  module    of  ARGUNAUT        (the  "deep   loop") has been  successful  in
+generating some classifiers. We are now in advanced stages of integrating these classifiers with the online
+monitoring module (the "shallow loop"), as shown in Figure 3.
+
+References
+Baker, M. J. (2003). Les dialogues avec, autour et au travers des technologies éducatives. /¶Orientation Scolaire
+         et Professionnelle, 32(3), 359-397.
+Harrer, A., Vetter, M., Thür, S., Brauckmann, J. (2005) Discovery of Patterns in Learner Actions. In Proc. of
+         Artificial Intelligence in Education (AIED), IOS Press, Amsterdam, pp. 816-818.
+Schwarz, B. B. & Glassner, A. (in press). The role of CSCL argumentative environments for broadening and
+         deepening understanding    of the  space  of debate.   In R. Saljo  (Ed.), Information  Technologies and
+         Transformation of Knowledge.
+Walton,  D.  N. (1989).    Informal Logic:   a handbook     for critical  argumentation.   Cambridge:   Cambridge
+         University Press.
+Wegerif, R., & Mercer, N. (1997). Using computer-based text analysis to integrate quantitative and qualitative
+         methods in the investigation of collaborative learning. Language and Education, 11(4), 271-287.
+
+                                                        167                                                    CSCL 2007
+

@@ -1,0 +1,122 @@
+CSCL 2013 Proceedings                   Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+           Understanding Participation and Persistence in Online
+                                        Peer-to-Peer Learning
+                            Sarah Webster, Alisha Alam, June Ahn, Brian S. Butler
+                                   University of Maryland, College Park, MD
+                 websters@umd.edu, alisha@umd.edu, juneahn@umd.edu, bsbutler@umd.edu
+
+        Abstract:  We   present  early   work    seeking to understand   participation  and persistence   in
+        online,  peer-to-peer   learning   environments.  We   obtain   log  data from   the  Peer-to-Peer
+        University (P2PU) and: (1) outline our methods to move from raw data to developing metrics
+        that can  help  explore  how    to promote  deeper  participation   and persistence   rates  in open
+        courses, and (2) describe some preliminary findings about different metrics of participation
+        and persistence in P2PU, culled from their log data.
+Introduction
+Open, online learning is a fast rising phenomenon in computer supported collaborative learning (CSCL). The
+growing library of open education resources (OER) combined with increased technology availability has created
+trends toward massively open online courses (MOOCs). Highly visible ventures such as Coursera, Udacity, and
+EdX have garnered much attention by attracting tens of thousands of learners (and sometimes hundreds of
+thousands) to their courses (Pappano, 2012). There are also other types of open online learning paradigms that
+are more learner-driven, bottom-up, and peer-to-peer. One such platform is the Peer-to-Peer University (P2PU),
+which is the focus of our research. In all of these different online learning platforms, the issue of learner
+participation and persistence is critical. Only a small number of learners even finish many of the high profile
+MOOC courses (Pappano, 2012), and peer-to-peer learning platforms are directly dependent on teacher and
+learner interactions to keep courses robust and active (Ahn, Weng, & Butler, 2013). A ripe area for future
+research is to understand metrics of participation and persistence in open, online learning. In this poster, we
+describe our early research with raw log data of the P2PU platform. We outline our methodologies in working
+with this data and preliminary findings about potential metrics of engagement that will inform future work.
+Methodology
+This study is a part of an ongoing partnership with P2PU where we are exploring how to create publicly
+sharable datasets and conduct analyses of this widely used open education platform. A major challenge of this
+type of research is to transform raw log data into a usable dataset that can be used to derive insight into open,
+online learning. We obtained data from P2PU that represented a log of all elements of the platform (e.g. courses,
+users, and learning activities etc.) in addition to all interactions that learners have had. This data captures a live
+snapshot of the system in July 2012. All   measures represent the system at that  point in time.
+        We used SQL to identify the tables, relationships, and data they contain. We also conducted direct
+observations of the P2PU.org website to identify how members go about: (a) joining learning communities, (b)
+interacting with peers, and (c) participate in learning groups. We then identified how these interactions with the
+P2PU.org   community    were  represented   in the underlying   database   structure. One   critical issue  in online
+platforms surrounds participation and persistence in open courses, so we concentrated our data investigation on
+understanding the characteristics of users and courses. We also developed a descriptive understanding of the
+P2PU ecosystem. Some of the characteristics we explored include: categories of courses in P2PU, the status of
+courses, the participation levels in courses, and the grouping of courses into schools.
+        Another   goal  of this initial analysis  was to  derive variables   relevant to concepts    of participation,
+engagement, and persistence in courses. Working from the data structures provided in the P2PU platform, we
+defined three types of measures that could be salient for future studies:
+1.  Basic engagement: The P2PU data allows us to track basic measures of course participation such as the
+    number of participants, followers, and organizers associated with each course. We can also understand
+    participation from the user's perspective, such as how many courses on average a user is a participant in.
+2.  Active   participation:  Beyond     basic  counts of    participation, we   also  defined  examples     of active
+    participation where users make explicit contributions to P2PU courses. These measures include statistics
+    such as the number of comments shared in courses or learning groups.
+3.  Metrics  of  Persistence:   We were     also interested in measures    that reflect  whether learners   complete
+    learning tasks and progress through courses. We derived two types of metrics from the P2PU log data.
+        a.   Task Completion Rate ­ Many P2PU courses have tasks that learners are asked to complete. We
+             were  able to  derive an   average   completion   rate for each  P2PU    course, which     was found by
+             calculating how many tasks on average, participants completed, divided by the total number of
+             tasks designed in a given course. In this way, we may be able to compare the completion rates of
+             different types of courses in P2PU in future work.
+
+© ISLS                                                                                                           375
+CSCL 2013 Proceedings                Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+         b.  Badges Earned Rate ­ Learners can also earn digital badges in the P2PU platform. Badges serve
+             many social and educational functions (Antin & Churchill, 2011; P2PU, 2012). We are able to
+             track the total number of badges earned by each learner across courses, in addition to the badges
+             that could be potentially earned in a given course. Using these metrics we can calculate a metric of
+             badge earning rate in each course, dividing the average number of badges a person earns by the
+             total number they could potentially earn in a given course.
+Preliminary Findings
+Descriptive summaries of the measures are included in Table 1. We found much variation between P2PU
+courses in terms of the level of participation as well as in the range of activity.
+Table 1: Descriptive summaries of participation and engagement measures across P2PU course
+                                Mean          Std.Dev          Median        Min                  Max
+Basic Engagement
+   Organizers                   1.5           3.712762         1             1                    98
+   Participants                 32.0          88.32164         8             1                    853
+   Followers                    5.7           31.46898         1             1                    594
+   Participation                3.9           3.8              2.7           1                    24
+Active Participation
+   Comments/Posts               12.5          44.2             2             1                    388
+User Achievement
+   Task Completion Rate         51%           20%              50%           2%                   90%
+   Badges Earned Rate           62%           27%              50%           18%                  100%
+In addition to targeting the specific engagement measures, this research also allows us to create a descriptive
+summary of the ecosystem of P2PU. The components of that ecosystem are the schools, courses, learners, tasks,
+and badges. We have identified 6 schools in P2PU. There are 1333 total courses. Of these 25% are active.
+Courses belong to course types: Study Groups (57%), Challenges (17%) and Courses (26%). A total of 34,777
+learners have created  accounts with P2PU,   however    only 4,576 are   active     participants, learners who have
+returned to the site multiple times, registered for multiple courses, or created content posts. Finally, as learners
+progress through courses, they complete tasks and earn badges to mark their progress. Badges are used as a tool
+of motivation to keep the learners engaged in the courses. Task completion and badge earning measures are
+described in Table 1.
+Discussion and Conclusion
+This poster describes the very early work we are undertaking on open, peer-to-peer learning in P2PU. We have
+begun the process of converting log data into usable datasets to glean deeper insight into the P2PU platform, and
+how learners participate in and persist through open online courses. Initial descriptive analyses are presented
+here, but these metrics of participation and engagement will serve as the foundation for future research. For
+example, in future work we plan to examine whether the characteristics of courses and learners in P2PU relate
+to metrics of persistence such as completion rates and badge earning. These future studies promise to shed light
+on factors that might help improve learner engagement in open, online learning, which is a topic that is gaining
+tremendous traction and visibility in the coming years.
+Acknowledgements
+This work was supported by a grant from the National Science Foundation (#OCI1257347).                 Thank you to
+Philipp Schmidt and Dirk Uys at P2PU for their collaboration and sharing of data.
+References
+Ahn, J., Weng, C., & Butler, B. S. (2013). The dynamics of open, peer-to-peer learning: What factors influence
+         participation in the P2P University? Proceedings of the 46th Annual Hawaii International Conference
+         on System Sciences (Learning Analytics and Networked Learning track).
+Antin, J., & Churchill, E. (2011). Badges in social media: A social psychological perspective. In Proceedings of
+         CHI 2011 ACM SIGCHI Conference on Human Factors in Computing Systems.
+Bienkowski, M., Feng, M., & Means, B. (2012). Enhancing teaching and learning through educational data
+         mining and learning analytics: An issue brief. Washington, DC: Office of Educational Technology,
+         U.S. Department of Education.
+P2PU.    (2012).  Open    badges    for  lifelong  learning.   Retrieved    on       September     28,  2012   from
+         https://wiki.mozilla.org/images/b/b1/OpenBadges-Working-Paper_092011.pdf.
+Papano,   L. (November    2, 2012).  The   year   of the   MOOC.   Retrieved         on November     8,  2012  from
+         http://www.nytimes.com/2012/11/04/education/edlife/massive-open-online-courses-are-multiplying-at-
+         a-rapid-pace.html?pagewanted=all.
+
+© ISLS                                                                                                          376
+

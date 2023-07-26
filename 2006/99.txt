@@ -1,0 +1,376 @@
+     The Impact on Learning of Generating vs. Selecting Descriptions
+                         in Analyzing Algebra Example Solutions
+
+                   Albert Corbett, Angela Wagner, Sharon Lesgold, Harry Ulrich, Scott Stevens
+           Human-Computer Interaction Institute, Carnegie Mellon University, Pittsburgh PA 15206, USA
+                      Email: {corbett, awagner, slesgold}@cmu.edu; {hgu, sms}@cs.cmu.edu
+
+         Abstract. Self-explanation of worked examples is an effective strategy for student learning. This
+         paper examines the impact on learning of self-generating explanations of worked examples vs.
+         selecting them from a menu in an intelligent tutoring system. In this study, students describe the
+         structure of algebraic models of real-world problem situations. In one tutor version students select
+         their descriptions from menus and in a second version students type their explanations in their own
+         words. In a third version menu-selection and self-generation are interleaved. In this condition the
+         canonical menu entries may serve to scaffold self-generated descriptions. Students completed the
+         problems fastest with the menu version and the students learned to both explain and generate the
+         target algebraic models equally well in all versions. However, the type-in version led to more
+         successful transfer to describing novel algebraic models of problem situations. The scaffolded
+         version was the least successful of the three.
+
+         Self-explanation of instructional materials is a highly effective learning strategy (e.g., Chi, Bassok, Lewis,
+Reimann & Glaser, 1989). More specifically, self-explanation of worked examples is an effective strategy for
+learning how to solve problems (Renkl, 1999) and interleaving self-explanation of worked examples with actual
+problem solving can be more effective than problem-solving alone (Trafton & Reiser, 1993). Students can be trained
+successfully to self-explain instructional materials (Bielaczyc, Pirolli & Brown, 1995; Chi, de Leeuw, Chiu &
+LaVancher, 1994), but the task of generating explanations is challenging and individual differences in the quality of
+explanations directly predict differences in learning outcomes (Renkl, 1997). Results such as these have stimulated
+research on  intelligent tutor support  for  student explanations,  since  intelligent tutors can provide just-in-time
+individualized feedback and advice on student explanations. Intelligent tutors have been developed that successfully
+support student explanations of worked examples (Conati & VanLehn, 2000) and self-generated problem-solving
+steps (Aleven & Koedinger, 2002).       This paper addresses a design issue that arises when incorporating student
+explanations into an online learning environment: the impact on learning of selecting explanations from a menu vs.
+typing self-generated explanations.  One     of the  principal benefits of intelligent  tutoring systems  is providing
+feedback on student actions. While intelligent learning environments are beginning to successfully incorporate
+natural language processing capabilities (e.g., Graesser, Person, Harter & TRG, 2001), such processing remains a
+substantially more challenging task than processing menu selections. Are there learning benefits for students that
+accompany self-generated explanations that warrant the additional effort, both on the part of developers and on the
+part of students? Aleven, Koedinger & Popsecu (2003) compared self-generated and menu-based explanations of the
+problem solving steps student generated in a Geometry intelligent tutor. They found in posttests that students in the
+self-generation condition learned to generate explanations better, but were no more successful in problem solving. In
+this paper we examine    the   question in  the context  of an  Algebra  modeling  task,  in  which students  generate
+explanations of worked    examples. In   the following   sections we  describe the algebra    model analysis  task and
+corresponding intelligent Model Analysis Tool, a new ALPS (Active Learning in Problem Solving) version designed
+to engage students more actively in problem solving and a study that compares three student input conditions: menu-
+selection, self-generated typed explanations, and a "Scaffolded" condition which interleaves problems with menu-
+selection and problems with self-generation.
+
+Algebra Modeling
+         The Algebra Model Analysis tool is employed in a Middle School Math Cognitive Tutor course. Consistent
+with National Council of Teachers of Mathematics (NCTM) standards, a major goal of the course is to introduce
+students to algebraic modeling of real-world problem situations. An example situation that can be modeled with a
+slope-intercept form equation of the form Y = MX+B is:
+
+         The Pine Mountain resort is expanding. The main lodge holds 50 guests. The management is
+         planning to build cabins that each hold 6 guests.
+
+                                                            99                                                ICLS 2006
+Many Cognitive Tutor units in the Middle School Mathematics courses engage students in answering arithmetic
+questions about such situations and generating Algebraic expressions to model the situations, in this example, Y =
+6X + 50. The Model Analysis tool is an intelligent tutor unit which essentially provides worked examples of such
+modeling problems. The tutor presents both the problem situation and an algebraic model of the situation and asks
+the student to describe the mapping from the hierarchical components of the algebra model to the components of the
+problem situation. Figure 1 displays the Model Analysis Tool on the left, at the end of this Pine Mountain problem.
+The tutor was seeded with the problem description and algebra model at the top of the screen and with the six
+hierarchical components of the algebra model components down the left side of the screen. The six text fields were
+initially blank and the student filled them with menu selections. For instance, the student selected "The number of
+guests in all the cabins" as the description of 6X. Students receive immediate accuracy feedback on the menu entries
+they select and can ask for help on selecting the menu entries.
+
+         We developed the Model Analysis Tool following a study of high school algebra students, who were given
+a model description task as a paper and pencil test after completing a model generation tutor unit.       We found that
+students were 83% correct in describing the constants in Algebra model, but only 41% correct in describing any
+component with a variable. We also found that students who could describe components with variables were more
+likely to be able to successfully generate algebra models (Corbett, McLaughlin, Scarpinatto & Hadley, 2000). The
+Model    Analysis tool has proven effective in both Algebra        and Pre-Algebra  courses  (Corbett,     McLaughlin,
+Scarpinatto & Hadley, 2000; Corbett, Wagner & Raspat, 2003). It yields large student learning gains not just in
+describing model components, but also in generating algebraic models of situations. In fact, it yields learning gains
+in model generation of the same magnitude as the direct model generation tutor units (Corbett, Wagner & Raspat,
+2003). In the present study, we compared three versions of this Model Analysis Tool as described in the following
+section.
+
+         Figure 1. Screenshots of the basic Model Analysis Tool (left) and ALPS Model Analysis Tool (right).
+
+ALPS Learning Environment
+         In this study we compare two versions of the Model Analysis Tool across three experimental conditions.
+One condition employs the basic Model Analysis Tool with menu-based entry as described in the preceding section.
+The second condition employs a new ALPS (Active Learning in Problem Solving) environment which accepts
+student-generated  typed descriptions. The  ALPS  Tutor  employs       an off-the-shelf technology called     Synthetic
+Interviews (Stevens & Marinelli, 1998) to simulate an interaction with a human tutor. In the model analysis unit,
+students type their descriptions instead of selecting them from a menu and receive feedback and hints via a video
+tutor window, as displayed on the right in Figure 1. In both the basic Menu-based and ALPS conditions in this
+study, students complete six model analysis problems. Students are required to enter a correct description for each of
+the components of a problem before moving to the next and can ask for help with any descriptions. The same hints
+are available in both environments, although they are presented as text in the Menu-based environment and as a
+video message  in  the ALPS  environment.   In addition, we      designed a third, "Scaffolded" condition,    in which
+students complete three of the problems (the first, second and fourth) with the basic menu-based tool and complete
+the remaining problems with the ALPS self-generation tool. This condition reflects the fact that the menu entries are
+themselves worked examples of canonical descriptions and explores whether interleaving canonical explanations
+with self-generated explanations can serve to scaffold self-generation and yield more efficient learning.
+
+                                                         100                                                   ICLS 2006
+Component Descriptions
+        Canonical descriptions of the model components for the Pine Mountain problem are displayed in Figure 1
+in the menu-based screenshot on the left. In the ALPS self-generation condition, students were not required to type
+canonical descriptions, but were    required to type  descriptions that unambiguously  referenced the appropriate
+quantity or quantities in the problem situation. The ALPS environment employed an ordered keyword matching
+algorithm to process student entries and observed these general principles across problems: (a) problem-specific
+synonyms were accepted (e.g., persons or people for guests; lodge, main cabin, or main building for main lodge); (b)
+syntax, including function words was not enforced if the meaning could be inferred; (c) the description of the rate
+constant M required a synonym of "each", as in "the number of guests in each cabin", (d) the description of the MX
+term required a variation of "all" as in "the number of guests in all cabins" (e) the description of Y required some
+synonym of  "total", as in "total guests" or "guests in the resort", and (f) the MX+B expression could be described in
+the same way as Y or as the sum of MX and B, e.g., "the number of guests in the lodge and all cabins." The ALPS
+version of each problem distinguished among an average of 47 error categories. Each error category was associated
+with a feedback messages, except for a default "uninterpretable" error category. The menus for each problem in the
+basic model analysis tool were seeded with three incorrect entries along with the six correct entries. The three
+incorrect entries for each problem were selected from common errors that had been observed previously, for
+example, the ambiguous description "the number of guests in cabins."
+
+Design of the Study
+
+Participants
+        Eighty-five students participated in the study for pay. The students ranged in age from 12 to 16 and were
+enrolled in the 7th, 8th or 9th grade. The students responded to a newspaper ad and represented 54 schools,
+including both private and public schools in urban and suburban communities. Twenty-eight students participated in
+the Menu condition, 30 in the Scaffolded condition and 27 in the ALPS condition.
+
+Materials
+        Twelve problem situations that can be represented by a slope intercept form algebraic equation (Y =
+MX+B) were employed in the study. Six were employed as tutor problems. In each problem students described what
+each hierarchical component of the problem situation represented in the problem situation, as described above.
+
+Pretests, Midtest and Posttests
+        Three comparable    paper-and-pencil    tests were constructed,  each containing two problems.   The     first
+problem presented a statement of a real-world situation and students were asked to solve three arithmetic questions
+and to generate a symbolic   model   of the  problem   situation. The second  problem was  analogous  to the     tutor
+problems. It presented both a problem statement and slope-intercept form symbolic model of the situation and
+students were asked to describe in their own words what each of the hierarchical symbolic components represented
+in the situation. The order in which these three test forms were presented was counterbalanced across students
+within each of the three groups.
+
+Transfer Test
+        A paper-and-pencil transfer test was designed to examine whether students' skill in describing equation
+components generalizes to novel problem situations.     The transfer test contained four problems in which students
+were presented problem statements and algebraic models and were asked to describe the mapping of the model
+components to the situation. The first problem presented a problem situation and a slope-intercept form Algebra
+model identical in form to the tutor problems, except that the problem statement did not include the actual values of
+the intercept and rate constants (additive and multiplicative constants). Problems 2-4 described situations whose
+Algebraic models differed in structure from the tutor problems. Unlike Problem 1, the problem statements in these
+problems provided the values for all relevant constants. Problem 2 presented a problem situation and Algebra model
+analogous to the tutor and test items, except the intercept constant is negative. Problem 3 presented a problem
+situation in which the intercept constant was itself a product of two constants, Y = 4X + 3*5, and in which the
+problem statement contained a distractor constant. Problem 4 presented a problem with a distributive Algebraic
+model, Y = 4(X ­1) + 10.
+
+                                                          101                                               ICLS 2006
+Questionnaires
+       A questionnaire was developed with 10 questions, displayed in abbreviated form in Table 3. The questions
+concerned students' self-knowledge of the learning process and attitudes about the tutor.
+
+Procedure
+       The study consisted of two sessions on successive days. In the first session students completed a survey of
+attitudes about mathematics, completed the pretest, three tutor problems, the questionnaire about the tutor, and the
+midtest. In the second session, students completed the final three tutor problems, the tutor questionnaire, completed
+the posttest and finally completed the transfer test.
+
+Results
+       To evaluate the ALPS tutor accuracy in processing the typed descriptions, two human judges independently
+categorized the  3053 descriptions   students typed     in the  ALPS and   Scaffolded conditions and   met       to resolve
+disagreements in their scoring. The human judges scored 1798 descriptions as correct and 1255 as incorrect. The
+tutor accurately categorized 90% of the descriptions as either correct or incorrect. More specifically, the tutor
+correctly accepted 84% of the students' correct descriptions and correctly rejected 98% of the incorrect descriptions.
+Among the 1235 incorrect descriptions the tutor accurately rejected, 82% were assigned to the correct error category
+and appropriate feedback was provided to students, while 18% were assigned to the wrong error category.
+
+       Students in the Menu-based condition completed the set of six tutor problems in an average of 11.3
+minutes. Students in the Scaffolded condition completed the problems in an average of 32.0 minutes and students in
+the ALPS condition completed the problems in an average of 38.0 minutes. There are several reasons students took
+longer to complete the problems in the ALPS and Scaffolded conditions. Students took longer to type a description
+than to select one from a menu, were more likely to type an incorrect description than select one from a menu and
+were more likely to ask for a hint. Finally, the tutor failed to accept some descriptions the human judged categorized
+as correct, as described above.
+
+Test Performance
+       The results of the pretests, midtests and posttests are displayed in Table 1. The three versions of the model
+analysis unit were very effective overall. Collapsing across interface condition and problem type, students' average
+probability correct increased 26% across the study, from 0.61 on the pretest to 0.74 on the midtest between tutor
+sessions to 0.76 on the posttest. In an Analysis of Variance with Interface version and Test as factors, the main effect
+of test time is significant, F(2,164) = 30.59, p < .01. The main effect of interface condition and the interaction were
+non-significant.
+
+Table 1: Pretest, midtest and posttest accuracy (probability correct) overall and for the three problem types.
+
+                    Pretest       MidTest      PostTest                         Pretest      MidTest      PostTest
+                   p(correct)    p(correct)   p(correct)                       p(correct)   p(correct)   p(correct)
+   *Overall                                                    *Descriptions
+     Menu            0.62           0.71        0.75              Menu           0.58          0.71              0.77
+    ALPS             0.62           0.80        0.81              ALPS           0.59          0.78              0.82
+   Scaffolded        0.58           0.72        0.75            Scaffolded       0.50          0.72              0.77
+    Average          0.61           0.74        0.77             Average         0.55          0.72              0.78
+
+  *Generation                                                   Arithmetic
+     Menu            0.57           0.68        0.75              Menu           0.70          0.74              0.71
+    ALPS             0.63           0.81        0.78              ALPS           0.69          0.84              0.79
+   Scaffolded        0.57           0.73        0.77            Scaffolded       0.74          0.72              0.71
+    Average          0.59           0.74        0.77             Average         0.71          0.76              0.74
+*Learning gains from Pretest to Posttest are reliable, p < .05. Main effects of Interface type are not reliable.
+
+       Analyses of the three separate problem types yielded similar patterns for the Model Description questions
+and Model Generation questions, but not the Arithmetic questions. Average probability correct in describing model
+components increased 42% across the tests, from 0.55 on the pretest to 0.72 on the midtest and 0.78 on the posttest.
+
+                                                            102                                                   ICLS 2006
+This main effect of test time is significant F(2,164) = 38.37, p < .01, while the main effect of interface version and
+the interaction were not reliable. Average probability correct in generating an Algebraic model for a problem
+situation increased 30% from 0.59 on the pretest to 0.74 on the midtest and 0.77 on the posttest. This main effect of
+test time is significant F(2,164) = 6.04, p < .01, while the main effect of interface version and the interaction were
+not reliable. Average probability correct for the Arithmetic problems changed little across the study, from 0.71 on
+the pretest to 0.76 on the midtest to 0.74 on the posttest. In an Analysis of Variance, the main effects and interaction
+are non-significant. This overall pattern, in which Arithmetic scores remain unchanged, while model description and
+generation accuracy increases replicates the results of earlier studies (Corbett et al, 2003).
+
+Transfer Test
+        The results for the four transfer test problems are displayed in Table 2. Overall, students found these model
+descriptions more challenging than the descriptions on the posttest. Average probability correct for the transfer
+problems is 0.64 vs 0.78 for the posttest descriptions. The first problem asked students to describe an algebra model
+with the same structure as in all the tutor problems, but the problem description did not include the values of the two
+constants. The remaining three problems asked students to describe models with different structures than the tutor
+problems. As can be seen, there is little difference among the three groups in describing the first problem. Average
+probability correct ranges from 0.55 to 0.58. Across the remaining three problems, average probability correct for
+the ALPS self-generation typed-explanation groups is consistently higher than for the Menu group or Scaffolded
+group.
+
+Table 2: Transfer test accuracy (probability correct) for the four problems.
+
+                                        Prob 1        *Prob 2        **Prob 3         *Prob 4
+                                       p(correct)    p(correct)      p(correct)      p(correct)
+                   Menu                  0.55          0.61            0.63            0.70
+                   ALPS                  0.54          0.75            0.70            0.79
+                   Scaffolded            0.58          0.61            0.55            0.68
+                   Average               0.56          0.65            0.62            0.72
+                * The ALPS group is reliably more accurate than either the Menu or Scaffolded groups, p < .05.
+                ** The ALPS group is marginally more accurate than the Scaffolded group, p < .10.
+
+        In a 3x4 Analysis of Variance with interface condition and problem type as factors, the main effects and
+interaction are non-significant. But if we collapse across the three problems 2-4 with novel model structures and
+perform a 3x2 ANOVA, the main effect of problem type is reliable, F(1,81) = 13.70, p < .01, the main effect of
+condition is not reliable, but most importantly the interaction of interface condition and problem type is marginally
+significant, F(2,81) = 2.63, p < .08. In a 3x3 ANOVA on just problems 2-4, the main effect of interface condition is
+reliable, F(2,81) = 3.31, p < .05, and the main effect of problem type is reliable F(2,162) = 6.77, P < .01, while the
+interaction is non-significant, F(4,162) = 0.46. In pairwise comparisons, the ALPS group is reliably more accurate
+than the Menu group in describing problem 2, F(1,52) = 5.00, P < .05, and problem 4, F(1,52) = 4.107, p < .05, but
+not problem 3. The ALPS group is reliably more accurate than the Scaffolded group in describing problem 2,
+F(1,54) = 5.46, p < .05, and problem 4, F(1,54) = 4.26, p < .05 and marginally more accurate in describing problem
+3, F(1,54) = 4.014, p < .06.  There are no reliable differences between the Menu and Scaffolded groups in describing
+any of the three problems.
+
+Questionnaires
+        Table 3 displays the average ratings for the questionnaire that was presented each day. Ten students who
+did not ask for help omitted responses to questions 7 and/or 8 on one or both questionnaires A separate two-way
+analysis of variance was performed on each of the questions. The most striking result is that there are no reliable
+main effects nor interactions for questions 2-6, The students in the three groups did not vary reliably in how much
+they liked the tutor or how much they think the tutor helped them. There is a reliable main effect of tutor version on
+question 1, F(2,82) = 4.13, p < .05. Students in the ALPS and Scaffolded conditions perceived the tutor problems as
+harder than students in the Menu condition. In pairwise ANOVAs, the ratings difference between the Menu and
+Scaffolding groups is reliable, F(1,56) = 8.02, p < .01 and the difference between the Menu and ALPS conditions is
+marginal, F(1,53) = 3.14, p < .09. The difference between the Scaffolded and ALPS groups is not reliable.
+
+                                                          103                                                    ICLS 2006
+       There is also a main effect of tutor version on question 7, F(2,72) = 3.14, p < .05 and question 8, F(2,72) =
+5.01, p < .01. Students in the ALPS and Scaffolded conditions liked the tutor's help more than students in the menu
+condition. In pairwise comparisons, the difference between the Menu and Scaffolded groups is reliable for question
+7, F(1,48) = 6.07, p < .05 and question 8, F(1,50) = 9.71, p < .01. Similarly, the difference between the Menu and
+ALPs groups is marginally reliable for question 7, F(1,45) = 3.96, p < .06, and reliable for question 8, F(1.46) =
+6.89, p < .05. The differences between the ALPS and Scaffolded groups are non-significant. The reliable effects for
+questions 7 and 8 likely reflect a greater student need for help in the type-in condition common to the ALPS and
+Scaffolded tutors, rather than a preference for the video tutor modality. The main effect of condition was not reliable
+for questions 9 and 10. It is noteworthy that there are no reliable differences between the ALPS condition and the
+Scaffolded condition. Half the problems in the Scaffolded condition were the easier menu-based problems and these
+problems in turn were intended to provide canonical description models to guide the students' self-generated
+descriptions in the other problems.      There  is no   evidence in the questionnaires however, that students in  the
+Scaffolded condition preferred it in anyway to the ALPS condition. If anything, ratings in the ALPS group tend to be
+more positive, although not reliably so.
+
+Table 3: Mean student ratings on the two attitude questionnaires.
+
+                      Questions                                         Day 1                     Day 2
+ "1" strongly agree; "7" = strongly disagree                  Menu      ALPS     Scaff    Menu    ALPS       Scaff
+ *1. The tutor exercises were hard.                             5.5      5.1      5.0      5.9       5.3      4.7
+  2. I learned a lot from this tutor lesson.                    4.4      4.2      3.8      4.7       3.9      4.0
+  3. I think using the tutor was fun.                           3.8      4.1      4.0      3.8       3.9      3.7
+  4. The tutor helped me solve problems faster.                 3.2      3.6      4.0      3.6       3.8      4.0
+  5. I liked working with the tutor.                            3.1      2.8      3.7      2.9       3.3      3.5
+  6. The tutor helped me to understand better.                  3.2      2.9      3.5      3.6       3.3      3.3
+ *7. I liked asking the tutor for help.                         4.9      3.9      3.8      5.0       4.0      3.9
+ *8. I wanted more help from the tutor.                         5.8      4.8      4.7      5.3       4.4      4.3
+  9. I like the messages when I made errors.                    3.3      3.0      3.1      3.7       3.5      3.5
+ 10. I wanted more messages when I made errors.                 4.7      4.2      4.3      4.9       4.2      3.9
+*The main effect of tutor version is reliable, p < .05.
+
+Discussion
+       All three variations on the Model Analysis Tool were successful. After completing six problems, students
+showed substantial learning gains both in describing the target Algebra models and in generating these Algebraic
+models. Since the learning gains are indistinguishable among the three conditions, menu-based entry of descriptions
+is most efficient for purposes of the target tasks, both in terms of developer time and student time. However,
+students in the ALPS condition who typed in self-generated descriptions demonstrated greater transfer to successful
+descriptions of novel Algebraic models than students in the other conditions. This is a noteworthy result, since this
+self-generation effect is obtained over a fixed curriculum size, but more work is need before strong instructional
+prescriptions are possible. For example, while the students in the ALPS conditions spent three times as long on task
+as students in the Menu condition, time on task is unlikely to fully explain the effect, because students in the
+Scaffolded condition spent almost as much time on the six tutor problems as students in the ALPS condition. It's
+likely that we can design more efficient learning conditions than either of the pure Menu or pure ALPS conditions,
+but the Scaffolded condition was surprisingly unsuccessful on that score.    Students in the Scaffolded condition spent
+more time on the learning task than students in the pure Menu condition and didn't realize any larger learning gains
+the Menu students, realized smaller transfer effects than the ALPS students, and didn't like the tutor better than
+students in the other conditions.
+
+       The questionnaire results suggest that the difference between the ALPS and menu conditions on the transfer
+task is probably not primarily motivational. Students in the ALPS condition could have been more engaged by the
+transfer problems either because they were more confident or just in a better mood generally, but there were no
+reliable differences between the ALPS and menu groups in students' ratings on the most relevant questions:      how
+much they learned, how well they understood the problems, how much they like the tutor or whether the tutor was
+fun. Even the non-significant trends argue against a motivational effect, since the average ratings of students in the
+scaffolded group are generally more similar to the ALPS students than to the menu students. Instead, the results
+
+                                                            104                                                ICLS 2006
+suggest that students in the ALPS condition are developing a deeper understanding that transfers more readily       to
+novel situations. Further work is needed to better understand the nature of this self-generation transfer effect. To
+what extent is linguistic knowledge transferred and to what extent is it mathematical knowledge transferred, and will
+there be more successful transfer to model generation as well as model description? But, as natural language
+technology   continues   to improve,   these results suggest   that actively engaging  students  in natural   language
+interactions can play an important role in the development of mathematics knowledge.
+
+References
+Aleven, V.A. and Koedinger, K.R. (2002). An effective metacognitive strategy: Learning by doing and explaining
+         with a computer-based Cognitive Tutor. Cognitive Science, 26, 147-179.
+Aleven, V., Koedinger, K.R. and Popescu, O. (2003). A tutorial dialogue system to support self-explanation:
+         Evluation and open questions. In U. Hoppe, F. Verdejo & J. Kay (Eds). Artificial intelligence in Education:
+         Proceedings of AIED 2003: The 11th International Conference on Artificial Intelligence and Education, 39-
+         46. Washington D.C, IOS Press.
+Bielaczyc,  K., Pirolli, P.  and  Brown,  A.  (1995).  Training  in  self-explanation and    self-regulation strategies:
+         Investigating the effects of knowledge acquisition strategies on problem solving. Cognition and Instruction,
+         13, 221-252.
+Chi, M.T.H., Bassok, M., Lewis, M., Reimann, P. and Glaser, R. (1989). Self-explanations:      How students study and
+         use examples in learning to solve problems.  Cognitive Science, 13, 145-182.
+Chi, M.T.H, de Leeuw, N., Chiu, M. and LaVancher, C. (1994).        Eliciting self-explanations improves understanding.
+         Cognitive Science, 18, 429-477.
+Conati, C. and VanLehn, K. (2000). Toward computer-based support for meta-cognitive skills: A computational
+         framework to coach self-explanation. International Journal of Artificial Intelligence in Education, 11, 398-
+         415.
+Corbett, A.T.,  McLaughlin,      M.S.,  Scarpinatto, K.C.  and   Hadley,  W.S.    (2000). Analyzing  and     generating
+         mathematical models: An Algebra II Cognitive Tutor design study. In G. Gauthier, C. Frasson & K.
+         VanLehn (Eds),     Intelligent tutoring systems:  Fifth international conference, ITS'2000, 314-323. New
+         York: Springer.
+Corbett, A., Wagner, A., and Raspat, J. (2003). The Impact of analysing example solutions on problem solving in a
+         pre-algebra tutor. In U. Hoppe, F. Verdejo & J. Kay (Eds). Artificial intelligence in Education: Proceedings
+         of  AIED 2003:     The  11th International  Conference  on  Artificial Intelligence and Education,   133-140.
+         Washington D.C, IOS Press.
+Graesser, A.C., Person, N., Harter, D. and The Tutoring Research Group (2001). Teaching tactics and dialog in
+         AutoTutor. International Journal of Artificial Intelligence in Education, 12, 257-279.
+Renkl, A. (1997). Learning from worked-out examples: A study on individual differences. Cognitive Science, 21, 1-
+         29.
+Renkl, A. (1999) Learning mathematics from worked-out examples: Analyzing and fostering self-explanations.
+         European Journal of Psychology in Education, 16, 477-488.
+Stevens, S.M. and Marinelli, D. (1998). Synthetic Interviews: The Art of Creating a `Dyad' Between Humans and
+         Machine-Based Characters. Proceedings of the 4th IEEE Workshop on Interactive Voice Technology for
+         Telecommunications Applications, 43-48. New York: IEEE.
+Trafton, J. and Reiser, B. (1993). The contributions of studying examples and solving problem to skill acquisition.
+         Proceedings   of   the 15th  Annual Meeting  of  the  Cognitive Science   Society,  1017-1022. Mahwah     NJ:
+         Lawrence Erlbaum Associates.
+
+Acknowledgment
+This research was supported by National Science Foundation Grant EIA0205301 "ITR: Collaborative Research:
+Putting a Face on Cognitive Tutors: Bringing Active Inquiry into Active Problem Solving."
+
+                                                           105                                                ICLS 2006
+

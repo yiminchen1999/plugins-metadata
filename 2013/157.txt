@@ -1,0 +1,214 @@
+CSCL 2013 Proceedings                    Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+                       Reciprocity in Student Online Discussions
+                                        Shitian Shen, Jihie Kim, Jaebong Yoo
+                             University of Southern California Information Sciences Institute
+                                     4676 Admiralty Way, Marina del Rey, CA, U.S.A
+                             Email: shitians@usc.edu, jihie@isi.edu, yoojaebong@gmail.com
+
+           Abstract:   Online discussion    is a popular   tool   for information   exchange     in  web-based
+           education.  Analyses   of how    students  interact  or  their  contribution   styles can    help   us
+           understand weaknesses or strengths of the participants.      This paper presents a framework for
+           capturing information trading behaviors in Q&A discussions using a `reciprocity' model. We
+           measure the reciprocity of a student based on (a) the degree of responses that he/she received
+           from other  students in  discussing   his/her questions  and   (b) the degree  of   contributions   in
+           discussing  other  students' problems.     We  use   a  linear  regression  to model     the overall
+           reciprocity rate over time, and correlate the regression coefficient of the reciprocity rate to the
+           student course grade. We found that although the overall reciprocity rate is not statistically
+           correlated to the grade, high performing students have larger reciprocity rates and help other
+           students  more  actively.  We   expect   that  the  reciprocity  rates revealed    from   discussion
+           participations can help instructors make online activities more balanced.
+
+Introduction
+Reciprocity, as a general concept for measuring the "trade" in social exchange, contains the common sense that
+giving and taking illuminate each other (Gouldner, 1960). As one of the essential and necessary attributes for
+the social community (Wellman, 1999), reciprocity indicates the members' behavior in the community (Herring,
+2001) and maintains the stable social system by encouraging the mutual beneficial exchanges and preventing
+antisocial  behavior  (Alexander,   1987).  Online  learning  networks,    as an  aspect  of  social life, also yield  the
+resource exchanges (Swan and Shea, 2005). Specifically, online discussion platform is a classical application of
+learning networks, which supplies a platform for students to post problems they encounter during study as well
+as to assist other students. Reciprocity allows the online discussion works effectively by promoting students to
+`give' under certain circumstances and they can also obtain help when they have problems. In previous work,
+reciprocity is treated as one of the "seven principles for good practice in undergraduate education" (Chickering,
+1996).  In  addition,  reciprocity belongs  to  one   of the  major   motivating  factors that  promote    individuals  to
+contribute to online communities (Wang, 2003).
+   Although reciprocity requires giving and taking simultaneously, the degree of giving and taking for a group
+or an individual cannot be strictly identical. There is a common recognition that giving can generate more
+altruistic and   stable  reciprocity  while    taking yields   more   selfish  reciprocity.   Taking    into   account  of
+characteristics of students, we classify them into three different groups: considerate, neutral and self-centered
+groups. Given the assumption that human behavior varies based on selfishness, we compare reciprocity rates
+among these three groups, which can provide insight on student knowledge sharing behavior (Soller, 2003). As
+the degree of reciprocity in learning is hard to measure, we propose a simple but effective way to define the rate
+between    the  degree  of giving  and  the degree    of taking   using participation  types   without  considering    the
+inequality of each problem or question. We split the students into four different performance groups based on
+their final course grades. Such classification can facilitate an analysis of how does the reciprocity rate vary
+among different performance groups, allowing us to examine the relation between the grade and reciprocity.
+   Furthermore, we examine the change of the reciprocity rate over time within the semester. Such reciprocity
+trend, presenting     changes in   student  participation  styles,  can   assist  the  teacher   in  assessing    students'
+contributions, comparing the performance of individuals or groups (Kapur, 2008), and detecting the cause for
+the change in participation styles.
+
+Methodology
+In this section, we first describe how we process discussion data. We then present a model of reciprocity in
+Q&A discussions. We show how the model captures the information trading behavior.
+Data collection and processing
+Our work takes place in an undergraduate course in Computer Science department at University of Southern
+California. Student grades and online discussion data have been collected from the same course taught by the
+same teacher in eight recent semesters, from 2006 to 2010 school year. The discussion data contain total 1,663
+discussion threads and 7,164 messages. Among 370 active users, we chose 204 users who have at least two
+questions,  so  that  we can  capture  the  information   trade trend  over   multiple questions.    Given   a thread, we
+classify which user the thread belongs to, based on the user id of the initial message in the thread. The first
+message in a thread usually presents a problem or a question that the user has (Feng et al., 2006). We can
+
+© ISLS                                                                                                                157
+CSCL 2013 Proceedings                Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+estimate how much help a user obtains by counting how many responses he/she gets from other users. On the
+other hand, we can also assess how much help the user provides to others by counting his/her replies to other
+users' questions.
+Reciprocity rate in Q&A discussions
+We examine asynchronous online Q&A forums where participants trade information by posting questions and
+sending answers   to the questions. Reciprocity is a common   activity   in social life but the  effectiveness      of
+reciprocity in online education forums is not clearly observed (Edwards 2002; Halloran et al., 2002). One main
+reason is that relations between actors in online learning communities are not very rich especially when there is
+limited participation within a course. We use multiple (8) semesters' data from the same course to capture
+general behavioral patterns.
+     We define reciprocity rate (reciprocityR) as the ratio of giving and taking acts of a user. A user's message
+is classified as a giving act of the person when it responds to a question. A response to the user's question is
+counted as a taking act by the user. In computing the degrees of giving and taking ratio at a given time, we
+accumulate all the giving and taking acts until that time. More specifically, the reciprocity of user i at time t
+when he/she posts a question can be modeled as follows:
+
+     where t is time at which user i posts a question. The overall reciprocity rate of the user within a semester
+can  be computed     by accumulating  all the giving  and  taking   acts in  the semester.  We    used   min-max
+normalization to rescale posting time ranges from the different semesters to the equal range between 0 and 1.
+For example, if user i posts n questions, we can calculate n reciprocity rates for the user, which shows how the
+rate change over   time as the user posts more  questions. Specifically,  k-th reciprocity  rate will be the rate
+between accumulated giving and taking acts until k-th question. Once we have the reciprocity at each time point
+for each user i, we can regress their reciprocity rates to capture the general trends on the time space as follows:
+
+where   t is a value ranged between  0 and 1. In the fitted line,   is a slope called the regression coefficient.
+Such behavior trend information can be related to other variables such as student performance.
+
+Results
+
+Reciprocity by Behavior and Group
+Figure 1 shows the distribution of each user's reciprocityR over time by his/her behavior style and performance
+group that he/she belongs. For performance-based grouping, we used normalized values of the course final
+grades since the raw grades across semesters cannot be directly comparable. We split students into four grade
+groups (high, high intermediate, low intermediate, and low grade group) using mean (0.82) and one standard
+deviation (0.08).
+
+                              Figure 1. Reciprocity Trends by grade and behavior.
+     A user's responses can be split into two different types; responses in the discussions that he/she initiated
+and responses in other users' threads. The former represents discussion participations in answering his/her own
+question and the latter captures contributions to other people's problems. We use this to describe the user's
+behavior style. A considerate user sends more replies to discuss other people's problems than his/her own
+
+© ISLS                                                                                                       158
+CSCL 2013 Proceedings                   Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+problems.  A   self-centered  user posts more   messages   relevant   to  his/her own   problems.  Other    users are
+considered neutral.
+    In  Figure  1, each  solid line represents  reciprocityR   of  a user  over  time. A  dotted  line  is called the
+"reciprocal line" since its reciprocityR is 1, i.e. the number of giving acts is equal to the number of taking acts.
+In the graphs in the top row (considerate group), we can observe that the reciprocitiRs of the high and the high-
+intermediate groups increase while those of the low-intermediate and low groups decrease over time. That is,
+higher performers tend to help other students. Although lower performers help other students sporadically, they
+stop helping before the final exam, which is located close to 1 in the timeline. In the middle second row (neural
+group), most lines are parallel to the reciprocity line but their reciprocitiyRs are close to zero. As shown in
+Table 1, those students asked fewer questions than other behavior groups and the average length of discussion
+threads is shorter than others. They seem to participate passively in the discussions resulting from the fact that;
+the number of message received from others (taking acts) is relatively smaller than the number of message sent
+to others (giving acts), as shown in Table 1.
+    Finally, in the graphs in the bottom row (self-centered group), reciprocityRs in all the performance groups
+increase  because  they  present more   giving acts  for their own   problems,   which  increases the  numerator    of
+raciprocityRs. Interestingly, the self-centered behavior group among the low performing students has the largest
+regression coefficient. They seem to concentrate on their own problems rather than others'.
+                             Table 1: Summary of Reciprocity by Behavior and Grade
+behavior  grade     N     reg.coef                                 Average#questions#giving for myproblems#giving forothers' problems#taking#thread#user
+consi-derateA      18     1.18B341.11C17-0.745.726.765.822.943.122.18     12.33           9.33        4.40     2.8111.3210.533.372.598.4712.883.242.58
+            D       3     -1.14      3.00            0.00                 5.00            5.00        2.47     2.22
+            A       9     0.00       2.89            0.00                 0.00            3.56        2.56     2.37
+neutral     BC     23     0.22160.04 3.573.44        0.740.56             0.74            5.43        3.38     2.660.565.002.752.41
+            D       5     0.22       2.40            0.20                 0.20            4.00        2.90     2.65
+            A      20     0.76       7.85            5.00                 1.15            9.60        3.89     2.55
+ self-centeredBC   28     0.87180.82 6.615.00        5.823.39             1.43            14.11       4.23     2.711.117.563.662.46
+            D      13     1.04       5.69            3.54                 1.00            7.31        3.69     2.60
+Note: reg.coef (regression coefficient)
+A (high), B(high-intermediate), C(low-intermediate), and D(low)
+
+Correlation Analysis between Reciprocity Trend and Grade
+To investigate the relationship between reciprocity trends and grades, we generated a fitted line for each user
+with his/her reciprocityR values. We used a linear regress analysis as shown in Figure 2. Each slope, which is a
+regression coefficient (  ), represents reciprocityR trend for user i. As summarized in Table 1, high and high-
+intermediate performing group have the largest average regression coefficient. The low-intermediate and the
+low grade group have only negative average regression coefficients. In the graphs in the third row (self-centered
+group), the average regression coefficients are positive because the number of giving acts for own problems
+increase. Most  of  the  high  and low  performing   groups  are   either considerate  or self-centered while  high-
+intermediate and low-intermediate group members are equally distributed among different behavior groups.
+                         Table 2: Correlation between Regression coefficient and Grade
+                                   considerate users       neutral users          self-centered users       all users
+  regression coefficient                0.25*                   -0.01                  -0.06                 0.08
+             N                           72                       53                      79                 204
+Note: p* < 0.05
+   Table 2 summarizes the result of a correlation analysis between regression coefficients and course grades.
+As expected, overall, they are not statistically correlated to each other because regression rate changes of the
+neutral and self-centered behavior groups are similar regardless of their grade levels. However, only for the
+considerate behavior group, the regression coefficient is statistically and positively correlated to the course
+grades, r(70) = 0.25, p<0.05.
+
+Conclusion and Future Work
+We propose a simple but effective model that captures reciprocal behaviors in student online Q&A discussions.
+The  model  illustrates  different information  trading   patterns among    different  grade  groups.  We   utilize   a
+
+© ISLS                                                                                                            159
+CSCL 2013 Proceedings                        Volume 2: Short Papers, Panels, Posters, Demos, & Community Events
+
+"reciprocity line" to analyze the reciprocity trends of individual users. We found that although reciprocityR is
+not statistically correlated with the course grade, high performing students tend to present higher reciprocity
+rates.
+   The participation styles may be related to the nature of the problem (Kapur 2007), such as difficulty and
+well   structuredness.     Besides,  the   change  of    reciprocity  may    be  associated  with   the  emotion  the   student
+(Muukkonen       2007).   We   plan  to  explore  use   of  reciprocity   in explaining  various   aspects  of  student   online
+learning behavior.
+
+                             Figure 2. Regressing Reciprocity Trends by grade and behavior.
+References
+Alexander,    R.D. (1987).   The  biology of moral  systems. London:    Aldine.  American  heritage dictionary. (1992). Boston:
+            Houghton Mifflin.
+Chickering, A. and Ehrmann, S. (1996). Implementing the Seven Principles: Technology as a Lever. AAHE bulletin. 49:3-6.
+Feng, D., Shaw, E., Kim, J., and Hovy, E. (2006). An Intelligent Discussion-Bot for Answering Student Queries in Threaded
+            Discussions, Proceedings of the International Conference on Intelligent User Interfaces.
+Edwards, C. (2002). Discourses on Collaborative Networked Learning Networked Learning Conference, Sheffield, UK.
+Gibbs, W., Simpson, L. D., & Bernas, R. S. (2008). An analysis of temporal norms in on- line discussions. International
+            Journal of Instructional Media, 35(1), 63­75.
+Gouldner, A.W. (1960). The norm of reciprocity: A preliminary statement. American Sociological Review, 25, 161­178.
+Halloran, J., Rogers, Y. and Scaife, M. (2002). Taking the 'No' out of Lotus Notes: Activity Theory, Groupware, and Student
+            Groupwork.    In Stahl,  G.   (Ed.) Computer    Support  for  Collaborative  Learning:   Foundations  for a   CSCL
+            Community. Lawrence Erlbaum, Boulder, CO, pp 169-178.
+Herring, S. C., Computer-Mediated Discourse. (2001). In Schiffrin, D., Tannen, D. and Hamilton, H.(Eds.) The Handbook of
+            Discourse Analysis. Blackwell, Oxford, pp 612-634.
+Jeong, A. (2005). A guide to analyzing message­response sequences and group interaction patterns in computer-mediated
+            communication. Distance Education, 26(3), 367­383.
+Manu    K., John   V., Charles K.   (2008) Sensitivities to early  exchange   in synchronous  computer-supported  collaborative
+            learning (CSCL) groups, Computers & Education, Volume 51, Issue 1, August 2008, Pages 54-66.
+Manu    K.  , Charles   K.   Kinzer (2007)   Examining   the effect  of   problem  type in a   synchronous  computer-supported
+            collaborative learning (CSCL) environment, Educational Technology Research and Development, Volume 55.
+Muukkonen, H. and Hakkarainen, K. and Kosonen, K. and Jalonen, S. and Heikkil A. (2007). Process-and context-sensitive
+            research on academic knowledge practices: developing CASS-tools and methods. CSCL 2007.
+Soller, A.,   and  Lesgold,   A.  (2003)   A computational   approach     to analyzing  online knowledge    sharing interaction.
+            Proceedings of AI in Education 2003.
+Swan,   K.  &   Shea,  P. (2005). The  development   of  virtual learning communities.  In S.  R. Hiltz, &  R.  Goldman   (Eds.),
+           Asynchronous learning networks: The research frontier (pp. 239­260). New York: Hampton Press.
+Suthers, D., Dwyer, N., Medina, R., & Vatrapu, R. (2010). A framework for conceptualiz- ing, representing, and analyzing
+           distributed interaction. International Journal of Computer-Supported Collaborative Learning, 5(1), 5­42.
+Wang,   Y.  and  Fesenmarier,    D. R.  (2003).  Understanding   the Motivation   of Contribution in Online   Communities:   An
+            Empirical Investigation of an Online Travel Community. Electronic Markets. 13.
+Wellman, B. and Gulia, M. (1999). Net Surfers Don't Ride Alone: Virtual Communities as Communities. In Kollock, P. and
+            Smith, M.(Eds.) Communities and Cyberspace. Routledge, Net York, NY.
+Wise,   A.  F., &  Chiu,  M.  M.  (2011).  Analyzing  temporal   patterns of  knowledge  construc-  tion in a  role-based online
+            discussion. International Journal of Computer-Supported Collaborative Learning, 6(3), 445­470.
+
+© ISLS                                                                                                                     160
+

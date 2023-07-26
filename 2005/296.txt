@@ -1,0 +1,246 @@
+       Weak Guidance with "Look" Functionality in
+                Handheld-Based Classroom Activities
+
+                                 Kibum Kim and Deborah G. Tatar
+                                 Center for Human-Computer Interaction
+                                    Department of Computer Science
+                                               Virginia Tech
+                                      kikim@vt.edu, tatar@vt.edu
+
+       Abstract. Wireless handheld technologies can be used to move technology into the classroom
+       framework  rather than    to move  classrooms       into the technology framework.   To make   such
+       technologies effective, we support activities and teaching practices crucial to children's creativity
+       and competence. However, because of the small screen size and distributed nature of some of the
+       activities, it can be hard for teachers to engage in formative assessment, that is, finding out what
+       students know and can do. The current work reports an idea about how to solve this problem and
+       the first assays of this idea in the classroom. We try to enable what we call weak guidance during
+       collaborative activities, by implementing a system feature called "Look."
+
+       Keywords: Mobile Computing, Constructivist Pedagogy
+
+INTRODUCTION
+  Ms. Smith was using a handheld-based math activity called "Match-my-Graph" with one of her eighth-grade
+classes. Students were grouped into pairs. Alice drew a line on an animatable velocity graph on her handheld.
+Brian's goal was to produce the equivalent function on a position graph on his handheld. To do this, he beamed
+each of his guesses to Alice, who gave him progressively more refined hints, until the graphs described the same
+trajectory. The challenge was    for  Alice to devise      useful hints describing position change based     on the
+relationship between two velocity graphs, and for Brian to interpret velocity-based hints in terms of required
+changes to the position graph. In this case, Alice had the hypothesis that velocity graphs below the x-axis meant
+that the object had a negative position, leading to systematically incorrect hints.  Both students were becoming
+frustrated when the teacher came by. She watched them argue about whose mistake it was. She glanced at one
+screen, when the student was not drawing or beaming.        Then she said, "Is everything all right?" Both students
+responded yes.  She moved on.    Ten minutes later, they were still working on the same problem when time ran
+out, each quite distressed at the failure of the other.
+
+  This scenario is taken from a month-long intervention using NetCalc with 8th grade students, which showed
+considerable gain scores and, even achievement on qualitative AP-calculus problems (Tatar, Roschelle, Vahey &
+Penuel, 2003; Vahey, Tatar & Roschelle, 2004). The class wide consequences of the study were overwhelmingly
+positive; therefore, arguably, the time the students spent struggling on the problem was well spent. However, at
+the same time, compared to when observing the use of manipulatives, worksheets or desktop, the teacher's
+ability to gauge the nature and seriousness of the problem was curtailed. Wirelessly-connected handheld PDAs
+hold great potential for the classroom because they are portable, easy-to-maintain and relatively inexpensive
+(Tatar, et al, 2003; Soloway, Grant, Tinker, Roschelle, Mills, Resnick, Berg & Eisenberg, 1999). It may be
+affordable to provide a handheld for every student, when it is too expensive to provide a desktop computer or too
+bothersome to go to the computer lab.
+  Handhelds can be used many ways in the classroom.             For example, employing both handhelds and large
+screen displays, Wilensky and Stroup (2000) use a distributed programming language, StarLogo, to allow
+students to explore complex distributed systems.        Kaput and his colleagues (Kaput and Hegedus, 2003; Kaput,
+Roschelle, Vahey, Tatar & Hegedus, 2003) also emphasize aggregation activities, highlighting the individual's
+contribution to the whole class. In these situations, there is a relatively close relationship between the acts of
+individuals and their publication to the whole classroom, including the teacher.       This  publication provides
+opportunity for formative assessment.  However, another class of activities involves a slightly longer tether.  For
+example, students may develop complex and sophisticated idea-networks using Picomap, a concept-mapping
+tool, before uploading them to a desktop or large screen formats (Luchini, Quintana, Krajcik, Farah, Nandihalli,
+Reese, Wieczorek  &  Soloway,    2002).  Likewise, the Sketchy tool (www.goknow.com) and elaboration in
+
+                                                           
+ImageMakers (www.projectwhirl.org) allows students to produces animations of science processes.               Indeed,
+ImageMakers has formative assessment as a goal; nonetheless, it primarily supports uploading at the end of the
+activity, using HotSyncing. In the NetCalc project, activities moved between whole class, small group, and
+individual work. The students had a clear idea when they had finished the tasks, but there were barriers to fine-
+grained formative assessment (Davis, 2002).
+  In this paper, we describe the beginning of an investigation of how formative assessment can be integrated
+into the classroom using Infrared-based (IR) communication (e.g. beaming). We focus on IR in this work for the
+same reasons we used it in the NetCalc project: IR machines are less expensive, and require no server. On the
+other hand,  any   success we have  with  implementing    formative   assessment tools with   IR should     only  be
+amplified with radio-frequency (RF) communication.     Since, unlike IR, RF is not directed at a particular other
+person, overhearing can be accomplished less intrusively.
+  To abstract the issue of overhearing, we created a game that is an electronic variant of the Tangram game so
+widely used to explore the creation and maintenance of common ground in the CSCW and psycholinguistic
+literature (Clark,  1996a; Clark, 1996b).   Indeed,  the  NetCalc Match-My-Graph     activity was       based on  the
+structure of the Tangram game.    Like Tangrams, our game involved two participants, a matcher and a director.
+For each round, the director had a sequence of images in a new random order.   The matcher also started with the
+same sequence of images in a random order.     By discussing each one in turn, the matcher was able to put the
+images on his screen into the same order (see Figure 1) as the director. The game is complete when the matcher
+and director agree that they have the images in the correct order. In our game, KCM, the images were Korean
+characters. The KCM game system runs on a Palm OS handheld computer and uses a stylus for drag and drop
+characters from one place to another and to initiate task actions, such as "shuffling" the image order.
+
+                                Figure 1. Korean characters matching (KCM) game
+
+WEAK GUIDANCE WITH LOOKING IN CLASSROOM ACTIVITIES
+KCM is a coherent activity in which participants are trying to understand what the other one is talking about, in
+other words, in which they are learning. However, the purpose of our study was to investigate another feature,
+Look.  In activity-based classroom environments, the ideal teacher has often been characterized a "guide on the
+side" rather than a "sage on the stage" (National Research Council, 2000). This pedagogical goal is based on the
+idea of constructivism, that active engagement in knowledge creation is vital to deep understanding. From a
+psycholinguistic   point of view,  teachers engaged    in  coaching   would  ideally be  characterized      as "side
+participants" to the interaction they are observing.  Their job is to assess and provide weak guidance, not to
+distract the students from their focused work. Typically, side participants enter in to a conversation about an
+object by watching the interaction until they can make an informed contribution.     Of course, it is the teacher's
+prerogative to ask students for an explanation of what they are doing, but typically, she picks her moment.
+Additionally, KCM provides a chance for the teacher to introduce secondary information, including the names of
+the Korean character
+  Look     supports formative assessment  by allowing     the teacher to capture objects from  other      screens by
+beaming to them (Figure 2). Instead of having the owner of the information beam stop on-going activity to beam
+to the newcomer, the newcomer could request data from the students' handhelds without disruption.
+   In  our   project, Look was implemented   using Exchange      Manager in the   Palm OS API.    The      Exchange
+Manager provides a high-level interface to use the exchange socket structure. We embedded and tested this Look
+functionally as a component for the KCM game.
+
+                                                        
+   Figure 2a. Initiating a Look to capture data from          Figure 2b. What the teacher sees after a Look.
+                student's handheld.
+
+PROOFS-OF-CONCEPT
+In April 2004, during the annual Women in Computing Day at Virginia Tech, eight local middle school girls
+(ages 12-14) experimented with our application and Look functionality. They were divided into three groups of
+two "learners" plus two student "teachers." One "teacher" monitored two matcher-director groups at the same
+time.  "Learners" switched between matcher and director roles in different rounds.    The teacher's system was
+equipped with both Look and a paper list of Korean characters and corresponding English-language names. The
+teacher was instructed to try to figure out whether the groups were making progress and to help them if they got
+stuck.  The experiment was conducted in a large meeting room with tables set in a U-shape.    Students were not
+instructed on where to sit or whether they were free to move around.      Nonetheless,  learners  sat facing one
+another or around a corner of the table while teachers sometimes stood next to one of them, sometimes say next
+to one of them, and moved from person to person.
+  Notes were taken by three observers to document the interaction.    These focused on whether and how Look
+was used. Participants were asked to engage in a "think-aloud" process in which they articulated what they were
+doing and when to enable us to locate usability problems.  Afterwards, students were asked to indicate both the
+positive (good) and negative (bad) aspects of what they had done.
+  Given its similarity to the Tangram and Match-my-graph games, it was not surprising that Matchers and
+Directors appeared to be engaged and consistently expressed enthusiasm.         The teacher's role was  the  new
+component.   These students did seem engaged, but not always in the ways we had envisioned. One teacher
+functioned much as we imagined, looking over the matcher's shoulder and beaming to a director to check
+desired the target order. This teacher beamed a lot in the middle of the game; however, the other beamed only at
+the beginning and end of each round. Thus, she was not monitoring progress the moment, but only global
+progress. Worse, neither teacher was able to intervene effectively during the interaction. Instead, they spoke
+with learners only after they had reported the end of their play. At that point, the teacher would check again with
+beaming and give feedback to students, such as concerning the incorrect placement of characters.
+  Subsequently, six triads of male undergraduate and graduate students at Virginia Tech were recruited through
+email requests to undergraduate and graduate researchers in Human-Computer Interaction (HCI) to perform an
+almost identical task. The average age of these participants was 24.7 years (Standard Deviation (SD): 3.7).   All
+students were from the School of Engineering, primarily computer science and industrial systems engineering.
+Half of these triads had Look functionality for the teacher, and half did not. Each group participated in two
+rounds of KCM, rotating all participants between roles. Participants were videotaped and log files of the
+interaction were kept. Additionally, two kinds of simple learning outcome measures were obtained: participants
+were asked to pick out which ten characters they had worked with from a list of the complete 20-character
+Korean alphabet, and to match characters with English names.
+  Although there were too few groups for statistical tests to be meaningful, the number of errors in recognizing
+the characters was consistently less for the groups that had Look compared to those that did not. In round 1, the
+mean number of errors in recognition with Look was 7.33 (SD: .99) while without Look, it was 10.67 (SD: 2.18).
+In the second round, the scores were 2.67 (SD: 1.33) and 8.33 (SD: 4.84).     Note that the standard deviations are
+also smaller for the groups with Look than for those without. Additionally, students in the Look condition were
+more accurate in naming the characters after round 1, though not for round 2.
+
+                                                        
+  Videotape     and log files revealed that teachers with  Look, updated   and consulted    their handhelds       quite
+frequently.  One teacher looked at the others' screens ten times during one round.       He moved back-and-forth
+between looking at the matcher's and director's screens.  Other teachers in the Look condition beamed to get the
+director's order and then sat next to the matcher and watched him work.
+  Although there was no reason to believe that the participants had any familiarity with pedagogical theory, and
+no instructions were given to the participants about the kind of pedagogy desired, participants in both conditions
+commented on the teacher's role.   One, in the Look condition, said "The teacher must not help the students until
+the last minute.  Extensive help from the teacher will reduce the learning." Another commented "We can keep
+going even   if the teacher  does not say anything."  On  the other  hand, students     in the no-Look       condition,
+commented that the teacher was not particular useful.  One said: "As far as the teacher's action, it was minimal,
+actually non-existent when I was trying to match for pictures."     Another echoed something sometimes heard
+from students in project-based classes that "the teacher did not have to help in solving the puzzle, we just did it
+ourselves."
+
+DISCUSSION
+  Thus, we have some support for the idea that Look functionality can be useful in conjunction with at least
+this task. The undergraduate and graduate student teachers appear to have used it in a way consistent with our
+pedagogical hopes and goals: lightly and to good effect.   The middle school girls had more trouble. This may
+have been because their own notions of teaching were less mature, because they saw the student's role passive
+than  did  VT   students, and/or  because   it was  more  difficult for  them  to imagine      teaching      in such a
+decontextualized situation.
+  One limitation of this work was that the learning task was confined to one factual task rather than a richer
+array of tasks including more complex inquiry-based learning. Another limitation is that the "teacher" was not
+motivated by the rich set of priorities and considerations that motivate a real teacher to intervene or not.
+  Strengths of the task include that it is in fact interesting for the participants, that there at least the two layers
+of learning (to recognize and name the characters), that it emphasizes the teacher's role, and that the recognition
+component is sufficiently complex to have produce a wide range of errors after two rounds.
+  Although these demonstrations are limited, we feel that there is enough evidence to go through the effort to
+incorporate Look functionality in a more contextualized teaching context.   We do not expect Look to be used
+constantly, perhaps only twice or three times in a class section; however, we expect that it will disambiguate
+situations such as that reported in the initial paragraph of this paper that otherwise would not be clear.
+  An additional direction has to do with the of future IR beaming.    We worked with IR in the NetCalc project
+and therefore in this one because it solves a raft of classroom management problems.      When the teacher or the
+teacher's machine functions as a central server, any problems tend to involve the whole class and be disruptive.
+Point-to-point beaming allows localized control but participants with no need for the system to know who is
+working together. We have found it to be extremely useful and easy for small group interaction.     However, it is
+unclear that IR will continue to prevail on inexpensive handheld machines, compared to radio-frequency (RF)
+communication.      Thus, our research has to extend to include RF. With its nearly synchronous properties,
+teachers should have an easier time seeing activity in progress with RF. There will be no need for static
+snapshots.  However, RF-based Looking may still be time consuming and problematic because of the need for
+machine to know which other machine or machines to be Looking at. RF alone may not suffice to make the
+teacher's assessment of the learning situation as automatic as with a desktop display.
+
+CONCLUSION
+  One of the fundamental design goals of this project was to support the role of the teacher in learning
+situations as a "guide on the side" in relationship to handheld wireless computing. We investigated using Look
+functionality for weak guidance in classroom activities, in which the teacher could come to understand the
+intellectual state of small groups at work. The result of user experience with our prototype and a few triads with
+a non-Look control, gives preliminary indication that Look can be used to enhance classroom communication
+and understanding; however, the case is not closed, creating interesting design challenges in the social or
+technological realm or both.
+
+ACKNOWLEDGMENTS
+We thank Dan Dunlap who helped set up and conduct this experiment successfully.
+
+                                                        
+REFERENCES
+Blaye, A., Light, P., Joiner, R., and Sheldon, S. (1991) Collaboration as a facilitator of planning and problem
+       solving on a computer-based task. British Journal of Developmental Psychology, 9, 471-483.
+Clark, H.H. (1996a)  Arranging    to  do things  with other.   Plenary Speech,   ACM    Conference    on Computer
+       Supported Collaborative Work, April 19, 1996; Vancouver, BC.
+Clark, H.H. (1996b) Using Language. New York: Cambridge University Press.
+Davis, S.M. (2002) Research to Industry: Four Years of Observations in Classrooms Using a Network of
+       Handheld   Devices.  Proceedings      of the  IEEE   International Workshop     on  Wireless   and   Mobile
+       Technologies in Education (WMTE'02), Vaxjo, Sweden., 31-38.
+Ferraris, C., Brunier, P., and Martel, C. (2002) Constructing Collaborative Pedagogical Situations in Classrooms:
+       A Scenario and Role Based Approach. Proceedings of CSCL 2002, Boulder, Colorado., 290-299.
+Kaput, J., and Hegedus, S. (2003) Exciting new opportunities to make mathematics an           expressive classroom
+       activity using newly emerging connectivity     technology. In N. A. Pateman, B. J. Dougherty & J. Zilliox
+       (Eds.),  Proceedings of    the 27th   Conference   of   the International Group    for  the  Psychology  of
+       Mathematics  Education   held  jointly   with the 25th   Conference  of   the PME-NA     (Vol. 1, pp. 293).
+       Honolulu, Hawaii: College of Education, University of Hawaii.
+Kaput, J.,Roschelle, J., Vahey, P., Tatar, D. and Hegedus, S. (2003) Five key considerations for networking in a
+       hanndheld-based  mathematics      classroom.   In N.  A. Pateman,  B. J.  Dougherty    &  J. Zilliox (Eds.),
+       Proceedings of the 27th Conference of the International Group for         the  Psychology   of Mathematics
+       Education held jointly with the 25th   Conference of the PME-NA (Vol. 4, pp. 71-78). Honolulu, Hawaii:
+       College of Education, University of Hawaii.
+Luchini, K., Quintana, C., Krajcik, J., Farah, C., Nandihalli, N., Reese, K., Wieczorek, A., and Soloway, E.
+       (2002) Scaffolding in the Small: Designing Educational Supports for Concept Mapping on Handheld
+       Computers.  CHI 2002, 792-793.
+Moher, T., Ding, X., Wiley, J., Conmy, D., Hussain, S., Singh, P., and Srinivasan, V. (2003) Combining
+       Handhelds with a Whole-Class Display to Support the Learning of Scientific Control. Proceedings of CHI
+       '93 (Amsterdam, The Netherlands, April 1993), ACM Press, 882-883.
+NRC (2000) How People Learn: Bridging Research and Practice. Washington, D.C., National Academy Press.
+Rieger, R. and Gay, G. (1997) Using Mobile Computing to Enhance Field Study. Proceedings of CSCL 1997,
+       Toronto, Ontario, 215-223.
+Roschell, J. (1996) Learning by collaboration: Convergent conceptual change. In T. Koschmann (Ed.), CSCL:
+       Theory and practice of an emerging paradigm, Mahwah, NJ: Lawrence Erlbaum Associates, 209-248.
+Soloway, E., Grant, W., Tinker, R., Roschelle, J., Mills, M., Resnick, M., Berg, R., and Eisenberg, M. (1999)
+       Science in the Palms of their Hands.  Communication of the ACM, 42, 8.
+Tatar, D., Roschelle, J., Vahey, P., and Penuel, W. R. (2003) Handhelds Go to School: Lessons Learned. IEEE
+       Computer, 36, 9, 30-37.
+Vahey, P., Tatar, D., and Roschelle, J. (2004) Leveraging Handhelds to Increase Student Learning:        Engaging
+       Middle  School Students    with   the Mathematics    of Change.  Proceedings    of the  Sixth  International
+       Conference of the Learning Sciences. Santa Monica, CA. June 22-26, 2004.
+Wilensky, U. & Stroup, W. (2000) Networked Gridlock: Students Enacting Complex Dynamic Phenomena with
+       the HubNet Architecture.   Proceedings of the Fourth International Conference of the Learning Sciences,
+       Ann Arbor, MI. June 14-17, 2000.
+
+                                                         
+

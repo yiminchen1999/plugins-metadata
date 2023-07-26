@@ -1,0 +1,456 @@
+CSCL 2011 Proceedings                                                                                         Volume I: Long Papers
+
+ Interactive Representations of Student Activity to Inform Teacher
+             Collaborations: Results from a Formative Exploration
+             R. Benjamin Shapiro, Morgridge Institute for Research, Madison, WI, ben@getdown.org
+                 Peter Samuelson Wardrip, University of Pittsburgh, Pittsburgh, PA, psw9@pitt.edu
+
+          Abstract: We describe a student activity visualization tool that we constructed to provide a
+          context for ethnomethodological inquiry -- a design-based breach experiment (Crabtree et al,
+          2004) -- into how teachers might think and communicate about student thinking when they
+          have   tools that give  them   better access   to  student  activity.    We  use   the   Learning   to Notice
+          framework (van Es & Sherin, 2008) to characterize the kinds of activity that occurred when
+          teachers used the tools in a team meeting. Then, we show how theses uses suggest ways that
+          research  on   and  uses  of  student activity   representations    may     need   to be  sensitive    to how
+          contexts of implementation shape the consumption and use of those representations.
+Objective
+Researchers in CSCL, educational data mining, games for learning, CSCW, and HCI more broadly are working
+to develop manual and automatic techniques for characterizing and classifying patterns, including patterns over
+time, in users' collaborative and individual interactions with computer-based media (Reimann, 2009). Suthers
+and colleagues are     developing   a methodology,     and   supporting     tools, for analyzing     logs  of online    activity in
+order to discover patterns in uses of on-screen representations that span multiple participants (Suthers et al.,
+2010;  Medina    &  Suthers,  2008).    Shute et al.  (2009)  describes     how    the play   of   educational   games     may   be
+scrutinized to create psychometrically valid assessments of learning and understanding that may be embedded
+in-game. Bit by bit, CSCL and its cognate fields are developing the methodological tools to produce precisely
+the kind of accounts of student activity that could support breakthroughs in the responsiveness of instructional
+environments     (Fullan et  al., 2006). But  very    few  efforts have     been   made  to  actually   construct   systems    that
+would   assist  teachers  in  understanding     their students'   activity   and   learning   in   CSCL    environments.      Rare
+exceptions     include  Feng   and    Heffernan    (2006)'s  ASSISTment          project,    which   explores    how      students'
+interactions   with an  intelligent tutoring  system   may   be   summarized       in order  to  help   teachers    to know   what
+students know and Summary Street, which provides teachers and students with feedback about the quality of
+students' text comprehension and summary writing (Wade-Stein & Kintsch, 2004).
+          Because of this, very little progress has been made toward figuring out how practitioners (teachers or
+students) will use computer-generated accounts of student activity (and what the challenges to doing so will be)
+once the difficult methodological challenges of constructing them have been sufficiently overcome. We do not
+believe  that  research  into  the  application  of   representations    of  student   activity    and  learning    to  improving
+teaching  must   wait   until methods    for  generating    valid  and   reliable   accounts     of activity  and    learning   are
+established.   Instead, we   propose   that CSCL    should   deepen     its inquiry   into   how   representations     of students'
+activity may be used in schools even as it figures out how to create those representations. Indeed, research on
+how    such accounts    could  be  used,  including   the   diverse  ways    in  which     different teachers    might    interpret
+different   representations   or   in  which    different   backgrounds      or    classroom     contexts   might      shape  their
+interpretation may be quite valuable in shaping the learning analytic program by helping researchers within it to
+focus their efforts on techniques that might have the largest impact on practice.
+          This   paper  describes   the beginnings    of  an attempt    to  do  just   that. We    describe   a  student   activity
+visualization that we constructed to provide a context for ethnomethodological inquiry -- a design-based breach
+experiment (Crabtree et al, 2004) -- into how teachers might think and communicate about student thinking
+when they have tools that give them better access to student activity. We describe our results in two parts: first,
+we  use  the   Learning  to Notice    framework    (van  Es  &  Sherin,     2008)   to establish    whether   our   tool  provides
+enough stimulus to the existing context of work to make activity occur that is consistent with a leading theory of
+teacher learning. Then, we show how the uses of our tool in teachers' collaborative practice suggest ways that
+research on student activity analysis representation construction and uses of new representations in practice may
+need to be sensitive to how contexts of implementation shape the consumption and use of those representations.
+Theoretical Framework
+Teaching    is a socially   complex    dynamic   of   data-rich interactions     between     teachers,  students,   and   content,
+mediated by classroom materials.         What   teachers   choose    to focus   on    with respect   to their   instruction,  their
+classroom environment, and student understanding has a powerful influence on what they understand about their
+classrooms   (Sherin   &  van  Es,  2003).   Teacher   noticing   is simultaneously     a    process of   directing    attention to
+certain features  of   instruction  as  well as  a  sense-making     activity   that   connects    what one   notices     to larger
+principles  of  action.  Collaborative   practices    that improve    teachers'    capacity     to  notice student     thinking  in
+classroom activity can also develop common professional vision (Goodwin, 1992) amongst teams of teachers
+(an important ingredient in improving instruction in schools) as well as make teaching practices more public
+
+© ISLS                                                                                                                          494
+CSCL 2011 Proceedings                                                                                   Volume I: Long Papers
+
+amongst faculties. In order to understand teacher noticing, Sherin & van Es have proposed a framework for
+Learning to Notice (2002). Within this framework, the skill of noticing consists of (van Es & Sherin, 2008):
+·    Identifying what is important in a teaching situation;
+·    Making connections between specific events and broader phenomena in teaching and learning.
+·    Using what one knows about the context to reason about a situation;
+          While the framework has been developed within the context of school-based video clubs (Sherin &
+Han, 2004; van Es & Sherin, 2008), research on teacher noticing has also developed with other techniques such
+as digital photography and teacher journal writing         (Sherin & van Es, 2003). Ultimately, as teachers develop
+their ability to notice, they are able to reframe their discussions about instructional matters in terms of student
+thinking (Sherin & Han, 2004). Cross-culturally, the capacity of groups of teachers with diverse perspectives to
+draw   attention to,  and make    varying  interpretations  of,  a broad range  of classroom   events   is core  fixture of
+Japanese Lesson Study (Lewis, 2000; Fernandez & Yoshida, 2004).
+          We propose that the learning to notice framework could be a benchmark that the CSCL community
+uses to gauge the utility of different representations that it constructs about students' learning activities. If an
+implementation of a new tool does not yield practice that satisfies the Learning to Notice criteria, then some
+measure of redesign may be necessary before more in-depth analyses of practice are warranted. If, on the other
+hand,  the Learning    to   Notice   criteria are satisfied,  then  the  implementation    should   offer  researchers   to
+opportunity to examine deeply the ways in which the new tools are used to construct meaning about student
+learning.
+          To explore this claim, we use the Learning to Notice framework to characterize the kinds of activity
+that result from the introduction of a data visualization tool that depicts students' literate activities into teachers'
+work. Specifically, we will show how the activity that resulted from the visualization tool's implementation
+satisfied the Learning    to Notice   criteria, then illustrate  how  particularities of the resulting  activity illustrate
+complexities in teachers' reasoning about student thinking that should guide ongoing design-based research into
+representational tools for teachers
+
+Context
+This design-based research is part of a larger effort to address literacy in the content areas at middle and high
+schools. The essence of the larger work is to build effective reading-to-learn environments for students and to
+use these environments to help us understand the reciprocal relationship between content area achievement and
+reading achievement.
+          This work took place in an urban suburb of a large Midwestern American city in a school containing
+K-8 students. The school attracts a diverse group of students from both disadvantaged and extremely affluent
+families. In particular, this paper will focus on one group of sixth grade teachers over the course of the first year
+of technical assistance involvement. After listening to a presentation on literacy in the content areas for the
+whole district, this team of teachers self-selected for participation in the project, and their principal agreed to set
+aside paid, protected time (free of other obligations) for the teachers to participate.
+          In this group of teachers, Ms. N. teaches mathematics, Mr. C. teaches reading and language arts and
+Ms. T. teaches social studies and science. They teach three blocks of classes every day, which reach all of the
+sixth grade students. Each class is taught every day except for science and social studies, which are taught on
+alternating days. Reading and Language Arts also alternated, although they often blurred together as one block.
+In addition, up to three researchers facilitated the meetings, Mr. B., Mr. S. and Mr. W. The group met every
+Friday morning for approximately one hour.
+          We  focus   on  building   reading-to-learn   environments   that rely on   the three  strategic approaches    to
+reading support: summarizing, T-Charts and annotating text (Scherer et al., 2008). Summarizing allows students
+to capture  the  gist of  a  chosen   text in   writing as  well as the  major  concepts  and   details supporting   those
+concepts. T-charts, also known as double-entry journals, are two or three column charts (like the shape of a T)
+that provide  a  structure   for  students to   monitor  and  document   their understanding    of texts   (Atwell, 1990).
+Annotation is the process of marking up a text in order to perform content analysis as well as reveal the meaning
+behind   various  textual features   (Liu, 1996).  While    these  techniques  can improve    student understanding,     no
+research has examined how the representations that students produce through the application of these techniques
+can  aid  teacher insight    into student  thinking.    The  design  based  research   described   here was  inspired    by
+observations  of  teacher   practice, which     revealed that raw   student annotation   data was   too  voluminous   and
+complex   for teachers   to  use  to drive instructional   decision-making.   Computer-based     data visualization  tools
+could help, but what should they look like? What kinds of teacher practices should they support? The absence of
+prior practice (both at our implementation site and in the research literature) offers no easy answers, and so we
+looked to a breach experiment, described in the next section, to find out.
+Methods and Data Sources
+We conducted a design-based breach experiment (Crabtree, 2004; Garfinkel, 1967) to illuminate the ways in
+which a team of teachers might use activity representation tools in their practice, and the personal perceptions,
+
+© ISLS                                                                                                                  495
+CSCL 2011 Proceedings                                                                                       Volume I: Long Papers
+
+beliefs,  and  expectancies   that shape    those  uses.  Breach  experiments     are  violations   of  the expectations   that
+characterize normal social order, through the overt need they create for participants to restore that normal social
+order. This induces participants to explain how they think about normally tacit aspects of their lives, including
+expectations   for others,   and how    the  breach   transforms  or  violates   those  expectations.   The   point  is not to
+frustrate  participants,  but to violate    their expectations   enough   that   they  must  actively   negotiate    with their
+surroundings to restore normalcy. This is a valuable ethnomethodological tool because it may offer insights into
+participants' desires, perceptions, and dependencies that are so deep, and so tied to the participant's cultural
+milieau, that they difficult to interrogate through questioning and observation alone. They are, to use Garfinkel's
+language, "demonstrations designed as `aids to a sluggish imagination'...produc[ing} reflections through which
+the strangeness of an obstinately familiar world can be detected." Crabtree (2004) argues that the introduction of
+novel  technologies    to participants'   lives   can function   as   breaching   experiments,    provoking     practices  and
+revealing participants' beliefs that could not otherwise be seen and making them available for design reasoning.
+           The purpose of this design-based breach experiment is to explore the ability of a re-representation of
+students' literate activity to support teacher noticing and thinking about students' literate thinking in content
+areas, as well as to use the differing ways in which different teachers react to what the new tools show (or what
+they   see the tools  as  showing)  about    their students   to illustrate  (at least a  corner  of)   the space of  reactive
+possibility to novel representational tools in teachers' practice.
+
+Breaching Tool: Markup
+To do    so, we   created Markup,     a prototype   tool  for students  to   annotate  texts and    for teachers  to  examine
+students' annotations. While annotation can be a powerful tool for student learning, it is difficult for teachers to
+use annotations to understand student thinking because the collected annotations (which we conceptualize as
+external   representations   of  students'  thinking)    that result  from   a   homework    assignment     typically   contain
+thousands of data points spread across dozens to hundreds of pages. To assist teachers, Markup's teacher user
+interface provided three different tools for viewing student work; the most used and discussed representation
+was the interactive heatmap (see Figure 1). The heatmap was an interactive heatmap, inspired by Hill et al.'s
+(1992) Edit Wear and Read Wear. The heatmap, as depicted in Figure 1, is simply a complete original text with
+the text's background shaded to indicate the frequency with which the text there was annotated. Regions that
+were annotated frequently (number of students who annotated / number of students who did the assignment)
+glowed red (the more frequent, the bolder the red). A teacher-user could click anywhere on the text to see a table
+of what each student wrote about the clicked text; this is depicted in Figure 2.
+           Teachers agreed to use Markup in their classes for about 6 weeks, during which time they reviewed
+students' annotations in Markup before school on every morning that followed an evening when students were
+assigned   reading   with annotation    for homework.     They   also used   the tools  within a  weekly     team meeting   to
+present, review, and discuss reading comprehension in each others' classes. We observed the ways in which
+teachers   used   the tools  to exploratively     analyze students'   work   and   the ways    that they    used the  tools to
+empirically ground discussion in their team meetings.
+           Because we focus here on teachers' use of the tool in collaboration with each other (and not the work
+teachers   did on  their  own),  data   for this  paper   are drawn   from   field  notes  and   recordings   from   the  team
+meetings. The specific data here come from two different team meetings, though many more were recorded and
+analyzed. These conversations were typical. As participant observers, we gathered observation notes, meeting
+agendas,   and  teacher-generated     artifacts as  well; this   heightened   our  sensitivity to   context   of the  research
+(Marshall & Rossman, 2006). These data provide thick qualitative descriptions of the teachers' individual and
+collaborative work. Using the Learning to Notice framework, the data were coded, often fitting into more than
+one of the Learning to Notice framework categories. The coded data also provided us with counterexamples.
+Analytic memos were written to test our conjectures and counterexamples during the analysis process (Maxwell,
+1996).   These  memos     were   also an    opportunity   for discovery,  orienting    and developing       new  categories of
+analysis   (Strauss,  1987).  Two   researchers    discussed  the data    in order  to increase   reliability of  the coding,
+multiple coding and counterexamples.
+Results
+In the   results, we   will  use excerpts    of   teacher conversations      during team   meetings     ­   selected for  their
+illustrativeness ­ to illustrate how resulting teacher practice corresponded to the dimensions identified by the
+Learning   to  Notice  framework.     These   examples    indicate   that our    design-based  breach    led  to new    teacher
+practices. Moreover, these new activities correspond to those that in other interventions have tended to improve
+teaching outcomes. That is, the results illustrate how new tools may support a richer teacher focus on student
+thinking.  In  our discussion,   we   discuss   how the   particulars of  how    teachers did  so   suggest  implications   for
+further research into representational tools for teachers.
+
+© ISLS                                                                                                                      496
+CSCL 2011 Proceedings                                                                             Volume I: Long Papers
+
+                                               Figure 1. The Heatmap.
+
+       Figure 2. Pop-over Aggregating Students' Interpretations of a Text Passage Clicked by the Teacher.
+
+Identifying What is Important in a Teaching Situation
+Analyzing the transcripts of the group of teachers talking about the student work represented in the heatmap, we
+notice  that the teachers are drawn  to   the features highlighted in the heatmap. That is, a common    point the
+teachers call out concerns the extent to which students did or did not highlight the text. For example, Mr. C, the
+literature teacher, stated, "I am already really concerned that, like ­ why didn't ­ why did so few of them even
+do questions?    I mean, that was the whole ­ that was the instruction. I mean, is ­ how many do you think this
+is?" He is referring to the disappointing amount of students as a whole class that actually did their homework. It
+is not surprising that teachers' attention would be drawn to this fact since this is the clearest function of the
+heatmap. As we note in our discussion, however, the fact that the heatmap encourages this way of looking at
+student activity may    actually distract from the  overall aim of improving teachers' understandings  of student
+thinking.
+          The heatmap enabled the teachers to focus on individual students as well. While this also led to some
+observations of how much or how little annotation was done, the teachers also identified places in the text that
+were not annotated by individual students. For example, Mr. C observed about a student's annotation that "It is
+interesting, a ton in the beginning and then only a couple at the end... But the middle of the story does kind of
+get left out." Since the teachers had annotated their respective texts before assigning them to their students, they
+had an inclination of important places in the text.
+          The pop-up window depicting what questions or comments students made about their annotations also
+provided details that teachers called out. For example, when reading a question from one student, the science
+teacher says,
+
+          Ms. T: Look at this. [She reads what the text says:] "Some stars are much larger than the sun"
+          She then reads a student's annotation. "Dose that mean they are hotter? (sic.)" It's such a
+          simple question but it really is important.
+
+          Here the teacher is calling out the question this student writes regarding a statement from the textbook.
+The student is connecting size of a star with heat. This is an important relationship within the scientific domain
+the students were studying; the tool supported the teacher noticing students' reasoning about it.
+
+Making Connections between Specific Events and Broader Principles of Teaching and
+Learning
+We found limited evidence of teachers explicitly linking specific instances of annotations to broader principles
+of teaching and learning. Nonetheless, several examples illustrated how teachers' implicit values shaped practice
+with Markup. One example worth noting refers to an exchange among the teachers about a student's question
+from the text:
+
+© ISLS                                                                                                           497
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+          Ms. T:  For example... [the text] says, "The sun is about 100 times greater than that of earth."
+          They are trying to say how big the sun is and other stars and Daniel's [a pseudonym] comment
+          is, "What about gas to keep the plane going if the plane were actually going that far?" ...         I
+          mean he is thinking about this analogy.
+          Mr. C:  He's seeing outside the box.
+          Ms. T:  No. That's not even what I mean.      I just mean he's actually like reading the words and
+          understanding the words and this is maybe even what I'm talking about when I'm saying that
+          sometimes it's so hard for me to say, "Well, a student doesn't understand this just by reading
+          what they wrote," because there are so many ways ­
+          Ms. N:  To access their knowledge?
+          Ms. T:    A student could have copied directly the definition for parallax from the text and I
+          wouldn't say that I thought they necessarily understood it.     I know so much more from Daniel
+          saying, "What about gas to keep the plane going?" than I do from someone copying word for
+          word the definition for parallax.
+
+          This excerpt demonstrates one teacher's reasoning about the particular student's response and how his
+response demonstrates understanding. Ms. T acknowledges that the student is trying to connect the size of the
+sun with an analogy from his own life. She is identifying the student's learning as a process of negotiation and
+interpretation (Cobb, 1994), including implications not intended by the author. She is not trying to determine
+whether the student's response is right or wrong (as Mr. C generally tended to), but rather whether the response
+reveals the kind of engaged attentiveness (an important broader teaching principle; see Pianta & Allen, 2008) to
+the text that the teacher is hoping for.
+
+Using What One Knows about the Context to Reason about a Situation
+Teachers'  conversations    about  students' work   also addressed   student   understanding.   Ms.  T stated that  "It is
+harder to tell what they do not understand than what they do understand, because...I guess you can kind of say
+you are giving the benefit of the doubt, unless ­ like, I would want to see how they talk about it..." Here the
+teacher   makes   two  important  points. First, even   with the  new   tools, she has  a difficult time  inferring what
+students do not understand about the text. Second, even when she infers that there is student understanding, she
+would prefer to check the understanding through another means, such as discussion. This presents an interesting
+problem: it is possible that annotation, which has previously been shown to aid text comprehension, may, alone,
+produce representations that cannot be easily used to assess comprehension. This suggests that one possible
+source  of   design   guidance  on designing    representational  tools for teachers,   studies  of existing  assessment
+practices, may be of limited value to CSCL researchers in this area, because they do not encompass uses of data
+that can inform teachers (such as evidence of student engagement) but do not comply with psychometrically
+reliable models of assessment.
+          The extent to which the tool reveals or does not reveal student understanding was echoed later in the
+teachers' conversation. In a conversation with Mr. C, Ms. T said,
+
+          "I just think  ...the ways  that they...show     that they understand    it, like, you do  not  know
+          exactly what those will be.  Like I have to wait and see, how did they word something, or like
+          what ­ how did they respond to it?       And just because they, like, copied the definition directly
+          from the book about light year [I might not know]"
+
+          Here the teacher is referring to the feature that allows students to write a definition of a word. While a
+student may be able to write the definition (definition was a kind of annotation; teachers sometimes directed
+students to annotate new vocabulary thusly) on the computer, it does not mean that they will be able to use the
+word   in an appropriate   way.  The  teacher   is also reporting on  the difficulty   of articulating in advance   what
+evidence of understanding will look like, and that instead a Stewart-like "know it when I see it" approach is
+needed. Mr. C responded by suggesting that Ms. T alter the task she has given students to require them to use
+the language in a sentence, rather than simply defining it. His suggestion illustrates the important role that the
+instructional context can have on the utility of any data visualization.
+          Another way that reasoning about context can occur is in using the insight into student thinking offered
+by a tool to make decisions about altering the context, such as by changing instructional plans based upon what
+one has seen. An instance of this occurred when Mr. C made note of students annotating in ways that were
+contrary to his thinking.   This provided a tension in his mind between students not annotating "correctly" either
+because   they were    not annotating what   he  felt they should  or   because  he was   gaining   evidence of multiple
+perspectives from the students. This provided new awareness ­ and instructional ramifications -- for the English
+teacher.  As he   told the other teachers,  "if  I discussed this story  today  I'm    going to be  going in  more  open
+
+© ISLS                                                                                                                498
+CSCL 2011 Proceedings                                                                                       Volume I: Long Papers
+
+minded that there are a lot more opinions out there than I thought there were."
+
+Single Example: Learning to Notice
+In some cases, an extended comment or discussion exhibited the multiple dimensions of the Learning to Notice
+framework. For example:
+
+           Mr. C: ...Dominic was done with it, got his ten done and stopped, didn't even get half way
+           through the story. Whether he read it or not he was done. That is Dominic.
+           Ms. N: That's so him.
+           Mr. C: And that's his big issue, it's about as quick as I can get it done. The rule was ten, he
+           did ten. So, it's hard to assess him. When you look at him, what he did in the beginning was ­
+           it was okay. He used a lot of the same words over, but he didn't do a horrible job, but that's
+           him, half way. Get it done, walk away.
+
+           Here, within    the context   of Mr.   C   attempting   to relate  his  instructional  goals  to  what the   student
+actually did, Mr. C is identifying what one student has done in the class and how the extent of the student's
+work   is  not  enough   to fulfill the    full purpose   of  the assignment     or  to allow  him   to  assess  the  student's
+understanding. This exchange corresponds to all three elements of the Learning to Notice framework because
+Mr. C called out a notable element of a student performance, characterized it in terms of a known problematic
+phenomenon      (not  completing    an   assignment),     and   related  it to that   student's  historical   tendencies.  The
+conversation continued:
+
+           Ms. T: I'm sorry, what about that thing he wrote for rap?
+           Ms. N: He was really intense about that.
+           Ms. T: He wrote the longest rap and it is awesome. It's so sophisticated.
+           Ms. N: But it's the first time I've seen him like ­
+           Mr. C: Engage.
+
+           Here, Ms. T argued with Mr. C and Ms. N's historical characterization of Dominic by presenting a
+different background to the students' performance on the Markup. While Dominic's annotation may have been
+typical of his behavior in reading, his level of engagement had seen peaks (corresponding to an assignment that
+aligned   with  the   student's   interest in   rap)  as  well. While   this  conversation    does   not necessarily    address
+instructional strategies to address Dominic's engagement, Ms. T's gentle critique does allow the teachers to
+acknowledge     the  many   sides   students    bring to  their learning   situations,  including   the ways  in  which   well-
+constructed assignments can motivate students to excel. It is also noteworthy to mention that this snippet of
+discussion   is  not  very  deep    with   respect   to  the instructional  topic.   However,    it is  possible  to  view the
+collaborative actions among teachers through the Learning to Notice framework both to provide future support
+to the learners as well as to aid in the design process of future instructional tools by suggesting conversational
+contexts and protocols (e.g., presenting counterexamples that explain students' successes contextually) in which
+they might be employed.
+Significance
+This   study demonstrates      how  design-based     breach  experiments    can  fill an information    gap  that exists when
+trying  to design    tools  to support   learning    in  an  absence  of   current  practice. This   is  acutely  the case   for
+researchers    designing data   analysis   tools for  teachers  to use  to  understand   student    thinking  through detailed
+analyses   of   student  activity.  With    the  exception    of  early  mathematics     and   reading,   such   practices   are
+exceedingly rare in schools and have been only lightly researched. We demonstrate how a breach experiment
+may be used to understand some of the practical problems of understanding students' literate activity through
+analysis of external representations produced during that activity. In addition, we showed how the Learning to
+Notice  framework     provides    designers   of collaborative    learning  tools  a  window   into  how    teachers  attend to
+student learning through examination of student activity. Looking at and discussing student work is an important
+learning activity for teachers and the learning is embedded in the collaborative activity (Koschmann, 1996). By
+providing    a reference   frame    for identifying     teacher practices   that  are  associated   with improved     teaching,
+Learning to Notice allows CSCL researchers to identify whether an important class of teacher activity results
+from   the implementation      of a new    tool, and  then   to study and   potentially  problematize    that activity. As   we
+showed, it is possible for individual teachers to practice in ways that satisfy the Learning to Notice criteria
+without thinking deeply about student thinking. For example, the Markup heatmap directed teachers' attention
+to how (in)frequently students annotated any given passage of text. But while this is an important feature, it
+challenges   designers   to highlight    features    that qualitatively  differentiate   student  work   and  expose    student
+thinking.  Mr.   C's  past  practice (i.e.,  before   this   intervention)  tended   to be strongly    top-down;  he  directed
+classroom conversations based upon his interests (early field notes noted the lack of opportunities for students to
+
+© ISLS                                                                                                                      499
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+talk about their ideas in his classroom) and he often judged students' activity, as depicted in the heatmap, based
+upon how well it concurred with his own. The heatmap supported this behavior by enabling him to make quick
+work of checking whether students annotated the "right" things. If used solely on his own, Mr. C's work with
+the tool may not, thus, have been much of a learning experience for him. The tool made it easy for him to
+continue his past practices and relative lack of focus on student thinking. However, with critique from his peer
+teachers, he recognized that other interpretations of the data were possible. By making activity in Mr. C's class
+transparent to his peers, Markup enabled a collaboration that expanded Mr. C's thinking about his students'
+activity.
+           Cases  like these  indicate  ways   that CSCL    researchers  could examine    the problems  of   practice that
+occur  when     teachers  try to    use data  analysis  tools to inform  their  teaching.   Specifically, by    examining
+differential interpretations by different participants of common representations, researchers may understand not
+only   the possible   approaches    to  meaning  making   with  new  tools, but also  the   ways in which    collaborative
+practices may bridge different interpretations to enrich teacher thinking. Such cases can aid design work by
+suggesting ways in which designed representations could either foreground details in student activity that are
+likely to  have   controversial   interpretations (thus   increasing the likelihood   that  teachers' conversations   will
+include   discussions  of multiple     points of  view)  or directly  suggest  multiple  meanings   ­   gathered  through
+exhaustive study of how different teachers make sense of analogous cases -- for displayed data, tutoring teachers
+in how to make sense of classroom activity.
+           More generally, this work suggests visualization tools, even relatively simple ones like the Markup
+tool, can facilitate teacher learning and discussion through de-privatizing their practice. Extensive research has
+shown both the degree to which the teaching profession is isolated and the power of collaborative teams and
+communities     of  teachers  to    support  learning.  Prior research  has  suggested   that  a focus  on    a long-term
+instructional   goal,  such   as literacy   strategies, can aid  in  building  collegial  relationships among     teachers
+(Wardrip,   2009).  Our   results   show  how  even     uncomplicated representations    of student activity  can support
+teacher analysis of student thinking, reaffirming our opening claim that research on responsive practices to new
+representations of learning activities need not wait until more complex analysis are ready for deployment.
+           In closing, it is important to note how these results highlight a limitation of the Learning to Notice
+framework with respect to studying collaborative learning. While the Learning to Notice framework highlights
+both   individual  and group-level     change in  perspective  taking  and  noticing, it does  not  highlight tensions or
+dissonant   views,  including    claims  about   appropriate  instructional responses,   that often occur  in   groups of
+teachers with varying experiences, beliefs and expertise. In future work, this theoretical framework may need to
+be modified in order to support deeper analyses of collaborative learning. CSCL has a pivotal role to play in
+guiding, and being enriched by, that theory construction.
+References
+Atwell, N. (1990). Coming to know: Writing to learn in the intermediate grades. Portsmouth, NH: Heinemann.
+Crabtree,   A.,  Benford,   S.,  Greenhalgh,    C., Tennent,   P.,  Chalmers,  M. &    Brown,    B.   (2004).   Supporting
+        ethnographic studies of ubiquitous computing in the wild. ACM Symposium on Designing Interactive
+        Systems, State College, PA, 60-69.
+Cobb,   P.  (1994).    Where     is the   mind?   Constructivist   and  sociocultural    perspectives  on  mathematical
+        development. Educational Researcher, 23 (7), pp. 13-20.
+Feng, M., Heffernan, N.T. & Koedinger, K.R. (2006) Addressing the testing challenges with a web-based e-
+        assessment system that tutors as it assesses. Paper presented at WWW 2006, May 23­26, Edinburgh,
+        Scotland.
+Fernandez, C. & Yoshida, M. (2004) Lesson Study: A Japanese approach to improving mathematics teaching
+        and learning. NJ: Erlbaum.
+Fullan, M., Hill, P. & Crevola, C. (2006). Breakthrough. Thousand Oaks, CA: Corwin Press.
+Goodwin C. (1994). Professional vision. American Anthropologist. 96, 606-33
+Hill, W., Hollan, J., Wroblewski, D., & McCandless, T. (1992). Edit wear and read wear.             Proceedings   of   the
+        SIGCHI conference on Human factors in computing systems , 3-9. 201
+Koschmann, T. (1996). Paradigm shifts and instructional technology. In T. Koschmann (Ed.), CSCL: Theory
+        and practice of an emerging paradigm (pp. 1-23). Mahwah, NJ: Lawrence Erlbaum.
+Lewis, C. (2000) Lesson Study: The Core of Japanese Professional Development. Paper presented at the special
+        interest group on research in mathematics in education at American Educational Research Association
+        Meeting (AERA), New Orleans, LA.
+Liu, K. (1996). Annotation as an index to critical writing. Urban Education, 41: 192-207
+Marshall, C., & Rossman, G.B. (2006). Designing qualitative research. Thousand Oaks, CA: Sage.
+Maxwell, J.A. (1996) Qualitative research design: An integrated approach. Thousand Oaks,CA: Sage
+Medina, R., Suthers, D. & Vatrapu, R. (2008). Inscriptions becoming representations. Proceedings of the 9th
+        international conference on Computer Supported Collaborative Learning, Volume 1.
+
+© ISLS                                                                                                                 500
+CSCL 2011 Proceedings                                                                            Volume I: Long Papers
+
+Pianta, R.C. & Allen, J.P. (2008). Building capacity for positive youth development in secondary   school
+        classrooms: Changing teachers' interactions with student. In M. Shinn & h. Yoshikawa (Eds.) Toward
+        positive youth development: Transforming schools and community programs. New York, NY: Oxford
+        University Press.
+Reimann,  P. (2009)    Time   is precious: Variable- and event-centred  approaches  to process analysis in CSCL
+        research. IJCSCL,   4 (3), 239-257.
+Scherer, J., Gomez, K., Herman, P., Gomez, L., White, J., & Williams, A. (2008). Literacy infusion in a high
+        school environmental     science curriculum. In K.  Bruna   & K. Gomez   (Eds.), Talking science,  writing
+        science: The work of language in multicultural classrooms. NJ: Erlbaum.
+Shapiro, R.B. & Wardrip, P.S. (2010) Understanding formative instruction by design. In: Proceedings of Ninth
+        International Conference of the Learning Sciences, Chicago, IL, pp. 316-317
+Sherin, M. G. & van Es, E. A. (2003).      A new lens on teaching: Learning to Notice. Mathematics Teaching in
+        the Middle School, 9(2), 92-95
+Sherin, M.  G., &     Han, S. (2004). Teacher  learning  in the context  of a video club. Teaching and    Teacher
+        Education, 20,163-183
+Shute, V. J., Ventura, M., Bauer, M. I., & Zapata-Rivera, D. (2009). Melding the power of serious games      and
+        embedded assessment to monitor and foster learning: Flow and grow. In U. Ritterfeld, M. Cody, & P.
+        Vorderer (Eds.), Serious games: Mechanisms and effects (pp. 295-321). Mahwah, NJ: Routledge.
+Stahl, G., Koschmann, T., & Suthers, D. (2006). Computer-supported collaborative learning. In R. K. Sawyer
+        (Ed.), Cambridge handbook of the learning sciences. Cambridge: Cambridge University Press.
+Strauss, A.L. (1987). Qualitative analysis for social scientists. Cambridge: Cambridge University Press
+Suthers, D.D., Dwyer, N., Medina, R. & Vatrapu, R. (2010). A framework for conceptualizing, representing and
+        analyzing distributed interaction. IJCSCL, 5(1), 5-42.
+van Es,  E. A., &     Sherin, M.   G. (2002). Learning   to notice: Scaffolding new  teachers' interpretations of
+        classroom interactions. Journal of Technology and Teacher Education, 10(4), 571-596.
+van Es, E. A. & Sherin, M. G. (2008). Mathematics teachers "Learning to Notice" in the context of a video club.
+        Teaching and Teacher Education, 24, 244-276
+Wade-Stein, D., and Kintsch, E. (2004). Summary street: Interactive computer support for writing. Cognition
+        and Instruction, (22), 333-362.
+Wardrip, P. S. (2009). The role of literacy work circles in developing professional community. Paper presented
+         at the annual meeting of AERA, San Diego, California, April 13­17.
+
+© ISLS                                                                                                          501
+

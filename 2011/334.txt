@@ -1,0 +1,462 @@
+CSCL 2011 Proceedings                                                                                    Volume I: Long Papers
+
+Adaptive Support for CSCL: Is it Feedback Relevance or Increased
+                             Student Accountability that Matters?
+
+              Erin Walker, Carnegie Mellon University, Pittsburgh, USA, erinawalker@gmail.com
+              Nikol Rummel, Ruhr-Universität Bochum, Bochum, Germany, nikol.rummel@rub.de
+          Kenneth R. Koedinger, Carnegie Mellon University, Pittsburgh, USA, koedinger@cmu.edu
+
+         Abstract:    While   fixed CSCL     support  approaches   such    as collaboration  scripts   have been
+         shown to improve domain learning, adaptive support that varies based on student actions may
+         be more effective. In this paper, we discuss the Adaptive Peer Tutoring Assistant (APTA), an
+         adaptive   support   system  for  computer-mediated      peer tutoring   in high-school  Algebra.     We
+         conducted an after-school study with 122 participants where we compared APTA to two fixed
+         support conditions: one where we told students support was adaptive when it was not, and one
+         where   we   told students  support  was    fixed. These  manipulations     explored  two    hypotheses:
+         Adaptive support is effective because it is relevant to student behaviors, and support that is
+         perceived    to  be adaptive   is effective because   it makes    students  feel accountable   for their
+         actions.  APTA      showed  better  effects  on tutor and   tutee    learning compared    to  the  other
+         conditions, suggesting that the more relevant the support, the more beneficial it will be.
+
+Introduction
+Collaborative activities in the classroom can yield positive learning outcomes through the social construction of
+knowledge (Schoenfeld, 1992), but students need to engage in beneficial reflective and elaborative processes,
+and   generally do    not do so  without   assistance (Lou,  Abrami,    &   d'Apollonia,   2001).  Collaboration    can be
+supported using scripts, where interaction is structured by assigning students roles and activities to follow in
+their interaction (e.g., Fischer, Kollar, Mandl, & Haake, 2007). For example, in the reciprocal teaching script for
+reading comprehension by Palincsar and Brown (1984), students alternate between the roles of tutor and tutee,
+and   engage  in  a   sequence   of  elaborative  activities   involving   summarizing,    questioning,    clarifying  and
+predicting. Other script approaches structure student dialogue on a fine-grained level by providing questions
+(e.g. "What would happen if ...") or sentence starters (e.g. "It was found that ..." ) that students apply during
+their  collaboration  (Kollar,  Fischer,   & Slotta, 2005).  While   scripts  have   been  successful,  they   may  not be
+maximally effective at improving student collaboration: providing too much support for students who do not
+need it or too little support for students who do (e.g., Kollar et al., 2005). Further, they might have drawbacks
+because  they   overstructure   student interaction,  limiting student  control,  and  potentially    reducing feelings of
+being good collaborators and desire to be good collaborators (Dillenbourg, 2002).
+         A promising new method for facilitating computer-supported collaborative activities in the classroom
+is by providing students with adaptive collaborative learning support (ACLS), where interaction is analyzed as
+it occurs and then support is provided tailored to the needs of individual collaborators. The few adaptive support
+systems  that have    been   evaluated  with  students have    shown   benefits   compared  to fixed    support (Baghaei,
+Mitrovic, & Irwin, 2007; Kumar, Rosé, Wang, & Joshi, & Robinson, 2007). However, because of the technical
+challenges in developing robust ACLS systems, these evaluations are difficult to conduct, and it is still unclear
+under what conditions adaptive support is more effective than fixed support. In the study presented in this paper,
+we explore two mechanisms for the potential effectiveness of adaptive support, illustrated in Figure 1. First, we
+hypothesize that adaptive support in collaborative learning is effective for the same reasons as in individual
+learning: it is more relevant than fixed support (H1: Relevance Hypothesis). Students might benefit from being
+able to immediately apply the support to their interaction, leading them to improve their collaboration and their
+domain learning (Rummel & Weinberger, 2008). Additionally, because support only appears when it is relevant
+it avoids the overstructuring problem of fixed support, potentially increasing student feelings of being good
+collaborators (perceived collaboration efficacy). A second hypothesis is that students who believe that support is
+adaptive may feel more accountable for their collaborative actions, and thus be more motivated to collaborate
+effectively (H2:   Accountability   Hypothesis).     Accountability    for one's  partner's  outcomes     tends  to be  an
+important motivational force in collaboration (e.g., Slavin, 1996), and it is plausible to assume that if students
+believe the computer is responding to their actions, they may feel an increased sense of responsibility for those
+actions. If this hypothesis is correct, we would see benefits of collaboration on both student goals to be effective
+collaborators   (collaboration    goal  orientation)   and   domain    learning.  Distinguishing      between   these  two
+hypotheses is important because if H2 is true, it suggests that it may not be necessary to develop sophisticated
+adaptive systems, but simply to develop systems that can convincingly pretend to be adaptive.
+         To   examine     these two hypotheses,  we    developed   a system    to adaptively  support   a  reciprocal peer
+tutoring activity for  high  school  algebra,  building  on  a successful   individual    intelligent tutoring system,  the
+Cognitive Tutor Algebra (CTA; Koedinger, Anderson, Hadley, & Mark, 1997). We conducted a study where we
+
+© ISLS                                                                                                                  334
+CSCL 2011 Proceedings                                                                                     Volume I: Long Papers
+
+     Figure 1. Adaptive support may influence domain learning and motivation by being more relevant to
+        student needs (H1), which should enhance self-efficacy and learning, or by encouraging greater
+                    accountability (H2), which should enhance goal orientation and learning.
+
+compared an adaptive to a fixed support system, by varying the adaptivity of reflective prompts given to peer
+tutors to improve their help-giving. In order to differentiate between the two hypotheses, and determine whether
+adaptive  support  could   be solely   effective through   the accountability     hypothesis    (H2),  we   included   a   third
+condition where we told students support was adaptive, when it in fact was fixed. Student belief that support is
+adaptive  may    lead to benefits that  can  be  explained   by H2    but not  H1.   In  this   paper, we   first  discuss the
+reciprocal peer tutoring context for the adaptive support. We then describe the adaptive support system we have
+developed for reciprocal peer tutoring. Finally, we discuss the study methodology and its results.
+
+Context: Help-Giving in Reciprocal Peer Tutoring
+Help-giving   is an   important part   of many   collaborative    activities, and   is a    key element   of   the productive
+interactions identified by Johnson and Johnson (1990) that contribute to learning from collaboration. The act of
+giving help has been demonstrated to improve learning of both the help giver and the receiver (see Ploetzner,
+Dillenbourg,   Preier, &   Traum,  1999).    In  giving help,  even   novice   students     benefit  through   reflective  and
+elaborative processes; they reflect on their peer's error and then construct a relevant explanation, elaborating on
+their existing knowledge and generating new knowledge (Roscoe & Chi, 2007). In turn, students benefit from
+receiving good help; that is, help that arrives when they reach an impasse, allows them to self-explain, and, if
+necessary, provides    an explanation   that is  conceptual,  targets   their misconceptions,      and is correct    (Webb  &
+Mastergeorge,    2003).  Unfortunately,   most   students do  not  exhibit good    help-giving     behaviors   spontaneously
+(Roscoe & Chi, 2007). Specifically, students are often more inclined to give each other instrumental help (e.g.,
+"subtract x").   They  rarely provide  conceptual,  elaborated     help  that  explains     why,  in addition  to    what, and
+references domain     concepts  (e.g., "subtract  x to  move    it to the  other   side").   This   tendency   decreases   the
+likelihood that either student benefits from the interaction (Webb & Mastergeorge, 2003). Therefore, promoting
+conceptual help-giving is a major focus of peer tutoring support. It is one criteria of good help for the receiver,
+and an indicator that the help-giver engaged in elaborative processes.
+         One technique for facilitating student help-giving is by employing a reciprocal schema, where students
+are given  different   information   and    take turns  helping    each   other   using     the information    they   received
+(Dillenbourg & Jermann, 2007). As part of their role, helpers must monitor their partner's problem solving and
+offer  appropriate explanations   when    needed. Examples     of  this class  of collaborative     activities are   reciprocal
+teaching  by  Palincsar  and  Brown    (1984),  mutual  peer  tutoring  by    King,  Staffieri,  and  Adelgais    (1998),  and
+reciprocal peer tutoring by Fantuzzo, Riggio, Connelly, and Dimeff (1989). Reciprocal learning settings have
+been   successful  at  increasing  student   learning   in   classroom    environments      compared     to  individual    and
+unstructured  controls   (Fantuzzo et  al., 1989;  King   et al.,  1998;  Fuchs   et   al., 1997),   but only  when    student
+activities are appropriately supported. For example, Fuchs et al. (1997) trained students to deliver conceptual
+mathematical     explanations  and give     elaborated  help,   and   showed    that   their    mathematical   learning    was
+significantly better  than elaborated   help training   alone  or  an individual    learning    control. There    is reason to
+believe that adaptive support would be effective in this context, for the same reasons that it may be effective in
+other  collaborative  contexts. Adaptive    support might    provide    relevant  assistance    at  moments    when    it most
+needed,   increasing   student  reflective   and  elaborative   processes,     and   thus    improving    domain     learning.
+Additionally, motivation plays an important part of peer tutoring. Peer tutors who feel accountable for their
+partner's learning tend to attend more to the subject material and learn more (e.g., Biswas et al., 2005), and peer
+tutors who feel like good tutors tend to try harder at the activity (Medway & Baron, 1977). Adaptive support in
+this context might have an amplified effect on student motivation, enabling us to investigate both the relevance
+and accountability hypotheses.
+
+© ISLS                                                                                                                      335
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+System: The Adaptive Peer Tutoring Assistant
+
+Basic Peer Tutoring Script
+To investigate the effects of adaptive collaboration support, we constructed a computer-supported collaborative
+learning system called the Adaptive Peer Tutoring Assistant (APTA). In APTA, dyads of students work on literal
+equation   problems   where  they   are given an  equation like  "ax   +  by =  c"  and  a prompt   like, "Solve  for x".
+Students are seated at different computers, and at any given time, one student is the peer tutor and the other is
+the tutee. Tutees can perform operations on the equation with a menu-based interaction used in the common,
+individual version of the Cognitive Tutor Algebra (CTA). Using the menus, students can select operations like
+"subtract  from both   sides", and  then  type in  the term they   would   like  to  subtract.  For some  problems,   the
+computer then performs the result of the operation and displays it on the screen; for others, the tutee must type
+in the result of the operation themselves. The peer tutors can see the tutee's actions on their computer screen,
+but are not able to perform actions in the problem themselves (#5 in Figure 2). Instead, the peer tutor can mark
+the tutee's actions (#6 in Figure 2), and adjust tutee skill assessments in the skillometer window (#1, Figure 2).
+Students can discuss the problem in a chat window (#4 in Figure 2). We intended that in constructing help for
+tutees in the chat window, peer tutors would engage in elaborative aspects of tutoring, generating knowledge
+and integrating it    with existing knowledge.    To facilitate  the  discussion  in the chat   window,   we included  a
+common     form of    fixed scaffolding:  sentence  classifiers. This  form   of  fixed  scaffolding   is thought  to be
+pedagogically   beneficial  by making    positive  collaborative  actions  explicit  in the interface  and  encouraging
+students to consider the type of utterance they wish to make (Weinberger, Ertl, Fischer, & Mandl, 2005). We
+asked peer tutors to label their utterances using one of four classifiers: "ask why", "explain why wrong", "give
+hint", and  "explain   what  next"  (#8  in Figure 2). Students  had   to select  a  classifier before they  typed in an
+utterance, but they could also choose to click a neutral classifier ("other"). For example, if students wanted to
+give a hint, they could click "give hint" and then type "subtract x". Their utterance would then appear as "tutor
+hints: subtract x" to both students in the chat window. By making those behaviors explicit in the interface, we
+hoped   to encourage    students to  put  more  consideration    into what   they  said and  why,   facilitating them  in
+constructing more conceptual help.
+         In the basic version of APTA, we provided tutors with adaptive domain assistance that supported them
+in reflecting on tutee errors. We intended that this assistance have the additional benefit of ensuring that the
+
+    Figure 2. Peer tutor's interface in APTA. Tutors observe and mark tutee actions, assess tutee skills, and
+       provided tutees with explanations in the chat window. They receive domain hints and feedback, and
+                       adaptive reflective prompts to help them improve their collaboration.
+
+© ISLS                                                                                                                336
+CSCL 2011 Proceedings                                                                                         Volume I: Long Papers
+
+tutee received more correct help than they otherwise would have. This assistance was provided in two cases.
+First, the peer tutor could request a hint from the CTA and relay it to the tutee. Second, if the peer tutor marked
+something incorrectly in the interface (e.g., they marked a wrong step by the tutee correct), the intelligent tutor
+would highlight the answer in the interface, and present the peer tutor with an error message. Hints and error
+messages were composed of a collaborative component ("Remember to explain why your partner should do
+something, not just what they should do"), and the cognitive component that the tutee would have originally
+received had they been using the CTA individually ("You can subtract qcv from both sides of the equation to
+eliminate  the  constant   value    of qcv  [qcv ­  qcv   =  0]"; see   #9,  Figure  2).   If the  tutor clicks   next   hint, both
+components become more specific, until the cognitive component reveals the answer to the tutor.
+
+Reflective Prompts: Study Manipulation
+Our experimental manipulation varied the adaptivity of reflective prompts students receive while collaborating.
+These reflective prompts appear simultaneously to both students in the chat window and target peer tutor help-
+giving skills that need improvement (#7 in Figure 2). For example, novice tutors may give instrumental hints
+like "then  subtract"   rather    than  conceptual  hints    like "to  get  rid of   qcv,  you   need   to perform    the  inverse
+operation on that side of the equation." When tutors are detected to be giving instrumental hints, the computer
+uses an assessment of the tutor's help-giving skill to say in the chat window (visible to both students), "Tutor,
+think about the last help you gave. Why did you say that? Can you explain more?" This utterance is designed to
+get  both  students   reflecting  on   the  domain concepts    behind   the  next    step, and  to  remind    the tutor  that  help
+should explain why in addition to what. Prompts are addressed to the peer tutor (e.g., "Tutor, can you explain
+your partner's mistake?"), and are adaptively selected based on the computer assessment of help-giving skills.
+For  example,   as  use of    the sentence   classifiers  is an   integral component       of our  ability to  assess    peer  tutor
+utterances, as well as having potential benefit for the students, when students fail to use the sentence classifiers,
+they receive prompts suggesting that they should do so (e.g., "The buttons underneath the chat [e.g., "Give
+Hint"] can help you let your partner know what you're doing"). Students also receive encouragement when they
+display a particular help-giving skill (e.g., "Good work! Explaining what your partner did wrong can help them
+not make the same mistake on future problems"). The prompts contain both praise and hedges, such that the
+computer's voice does not publicly threaten the peer tutor's voice. Only one reflective prompt was given at a
+time, and parameters were tuned so that students received an average of one prompt for every three peer tutor
+utterances. There were several different prompts for any given situation, so students rarely received the same
+prompt twice.
+           We built a model for good peer tutoring which assessed whether students displayed four help-giving
+skills: help   in response    to  tutee  errors  and   requests,   help  that   targets  tutee  misconceptions,       help that  is
+conceptual   and  elaborated,     and  the  use of sentence    classifiers  to give  help.    This assessment     is the  basis for
+providing   students   with   reflective prompts.   Our   main    focus was    supporting     peer tutors  in giving     conceptual
+elaborated   help   to benefit    their  own    learning. For     example,   by   encouraging      peer  tutors   to  target   tutee
+misconceptions, we hoped to lead them to reflect and elaborate more on the concepts involved in solving the
+problem. To assess peer tutor performance, the model uses a combination of several inputs. First, it uses CTA
+domain models to access the problem-solving context (e.g., it could tell if tutees had just made an error). Next, it
+uses   student  interface  actions,  including   tutor self-classifications    of chat  actions    as prompts,    error  feedback,
+hints,  or explanations,    to determine    what   the students'    intentions    were   when    giving   help. Finally,   it  used
+Taghelper (Rosé et al., 2008) to automatically determine whether students were giving help, whether the help
+targeted the next problem step or the previous problem step, and whether the help was conceptual. Based on a
+combination of these three channels, we used a simple model composed of 15 rules to assess each peer tutor
+action taken, and used Bayesian knowledge tracing (Corbett & Anderson, 1995) to update a running assessment
+of  peer  tutor mastery    of  the  four   help-giving skills.  For   example,    if the   peer tutor  clicked    the "give    hint"
+classifier and typed "subtract x", the system would classify the utterance as nonconceptual help on the next
+problem step. The system would then access the CTA problem-solving context, and might see that the tutee had
+recently   made   an  error.  The   system  would   consider   the  peer   tutor  utterance   to   be suboptimal     collaboration
+because    the peer  tutor did   not   give feedback   on the   error,  and  the  "target  misconceptions"      skill assessment
+would   be  decreased.    If, after any    peer tutor  action, a  skill fell within   a  predefined    threshold     for that  skill,
+students were given a reflective prompt targeting that skill. In this particular example, the peer tutor may be
+told: "Tutor, is there anything your partner doesn't understand right now about the problem?" These prompts are
+adaptive both with respect to their timing and with respect to their content.
+
+Method
+The goals of this study were to investigate the potential beneficial effects of adaptive support on collaboration
+and learning in a computer-supported peer tutoring setting and to explore two potential mechanisms for these
+effects. Thus, we compared three conditions:
+           1) Students received adaptive support and were told it was adaptive (real adaptive condition)
+
+© ISLS                                                                                                                           337
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+         2) Students received fixed support and were told it was adaptive (told adaptive condition)
+         3) Students received fixed support and were told it was fixed (real fixed condition)
+We deployed the three versions of our system in an after-school lab study to examine the influence of the actual
+and  perceived   adaptive   support on  student learning  and  motivation.   Following   the accountability    hypothesis
+(H2), we believed that in the conditions where students perceived support as adaptive (the real and told adaptive
+conditions), they would be more motivated to collaborate effectively, and would learn more than the students
+who    perceived the   support as   random.   Following   the relevance   hypothesis   (H1),  we   believed   that in  the
+condition where    support   was  actually  adaptive   (only  the real  adaptive  condition),  students    would   receive
+feedback on their help only at moments when they could apply it, and thus would learn more than other students
+and feel more positively about their tutoring.
+
+Participants
+Participants were 130 high-school students (49 males, 81 females) from one high school, ranging from 7th to
+12th   grade, and  currently  enrolled  in  Algebra  1 (46   students), Geometry     (49  students), or  Algebra   2   (35
+students). While the literal equation solving unit was one that all students had completed, the teacher we were
+working with identified it as a challenging unit for the students, and, in fact, many students did not remember
+seeing  the   material before. The    study was  run   at the  high  school,  either immediately     after school  or  on
+Saturdays. All students were paid 30 dollars for their participation. Students participated in sessions of up to 9
+students at a time (M group size = 7.41, SD = 1.35). Each session was randomly assigned to one of the three
+conditions, and then within each pair students were randomly assigned to the role of tutee or tutor. Students
+came   with partners   that  they had chosen,   except in the  case  of 4 students   assigned  to their partners   by  the
+researchers.  For  ease   of scheduling,  we  sometimes    assigned  an   extra student   to a  given   session   (in case
+somebody did not show up at the assigned time). There were 8 students who worked alone over the course of
+the session. Thus, a total of 122 students were included in the analysis.
+
+Procedure
+This study took place over 3 hours. Students received a brief 5-minute introduction to the study, and then took a
+20-minute domain pretest. Next, students spent 20 minutes in a preparation phase, working individually using
+the CTA. Students solved problems involving literal equations where the variable terms were on the same side
+of the equation (e.g., ax + bx = cy + dz; solve for x). Students then spent 30 minutes in the tutoring phase, with
+one student tutoring another student on problems where the variable terms were on both sides of the equation
+(e.g., ax + cy = bx + dz; solve for x). Students took up to 10 minutes to answer several survey questions on their
+motivational state, and then spent another 30 minutes in the tutoring phase. At this point, students took a 15-
+minute   break,  and   then  took   a 20-minute  domain    posttest,   again  consisting  of  a  10-minute    conceptual
+component and 10-minute procedural component. Students concluded the study by tutoring without support for
+25 minutes, and answering demographic questions.
+         In the tutoring phase, we implemented two between-subjects manipulations where we varied whether
+students  received    adaptive    support and   whether   they thought    the   support   was  adaptive.   As   our   first
+manipulation,    we   varied  the  adaptivity of   the reflective   prompts   students   received. To    implement     the
+comparison conditions where students received fixed support, we gave students pseudo-random prompts that
+ensured that the timing and content of the prompts was not contingent on student actions. Every time students
+would have received a reflective prompt were they in the adaptive condition, they did not receive a prompt in
+the fixed condition. However, we ensured that they received a prompt within the next three turns, thus yoking
+the fixed prompt to the adaptive prompt. We randomly selected the content of the prompt, with one exception:
+we did not choose content that would have been parallel to the yoked adaptive prompt. Thus, we tried to avoid
+cases  where   the fixed  support   prompts   were accidentally   relevant (according    to  our  model    of adaptivity),
+making the comparison between the adaptive and fixed support more controlled. For the second manipulation,
+prior to the tutoring phase, we gave students instructions that told them that the support was either adaptive or
+fixed. The adaptive instructions were as follows: "The computer will watch you tutor, and give you targeted
+advice when you need it based on how well you tutor. Both you and your partner will see the help in the chat."
+The fixed instructions were as follows: "From time to time, the computer will give you a general tip chosen
+randomly  from   advice   on  good  collaboration. Both   you  and  your  partner will   see the  help  in the chat."  As
+students began   to   use the  tutoring system,  they  were   given  further  instruction on  how    to use   the system,
+including instructions on how to indicate how they felt about the reflective prompts using "like" and "dislike"
+widgets. To reaffirm the experimental manipulation, students in the real and told adaptive conditions were told:
+"We will use that information to improve the computer's ability to track what you're doing and give you advice
+you can use." Students in the real fixed condition were told: "We will use that information to describe which
+pieces of advice can go into the pool of advice we randomly select from."
+
+© ISLS                                                                                                                  338
+CSCL 2011 Proceedings                                                                              Volume I: Long Papers
+
+Measures
+To assess students' individual domain learning we used counterbalanced pretests and posttests, each containing
+7 conceptual items and 5 procedural items. Tests were approved by the coordinating classroom teacher, and
+were administered on paper. We scored answers on these tests by marking whether students were correct or
+incorrect on each item, and then summing the scores. We further assessed student motivational state in two
+ways.  First, we included   several  items assessing perceived   collaboration  efficacy  relating to how    positively
+students perceived    themselves  in the interaction (e.g., for the tutor: "I think I was a  good   tutor"), and how
+positively they perceived their partner (e.g., for the tutee: "I think my partner learned a lot from being a tutor").
+Second, we adapted individual learning orientation questionnaires (Elliot & McGregor, 2001) to assess peer
+tutor mastery and performance goals for being a good tutor (e.g., "While tutoring, I was worried that I might not
+learn enough about tutoring", "While tutoring, my goal was to show my partner I was a good tutor"), and tutee
+mastery and performance goals for helping their partner be a good tutor (e.g., "While being tutored, I wanted
+my partner to understand how to tutor", "While being tutored, it was important for me that my partner look like
+a good tutor"). We called this measure collaboration goal orientation. For both motivation measures, scores
+were averaged across all relevant items. Finally, as a manipulation check, we assessed perceived adaptivity,
+with five items asking students how adaptive they thought the system was (e.g., for the tutor: "The computer
+gave advice at times when it was useful.") and how positively they perceived the system (e.g., for the tutee:
+"The advice the computer gave improved how well my partner tutored me.").
+
+Results
+
+Domain Learning
+We conducted a two-way (condition x role) ANCOVA, controlling for pretest, with posttest as the dependent
+variable. Pretest score was significantly predictive of posttest score (F[1,115]=120.43, p < 0.001; see Table 1).
+There was a significant effect of condition on posttest (F[2,115] = 4.20, p = 0.017, eta2 = 0.068), indicating that
+the adaptiveness of support had a positive effect on student posttest performance. A planned comparison of the
+effects of receiving real adaptive support revealed that it indeed had a significant effect (F[1,115] = 7.47, p =
+0.007), while a planned comparison of the effects of receiving support that students were told was adaptive
+revealed that  this   manipulation did not  have a significant  effect (F[1,115]=0.393,   p = 0.532).  These   results
+support the relevance (H1) but not the accountability (H2) hypothesis, suggesting that real adaptive support had
+a more beneficial effect than fixed support, even if students were told that the support was adaptive.
+         Interestingly, while the effect of role on posttest was not significant (F[1,115] = 0.751, p = 0.338),
+there was a significant interaction effect between condition and role (F[1,115] = 3.334, p = 0.039, eta2 = 0.055).
+Applying the planned comparisons based on H1 and H2 to the interaction effect revealed that while the effects
+of real  adaptivity   did not differ across the  two  roles  (F[1,115]  =  2.660, p   = 0.106), told  adaptivity    had
+differential effects on peer tutors and tutees (F[1,115] = 6.561, p = 0.012). Inspecting student learning across
+role and condition (see Table 1) revealed that peer tutors benefit more from the told adaptive condition than the
+real fixed condition, but tutees benefit more from the real fixed condition than the told adaptive condition. The
+perception of adaptivity may have an effect on peer tutor feelings of accountability and thus may positively
+influence their learning.  However, the perception that the tutoring advice is relevant when it is not may impede
+the tutoring abilities of the peer tutor and thus may lead to less tutee learning than in the real fixed condition.
+
+ Table 1. Pretest and posttest scores for the tutee and tutor. Scores represent percent correct.
+                            Real Fixed                Told Adaptive                 Real Adaptive
+                        Tutor         Tutee          Tutor        Tutee         Tutor         Tutee
+   Pretest Score      0.29 (0.15)  0.23 (0.16)   0.24 (0.12)    0.28 (0.18)   0.27 (0.16)   0.28 (0.15)
+   Posttest Score     0.28 (0.18)  0.33 (0.21)   0.27 (0.16)    0.29 (0.14)   0.39 (0.17)   0.36 (0.21)
+
+Tutoring Efficacy and Goal Orientation
+We then investigated the motivational effects of the manipulation. We assessed how positively students felt
+about their and their partner's tutoring abilities in the perceived collaboration efficacy measure, using a two-
+way (condition x role) ANOVA (see Table 2, row 1). We found that condition significantly affected student
+positive feelings of perceived collaboration efficacy (F[2,102] = 5.58, p = 0.005), as did role (F[1,102] = 5.10, p
+= 0.026). There was no significant interaction of condition and role (F[2,102] = 0.542, p          = 0.583). We then
+looked at the effects of condition on tutoring mastery and performance orientation using the collaboration goal
+orientation measure (see Table 2, rows 2 and 3). Condition did not have a significant effect on either variable
+(mastery orientation: F[2,99] = 0.501, p = 0.607; performance orientation: F[2,99] = 0.679; p = 0.510).
+
+© ISLS                                                                                                              339
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+Table 2. Motivational effects and manipulation check. Standard deviations are presented in parentheses. Scores
+are on a 7-point Likert scale, with 7 being the most positive response.
+                                      Real Fixed                   Told Adaptive                Real Adaptive
+                                   Tutor         Tutee          Tutor          Tutee         Tutor         Tutee
+Collaboration efficacy         4.53 (1.28)   5.35 (1.37)   4.68 (1.86)     4.90 (1.39)    5.43 (1.03)   6.14 (0.67)
+Mastery orientation            4.93 (1.10)   5.15 (1.24)   4.94 (1.05)     5.10 (1.17)    5.28 (1.10)   5.46 (1.52)
+Performance orientation        4.77 (1.17)   5.08 (1.01)   4.78 (1.25)     4.72 (1.59)    4.85 (1.05)   4.82 (1.25)
+Perceived adaptivity           4.75 (1.60)   4.79 (1.56)   5.06 (1.05)     4.54 (1.30)    4.84 (1.30)   5.23 (1.25)
+
+Perceived Adaptivity
+As a manipulation check, we evaluated how adaptive and effective students thought the system was (perceived
+adaptivity; see Table 2, row 4). In a two-way (condition x role) ANOVA, there were no significant effects of
+condition on perceived adaptivity (F[2, 96] = 1.046, p = 0.355), no significant effects of role (F[1,96] = 0.00, p
+= 0.992), and no interaction (F[2,96] = 1.741, p = 0.181).
+
+Discussion and Conclusions
+In this paper, we     described APTA,    a system   for adaptively  supporting  peer  tutoring,  and  conducted a study
+where we compared a condition employing APTA to two conditions employing a fixed support system. The
+results suggested that compared to fixed support, adaptive support improved the domain learning of peer tutors
+and tutees. This result adds to the small list of studies demonstrating the effectiveness of adaptive collaborative
+support at improving learning (e.g., Kumar et al., 2007). We also found that students who received adaptive
+support thought they were better collaborators than their fixed support peers. As there is a positive link between
+efficacy and motivation, this finding suggests that adaptive reflective prompts may help overcome motivational
+drawbacks of fixed support systems (e.g., Dillenbourg, 2002).
+         One of the central questions of this research agenda is: how adaptive does support need to be? The
+effectiveness  of the  real adaptive   support compared    to   the told adaptive   support  provided  evidence  for the
+relevance hypothesis (H1; the top path in Figure 1). As the fixed support conditions received approximately the
+same collaborative support content as the adaptive support condition, we can conclude that it was the adaptive
+presentation  of  the content   at appropriate moments     that enhanced    student  learning and  motivation.  We   also
+tested whether by simply telling students that support was adaptive, even when it was not, students might learn
+more from the collaboration (accountability hypothesis; H2; the bottom path in Figure 1). This hypothesis was
+not confirmed.    Peer   tutors  may  have   received   some   benefit from    the perception of  adaptivity, but tutees
+performed worst in this condition. Moreover, the adaptivity of support had a significant effect on collaboration
+efficacy but not goal orientation, further supporting the relevance hypothesis over the accountability hypothesis.
+Despite these results, we found no differences between conditions in student reports of how adaptive they found
+the system. It is interesting that although students in the real adaptive condition did not appear, on the survey
+measure, to perceive the system as more adaptive, they still received beneficial effects of adaptivity.
+         This  study     tried  to identify  guidelines   for   supporting   collaborative   learning using   controlled
+experimentation   in   a school    context, and   further  focused   on    uncovering   the underlying  mechanism    by
+manipulating   particular aspects   of   adaptive support.  Theoretical    progress  in understanding  the potential  of
+adaptive support for collaborative learning will be enhanced by further investigations of alternative mechanisms
+for how, when, and why particular forms of adaptive support are effective. In general, the positive learning and
+motivational  results  relating  to real   adaptive support   encourage    the continuation   of research into  adaptive
+support for collaboration, suggesting that the time and effort necessary to develop this support is worthwhile.
+
+References
+Baghaei, N., Mitrovic, A., & Irwin, W. (2007). Supporting Collaborative Learning and Problem Solving in a
+         Constraint-based CSCL Environment for UML Class Diagrams. International Journal of Computer-
+         Supported Collaborative Learning, 2 (2-3), 159-190.
+Biswas,  G.,  Leelawong,    K.,  Schwartz,   D.,  Vye,  N. &    The  Teachable     Agents Group   at Vanderbilt  (2005).
+         Learning     By  Teaching:    A   New    Agent   Paradigm     for Educational    Software.   Applied  Artificial
+         Intelligence, 19, 363-392.
+Corbett, A.T., Anderson, J.R. (1995) Knowledge Tracing: Modeling the Acquisition of Procedural Knowledge.
+         User Modeling and User-Adapted Interaction, 4, 253-278.
+Dillenbourg,  P.  (2002). Over-scripting    CSCL:   The   risk  of  blending collaborative   learning with instructional
+         design. In Kirschner, P. A. (Ed.), Three worlds of CSCL: Can we support CSCL? 61-91.
+
+© ISLS                                                                                                               340
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+Dillenbourg,  P., &     Jermann,  J.  (2007).   Designing    integrative scripts. In Scripting   Computer-Supported
+         Collaborative    Learning   -  Cognitive,   Computational,    and   Educational     Perspectives,  Computer-
+         Supported Collaborative Learning Series, pages 275-301. Springer, New York, 2007.
+Elliot, A. J., & McGregor, H. A. (2001). A 2 x 2 achievement goal framework. Journal of Personality and
+         Social Psychology, 80, 501-519.
+Fantuzzo, J. W., Riggio, R. E., Connelly, S., & Dimeff, L. A. (1989). Effects of reciprocal peer tutoring on
+         academic achievement and psychological adjustment: A component analysis. Journal of Educational
+         Psychology, 81(2), 173-177.
+Fischer, F., Kollar, I., Mandl, H., & Haake, J. (2007). Scripting Computer-Supported Collaborative Learning ­
+         Cognitive, Computational, and Educational Perspectives. Computer-Supported Collaborative Learning
+         Series, New York: Springer.
+Fuchs, L., Fuchs, D., Hamlett, C., Phillips, N., Karns, K., & Dutka, S. (1997). Enhancing students' helping
+         behavior during peer-mediated instruction with conceptual mathematical explanations. The Elementary
+         School Journal, 97(3), 223-249.
+Johnson,   D.  W.     &   Johnson,   R.   T.   (1990).  Cooperative    learning   and    achievement.  In   S.  Sharan
+         (Ed.), Cooperative learning: Theory and research (pp. 23-37). NY: Praeger.
+King, A., Staffieri, A., & Adelgais, A. (1998). Mutual peer tutoring: Effects of structuring tutorial interaction to
+         scaffold peer learning. Journal of Educational Psychology, 90, 134-152.
+Koedinger, K., Anderson, J., Hadley, W., & Mark, M. (1997). Intelligent tutoring goes to school in the big city.
+         International Journal of Artificial Intelligence in Education, 8, 30-43.
+Kollar, I., Fischer, F., & Slotta, J. D. (2005). Internal and external collaboration scripts in web-based science
+         learning at    schools.  In T. Koschmann,      D.   Suthers, &  T.-W.    Chan   (Eds.), The   next 10  years!
+         Proceedings of the International Conference on Computer Support for Collaborative Learning 2005
+         (pp. 331-340). Mahwah, NJ: Lawrence Erlbaum Associates.
+Kumar,   R.,  Rosé,   C.  P., Wang,    Y.  C.,  Joshi, M.,   Robinson,   A. (2007).   Tutorial   dialogue  as  adaptive
+         collaborative   learning support.   In R.   Luckin,  K. R.   Koedinger,  &   J. Greer  (Eds.) Proceedings  of
+         Artificial Intelligence in Education (pp. 383-390). IOS Press.
+Lou, Y., Abrami, P. C., d'Apollonia S. (2001). Small group and individual learning with technology: A meta-
+         analysis. Review of Educational Research, 71(3), 449-521.
+Medway,    F. &   Baron,   R.    Locus  of   control and   tutors' instructional  style.  Contemporary     Educational
+         Psychology, 2, 298-310 (1997).
+Palincsar, A.S., & Brown, A.L. (1984). Reciprocal teaching of comprehension-fostering and comprehension-
+         monitoring activities. Cognition and Instruction, 1(2), 117-175.
+Ploetzner, R., Dillenbourg, P., Preier, M., & Traum, D. (1999). Learning by explaining to oneself and to others.
+         In P. Dillenbourg (Ed.), Collaborative Learning: Cognitive and Computational Approaches            (pp. 103 ­
+         121). Elsevier Science Publishers.
+Roscoe, R. D. & Chi, M. (2007) Understanding tutor learning: Knowledge-building and knowledge-telling in
+         peer tutors' explanations and questions. Review of Educational Research. 77(4), 534-574.
+Rosé, C. P., Wang, Y.C., Cui, Y., Arguello, J., Stegmann, K., Weinberger, A., Fischer, F. (2008). Analyzing
+         Collaborative    Learning    Processes   Automatically:    Exploiting    the    Advances  of   Computational
+         Linguistics   in Computer-Supported       Collaborative   Learning.  International    Journal  of  Computer-
+         Supported Collaborative Learning, 3(3), 237-271.
+Rummel, N. & Weinberger, A. (2008). New challenges in CSCL: Towards adaptive script support. In G.
+         Kanselaar, V. Jonker, P.A. Kirschner, & F. Prins, (Eds.), International perspectives of the learning
+         sciences: Cre8ing a learning world. Proceedings of the Eighth International Conference of the
+         Learning Sciences (ICLS 2008), Vol 3 (pp. 338-345). International Society of the Learning Sciences.
+Schoenfeld, A. H. (1992). Learning to think mathematically: Problem-solving, metacognition, and sense making
+         in mathematics. In D. Grouws (Ed.), Handbook for research on mathematics teaching and learning
+         (pp. 334­370). New York: Macmillan.
+Slavin, R. E. (1996).    Research  on  cooperative   learning and  achievement:   What    we know,  what   we  need to
+         know. Contemporary Educational Psychology, 21, 43-69.
+Webb,   N. M.,  &     Mastergeorge,  A. (2003).   Promoting   effective  helping  behavior   in  peer-directed groups.
+         International Journal of Educational Research, 39, 73-97.
+Weinberger, A., Ertl, B., Fischer, F., & Mandl, H. (2005). Epistemic and social scripts in computer-supported
+         collaborative learning. Instructional Science, 33(1), 1-30.
+
+Acknowledgments
+This research is supported by the Pittsburgh Science of Learning Center, NSF Grant #SBE-0836012. Thanks to
+Carolyn Rosé, and the mathematics coordinator who made this study possible.
+
+© ISLS                                                                                                              341
+

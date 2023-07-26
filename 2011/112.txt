@@ -1,0 +1,411 @@
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+ Weblines: Enabling the Social Transfer of Web Search Expertise
+                      using User-Generated Short-form Timelines
+         Neema Moraveji, Salman Ahmad, Chigusa Kita, Frank Chen, Sep Kamvar, Stanford University
+        Email: neema@stanford.edu, saahmad@stanford.edu, ckita@stanford.edu, fxchen@stanford.edu,
+                                               sdkamvar@stanford.edu
+
+         Abstract: Web search encompasses more than fact retrieval; it is a primary entry point for
+         learning.    Exploratory  search  tasks   are attempts     at such learning   and require   cognitive,
+         strategic, and interpretive work from the user. The pathways of such searches are likewise
+         complex and nuanced. The present study attempts to enable the human work that goes into
+         conducting exploratory searches to be efficiently captured and transmitted to other learners.
+         By  this  method,    web  search  expertise   can transfer    socially and  implicitly between   users
+         instead of developing individually or through directed learning. The system we deployed uses
+         an  existing  metaphor,   the  timeline,  to  structure insights  from  searches. We   refer to  these
+         semantically meaningful representations as `weblines'. We deployed a live system to 81 users
+         in three user populations. The resulting weblines were delineated into four types. Successful
+         weblines     were those   that participants  used to iteratively   reflect upon the insights of  their
+         searches.
+
+Introduction and Motivation
+Web search has emerged as a primary entry point to acquiring, confirming, and analyzing knowledge.                  The
+study of search has grown to encompass more than looking up discrete facts (e.g. In what year was the San
+Francisco fire?) and into the informal and formal learning of complex topics (e.g. Why did my local public
+swimming pool close and what can be done about it?).
+         Moving beyond the traversal of digital libraries and into general knowledge acquisition it is a skill that
+crosses  the boundaries       between   formal and     informal   learning  environments     and  across  cultural  and
+socioeconomic strata. While we tend to think of web search as `information retrieval' rather than learning, much
+learning in information societies takes place during web search.
+         Information-processing theory posits that the formal mental operations required to conduct purposeful
+and effective searches (e.g. as required to define abstract keywords) emerge at the corresponding developmental
+stage. We view the logical steps in web search as a partial and abstracted representation of the user's cognitive
+process. By  representing     such processes we   allow  them    to be  transferred between  participants via cognitive
+apprenticeship, a     process by   which  learners   can model   accurate   problem-solving   skills by  inspecting the
+cognitive processes of instructors (Collins 1987).
+
+Insights: The Products of Exploratory Web Search
+Researchers are actively attempting to unpack search into different types that vary in complexity. An oft-cited
+theory is the distinction between lookup, learning, and investigation tasks (Marchionini, 2006) (see Figure 1)
+while another attempts to use navigation characteristics such as `search moves' to describe the complexity of the
+search task (Aula, Russell, 2008).
+
+ Figure 1. Web search is a broad area. The research community is growing to consider Exploratory search as
+being of utmost importance as it relates to higher-order tasks and processes. The results from such searches are
+                ostensibly of greater value to the searcher and others (from (Marchionini, 2006)).
+
+         Improving system and user efficacy for exploratory search tasks has emerged as a paramount problem
+of human-information interaction research (Marchionini, 2006). Currently, exploratory search success depends
+
+© ISLS                                                                                                               112
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+largely on the cognitive and interpretive work of the user rather than retrieval algorithms. This human work
+increases the potential value of the results to the searcher and potentially to others. That work also contains
+cognitive processes and interpretations that are likely to be instructive to other learners about the topic at hand
+or the search process itself.
+         The results of exploratory searches are also different from those of lookup tasks because the insights
+gained often come from connections found across multiple webpages. This leads to a problem the present work
+aims to solve: how can we support users to share a series of related URLs that led to the insight in question?
+         For  lookup    tasks, the  problem   of  sharing   results has   been  largely   solved using   `link-sharing'
+mechanisms common to social networking status updates and micro-blogging where a single URL is qualified
+with an optional textual description or conclusion. However, the problem is not solved for more complex and
+multi-step queries where multiple pages and queries are necessary to qualify and communicate the insight. As
+Hamming was paraphrased in (Gersh, et al, 2006), "the purpose of exploratory search is insight, not data." (The
+original quote was "The purpose of computing is insight, not numbers.")
+         We refer to the results of a complex search as `insights'. Insights are the result of "a story implied by
+relationships among     discovered   information  items"  (Gersh,   et al, 2006).   In  this  study we   present  work
+conducted to capture and represent the insights from complex search for later individual use as well as the social
+transmission of knowledge. We narrowed our focus to results from news-related searches as these encompass
+common research methods as well as being of social interest.
+         After first motivating the study of sharing insights, we present a summary of related research on the
+topic. This is followed by a description of our iterative, user-centered design process that draws upon principles
+from micro-blogging, print media, and social media. We present results using the deployed system with 81
+unique users and 195 shared insights. We studied the nature of these insights and what differentiates them. Our
+results have  implications     for the  study of   learning technologies     concerning   web    search expertise  and
+knowledge-sharing systems within classrooms and organizations.
+
+Related Work
+A comprehensive and nuanced understanding of the development of search expertise (and "online reading") is
+emerging in the literature (Leu, Zawilinksi, 2007). Formulating queries is complex task due to its reliance upon
+abstraction, vocabulary, domain knowledge, and grammar. Despite this complexity, query formulation is often
+the focus of explicit instruction because it is so central to Web search practice (Lazonder, 2003).
+         Prior work studying the habits and behaviors of students of various ages using the Internet in directed
+or self-directed tasks have associated novice searchers with issuing vague queries (Bilal, 2000), focusing on
+surface site features (Coiro, 2003), and limited confidence about and awareness of Web resources (Druin, 2010).
+         Numerous      search  curricula have  been   proposed  though     none   are  yet established   as  standards.
+Instructional guidelines   have    been  proposed   for  teaching   search   skills and    creating relevant  learning
+environments as reviewed in (Lazonder, 2003). These approaches have focused on direct learning, not social,
+implicit learning.
+         The concept of imitating a skilled practitioner is perhaps the oldest and most natural form of social
+learning (Lave, Wenger, 1991). However, it is not clear if imitating an expert's queries or navigational choices
+directly enhances a searcher's skill set. Rather, it is the process underlying a search that is useful to imitate. This
+is because information    needs vary   from moment    to moment,    making   the  user's  conceptual model   of  search
+paramount.    In postulating   that  these  processes   may  be  socially    transferred,  we  draw    upon  cognitive
+apprenticeship (Collins, 1987), which posits that learners can imitate experts by deriving components of their
+thought processes, not just their behavior.
+
+Sharing the Web Search Process with Others
+Another branch of research in this area has been on how search processes can be represented and shared. Indeed,
+Vannevar   Bush  conceptualized    "trailblazers" whose  primary    function in society   would  be to  establish paths
+through hypertext collections for the purpose of serving future searchers (Bush, 1945). High information-density
+visualizations of web navigation processes have traditionally been used to study information-seeking behavior.
+         The work of Lin, et al, on visualizing search processes (Lin, 1991) (see Figure 3) led to representations
+like PadPrints (Hightower, et al, 1998) for search behavior analysis and navigation flow maps (Lin, Tsai, 2005)
+for enabling search instructors to understand student search behavior.
+         Academics     have   also  used graphical  representations    of  search   processes for   learning purposes.
+Twidale, et al, attempted to apply such representations to support collaborative search explicitly for the purpose
+of improving expertise (rather than improving instruction) in searching structured digital libraries with Ariadne
+(Twidale, 2005). These and related systems are useful for instructors and curious searchers in formal learning
+environments. However, they require learners be explicitly interested in improving their search expertise. We
+propose drawing learners into the search process of another expert through a compelling narrative.
+
+© ISLS                                                                                                              113
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+         A number of commercial applications are enable publishing and sharing of navigation histories or a
+collection of  links  about   a topic. They   include  TrailFire.com    (now    defunct), PearlTrees.com,     and  Google
+Bookmarks. As far as we have seen, they have not differed significantly from any prior academic projects.
+
+Sharing the Results from Search and Analysis
+Gersh, et al, supports the sharing of insights in the intelligence community (Gersh, 2006). Their tools aim to
+share  "chains  of    data, evidence,  hypotheses,   and   other  constructs,   in which    a   collection of lower-level
+information supports a statement (hypothetical or real) at some higher level of organization or abstraction".
+         What   remains     understudied   is how    the  results from  exploratory    search   can   be   structured in a
+lightweight and flexible manner that can be shared to aid social learning and lead to well-acknowledged search
+expertise  exemplars     and    practices.  Such   a  representation    could     improve    knowledge-transfer      within
+organizations, classrooms, or in public.
+
+A User-centered Design Process for a Tool to Share Web-based Insights
+We set out to design a system that allows users to create a single representation from a small collection of URLs
+that result from a complex or exploratory search. We expected the representation to consist of four components:
+(1) a  collection of  URLs,   (2) the  relevant   portion of   each URL,    (3) a  semantically  cohesive   title or  meta-
+description, and (4) a visual representation that makes this collection easily and quickly understandable.
+         Though the system is designed to support social learning of web search expertise, its ostensible goal
+was to share insights from exploratory web search. This section describes how the final system, LineHive.com,
+evolved through three rounds of user testing. The final design (see Figure 4b) uses an embeddable timeline
+representation to   aid in  describing  a  narrative and  constrains  the   set to ensure   all items are  always    visible
+simultaneously.
+
+Connecting a Collection of Related URLs
+Based on existing practices, the initial design approach was to allow a user to declare a collection of individual
+URLs in a manner that closely resembles existing link-sharing practices on micro-blogging services and social
+networks. Such practices support sharing results from lookup tasks, i.e., a single URL and an optional user-
+generated caption. A title was added to allow the user to describe the collection, as shown in Figure 2.
+
+  Figure 2. Our initial approach allowed a user to define a title for a collection of URLs. Each URL was then
+                             added manually with a subtitle (labeled, "your thoughts...").
+Figure 3. Our second iteration was a weblog view of a URL sequence. A rich description is included to support
+                              writing of a narrative, an `embed code' field is included.
+
+         We asked three university students to create a collection of links using a medium-fidelity prototype of
+this system. The primary feedback we received was that commentary or a preface was necessary to describe the
+sequence   of URLs.    This  initial prototype did   not  feel sufficiently easy   to create  and share.   We noted   how
+disjointed the items were from one another. We reflected upon how, in contrast, user-generated blog posts can
+contain multiple URLs yet still feel cohesive because a narrative connects them.
+
+A Weblog View of a URL Collection
+Figure 3 depicts the next iteration of the interface, which added a description under the title for narrative or
+explanatory   text. The  items   were  laid   out as individual,  short weblog     entries, using  a  well-known     online
+metaphor (i.e. blogs). We also added support for reader comments and related `trails' (as they were then called).
+
+© ISLS                                                                                                                  114
+CSCL 2011 Proceedings                                                                               Volume I: Long Papers
+
+To support the transfer of these trails as units, we added support for embedding them as an HTML widget (as is
+popular with YouTube videos).
+          Our team conducted informal feedback sessions with several adults and found a number of problems.
+The description field would likely prompt users to type information, making creation prohibitively laborious.
+The sequence or relationship between individual URLs in the collection had to be described textually by the
+author, resulting in even more text. This extra information would make it time-consuming to read and result in a
+reduced ability to be treated as a single structural unit and theme. Similarly, the vertical scrolling required to
+view more than two links meant the reader would never see the sequence in its entirety.
+          Our approach     to remedy   these issues was  to employ   a  metaphor     that  would constrain   the URL
+collections but enable fast inference of the relationship between each URL. This would reduce the amount of
+text required to be written.
+
+Weblines: Using Timelines to Represent Insights from Web Navigation
+Using  timelines   was  an attempt  to turn  the URL  collection  into a URL     sequence.  The  timeline   is a well-
+understood metaphor that includes its own narrative: setting, apex, and resolution along a temporal dimension
+with any units. Timelines also connote a story rather than simply a logical collection; timelines are used to
+outline stories and they make regular of use of thumbnails, a useful visual element for digital media.
+          We refer to these timelines as weblines because they are timelines about web traversals meant to guide
+another's sense-making process on the web. That is, individual items must link to URLs, they cannot contain
+arbitrary information or events. This constrains what weblines can be used to express but enable readers to
+interrogate and re-interpret the source URLs.
+          Following Western tradition, the timeline is presented horizontally. This was also done to ensure the
+sequence felt like and could be embedded in other webpages more easily. The authoring experience required the
+author to add a URL for the webpage and one for the thumbnail. User-defined subtitles of each URL appear on
+mouseover as tooltips when the user's mouse hovers atop the thumbnail.
+          There are two potential dates to use for each item in a webline: publish date and user access date. Our
+initial implementation ignores the latter and attempts to parse the former from the source URL but makes it
+user-configurable.
+          The result was a highly visual sequence of images meant to tell the story using the imagery alone. In
+feedback using a high-fidelity prototype with five users, we found it difficult to create a sequence whose images
+alone would be communicative. Figure 4a shows what would be displayed if you viewed one webline alone.
+The user's mouse is hovering on the third item from the left. Figure 4b shows a webline embedded in another
+webpage (without reader comments and metadata).
+
+Figure 4a. A webpage dedicated to displaying a single webline. Thumbnails depict the items in the collection of
+       URLs and a textual description describes the narrative. The reader here is hovering their mouse atop a
+                                           thumbnail to reveal the subtitle.
+              Figure 4b. A webline embedded in another webpage hides the narrative description.
+
+          Though   the  initial impression of the  page was  less loquacious     and  more  visual  than the previous
+iteration, hiding the captions in tooltips meant the users co-opted the description fields to describe the narrative,
+again creating an abundance of text. The distinction between webline title and item description prompted users
+to type short titles  (3-7 words)  and very   long descriptions. The goal    for the  next revision was  to  make  the
+narrative immediately    apparent   by complementing    the thumbnails   with    text and  reducing  reliance  on  the
+description field.
+
+© ISLS                                                                                                              115
+CSCL 2011 Proceedings                                                                                Volume I: Long Papers
+
+Figure 5a. The WYSIWYG authoring interface has essentially two elements: a textbox to paste URLs into and
+    the resulting timeline below it. A single box enables the author to add items to the webline. As dates are
+                       changed of individual items, their order animates to the new sequence.
+ Figure 5b. After entering an item URL, the user can elect to refine the choice of a representative thumbnail. A
+    list of thumbnails is presented from the URL in question and the user can paste any image URL as well.
+
+WYSIWYG Authoring of Weblines
+A system supporting webline authoring, reading, and embedding is available at LineHive.com. The weblines
+authoring interface requires the user to paste desired URLs into a textbox and press [Enter], whereupon they are
+added to the webline in WYSIWYG fashion. Hovering over individual items allows the user to refine the date or
+change  the  thumbnail.  Crucially,    as dates on  individual items are  changed, their position   on the  timeline is
+updated immediately, animating to the new position.
+         We also made timeline creation simpler by automatically downloading a thumbnail from the item's
+URL (an idea observed in Facebook). Because automatically selecting a representative image is error-prone, the
+user can refine the choice or enter the URL of a desired thumbnail image (Figure 5b).
+         Three types of time-scale representations were explored: relative (the distance between the items is
+proportionate to the duration between them), fixed-interval (all items are displayed at a fixed distance apart ­ see
+Figure  6a), and   fixed-interval clusters  (visual indicators are placed  on  the timeline    to represent  significant
+durations ­ see Figure 6b). To reduce information complexity, we sacrificed temporal accuracy and used fixed-
+interval clusters.
+         The  description  was    eliminated  and  renamed to   `caption' to prompt a  descriptive   title. It was also
+moved below the timeline, resembling a caption to an illustration, to ensure the author is sufficiently descriptive.
+
+  Figure 6a and b. These two weblines illustrate the difference between fixed-interval and fixed-interval with
+    clusters types of time-scale represntations. In (a), the items are placed at fixed intervals regardless of the
+          duration between them. In (b), visual `time gap' indicators indicate relatively large durations.
+
+Sharing Weblines by Embedding or Hyperlinking
+The    sequence of    webpages    that a  webline   represents is meant   to be  treated as    a  unit of   information
+complementing a greater point or standing alone. Each webline has a short URL that can be micro-blogged and
+can be embedded as a widget to complement articles or blog posts.
+
+Pilot Study: 60 Collocated Participants in a Classroom Setting
+We took a high-fidelity prototype of the design to two 9th grade public high school journalism classrooms in an
+affluent area where students were writing reviews of books by conducting Internet research. They were asked to
+create timelines to complement their reviews.
+         The function and form of the caption was effective at eliciting descriptive but not loquacious titles.
+Though   we  expected   these timelines    to be created quickly,  the students voiced   their opinion  to  login, save
+drafts, and revisit the timelines they created. In effect, the timelines became valuable narrative representation of
+
+© ISLS                                                                                                               116
+CSCL 2011 Proceedings                                                                                  Volume I: Long Papers
+
+student thinking and research. They both took longer to create and were more valuable to authors and peers than
+expected.
+          Frequently, students would create long timelines with over 10 items that required significant horizontal
+scrolling, an undesired consequence. They would simply paste links from any URLs they visited during their
+research, without regard. These quickly became unwieldy and lost their narrative thread.
+
+Constraining Volume and Length to Form Short-form Timelines
+Our team inspected a number of print periodicals for examples of timeline narratives. We observed that short-
+form timelines were used frequently to complement articles or even to stand on their own. These short-form
+timelines  were constrained     in both volume  (number     of items) and  length   (characters   of   text). Readers   are
+accustomed   to them    and   they drew upon   the same  principle  that has  led  to  the success     of micro-blogging:
+constraint. We restricted the maximum number of items to 6 and amount of characters to 200 for each subtitle,
+and the title to 100 characters (to make room for a URL that could then be micro-blogged).
+          By restricting the volume and length of our timelines would both eliminate horizontal scrolling and,
+ideally, ensure tighter narratives. By reducing the number of options, authors would have to be selective in their
+choice of URLs. All items would be visible on one screen at one time, requiring no scrolling whatsoever. This
+became a guiding principle in the system's design.
+
+Evaluation
+Our research  question    then  became,   "What characterizes   the nature of    different weblines    and  how  does   the
+user's exploratory search process inform this nature?"
+
+Participants, Dataset, and Methodology
+We deployed LineHive.com publicly and worked closely with three groups of participants to collect data on
+how it was used and the nature of the resulting timelines over the course of three months. The first group N1,
+was a classroom of 30 9th grade journalism students. The second group, N2, consisted of 29 journalists for an
+online magazine who work remotely from one another and conduct weekly teleconferences (and occasional in-
+person meetings) that our team became part of. The third, N3, was a group of 22 students in a university course
+on social technologies. The students had weekly reading assignments and, each week, were given the option of
+writing an essay or creating a webline. In either case, they were shared publicly with the class and on Twitter. In
+total, there were 81 unique users of the tool. In total, 353 weblines were analyzed (including the research teams'
+own examples).   We collected and analyzed the weblines created by all these participants.
+          We used     a grounded   theory (Glaser, 1992)   approach   to evaluate  how     users expressed    their search
+insights. We pruned     a portion  of  weblines that  were  not suitable  for analysis.    The pruning    process   was as
+follows. First, we first omitted duplicates and some improper contents such as racist account (which were likely
+created by  arbitrary   web   users).  Second, we omitted `test' weblines.        Through   this  pruning     process, 252
+timelines remained to be analyzed.
+          We then     categorized  weblines based  on communicative      intent. With  these   initial categories,  we  re-
+examined the 252 weblines and refined the categories again.          Two category types emerged: "sequence" and
+"argument." We then pruned items that our team had contributed, resulting in 195 weblines. Weblines in the
+sequence   category     pull together links in  order to  describe  an   event   (e.g. "Major    events    of the   Obama
+campaign") or steps in a process while argument weblines are where the author is using links to make a logical
+argument or statement (e.g. "How social media changed youth radio").
+
+Results
+Among the 195 weblines created, 26 lines deal strictly with chronological report of a current issue (13.3%) (e.g.
+Figure 7a). In creating these narratives, authors had to choose the most relevant facts to form a sequence of
+events on an issue.     However, chronology of an issue sometimes has longer time span as shown in Figure 7b.
+Figure 7a was clearly stimulated by the Olympic Games but is focused on its historical aspect. There are 61
+historical weblines of this kind (31.3%).
+          A portion of the weblines go beyond just convey a chronology as Figure 7c illustrates. In this case, the
+caption delivers creator's argument, and the links are selected as to support the argument, at the same time the
+evidences  became     more   comprehensive  when   it is in chronological  order.   22 timelines are fallen into this
+category (11.2%).
+
+© ISLS                                                                                                                  117
+CSCL 2011 Proceedings                                                                            Volume I: Long Papers
+
+Figure 7a-d, clockwise from top-left.    (a) This webline illustrates a chronological timeline that does not present
+ an argument, per se. (b) This webline combines a chronology with an argument. (c) The result of a contextual
+ interview we conducted, this webline both makes an argument and presents a chronology of a topic. (d) This
+webline does not present a chronology of an event but rather a collection of weblines. The numbers on this latter
+                        webline indicate the order in which they were added by the author.
+
+         In a majority of the weblines that illustrate a well-constructed argument, the chronological order of the
+URLs is not paramount, as shown in Figure 7d. We labeled this category, which contains 43 weblines (22.0%),
+"argument by example."
+         We then created a quadrant graph of the weblines with the two dimensions, plotted in Figure 8 (with
+counts for each quadrant). One third of timelines made a clear argument but it is not clear whether this type of
+argument is formed during the search process or beforehand.
+
+Figure 8. Weblines made using the tool fell into four quadrants along two dimensions: Sequence and Argument.
+          The numbers represent counts. Category descriptors on the circles represent sub-categories.
+
+Contextual Interview with an Expert Webline Creator
+We conducted a contextual interview with a participant who created multiple high-quality weblines to see how
+such insights are developed and transferred into weblines.    We tasked her with making a webline related to her
+expertise in youth's use of social media. We asked her to think-aloud (Lewis, 1982) through this process.
+         The participant spent 48 minutes talking. We attribute this relatively long duration to the think-aloud
+and interjecting we initiated. During this time, she changed URLs 58 times, 11 of which were searches. The
+outcome is as Fig. 7d. The number on each link indicates the order in which that link was added to the webline.
+This timeline can be plotted in the overlap area between "History" and "Argument by Chronology" in Fig. 8.
+The webline  caption    was finalized at the end. Her initial intention evolved significantly over the course of
+creation. She frequently mentioned the remaining number of link spots available and ran up to this constraint
+repeatedly. Several times throughout the process, she looked at what she had so far and the forced temporal
+sequence made her re-evaluate her goal and the most interesting insight to share with the webline.
+         Arguments shown in weblines may not be directly attributed as an initial insight but the tool galvanizes
+the exploratory search and insights from the search can be expressed as a selection of the items. In effect, a
+
+© ISLS                                                                                                          118
+CSCL 2011 Proceedings                                                                                 Volume I: Long Papers
+
+number of non-obvious insights can support weblines that are ostensibly made to be arguments or chronologies.
+Weblines effectively support not only the transfer of insights but also an insightful search process itself.
+
+Discussion and Next Steps
+We learned how the exploratory search process can be represented using a metaphor common to print design:
+the short-form   timeline.  By  translating  search  skill development   into   a constructionist (Harel, Papert, 1991)
+storytelling tool, authors can create weblines individually or collaboratively. Future studies will determine if
+authors develop    exploratory  search   skills by  ensuring their   search process  develops   a narrative arc and,  for
+readers, because exploratory search process is represented by an engaging narrative. It is core to the design that
+each webline is automatically published in a user's `stream' so that public sharing is the default.
+         One reason users iterate on their weblines is because they re-organize themselves based on each link's
+publication  date. This    forces  users to  re-evaluate   their choices and  address   gaps. By   having   at least  one
+organizing principle (i.e. time), the system enforces a level of coherency in the user's findings.
+         Our    representation does   not illustrate the   author's entire  process, as prior work  did,  but  rather the
+resulting insight. Thus, the trade-off is that authors are motivated to search enough to produce an insight but that
+this process is more opaque to readers. Future work might reveal this process upon request.
+         This   study  has  implications  for   how  exploratory    search  systems  are  conceived.  Currently,  search
+interfaces  are designed   for solitary  use and   their results are of use  to the  user only; sharing  is a  secondary
+consideration. It is interesting to investigate search engines as inherently social systems such that the act of
+using it was to create knowledge for oneself and others. By creating knowledge one knows others will consume,
+constructionist theory posits that one creates higher-quality artifacts and conducts more insightful searches.
+
+References
+Aula,  A.,  Russell,  D.   (2008). Complex      and  Exploratory   Web   Search.   NSF:   Information   Seeking Support
+         Systems. UNC Chapel Hill.
+Bush, Vannevar. (1945). "As We May Think." The Atlantic Monthly.
+Bilal, D. (2000). Children's use of the Yahooligans! Web Search Engine: I. Cognitive, Physical, and Affective
+         Behaviors on Fact-Based Search-Tasks. J American Society for Information Sciences, 51.7, 646-5.
+Coiro, J. (2003). Rethinking comprehension strategies to better prepare students for critically evaluating content
+         on the Internet. New Eng Reading Assoc J, 39, 29-34.
+Collins, A., Brown, J.S., Newman, S.E. (1989) Cognitive apprenticeship: Teaching the craft of reading, writing
+         and mathematics. Knowing Learning and Instruction, 8.1, 453-94.
+Druin,  A., Foss,  E.,    Hutchinson, H., Golub,    E.,  Hatley,  L. (2010).  Children's  roles   using keyword   search
+         interfaces at home. Proceedings of CHI 2010.
+Gersh,  J., Lewis,    B., Montemayor,    J., Piatko, C.,   Turner,  R.  (2006).   Supporting  insight-based information
+         exploration in intelligence analysis. Commun. ACM 49, 4, 63-68.
+Glaser, B. (1992). Basics of grounded theory analysis. Mill Valley, CA: Sociology Press.
+Gupta,  N.K.,   Rosé,  C.P.  (2010) Understanding     Instructional  Support  Needs   of  Emerging   Internet  Users  for
+         Web-based Information Seeking. Journal of Educational Data Mining, 2 (1), 38-82.
+Harel, I., Papert, S. (1991). Constructionism. Ablex Publishing.
+Hightower, R. R., Ring, L. T., Helfman, J. I., Bederson, B. B., Hollan, J. D. (1998) Graphical multiscale Web
+         histories: a study of padprints. Proceedings of Hypertext.
+Kuiper, E., Volman, M., Terwel, J. (2005). The Web as an Information Resource in K-12 Education: Strategies
+         for Supporting Students. Rev of Educ Res, 75.3, 285-328.
+Lave, J. & Wenger, E. (1991). Situated Learning: Legitimate Peripheral Participation. Cambridge Univ Press.
+Lazonder, A. (2003). Principles for designing web searching instruction. Educ. & Info Tech., 8.2, 179-93.
+Leu, D.J., Zawilinski, L. (2007). The New Literacies of Online Reading Comprehension. JNERA, 43.1, 1-7.
+Lewis, C. H. (1982). Using the "Thinking Aloud" Method In Cognitive Interface Design. IBM TR RC-9265.
+Lin, X., Liebscher, P. Marchionni, G. (1991). Graphical representations of electronic search patterns, J Amer
+         Soc for Info Sci, 42.7, 469-78.
+Lin, C., Tsai, C. (2005). Navigation Flow Map Method of Representing Students' Searching Strategies on the
+         Web. Proceedings of World Conf on Educational Multimedia, Hypermedia and Telecommunications.
+Marchionini, G. (2006). Exploratory search: from finding to understanding. Commun. ACM 49, 4, 41-46.
+Twidale, M. B. (2005). Over the Shoulder Learning: Supporting Brief Informal Learning. JCSCW, 14.6.
+
+Acknowledgements
+Chigusa Kita's research was supported by Kansai University's Overseas Research Program for the year of 2010.
+We thank David Zhang and Amanda Li for interface design support and the reviewers for valuable feedback.
+We thank Roy Pea for valuable guidance.
+
+© ISLS                                                                                                                119
+
