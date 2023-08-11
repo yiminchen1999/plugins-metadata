@@ -25,5 +25,5 @@ def merge_xlsx_files(input_folder, output_file):
 
 if __name__ == "__main__":
     input_folder = "revised all year paper"
-    output_file = "merged_paper.xlsx"
+    output_file = "merged_paper_original.xlsx"
     merge_xlsx_files(input_folder, output_file)
